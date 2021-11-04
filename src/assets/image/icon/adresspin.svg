@@ -1,0 +1,9 @@
+<svg id="adresspin" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <circle id="Ellipse_47" data-name="Ellipse 47" cx="40" cy="40" r="40" fill="#f7dfa1"/>
+  <g id="Iconly_Light_Location" data-name="Iconly/Light/Location" transform="translate(13.605 7.069)">
+    <g id="Location" transform="translate(0 0)">
+      <path id="Path_33958" d="M0,29.02C.048,12.938,11.456-.054,25.481,0S50.837,13.136,50.79,29.218v.33C50.617,40,45.527,49.664,39.286,57.216A69.668,69.668,0,0,1,27.408,68.428a2.787,2.787,0,0,1-4.026,0A70.213,70.213,0,0,1,6.672,50.489,40.8,40.8,0,0,1,0,29.119Z" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <ellipse id="Ellipse_740" cx="8.139" cy="9.333" rx="8.139" ry="9.333" transform="translate(17.256 20.248)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
