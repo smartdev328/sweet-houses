@@ -24,12 +24,12 @@
     </div>
      <div class="group">
         <div class="group1">
-          <div class="group1a px-4 py-4">
+          <div class="group1a px-1 px-md-4 py-4">
             <p class="DMSerifRegular text-white">Sell Without Showings </p>
             <div style="height:4px;width:34px;background:#FFB600"></div>
             <p class="Roboto-Regular text-white text-center">Get an instant estimate on the value of your home</p>
           </div>
-          <div class="px-3">
+          <div class="px-2 px-md-3">
             <div class="w-100 inputaddress">
               <img src="../../assets/image/icon/Iconly-Light-Location.svg" alt="">
               <div class="item1b2">
@@ -266,5 +266,32 @@ border-radius: 8px;
 }
 input:focus{
      outline: none;
+}
+@media only screen and (max-width: 600px){
+  .group{
+    left: 25px;
+    top: 250px;
+    width: 55%;
+    padding: 0px;
+  }
+  .group .group1 .group1a p:first-child{
+    font-size: 18px;
+  }
+  .group .group1 .group1a p:last-child{
+    font-size: 18px;
+  }
+  .group .group1 .inputaddress img{
+    width: 14px;
+    height: 14px;
+  }
+  .group .group1 button{
+    padding: 6px 2px;
+    font-size: 12px;
+    border:0
+  }
+  .group .group1 input{
+    padding-left: 4px;
+  }
+
 }
 </style>

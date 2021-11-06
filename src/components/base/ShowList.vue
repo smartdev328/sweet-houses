@@ -1,7 +1,7 @@
 <template>
     <div class="showlist">
         <div class="container ">
-                <div style="height:40px"></div>
+                <div class="space-40"></div>
             <div class="item1">
             <div class="item1a">
                 <p>8485 <span class="DMSerifRegular text-color-2">Result</span> </p>
@@ -10,9 +10,18 @@
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
             </div>
             <div class="item1c">
-                <p class="text-color-2 Roboto-Regular">
+                <div class="text-color-2 Roboto-Regular dropdown">
+                    <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Date listed (new to old)
-                </p>
+                    </a>
+                    <div class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Date listed (new to old)</a>
+                    <a class="dropdown-item" href="#">Price (low to high)</a>
+                    <a class="dropdown-item" href="#">Price (high to low)</a>
+                    <a class="dropdown-item" href="#">Beds (most to least)</a>
+                    <a class="dropdown-item" href="#">Internal sqft (most to least)</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="cards my-5">
@@ -80,6 +89,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 /*     position: fixed;
     left: calc(2% - 4px);
     right: calc(2% - 4px);
@@ -115,8 +125,26 @@ export default {
 .showlist .item1 .item1c{
     font-size: 16px;
 }
-
+.space-40{
+    height: 40px;
+}
+.showlist .dropdown-menu .dropdown-item{
+    color: #434242;
+}
+.showlist .dropdown-menu .dropdown-item:hover{
+    background: #FFB600;
+    color: #fff;
+}
 @media only screen and (max-width: 600px){
+    .showlist .cards{
+        grid-template-columns: auto ;
+    }
+    .showlist .item1{
+        flex-direction: column;
+    }
+    .space-40{
+        height: 100px;
+    }
 
 }
 @media only screen and (min-width: 900px){
