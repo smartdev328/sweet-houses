@@ -52,13 +52,14 @@ Vue.component('home-infoedit',require('./components/base/ConfirmAddress/HomeInfo
 Vue.component('contact-detailsedit',require('./components/base/ConfirmAddress/ContactDetails.vue').default)
 Vue.component('personalized-valuationedit',require('./components/base/ConfirmAddress/PersonalizedValuation.vue').default)
 
+/*registration */ 
+Vue.component('sign-up',require('./components/share/Register/SignUp.vue').default)
 
 Vue.component('address-map',require('./components/base/AddressMap.vue').default)
 Vue.component('show-map',require('./components/base/ShowMap.vue').default)
 Vue.component('show-list',require('./components/base/ShowList.vue').default)
 
 Vue.component('card-home',require('./components/share/CardHome.vue').default)
-
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {

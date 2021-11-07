@@ -66,47 +66,13 @@ Estate</a>
       <b-button v-b-modal="'my-modal'" variant="white" class="bg-transparent  signupbtn px-2 py-1">
         Sign Up
       </b-button>
-      <b-modal id="my-modal" 
+        <b-modal id="my-modal" 
         header-bg-variant="white"
         body-bg-variant="white"
         footer-bg-variant="white">
-        <div class="text-center element1  mt-n3">
-          <p class="font-robot text8">Sign Up</p>
-        </div>
-        <div class="w-75 mx-auto element2">
-            <a class="btn w-100 mb-1 btn-auth" href="">
-            <img src="@/assets/image/icons8-google.svg" alt="">
-            <span>Sign up with Google</span>
-            </a>
-            <p class="hnXNtF">
-              or
-            </p>
-            <div class="form-group">
-              <input type="text" class="form-control form-control-lg"  placeholder="Full Name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control form-control-lg"  placeholder="Email">
-            </div>
-            <div class="form-group position-relative">
-              <input :type="FieldType" class="form-control form-control-lg"  placeholder="Password">
-              <div class="passinput">
-                  <span v-if="FieldType === 'password'"  @click="switchVisibility">Show</span>
-              <span v-else  @click="switchVisibility">Hide</span>
-              </div>
-            </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn ">Join Now</button>
-              <div class="element3 align-items-baseline">
-                <p class="font-robot text-color-2 mr-2">Already have a profile? </p>
-                <button>log in</button>
-              </div>
-              <div class="element4 d-flex justify-content-center text-center mb-4">
-              <p>
-                By creating your account, you agree to our<code><br></code>
-              <a href="" class="text-color-2">Terms of Use</a>  and <a href="" class="text-color-2">Privacy Policy</a> </p>
-              </div>
-             
-        </div>
-      </b-modal>
+         <sign-up @hidesignupmodal="hidesignupmodal"></sign-up>
+        </b-modal>
+     
     </div>
   </div>
 </nav>
@@ -116,13 +82,15 @@ Estate</a>
 export default {
     data(){
       return{
-        fullname:"",
-        FieldType:"password"
+       
       }
     },
     methods:{
       switchVisibility(){
         this.FieldType = this.FieldType === 'password' ? 'text':'password'
+      },
+      hidesignupmodal(){
+        this.$bvModal.hide('my-modal')
       }
     }
 }

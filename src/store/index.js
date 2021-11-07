@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
-
+axios.defaults.baseURL = 'http://35.182.224.125:8000/api/'
 export const store = new Vuex.Store({
     state:{
         agents:[
@@ -426,13 +427,77 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         {title:`What if I have more questions?`,
         content:`Call us! Our number is 780-477-9338.`},
         ],
-        agent:{}
+        agent:{},
+        token: localStorage.getItem('token') || '',
+        user:{},
+        status:''
+
     },
     mutations:{
         setagent(state,payload){
             state.agent = payload
-        }
+        },
+        auth_request(state){
+            state.status = 'loading'
+        },
+        auth_success(state, token){
+            state.status = 'success'
+            state.token = token
+        },
+        auth_error(state){
+            state.status = 'error'
+        },
+        getUser(state,payload){
+        state.user = payload
+        },
     },
-    actions:{},
+    actions:{
+        login({commit,state} , user){
+            return new Promise((resolve, reject) => {
+              commit('auth_request')
+              axios({url: 'login/', data: user, method: 'POST' })
+              .then(resp => {
+                const token = resp.data.token
+                const user = resp.data.user
+                localStorage.setItem('token', token)
+                localStorage.setItem('user', user)
+                axios.defaults.headers.common['Authorization'] = token
+                commit('auth_success', token)
+                state.user = resp.data.user
+                resolve(resp)
+              })
+              .catch(err => {
+                commit('auth_error')
+                localStorage.removeItem('token')
+                reject(err)
+              })
+            })
+        },
+        register({commit , state}, user){
+            return new Promise((resolve, reject) => {
+              commit('auth_request')
+              axios({url: 'register', data: user, method: 'POST',crossDomain: true ,headers:{
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin' : 'http://localhost:8080'
+              }})
+              .then(resp => {
+                const token = resp.data.token
+                const user = resp.data.user
+                localStorage.setItem('token', token)
+                localStorage.setItem('user', user)
+                axios.defaults.headers.common['Authorization'] = token
+                commit('auth_success', token)
+                state.user = resp.data.user
+                resolve(resp)
+              })
+              .catch(err => {
+                commit('auth_error', err)
+                localStorage.removeItem('token')
+                reject(err)
+              })
+            })
+          },
+    },
     getters:{},
 })
+export default store;
