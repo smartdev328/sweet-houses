@@ -66,6 +66,7 @@ export default {
         return{
         fullname:"",
         FieldType:"password",
+        formData: new FormData(),
         input: {},
         errors: {},
         msg: {},
@@ -97,9 +98,12 @@ export default {
       Login(){
           this.msg={};
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
+              Object.entries(this.input).forEach((entry) =>
+                this.formData.append(entry[0], entry[1])
+                );
               this.loading = true
               this.$store
-          .dispatch("register", this.input).then(()=>{
+          .dispatch("register", this.formData).then(()=>{
                   this.loading = false
                   this.$emit('hidesignupmodal')
               }) .catch((err) => {
