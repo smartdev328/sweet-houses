@@ -6,6 +6,8 @@ Vue.use(Vuex)
 axios.defaults.baseURL = 'http://35.182.224.125:8000/api/'
 export const store = new Vuex.Store({
     state:{
+        token: localStorage.getItem('token') || '',
+        user:{},
         agents:[
             {name:"Barbara Diduch",phone:'(587) 984-2058',position:"REALTOR®",image:require('../assets/image/homepage/team/Barbara.svg'),
             details:`
@@ -428,8 +430,6 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         content:`Call us! Our number is 780-477-9338.`},
         ],
         agent:{},
-        token: localStorage.getItem('token') || '',
-        user:{},
         status:''
 
     },
@@ -450,6 +450,11 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         getUser(state,payload){
         state.user = payload
         },
+        logout(state){
+            state.status = ''
+            state.token = ''
+            state.user = {}
+          },
     },
     actions:{
         login({commit,state} , user){
@@ -462,8 +467,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', user)
                 axios.defaults.headers.common['Authorization'] = token
-                commit('auth_success', token)
+                commit('auth_success', token,user)
                 state.user = resp.data.user
+                state.token = resp.data.token
                 resolve(resp)
               })
               .catch(err => {
@@ -473,10 +479,10 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
               })
             })
         },
-        register({commit , state}, user){
+        register({commit , state}, input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
-              axios({url: 'register/', data: user, method: 'POST' })
+              axios({url: 'register/', data: input, method: 'POST' })
               .then(resp => {
                 const token = resp.data.token
                 const user = resp.data.user
@@ -485,7 +491,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
                 axios.defaults.headers.common['Authorization'] = token
                 commit('auth_success', token)
                 state.user = resp.data.user
-                resolve(resp)
+                state.token = resp.data.token
               })
               .catch(err => {
                 commit('auth_error', err)
@@ -494,7 +500,27 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
               })
             })
           },
+          logout({commit,state}){
+
+            return new Promise((resolve) => {
+                axios({url: 'logout/',  method: 'POST',headers:{
+                    'Content-Type':'application/json',
+                    'Authorization':`Token ${state.token}`
+                } }).then(() =>{
+                commit('logout')
+                localStorage.removeItem('token')
+                localStorage.setItem('token', '')
+                    localStorage.setItem('user', '')
+                delete axios.defaults.headers.common['Authorization']
+                resolve
+                })
+                
+              
+            })
+         
+          },
     },
-    getters:{},
+    getters:{
+    },
 })
 export default store;

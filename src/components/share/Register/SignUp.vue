@@ -26,7 +26,17 @@
                 </div>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control form-control-lg"  placeholder="Email">
+              <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
+               <span v-if="msg.email" style="color: #fc5353;">{{
+                  msg.email
+                }}</span>
+                <div v-for="(error, index) in this.errors" :key="index">
+                  <span
+                    v-if="error.param === 'email'"
+                    style="color: #fc5353;"
+                    >{{ error.msg }}</span
+                  >
+                </div>
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
@@ -45,10 +55,13 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn " @click="Login()">Join Now</button>
+              <button type="submit" class="btn btn-primary w-100 submit-btn " @click="SignUp()">
+                <span v-if="loading">Loading ...</span>
+                <span v-else>Join Now</span>
+               </button>
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Already have a profile? </p>
-                <button>log in</button>
+                <button @click="XsignupOlogin">log in</button>
               </div>
               <div class="element4 d-flex justify-content-center text-center mb-4">
               <p>
@@ -74,6 +87,9 @@ export default {
         }
     },
     methods:{
+        XsignupOlogin(){
+            this.$emit('XsignupOlogin')
+        },
         switchVisibility(){
         this.FieldType = this.FieldType === 'password' ? 'text':'password'
       },
@@ -82,6 +98,17 @@ export default {
           if(!this.input.username){
               this.msg.username = "username is required"
           }
+          if(!this.input.email){
+              this.msg.email = "Email is required"
+          }
+          if (
+        this.input.email &&
+        !this.input.email.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+      ) {
+            this.msg.email = "Email is required"
+      }
           if(this.input.username && this.input.username.length < 4){
               this.msg.username = "username must be more 4 character"
           }
@@ -91,21 +118,24 @@ export default {
           if(this.input.password && this.input.password.length < 7){
               this.msg.password  = "password must be more 6 character"
           }
-          if(this.input.username && this.input.password.length > 6){
+          if(this.input.username && this.input.password.length > 6 && this.input.email){
               return true
           }
       },
-      Login(){
+      SignUp(){
           this.msg={};
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
+            this.loading = true
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
-              this.loading = true
               this.$store
-          .dispatch("register", this.formData).then(()=>{
-                  this.loading = false
-                  this.$emit('hidesignupmodal')
+          .dispatch("register", this.formData).then((res)=>{
+                  this.$emit('successmsg');
+                  this.loading = false; 
+                  this.$emit('hidesignupmodal');
+                   
+                  return res;
               }) .catch((err) => {
                 this.errors = err.response.data.errors || {};
                 this.loading = false

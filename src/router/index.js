@@ -126,8 +126,12 @@ const routes = [
     path:'/SuceessMsg',
     name:'SuceessMsg',
     component:()=>import('../components/base/SuceessMsg.vue')
+  },
+  {
+    path:'/home-details',
+    name:'HomeDetails',
+    component:()=>import('../components/base/HomeDetails.vue')
   }
-  
   
   
   

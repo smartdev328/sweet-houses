@@ -58,7 +58,7 @@
 <script>
 export default {
     data :() =>({
-        selected_menu:"home-info",
+        selected_menu:"contact-details",
         obj1:{},
         channelitem:null
     }),
