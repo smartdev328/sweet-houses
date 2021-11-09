@@ -113,6 +113,83 @@
                                 <p class="p2 text-color-2 Roboto-Regular my-3">Access sold prices, more photos, and insights about this home</p>
                             </div>
                         </div>
+                        <div class="item8 my-2 py-5">
+                            <div class="d-flex justify-content-between w-50">
+                            <div class="item8a">
+                                <div class="d-flex align-items-center">
+                                    <img src="../../assets/image/icon/arrowup.svg" alt="icon">
+                                    <p class="mb-0 Roboto-Medium ml-3">$ x,xxx,xxx</p>
+                                </div>
+                                <p class="mb-0 Roboto-Regular p2">Compared to last sold</p>    
+                            </div>
+                            <div class="item8a">
+                                <div class="d-flex align-items-center">
+                                    <img src="../../assets/image/icon/arrowup.svg" alt="icon">
+                                    <p class="mb-0 Roboto-Medium ml-3">x%</p>
+                                </div>
+                                <p class="mb-0 Roboto-Regular p2">Yearly appreciation </p>    
+                            </div>
+                            </div>
+                        </div>
+                        <div class="item9 my-2 py-5">
+                            <div class="item9a new my-3 d-flex justify-content-between align-items-center">
+                                <div class="ml-3 text-color-2 Roboto-Medium col-4">Now</div>
+                                <div class="col-5">
+                                    <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                                    <p class="mb-0 text-color-2 Roboto-Medium">8 days on market</p>
+                                </div>
+                                <div class="image col-3">
+                                    <img src="../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
+                                </div>
+                            </div>
+                            <div class="item9a sold my-3 d-flex justify-content-between align-items-center">
+                                <div class="ml-3 text-color-2 Roboto-Medium col-4">8 month ago</div>
+                                <div class="col-5">
+                                    <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                                    <p class="mb-0 text-color-2 Roboto-Medium">8 days on market</p>
+                                </div>
+                                <div class="image col-3">
+                                    <img src="../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
+                                </div>
+                            </div>
+                            <div class="item9a listed my-3 d-flex justify-content-between align-items-center">
+                                <div class="ml-3 text-color-2 Roboto-Medium col-4">2021</div>
+                                <div class="col-5">
+                                    <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                                    <p class="mb-0 text-color-2 Roboto-Medium">8 days on market</p>
+                                </div>
+                                <div class="image col-3">
+                                    <img src="../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item10 my-2 py-3">
+                            <div class="item1">
+                                <p class="text-color-1 DMSerifRegular">Commute Time</p>
+                            </div>
+                            <div class="item2 px-2 d-flex">
+                                <div>
+                                    <img src="../../assets/image/icon/commute.svg" alt="">
+                                </div>
+                                <div class="w-100 ml-2">
+                                    <p class="mb-0 item2a Roboto-Regular">
+                                        <span>19555 Shaws </span>
+                                        <span>Yonge-St. Clair </span>
+                                        <span class="px-2">City Name</span>
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between w-100 item2b my-2">
+                                        <div class="form-group mb-0 w-75">
+                                            <input type="text" class="w-100 form-control form-control-lg shadow-sm" placeholder="Enter a location to view travel times">
+                                        </div>
+                                        <button class="btn">Show Travel Time</button>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" id="package-area-0" type="checkbox" checked="checked" />
+                                        <label class="custom-control-label" for="package-area-0">During peak traffic </label>  
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <div></div>
@@ -164,7 +241,8 @@ export default {
             }
             }
         ]
-            }
+            },
+            checkstatus:null
         }
     },
     components:{
@@ -306,6 +384,90 @@ export default {
 }
 .homedetails .item7 .item7a .p2{
     font-size: 18px;
-
 }
+.homedetails .item8 .item8a img{
+    width: 22px;
+    height: 22px;
+}
+.homedetails .item8 .item8a p{
+    color: #FFB600;
+    font-size: 28px;
+}
+.homedetails .item8 .item8a .p2{
+    font-size: 16px;
+    color: #707070;
+}
+.homedetails .item9{
+    border-bottom: 1px solid #7070706b;
+}
+.homedetails .item9 div:first-child{
+    font-size: 24px;
+}
+.homedetails .item9 div:nth-child(2) p:first-child{
+    color: #FFB600;
+    font-size: 24px;
+}
+.homedetails .item9 .item9a .image{
+    width: 120px;
+    height: 90px;
+}
+.homedetails .item9 .item9a .image img{
+    filter: blur(1px);
+    border-radius: 12px;
+}
+.homedetails .item9  .new{
+    border-left: 5px solid #FFB600;
+    background: #F3F3F3;
+}
+.homedetails .item9  .sold{
+    border-left: 5px solid #C95055;
+}
+.homedetails .item9  .listed {
+    border-left: 5px solid #707070;
+}
+.homedetails .item10{
+    border-bottom: 1px solid #7070706b;
+}
+.homedetails .item10 .item1{
+    font-size: 28px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+      outline: none;
+    box-shadow: 0;
+    }
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+    background-color: #FFB600;
+    border: 0;
+    outline: none;
+    box-shadow: 0;
+}
+.custom-control-input:focus~.custom-control-label::before{
+    box-shadow: none !important;
+}
+.custom-control-label::before{
+        border: #70707069 solid 1px;
+}
+.homedetails .item10 .item2a span:first-child{
+    color: #434242;
+    font-size: 18px;
+}
+.homedetails .item10 .item2a span:nth-child(2){
+    color: #707070;
+    font-size: 16px;
+}
+.homedetails .item10 .item2a span:nth-child(3){
+    color: #707070;
+    font-size: 16px;
+    border-left: 1px solid #707070;
+}
+.homedetails .item10 .item2b input{
+    border: 1px solid #AAAAAA;
+    border-radius: 8px;
+}
+.homedetails .item10 .item2b input::placeholder{
+    color: #AAAAAA;
+}
+
 </style>

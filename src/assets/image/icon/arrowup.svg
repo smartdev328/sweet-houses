@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="arrowup" transform="translate(-205 -720.833)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="8.5" cy="8.5" r="8.5" transform="translate(205 720.833)" fill="#ffb600"/>
+    <g id="Iconly_Light_Arrow_-_Right" data-name="Iconly/Light/Arrow - Right" transform="translate(210.737 732.395) rotate(-90)">
+      <g id="Arrow_-_Right" data-name="Arrow - Right" transform="translate(0 5.527) rotate(-90)">
+        <path id="Stroke_1" data-name="Stroke 1" d="M0,6.125V0" transform="translate(2.763)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Stroke_3" data-name="Stroke 3" d="M5.527,0,2.764,2.47,0,0" transform="translate(0 3.655)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
