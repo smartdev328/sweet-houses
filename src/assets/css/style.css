@@ -2,10 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"); */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @font-face {
   font-family: "DMSerifRegular";
-  src: url("./DMSerifText-Regular.ttf"),
+  src: url("DMSerifText-Regular.ttf"),
   }
   @font-face {
     font-family: "DMSerifRegularItalic";
@@ -60,7 +61,9 @@
     src: url("Roboto-ThinItalic.ttf"),
   } 
 
-
+.Poppins{
+  font-family: 'Poppins', sans-serif;
+}
 
 * {
   padding: 0;
@@ -71,47 +74,47 @@ body{
   overflow-x: hidden;
 }
 .DMSerifRegular {
-  font-family: 'DMSerifRegular' !important;
+  font-family: 'DMSerifRegular'  !important;
 }
 .DMSerifRegularItalic{
-  font-family: 'DMSerifRegularItalic' !important;
+  font-family: 'DMSerifRegularItalic'  !important;
 }
 .Roboto-Black{
-  font-family: 'Roboto-Black' !important;
+  font-family: 'Roboto-Black' , sans-serif  !important;
 }
 .Roboto-BlackItalic{
-  font-family: 'Roboto-BlackItalic' !important;
+  font-family: 'Roboto-BlackItalic' ,sans-serif  !important;
 }
 .Roboto-Bold{
-  font-family: 'Roboto-Bold' !important;
+  font-family: 'Roboto-Bold' , sans-serif  !important;
 }
 .Roboto-BoldItalic{
-  font-family: 'Roboto-BoldItalic' !important;
+  font-family: 'Roboto-BoldItalic' , sans-serif !important;
 }
 .Roboto-Italic{
-  font-family: 'Roboto-Italic' !important;
+  font-family: 'Roboto-Italic' , sans-serif  !important;
 }
 .Roboto-Light{
-  font-family: 'Roboto-Light' !important;
+  font-family: 'Roboto-Light' , sans-serif  !important;
 }
 .Roboto-LightItalic{
-  font-family: 'Roboto-LightItalic' !important;
+  font-family: 'Roboto-LightItalic' ,sans-serif !important;
 }
 .Roboto-Medium{
-  font-family: 'Roboto-Medium' !important;
+  font-family: 'Roboto-Medium', sans-serif  !important;
 } 
 .Roboto-MediumItalic{
-  font-family: 'Roboto-MediumItalic' !important;
+  font-family: 'Roboto-MediumItalic',sans-serif  !important;
 }
 .Roboto-Regular{
-  /* font-family: 'Roboto-Regular' !important; */
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto-Regular' , sans-serif !important;
+  /* font-family: 'Roboto', sans-serif; */
 }
 .Roboto-Thin{
-  font-family: 'Roboto-Thin' !important;
+  font-family: 'Roboto-Thin' , sans-serif  !important;
 }
 .Roboto-ThinItalic{
-  font-family: 'Roboto-ThinItalic' !important;
+  font-family: 'Roboto-ThinItalic' , sans-serif  !important;
 }
 /* .font-robot {
   font-family: "Roboto", sans-serif;
@@ -134,7 +137,12 @@ body{
 }
 .navbar-nav .nav-item a {
   color: #232323 !important;
-  font-size: 16px !important;
+  font-size: 20px !important;
+  font-family: 'DMSerifRegular' !important;
+}
+.navbar button{
+  color: #232323 !important;
+  font-size: 20px !important;
   font-family: 'DMSerifRegular' !important;
 }
 .navbar .signupbtn {

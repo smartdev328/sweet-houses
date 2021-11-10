@@ -118,7 +118,7 @@ export default {
         color:#FFB600;
         text-decoration: none;
         cursor: pointer;
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
         font-size: 16px;
     }
     footer .elementb ul li .socialicon{
@@ -129,7 +129,7 @@ export default {
          color:#FFB600;
         text-decoration: none;
         cursor: pointer;
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
         font-size: 16px;
         margin: 0;
      }

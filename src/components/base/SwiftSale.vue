@@ -68,20 +68,20 @@ deducted so there's no out of pocket expenses. </li>
 Value</p>
                             <p>$400,000</p>
                         </div>
-                        <div class="gridcol px-5 text-center">
+                        <div class="gridcol px-3 text-center">
                             <p class="mx-1">Estimated Seller 
 Concession </p>
                             <p>N/A</p>
                         </div>
-                        <div class="gridcol px-5 text-center">
+                        <div class="gridcol px-3 text-center">
                             <p class="mx-1">Repairs</p><br>
                             <p>$16,900</p>
                         </div>
-                         <div class="gridcol px-4 text-center">
+                         <div class="gridcol px-3 text-center">
                             <p class="mx-1">Service Charge</p><br>
                             <p>9.9%</p>
                         </div>
-                        <div class="gridcol px-4 text-center">
+                        <div class="gridcol px-3 text-center">
                             <p class="mx-1">Estimated Proceeds </p>
                             <p>$394,400</p>
                         </div>
@@ -316,14 +316,15 @@ export default {
 
 <style scoped>
     .page2 .item1 .item1a p{
-        font-size: 32px;
+        font-size: 34px;
     }
     .page2 .item1 .item1b p:first-child{
     color:#232323;
-    font-size: 28px;
+    font-size: 30px;
     }
     .page2 .item1 .item1b p:last-child{
         color:#434242;
+        font-size: 18px;
     }
     .page2 .item2 .title p{
         font-size: 30px;
@@ -389,12 +390,12 @@ export default {
      .item2c .gridcontainer .gridcol p:first-child,
     .item2c2 .gridcontainer .gridcol p:first-child
     {
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
         font-size: 20px;
     }
     .item2c .gridcontainer .gridcol p,
     .item2c2 .gridcontainer .gridcol p{
-        font-family: 'Roboto-Medium' !important;
+        font-family: 'Roboto-Medium',sans-serif  !important;
         color: #232323;
         font-size: 18px;
     /* position: absolute;

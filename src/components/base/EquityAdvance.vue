@@ -316,7 +316,7 @@ export default {
     .page3 .item6 ul li,
     .page3 .item3 ul li{
         margin-bottom: 1em;
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
     }
     .page3 .item3 ul li .icon ,
     .page3 .item5 ul li .icon{

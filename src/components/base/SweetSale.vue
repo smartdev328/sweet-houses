@@ -406,10 +406,11 @@ export default {
 
 <style scoped>
     .page1 .item1 .item1a p{
-        font-size: 32px;
+        font-size: 36px;
     }
     .page1 .item1 .item1b p{
     color:#434242;
+    font-size: 18px;
     }
     .page1 .item2 .title p{
         font-size: 30px;
@@ -418,7 +419,7 @@ export default {
         width: 75%;
     }
     .page1 .item2 .item2a .item2b{
-        font-size: 24px;
+        font-size: 26px;
         cursor: pointer;
     }
     .page1 .item2 .item2a .item2b .active{
@@ -474,14 +475,14 @@ export default {
     .item2c .gridcontainer .gridcol p:first-child,
     .item2c2 .gridcontainer .gridcol p:first-child
     {
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
         font-size: 20px;
     }
     .item2c .gridcontainer .gridcol p,
     .item2c2 .gridcontainer .gridcol p{
-        font-family: 'Roboto-Medium' !important;
+        font-family: 'Roboto-Medium' , sans-serif  !important;
         color: #232323;
-        font-size: 18px;
+        font-size: 17px;
     /* position: absolute;
     left: 25%;
     right: 25%;
@@ -513,7 +514,7 @@ export default {
     .page1 .item6 ul li,
     .page1 .item3 ul li{
         margin-bottom: 1em;
-        font-family: 'Roboto-Regular' !important;
+        font-family: 'Roboto-Regular' , sans-serif  !important;
     }
     .page1 .item3 ul li .icon ,
     .page1 .item5 ul li .icon{
@@ -543,10 +544,10 @@ export default {
         height: 300px;
     }
     .page1 .item7 p{
-        font-size: 28px;
+        font-size: 32px;
     }
     .page1 .item8 .element1 p:first-child{
-        font-size: 28px;
+        font-size: 32px;
     }
     .page1 .item8 .element1 p:last-child{
         font-size: 16px;
@@ -581,7 +582,7 @@ export default {
         font-size: 16px !important;
     }
     .page1 .item8 .element4{
-        font-size: 28px;
+        font-size: 34px;
     }
     .page1 .item8 .element6 a{
         border-radius: 8px;

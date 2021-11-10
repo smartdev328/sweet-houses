@@ -23,7 +23,7 @@
                     <p>Get Maximum Value! Skip
                     Public Showings And Choose 
                     Your Moving Day</p>
-                    <p>The SMARTEST way to Sold!</p>
+                    <p>The SMARTEST way to Sell!</p>
                   </div> 
                   <div class="text-center  text-white DMSerifRegular" :class="tab_visible('Swift_Sale')">
                     <p>Your offer in minutes, SOLD in days</p>
@@ -41,10 +41,10 @@
                       <img src="../assets/image/icon/Iconly-Light-Location.svg" alt="">
                       <div class="item1b2">
                         <span class="space"></span>
-                        <input type="text" placeholder="Enter your home address  ">
+                        <input type="text" class="Poppins" placeholder="Enter your home address  ">
                       </div>
                       <div class="item1b3">
-                        <button>Get started</button>
+                        <button class="Poppins">Get started</button>
                       </div>
                   </div>
               </div>
@@ -119,9 +119,9 @@ export default {
     gap: 8px;
   }
  .home .item1a button{
-        background: #04847F;
+    background: #04847F;
     color: white;
-        border: none;
+    border: none;
     border-radius: 12px 12px 0px 0px;
     display: flex;
     flex-direction: column;
@@ -132,6 +132,7 @@ export default {
     padding: 10px;
     position: relative;
     font-family: 'DMSerifRegular' !important;
+    font-size: 20px;
   }
   .item1 .item1b{
     background: #00A19B;
@@ -148,10 +149,10 @@ export default {
     flex-direction: column;
   }
  .home .item1 .item1b p:first-child{
-    font-size: 36px;
+    font-size: 38px;
   }
   .home .item1 .item1b p:nth-child(2){
-    font-size: 20px;
+    font-size: 22px;
   }
   .item1 .item1b .inputaddress{
     width: 100%;
@@ -216,7 +217,7 @@ export default {
     flex-shrink: 0;
   }
   .item1b .item1b3 button{
-    background-color: rgb(255, 192, 67);
+    background-color: #FFB600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -228,7 +229,7 @@ export default {
     -webkit-box-pack: center;
     justify-content: center;
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 9px 16px;
   }
  @media only screen and (max-width: 600px){

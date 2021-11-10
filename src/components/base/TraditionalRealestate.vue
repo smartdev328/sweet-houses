@@ -100,7 +100,7 @@ A New Idea To Better Serve Our Clients, We Can Implement It Immediately. </p></d
             <div class="container">
                 <div class="py-5">
                     <div class="text-color-1 text-center">
-                        <p class="Roboto-Medium">Professional Advice & Guidance</p>
+                        <p class="Roboto-Medium ele1">Professional Advice & Guidance</p>
                         <p class="Roboto-Regular">We offer professional and timely advice.  Based on market activity and buyer feedback we can provide you with the information you’ll need to make the best decisions for your unique situation.  We have a team of contractors available to make any necessary improvements to obtain the maximum price for your home.  When an offer comes in, you can count on us to be great 
                             communicators and excellent negotiators, protecting your best interests at all times. </p><br><br>
                         <p class="Roboto-Regular">REALTOR.Ca Websites & Apps (Last 7 Days: 266 Views On 4 Sites)</p>
@@ -325,6 +325,9 @@ export default {
 }
 .page4 .item5 p:first-child{
     font-size: 28px;
+}
+.page4 .item6  .ele1 {
+ font-size: 28px;
 }
 .page4 .item6 .red-dot{
     height: 14px;

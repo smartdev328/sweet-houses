@@ -101,7 +101,7 @@ export default {
     .editaddress .navigation ul li{
     display: flex;
     align-items: baseline;
-    font-family: 'Roboto-Medium' !important;
+    font-family: 'Roboto-Medium' , sans-serif !important;
     font-size: 20px;
     cursor: pointer;
     }
