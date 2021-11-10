@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 Vue.config.productionTip = false
 import {store} from './store'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue } from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -42,7 +42,7 @@ Vue.component('pagination', Pagination);
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+//Vue.use(IconsPlugin)
 
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
@@ -66,14 +66,22 @@ Vue.component('sale-question',require('./components/share/SaleQuestion.vue').def
 
 
 
+const SweetSale = () => import('./components/base/SweetSale.vue');
+Vue.component('sweet-sale', SweetSale)
 
-Vue.component('sweet-sale',require('./components/base/SweetSale.vue').default)
-Vue.component('swift-sale',require('./components/base/SwiftSale.vue').default)
-Vue.component('equity-advance',require('./components/base/EquityAdvance.vue').default)
-Vue.component('traditional-realestate',require('./components/base/TraditionalRealestate.vue').default)
+const SwiftSale = () => import('./components/base/SwiftSale.vue');
+Vue.component('swift-sale', SwiftSale)
+
+const EquityAdvance = () => import('./components/base/EquityAdvance.vue');
+Vue.component('equity-advance', EquityAdvance)
+
+const TraditionalRealestate = () => import('./components/base/TraditionalRealestate.vue');
+Vue.component('traditional-realestate', TraditionalRealestate)
 
 /* Edit Address Component */
-Vue.component('home-info',require('./components/base/EditAddress/HomeInfo.vue').default)
+const HomeInfo = () => import('./components/base/EditAddress/HomeInfo.vue');
+Vue.component('home-info', HomeInfo)
+
 Vue.component('contact-details',require('./components/base/EditAddress/ContactDetails.vue').default)
 Vue.component('personalized-valuation',require('./components/base/EditAddress/PersonalizedValuation.vue').default)
 
@@ -102,6 +110,7 @@ Vue.use(VueGoogleMaps, {
 new Vue({
   router,
   store,
+
   created(){
  
       this.$http.get('user/',{headers:{
