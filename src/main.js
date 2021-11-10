@@ -27,6 +27,15 @@ if(user){
 if (token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token
 }
+import GAuth from 'vue-google-oauth2'
+const gauthOption = {
+  clientId: '280245313331-9a9gr4kmfpougbbr1ln1juhdqljs6q2l.apps.googleusercontent.com',
+  scope: 'profile email',
+  prompt: 'consent',
+  fetch_basic_profile:true
+}
+Vue.use(GAuth, gauthOption)
+
 
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
@@ -94,12 +103,14 @@ new Vue({
   router,
   store,
   created(){
-    this.$http.get('user/',{headers:{
-      'Authorization':`Token ${this.$store.state.token}` 
-    }}).then(res =>{
-      this.$store.state.user = res.data
-
-    }) 
+ 
+      this.$http.get('user/',{headers:{
+        'Authorization':`Token ${this.$store.state.token}` 
+      }}).then(res =>{
+        this.$store.state.user = res.data
+  
+      }) 
+    
   },
   render: h => h(App)
 }).$mount('#app')

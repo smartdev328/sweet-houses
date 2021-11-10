@@ -492,6 +492,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
                 commit('auth_success', token)
                 state.user = resp.data.user
                 state.token = resp.data.token
+                resolve(resp)
               })
               .catch(err => {
                 commit('auth_error', err)

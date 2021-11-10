@@ -124,7 +124,6 @@ Estate</a>
         footer-bg-variant="white">
          <sign-up @hidesignupmodal="hidesignupmodal"
          @XsignupOlogin="XsignupOlogin"
-         @successmsg="successmsg"
          ></sign-up>
         </b-modal>
     </div>
@@ -160,7 +159,9 @@ export default {
         this.FieldType = this.FieldType === 'password' ? 'text':'password'
       },
       hidesignupmodal(){
+        console.log('success')
         this.$bvModal.hide('my-modal')
+        
       },
       hideloginmodal(){
         this.$bvModal.hide('my-modallogin')
@@ -181,13 +182,6 @@ export default {
           text: 'Hello user! This is a notification!',
         });
       },
-      successmsg(){
-        this.$notify({
-          group: 'foo',
-          type: "success",
-          text: 'Hello user! This is a notification!',
-        });
-      }
     }
 }
 </script>

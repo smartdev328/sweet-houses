@@ -5,7 +5,7 @@
           <p class="font-robot text8">Sign Up</p>
         </div>
         <div class="w-75 mx-auto element2">
-            <a class="btn w-100 mb-1 btn-auth" href="">
+            <a class="btn w-100 mb-1 btn-auth" @click="signupgoogle()">
             <img src="@/assets/image/icons8-google.svg" alt="">
             <span>Sign up with Google</span>
             </a>
@@ -131,18 +131,40 @@ export default {
                 );
               this.$store
           .dispatch("register", this.formData).then((res)=>{
-                  this.$emit('successmsg');
-                  this.loading = false; 
-                  this.$emit('hidesignupmodal');
-                   
+             this.$notify({
+                  group: 'foo',
+                  type: "success",
+                  text: 'Hello user! This is a notification!',
+                });
                   return res;
+              }).then(()=>{
+                this.loading = false; 
+                this.$emit('hidesignupmodal');
+                
               }) .catch((err) => {
-                this.errors = err.response.data.errors || {};
+                 this.$notify({
+                  group: 'foo',
+                  type: "error",
+                  text: 'Hello user! This is a notification!',
+                });
+              //  this.errors = err.response.data.errors || {};
                 this.loading = false
+                console.log(err)
           });
       }
-          
       },
+    async signupgoogle() {
+      const googleUser = await this.$gAuth.signIn();
+      console.log("googleUser", googleUser);
+      console.log("getId", googleUser.getId());
+      console.log("getBaseProfile", googleUser.getBasicProfile());
+      console.log("getAuthResponse", googleUser.getAuthResponse());
+      console.log(
+        "getAuthResponse$G",
+        this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
+      );
+      this.isLogin = this.$gAuth.isAuthorized;
+    },
     }
 }
 </script>

@@ -5,7 +5,7 @@
           <p class="font-robot text8">LogIn</p>
         </div>
         <div class="w-75 mx-auto element2">
-            <a class="btn w-100 mb-1 btn-auth" href="">
+            <a class="btn w-100 mb-1 btn-auth" @click="logingoogle()" >
             <img src="@/assets/image/icons8-google.svg" alt="">
             <span>log In with Google</span>
             </a>
@@ -42,10 +42,15 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4" @click="login()">Log In</button>
+              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4" @click="login()">
+                <span v-if="loading">Loading ...</span>
+                <span v-else>Log In</span>
+              </button>
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Don't have a profile yet? </p>
-                <button @click="xloginOsignup">Join now</button>
+                <button @click="xloginOsignup">
+                Join now
+                </button>
               </div>
              
         </div>
@@ -62,7 +67,8 @@ export default {
         input: {},
         errors: {},
         msg: {},
-        loading:false
+        loading:false,
+        isLogin:false
         }
     },
     methods:{
@@ -104,15 +110,38 @@ export default {
               this.loading = true
               this.$store
           .dispatch("login", this.formData).then(()=>{
+                  this.$notify({
+                  group: 'foo',
+                  type: "success",
+                  text: 'Hello user! This is a notification!',
+                });
                   this.loading = false
                   this.$emit('hideloginmodal')
               }) .catch((err) => {
+                this.$notify({
+                  group: 'foo',
+                  type: "error",
+                  text: 'Hello user! This is a notification!',
+                });
+                console.log('errro')
                 this.errors = err.response.data.errors || {};
                 this.loading = false
           });
       }
           
       },
+      async logingoogle() {
+      const googleUser = await this.$gAuth.signIn();
+      console.log("googleUser", googleUser);
+      console.log("getId", googleUser.getId());
+      console.log("getBaseProfile", googleUser.getBasicProfile());
+      console.log("getAuthResponse", googleUser.getAuthResponse());
+      console.log(
+        "getAuthResponse$G",
+        this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
+      );
+      this.isLogin = this.$gAuth.isAuthorized;
+    },
     }
 }
 </script>

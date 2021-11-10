@@ -17,9 +17,52 @@
                         <button class="btn text-color-1 Roboto-Regular">
                             <img src="../../assets/image/icon/Heart.svg" alt="icon">
                             Save</button>
-                        <button class="btn text-color-1 Roboto-Regular">
+                        <b-button v-b-modal="'modal-share'" class="btn bg-transparent text-color-1 Roboto-Regular">
                             <img src="../../assets/image/icon/share.svg" alt="icon">
-                             Share</button>
+                             Share</b-button>
+                             <b-modal
+                              id="modal-share" 
+                              size="lg"
+                            header-bg-variant="white"
+                            body-bg-variant="white"
+                            footer-bg-variant="white">
+                                <template #modal-title>
+                                   <h4 class="text-color-1 Roboto-Medium">Share this Sweetly</h4> 
+                            </template>
+                            <div class="element1">
+                                <div class="item1">
+                                    <div class="item1a">
+                                        <img @click="copyURL" class="pointer" src="../../assets/image/icon/noun_linked_4211117.svg" alt="">
+                                        <form>
+                                            <input ref="mylink" value="https://www.properly.ca/buy/home/view/RPJwXDrGTB61DB-zR_gwsQ/on/toronto" type="text" name="" id="">
+                                        </form>
+                                    </div>
+                                    <div class="item1b">
+                                        <button class="btn" @click="copyURL()">Copy Link</button>
+                                    </div>
+                                </div>
+                                <div class="item2 mb-2">
+                                    <div class="item2a">
+                                        <button class="btn Roboto-Medium ">
+                                            <img src="../../assets/image/icon/noun_messenger_3202205.svg" alt="">
+                                            <span>Messenger</span>
+                                        </button>
+                                    </div>
+                                    <div class="item2b">
+                                        <button class="btn Roboto-Medium ">
+                                            <img src="../../assets/image/icon/Group 13353.svg" alt="">
+                                            <span>SMS</span>
+                                        </button>
+                                    </div>
+                                    <div class="item2c">
+                                        <button class="btn Roboto-Medium ">
+                                            <img src="../../assets/image/icon/noun_Email_4292826.svg" alt="">
+                                            <span>Email</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </b-modal>
                     </div>
                 </div>
                 <div class="item2 my-5">
@@ -247,6 +290,14 @@ export default {
     },
     components:{
         VueSlickCarousel 
+    },
+    methods:{
+        copyURL(){
+            var Url = this.$refs.mylink;
+            Url.select();
+            document.execCommand("copy");
+        }
+        
     }
 }
 </script>
@@ -469,5 +520,10 @@ export default {
 .homedetails .item10 .item2b input::placeholder{
     color: #AAAAAA;
 }
+@media (min-width: 760px){
+.modal-dialog {
+    max-width: 780px;
+    margin: 1.75rem auto;}
 
+}
 </style>
