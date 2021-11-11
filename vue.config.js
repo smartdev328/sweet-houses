@@ -1,9 +1,9 @@
   module.exports = {
     configureWebpack: {
         performance: {
-            hints: "warning", // enum
-            maxAssetSize: 44048576, // int (in bytes),
-            maxEntrypointSize: 44048576, // int (in bytes)
+            hints: false, // enum
+            maxAssetSize: 250000, // int (in bytes),
+            maxEntrypointSize: 250000, // int (in bytes)
         }
     }
 }
