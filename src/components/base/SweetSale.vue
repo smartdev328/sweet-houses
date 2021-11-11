@@ -557,6 +557,7 @@ export default {
     }
     .page1 .item8 .element2 table tbody tr{
         padding: 12px 20px;
+        font-size: 18px;
     }
     .page1 .item8 .element2 table tbody tr td:nth-child(2){
         background: #EDF3F2;
@@ -565,13 +566,19 @@ export default {
     .page1 .item8 .element2 table tbody tr td:first-child{
         padding: 5px 20px;
     }
-    .page1 .item8 .element2 table tbody tr:first-child td,
+    .page1 .item8 .element2 table tbody tr:first-child td
+    {
+        padding: 24px 20px 8px;
+        font-size:24px;
+        color:#232323;
+    }
     .page1 .item8 .element2 table tbody tr:last-child td{
         padding: 24px 20px 8px;
+        color:#232323;
     }
     .page1 .item8 .element2 table tbody tr:first-child td:nth-child(2){
         color: #FFB600;
-        font-size: 24px !important;
+        font-size: 26px !important;
     }
     .page1 .item8 .element2 table tbody tr td:nth-child(2) .h1,
     .page1 .item8 .element2 table tbody tr td:nth-child(2) .h1{

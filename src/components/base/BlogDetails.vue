@@ -28,7 +28,7 @@
                 </div>
                 <div class="item2">
                     <div class="image">
-                        <img src="../../assets/image/blog/Group13491.svg" class="w-100 h-100" alt="">
+                        <img src="../../assets/image/blog/Group13491.png" class="w-100 h-100" alt="">
                     </div>
                 </div>
                 <div class="item3">

@@ -2,8 +2,8 @@
     configureWebpack: {
         performance: {
             hints: "warning", // enum
-            maxAssetSize: 4048576, // int (in bytes),
-            maxEntrypointSize: 4048576, // int (in bytes)
+            maxAssetSize: 44048576, // int (in bytes),
+            maxEntrypointSize: 44048576, // int (in bytes)
         }
     }
 }
