@@ -11,7 +11,7 @@ once re-sold you get the FULL balance of the highest sale price, less our fee Ch
 your moving day. Skip public showings and net the After Renovation Value from the 
 comfort of your couch! </p></div>
                     <div class="col-12 col-md-4">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                 </div>
         </div>
@@ -79,7 +79,7 @@ Cost</p>
                             <span class="Roboto-Regular">(2%)</span>
                             <p>$8,600</p>
                         </div>
-                        <div class="gridcol px-3 text-center">
+                        <div class="gridcol px-2 text-center">
                             <p class="mx-1">Likely Resale Price</p>
                             <p>$430,000</p>
                         </div>
@@ -160,7 +160,7 @@ When listing traditionally, market conditions and results will vary</p>
 
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">You get MORE money from a sweet sale</p>
                     <ul>
                         <li>
@@ -179,7 +179,7 @@ over asking) less our hard costs for improvements
 and our fee.</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                      <div class="image">
                         <img src="../../assets/image/homepage/Component 80 – 1.svg" class="w-100 h-100" alt="">
@@ -194,8 +194,8 @@ and our fee.</li>
                         <img src="../../assets/image/homepage/Component 81 – 1.svg" class="w-100 h-100" alt="">
                     </div>
                 </div>
-                <div class="col-12 col-md-1"></div>
-                 <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Skip Public Showings</p>
                     <ul>
                         <li>
@@ -218,7 +218,7 @@ Sweetly takes the home whenever it works for you.</li>
         </div>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Choose your own moving day</p>
                     <ul>
                         <li>
@@ -237,7 +237,7 @@ hassle-free.</li>
 conflicts with price.</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">
@@ -252,8 +252,8 @@ conflicts with price.</li>
                         <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
-                <div class="col-12 col-md-1"></div>
-                <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Certainty</p>
                     <ul>
                         <li>
@@ -280,11 +280,25 @@ $2,000,000 in any major Alberta market.</li>
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 px-3 px-md-0 pr-md-1">
                     <div class="h-300px">
-                          <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 px-3 px-md-0  pl-md-1 mt-4 mt-md-0">
-                    <div class="h-300px">  <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="h-300px">  <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+        <div class="my-2 my-md-5 item11">
+            <div class="item11a DMSerifRegular text-center">
+                <p>Why Choose a Sweet Sale?</p>
+            </div>
+            <div class="item11b row p-0">
+                <div class="element1 p-0 col-12 col-md-6">
+                    <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
+                    <img src="../../assets/image/pica1.svg" class="w-100 h-100" alt="">
+                </div>
+                <div class="element2 p-0 col-12 col-md-6">
+                     <img src="../../assets/image/picb1.svg" class="w-100 h-100" alt="">
                 </div>
             </div>
         </div>
@@ -413,14 +427,16 @@ export default {
     font-size: 18px;
     }
     .page1 .item2 .title p{
-        font-size: 30px;
+        font-size: 36px;
+        font-weight: 600;
     }
     .page1 .item2 .item2a{
         width: 75%;
     }
     .page1 .item2 .item2a .item2b{
-        font-size: 26px;
+        font-size: 30px;
         cursor: pointer;
+        font-weight: bold;
     }
     .page1 .item2 .item2a .item2b .active{
     background: rgb(255, 182, 0);margin-bottom: 0px;    width: 100%;  border-radius: 20px;height: 5px;
@@ -499,14 +515,16 @@ export default {
     }
     .page1 .item3 p ,
     .page1 .item5 p{
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page1 .item4 p ,
     .page1 .item6 p
     {
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page1 .item3 ul li,
     .page1 .item4 ul li,
@@ -544,10 +562,12 @@ export default {
         height: 300px;
     }
     .page1 .item7 p{
-        font-size: 32px;
+        font-size: 38px;
+        font-weight: 600;
     }
     .page1 .item8 .element1 p:first-child{
-        font-size: 32px;
+        font-size: 38px;
+        font-weight: 600;
     }
     .page1 .item8 .element1 p:last-child{
         font-size: 16px;
@@ -589,7 +609,8 @@ export default {
         font-size: 16px !important;
     }
     .page1 .item8 .element4{
-        font-size: 34px;
+        font-size: 38px;
+        font-weight: 600;
     }
     .page1 .item8 .element6 a{
         border-radius: 8px;
@@ -608,8 +629,25 @@ export default {
     .page1 .item2c  ul{
          margin-top: unset;
     }
-
-
+    .page1 .item11 .item11a{
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .page1 .item11 .item11b{
+        border: 2px solid;
+        background: rgb(229, 245, 244);
+    }
+    .page1 .item11 .item11b .element1{
+            background: rgb(229, 245, 244);
+            height: -webkit-fill-available;
+              
+    }
+     .page1 .item11 .item11b .element1 .p1,
+     .page1 .item11 .item11b .element2 .p1
+     {
+         font-size: 38px;
+         font-weight: 600;
+     }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
     .item2c2 .gridcontainer{

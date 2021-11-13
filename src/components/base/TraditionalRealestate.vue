@@ -246,7 +246,7 @@ export default {
         background-color: #EDF3F2;
     }
     .page4 .item2 .item2a{
-        font-size: 30px;
+        font-size: 36px;
     }
     .page4 .item2 .item2b{
         width: 75%;
@@ -294,11 +294,11 @@ export default {
     color: #FFB600;
 }
 .page4 .item3 .-p1{
-    font-size: 30px;
+    font-size: 38px;
 }
 .page4 .item3 .-p2,
 .page4 .item3 .-p2{
-    font-size: 16px;
+    font-size: 18px;
 }
 .page4 .item3 .item3c{
     display: grid;
@@ -321,13 +321,13 @@ export default {
     flex-direction: row;
 }
 .page4 .item4 p:first-child{
-    font-size: 28px;
+    font-size: 38px;
 }
 .page4 .item5 p:first-child{
-    font-size: 28px;
+    font-size: 38px;
 }
 .page4 .item6  .ele1 {
- font-size: 28px;
+ font-size: 38px;
 }
 .page4 .item6 .red-dot{
     height: 14px;
@@ -359,7 +359,7 @@ export default {
 }
 .page4 .item7 p:first-child,
 .page4 .item8 p:first-child{
-    font-size: 28px;
+    font-size: 38px;
 }
  @media only screen and (max-width: 600px){
      .page4 .item2 .item2c{

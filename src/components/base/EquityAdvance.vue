@@ -16,7 +16,7 @@
 
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Certainty</p>
                     <ul>
                         <li>
@@ -36,7 +36,7 @@ your current home is SOLD!
 choose) within days </li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 86 – 1.svg" class="w-100 h-100" alt="">
@@ -50,8 +50,8 @@ choose) within days </li>
                  <div class="image">
                         <img src="../../assets/image/homepage/Component 87 – 1.svg" class="w-100 h-100" alt="">
                     </div>                 </div>
-                <div class="col-12 col-md-1"></div>
-                 <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Skip ALL Public Showings</p>
                     <ul>
                         <li>
@@ -74,7 +74,7 @@ commissions apply.</li>
         </div>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Choose your own moving day</p>
                     <ul>
                         <li>
@@ -93,7 +93,7 @@ hassle-free.</li>
 day - like a traditional listing/selling process.</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 88 – 1.svg" class="w-100 h-100" alt="">
@@ -108,8 +108,8 @@ day - like a traditional listing/selling process.</li>
                         <img  src="../../assets/image/homepage/Component 89 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
-                <div class="col-12 col-md-1"></div>
-                 <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Consider Any Other Offers</p>
                     <ul>
                         <li>
@@ -218,7 +218,7 @@ export default {
 
 <style scoped>
     .page3 .item1 .item1a p{
-        font-size: 32px;
+        font-size: 34px;
     }
     .page3 .item1 .item1b p{
         color:#434242;
@@ -301,14 +301,16 @@ export default {
     }
     .page3 .item3 p ,
     .page3 .item5 p{
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page3 .item4 p ,
     .page3 .item6 p
     {
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page3 .item3 ul li,
     .page3 .item4 ul li,
@@ -385,7 +387,8 @@ export default {
         font-size: 16px !important;
     }
     .page3 .item8 .element4{
-        font-size: 28px;
+        font-size: 36px;
+        font-weight: 600;
     }
     .page3 .item8 .element6 a{
         border-radius: 8px;

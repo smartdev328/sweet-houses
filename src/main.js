@@ -9,7 +9,7 @@ import { BootstrapVue , IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
-
+export const eventBus = new Vue();
 import axios from 'axios'
 const api = axios.create({
   baseURL: 'http://35.182.224.125:8000/api/',
@@ -121,5 +121,6 @@ new Vue({
       }) 
     
   },
+  eventBus,
   render: h => h(App)
 }).$mount('#app')

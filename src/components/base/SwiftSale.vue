@@ -13,7 +13,7 @@ once re-sold you get the FULL balance of the highest sale price, less our fee Ch
 your moving day. Skip public showings and net the After Renovation Value from the 
 comfort of your couch! </p></div>
                     <div class="col-12 col-md-4">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                 </div>
         </div>
@@ -162,7 +162,7 @@ When listing traditionally, market conditions and results will vary</p>
 
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Certainty</p>
                     <ul>
                         <li>
@@ -182,7 +182,7 @@ your current home is SOLD!
 choose) within days </li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                 <div class="image">
                         <img src="../../assets/image/homepage/Component 79 – 1.svg" class="w-100 h-100" alt="">
@@ -197,8 +197,8 @@ choose) within days </li>
                         <img src="../../assets/image/homepage/Component 90 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
-                <div class="col-12 col-md-1"></div>
-                <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Skip ALL Public Showings</p>
                     <ul>
                         <li>
@@ -221,7 +221,7 @@ commissions apply.</li>
         </div>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Choose your own moving day</p>
                     <ul>
                         <li>
@@ -240,7 +240,7 @@ hassle-free.</li>
 day - like a traditional listing/selling process.</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-1"></div>
+                <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
                      <div class="image">
                         <img src="../../assets/image/homepage/Component 84 – 1.svg" class="w-100 h-100" alt="">
@@ -255,8 +255,8 @@ day - like a traditional listing/selling process.</li>
                         <img  src="../../assets/image/homepage/Component 85 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
-                <div class="col-12 col-md-1"></div>
-                 <div class="col-12 col-md-5">
+                <!-- <div class="col-12 col-md-1"></div> -->
+                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Consider Any Other Offers</p>
                     <ul>
                         <li>
@@ -276,6 +276,20 @@ traditional Realtor commission will apply.</li>
         </div>
         <div class="my-2 my-md-5 item12">
             <google-review></google-review>
+        </div>
+        <div class="my-2 my-md-5 item11">
+            <div class="item11a DMSerifRegular text-center">
+                <p>Why Choose a Swift Sale?</p>
+            </div>
+            <div class="item11b row p-0">
+                <div class="element1 p-0 col-12 col-md-6">
+                    <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
+                    <img src="../../assets/image/pic2a.svg" class="w-100 h-100" alt="">
+                </div>
+                <div class="element2 p-0 col-12 col-md-6">
+                     <img src="../../assets/image/pic2b.svg" class="w-100 h-100" alt="">
+                </div>
+            </div>
         </div>
         <div class="my-2 my-md-5 item8">
 
@@ -316,7 +330,7 @@ export default {
 
 <style scoped>
     .page2 .item1 .item1a p{
-        font-size: 34px;
+        font-size: 36px;
     }
     .page2 .item1 .item1b p:first-child{
     color:#232323;
@@ -327,14 +341,16 @@ export default {
         font-size: 18px;
     }
     .page2 .item2 .title p{
-        font-size: 30px;
+         font-size: 36px;
+        font-weight: 600;
     }
     .page2 .item2 .item2a{
         width: 75%;
     }
     .page2 .item2 .item2a .item2b{
-        font-size: 24px;
+         font-size: 30px;
         cursor: pointer;
+        font-weight: bold;
     }
     .page2 .item2 .item2a .item2b .active{
     background: rgb(255, 182, 0);margin-bottom: 0px;    width: 100%;  border-radius: 20px;height: 5px;
@@ -397,7 +413,7 @@ export default {
     .item2c2 .gridcontainer .gridcol p{
         font-family: 'Roboto-Medium',sans-serif  !important;
         color: #232323;
-        font-size: 18px;
+        font-size: 16px;
     /* position: absolute;
     left: 25%;
     right: 25%;
@@ -420,14 +436,16 @@ export default {
     }
     .page2 .item3 p ,
     .page2 .item5 p{
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page2 .item4 p ,
     .page2 .item6 p
     {
-        font-size: 24px;
+        font-size: 36px;
         width: 80%;
+        font-weight: 600;
     }
     .page2 .item3 ul li,
     .page2 .item4 ul li,
@@ -498,7 +516,8 @@ export default {
         font-size: 16px !important;
     }
     .page2 .item8 .element4{
-        font-size: 28px;
+         font-size: 38px;
+        font-weight: 600;
     }
     .page2 .item8 .element6 a{
         border-radius: 8px;
@@ -518,7 +537,19 @@ export default {
     .page2 .item2c  ul{
         margin-top: unset;
     }
-
+        .page2 .item11 .item11a{
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .page2 .item11 .item11b{
+        border: 2px solid;
+        background: rgb(229, 245, 244);
+    }
+    .page2 .item11 .item11b .element1{
+            background: rgb(229, 245, 244);
+            height: -webkit-fill-available;
+              
+    }
 
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
         <Navbar/>
-    <router-view/>
+    <router-view  />
     <Footer></Footer>
     <notifications group="foo" />
   </div>
@@ -10,3 +10,12 @@
 <style>
 @import url(assets/css/style.css);
 </style>
+<script>
+export default {
+  methods:{
+  },
+  mounted(){
+
+  }
+}
+</script>

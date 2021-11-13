@@ -135,6 +135,9 @@ export default {
     background: #FFB600;
     color: #fff;
 }
+.item1c .dropdown-toggle{
+    z-index: 1000;
+}
 @media only screen and (max-width: 600px){
     .showlist .cards{
         grid-template-columns: auto ;

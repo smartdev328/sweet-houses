@@ -57,19 +57,19 @@
   <div v-else class="collapse navbar-collapse mx-auto DMSerifRegular" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle DMSerifRegular" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <router-link class="nav-link dropdown-toggle DMSerifRegular" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Buy & Sell
-          <a class="h5">  <b-icon-chevron-down
-></b-icon-chevron-down></a>
+          <!-- <a class="h5">  <b-icon-chevron-down
+></b-icon-chevron-down></a> -->
         
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Sweet Sale</a>
-          <a class="dropdown-item" href="#">Swift Sale</a>
-          <a class="dropdown-item" href="#">Equity Advance</a>
-          <a class="dropdown-item" href="#">Traditional Real 
+        </router-link>
+        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')">Sweet Sale</a>
+          <a class="dropdown-item btn" @click="opensweetsale('Swift_Sale')" >Swift Sale</a>
+          <a class="dropdown-item btn"  @click="opensweetsale('Equity_Advance')">Equity Advance</a>
+          <a class="dropdown-item btn" @click="opensweetsale('Traditional_Real_Estate')">Traditional Real 
 Estate</a>
-        </div>
+        </div> -->
       </li>
        <li class="nav-item">
         <router-link class="nav-link" to="/maphome">Browse Homes</router-link>
@@ -133,6 +133,7 @@ Estate</a>
 </div>
 </template>
 <script>
+import { eventBus } from '../../main'
 export default {
     data(){
       return{
@@ -181,6 +182,11 @@ export default {
           type: "success",
           text: 'Hello user! This is a notification!',
         });
+      },
+      opensweetsale(tab){
+        this.$router.push({name:'Home'})
+        eventBus.$emit('fireMethod',tab);
+
       },
     }
 }

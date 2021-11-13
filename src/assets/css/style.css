@@ -74,7 +74,8 @@ body{
   overflow-x: hidden;
 }
 .DMSerifRegular {
-  font-family: 'DMSerifRegular'  !important;
+  /* font-family: 'DMSerifRegular'  !important; */
+  font-family: "DMSerifRegular","Playfair Display",serif;
 }
 .DMSerifRegularItalic{
   font-family: 'DMSerifRegularItalic'  !important;
@@ -138,12 +139,16 @@ body{
 .navbar-nav .nav-item a {
   color: #232323 !important;
   font-size: 20px !important;
-  font-family: 'DMSerifRegular' !important;
+  font-weight: bold;
+  /* font-family: 'DMSerifRegular' !important; */
+  font-family: "DMSerifRegular","Playfair Display",serif;
 }
 .navbar button{
   color: #232323 !important;
   font-size: 20px !important;
-  font-family: 'DMSerifRegular' !important;
+  font-weight: bold;
+  /* font-family: 'DMSerifRegular' !important; */
+  font-family: "DMSerifRegular","Playfair Display",serif;
 }
 .navbar .signupbtn {
   border: 1px solid #00a19b;

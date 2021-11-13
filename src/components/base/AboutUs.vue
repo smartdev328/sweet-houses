@@ -423,10 +423,11 @@ export default {
         margin: auto;
     }
     .aboutus .item1 .item1a .p1{
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: 600;
     }
     .aboutus .item1 .item1a .p2{
-        font-size: 22px;
+        font-size: 32px;
     }
     .aboutus .item1 .item1a .inputaddress{
     width: 100%;
@@ -511,11 +512,13 @@ input:focus{
      outline: none;
 }
 .aboutus .item2 .element1{
-    font-size: 28px;
+    font-size: 34px;
+    font-weight: 600;
 }
 .aboutus .item2 .element2{
     color: #4A4A4A;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 2;
 }
 .aboutus .item2 .image{
     width: 380px;
@@ -531,7 +534,8 @@ box-shadow: 20px -20px 0px 0px #70707085;
 }
 .aboutus .item3 .element1{
     color: #434242;
-    font-size: 30px;
+    font-size: 38px;
+    font-weight: 600;
 }
 .aboutus .item3 .element2{
     display: grid;
@@ -553,9 +557,10 @@ box-shadow: 20px -20px 0px 0px #70707085;
     font-size: 16px;
 }
 .aboutus .item4 .title{
-    font-size: 28px;
+    font-size: 32px;
     width: 50%;
     margin: auto;
+    font-weight: 600;
 }
 .aboutus .item4 .element2{
     display: grid;
@@ -599,7 +604,8 @@ box-shadow: 20px -20px 0px 0px #70707085;
 }
 .aboutus .item5 .element1 p{
     color: #434242;
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: 600;
 }
 .aboutus .item5 .element2 .slide-card{
     background: #fff;

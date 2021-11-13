@@ -1,4 +1,4 @@
-<template>
+<template ref="home">
   <div class="home">
     <header>
         <div class="py-5">
@@ -70,7 +70,7 @@
 
 <script>
 // @ is an alias to /src
-
+import { eventBus } from '../main'
 
 
 export default {
@@ -101,7 +101,22 @@ export default {
         return "d-none";
       }
     },
-      }
+    opensweetsale(tab){
+      this.tab_visible(tab);
+      this.getline(tab);
+      this.getclass(tab);
+      console.log(tab)
+      this.selected_menu = tab
+     // console.log(tab)
+     // this.selected_menu = tab;
+    }
+      },
+      created() {
+    eventBus.$on('fireMethod', (tab) => {
+        window.setInterval(this.opensweetsale(tab),1000)
+        //  this.opensweetsale(tab);
+    })
+}
   
 }
 </script>
@@ -131,8 +146,8 @@ export default {
     justify-content: center;
     padding: 10px;
     position: relative;
-    font-family: 'DMSerifRegular' !important;
-    font-size: 20px;
+    font-family: "DMSerifRegular","Playfair Display",serif;
+    font-size: 24px;
   }
   .item1 .item1b{
     background: #00A19B;

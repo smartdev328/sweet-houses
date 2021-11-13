@@ -31,14 +31,17 @@ export default {
         margin: auto;
     }
     .homeworth .item1 .item1a .item1b{
-        width: 75%;
+         width: 80%; 
         margin: auto;
     }
     .homeworth .item1 .item1a .p1{
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: 600;
     }
     .homeworth .item1 .item1a .p2{
-        font-size: 22px;
+        font-size: 32px;
+        width: 80%;
+        margin: auto;
     }
     .homeworth .item1 .item1a .inputaddress{
     width: 100%;

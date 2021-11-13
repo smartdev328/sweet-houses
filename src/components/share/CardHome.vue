@@ -121,7 +121,7 @@ export default {
     top: 0px;
     padding: 10px;
     position: absolute;
-    z-index: 1000;
+    z-index: 999;
 }
 .card .ellipsis{
     background-color: #fff;
