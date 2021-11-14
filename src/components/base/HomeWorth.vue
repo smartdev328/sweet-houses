@@ -62,6 +62,7 @@ export default {
     flex-direction: row;
     border-width: 1px;
     border-style: solid;
+    font-size: 18px;
 }
 .homeworth .item1 .item1a .inputaddress img{
         flex-shrink: 0;
@@ -134,6 +135,9 @@ input:focus{
         width: 90%;
         margin: auto;
     }
+    .homeworth .item1 .item1a .inputaddress{
+        font-size: 12px;
+    }
     .homeworth .item1 .item1a .inputaddress img{
         width: 20px;
         height: 20px;
@@ -146,6 +150,12 @@ input:focus{
     }
     .homeworth .item1 .item1a input{
         padding-left: 6px;
+    }
+    .homeworth .item1 .item1a .p1{
+        font-size: 30px;
+    }
+    .homeworth .item1 .item1a .p2{
+        font-size: 20px;
     }
 }
 </style>

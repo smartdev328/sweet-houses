@@ -32,11 +32,11 @@
                     </div>
                 </div>
                 <div class="item3">
-                    <div class="row">
+                    <div class="row mx-3">
                         <div class="col-12 col-md-8 px-0 py-5" style="border-top: 2px solid #70707063;">
                             <p class="my-4 text-color-1 Roboto-Medium">Latest Articles</p>
                             <div class="element1">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
                                             <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="element1">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
                                             <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="element1">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
                                             <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">

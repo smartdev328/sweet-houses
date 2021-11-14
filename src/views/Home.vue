@@ -224,6 +224,7 @@ export default {
     line-height: normal;
     box-shadow: none !important;
     outline: none;
+    font-size: 18px;
   }
   .item1b .item1b3{
     display: flex;
@@ -270,5 +271,11 @@ export default {
     font-weight: 700;
     padding: 9px 10px;
   } 
+  .home .item1a button{
+    font-size:18px;
+  }
+  .item1b input{
+    font-size: 12px;
+  }
 } 
 </style>

@@ -277,7 +277,7 @@ traditional Realtor commission will apply.</li>
         <div class="my-2 my-md-5 item12">
             <google-review></google-review>
         </div>
-        <div class="my-2 my-md-5 item11">
+        <div class="my-2 my-md-5 item11 mx-3">
             <div class="item11a DMSerifRegular text-center">
                 <p>Why Choose a Swift Sale?</p>
             </div>
@@ -586,12 +586,14 @@ export default {
     .page2 .item3 p ,
     .page2 .item5 p{
         width: 100%;
-        font-size: 18px;
+        font-size: 28px;
+        font-weight: 600;
     }
     .page2 .item4 p ,
     .page2 .item6 p{
-        font-size:18px;
         width: 100%;
+        font-size: 28px;
+        font-weight: 600;
     }
     .item2c .p2,
     .item2c2 .p2{
@@ -609,6 +611,9 @@ export default {
     top: -2em;
     width: 194px;
     height: 194px;
+    }
+    .page2 .item8 .element4{
+        font-size: 32px;
     }
     }
 

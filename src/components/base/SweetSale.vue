@@ -292,7 +292,7 @@ $2,000,000 in any major Alberta market.</li>
             <div class="item11a DMSerifRegular text-center">
                 <p>Why Choose a Sweet Sale?</p>
             </div>
-            <div class="item11b row p-0">
+            <div class="item11b row p-0 mx-2">
                 <div class="element1 p-0 col-12 col-md-6">
                     <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
                     <img src="../../assets/image/pica1.svg" class="w-100 h-100" alt="">
@@ -683,12 +683,14 @@ export default {
     .page1 .item3 p ,
     .page1 .item5 p{
         width: 100%;
-        font-size: 18px;
+        font-size: 28px;
+        font-weight: 600;
     }
     .page1 .item4 p ,
     .page1 .item6 p{
-        font-size:18px;
+        font-size:28px;
         width: 100%;
+        font-weight: 600;
     }
     .item2c .p1 , .item2c2 .p1{
     position: absolute;
@@ -706,6 +708,15 @@ export default {
     top: 2em;
     width: 194px;
     height: 194px;
+    }
+    .page1 .item7 p{
+        font-size: 26px;
+    }
+    .page1 .item11 .item11a{
+        font-size: 32px;
+    }
+    .page1 .item8 .element4{
+        font-size: 32px;
     }
     }
 

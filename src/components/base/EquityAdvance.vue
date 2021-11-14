@@ -444,12 +444,14 @@ export default {
     .page3 .item3 p ,
     .page3 .item5 p{
         width: 100%;
-        font-size: 18px;
+        font-size: 28px;
+        font-weight: 600;
     }
     .page3 .item4 p ,
     .page3 .item6 p{
-        font-size:18px;
         width: 100%;
+        font-size: 28px;
+        font-weight: 600;
     }
     }
 

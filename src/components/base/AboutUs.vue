@@ -448,6 +448,7 @@ export default {
     flex-direction: row;
     border-width: 1px;
     border-style: solid;
+    font-size: 18px;
 }
 .aboutus .item1 .item1a .inputaddress img{
         flex-shrink: 0;
@@ -707,7 +708,15 @@ box-shadow: 20px -20px 0px 0px #70707085;
 .aboutus .item6 .element2 p{
     font-size: 14px;
 }
-
+.aboutus .item1 .item1a .p1{
+    font-size: 30px;
+}
+.aboutus .item1 .item1a .p2{
+        font-size: 24px;
+    }
+    .aboutus .item1 .item1a .inputaddress{
+        font-size: 12px;
+    }
 
 }
 </style>

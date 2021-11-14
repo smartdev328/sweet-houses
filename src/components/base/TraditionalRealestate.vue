@@ -382,5 +382,8 @@ export default {
 .page4 .item6 .element12{
     flex-direction: column;
 }
+.page4 .item2 .item2b{
+    width: 100%;
+}
  }
 </style>
