@@ -5,7 +5,11 @@
             <p cRoboto-Regular>Schedule your introduction call</p>
         </div>
         <div class="item2 mb-5">
-            <VueCtkDateTimePicker v-model="yourValue" buttonColor="#FFB600" color="#FFB600" minuteInterval="5" />
+            <VueCtkDateTimePicker v-model="yourValue" buttonColor="#FFB600" color="#FFB600" minuteInterval="5" 
+            input-size="lg"	 maxDate='2019-06-24 09:14' 
+
+
+             />
         </div>
         <div class="item3 mt-5 mb-0">
             <p class="text-center DMSerifRegular text-color-1">What to expect on the call</p>
@@ -45,10 +49,31 @@ perfect Sweetly Agent.
     </div>
 </template>
 <script>
+import moment from 'moment';
 export default {
     data:() =>({
-        yourValue:null
-    })
+        yourValue:null,
+        thisMonth:[
+             {
+    key: 'customValue',
+    label: 'My custom thing',
+    value: () => {
+      return {
+        start: moment(),
+        end: moment().add(2, 'days')
+      }
+    },
+    callback: ({ start, end }) => {
+      console.log('My shortcut was clicked with values: ', start, end)
+    }
+  },
+        ]
+    }),
+    computed:{
+        maxDate(){
+            return new Date()
+        }
+    }
 }
 </script>
 <style scoped>

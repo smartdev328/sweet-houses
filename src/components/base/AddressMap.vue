@@ -1,13 +1,14 @@
 <template>
     <div>
         <div>
-            <div style="display: block; width:auto;height:320px">
+            <div style="display: block; width:auto;height:400px">
                 
             <GmapMap
             :center="{lat:this.lat, lng:this.lon}"
             :zoom="8"
             ref="map"
             map-type-id="terrain"
+            draggable=false
             :options="options"
             style="width: 100%; height: 50vh"
             >
@@ -16,6 +17,7 @@
                 :clickable="true"
                 :draggable="false"
                 @click="center=m.position"
+
             />
             </GmapMap>
                 </div>
@@ -34,6 +36,7 @@ export default {
         options:{
         zoomControl: true,
         mapTypeControl: false,
+        scrollwheel:false,
         scaleControl: true,
         streetViewControl: true,
         rotateControl: true,

@@ -54,7 +54,7 @@ export default {
         height: 40px;
     }
     .homenotfound .item3 p{
-        font-size: 28px;
+        font-size: 32px;
     }
     .homenotfound .item5{
         width: 50%;

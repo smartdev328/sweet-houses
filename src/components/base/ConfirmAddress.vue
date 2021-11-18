@@ -1,7 +1,7 @@
 <template>
     <div class="editaddress">
         <div class="row mx-0 w-100">
-            <div class="col-12 col-md-3 navigation">
+            <div class="col-12 col-md-2  navigation">
                 <div class="py-5">
                     <div class="">
                         <div class="logo-img mx-auto my-3">
@@ -38,10 +38,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-9">
+              <div class="d-sm-only text-center Roboto-Regular pt-3">
+                <p>{{selected_menu}}</p>
+            </div>
+            <div class="col-12 col-md-10">
                 <div class="my-5">
                     <div :class="tab_visible('home-info')" class="h-100">
-                        <home-infoedit @submitparent="submitparent"></home-infoedit>
+                        <home-infoedit @submitparent="submitparent"
+                        @twoFunc="twoFunc"
+                        ></home-infoedit>
                     </div>
                     <div :class="tab_visible('contact-details')" class="h-100">
                         <contact-detailsedit @submitparent2="submitparent2"></contact-detailsedit>
@@ -82,6 +87,9 @@ export default {
     submitparent2(item){
         this.selected_menu = "personalized-valuation"
         this.channelitem = item
+    },
+    twoFunc(){
+        this.selected_menu = "contact-details"
     }
     }
 }
@@ -108,5 +116,23 @@ export default {
     .editaddress .navigation ul li .icon{
         width: 44px;
         height: 44px;
+    }
+    .d-sm-only{
+    display: none;
+}
+    @media only screen and (max-width: 600px){
+        .editaddress .navigation{
+            display: none;
+        }
+    .d-sm-only{
+        display: block;
+        border-bottom:1px solid #70707054 ;
+        width: 100%;
+        
+    }
+    .d-sm-only p{
+        font-size: 18px !important;
+        color: #FFB600;;
+    }
     }
 </style>

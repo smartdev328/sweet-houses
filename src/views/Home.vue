@@ -41,12 +41,17 @@
                       <img src="../assets/image/icon/Iconly-Light-Location.svg" alt="">
                       <div class="item1b2">
                         <span class="space"></span>
-                        <input type="text" class="Poppins" placeholder="Enter your home address  ">
+                        <input type="text" class="Poppins" v-model="input.homeaddress"
+                        @input="getinputhome()"
+                         placeholder="Enter your home address">
+                         
                       </div>
+                    
                       <div class="item1b3">
-                        <button class="Poppins">Get started</button>
+                        <button class="Poppins" type="button" @click="getresult()">Get started</button>
                       </div>
                   </div>
+                  <span class="spanerr" v-if="errmsg && !input.homeaddress">{{errmsg}}</span>
               </div>
           </div>
         </div>
@@ -77,7 +82,11 @@ export default {
   name: 'Home',
   data(){
     return{
-      selected_menu:"Sweet_Sale"
+      selected_menu:"Sweet_Sale",
+      input:{
+        homeaddress:null
+      },
+      errmsg:''
     }
   },
   components: {
@@ -109,6 +118,26 @@ export default {
       this.selected_menu = tab
      // console.log(tab)
      // this.selected_menu = tab;
+    },
+    getinputhome(){
+      console.log(this.input.homeaddress)
+    },
+  checkform(){
+    this.errmsg = ""
+    if(!this.input.homeaddress){
+      this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`
+    }
+    if(this.input.homeaddress){
+      return true
+    }
+  },
+    getresult(){
+      if(this.checkform()){
+        console.log(this.input.homeaddress)
+        this.$store.commit('sethomeaddress',this.input.homeaddress)
+        this.$router.push({name:'ConfirmAddress'})
+      }
     }
       },
       created() {
@@ -247,6 +276,14 @@ export default {
     font-size: 16px;
     /* font-weight: bold; */
     padding: 9px 16px;
+  }
+  .spanerr{
+    font-size: 16px;
+    width: 75%;
+    background-color: rgb(255, 219, 220);
+    padding: 8px;
+    color: #043a30;
+    margin-top: 6px;
   }
  @media only screen and (max-width: 600px){
   .home .item1{

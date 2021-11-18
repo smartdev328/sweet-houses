@@ -115,7 +115,7 @@ Estate</a>
          @xloginOsignup="xloginOsignup"
          ></log-in>
         </b-modal>
-      <b-button v-b-modal="'my-modal'" variant="white" class="bg-transparent  signupbtn px-2 py-1">
+      <b-button v-b-modal="'my-modal'" variant="white" class="bg-transparent  signupbtn px-2 py-1" >
         Sign Up
       </b-button>
         <b-modal id="my-modal" 

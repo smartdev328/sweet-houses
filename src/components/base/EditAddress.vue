@@ -1,7 +1,7 @@
 <template>
     <div class="editaddress">
         <div class="row mx-0 w-100">
-            <div class="col-12 col-md-3 navigation">
+            <div class="col-12 col-md-2 navigation">
                 <div class="py-5">
                     <div class="">
                         <div class="logo-img mx-auto my-3">

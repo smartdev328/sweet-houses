@@ -10,9 +10,15 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 export const eventBus = new Vue();
+
+import VuePhoneNumberInput from 'vue-phone-number-input';
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+
+Vue.component('vue-phone-number-input', VuePhoneNumberInput);
+
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'https://35.182.224.125:8000/api/',
+  baseURL: 'http://35.182.224.125:8000/api/',
   headers: {
      /*  "x-rapidapi-key": "da7185aeb9msh0e13b327cf70bc8p10a2abjsn259d1f854d02",
       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com" */
