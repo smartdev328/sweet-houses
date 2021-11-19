@@ -668,10 +668,10 @@ export default {
         font-size: 12px;
     }
     .page1 .item2c2 ul{
-            margin-top: 24em;
+            margin-top: 16em;
     }
     .page1 .item2c  ul{
-       margin-top: 24em; 
+       margin-top: 16em; 
     }
     .page1 ul li{
         font-size: 16px;

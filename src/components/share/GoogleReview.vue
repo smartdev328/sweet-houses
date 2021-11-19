@@ -297,6 +297,138 @@
                             </div>
                         </div>
                         </div>
+                         <div class="py-5 px-4">
+                        <div class="slide-card px-3 py-2 py-md-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                            <div class="image">
+                                <img src="../../assets/image/aboutuspage/say1.svg" class="w-100 h-100" alt="">
+                            </div>
+                            <div>
+                                <p class="text-color-1  mb-1 name Roboto-Regular">Heather Bhambhani</p>
+                                    <div class="review">
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <span>3 days ago</span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="description my-3">
+                                <p class="mb-0 Roboto-Regular">{{slugtitle(`We used the Sweetly plan to move. We had tried to sell our 
+                                    home in the past and struggled with the constant showings that never led to a sale`)}} </p>
+                                    <a class="btn ml-0 pl-0 Roboto-Regular">Read More..</a>
+                            </div>
+                            <div class="d-flex">
+                                <div class="image2">
+                                    <img src="../../assets/image/homepage/google_icon-icons.com_62736.svg" class="w-100 h-100" alt="">
+                                </div>
+                                <div class="ml-1">
+                                    <p class="mb-0 element11 Roboto-Regular">Posted on</p>
+                                    <p class="element12 Roboto-Regular">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                         <div class="py-5 px-4">
+                        <div class="slide-card px-3 py-2 py-md-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                            <div class="image">
+                                <img src="../../assets/image/aboutuspage/say1.svg" class="w-100 h-100" alt="">
+                            </div>
+                            <div>
+                                <p class="text-color-1  mb-1 name Roboto-Regular">Heather Bhambhani</p>
+                                    <div class="review">
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <span>3 days ago</span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="description my-3">
+                                <p class="mb-0 Roboto-Regular">{{slugtitle(`We used the Sweetly plan to move. We had tried to sell our 
+                                    home in the past and struggled with the constant showings that never led to a sale`)}} </p>
+                                    <a class="btn ml-0 pl-0 Roboto-Regular">Read More..</a>
+                            </div>
+                            <div class="d-flex">
+                                <div class="image2">
+                                    <img src="../../assets/image/homepage/google_icon-icons.com_62736.svg" class="w-100 h-100" alt="">
+                                </div>
+                                <div class="ml-1">
+                                    <p class="mb-0 element11 Roboto-Regular">Posted on</p>
+                                    <p class="element12 Roboto-Regular">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                         <div class="py-5 px-4">
+                        <div class="slide-card px-3 py-2 py-md-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                            <div class="image">
+                                <img src="../../assets/image/aboutuspage/say1.svg" class="w-100 h-100" alt="">
+                            </div>
+                            <div>
+                                <p class="text-color-1  mb-1 name Roboto-Regular">Heather Bhambhani</p>
+                                    <div class="review">
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <p class="h4">
+                                    <b-icon icon="star-fill" variant="warning"></b-icon>
+                                </p>
+                                <span>3 days ago</span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="description my-3">
+                                <p class="mb-0 Roboto-Regular">{{slugtitle(`We used the Sweetly plan to move. We had tried to sell our 
+                                    home in the past and struggled with the constant showings that never led to a sale`)}} </p>
+                                    <a class="btn ml-0 pl-0 Roboto-Regular">Read More..</a>
+                            </div>
+                            <div class="d-flex">
+                                <div class="image2">
+                                    <img src="../../assets/image/homepage/google_icon-icons.com_62736.svg" class="w-100 h-100" alt="">
+                                </div>
+                                <div class="ml-1">
+                                    <p class="mb-0 element11 Roboto-Regular">Posted on</p>
+                                    <p class="element12 Roboto-Regular">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                         <div class="py-5 px-4">
                         <div class="slide-card px-3 py-2 py-md-5">
                             <div class="d-flex align-items-center justify-content-between">
@@ -378,14 +510,16 @@ export default {
             "settings": {
                 "slidesToShow": 2,
                 "slidesToScroll": 1,
-                "initialSlide": 1
+                "initialSlide": 1,
+                "arrows":true,
             }
             },
             {
             "breakpoint": 480,
             "settings": {
                 "slidesToShow": 1,
-                "slidesToScroll": 1
+                "slidesToScroll": 1,
+                "arrows":true,
             }
             }
         ]

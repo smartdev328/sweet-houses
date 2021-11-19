@@ -1,7 +1,7 @@
 <template ref="home">
   <div class="home">
     <header>
-        <div class="py-5">
+        <div class="py-2 py-md-5">
           <div class="item1 mt-4">
               <div class="item1a">
                 <button @click="selected_menu = 'Sweet_Sale'" 
@@ -292,6 +292,9 @@ export default {
   .home .item1 .item1b p{
     font-size: 20px;
   }
+  .home .item1 .item1b p:first-child{
+    font-size: 20px;
+  }
   .item1 .item1b .inputaddress img{
     margin-left: 4px;
     width: 20px;
@@ -309,7 +312,7 @@ export default {
     padding: 9px 10px;
   } 
   .home .item1a button{
-    font-size:18px;
+    font-size:14px;
   }
   .item1b input{
     font-size: 12px;

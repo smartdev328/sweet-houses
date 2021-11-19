@@ -148,6 +148,11 @@ your next home
                             </td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td class="Roboto-Regular">You must buy with Sweetly in order to access our interest free equity 
 advance.</td>
                             <td class="text-center">
@@ -157,6 +162,11 @@ advance.</td>
                                 <p class="h1"> <b-icon icon="x"  class="text-danger"></b-icon></p>
                             </td>
                         </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr>
                             <td class="Roboto-Regular">Receive up to 75% of your home value before your first showing</td>
                             <td class="text-center">
@@ -165,6 +175,11 @@ advance.</td>
                             <td class="text-center">
                                 <p class="h1"> <b-icon icon="x"  class="text-danger"></b-icon></p>
                             </td>
+                        </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="Roboto-Regular">Access to your euquity when you want it</td>
@@ -452,6 +467,13 @@ export default {
         width: 100%;
         font-size: 28px;
         font-weight: 600;
+    }
+     .page3 .item8 .element2 table tbody tr td:first-child{
+        padding: 2px 5px;
+    }
+    .page3 .item8 .element2 table tbody tr{
+        padding: 7px 12px;
+        font-size: 14px;
     }
     }
 

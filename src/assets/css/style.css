@@ -478,8 +478,20 @@ body{
     background: #fff !important;
     color: #232323 !important;
 }
-.homedetails button.slick-prev:before, .homedetails button.slick-next:before {
+.homedetails button.slick-next:before {
   color: #434242;
+}
+ .slick-next:before{
+  color: #434242 !important;
+}
+/* .homedetails button.slick-prev:before{
+  color: #434242 !important;
+} */
+/* .slick-prev{
+  left: 0px !important;
+} */
+.slick-next{
+  right: 0px !important;
 }
 .vue-notification {
   padding:  10px !important;
@@ -513,5 +525,11 @@ body{
   }
   .homeworth .item1{
     height: 65vh;
+  }
+  .space-50{
+    height: 5px;
+  }
+  .space-30{
+    height: 3px;
   }
 }

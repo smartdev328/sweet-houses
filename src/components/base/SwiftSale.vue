@@ -571,10 +571,10 @@ export default {
         font-size: 12px;
     }
     .page2 .item2c2 ul{
-            margin-top: 24em;
+            margin-top: 16em;
     }
     .page2 .item2c  ul{
-       margin-top: 24em; 
+       margin-top: 16em; 
     }
     .page2 ul li{
         font-size: 16px;
