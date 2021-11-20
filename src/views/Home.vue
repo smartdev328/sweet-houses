@@ -41,17 +41,23 @@
                       <img src="../assets/image/icon/Iconly-Light-Location.svg" alt="">
                       <div class="item1b2">
                         <span class="space"></span>
-                        <input type="text" class="Poppins" v-model="input.homeaddress"
-                        @input="getinputhome()"
+                        <input type="text" class="Poppins" v-model="location"
                          placeholder="Enter your home address">
+                       
                          
                       </div>
+                        
                     
                       <div class="item1b3">
                         <button class="Poppins" type="button" @click="getresult()">Get started</button>
                       </div>
                   </div>
-                  <span class="spanerr" v-if="errmsg && !input.homeaddress">{{errmsg}}</span>
+                  <ul class="listcity"  v-if="searchResults && location">
+                        <li v-for="(result, i) in searchResults" :key="i" @click="chooseaddress(result)" class="Roboto-Regular">
+                         <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result }} // list of all places
+                        </li>
+                      </ul>
+                  <span class="spanerr" v-if="errmsg && !location">{{errmsg}}</span>
               </div>
           </div>
         </div>
@@ -86,13 +92,49 @@ export default {
       input:{
         homeaddress:null
       },
+      location:'',
+      searchResults: [],
+       service: null ,
       errmsg:''
     }
   },
+   metaInfo () {
+      return {
+        script: [{
+          src: `https://maps.googleapis.com/maps/api/js?key=AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60&libraries=places`,
+          async: true,
+          defer: true,
+          callback: () => this.MapsInit() ,// will declare it in methods
+        }]
+      }
+   },
   components: {
     
   },
+   watch: {
+      location : function(newValue){
+        if(newValue){
+          this.service.getPlacePredictions({
+          input:this.location,
+          ttypes: ['(cities)']
+        },
+          this.displaySuggestions
+        )
+        }
+        
+      }
+    },
   methods:{
+    MapsInit(){
+       this.service = new window.google.maps.places.AutocompleteService()
+    },
+     displaySuggestions (predictions, status) {
+        if (status !== window.google.maps.places.PlacesServiceStatus.OK) {
+          this.searchResults = []
+          return
+        }
+        this.searchResults = predictions.map(prediction => prediction.description) 
+      },
     getclass(tab) {
       if (tab == this.selected_menu) {
         return "background:#00A19B;";
@@ -119,23 +161,23 @@ export default {
      // console.log(tab)
      // this.selected_menu = tab;
     },
-    getinputhome(){
-      console.log(this.input.homeaddress)
-    },
   checkform(){
     this.errmsg = ""
-    if(!this.input.homeaddress){
+    if(!this.location){
       this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`
     }
-    if(this.input.homeaddress){
+    if(this.location){
       return true
     }
   },
+  chooseaddress(value){
+    this.location = value
+    this.searchResults = []
+  },
     getresult(){
       if(this.checkform()){
-        console.log(this.input.homeaddress)
-        this.$store.commit('sethomeaddress',this.input.homeaddress)
+        this.$store.commit('sethomeaddress',this.location)
         this.$router.push({name:'ConfirmAddress'})
       }
     }
@@ -226,7 +268,7 @@ export default {
   height: 30px;
   }
   .item1 .item1b .inputaddress .item1b2{
-    display: inline-flex;
+    /* display: inline-flex; */
     width: 100%;
     flex-direction: column;
   }
@@ -284,6 +326,28 @@ export default {
     padding: 8px;
     color: #043a30;
     margin-top: 6px;
+    border-radius: 4px;
+  }
+  .listcity{
+    list-style-type: none;
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px 16px;
+    margin-top: 8px;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+  }
+  .listcity li:hover{
+    background: #a19f9f12;
+  }
+   .listcity li{
+     padding: 2px 4px;
+     cursor: pointer;
+   }
+  .listcity li img{
+    width: 20px;
+    height: 20px;
   }
  @media only screen and (max-width: 600px){
   .home .item1{
@@ -316,6 +380,10 @@ export default {
   }
   .item1b input{
     font-size: 12px;
+  }
+    .spanerr{
+    font-size: 10px;
+    width: 90%;
   }
 } 
 </style>

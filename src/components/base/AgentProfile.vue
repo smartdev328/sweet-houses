@@ -8,11 +8,11 @@
                             <img :src="agent.image" class="w-100 h-100" alt="personal photo" />
                         </div>
                         <div class="contactinfo">
-                        <div>
-                            <button class="btn btn-call px-5 py-1 Roboto-Medium">call  <span v-if="agent.phone">{{agent.phone}}</span></button>
+                        <div class="mb-2 mb-md-0">
+                            <button class="btn btn-call px-1 px-md-5 py-1 Roboto-Medium w-100">call  <span v-if="agent.phone">{{agent.phone}}</span></button>
                         </div>
-                        <div>
-                            <b-button v-b-modal="'contact-modal'" class="bnt bun-mail px-5 py-1 Roboto-Medium">Email</b-button>
+                        <div class="">
+                            <b-button v-b-modal="'contact-modal'" class="bnt btn-mail px-5 py-1 Roboto-Medium w-100">Email</b-button>
                             <b-modal size="lg" id="contact-modal">
                                 
                                 <div class="px-4 element1">
@@ -113,6 +113,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: self-end;
+    flex-direction: row;
 }
 .agentprofile .item1 .image{
     width: 260px;
@@ -130,7 +131,7 @@ margin-top: 5em;
     font-size: 20px;
     
 }
-.agentprofile .item1 .bun-mail{
+.agentprofile .item1 .btn-mail{
     background: #FFB600;
     border-radius: 5px;
     color: #fff;
@@ -188,10 +189,35 @@ button.close{
 textarea{
     resize: none;
 }
+.contactinfo div{
+    width: unset;
+}
 @media (min-width: 760px){
 .modal-dialog {
     max-width: 780px;
-    margin: 1.75rem auto;}
-
+    margin: 1.75rem auto;
+    
+    }
+}
+@media only screen and (max-width: 600px){
+    .agentprofile .item1 .image{
+        width: 200px;
+        height: 260px;
+    }
+    .agentprofile .item1 .element1 .contactinfo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: self-end;
+    flex-direction: column;
+}
+.agentprofile .item1 .btn-call{
+    font-size: 16px;
+}
+.agentprofile .item1 .btn-mail{
+    font-size: 16px;
+}
+.contactinfo div{
+    width: 100%;
+}
 }
 </style>

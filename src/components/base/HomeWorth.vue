@@ -3,18 +3,22 @@
         <div class="item1">
             <div class="item1a py-5">
                 <div class="mt-5 item1b">
-                    <p class="text-center p1 text-white DMSerifRegular">What’s My Home Worth?</p>
+                    <p class="text-center p1 text-white DMSerifRegular">What's My Home Worth?</p>
                     <p class="text-center p2 my-4 text-white Roboto-Regular">Start your search for your next home with our comprehensive, personalized home valuation.</p>
                     <div class="w-100 inputaddress">
                       <img src="../../assets/image/icon/Iconly-Light-Location.svg" alt="">
                       <div class="item1b2">
                         <span class="space"></span>
-                        <input type="text" class="Roboto-Regular" placeholder="Enter your home address  ">
+                        <input type="text" class="Roboto-Regular" placeholder="Enter your home address" 
+                        v-model="input.homeaddress"  @input="getinputhome()"
+                        >
                       </div>
                       <div class="item1b3">
-                        <button class="Roboto-Regular">Get An Estimate</button>
+                        <button class="Roboto-Regular" type="button" @click="getresult()">Get An Estimate</button>
                       </div>
                   </div>
+                  <div class="spanerr" v-if="errmsg && !input.homeaddress">
+                     <span>{{errmsg}}</span>  </div>
                 </div>
             </div>
     </div>
@@ -22,7 +26,36 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            input:{
+        homeaddress:null
+      },
+      errmsg:''
+        }
+    },
+    methods:{
+        getinputhome(){
+      console.log(this.input.homeaddress)
+    },
+      checkform(){
+    this.errmsg = ""
+    if(!this.input.homeaddress){
+      this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`
+    }
+    if(this.input.homeaddress){
+      return true
+    }
+  },
+    getresult(){
+      if(this.checkform()){
+        console.log(this.input.homeaddress)
+        this.$store.commit('sethomeaddress',this.input.homeaddress)
+        this.$router.push({name:'ConfirmAddress'})
+      }
+    }
+    }
 }
 </script>
 <style scoped>
@@ -126,6 +159,15 @@ height: 30px;
 input:focus{
      outline: none;
 }
+  .spanerr{
+    font-size: 16px;
+    width: 75%;
+    background-color: rgb(255, 219, 220);
+    padding: 8px;
+    color: #043a30;
+    margin-top: 6px;
+    border-radius: 4px;
+  }
 @media only screen and (max-width: 600px){
     .homeworth .item1 .item1a{
         width: 100%;
@@ -157,5 +199,9 @@ input:focus{
     .homeworth .item1 .item1a .p2{
         font-size: 20px;
     }
+     .spanerr{
+    font-size: 10px;
+    width: 90%;
+  }
 }
 </style>
