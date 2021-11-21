@@ -5,7 +5,7 @@
                 
             <GmapMap
             :center="{lat:this.lat, lng:this.lon}"
-            :zoom="8"
+            :zoom="12"
             ref="map"
             map-type-id="terrain"
             draggable=false
@@ -34,14 +34,15 @@ export default {
     },
     data:() =>({
         options:{
-        zoomControl: true,
+        zoomControl: false,
         mapTypeControl: false,
         scrollwheel:false,
-        scaleControl: true,
-        streetViewControl: true,
+        scaleControl: false,
+        streetViewControl: false,
         rotateControl: true,
-        fullscreenControl: true,
-        disableDefaultUi: false
+        fullscreenControl: false,
+        disableDefaultUi: false,
+        draggable:false
         },
     }),
     computed: {

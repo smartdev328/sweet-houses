@@ -4,14 +4,18 @@
 
         <div v-if="tab_visible == 'menu_one' "> 
                <div class="row">
-            <div class="col-12 col-md-8 mx-auto">
+                
+            <div class="col-12 col-md-6 mx-auto d-flex">
+                <div class="col-1 col-md-1 mr-sm-auto ml-md-auto">
+                      <p class="h1" @click="openhomeinfopage" style="cursor:pointer"><b-icon icon="chevron-left"></b-icon></p>
+                </div>
                     <div class="item1z p-1 p-md-4">
                         <div class="item1az text-center">
                             <p class="text-color-1 DMSerifRegular">How did you hear about us?</p>
                         </div>
                         <div class="item1bz row">
                             <div class="col-8 col-md-6 mx-auto" v-for="channel in socialchanels" :key="channel.id">
-                                <div class="shadow-sm bg-white px-4 text-center element1z Roboto-Regular" @click="changechannel"><p>{{channel.name}}</p></div>
+                                <div class="shadow-sm bg-white px-4 text-center element1z Roboto-Regular" @click="changechannel(channel.name)"><p>{{channel.name}}</p></div>
                             </div>
                         </div>
                         
@@ -32,24 +36,28 @@
 features to prepare your personalized valuation.</p>
                     </div>
                     <form action="" class="container">
-                        <div class="form-group mx-auto my-3 text-left">
+                        <div class="form-group mx-auto my-3 text-left" 
+                        :class="{ 'input--error': msg.fullname && !fullname}"
+                         >
                             <div class="">
                             <input type="text" id="hometype" placeholder="Full name" 
                             v-model="fullname"
                              class="form-control form-control-lg border bg-white shadow-sm">
                             </div>
-                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.fullname">{{
+                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.fullname && !fullname">{{
                                 msg.fullname
                             }}</span>
                         </div>
-                         <div class="form-group mx-auto my-3 text-left">
+                         <div class="form-group mx-auto my-3 text-left" 
+                         :class="{ 'input--error': msg.email && !email}"
+                          >
                             <div class="">
                             <input type="text" id="hometype" placeholder="Email" 
                             v-model="email"
                              class="form-control form-control-lg border bg-white shadow-sm">
     
                             </div>
-                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.email">{{
+                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.email && !email">{{
                                 msg.email
                             }}</span>
                         </div>
@@ -59,7 +67,7 @@ features to prepare your personalized valuation.</p>
                              @update="resultsExample = $event"
                              />
                             </div>
-                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.phone">{{
+                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.phone && !phone">{{
                                 msg.phone
                             }}</span>
                         </div>
@@ -112,6 +120,7 @@ features to prepare your personalized valuation.</p>
 export default {
     data:() => ({
         tab_visible :'menu_one',
+        socialchanel:null,
         socialchanels:[
             {name:'Facebook'},
             {name:'Instagram'},
@@ -166,11 +175,21 @@ export default {
       }
 
      },
-      changechannel(){
+      changechannel(value){
+          this.socialchanel = value;
         this.tab_visible = 'menu_two'
+     },
+     openhomeinfopage(){
+         this.$emit('openhomeinfopage')
      },
      openPersonalized(){
          if(this.checkform() &&  Object.keys(this.msg).length == 0){
+             let contactinput = {}
+             contactinput.socialchanel =  this.socialchanel 
+             contactinput.fullname =  this.socialchanel
+             contactinput.email =  this.email
+             contactinput.phone =  this.phone
+             this.$store.commit('setContactDetail',contactinput)
              this.$emit('submitparent2')
           }
      } 
@@ -219,6 +238,7 @@ export default {
      }
         .contact-details-form .item1z{
         background: #EDF3F2;
+        border-radius: 6px;
     }
     .contact-details-form .item1z .item1az{
         font-size: 30px;
@@ -229,9 +249,13 @@ export default {
         cursor: pointer;
         color:#434242;
     }
-    .contact-details-form .item1z .item1bz .element1z:focus{
-        border: 1px solid #FFB600;
+    .contact-details-form .item1z .item1bz .element1z:hover{
+        background: #7070701a !important;
     }
+    .input--error input{
+    border: 1px solid #F79483 !important;
+    box-shadow:rgb(247 148  131/24%)0px 0px 0px 3px !important;
+}
     @media only screen and (max-width: 600px){
           .contact-details-form .item1z .item1az{
         font-size: 25px;

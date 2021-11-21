@@ -4,6 +4,11 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+
+function lazyLoad(view){
+  return() => import(`../components/base/${view}.vue`)
+}
+
 const routes = [
   {
     path: '/',
@@ -16,7 +21,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Cities.vue')
+    component: lazyLoad('Cities')
+    //component: () => import(/* webpackChunkName: "about" */ '../components/base/Cities.vue')
   },
   {
     path: '/cities-one',
@@ -115,7 +121,11 @@ const routes = [
   {
     path:'/confirm-address',
     name:'ConfirmAddress',
-    component: () => import('../components/base/ConfirmAddress.vue')
+    component: () => import('../components/base/ConfirmAddress.vue'),
+    meta: {
+      hideNavbar: true,
+     }
+    
   },
   {
     path:'/NotAvailable',

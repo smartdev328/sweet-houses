@@ -2,7 +2,7 @@
   <div id="app">
         <Navbar/>
     <router-view  />
-    <Footer></Footer>
+    <Footer v-if="!$route.meta.hideNavbar"></Footer>
     <notifications group="foo" />
   </div>
 </template>
@@ -19,3 +19,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+#app{
+  height: 100vh;
+}
+</style>

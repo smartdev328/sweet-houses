@@ -1,6 +1,6 @@
 <template>
-    <div class="editaddress">
-        <div class="row mx-0 w-100">
+    <div class="editaddress mb-0 h-100">
+        <div class="row mx-0 w-100 h-100">
             <div class="col-12 col-md-2  navigation">
                 <div class="py-5">
                     <div class="">
@@ -45,14 +45,16 @@
                 <div class="my-5">
                     <div :class="tab_visible('home-info')" class="h-100">
                         <home-infoedit @submitparent="submitparent"
-                        @twoFunc="twoFunc"
+                        @gotoContactPage="gotoContactPage"
                         ></home-infoedit>
                     </div>
                     <div :class="tab_visible('contact-details')" class="h-100">
-                        <contact-detailsedit @submitparent2="submitparent2"></contact-detailsedit>
+                        <contact-detailsedit @submitparent2="submitparent2" 
+                        @openhomeinfopage="openhomeinfopage"
+                        ></contact-detailsedit>
                     </div>
                     <div :class="tab_visible('personalized-valuation')" class="h-100">
-                        <personalized-valuationedit></personalized-valuationedit>
+                        <personalized-valuationedit @opencontactpage="opencontactpage"></personalized-valuationedit>
                     </div>
                 </div>
 
@@ -73,6 +75,12 @@ export default {
             return "color:#00A19B;font-weight:bold";
         }
     },
+    openhomeinfopage(){
+        this.selected_menu = "home-info"
+    },
+    opencontactpage(){
+        this.selected_menu = "contact-details"
+    },
     tab_visible(tab) {
         if (tab == this.selected_menu) {
             return "d-block";
@@ -88,7 +96,7 @@ export default {
         this.selected_menu = "personalized-valuation"
         this.channelitem = item
     },
-    twoFunc(){
+    gotoContactPage(){
         this.selected_menu = "contact-details"
     }
     }

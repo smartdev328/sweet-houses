@@ -7,7 +7,8 @@
         <div v-if="tab_visible == 'menu_one'">
             <div class="item2 mb-5">
             <VueCtkDateTimePicker v-model="yourtime" buttonColor="#FFB600" color="#FFB600" minuteInterval="5" 
-            input-size='lg'	 :maxDate=maxDate :minDate=minDate
+            input-size='lg'	 :maxDate=maxDate :minDate=minDate 
+            no-weekends-days=true	
              />
         </div>
         <div class="col-8 col-md-4 mx-auto element4 pl-0">
@@ -55,7 +56,7 @@ perfect Sweetly Agent.
         <div v-if="tab_visible == 'menu_two'">
             <div class="row shadow item7">
                 <div class="col-12 col-md-4 element1 border-right p-3 p-md-5">
-                    <div class="element1a d-flex align-items-center justify-content-center">
+                    <div class="element1a d-flex align-items-center justify-content-center" @click="returncontactpage()">
                         <img src="../../../assets/image/icon/toright.svg" alt="icon" class="w-75 h-75">
                     </div>
                     <div class="element1b mt-3">
@@ -96,7 +97,7 @@ October 6,2021</p>
                     <button type="submit" class="btn btn-submit Roboto-Regular">Add Guests</button>
                     </form>
                      <div class="form-group w-100 w-md-75 mt-4">
-                        <label for="name" class="Roboto-Regular text-color-3">What's your phone number?*</label>
+                        <label for="phone" class="Roboto-Regular text-color-3">What's your phone number?*</label>
                         <vue-phone-number-input v-model="phone" size="lg"
                              @update="resultsExample = $event"
                              />
@@ -116,16 +117,15 @@ export default {
     data:() =>({
         tab_visible:'menu_one',
         minDate:new Date(),
+        yourtime:new Date(),
         phone:null,
+        email:null,
+        name:null,
         resultsExample: null
 
     }),
     computed:{
-    yourtime(){
-        var result = new Date();
-    result.setDate(result.getDate() + 1);
-    return result;
-    },
+
     maxDate() {
     var result = new Date();
     result.setDate(result.getDate() + 4);
@@ -139,6 +139,9 @@ export default {
         },
         scheduleEvent(){
             this.$router.push({name:'SuceessMsg'})
+        },
+        returncontactpage(){
+            this.$emit('opencontactpage')
         }
     }
 }

@@ -432,6 +432,10 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         agent:{},
         status:'',
         homeaddress:'',
+        latlong:null,
+        homedatafirst:{},
+        homedatasecond:{},
+        contactinput:{},
         canadianprovinces:[
             {
                 "name" : "Alberta",
@@ -585,13 +589,28 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         sethomeaddress(state,payload){
             state.homeaddress = payload
         },
+        setlatlong(state,payload){
+            state.latlong = payload
+        },
         logout(state){
             state.status = ''
             state.token = ''
             state.user = {}
-          },
+        },
+        sethomedata(state,payload){
+        state.homedatafirst = payload
+        },
+        sethomedatasecond(state,payload){
+            state.homedatasecond = payload
+        },
+        setContactDetail(state,payload){
+            state.contactinput = payload
+        }
     },
     actions:{
+        ScrollTop(){
+            window.scrollTo(0,0);
+        },
         login({commit,state} , user){
             return new Promise((resolve, reject) => {
               commit('auth_request')

@@ -72,6 +72,7 @@
 body{
   max-width: 100%;
   overflow-x: hidden;
+  height: 100%;
 }
 .DMSerifRegular {
   /* font-family: 'DMSerifRegular'  !important; */
@@ -518,6 +519,9 @@ body{
 
 .homedetails .modal-lg, .modal-xl{
   max-width: 600px !important;
+}
+.vue-map-container .vue-map{
+  border-radius: 12px;
 }
 @media only screen and (max-width: 600px){
   .home header{

@@ -108,7 +108,7 @@ Vue.component('google-review',require('./components/share/GoogleReview.vue').def
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60',
+    key: 'AIzaSyBqme0IYqZWLPzvRdU7yTguMKMDVSdY6tI',
     libraries: 'places', // This is required if you use the Autocomplete plugin
   }
 })

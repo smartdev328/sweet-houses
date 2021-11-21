@@ -52,9 +52,9 @@
                         <button class="Poppins" type="button" @click="getresult()">Get started</button>
                       </div>
                   </div>
-                  <ul class="listcity"  v-if="searchResults && location">
+                  <ul class="listcity"  v-if="searchResults.length > 0 && location">
                         <li v-for="(result, i) in searchResults" :key="i" @click="chooseaddress(result)" class="Roboto-Regular">
-                         <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result }} // list of all places
+                         <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result }}
                         </li>
                       </ul>
                   <span class="spanerr" v-if="errmsg && !location">{{errmsg}}</span>
@@ -95,13 +95,14 @@ export default {
       location:'',
       searchResults: [],
        service: null ,
-      errmsg:''
+      errmsg:'',
+      latlong:{ lat:0,lng:0}
     }
   },
    metaInfo () {
       return {
         script: [{
-          src: `https://maps.googleapis.com/maps/api/js?key=AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60&libraries=places`,
+         src: `https://maps.googleapis.com/maps/api/js?key=AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60&libraries=places`,
           async: true,
           defer: true,
           callback: () => this.MapsInit() ,// will declare it in methods
@@ -135,6 +136,15 @@ export default {
         }
         this.searchResults = predictions.map(prediction => prediction.description) 
       },
+      getCoordinates(address){
+  fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&key=AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60')
+    .then(response => response.json())
+    .then(data => {
+      const latitude = data.results[0].geometry;
+     this.latlong.lat = latitude.location.lat;
+     this.latlong.lng = latitude.location.lng
+    })
+},
     getclass(tab) {
       if (tab == this.selected_menu) {
         return "background:#00A19B;";
@@ -177,8 +187,11 @@ export default {
   },
     getresult(){
       if(this.checkform()){
+        this.getCoordinates(this.location);
         this.$store.commit('sethomeaddress',this.location)
+        this.$store.commit('setlatlong',this.latlong)
         this.$router.push({name:'ConfirmAddress'})
+        this.$store.dispatch('ScrollTop')
       }
     }
       },
