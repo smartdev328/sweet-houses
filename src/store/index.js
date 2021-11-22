@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'http://35.182.224.125:8000/api/'
+axios.defaults.baseURL = 'http://35.182.224.125:80/api/'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
@@ -636,11 +636,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         register({commit , state}, input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
-              axios({url: 'register/', data: input, method: 'POST',dataType: 'jsonp',headers:{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Access-Control-Allow-Headers' : 'Content-Type, Authorization'
-              } })
+              axios({url: 'register/', data: input, method: 'POST' })
               .then(resp => {
                 const token = resp.data.token
                 const user = resp.data.user

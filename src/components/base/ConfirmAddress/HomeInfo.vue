@@ -503,11 +503,11 @@ export default {
                 this.msgone.squfeet = 'required'
             }
             if(this.hometype && this.storeys && 
-            this.bedboveg > 1 &&
-            this.bedbelowg > 1 &&
-            this.parbathroom > 1 &&
-               this.fullbathroom > 1 &&
-               this.squfeet > 1 
+            this.bedboveg > 0 &&
+            this.bedbelowg > 0 &&
+            this.parbathroom > 0 &&
+               this.fullbathroom > 0 &&
+               this.squfeet > 0
             ){
                 return true
             }
@@ -553,7 +553,7 @@ export default {
                 this.yourbasement && 
                 this.prioritysale &&
                 this.CurrentOccupancy &&
-                this.vehiclesnNo > 1
+                this.vehiclesnNo > 0
             ){
                 return true
             }

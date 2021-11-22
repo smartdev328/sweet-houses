@@ -17,6 +17,8 @@
           :maxDate="maxDate"
           :minDate="minDate"
           no-weekends-days="true"
+          firstDayOfWeek="1"
+
         />
       </div>
       <div class="col-8 col-md-4 mx-auto element4 pl-0">
@@ -235,6 +237,9 @@ export default {
     },
 
     openParttwo() {
+      if(!this.yourtime){
+        this.errtime = 'Opps,please make sure you  input time'
+      }
       this.tab_visible = "menu_two";
     },
     scheduleEvent() {

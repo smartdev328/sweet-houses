@@ -18,7 +18,7 @@ Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'http://35.182.224.125:8000/api/',
+  baseURL: 'http://35.182.224.125:80/api/',
   headers: {
      /*  "x-rapidapi-key": "da7185aeb9msh0e13b327cf70bc8p10a2abjsn259d1f854d02",
       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com" */

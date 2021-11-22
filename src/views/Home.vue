@@ -117,7 +117,8 @@ export default {
         if(newValue){
           this.service.getPlacePredictions({
           input:this.location,
-          ttypes: ['(cities)']
+          ttypes: ['(cities)'],
+          componentRestrictions: {country: "ca"}
         },
           this.displaySuggestions
         )
@@ -127,10 +128,12 @@ export default {
     },
   methods:{
     MapsInit(){
-       this.service = new window.google.maps.places.AutocompleteService()
+       this.service = new window.google.maps.places.AutocompleteService();
+
     },
      displaySuggestions (predictions, status) {
         if (status !== window.google.maps.places.PlacesServiceStatus.OK) {
+
           this.searchResults = []
           return
         }
