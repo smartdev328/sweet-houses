@@ -636,7 +636,10 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         register({commit , state}, input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
-              axios({url: 'register/', data: input, method: 'POST' })
+              axios({url: 'register/', data: input, method: 'POST',dataType: 'jsonp',headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              } })
               .then(resp => {
                 const token = resp.data.token
                 const user = resp.data.user
