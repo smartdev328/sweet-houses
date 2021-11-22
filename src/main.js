@@ -22,9 +22,6 @@ const api = axios.create({
   headers: {
      /*  "x-rapidapi-key": "da7185aeb9msh0e13b327cf70bc8p10a2abjsn259d1f854d02",
       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com" */
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Access-Control-Allow-Headers' : 'Content-Type, Authorization'
       }
     
 })

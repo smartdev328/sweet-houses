@@ -14,7 +14,7 @@
             </p>
             <div class="form-group">
               <input type="text" class="form-control form-control-lg" v-model="input.username" placeholder="Full Name">
-               <span v-if="msg.username" style="color: #fc5353;">{{
+               <span v-if="msg.username && !input.username" style="color: #fc5353;">{{
                   msg.username
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index">
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
-               <span v-if="msg.email" style="color: #fc5353;">{{
+               <span v-if="msg.email && !input.email" style="color: #fc5353;">{{
                   msg.email
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
-              <span v-if="msg.password" style="color: #fc5353;">{{
+              <span v-if="msg.password && !input.password" style="color: #fc5353;">{{
                   msg.password
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index">
@@ -55,6 +55,11 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
+             <div v-if="errors">
+                  <span  style="color: #fc5353;" v-for="err in errors" :key="(err.id)"> 
+                  {{err}}
+              </span>
+              </div>
               <button type="submit" class="btn btn-primary w-100 submit-btn " @click="SignUp()">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Join Now</span>
@@ -124,6 +129,7 @@ export default {
       },
       SignUp(){
           this.msg={};
+          this.errors={};
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
             this.loading = true
               Object.entries(this.input).forEach((entry) =>
@@ -134,7 +140,9 @@ export default {
              this.$notify({
                   group: 'foo',
                   type: "success",
-                  text: 'Hello user! This is a notification!',
+                   text: 'Success..! you are login',
+                  duration:6000,
+                  speed:500
                 });
                   return res;
               }).then(()=>{
@@ -142,14 +150,17 @@ export default {
                 this.$emit('hidesignupmodal');
                 
               }) .catch((err) => {
+                this.formData = new FormData(),
                  this.$notify({
                   group: 'foo',
                   type: "error",
-                  text: 'Hello user! This is a notification!',
+                  text: 'Ooops!,There are some errors',
+                  duration:6000,
+                  speed:500
                 });
-              //  this.errors = err.response.data.errors || {};
+              this.errors = err.response.data || {};
                 this.loading = false
-                console.log(err)
+                console.log(err.response.data)
           });
       }
       },

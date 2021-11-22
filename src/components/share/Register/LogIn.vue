@@ -14,7 +14,7 @@
             </p>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg"  v-model="input.email" placeholder="Email">
-              <span v-if="msg.email" style="color: #fc5353;">{{
+              <span v-if="msg.email && !input.email" style="color: #fc5353;">{{
                   msg.email
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index">
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
-              <span v-if="msg.password" style="color: #fc5353;" class="position-absolute">{{
+              <span v-if="msg.password && !input.password" style="color: #fc5353;" class="position-absolute">{{
                   msg.password
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index" class="position-absolute">
@@ -46,6 +46,12 @@
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Log In</span>
               </button>
+              <div v-if="errors">
+                  <span  style="color: #fc5353;" v-for="err in errors" :key="(err.id)"> 
+                  {{err}}
+              </span>
+              </div>
+            
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Don't have a profile yet? </p>
                 <button @click="xloginOsignup">
@@ -103,28 +109,35 @@ export default {
       },
       login(){
           this.msg={};
+          this.errors={};
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
               this.loading = true
               this.$store
-          .dispatch("login", this.formData).then(()=>{
+          .dispatch("login", this.formData).then((res)=>{
                   this.$notify({
                   group: 'foo',
                   type: "success",
-                  text: 'Hello user! This is a notification!',
+                  text: 'Success..! you are login',
+                  duration:6000,
+                  speed:500
                 });
                   this.loading = false
                   this.$emit('hideloginmodal')
+                  return res;
               }) .catch((err) => {
+                this.formData =  new FormData(),
                 this.$notify({
                   group: 'foo',
                   type: "error",
-                  text: 'Hello user! This is a notification!',
+                  text: 'Ooops!,There are some errors',
+                  duration:6000,
+                  speed:500
                 });
-                console.log('errro')
-                this.errors = err.response.data.errors || {};
+                console.log(err.response.data)
+               this.errors = err.response.data || {};
                 this.loading = false
           });
       }
