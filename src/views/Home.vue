@@ -188,15 +188,18 @@ export default {
       this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`
     }
-    if(!this.userlocation){
+    if(!Object.keys(this.userlocation).length > 0){
        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`
     }
-    if(!this.userlocation.types.includes('street_address')){
-       this.errmsg = `Oops! Please You must  enter your home address (including street number), then select from the dropdown.
+    if(Object.keys(this.userlocation).length > 0){
+      if(!this.userlocation.types.includes('street_address')){
+        this.errmsg = `Oops! Please select from the dropdown.
        If you're having trouble, just contact us.`
+      }
+
     }
-    if(this.location && this.userlocation && this.userlocation.types.includes('street_address')){
+    if(this.location && Object.keys(this.userlocation).length > 0 && this.userlocation.types.includes('street_address')){
       return true
     }
 
