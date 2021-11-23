@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "lint": "vue-cli-service lint",
-    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
