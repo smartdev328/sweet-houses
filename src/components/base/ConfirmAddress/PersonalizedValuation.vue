@@ -206,7 +206,7 @@
 import moment from "moment";
 export default {
   data: () => ({
-    tab_visible: "menu_two",
+    tab_visible: "menu_one",
     minDate: new Date(),
     yourtime: new Date(),
     phone: null,

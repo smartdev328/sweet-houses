@@ -54,10 +54,10 @@
                   </div>
                   <ul class="listcity"  v-if="searchResults.length > 0 && location">
                         <li v-for="(result, i) in searchResults" :key="i" @click="chooseaddress(result)" class="Roboto-Regular">
-                         <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result }}
+                         <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result.description }}
                         </li>
                       </ul>
-                  <span class="spanerr" v-if="errmsg && !location">{{errmsg}}</span>
+                  <span class="spanerr" v-if="errmsg">{{errmsg}}</span>
               </div>
           </div>
         </div>
@@ -96,7 +96,8 @@ export default {
       searchResults: [],
        service: null ,
       errmsg:'',
-      latlong:{ lat:0,lng:0}
+      latlong:{ lat:0,lng:0},
+      userlocation:{}
     }
   },
    metaInfo () {
@@ -109,6 +110,9 @@ export default {
         }]
       }
    },
+  computed:{
+    
+  },
   components: {
     
   },
@@ -117,8 +121,10 @@ export default {
         if(newValue){
           this.service.getPlacePredictions({
           input:this.location,
-          ttypes: ['(cities)'],
-          componentRestrictions: {country: "ca"}
+          ttypes: ['(address)'],  
+          fields: ["address_components", "geometry", "name"],
+          componentRestrictions: {country: "ca"},
+          
         },
           this.displaySuggestions
         )
@@ -137,7 +143,7 @@ export default {
           this.searchResults = []
           return
         }
-        this.searchResults = predictions.map(prediction => prediction.description) 
+        this.searchResults = predictions.map(prediction => prediction) 
       },
       getCoordinates(address){
   fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&key=AIzaSyBcU3Q8AzxVuwdri3eEWOlVdVqFSeLtT60')
@@ -176,25 +182,36 @@ export default {
     },
   checkform(){
     this.errmsg = ""
+    this.searchResults =[];
     if(!this.location){
       this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`
     }
-    if(this.location){
+    if(!this.userlocation){
+       this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`
+    }
+    if(!this.userlocation.types.includes('street_address')){
+       this.errmsg = `Oops! Please You must  enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`
+    }
+    if(this.location && this.userlocation){
       return true
     }
+
   },
   chooseaddress(value){
-    this.location = value
-    this.searchResults = []
+    this.userlocation = value;
+    this.location = value.description;
+    this.searchResults = [];
   },
     getresult(){
       if(this.checkform()){
-        this.getCoordinates(this.location);
-        this.$store.commit('sethomeaddress',this.location)
-        this.$store.commit('setlatlong',this.latlong)
-        this.$router.push({name:'ConfirmAddress'})
-        this.$store.dispatch('ScrollTop')
+      //  this.getCoordinates(this.location);
+      //  this.$store.commit('sethomeaddress',this.location)
+       // this.$store.commit('setlatlong',this.latlong)
+      //  this.$router.push({name:'ConfirmAddress'})
+        //this.$store.dispatch('ScrollTop')
       }
     }
       },
