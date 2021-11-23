@@ -111,7 +111,7 @@ export default {
       }
    },
   computed:{
-    
+
   },
   components: {
     
@@ -126,7 +126,8 @@ export default {
           componentRestrictions: {country: "ca"},
           
         },
-          this.displaySuggestions
+          this.displaySuggestions,
+          
         )
         }
         
@@ -195,7 +196,7 @@ export default {
        this.errmsg = `Oops! Please You must  enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`
     }
-    if(this.location && this.userlocation){
+    if(this.location && this.userlocation && this.userlocation.types.includes('street_address')){
       return true
     }
 
@@ -207,11 +208,11 @@ export default {
   },
     getresult(){
       if(this.checkform()){
-      //  this.getCoordinates(this.location);
-      //  this.$store.commit('sethomeaddress',this.location)
-       // this.$store.commit('setlatlong',this.latlong)
-      //  this.$router.push({name:'ConfirmAddress'})
-        //this.$store.dispatch('ScrollTop')
+        this.getCoordinates(this.location);
+        this.$store.commit('sethomeaddress',this.location)
+        this.$store.commit('setlatlong',this.latlong)
+        this.$router.push({name:'ConfirmAddress'})
+        this.$store.dispatch('ScrollTop')
       }
     }
       },
