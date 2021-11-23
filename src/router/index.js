@@ -116,7 +116,10 @@ const routes = [
   {
     path:'/edit-address',
     name:'EditAddress',
-    component : () => import('../components/base/EditAddress.vue')
+    component : () => import('../components/base/EditAddress.vue'),
+    meta: {
+      hideNavbar: true,
+     }
   },
   {
     path:'/confirm-address',
