@@ -436,6 +436,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         homedatafirst:{},
         homedatasecond:{},
         contactinput:{},
+        editdatainput:{},
         canadianprovinces:[
             {
                 "name" : "Alberta",
@@ -605,6 +606,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         },
         setContactDetail(state,payload){
             state.contactinput = payload
+        },
+        editHomeaddressdata(state,payload){
+            state.editdatainput = payload
         }
     },
     actions:{

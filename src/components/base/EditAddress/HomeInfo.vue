@@ -5,38 +5,48 @@
             <div class="row">
                 <div class="col-10 col-md-5 mx-auto">
                     <form @submit.prevent="EditAddress()">
-                        <div class="form-group">
+                        <div class="form-group"  
+                        :class="{ 'input--error': msg.streetaddress && !input.streetaddress}"
+                         >
                             <input type="text" class="form-control form-control-lg Roboto-Regular" v-model="input.streetaddress" placeholder="Street address" >
-                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.streetaddress">{{
+                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.streetaddress && !input.streetaddress">{{
                                 msg.streetaddress
                                 }}</span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" 
+                        :class="{ 'input--error': msg.Apt && !input.Apt}"
+                          >
                             <input type="text" class="form-control form-control-lg Roboto-Regular" v-model="input.Apt" placeholder="Apt, unit, or suite (if applicable)">
-                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.Apt">{{
+                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.Apt && !input.Apt">{{
                                 msg.Apt
                                 }}</span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"  
+                        :class="{ 'input--error': msg.city && !input.city}"
+                         >
                             <input type="text" class="form-control form-control-lg Roboto-Regular" v-model="input.city" placeholder="City" >
-                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.city">{{
+                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.city && !input.city">{{
                                 msg.city
                                 }}</span>
                         </div>
-                        <div class="form-group selectspecbg" :class=" {selectspecchanged : changedsubcategory}">
+                        <div class="form-group selectspecbg" :class=" {selectspecchanged : changedsubcategory , inputerr:msg.canadianprovince && !input.canadianprovince}" 
+                        
+                          >  
                             <select name="canadianprovince"   @change="changestylesub()" class="form-control form-control-lg Roboto-Regular" id="" v-model="input.canadianprovince" >
                                 <option value="null" disabled hidden selected>
                           Province
                                 </option>
                                <option v-for="canadianprovince in canadianprovinces" :key="canadianprovince.id" :value="canadianprovince.short">{{canadianprovince.short}}</option>
                       </select>
-                      <span style="color: #dc3545;font-size: 16px;" v-if="msg.canadianprovince">{{
+                      <span style="color: #dc3545;font-size: 16px;" v-if="msg.canadianprovince && !input.canadianprovince">{{
                                 msg.canadianprovince
                                 }}</span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" 
+                        :class="{ 'input--error': msg.Postal && !input.Postal}"
+                         >
                             <input type="text" class="form-control form-control-lg Roboto-Regular" v-model="input.Postal" placeholder="Postal code" >
-                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.Postal">{{
+                            <span style="color: #dc3545;font-size: 16px;" v-if="msg.Postal && !input.Postal">{{
                                 msg.Postal
                                 }}</span>
                         </div>
@@ -54,10 +64,12 @@ export default {
     data(){
         return{
             msg:{},
-            obj1:{
-            },
             input:{
-                canadianprovince:null
+                canadianprovince:null,
+                streetaddress:"",
+                Apt:"",
+                city:"",
+                Postal:""
             },
             changedsubcategory:false
             
@@ -101,9 +113,23 @@ export default {
         }
 
     },
+    clearForm(){
+        this.input.streetaddress = "",
+        this.input.Apt = "",
+        this.input.city = "",
+        this.input.canadianprovince = null,
+        this.input.Postal=""
+    },
+    propsAsString(obj){
+          return Object.keys(obj).map(function(k) { return obj[k] }).join(" ,")
+
+    },
         EditAddress(){
             if(this.checkform() && Object.keys(this.msg).length == 0){
-                 this.$router.push({name:'ConfirmAddress'})
+                let editdatainput = this.propsAsString(this.input);
+                this.$store.commit('editHomeaddressdata',editdatainput)
+                this.clearForm();
+                 //this.$router.push({name:'ConfirmAddress'})
             }
            
         }
@@ -147,5 +173,14 @@ export default {
 }
 .selectspecchanged select{
     color:#000;
+}
+.input--error input[type="number"],
+.input--error input[type="text"]{
+    border: 1px solid #F79483 !important;
+    box-shadow:rgb(247 148  131/24%)0px 0px 0px 3px !important;
+}
+.inputerr select{
+     border: 1px solid #F79483 !important;
+    box-shadow:rgb(247 148  131/24%)0px 0px 0px 3px !important;
 }
 </style>
