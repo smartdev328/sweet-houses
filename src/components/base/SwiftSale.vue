@@ -10,7 +10,7 @@ less our fee. Our offer is only conditional to a property inspection which we
 arrange - at our cost. Once completed, you'll have a firm commitment for the 
 sale price and the moving day that you choose. </p></div>
                     <div class="col-12 col-md-4">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://youtu.be/lm6lGa_4Ci0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                 </div>
         </div>
