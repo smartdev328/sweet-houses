@@ -4,7 +4,7 @@
                 <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How It Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8"><p>We establish value by recent appraisal or comparison to other sales in your area.
-You get tow payments. Sweetly pays 75% of value on the moving day yo choose. 
+You get two payments. Sweetly pays 75% of value on the moving day yo choose. 
 Then (if needed) Sweetly invests up to $25,000 in upgrades that you approve- 
 designed to increase the resale price. Well manage a professional MLS listing, and 
 once re-sold you get the FULL balance of the highest sale price, less our fee Choose 
