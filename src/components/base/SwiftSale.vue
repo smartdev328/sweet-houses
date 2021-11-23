@@ -5,13 +5,10 @@
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
                         <p>Simple. Certain. Easy</p>
-                        <p>We establish value by recent appraisal or comparison to other sales in your area.
-You get two payments. Sweetly pays 75% of value on the moving day yo choose. 
-Then (if needed) Sweetly invests up to $25,000 in upgrades that you approve- 
-designed to increase the resale price. Well manage a professional MLS listing, and 
-once re-sold you get the FULL balance of the highest sale price, less our fee Choose 
-your moving day. Skip public showings and net the After Renovation Value from the 
-comfort of your couch! </p></div>
+                        <p>You choose the moving day and Sweetly will buy your home at current value,
+less our fee. Our offer is only conditional to a property inspection which we
+arrange - at our cost. Once completed, you'll have a firm commitment for the 
+sale price and the moving day that you choose. </p></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
