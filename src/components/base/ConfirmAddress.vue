@@ -65,7 +65,7 @@
 <script>
 export default {
     data :() =>({
-        selected_menu:"personalized-valuation",
+        selected_menu:"home-info",
         obj1:{},
         channelitem:null
     }),
