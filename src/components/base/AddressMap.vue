@@ -29,8 +29,8 @@
 import { gmapApi } from 'vue2-google-maps';
 export default {
     props: {
-        lon: { type: Number,default:46.68844583469802},
-        lat: { type: Number,default:24.697922601007832},
+        lon: { type: Number,default:-79.383184},
+        lat: { type: Number,default:43.653226},
     },
     data:() =>({
         options:{

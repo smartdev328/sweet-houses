@@ -88,7 +88,7 @@ Estate</a>
         <div class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown">
           <router-link class="dropdown-item pl-3" to="/agents">Agents</router-link>
           <router-link class="dropdown-item pl-3" to="/for-realtor">For Realtors</router-link>
-          <router-link class="dropdown-item pl-3" to="/contact-us">contact</router-link>
+          <router-link class="dropdown-item pl-3" to="/contact-us">Contact</router-link>
         </div>
       </li>
           <li class="nav-item dropdown">

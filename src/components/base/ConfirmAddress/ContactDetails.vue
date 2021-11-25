@@ -42,7 +42,7 @@ features to prepare your personalized valuation.</p>
                             <div class="">
                             <input type="text" id="hometype" placeholder="Full name" 
                             v-model="fullname"
-                             class="form-control form-control-lg border bg-white shadow-sm">
+                             class="form-control form-control-lg  bg-white">
                             </div>
                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.fullname && !fullname">{{
                                 msg.fullname
@@ -52,9 +52,9 @@ features to prepare your personalized valuation.</p>
                          :class="{ 'input--error': msg.email && !email}"
                           >
                             <div class="">
-                            <input type="text" id="hometype" placeholder="Email" 
+                            <input type="email" id="hometype" placeholder="Email" 
                             v-model="email"
-                             class="form-control form-control-lg border bg-white shadow-sm">
+                             class="form-control form-control-lg  bg-white">
     
                             </div>
                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.email && !email">{{
@@ -65,6 +65,8 @@ features to prepare your personalized valuation.</p>
                             <div class="">
                             <vue-phone-number-input v-model="phone"
                              @update="resultsExample = $event"
+                             color="#ffb600"
+                             error-color="orangered"
                              />
                             </div>
                             <span style="color: #dc3545;font-size: 16px;" v-if="msg.phone && !phone">{{
@@ -117,6 +119,7 @@ features to prepare your personalized valuation.</p>
     </div>
 </template>
 <script>
+
 export default {
     data:() => ({
         tab_visible :'menu_one',
@@ -140,11 +143,28 @@ export default {
         fullname:null,
         email:null,
         phone:null,
-        resultsExample: null
+        resultsExample: null,
+        // loadvalid:false,
+        // emailisvalid:false,
+        // emailnotmaildmsg:''
     }),
     methods:{
+    // checkemail(){
+    //     this.loadvalid=true
+    //      this.$http.get(`https://deva.dillilabs.com/api/1e48daa0-4d56-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`).then((res) =>{
+    //          if(res.data){
+    //              console.log('true')
+    //              this.emailisvalid = true
+    //              this.loadvalid =false
+    //              return true
+    //          }
+    //          this.loadvalid=false
+    //          this.emailnotmaildmsg = "please enter a real email"
+    //         })
+    // },
      checkform(){
          this.msg = {}
+       //  this.checkemail()
          if(!this.fullname){
              this.msg.fullname = 'Fullname is required'
          }
@@ -159,6 +179,8 @@ export default {
       ) {
         this.msg.email = "please enter a valid email";
       }
+
+      
       if(!this.phone){
           this.msg.phone = 'phone is required'
       }
@@ -169,7 +191,9 @@ export default {
       if(this.fullname &&
       this.email &&
       this.phone &&
-      this.resultsExample.isValid
+        this.resultsExample.isValid 
+        
+
       ){
           return true
       }
@@ -183,7 +207,9 @@ export default {
          this.$emit('openhomeinfopage')
      },
      openPersonalized(){
-         if(this.checkform() &&  Object.keys(this.msg).length == 0){
+        if(this.checkform() && Object.keys(this.msg).length == 0){
+
+            
              let contactinput = {}
              contactinput.socialchanel =  this.socialchanel 
              contactinput.fullname =  this.socialchanel
@@ -191,6 +217,7 @@ export default {
              contactinput.phone =  this.phone
              this.$store.commit('setContactDetail',contactinput)
              this.$emit('submitparent2')
+            
           }
      } 
     }
@@ -219,13 +246,21 @@ export default {
         border-radius: 4px;
         font-size: 1.2em;
     }
+    .contact-details-form form .btn-continue:hover{
+        background:  #ffb700d2;
+    }
     .contact-details-form .btn-continue p:first-child{
         font-size: 24px
     }
-     input:focus{
-         outline: none;
-         border: 0;
-     }
+
+    input[type="email"]:focus {
+    border: 1px solid rgb(255, 182, 0);
+    box-shadow: inset 0 1px 1px rgba(255, 182, 0, 0.9), 0 0 4px #ffb600;
+    }
+        input[type="text"]:focus {
+    border: 1px solid rgb(255, 182, 0);
+    box-shadow: inset 0 1px 1px rgba(255, 182, 0, 0.9), 0 0 4px #ffb600;
+    }
      .contact-details-form .partb .item1 p{
          font-size: 32px;
      }

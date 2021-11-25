@@ -61,26 +61,26 @@ deducted so there's no out of pocket expenses. </li>
                     <div class="space-50"></div>
                     <div class="my-2 bg-white py-3 px-1 gridcontainer rounded">
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Example Current 
+                            <p class="mx-1 mb-4 mb-md-3">Example Current 
 Value</p>
-                            <p>$400,000</p>
+                            <p class="pt-3 pt-md-1">$400,000</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated Seller 
+                            <p class="mx-1 mb-4 mb-md-3">Estimated Seller 
 Concession </p>
-                            <p>N/A</p>
+                            <p class="pt-3 pt-md-1">N/A</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Repairs</p><br>
-                            <p>$16,900</p>
+                            <p class="mx-1 mb-4">Repairs</p>
+                            <p class="mb-0 pt-3 pt-md-2">Based on our inspection</p>
                         </div>
                          <div class="gridcol px-3 text-center">
                             <p class="mx-1">Service Charge</p><br>
                             <p>9.9%</p>
                         </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated Proceeds </p>
-                            <p>$394,400</p>
+                        <div class="gridcol px-2 text-center">
+                            <p class="mx-1 mb-4">Estimated Proceeds </p>
+                            <p class="pt-3 pt-md-1"> the total should be $364,400</p>
                         </div>
                          <!-- <div class="gridcol px-3 text-center">
                             <p class="mx-1">Estimated NET</p>
@@ -126,27 +126,27 @@ to make good real estate decisions. </li>
                     <div class="space-50"></div>
                     <div class="my-2 bg-white py-3 px-1 gridcontainer rounded">
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Example Current Value</p>
-                            <p>$390,000 to $410,000</p>
+                            <p class="mx-1 mb-4 mb-md-3">Example Current Value</p>
+                            <p class="pt-3 pt-md-2">$390,000 to $410,000</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated Seller 
+                            <p class="mx-1 mb-4 mb-md-2">Estimated Seller 
 Concession</p>
-                            <p>1 - 3%</p>
+                            <p class="pt-3">1 - 3%</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Repairs</p>
-                            <p>Based on buyers'
+                            <p class="mx-1 mb-4 mb-md-3">Repairs</p>
+                            <p class="pt-3">Based on buyers'
 inspection</p>
                         </div>
                          <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Commission</p>
+                            <p class="mx-1 mb-md-4">Commission</p>
                             <span class="Roboto-Regular">(7%/3%)</span>
                             <p>$15,700-$16,300</p>
                         </div>
                         <div class="gridcol px-3 text-center">
                             <p class="mx-1">Estimated NET</p><br>
-                            <p>$363,000 to $389,000</p>
+                            <p class="pt-0 pt-md-3">$363,000 to $389,000</p>
                         </div>
                         
                     </div>
@@ -160,7 +160,7 @@ When listing traditionally, market conditions and results will vary</p>
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Certainty</p>
+                    <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -196,7 +196,7 @@ choose) within days </li>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Skip ALL Public Showings</p>
+                    <p class="DMSerifRegular text-capitalize">Skip ALL Public Showings</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -219,7 +219,7 @@ commissions apply.</li>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Choose your own moving day</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -308,7 +308,7 @@ traditional Realtor commission will apply.</li>
 export default {
     data(){
         return{
-            selected_part:"traditionalpart"
+            selected_part:"Swiftpart"
         }
     },
     computed:{
@@ -404,7 +404,7 @@ export default {
     .item2c2 .gridcontainer .gridcol p:first-child
     {
         font-family: 'Roboto-Regular' , sans-serif  !important;
-        font-size: 20px;
+        font-size: 18px;
     }
     .item2c .gridcontainer .gridcol p,
     .item2c2 .gridcontainer .gridcol p{
@@ -547,6 +547,9 @@ export default {
             height: -webkit-fill-available;
               
     }
+    .page2 .flex-row-reverse{
+        flex-direction: row;
+    }
 
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
@@ -611,6 +614,9 @@ export default {
     }
     .page2 .item8 .element4{
         font-size: 32px;
+    }
+     .page2 .flex-row-reverse{
+        flex-direction: column-reverse;
     }
     }
 

@@ -20,21 +20,22 @@
               </div>
               <div class="item1b px-3 py-5 p-md-5">
                   <div class="text-center  text-white DMSerifRegular" :class="tab_visible('Sweet_Sale')">
-                    <p>Get Maximum Value! Skip
+                    <p class="DMSerifRegular">Get Maximum Value! Skip
                     Public Showings And Choose 
                     Your Moving Day</p>
-                    <p>The SMARTEST way to Sell!</p>
+                    <p class="Roboto-Regular">The Sweet Sale is the smartest way to sell.</p>
                   </div> 
                   <div class="text-center  text-white DMSerifRegular" :class="tab_visible('Swift_Sale')">
-                    <p>Your offer in minutes, SOLD in days</p>
-                    <p>Market Value less Our Fee = SOLD! Hassle-free.</p>
+                    <p class="DMSerifRegular">Your offer in minutes, SOLD in days</p>
+                    <p class="Roboto-Regular">Market Value less Our Fee = SOLD! Hassle-free.</p>
                   </div>
                     <div class="text-center  text-white DMSerifRegular" :class="tab_visible('Equity_Advance')">
-                    <p>Your Home Equity, Before Your First Showing! </p>
+                    <p class="DMSerifRegular">Your Home Equity, Before Your First Showing! </p>
+                    <p>Access $25,000, $50,000, $150,000, or more!</p>
                   </div>
                   <div class="text-center  text-white DMSerifRegular" :class="tab_visible('Traditional_Real_Estate')">
-                    <p>Sweetened Listing, With Muscle!</p>
-                    <p>Compare our services.</p>
+                    <p class="DMSerifRegular">Sweetened Listing, With Muscle!</p>
+                    <p class="Roboto-Regular">Compare our services.</p>
                   </div>
 
                   <div class="w-100 inputaddress">
@@ -52,6 +53,9 @@
                         <button class="Poppins" type="button" @click="getresult()">Get started</button>
                       </div>
                   </div>
+                    <div class="item1b3-sm">
+                        <button class="Poppins" type="button" @click="getresult()">Get started</button>
+                      </div>
                   <ul class="listcity"  v-if="searchResults.length > 0 && location">
                         <li v-for="(result, i) in searchResults" :key="i" @click="chooseaddress(result)" class="Roboto-Regular">
                          <img src="../assets/image/icon/pinaddress.svg" class=""> {{ result.description }}
@@ -334,13 +338,15 @@ export default {
     outline: none;
     font-size: 18px;
   }
-  .item1b .item1b3{
+  .item1b .item1b3,
+   .item1b .item1b3-sm{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     flex-shrink: 0;
   }
-  .item1b .item1b3 button{
+  .item1b .item1b3 button,
+  .item1b .item1b3-sm button{
     background-color: #FFB600;
     color: #fff;
     height: 48px;
@@ -386,6 +392,9 @@ export default {
     width: 20px;
     height: 20px;
   }
+  .item1b .item1b3-sm{
+    display: none;
+  }
  @media only screen and (max-width: 600px){
   .home .item1{
     width: 100%;
@@ -401,7 +410,9 @@ export default {
     width: 20px;
     height: 20px;
   }
-  .item1b .item1b3 button{
+  .item1b .item1b3 button ,
+    .item1b .item1b3-sm button
+  {
     border: 1px solid transparent;
     border-radius: 6px;
     width: 100%;
@@ -421,6 +432,17 @@ export default {
     .spanerr{
     font-size: 10px;
     width: 90%;
+  }
+  .item1b .item1b3{
+    display: none;
+  }
+  .item1b .item1b3-sm{
+        display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+        width: 100%;
+    margin-top: 8px 
   }
 } 
 </style>
