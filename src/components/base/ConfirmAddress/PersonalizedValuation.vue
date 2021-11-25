@@ -2,7 +2,7 @@
   <div class="container mt-4 mb-1 per-validation">
     <div class="text-center item1">
       <p class="text-color-1 DMSerifRegular">
-        User name, one last step to your home valuation
+       <span v-if="contactinput"> {{contactinput.fullname}}</span> <span v-else>UserName</span> one last step to your home valuation
       </p>
       <p cRoboto-Regular>Schedule your introduction call</p>
     </div>
@@ -248,6 +248,7 @@
 <script>
 import moment from "moment";
 export default {
+  props:["contactinput"],
   data: () => ({
     tab_visible: "menu_one",
     minDate: new Date(),
@@ -357,13 +358,7 @@ export default {
             }
           });
       }
-      //  let contactinput = {}
-      //  contactinput.socialchanel =  this.socialchanel
-      //  contactinput.fullname =  this.socialchanel
-      //  contactinput.email =  this.email
-      //  contactinput.phone =  this.phone
-      //  this.$store.commit('setContactDetail',contactinput)
-      //  this.$emit('submitparent2')
+
     },
   },
 };
