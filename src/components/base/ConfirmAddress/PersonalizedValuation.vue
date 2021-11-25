@@ -132,7 +132,9 @@
         <div class="col-12 col-md-8 element2 p-3 p-md-5">
           <p class="Roboto-Regular text-color-3">Enter Details</p>
           <form class="w-100 w-md-75">
-            <div class="form-group">
+            <div class="form-group" 
+             :class="{ 'input--error': msg.fullname && !fullname }"
+             >
               <label for="name" class="Roboto-Regular text-color-3"
                 >Name *</label
               >
@@ -140,10 +142,17 @@
                 type="text"
                 class="form-control form-control-lg"
                 id="name"
-                v-model="name"
+                v-model="fullname"
               />
             </div>
-            <div class="form-group">
+            <span
+              style="color: #dc3545; font-size: 16px"
+              v-if="msg.fullname && !fullname"
+              >{{ msg.fullname }}</span
+            >
+            <div class="form-group" 
+             :class="{ 'input--error': msg.email && !email }"
+             >
               <label for="email" class="Roboto-Regular text-color-3"
                 >Email *</label
               >
@@ -154,6 +163,18 @@
                 v-model="email"
               />
             </div>
+              <span
+              style="color: #dc3545; font-size: 16px"
+              v-if="msg.email && !email"
+              >{{ msg.email }}</span
+            >
+            <span
+              span
+              style="color: #dc3545; font-size: 16px"
+              v-if="emailnotmaildmsg && !emailisvalid"
+              >{{ emailnotmaildmsg }}</span
+            >
+            <div></div>
             <div class="form-group" v-if="showGuestemail">
               <label for="email" class="Roboto-Regular text-color-3"
                 >Guest Email(s)</label
@@ -165,6 +186,17 @@
                 v-model="Guestemail"
               />
             </div>
+              <span
+              style="color: #dc3545; font-size: 16px"
+              v-if="msg.Guestemail && !Guestemail"
+              >{{ msg.Guestemail }}</span
+            >
+            <span
+              span
+              style="color: #dc3545; font-size: 16px"
+              v-if="Guestemailnotmaildmsg && !Guestemailisvalid"
+              >{{ Guestemailnotmaildmsg }}</span
+            >
             <button
               type="button"
               @click="showGuestemail = true"
@@ -179,19 +211,30 @@
               >What's your phone number?*</label
             >
             <vue-phone-number-input
-              v-model="phone"
-              size="lg"
-              @update="resultsExample = $event"
+             v-model="phone"
+                @update="resultsExample = $event"
+                color="#ffb600"
+                error-color="orangered"
             />
           </div>
+           <span style="color: #dc3545; font-size: 16px" v-if="msg.phone">{{
+              msg.phone
+            }}</span>
           <br />
           <div class="col-8 col-md-4 element4 pl-0">
             <button
               class="btn w-100 Roboto-Medium "
               type="button"
-              @click.prevent="scheduleEvent"
+              
+              @click.prevent="openPersonalized"
             >
-              Schedule Event
+             <span v-if="!loadvalid">Schedule Event</span> 
+              <div v-if="loadvalid" class="lds-ring mx-auto">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </button>
           </div>
           <p class="text-color-3 Roboto-Regular mt-2">
@@ -209,12 +252,17 @@ export default {
     tab_visible: "menu_one",
     minDate: new Date(),
     yourtime: new Date(),
-    phone: null,
+      msg: {},
+    fullname: null,
     email: null,
-    name: null,
+    phone: null,
     resultsExample: null,
+    loadvalid: false,
+    emailisvalid: false,
+    emailnotmaildmsg: "",
     Guestemail: null,
     showGuestemail: false,
+    Guestemailnotmaildmsg:""
   }),
   computed: {
     maxDate() {
@@ -247,6 +295,75 @@ export default {
     },
     returncontactpage() {
       this.$emit("opencontactpage");
+    },
+    checkform() {
+      this.msg = {};
+      if (!this.fullname) {
+        this.msg.fullname = "Fullname is required";
+      }
+      if (!this.email) {
+        this.msg.email = "email is required";
+      }
+      if (
+        this.email &&
+        !this.email.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+      ) {
+        this.msg.email = "please enter a valid email";
+      }
+
+      if (!this.phone) {
+        this.msg.phone = "phone is required";
+      }
+      if (!this.resultsExample.isValid) {
+        this.msg.phone = "enter a correct phone number";
+      }
+       if (
+        this.Guestemail &&
+        !this.Guestemail.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+      ) {
+        this.msg.Guestemail = "please enter a valid email";
+      }
+      if (
+        this.fullname &&
+        this.email &&
+        this.phone &&
+        this.resultsExample.isValid &&
+        (this.showGuestemail && this.Guestemail)
+      ) {
+        return true;
+      }
+    },
+        openPersonalized() {
+      if (this.checkform() && Object.keys(this.msg).length == 0) {
+        this.loadvalid = true;
+        this.$http
+          .get(
+            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+          )
+          .then((res) => {
+            if (res.data) {
+              this.emailisvalid = true;
+              this.loadvalid = false;
+              this.emailnotmaildmsg = "";
+              this.scheduleEvent();
+            } else {
+              this.loadvalid = false;
+              this.emailisvalid = false;
+              this.emailnotmaildmsg = "please enter a real email";
+            }
+          });
+      }
+      //  let contactinput = {}
+      //  contactinput.socialchanel =  this.socialchanel
+      //  contactinput.fullname =  this.socialchanel
+      //  contactinput.email =  this.email
+      //  contactinput.phone =  this.phone
+      //  this.$store.commit('setContactDetail',contactinput)
+      //  this.$emit('submitparent2')
     },
   },
 };
@@ -334,5 +451,40 @@ export default {
 .per-validation .element4 button:hover {
   color: #ffb600;
   background: #fff;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 1px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

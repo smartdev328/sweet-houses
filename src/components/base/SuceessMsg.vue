@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="my-5 item5 text-center">
+                    <div class="my-5 item5 text-center" @click="routetohome()">
                         <p class="Roboto-Regular">Back to homepage</p>
                     </div>
             </div>
@@ -43,7 +43,11 @@
 </template>
 <script>
 export default {
-    
+    methods:{
+        routetohome(){
+            this.$router.push({name:"SuceessMsg"})
+        }
+    }
 }
 </script>
 <style scoped>

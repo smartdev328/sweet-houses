@@ -115,7 +115,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgone.bedboveg && bedboveg < 1 }"
+              :class="{ 'input--error':  (msgone.bedboveg && bedboveg < 0) || (msgone.bedboveg && bedboveg == null) }"
             >
               <label for="bedboveg" class="col-sm-5 col-form-label text-left"
                 >Bedrooms (above ground)</label
@@ -124,7 +124,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="bedboveg < 2"
+                    :disabled="bedboveg < 1"
                     type="button"
                     @click="bedboveg--"
                   >
@@ -143,9 +143,9 @@
                     required
                   />
                   <span
-                    class="reuired-err"
-                    v-if="msgone.bedboveg && bedboveg < 1"
-                    >reuired</span
+                    class="required-err"
+                    v-if="(msgone.bedboveg && bedboveg < 0) || (msgone.bedboveg && bedboveg == null) "
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2">
@@ -162,7 +162,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgone.bedbelowg && bedbelowg < 1 }"
+              :class="{ 'input--error':  (msgone.bedbelowg && bedbelowg < 0) || (msgone.bedbelowg && bedbelowg == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
                 >Bedrooms (below ground)</label
@@ -171,7 +171,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="bedbelowg < 2"
+                    :disabled="bedbelowg < 1"
                     type="button"
                     @click="bedbelowg--"
                   >
@@ -189,9 +189,9 @@
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
-                    class="reuired-err"
-                    v-if="msgone.bedbelowg && bedbelowg < 1"
-                    >reuired</span
+                    class="required-err"
+                    v-if="(msgone.bedbelowg && bedbelowg < 0) || (msgone.bedbelowg && bedbelowg == null)"
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2">
@@ -208,9 +208,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{
-                'input--error': msgone.fullbathroom && fullbathroom < 1,
-              }"
+               :class="{ 'input--error':  (msgone.fullbathroom && fullbathroom < 0) || (msgone.fullbathroom && fullbathroom == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
                 >Full bathrooms</label
@@ -219,7 +217,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="fullbathroom < 2"
+                    :disabled="fullbathroom < 1"
                     type="button"
                     @click="fullbathroom--"
                   >
@@ -237,9 +235,9 @@
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
-                    class="reuired-err"
-                    v-if="msgone.fullbathroom && fullbathroom < 1"
-                    >reuired</span
+                    class="required-err"
+                    v-if="(msgone.fullbathroom && fullbathroom < 0) || (msgone.fullbathroom && fullbathroom == null)"
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2">
@@ -256,7 +254,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgone.parbathroom && parbathroom < 1 }"
+              :class="{ 'input--error':  (msgone.parbathroom && parbathroom < 0) || (msgone.parbathroom && parbathroom == null) }"
             >
               <label for="Partial" class="col-sm-5 col-form-label text-left"
                 >Partial bathrooms</label
@@ -265,7 +263,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="parbathroom < 2"
+                    :disabled="parbathroom < 1"
                     type="button"
                     @click="parbathroom--"
                   >
@@ -283,9 +281,9 @@
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
-                    class="reuired-err"
-                    v-if="msgone.parbathroom && parbathroom < 1"
-                    >reuired</span
+                    class="required-err"
+                    v-if=" (msgone.parbathroom && parbathroom < 0) || (msgone.parbathroom && parbathroom == null) "
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2">
@@ -302,7 +300,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgone.squfeet && squfeet < 1 }"
+              :class="{ 'input--error':  (msgone.squfeet && squfeet < 0) || (msgone.squfeet && squfeet == null) }"
             >
               <label for="Square" class="col-sm-5 col-form-label text-left"
                 >Square feet (approx.)</label
@@ -318,8 +316,8 @@
                     v-model.number="squfeet"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
-                  <span class="reuired-err" v-if="msgone.squfeet && squfeet < 1"
-                    >reuired</span
+                  <span class="required-err" v-if=" (msgone.squfeet && squfeet < 0) || (msgone.squfeet && squfeet == null)"
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2"></div>
@@ -327,7 +325,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgone.parkspaces && parkspaces < 1 }"
+               :class="{ 'input--error':  (msgone.parkspaces && parkspaces < 0) || (msgone.parkspaces && parkspaces == null) }"
             >
               <label for="Parking" class="col-sm-5 col-form-label text-left"
                 >Parking spaces</label
@@ -336,7 +334,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="parkspaces < 2"
+                    :disabled="parkspaces < 1"
                     type="button"
                     @click="parkspaces--"
                   >
@@ -354,9 +352,9 @@
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
-                    class="reuired-err"
-                    v-if="msgone.parkspaces && parkspaces < 1"
-                    >reuired</span
+                    class="required-err"
+                    v-if="(msgone.parkspaces && parkspaces < 0) || (msgone.parkspaces && parkspaces == null) "
+                    >required</span
                   >
                 </div>
                 <div class="col-sm-2">
@@ -480,7 +478,7 @@
             </div>
             <div
               class="form-group row ol-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgtwo.vehiclesnNo && vehiclesnNo < 1 }"
+               :class="{ 'input--error':  (msgtwo.vehiclesnNo && vehiclesnNo < 0) || (msgtwo.vehiclesnNo && vehiclesnNo == null) }"
             >
               <label for="vehicles" class="col-sm-5 col-form-label text-left"
                 >How many vehicles fit in your garage?</label
@@ -489,7 +487,7 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="vehiclesnNo < 2"
+                    :disabled="vehiclesnNo < 1"
                     type="button"
                     @click="vehiclesnNo--"
                   >
@@ -507,7 +505,7 @@
                   />
                   <span
                     style="color: #dc3545;font-size: 16px;"
-                    v-if="msgtwo.vehiclesnNo && !vehiclesnNo"
+                    v-if=" (msgtwo.vehiclesnNo && vehiclesnNo < 0) || (msgtwo.vehiclesnNo && vehiclesnNo == null) "
                   >
                     required
                   </span>
@@ -804,32 +802,32 @@ export default {
       if (!this.storeys) {
         this.msgone.storeys = "Storeys is required";
       }
-      if (!this.bedboveg || this.bedboveg < 1) {
+      if (this.bedboveg==null || this.bedboveg < 0) {
         this.msgone.bedboveg = "required";
       }
-      if (!this.bedbelowg || this.bedbelowg < 1) {
+      if (this.bedbelowg == null || this.bedbelowg < 0) {
         this.msgone.bedbelowg = "required";
       }
-      if (!this.fullbathroom || this.fullbathroom < 1) {
+      if (this.fullbathroom ==null || this.fullbathroom < 0) {
         this.msgone.fullbathroom = "required";
       }
-      if (!this.parbathroom || this.parbathroom < 1) {
+      if (this.parbathroom   ==null || this.parbathroom < 0) {
         this.msgone.parbathroom = "required";
       }
-      if (!this.fullbathroom || this.parkspaces < 1) {
+      if (this.parkspaces  ==null || this.parkspaces < 0) {
         this.msgone.parkspaces = "require";
       }
-      if (!this.squfeet || this.squfeet < 1) {
+      if (this.squfeet ==null || this.squfeet < 0) {
         this.msgone.squfeet = "required";
       }
       if (
         this.hometype &&
         this.storeys &&
-        this.bedboveg > 0 &&
-        this.bedbelowg > 0 &&
-        this.parbathroom > 0 &&
-        this.fullbathroom > 0 &&
-        this.squfeet > 0
+        this.bedboveg >= 0 &&
+        this.bedbelowg >= 0 &&
+        this.parbathroom >= 0 &&
+        this.fullbathroom >= 0 &&
+        this.squfeet >= 0
       ) {
         return true;
       }
@@ -865,7 +863,7 @@ export default {
       if (!this.CurrentOccupancy) {
         this.msgtwo.CurrentOccupancy = "CurrentOccupancy is required";
       }
-      if (!this.vehiclesnNo || this.vehiclesnNo < 1) {
+      if (this.vehiclesnNo == null || this.vehiclesnNo < 0) {
         this.msgtwo.vehiclesnNo = "required";
       }
       if (
@@ -874,7 +872,7 @@ export default {
         this.yourbasement &&
         this.prioritysale &&
         this.CurrentOccupancy &&
-        this.vehiclesnNo > 0
+        this.vehiclesnNo >= 0
       ) {
         return true;
       }
@@ -1051,7 +1049,7 @@ input[type="file"] {
   border: 1px solid #f79483 !important;
   box-shadow: rgb(247 148 131/24%) 0px 0px 0px 3px !important;
 }
-.reuired-err {
+.required-err {
   color: rgb(220, 53, 69);
   font-size: 16px;
 }
