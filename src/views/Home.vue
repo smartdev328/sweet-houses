@@ -63,6 +63,10 @@
                       </ul>
                   <span class="spanerr" v-if="errmsg">{{errmsg}}</span>
               </div>
+
+              <div class="itemnew11 mt-2 mt-md-4 d-flex justify-content-center Roboto-Regular">
+                    <textra :data='words' :timer="4" :infinite='true' filter="top-bottom" />  Your Home
+              </div>
           </div>
         </div>
     </header>
@@ -101,7 +105,8 @@ export default {
        service: null ,
       errmsg:'',
       latlong:{ lat:0,lng:0},
-      userlocation:{}
+      userlocation:{},
+       words: ["Buy", "Sell", "List", "Trade","We'll buy","Finance"]
     }
   },
    metaInfo () {
@@ -395,6 +400,10 @@ export default {
   .item1b .item1b3-sm{
     display: none;
   }
+  .itemnew11{
+    font-size: 48px;
+    color: aliceblue;
+  }
  @media only screen and (max-width: 600px){
   .home .item1{
     width: 100%;
@@ -443,6 +452,10 @@ export default {
     flex-shrink: 0;
         width: 100%;
     margin-top: 8px 
+  }
+   .itemnew11{
+    font-size: 20px;
+
   }
 } 
 </style>
