@@ -65,6 +65,11 @@ Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 
+
+
+import Textra from 'vue-textra'
+
+Vue.use(Textra);
 /*share component*/ 
 Vue.component('Navbar',require('./components/share/Navbar.vue').default)
 /* Vue.component('ImageItem',require('./components/share/ImageItem.vue').default) */
