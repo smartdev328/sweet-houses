@@ -61,30 +61,30 @@ comfort of your couch! </p></div>
                     <div class="space-50"></div>
                     <div class="my-4 bg-white py-3 px-1 gridcontainer rounded">
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Example Current Value</p>
-                            <p>$400,000</p>
+                            <p class="mx-1 mb-4 mb-md-3">Example Current Value</p>
+                            <p class="pt-3 pt-md-1">$400,000</p>
                         </div>
                         <div class="gridcol px-3 text-center">
                             <p class="mx-1">Example Improvement
 Cost</p>
-                            <p>$10,000</p>
+                            <p class="pt-4 pt-md-1 Roboto-Regular">$10,000</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Commission</p>
+                            <p class="mx-1 mb-3 mb-md-4">Commission</p>
                             <span class="Roboto-Regular">(7%/3%)</span>
                             <p>$16,900</p>
                         </div>
                          <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Service Fee</p>
+                            <p class="mx-1 mb-3 mb-md-4">Service Fee</p>
                             <span class="Roboto-Regular">(2%)</span>
                             <p>$8,600</p>
                         </div>
                         <div class="gridcol px-2 text-center">
-                            <p class="mx-1">Likely Resale Price</p>
-                            <p>$430,000</p>
+                            <p class="mx-1 mb-4 mb-md-1">Likely Resale Price</p>
+                            <p class="pt-3">$430,000</p>
                         </div>
                          <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-1 mb-md-3">Estimated NET</p>
+                            <p class="mx-1 mb-3 mb-md-4">Estimated NET</p><br>
                             <p>$394,500</p>
                         </div>
                     </div>
@@ -127,17 +127,17 @@ to make good real estate decisions. </li>
                     <div class="space-50"></div>
                     <div class="my-2 bg-white py-3 px-1 gridcontainer rounded">
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Example Current Value</p>
-                            <p>$390,000 to $410,000</p>
+                            <p class="mx-1 mb-4 mb-md-3">Example Current Value</p>
+                            <p class="pt-3 pt-md-2">$390,000 to $410,000</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated Seller 
+                            <p class="mx-1 mb-2 mb-md-4">Estimated Seller 
 Concession</p>
                             <p>1 - 3%</p>
                         </div>
                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Repairs</p>
-                            <p>Based on buyers'
+                            <p class="mx-1 mb-2 mb-md-4">Repairs</p>
+                            <p class="pt-4 pt-md-1">Based on buyers'
 inspection</p>
                         </div>
                          <div class="gridcol px-3 text-center">
@@ -161,7 +161,7 @@ When listing traditionally, market conditions and results will vary</p>
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">You get MORE money from a sweet sale</p>
+                    <p class="DMSerifRegular text-capitalize">You get MORE money from a sweet sale</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -188,7 +188,7 @@ and our fee.</li>
             </div>
         </div>
           <div class="my-2 my-md-5 item4">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-revers-sm">
                 <div class="col-12 col-md-6 d-flex">
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 81 – 1.svg" class="w-100 h-100" alt="">
@@ -196,7 +196,7 @@ and our fee.</li>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                  <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Skip Public Showings</p>
+                    <p class="DMSerifRegular text-capitalize">Skip Public Showings</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -219,7 +219,7 @@ Sweetly takes the home whenever it works for you.</li>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Choose your own moving day</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -246,7 +246,7 @@ conflicts with price.</li>
             </div>
         </div>
         <div class="my-2 my-md-5 item6">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-revers-sm">
                 <div class="col-12 col-md-6 d-flex">
                     <div class="image">
                         <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">
@@ -254,7 +254,7 @@ conflicts with price.</li>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Certainty</p>
+                    <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -274,7 +274,7 @@ $2,000,000 in any major Alberta market.</li>
             </div>
         </div>
         <div class="my-2 my-md-5 item7">
-            <div class="text-center text-color-1 mb-5 DMSerifRegular">
+            <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
                 <p>What Sweetly customers are saying!</p>
             </div>
             <div class="row align-items-center">
@@ -325,7 +325,7 @@ current home lets you make a more compelling offer on your next home without a c
                             </td>
                         </tr>
                         <tr>
-                            <td class="Roboto-Regular">Choose your own moving day</td>
+                            <td class="Roboto-Regular text-capitalize">Choose your own moving day</td>
                             <td class="text-center">
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
@@ -401,7 +401,7 @@ current home lets you make a more compelling offer on your next home without a c
 export default {
     data(){
         return{
-            selected_part:"traditionalpart"
+            selected_part:"Swiftpart"
         }
     },
     computed:{
@@ -648,6 +648,9 @@ export default {
          font-size: 38px;
          font-weight: 600;
      }
+     .page1 .flex-revers-sm{
+         flex-direction: row;
+     }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
     .item2c2 .gridcontainer{
@@ -718,6 +721,9 @@ export default {
     .page1 .item8 .element4{
         font-size: 32px;
     }
+     .page1 .flex-revers-sm{
+         flex-direction: column-reverse;
+     }
     }
 
 </style>

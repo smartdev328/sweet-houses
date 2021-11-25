@@ -6,7 +6,7 @@
                     <div class="px-2 px-md-5 text-center">
                         <p>Sweetly will advance the first part of your home equity - just to get your business! Access $25,000, $50,000, $150,000,
                              or more at the time you list your home with Sweetly.
-                             Our equity advance is interest free for 60 days (5.9% thereafter); and you repay us when the property sells! </p>  <br><br>
+                             Our equity advance is interest free for 60 days (5.9% thereafter); and you repay us when the property sells! </p>
                              
                              <p>*Owners must have sufficient equity to qualify. Higher debt-to-value scenarios may not qualify for this program.
 </p></div>
@@ -17,7 +17,7 @@
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Certainty</p>
+                    <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -45,14 +45,14 @@ choose) within days </li>
             </div>
         </div>
           <div class="my-2 my-md-5 item4">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-row-reverse">
                 <div class="col-12 col-md-6 d-flex">
                  <div class="image">
                         <img src="../../assets/image/homepage/Component 87 – 1.svg" class="w-100 h-100" alt="">
                     </div>                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                  <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Skip ALL Public Showings</p>
+                    <p class="DMSerifRegular text-capitalize">Skip ALL Public Showings</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -75,7 +75,7 @@ commissions apply.</li>
          <div class="mmy-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular">Choose your own moving day</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
@@ -102,7 +102,7 @@ day - like a traditional listing/selling process.</li>
             </div>
         </div>
         <div class="my-2 my-md-5 item6">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-row-reverse">
                 <div class="col-12 col-md-6 d-flex">
                     <div class="image">
                         <img  src="../../assets/image/homepage/Component 89 – 1.svg" class="w-100 h-100" alt="">
@@ -134,7 +134,7 @@ traditional Realtor commission will apply.</li>
                         <tr>
                             <td class="DMSerifRegular">Benefit </td>
                             <td class="text-center DMSerifRegular">Sweetly</td>
-                            <td class="text-center DMSerifRegular">Re/Maxd</td>
+                            <td class="text-center DMSerifRegular">Hot Air Balloon Brand</td>
                         </tr>
                         <tr>
                             <td class="Roboto-Regular">Brokerage provides an interest free* equity advance to help you buy 
@@ -423,7 +423,9 @@ export default {
         margin-top: unset;
     }
 
-
+    .page3 .flex-row-reverse{
+        flex-direction: row;
+    }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
     .item2c2 .gridcontainer{
@@ -474,6 +476,9 @@ export default {
     .page3 .item8 .element2 table tbody tr{
         padding: 7px 12px;
         font-size: 14px;
+    }
+    .page3 .flex-row-reverse{
+        flex-direction: column-reverse;
     }
     }
 
