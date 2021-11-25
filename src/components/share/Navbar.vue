@@ -1,6 +1,6 @@
 <template>
     <div class="shadow-sm">
-  <nav class="navbar navbar-expand-lg container navbar-light bg-transparent sticky-top">
+  <nav class="navbar navbar-expand-lg px-4 navbar-light bg-transparent sticky-top">
   <router-link class="navbar-brand" to="/">
       <div class="logo">
             <img src="@/assets/image/logo.svg" class="w-100 h-100 normalstate" alt="logo" />
