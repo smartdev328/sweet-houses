@@ -54,7 +54,9 @@
                         ></contact-detailsedit>
                     </div>
                     <div :class="tab_visible('personalized-valuation')" class="h-100">
-                        <personalized-valuationedit @opencontactpage="opencontactpage"></personalized-valuationedit>
+                        <personalized-valuationedit @opencontactpage="opencontactpage" 
+                        :contactinput="contactinput"
+                         ></personalized-valuationedit>
                     </div>
                 </div>
 
@@ -67,7 +69,8 @@ export default {
     data :() =>({
         selected_menu:"home-info",
         obj1:{},
-        channelitem:null
+        channelitem:null,
+        contactinput:{}
     }),
     methods:{
         getclass(tab) {
@@ -94,7 +97,7 @@ export default {
     },
     submitparent2(item){
         this.selected_menu = "personalized-valuation"
-        this.channelitem = item
+        this.contactinput = item
     },
     gotoContactPage(){
         this.selected_menu = "contact-details"

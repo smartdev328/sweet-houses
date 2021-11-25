@@ -273,11 +273,11 @@ export default {
               this.emailnotmaildmsg = "";
               let contactinput = {};
               contactinput.socialchanel = this.socialchanel;
-              contactinput.fullname = this.socialchanel;
+              contactinput.fullname = this.fullname;
               contactinput.email = this.email;
               contactinput.phone = this.phone;
               this.$store.commit("setContactDetail", contactinput);
-              this.$emit("submitparent2");
+              this.$emit("submitparent2",contactinput);
             } else {
               this.loadvalid = false;
               this.emailisvalid = false;
