@@ -92,7 +92,6 @@
               >{{ msg.email }}</span
             >
             <span
-              span
               style="color: #dc3545; font-size: 16px"
               v-if="emailnotmaildmsg && !emailisvalid"
               >{{ emailnotmaildmsg }}</span

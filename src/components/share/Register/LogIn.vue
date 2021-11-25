@@ -14,9 +14,14 @@
             </p>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg"  v-model="input.email" placeholder="Email">
-              <span v-if="msg.email && !input.email" style="color: #fc5353;">{{
+              <span v-if="msg.email" style="color: #fc5353;">{{
                   msg.email
                 }}</span>
+                <span
+              style="color: #dc3545; font-size: 16px"
+              v-if="emailnotmaildmsg && !emailisvalid"
+              >{{ emailnotmaildmsg }}</span
+            >
                 <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'email'"
@@ -74,7 +79,9 @@ export default {
         errors: {},
         msg: {},
         loading:false,
-        isLogin:false
+        isLogin:false,
+        emailnotmaildmsg:"",
+        emailisvalid: false,
         }
     },
     methods:{
@@ -98,7 +105,7 @@ export default {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             )
         ) {
-                this.msg.email = "Email is required"
+                this.msg.email = "please enter emai correctly"
         }
           if(this.input.password && this.input.password.length < 7){
               this.msg.password  = "password must be more 6 character"
@@ -108,14 +115,21 @@ export default {
           }
       },
       login(){
-          this.msg={};
-          this.errors={};
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
+
+            this.loading = true
+             this.$http
+          .get(
+            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
+          ).then((res) =>{
+            if(res.data){
+               this.emailisvalid = true;
+              this.emailnotmaildmsg = "";
+
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
-              this.loading = true
-              this.$store
+                  this.$store
           .dispatch("login", this.formData).then((res)=>{
                   this.$notify({
                   group: 'foo',
@@ -140,6 +154,15 @@ export default {
                this.errors = err.response.data || {};
                 this.loading = false
           });
+            }else{
+              this.loading = false
+              this.emailisvalid = false;
+              this.emailnotmaildmsg = "please enter a real email";
+
+            }
+          })
+
+            
       }
           
       },
