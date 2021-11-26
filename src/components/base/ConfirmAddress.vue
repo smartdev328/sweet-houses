@@ -4,7 +4,7 @@
             <div class="col-12 col-md-2  navigation">
                 <div class="py-5">
                     <div class="">
-                        <div class="logo-img mx-auto my-3">
+                        <div class="logo-img mx-auto my-3" @click="routeHomepage()">
                             <img src="../../assets/image/logo.svg" class="w-100 h-100" alt="logo" />
                         </div>
                         <div>
@@ -67,7 +67,7 @@
 <script>
 export default {
     data :() =>({
-        selected_menu:"personalized-valuation",
+        selected_menu:"home-info",
         obj1:{},
         channelitem:null,
         contactinput:{}
@@ -101,6 +101,9 @@ export default {
     },
     gotoContactPage(){
         this.selected_menu = "contact-details"
+    },
+    routeHomepage(){
+        this.$router.push({name:"Home"})
     }
     }
 }

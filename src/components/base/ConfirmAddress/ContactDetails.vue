@@ -224,8 +224,11 @@ export default {
     // },
     checkform() {
       this.msg = {};
-      this.loadvalid = true;
-      if(this.email){
+      
+      if(this.email && this.email.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )){
+        this.loadvalid = true;
          this.$http
           .get(
             `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
