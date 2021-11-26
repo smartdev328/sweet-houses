@@ -27,13 +27,13 @@
             </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
-               <!-- <span v-if="msg.email && !email" style="color: #fc5353;">{{
+                <span v-if="msg.email && !input.email" style="color: #fc5353;font-size: 16px">{{
                   msg.email
-                }}</span> -->
+                }}</span>
                 <span
               style="color: #dc3545; font-size: 16px"
-              v-if="msg.email || (emailnotmaildmsg && !emailisvalid) "
-              >{{ msg.email }}</span
+              v-if="(emailnotmaildmsg && !emailisvalid) "
+              >{{ emailnotmaildmsg }}</span
             >
                 <!-- <div v-for="(error, index) in this.errors" :key="index">
                   <span
@@ -48,13 +48,13 @@
               <span v-if="msg.password && !input.password" style="color: #fc5353;">{{
                   msg.password
                 }}</span>
-                <div v-for="(error, index) in this.errors" :key="index">
+                <!-- <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'password'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div>
+                </div> -->
               <div class="passinput">
                   <span v-if="FieldType === 'password'"  @click="switchVisibility">Show</span>
               <span v-else  @click="switchVisibility">Hide</span>
@@ -108,6 +108,10 @@ export default {
       },
       ckeckform(){
           this.msg={};
+          if( this.input.email &&
+        this.input.email.match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        ))
           this.loadvalid = true
            this.$http
           .get(
