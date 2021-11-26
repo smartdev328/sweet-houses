@@ -17,23 +17,23 @@
                <span v-if="msg.username && !input.username" style="color: #fc5353;">{{
                   msg.username
                 }}</span>
-                <div v-for="(error, index) in this.errors" :key="index">
+                <!-- <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'username'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div>
+                </div> -->
             </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
-               <span v-if="msg.email" style="color: #fc5353;">{{
+               <!-- <span v-if="msg.email && !email" style="color: #fc5353;">{{
                   msg.email
-                }}</span>
-                 <span
+                }}</span> -->
+                <span
               style="color: #dc3545; font-size: 16px"
-              v-if="emailnotmaildmsg && !emailisvalid"
-              >{{ emailnotmaildmsg }}</span
+              v-if="msg.email || (emailnotmaildmsg && !emailisvalid) "
+              >{{ msg.email }}</span
             >
                 <!-- <div v-for="(error, index) in this.errors" :key="index">
                   <span
@@ -108,6 +108,20 @@ export default {
       },
       ckeckform(){
           this.msg={};
+          this.loadvalid = true
+           this.$http
+          .get(
+            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
+          ).then((res)=>{
+            if(res.data){
+               this.emailisvalid = true;
+              this.emailnotmaildmsg = ""
+              this.loadvalid = false
+            }else{
+              this.emailisvalid = false;
+              this.emailnotmaildmsg = "please enter a real email";
+            }
+          })
           if(!this.input.username){
               this.msg.username = "username is required"
           }
@@ -120,7 +134,7 @@ export default {
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         )
       ) {
-            this.msg.email = "please enter emai correctly"
+            this.msg.email = "Please enter the email correctly"
       }
           if(this.input.username && this.input.username.length < 4){
               this.msg.username = "username must be more 4 character"
@@ -138,13 +152,7 @@ export default {
       SignUp(){
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
             this.loading = true
-            this.$http
-          .get(
-            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
-          ).then((res) =>{
-            if(res.data){
-               this.emailisvalid = true;
-              this.emailnotmaildmsg = "";
+
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
@@ -163,6 +171,7 @@ export default {
                 this.$emit('hidesignupmodal');
                 
               }) .catch((err) => {
+                this.loading = false
                 this.formData = new FormData(),
                  this.$notify({
                   group: 'foo',
@@ -175,12 +184,8 @@ export default {
                 this.loading = false
                 console.log(err.response.data)
           });
-            }else{
-              this.loading = false
-              this.emailisvalid = false;
-              this.emailnotmaildmsg = "please enter a real email";
-            }
-          })
+            
+          
               
       }
       },
