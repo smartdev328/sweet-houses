@@ -65,7 +65,7 @@
               </div>
 
               <div class="itemnew11 mt-2 mt-md-4 d-flex justify-content-center Roboto-Regular">
-                    <textra :data='words' :timer="4" :infinite='true' filter="top-bottom" />  Your Home
+                    <textra :data='words' :timer="4" :infinite='true' filter="top-bottom" /> <span class="ml-2">Your Home</span> 
               </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default {
       errmsg:'',
       latlong:{ lat:0,lng:0},
       userlocation:{},
-       words: ["Buy", "Sell", "List", "Trade","We'll buy","Finance"]
+       words: ["Buy", "Sell", "List","Trade","Finance","Unlock"]
     }
   },
    metaInfo () {
@@ -403,6 +403,9 @@ export default {
   .itemnew11{
     font-size: 48px;
     color: aliceblue;
+  }
+  .itemnew11 span{
+    text-decoration: underline;
   }
  @media only screen and (max-width: 600px){
   .home .item1{
