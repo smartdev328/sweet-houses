@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import store from '../store/index'
 Vue.use(VueRouter)
 
 
@@ -9,6 +9,16 @@ function lazyLoad(view){
   return() => import(`../components/base/${view}.vue`)
 }
 
+function requireAddress(to, from, next) {
+  if (store.state.homeaddress) {
+      next();
+  } else {
+      next({
+        name: 'Home'
+      });
+  }
+  next();
+}
 const routes = [
   {
     path: '/',
@@ -125,8 +135,9 @@ const routes = [
     path:'/confirm-address',
     name:'ConfirmAddress',
     component: () => import('../components/base/ConfirmAddress.vue'),
+    beforeEnter: requireAddress,
     meta: {
-      hideNavbar: true,
+      hideNavbar: true
      }
     
   },
