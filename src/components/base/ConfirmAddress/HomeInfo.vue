@@ -128,8 +128,7 @@
                     type="button"
                     @click="bedboveg--"
                   >
-                    <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>-</span>
+                    <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -154,8 +153,7 @@
                     type="button"
                     @click="bedboveg++"
                   >
-                    <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>+</span>
+                  <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -176,7 +174,7 @@
                     @click="bedbelowg--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>-</span>
+                  <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -201,7 +199,7 @@
                     @click="bedbelowg++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>+</span>
+                    <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -222,7 +220,7 @@
                     @click="fullbathroom--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>-</span>
+                   <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -247,7 +245,7 @@
                     @click="fullbathroom++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>+</span>
+                   <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -268,7 +266,7 @@
                     @click="parbathroom--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>-</span>
+                  <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -293,7 +291,7 @@
                     @click="parbathroom++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>+</span>
+                   <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -339,7 +337,7 @@
                     @click="parkspaces--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>-</span>
+                 <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -364,7 +362,7 @@
                     @click="parkspaces++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
-                    <span>+</span>
+                    <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -491,7 +489,7 @@
                     type="button"
                     @click="vehiclesnNo--"
                   >
-                    <span class="mb-1">-</span>
+                    <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
                 </div>
                 <div class="col-sm-3">
@@ -516,7 +514,7 @@
                     type="button"
                     @click="vehiclesnNo++"
                   >
-                    <span class="mb-2">+</span>
+                    <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
                 </div>
               </div>
@@ -960,9 +958,9 @@ input:focus {
   justify-content: center;
   transition: .3s ease-in-out;
 }
-.minus-btn {
+/* .minus-btn {
   padding-bottom: 8px;
-}
+} */
 .minus-btn:hover,
 .plus-btn:hover {
     border: 1px solid rgb(255, 182, 0);

@@ -75,7 +75,7 @@
           </div>
           <div
             class="form-group mx-auto my-3 text-left"
-            :class="{ 'input--error': msg.email && !email }"
+            :class="{ 'input--error': msg.email || (emailnotmaildmsg && !emailisvalid) }"
           >
             <div class="">
               <input
@@ -88,14 +88,14 @@
             </div>
             <span
               style="color: #dc3545; font-size: 16px"
-              v-if="msg.email && !email"
+              v-if="msg.email || (emailnotmaildmsg && !emailisvalid) "
               >{{ msg.email }}</span
             >
-            <span
+            <!-- <span
               style="color: #dc3545; font-size: 16px"
               v-if="emailnotmaildmsg && !emailisvalid"
               >{{ emailnotmaildmsg }}</span
-            >
+            > -->
           </div>
           <div class="form-group mx-auto my-3 text-left">
             <div class="">
@@ -106,7 +106,10 @@
                 error-color="orangered"
               />
             </div>
-            <span style="color: #dc3545; font-size: 16px" v-if="msg.phone">{{
+            <span style="color: #dc3545; font-size: 16px" v-if="msg.phone && !phone">{{
+              msg.phone
+            }}</span>
+             <span style="color: #dc3545; font-size: 16px" v-if="phone && resultsExample && !resultsExample.isValid">{{
               msg.phone
             }}</span>
           </div>
@@ -221,6 +224,25 @@ export default {
     // },
     checkform() {
       this.msg = {};
+      this.loadvalid = true;
+      if(this.email){
+         this.$http
+          .get(
+            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+          )
+          .then((res) => {
+            if (res.data) {
+              this.emailisvalid = true;
+              this.loadvalid = false;
+             this.msg.email = "";
+            } else {
+              this.loadvalid = false;
+              this.emailisvalid = false;
+            this.msg.email = "please enter a real email";
+            }
+          });
+      }
+      
       if (!this.fullname) {
         this.msg.fullname = "Fullname is required";
       }
@@ -246,7 +268,8 @@ export default {
         this.fullname &&
         this.email &&
         this.phone &&
-        this.resultsExample.isValid
+        this.resultsExample.isValid &&
+        this.emailisvalid
       ) {
         return true;
       }
@@ -260,16 +283,16 @@ export default {
     },
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {
-        this.loadvalid = true;
-        this.$http
-          .get(
-            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
-          )
-          .then((res) => {
-            if (res.data) {
-              this.emailisvalid = true;
-              this.loadvalid = false;
-              this.emailnotmaildmsg = "";
+      //  this.loadvalid = true;
+     ///   this.$http
+      //    .get(
+      //      `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+      //    )
+      //    .then((res) => {
+       //     if (res.data) {
+        //      this.emailisvalid = true;
+        //      this.loadvalid = false;
+        //      this.emailnotmaildmsg = "";
               let contactinput = {};
               contactinput.socialchanel = this.socialchanel;
               contactinput.fullname = this.fullname;
@@ -277,12 +300,12 @@ export default {
               contactinput.phone = this.phone;
               this.$store.commit("setContactDetail", contactinput);
               this.$emit("submitparent2",contactinput);
-            } else {
-              this.loadvalid = false;
-              this.emailisvalid = false;
-              this.emailnotmaildmsg = "please enter a real email";
-            }
-          });
+         //   } else {
+         //     this.loadvalid = false;
+        //      this.emailisvalid = false;
+        //      this.emailnotmaildmsg = "please enter a real email";
+       //     }
+   //       });
       }
       //  let contactinput = {}
       //  contactinput.socialchanel =  this.socialchanel
