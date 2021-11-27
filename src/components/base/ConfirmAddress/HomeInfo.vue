@@ -1,6 +1,6 @@
 <template>
   <div class="home-info-form2">
-    <div class="px-2 px-md-5 w-100 mx-0">
+    <div class="px-0 px-md-5 w-100 mx-0">
       <div v-if="tab_visible == 'menu_one'">
         <p class="text-center text-color-1 DMSerifRegular font-weight-bold">
           Is this the right address?
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="d-flex" v-if="tab_visible == 'menu_two'">
+      <div class="d-flex row" v-if="tab_visible == 'menu_two'">
         <div class="col-1 mr-auto mr-md-0 ml-md-auto">
           <p
             @click="tab_visible = 'menu_one'"
@@ -36,7 +36,7 @@
             <b-icon icon="chevron-left"></b-icon>
           </p>
         </div>
-        <div class="col-11 col-md-7 mr-auto item11 text-center p-2 px-md-4">
+        <div class="col-12 col-md-7 mr-auto item11 text-center p-2 px-md-4">
           <div class="item11a DMSerifRegular">
             <p>Tell us about your home</p>
           </div>
@@ -143,6 +143,7 @@
                   />
                   <span
                     class="required-err"
+                    style="position:absolute;top:38px"
                     v-if="(msgone.bedboveg && bedboveg < 0) || (msgone.bedboveg && bedboveg == null) "
                     >required</span
                   >
@@ -188,6 +189,7 @@
                   />
                   <span
                     class="required-err"
+                    style="position:absolute;top:38px"
                     v-if="(msgone.bedbelowg && bedbelowg < 0) || (msgone.bedbelowg && bedbelowg == null)"
                     >required</span
                   >
@@ -234,6 +236,7 @@
                   />
                   <span
                     class="required-err"
+                    style="position:absolute;top:38px"
                     v-if="(msgone.fullbathroom && fullbathroom < 0) || (msgone.fullbathroom && fullbathroom == null)"
                     >required</span
                   >
@@ -280,6 +283,7 @@
                   />
                   <span
                     class="required-err"
+                    style="position:absolute;top:38px"
                     v-if=" (msgone.parbathroom && parbathroom < 0) || (msgone.parbathroom && parbathroom == null) "
                     >required</span
                   >
@@ -314,7 +318,7 @@
                     v-model.number="squfeet"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
-                  <span class="required-err" v-if=" (msgone.squfeet && squfeet < 0) || (msgone.squfeet && squfeet == null)"
+                  <span class="required-err" style="position:absolute;top:38px" v-if=" (msgone.squfeet && squfeet < 0) || (msgone.squfeet && squfeet == null)"
                     >required</span
                   >
                 </div>
@@ -351,6 +355,7 @@
                   />
                   <span
                     class="required-err"
+                    style="position:absolute;top:38px"
                     v-if="(msgone.parkspaces && parkspaces < 0) || (msgone.parkspaces && parkspaces == null) "
                     >required</span
                   >
@@ -383,7 +388,7 @@
         </div>
       </div>
 
-      <div class="d-flex" v-if="tab_visible == 'menu_three'">
+      <div class="d-flex row" v-if="tab_visible == 'menu_three'">
         <div class="col-1 mr-auto mr-md-0 ml-md-auto">
           <p
             @click="tab_visible = 'menu_two'"
@@ -393,7 +398,7 @@
             <b-icon icon="chevron-left"></b-icon>
           </p>
         </div>
-        <div class="col-11 col-md-7 mr-auto item11 text-center p-2 p-md-4">
+        <div class="col-12 col-md-7 mr-auto item11 text-center p-2 p-md-4">
           <div class="item11a DMSerifRegular">
             <p>Tell us about your home</p>
           </div>
@@ -502,7 +507,7 @@
                     class="pl-2 form-control border bg-white no-arrow"
                   />
                   <span
-                    style="color: #dc3545;font-size: 16px;"
+                    style="color: #dc3545;font-size: 16px;position:absolute;top:38px"
                     v-if=" (msgtwo.vehiclesnNo && vehiclesnNo < 0) || (msgtwo.vehiclesnNo && vehiclesnNo == null) "
                   >
                     required
@@ -941,7 +946,10 @@ input:focus {
   border: 0;
 }
 .minus-btn,
-.plus-btn {
+.plus-btn,
+.minus-btn:disabled,
+.plus-btn:disabled
+ {
   width: 40px;
   height: 40px;
   /* font-size: 1em; */
@@ -957,6 +965,9 @@ input:focus {
   -webkit-box-pack: center;
   justify-content: center;
   transition: .3s ease-in-out;
+}
+.btn.disabled, .btn:disabled{
+  opacity: 1;
 }
 /* .minus-btn {
   padding-bottom: 8px;
@@ -1069,6 +1080,11 @@ input[type="file"] {
   }
   .d-style {
     display: flex !important;
+    width: 100%;
+  }
+  .d-style  div{
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

@@ -1,8 +1,11 @@
 <template ref="home">
   <div class="home">
     <header>
-        <div class="py-2 py-md-5">
-          <div class="item1 mt-4">
+        <div class="p-5">
+                <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
+                    <textra :data='words' :timer="4" :infinite='true' filter="top-bottom" /> <span class="ml-2">Your Home</span> 
+              </div>
+          <div class="item1 mt-4 mb-3">
               <div class="item1a">
                 <button @click="selected_menu = 'Sweet_Sale'" 
                 :style="getclass('Sweet_Sale')">Sweet Sale 
@@ -62,10 +65,6 @@
                         </li>
                       </ul>
                   <span class="spanerr" v-if="errmsg">{{errmsg}}</span>
-              </div>
-
-              <div class="itemnew11 mt-2 mt-md-4 d-flex justify-content-center Roboto-Regular">
-                    <textra :data='words' :timer="4" :infinite='true' filter="top-bottom" /> <span class="ml-2">Your Home</span> 
               </div>
           </div>
         </div>

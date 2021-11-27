@@ -41,7 +41,7 @@
               <div class="d-sm-only text-center Roboto-Regular pt-3">
                 <p>{{selected_menu}}</p>
             </div>
-            <div class="col-12 col-md-10">
+            <div class="col-12 p-0 pl-md-1 col-md-10">
                 <div class="my-5">
                     <div :class="tab_visible('home-info')" class="h-100">
                         <home-infoedit @submitparent="submitparent"

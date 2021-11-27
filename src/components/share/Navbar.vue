@@ -12,7 +12,7 @@
   <div v-if="isLoggedIn" class="collapse navbar-collapse mx-auto DMSerifRegular" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
        <li class="nav-item">
-        <router-link class="nav-link" to="/maphome">Browse Homes</router-link>
+        <router-link class="nav-link" to="/maphome"  exact-path>Browse Homes</router-link>
       </li>
         <li class="nav-item">
         <router-link to="/Whats-My-Home-Worth" class="nav-link">
@@ -219,5 +219,12 @@ nav a:focus{
 }
  .b-r-1{
   border-right: 2px solid #70707099;
+}
+.navbar-nav .nav-item a:hover{
+  color: #707070 !important;
+  text-decoration: underline;
+}
+.navbar-nav .nav-item  .router-link-exact-active{
+  color: #04847f !important
 }
 </style>
