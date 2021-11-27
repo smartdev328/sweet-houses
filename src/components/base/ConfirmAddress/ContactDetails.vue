@@ -2,13 +2,13 @@
   <div class="contact-details-form">
     <div v-if="tab_visible == 'menu_one'">
       <div class="row">
-        <div class="col-12 col-md-6 mx-auto d-flex">
+        <div class="col-12 row p-0 col-md-6 mx-auto d-flex">
           <div class="col-1 col-md-1 mr-sm-auto ml-md-auto">
             <p class="h1" @click="openhomeinfopage" style="cursor: pointer">
               <b-icon icon="chevron-left"></b-icon>
             </p>
           </div>
-          <div class="item1z p-1 p-md-4">
+          <div class="item1z p-1 p-md-4 col-12 col-md-11">
             <div class="item1az text-center">
               <p class="text-color-1 DMSerifRegular">
                 How did you hear about us?
@@ -16,7 +16,7 @@
             </div>
             <div class="item1bz row">
               <div
-                class="col-8 col-md-6 mx-auto"
+                class="col-8 col-md-6 mx-auto  "
                 v-for="channel in socialchanels"
                 :key="channel.id"
               >
@@ -75,7 +75,7 @@
           </div>
           <div
             class="form-group mx-auto my-3 text-left"
-            :class="{ 'input--error': msg.email || (emailnotmaildmsg && !emailisvalid) }"
+            :class="{ 'input--error': msg.email && !email  ,  'input--error': (emailnotmaildmsg && !emailisvalid) }"
           >
             <div class="">
               <input
@@ -88,14 +88,14 @@
             </div>
             <span
               style="color: #dc3545; font-size: 16px"
-              v-if="msg.email || (emailnotmaildmsg && !emailisvalid) "
+              v-if="msg.email  &&!email"
               >{{ msg.email }}</span
             >
-            <!-- <span
+             <span
               style="color: #dc3545; font-size: 16px"
               v-if="emailnotmaildmsg && !emailisvalid"
               >{{ emailnotmaildmsg }}</span
-            > -->
+            > 
           </div>
           <div class="form-group mx-auto my-3 text-left">
             <div class="">
@@ -237,11 +237,11 @@ export default {
             if (res.data) {
               this.emailisvalid = true;
               this.loadvalid = false;
-             this.msg.email = "";
+             this.emailnotmaildmsg=""
             } else {
               this.loadvalid = false;
               this.emailisvalid = false;
-            this.msg.email = "please enter a real email";
+            this.emailnotmaildmsg = "please enter a real email";
             }
           });
       }
