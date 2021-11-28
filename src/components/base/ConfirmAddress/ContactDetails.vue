@@ -226,30 +226,6 @@ export default {
     //       this.emailnotmaildmsg = "please enter a real email";
     //     });
     // },
-    checkdata(){
-      this.msg = {};
-      
-       if(this.email && this.email.match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )){
-        this.loadvalid = true;
-         this.$http
-          .get(
-            `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
-          )
-          .then((res) => {
-            if (res.data) {
-              this.emailisvalid = true;
-              this.loadvalid = false;
-             this.emailnotmaildmsg=""
-            } else {
-              this.loadvalid = false;
-              this.emailisvalid = false;
-            this.emailnotmaildmsg = "please enter a real email";
-            }
-          });
-      }
-    },
     checkform() {
       this.msg = {};
       this.emailnotmaildmsg = "";
