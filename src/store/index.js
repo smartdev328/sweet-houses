@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'http://35.182.224.125:80/api/'
+axios.defaults.baseURL = 'http://newsweetly.com/api/'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
