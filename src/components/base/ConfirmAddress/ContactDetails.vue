@@ -1,5 +1,8 @@
 <template>
   <div class="contact-details-form">
+    <div class="px-0 px-md-5 w-100 mx-0">
+
+   
     <div v-if="tab_visible == 'menu_one'">
       <div class="row">
         <div class="col-12 row p-0 col-md-6 mx-auto d-flex">
@@ -39,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div v-if="tab_visible == 'menu_two'" class="row container w-100 mx-0">
+    <div v-if="tab_visible == 'menu_two'" class="row container px-0 w-100 mx-0">
       <div class="col-1 col-md-1 mr-sm-auto ml-md-auto">
         <p class="h1" @click="tab_visible = 'menu_one'" style="cursor: pointer">
           <b-icon icon="chevron-left"></b-icon>
@@ -75,7 +78,7 @@
           </div>
           <div
             class="form-group mx-auto my-3 text-left"
-            :class="{ 'input--error': msg.email && !email  ,  'input--error': (emailnotmaildmsg && !emailisvalid) }"
+            :class="{ 'input--error': msg.email ,  'input--error': (emailnotmaildmsg && !emailisvalid) }"
           >
             <div class="">
               <input
@@ -88,7 +91,7 @@
             </div>
             <span
               style="color: #dc3545; font-size: 16px"
-              v-if="msg.email  &&!email"
+              v-if="msg.email "
               >{{ msg.email }}</span
             >
              <span
@@ -173,6 +176,7 @@
         </div>
       </div>
     </div>
+     </div>
   </div>
 </template>
 <script>
@@ -222,10 +226,9 @@ export default {
     //       this.emailnotmaildmsg = "please enter a real email";
     //     });
     // },
-    checkform() {
+    checkdata(){
       this.msg = {};
-      
-      if(this.email && this.email.match(
+       if(this.email && this.email.match(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         )){
         this.loadvalid = true;
@@ -245,6 +248,9 @@ export default {
             }
           });
       }
+    },
+    checkform() {
+      this.msg = {};
       
       if (!this.fullname) {
         this.msg.fullname = "Fullname is required";
@@ -271,8 +277,8 @@ export default {
         this.fullname &&
         this.email &&
         this.phone &&
-        this.resultsExample.isValid &&
-        this.emailisvalid
+        this.resultsExample.isValid 
+      //  this.emailisvalid
       ) {
         return true;
       }
@@ -286,16 +292,16 @@ export default {
     },
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {
-      //  this.loadvalid = true;
-     ///   this.$http
-      //    .get(
-      //      `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
-      //    )
-      //    .then((res) => {
-       //     if (res.data) {
-        //      this.emailisvalid = true;
-        //      this.loadvalid = false;
-        //      this.emailnotmaildmsg = "";
+        this.loadvalid = true;
+      this.$http
+      .get(
+          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+          )
+          .then((res) => {
+           if (res.data) {
+              this.emailisvalid = true;
+              this.loadvalid = false;
+            this.emailnotmaildmsg = "";
               let contactinput = {};
               contactinput.socialchanel = this.socialchanel;
               contactinput.fullname = this.fullname;
@@ -303,12 +309,12 @@ export default {
               contactinput.phone = this.phone;
               this.$store.commit("setContactDetail", contactinput);
               this.$emit("submitparent2",contactinput);
-         //   } else {
-         //     this.loadvalid = false;
-        //      this.emailisvalid = false;
-        //      this.emailnotmaildmsg = "please enter a real email";
-       //     }
-   //       });
+            } else {
+             this.loadvalid = false;
+             this.emailisvalid = false;
+              this.emailnotmaildmsg = "please enter a real email";
+           }
+          });
       }
       //  let contactinput = {}
       //  contactinput.socialchanel =  this.socialchanel

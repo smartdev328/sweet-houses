@@ -416,11 +416,15 @@ export default {
   .home .item1 .item1b p:first-child{
     font-size: 20px;
   }
+   .item1 .item1b .inputaddress{
+    padding: 0px 10px;
+  }
   .item1 .item1b .inputaddress img{
     margin-left: 4px;
     width: 20px;
     height: 20px;
   }
+ 
   .item1b .item1b3 button ,
     .item1b .item1b3-sm button
   {
