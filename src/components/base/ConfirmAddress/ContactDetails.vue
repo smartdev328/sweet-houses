@@ -228,6 +228,7 @@ export default {
     // },
     checkdata(){
       this.msg = {};
+      
        if(this.email && this.email.match(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         )){
@@ -251,7 +252,7 @@ export default {
     },
     checkform() {
       this.msg = {};
-      
+      this.emailnotmaildmsg = "";
       if (!this.fullname) {
         this.msg.fullname = "Fullname is required";
       }
@@ -312,7 +313,7 @@ export default {
             } else {
              this.loadvalid = false;
              this.emailisvalid = false;
-              this.emailnotmaildmsg = "please enter a real email";
+            this.emailnotmaildmsg = "please enter a real email";
            }
           });
       }
