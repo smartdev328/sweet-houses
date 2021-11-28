@@ -406,6 +406,10 @@ export default {
   .itemnew11 span{
     text-decoration: underline;
   }
+  .textra{
+    width: 160px !important;
+    text-align: end;
+  }
  @media only screen and (max-width: 600px){
   .home .item1{
     width: 100%;
