@@ -467,5 +467,8 @@ export default {
     font-size: 20px;
 
   }
+    .textra{
+    width: 60px !important;
+  }
 } 
 </style>
