@@ -179,6 +179,7 @@ export default {
                 console.log(err.response.data)
           });
             } else {
+              this.loading = false;
              this.loadvalid = false;
              this.emailisvalid = false;
             this.emailnotmaildmsg = "please enter a real email";
