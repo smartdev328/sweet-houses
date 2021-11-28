@@ -291,6 +291,9 @@ export default {
     openhomeinfopage() {
       this.$emit("openhomeinfopage");
     },
+    scheduleEvent() {
+      this.$router.push({ name: "SuceessMsg" });
+    },
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {
         this.loadvalid = true;
@@ -309,7 +312,8 @@ export default {
               contactinput.email = this.email;
               contactinput.phone = this.phone;
               this.$store.commit("setContactDetail", contactinput);
-              this.$emit("submitparent2",contactinput);
+              this.scheduleEvent()
+             // this.$emit("submitparent2",contactinput);
             } else {
              this.loadvalid = false;
              this.emailisvalid = false;

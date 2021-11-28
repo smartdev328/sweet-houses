@@ -45,7 +45,7 @@
 export default {
     methods:{
         routetohome(){
-            this.$router.push({name:"SuceessMsg"})
+            this.$router.push({name:"Home"})
         }
     }
 }

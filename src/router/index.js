@@ -13,10 +13,10 @@ function requireAddress(to, from, next) {
   if (store.state.homeaddress) {
       next();
   } else {
-    next();
-      // next({
-      //   name: 'Home'
-      // });
+   // next();
+       next({
+         name: 'Home'
+       });
   }
   next();
 }
