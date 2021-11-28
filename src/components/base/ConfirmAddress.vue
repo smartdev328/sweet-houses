@@ -24,15 +24,7 @@
                                         <img src="../../assets/image/icon/Group 13466.svg" class="w-100 h-100" alt="icon">
                                     </div>
                                     <p class="ml-3">Contact Details</p>
-                                </li>
-                                <li class="my-3" 
-                                :style="getclass('personalized-valuation')"
-                                >
-                                    <div class="icon">
-                                        <img src="../../assets/image/icon/Group 13467.svg" class="w-100 h-100" alt="icon">
-                                    </div>
-                                    <p class="ml-3">Personalized Valuation</p>
-                                </li>
+                                </li> 
                             </ul>
                         </div>
                     </div>
@@ -49,15 +41,16 @@
                         ></home-infoedit>
                     </div>
                     <div :class="tab_visible('contact-details')" class="h-100">
-                        <contact-detailsedit @submitparent2="submitparent2" 
+                        <contact-detailsedit
+                        
+                         
                         @openhomeinfopage="openhomeinfopage"
                         ></contact-detailsedit>
                     </div>
-                    <div :class="tab_visible('personalized-valuation')" class="h-100">
-                        <personalized-valuationedit @opencontactpage="opencontactpage" 
-                        :contactinput="contactinput"
+                    <!-- <div :class="tab_visible('personalized-valuation')" class="h-100">
+                        <personalized-valuationedit
                          ></personalized-valuationedit>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -70,7 +63,7 @@ export default {
         selected_menu:"home-info",
         obj1:{},
         channelitem:null,
-        contactinput:{}
+      //  contactinput:{}
     }),
     methods:{
         getclass(tab) {
@@ -81,9 +74,9 @@ export default {
     openhomeinfopage(){
         this.selected_menu = "home-info"
     },
-    opencontactpage(){
-        this.selected_menu = "contact-details"
-    },
+    // opencontactpage(){
+    //     this.selected_menu = "contact-details"
+    // },
     tab_visible(tab) {
         if (tab == this.selected_menu) {
             return "d-block";
@@ -95,10 +88,10 @@ export default {
         this.selected_menu = "contact-details"
         this.obj1 = obj1
     },
-    submitparent2(item){
-        this.selected_menu = "personalized-valuation"
-        this.contactinput = item
-    },
+    // submitparent2(item){
+    //     this.selected_menu = "personalized-valuation"
+    //     this.contactinput = item
+    // },
     gotoContactPage(){
         this.selected_menu = "contact-details"
     },
