@@ -524,6 +524,25 @@ body{
 .vue-map-container .vue-map{
   border-radius: 12px;
 }
+.vs__dropdown-toggle{
+  border: 0;
+}
+.vs--unsearchable .vs__search{
+  color: #495057d1;
+}
+.vs__dropdown-option{
+  padding: 6px 4px !important;
+  color: #495057d1;
+  font-family: 'Roboto-Light' , sans-serif  !important;
+
+}
+.vs__dropdown-option--highlight{
+  background-color: #fff;
+}
+.vs__dropdown-option:hover{
+  background: #ffb600;
+  color: #fff ;
+}
 @media only screen and (max-width: 600px){
   .home header{
     height: 85vh;
