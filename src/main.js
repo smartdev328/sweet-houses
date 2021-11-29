@@ -14,6 +14,10 @@ export const eventBus = new Vue();
 import VuePhoneNumberInput from 'vue-phone-number-input';
 import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
+import VueGoogleAutocomplete from 'vue-google-autocomplete'
+Vue.component('vue-google-autocomplete',VueGoogleAutocomplete)
+
+
 Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 
 import axios from 'axios'
@@ -109,6 +113,7 @@ Vue.component('address-map',require('./components/base/AddressMap.vue').default)
 Vue.component('show-map',require('./components/base/ShowMap.vue').default)
 Vue.component('show-list',require('./components/base/ShowList.vue').default)
 
+
 Vue.component('card-home',require('./components/share/CardHome.vue').default)
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -119,6 +124,9 @@ Vue.use(VueGoogleMaps, {
   }
 })
 
+import vSelect from "vue-select";
+
+Vue.component("v-select", vSelect);
 
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta, {

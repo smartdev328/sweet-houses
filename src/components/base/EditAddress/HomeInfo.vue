@@ -171,6 +171,9 @@ export default {
   color:#495057d1;
   background: url(../../../assets/image/icon/IconlyRight2.svg) 96% / 5% no-repeat #fff;
 }
+.selectspecbg select option:hover{
+    background: red  !important;
+}
 .selectspecchanged select{
     color:#000;
 }

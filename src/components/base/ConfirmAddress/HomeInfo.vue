@@ -52,7 +52,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular  text-left"
                 :class="{ selectspecchanged: changedsubcategory }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   @change="changestylesub()"
                   class="form-control form-control-lg Roboto-Regular"
@@ -69,7 +69,16 @@
                     :value="hometype.value"
                     >{{ hometype.name }}</option
                   >
-                </select>
+                </select>  -->
+                 <v-select 
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="hometype"
+                    :options="hometypes" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgone.hometype && !hometype"
@@ -88,7 +97,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular  text-left"
                 :class="{ selectspecchanged: changedStorey }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince "
                   @change="changestyleStorey()"
                   class="form-control form-control-lg Roboto-Regular"
@@ -103,9 +112,20 @@
                     v-for="StoreyType in StoreysType"
                     :key="StoreyType.id"
                     :value="StoreyType.value"
-                    >{{ StoreyType.name }}</option
+                    >
+                    <p >{{ StoreyType.name }}</p>
+                   </option
                   >
-                </select>
+                </select> -->
+                  <v-select 
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="storeys"
+                    :options="StoreysType" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgone.storeys && !storeys"
@@ -418,7 +438,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedhomecondition }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   id="homecondition "
                   @change="changehcond()"
@@ -435,7 +455,16 @@
                     :value="homecondition.value"
                     >{{ homecondition.name }}</option
                   >
-                </select>
+                </select> -->
+                 <v-select 
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="homecondition"
+                    :options="homeconditions" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.homecondition && !homecondition"
@@ -454,7 +483,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changeddercrube }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   id="dercrubes"
                   @change="changedescibe()"
@@ -471,7 +500,16 @@
                     :value="dercrube.value"
                     >{{ dercrube.name }}</option
                   >
-                </select>
+                </select> -->
+                 <v-select 
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="dercrube"
+                    :options="dercrubes" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.dercrube && !dercrube"
@@ -535,7 +573,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedbasement }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   @change="changebasement()"
                   class="form-control form-control-lg Roboto-Regular"
@@ -552,7 +590,16 @@
                     :value="basement.value"
                     >{{ basement.name }}</option
                   >
-                </select>
+                </select> -->
+                  <v-select 
+                    class="form-control form-control-lg Roboto-Regular"
+                    v-model="yourbasement"
+                    :options="basements" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.yourbasement && !yourbasement"
@@ -571,7 +618,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedprioritysale }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   @change="changesale()"
                   class="form-control form-control-lg Roboto-Regular"
@@ -588,7 +635,16 @@
                     :value="prioritysale.value"
                     >{{ prioritysale.name }}</option
                   >
-                </select>
+                </select> -->
+                 <v-select 
+                    class="form-control form-control-lg Roboto-Regular"
+                    v-model="prioritysale"
+                    :options="prioritysales" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.prioritysale && !prioritysale"
@@ -609,7 +665,7 @@
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedCurrentOccupancy }"
               >
-                <select
+                <!-- <select
                   name="canadianprovince"
                   @change="changeCurrentOccupancy()"
                   class="form-control form-control-lg Roboto-Regular text-left"
@@ -626,7 +682,16 @@
                     :value="CurrentOccupancy.value"
                     >{{ CurrentOccupancy.name }}</option
                   >
-                </select>
+                </select> -->
+                 <v-select 
+                    class="form-control form-control-lg Roboto-Regular"
+                    v-model="CurrentOccupancy"
+                    :options="CurrentOccupancies" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.CurrentOccupancy && !CurrentOccupancy"
@@ -686,6 +751,7 @@ export default {
       StoreysType: [
         { value: "1 (Bungalow)", name: "1 (Bungalow)" },
         { value: "2-Storey", name: "2-Storey" },
+       { value: "1 1/2 Storey", name: "1 1/2 Storey" },
         { value: "2 1/2 Storey", name: "2 1/2 Storey" },
         { value: "3-Storey", name: "3-Storey" },
         { value: "3 Storey or more", name: "3 Storey or more" },
@@ -793,9 +859,6 @@ export default {
     },
     changestyleStorey() {
       this.changedStorey = true;
-    },
-    test() {
-      this.$emit("submitparent", this.obj1);
     },
     onecheckform() {
       this.msgone = {};
@@ -907,7 +970,9 @@ export default {
   },
 };
 </script>
+
 <style scoped>
+
 .home-info-form2 p:first-child {
   font-size: 46px;
 }
@@ -1024,12 +1089,19 @@ input[type="number"]:focus {
   -moz-appearance: none;
   appearance: none;
   color: #495057d1;
-  background: url(../../../assets/image/icon/Arrowtop.svg) 96% / 10% no-repeat
+  background: url(../../../assets/image/icon/Arrowtop.svg) 96% / 5% no-repeat
     #fff;
   border: 0;
   outline: 1px solid #ccc;
   outline-offset: -1px;
 }
+.selectspecbg .form-control-lg{
+      padding: 0.5rem 0rem;
+}
+.selectspecbg .v-select{
+   color: #495057d1;
+}
+
 .selectspecchanged select {
   color: #000;
 }
@@ -1054,7 +1126,9 @@ input[type="file"] {
 .d-style {
   display: contents;
 }
-.input--error input[type="number"] {
+.input--error input[type="number"] ,
+.input--error .v-select
+{
   border: 1px solid #f79483 !important;
   box-shadow: rgb(247 148 131/24%) 0px 0px 0px 3px !important;
 }
