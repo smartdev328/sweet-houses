@@ -108,6 +108,7 @@ export default {
       },
       ckeckform(){
           this.msg={};
+          this.errors =  {};
           this.emailnotmaildmsg =  "";
           if(!this.input.username){
               this.msg.username = "username is required"
