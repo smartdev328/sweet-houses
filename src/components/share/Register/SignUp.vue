@@ -18,13 +18,13 @@
                <span v-if="msg.username && !input.username" style="color: #fc5353;">{{
                   msg.username
                 }}</span>
-                <!-- <div v-for="(error, index) in this.errors" :key="index">
+                 <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'username'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div> -->
+                </div> 
             </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
@@ -36,26 +36,26 @@
               v-if="(emailnotmaildmsg && !emailisvalid) "
               >{{ emailnotmaildmsg }}</span
             >
-                <!-- <div v-for="(error, index) in this.errors" :key="index">
+                 <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'email'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div> -->
+                </div>
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
               <span v-if="msg.password && !input.password" style="color: #fc5353;">{{
                   msg.password
                 }}</span>
-                <!-- <div v-for="(error, index) in this.errors" :key="index">
+                <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'password'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div> -->
+                </div>
               <div class="passinput">
                   <span v-if="FieldType === 'password'"  @click="switchVisibility">Show</span>
               <span v-else  @click="switchVisibility">Hide</span>
@@ -141,7 +141,8 @@ export default {
             this.loading = true
               this.$http
       .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
+          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`,
+          
           ).then((res) =>{
              if (res.data) {
               this.emailisvalid = true;
@@ -170,7 +171,7 @@ export default {
                  this.$notify({
                   group: 'foo',
                   type: "error",
-                  text: 'Ooops!,There are some errors',
+                  text: err.response.data.msg,
                   duration:6000,
                   speed:500
                 });

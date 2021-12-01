@@ -138,7 +138,7 @@ export default {
                 this.$notify({
                   group: 'foo',
                   type: "error",
-                  text: 'Ooops!,There are some errors',
+                  text: err.response.data.msg,
                   duration:6000,
                   speed:500
                 });
