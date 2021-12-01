@@ -23,14 +23,14 @@
                         </p>
                     </div>
                     <div class="item4 bg-white shadow-lg">
-                        <div class="p-5 d-flex justify-content-between">
+                        <div class="p-3 p-md-5 d-flex justify-content-between">
                             <div class="image">
                                 <img src="../../assets/image/icon/ico81.svg" class="w-100 h-100" alt="icon">
                             </div>
-                            <div class="item4b">
+                            <div class="item4b ml-2">
                                 <p class="Roboto-Regular mb-0">Thinking about moving soon?</p>
                                 <p class="Roboto-Regular">Find your next home and schedule on-demand tours.</p>
-                                <button class="btn browse-btn Roboto-Regular"> Browse in City Name</button>
+                                <button class="btn browse-btn Roboto-Regular" @click="routetohome"> Browse in City Name</button>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,8 @@
 export default {
     methods:{
         routetohome(){
-            this.$router.push({name:"Home"})
+            this.$router.push({name:"Home"});
+            window.scrollTo(0,0);
         }
     }
 }
@@ -100,6 +101,30 @@ export default {
     .item5 p{
         color: #434242;
         font-size: 14px;
-        
     }
+
+    @media only screen and (max-width: 600px){
+    .item1 p{
+        font-size: 28px;
+    }
+    .item2{
+        width: 90%;
+    }
+    .item2 .image{
+        width: 18px;
+        height: 18px;
+    }
+    .item3{
+        width: 80%;
+    }
+    .item4{
+    width: 90%;
+    }
+    .item4 .image{
+        width: 60px;
+        height: 60px;
+    }
+
+    }
+
 </style>

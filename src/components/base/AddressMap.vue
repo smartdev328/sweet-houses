@@ -5,7 +5,7 @@
                 
             <GmapMap
             :center="{lat:this.lat, lng:this.lon}"
-            :zoom="12"
+            :zoom="15"
             ref="map"
             map-type-id="terrain"
             draggable=false
