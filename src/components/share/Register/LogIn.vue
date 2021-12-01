@@ -46,11 +46,11 @@
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Log In</span>
               </button>
-              <div v-if="errors">
+              <!-- <div v-if="errors">
                   <span  style="color: #fc5353;" v-for="err in errors" :key="(err.id)"> 
                   {{err}}
               </span>
-              </div>
+              </div> -->
             
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Don't have a profile yet? </p>
@@ -86,6 +86,7 @@ export default {
       },
       ckeckform(){
           this.msg={};
+          this.errors=[]
           if(!this.input.password){
               this.msg.password = "password is required"
           }
@@ -138,8 +139,7 @@ export default {
                   duration:6000,
                   speed:500
                 });
-                console.log(err.response.data)
-               this.errors = err.response.data || {};
+               this.errors = err.response.data.errors || {};
                 this.loading = false
           });
             
