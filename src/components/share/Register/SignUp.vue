@@ -12,7 +12,8 @@
             <p class="hnXNtF">
               or
             </p>
-            <div class="form-group">
+            <form @submit.prevent="SignUp">
+                 <div class="form-group">
               <input type="text" class="form-control form-control-lg" v-model="input.username" placeholder="Full Name">
                <span v-if="msg.username && !input.username" style="color: #fc5353;">{{
                   msg.username
@@ -60,15 +61,13 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
-             <div v-if="errors">
-                  <span  style="color: #fc5353;" v-for="err in errors" :key="(err.id)"> 
-                  {{err}}
-              </span>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn " @click="SignUp()">
+              <button type="submit" class="btn btn-primary w-100 submit-btn">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Join Now</span>
                </button>
+
+            </form>
+         
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Already have a profile? </p>
                 <button @click="XsignupOlogin">log in</button>
