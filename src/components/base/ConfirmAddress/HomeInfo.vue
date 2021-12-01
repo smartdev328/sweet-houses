@@ -637,10 +637,12 @@
                   >
                 </select> -->
                  <v-select 
+                    :reduce="prioritysales => prioritysales.value"
                     class="form-control form-control-lg Roboto-Regular"
                     v-model="prioritysale"
                     :options="prioritysales" 
-                    label="name"
+                  
+                    :get-option-label="({name}) => `${name}`" 
                     placeholder="Choose an option"
                     :searchable=false
                     :clearable=false
@@ -780,16 +782,16 @@ export default {
       prioritysales: [
         {
           value: "We want the highest price with the right improvements",
-          name: "We want the highest price with the right improvements",
+          name: "We want the highest price ...",
         },
         { value: "Sell by a specific date", name: "Sell by a specific date" },
         {
           value: "Secure a sale to purchase another home",
-          name: "Secure a sale to purchase another home",
+          name: "Secure a sale to purchase...",
         },
         {
           value: `Been for sale before and we don't want that again`,
-          name: `Been for sale before and we don't want that again`,
+          name: `Been for sale before and....`,
         },
       ],
       CurrentOccupancies: [
@@ -832,6 +834,10 @@ export default {
     latlong() {
       return this.$store.state.latlong || {};
     },
+    val(){
+      return document.getElementsByClassName('vs__selected')[3].innerText;  
+    }
+ 
   },
 
   methods: {
@@ -910,6 +916,7 @@ export default {
           (inputdata.squfeet = this.squfeet);
         this.$store.commit("sethomedata", inputdata);
         this.tab_visible = "menu_three";
+        window.scrollTo(0,0);
       }
     },
     twocheckform() {
@@ -965,6 +972,7 @@ export default {
         secondinputdata.vehiclesnNo = this.vehiclesnNo;
         this.$store.commit("sethomedatasecond", secondinputdata);
         this.$emit("gotoContactPage");
+        window.scrollTo(0,0);
       }
     },
   },

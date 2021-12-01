@@ -12,7 +12,8 @@
             <p class="hnXNtF">
               or
             </p>
-            <div class="form-group">
+            <form @submit.prevent="login">
+                <div class="form-group">
               <input type="email" class="form-control form-control-lg"  v-model="input.email" placeholder="Email">
               <span v-if="msg.email" style="color: #fc5353;">{{
                   msg.email
@@ -42,10 +43,12 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4" @click="login()">
+              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Log In</span>
               </button>
+            </form>
+          
               <!-- <div v-if="errors">
                   <span  style="color: #fc5353;" v-for="err in errors" :key="(err.id)"> 
                   {{err}}
