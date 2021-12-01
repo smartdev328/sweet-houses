@@ -107,6 +107,7 @@
                 @update="resultsExample = $event"
                 color="#ffb600"
                 error-color="orangered"
+                default-country-code="CA"
               />
             </div>
             <span style="color: #dc3545; font-size: 16px" v-if="msg.phone && !phone">{{
