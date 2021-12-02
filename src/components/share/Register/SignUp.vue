@@ -14,13 +14,13 @@
             </p>
             <form @submit.prevent="SignUp">
                  <div class="form-group">
-              <input type="text" class="form-control form-control-lg" v-model="input.username" placeholder="Full Name">
-               <span v-if="msg.username && !input.username" style="color: #fc5353;">{{
-                  msg.username
+              <input type="text" class="form-control form-control-lg" v-model="input.first_name" placeholder="Full Name">
+               <span v-if="msg.first_name && !input.first_name" style="color: #fc5353;">{{
+                  msg.first_name
                 }}</span>
                  <div v-for="(error, index) in this.errors" :key="index">
                   <span
-                    v-if="error.param === 'username'"
+                    v-if="error.param === 'first_name'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
@@ -83,6 +83,7 @@
     </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 export default {
     data(){
         return{
@@ -109,8 +110,8 @@ export default {
           this.msg={};
           this.errors =  {};
           this.emailnotmaildmsg =  "";
-          if(!this.input.username){
-              this.msg.username = "username is required"
+          if(!this.input.first_name){
+              this.msg.first_name = "username is required"
           }
           if(!this.input.email){
               this.msg.email = "Email is required"
@@ -123,8 +124,8 @@ export default {
       ) {
             this.msg.email = "Please enter the email correctly"
       }
-          if(this.input.username && this.input.username.length < 4){
-              this.msg.username = "username must be more 4 character"
+          if(this.input.first_name && this.input.first_name.length < 4){
+              this.msg.first_name = "first_name must be more 4 character"
           }
           if(!this.input.password){
               this.msg.password = "password is required"
@@ -132,7 +133,7 @@ export default {
           if(this.input.password && this.input.password.length < 7){
               this.msg.password  = "password must be more 6 character"
           }
-          if(this.input.username && this.input.password.length >= 6 && this.input.email){
+          if(this.input.first_name && this.input.password.length >= 6 && this.input.email){
               return true
           }
       },
@@ -153,13 +154,20 @@ export default {
                 );
               this.$store
           .dispatch("register", this.formData).then((res)=>{
-             this.$notify({
-                  group: 'foo',
-                  type: "success",
-                   text: 'Success..! you are login',
-                  duration:6000,
-                  speed:500
-                });
+            //  this.$notify({
+            //       group: 'foo',
+            //       type: "success",
+            //        text: 'Success..! you are login',
+            //       duration:6000,
+            //       speed:500
+            //     });
+             Swal.fire({
+                  title: 'success!',
+                  text: 'Success..! you are login',
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
                   return res;
               }).then(()=>{
                 this.loading = false; 
@@ -168,14 +176,21 @@ export default {
               }) .catch((err) => {
                 this.loading = false
                 this.formData = new FormData(),
-                 this.$notify({
-                  group: 'foo',
-                  type: "error",
+                //  this.$notify({
+                //   group: 'foo',
+                //   type: "error",
+                //   text: err.response.data.msg,
+                //   duration:6000,
+                //   speed:500
+                // });
+                 Swal.fire({
+                  title: 'Error!',
                   text: err.response.data.msg,
-                  duration:6000,
-                  speed:500
-                });
-              this.errors = err.response.data || {};
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
+              this.errors = err.response.data.errors || {};
                 this.loading = false
                 console.log(err.response.data)
           });

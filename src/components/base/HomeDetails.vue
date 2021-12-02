@@ -233,9 +233,227 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="item11 my-2 py-3">
+                            <div class="item1">
+                                <p class="text-color-1 DMSerifRegular">Home Details</p>
+                                <p class="Roboto-Medium">Description</p>
+                                <p class="Roboto-Regular">Owners Delight Custom Home!  One Acre Sweetly! This Is Your Chance To Own A One Off A Kind Bright
+Ultimate Rural Home! Beautiful Country Bungalow On A Huge Lot (100.05 Ft X 145.06 Ft X 252.81 Ft X
+ 248) Renovated Top To Bottom W//Full Unspoiled Walkout Bsmt. 4 Car Heated/Cooled Huge 35 Ft By 30
+Ft Garage With Loft. Main Floor Walk Out To Large Deck For Entertaining. In-Law Suite With A Kitchen
+And A Walkout To A Gorgeous Backyard.</p>
+                            </div>
+                            <div class="item2 my-4">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Type</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Detached</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Basement</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Fully Finished </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Sweetly Taxes </p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>$4,397 per year / $366 per month</p>
+                                        </div>
+                                    </div>
+
+                                     <div class="row">
+                                        <div class="col-3">
+                                            <p>Maintenance Fees</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>- </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Bedrooms</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>4 Full</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Bathrooms</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>2 Full </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Parking</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>10 </p>
+                                        </div>
+                                    </div>
+
+                                     <div class="row">
+                                        <div class="col-3">
+                                            <p>External Features</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Brick </p>
+                                        </div>
+                                    </div>
+
+                                     <div class="row">
+                                        <div class="col-3">
+                                            <p>Lot Frontage</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>100 ft </p>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-3">
+                                            <p>Lot Depth</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>- </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>Internal Area (Above
+Ground)</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>- </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="item13 my-2 py-3"> 
+                            <div class="item1">
+                                <p class="title Roboto-Medium">Main Level</p>
+
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p>Kitchen</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>19'8' ' x 26'2' '</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p>Living</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>26'2' ' x 13'1' '</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p>Dining </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>26'2' ' x 13'1' '</p>
+                                    </div>
+                                </div>
+
+
+                                 <div class="row">
+                                    <div class="col-3">
+                                        <p>Master </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>13'1' ' x 13'1' '</p>
+                                    </div>
+                                </div>
+
+                                 <div class="row">
+                                    <div class="col-3">
+                                        <p>2nd Br </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>13'1' ' x 9'10' '</p>
+                                    </div>
+                                </div>
+
+                                 <div class="row">
+                                    <div class="col-3">
+                                        <p>3rd Br</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>13'1' ' x 9'10' '</p>
+                                    </div>
+                                </div>
+                            <p class="title mt-3 Roboto-Medium">Lower</p>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p>Kitchen</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>9'10' ' x 16'4' '</p>
+                                    </div>
+                                </div>
+
+                                    <div class="row">
+                                    <div class="col-3">
+                                        <p>Rec</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>926'2' ' x 26'2' '</p>
+                                    </div>
+                                </div>
+
+                                 <div class="row">
+                                    <div class="col-3">
+                                        <p>Br</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>13'1' ' x 9'10' '</p>
+                                    </div>
+                                </div>
+
+                                 
+
+
+                            </div>
+                        </div>
+                        <!-- <div class="item12 my-2 py-3">
+                            <div class="item1">
+                                <p class="text-color-1 DMSerifRegular">Listing Brokerage</p>
+                            </div>
+                            <div class="item2 Roboto-Regular">
+                                <div class="row">
+                                    <div class="col-3">MLS &#174; Listing </div>
+                                    <div class="col-9">E5371141</div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-3">Brokerage</div>
+                                    <div class="col-9">RE/MAX HALLMARK FIRST GROUP REALTY LTD., BROKERAGE</div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div></div>
+                    <div class="col-12 col-md-3">
+                        <div class="part2 shadow p-3">
+                            <div class="item1">
+                                <p class="Roboto-Medium">Tour this home</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -414,6 +632,7 @@ export default {
 }
 .homedetails .item7 p{
     font-size: 28px;
+    font-weight: 600;
 }
 .homedetails .item7 .item7a{
     background: #EDF3F2;
@@ -453,6 +672,7 @@ export default {
 }
 .homedetails .item9 div:first-child{
     font-size: 24px;
+    
 }
 .homedetails .item9 div:nth-child(2) p:first-child{
     color: #FFB600;
@@ -476,13 +696,55 @@ export default {
 .homedetails .item9  .listed {
     border-left: 5px solid #707070;
 }
-.homedetails .item10{
+.homedetails .item10,
+.homedetails .item11{
     border-bottom: 1px solid #7070706b;
 }
 .homedetails .item10 .item1{
-    font-size: 28px;
+    font-size: 34px;
+    font-weight: 600;
 }
-
+.homedetails .item11 .item1{
+    display: block;
+}
+.homedetails .item11 .item1 p:first-child{
+    font-size: 34px;
+    font-weight: 600;
+    color: #232323;
+}
+.homedetails .item11 .item1 p:nth-child(2){
+    font-size: 24px;
+     font-weight: 600;
+    color: #232323;
+}
+.homedetails .item11 .item1 p:nth-child(3){
+    font-size: 20px;
+    color: #707070;
+}
+.homedetails .item11 .item2 p{
+    font-size: 20px;
+    color: #707070;
+    font-family: 'Roboto-Regular' , sans-serif !important;
+}
+.homedetails .item12 .item1 p {
+     font-size: 34px;
+    font-weight: 600;
+    color: #232323;
+}
+.homedetails .item12 .item2{
+    font-size: 20px;
+    color: #707070;
+}
+.homedetails .item13 .item1 .title{
+    font-size: 24;
+    font-weight: 600;
+    color: #232323;
+}
+.homedetails .item13 .item1{
+    display: block;
+     font-size: 20px;
+    color: #707070;
+}
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after{
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
       outline: none;
@@ -519,6 +781,14 @@ export default {
 }
 .homedetails .item10 .item2b input::placeholder{
     color: #AAAAAA;
+}
+.homedetails .part2{
+    border-radius: 8px;
+}
+.homedetails .part2 .item1{
+    color: #FFB600;
+    font-size: 26px;
+    font-weight: 600;
 }
 @media (min-width: 760px){
 .modal-dialog {

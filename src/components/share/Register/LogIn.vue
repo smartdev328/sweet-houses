@@ -67,6 +67,7 @@
     </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 export default {
     data(){
         return{
@@ -123,25 +124,39 @@ export default {
                 );
                   this.$store
           .dispatch("login", this.formData).then((res)=>{
-                  this.$notify({
-                  group: 'foo',
-                  type: "success",
+                //   this.$notify({
+                //   group: 'foo',
+                //   type: "success",
+                //   text: 'Success..! you are login',
+                //   duration:6000,
+                //   speed:500
+                // });
+                  Swal.fire({
+                  title: 'success!',
                   text: 'Success..! you are login',
-                  duration:6000,
-                  speed:500
-                });
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
                   this.loading = false
                   this.$emit('hideloginmodal')
                   return res;
               }) .catch((err) => {
                 this.formData =  new FormData(),
-                this.$notify({
-                  group: 'foo',
-                  type: "error",
+                // this.$notify({
+                //   group: 'foo',
+                //   type: "error",
+                //   text: err.response.data.msg,
+                //   duration:6000,
+                //   speed:500
+                // });
+                Swal.fire({
+                  title: 'Error!',
                   text: err.response.data.msg,
-                  duration:6000,
-                  speed:500
-                });
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
                this.errors = err.response.data.errors || {};
                 this.loading = false
           });
