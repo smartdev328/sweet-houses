@@ -58,8 +58,6 @@ Vue.use(IconsPlugin)
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
 
-import Notifications from 'vue-notification'
-Vue.use(Notifications)
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 

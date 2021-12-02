@@ -3,7 +3,6 @@
         <Navbar/>
     <router-view  />
     <Footer v-if="!$route.meta.hideNavbar"></Footer>
-    <notifications group="foo" />
   </div>
 </template>
 

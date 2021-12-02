@@ -134,6 +134,7 @@ Estate</a>
 </template>
 <script>
 import { eventBus } from '../../main'
+import Swal from 'sweetalert2'
 export default {
     data(){
       return{
@@ -142,7 +143,7 @@ export default {
     },
     computed:{
       username(){
-        return this.$store.state.user.username || "";
+        return this.$store.state.user.first_name || "";
       },
       user(){
         return this.$store.state.user || "";
@@ -177,11 +178,18 @@ export default {
       },
       logout(){
         this.$store.dispatch('logout');
-        this.$notify({
-          group: 'foo',
-          type: "success",
-          text: 'Hello user! This is a notification!',
-        });
+        // this.$notify({
+        //   group: 'foo',
+        //   type: "success",
+        //   text: 'Hello user! This is a notification!',
+        // });
+         Swal.fire({
+            title: 'success!',
+            text: 'you are logout!',
+            icon: 'warning',
+            confirmButtonText: 'Ok',
+            timer: 1500
+          })
       },
       opensweetsale(tab){
        // this.$router.push({name:'Home'})
