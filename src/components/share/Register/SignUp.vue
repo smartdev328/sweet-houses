@@ -14,13 +14,13 @@
             </p>
             <form @submit.prevent="SignUp">
                  <div class="form-group">
-              <input type="text" class="form-control form-control-lg" v-model="input.first_name" placeholder="Full Name">
-               <span v-if="msg.first_name && !input.first_name" style="color: #fc5353;">{{
-                  msg.first_name
+              <input type="text" class="form-control form-control-lg" v-model="input.full_name" placeholder="Full Name">
+               <span v-if="msg.full_name && !input.full_name" style="color: #fc5353;">{{
+                  msg.full_name
                 }}</span>
                  <div v-for="(error, index) in this.errors" :key="index">
                   <span
-                    v-if="error.param === 'first_name'"
+                    v-if="error.param === 'full_name'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
@@ -110,8 +110,8 @@ export default {
           this.msg={};
           this.errors =  {};
           this.emailnotmaildmsg =  "";
-          if(!this.input.first_name){
-              this.msg.first_name = "username is required"
+          if(!this.input.full_name){
+              this.msg.full_name = "full name is required"
           }
           if(!this.input.email){
               this.msg.email = "Email is required"
@@ -124,8 +124,8 @@ export default {
       ) {
             this.msg.email = "Please enter the email correctly"
       }
-          if(this.input.first_name && this.input.first_name.length < 4){
-              this.msg.first_name = "first_name must be more 4 character"
+          if(this.input.full_name && this.input.full_name.length < 4){
+              this.msg.full_name = "full_name must be more 4 character"
           }
           if(!this.input.password){
               this.msg.password = "password is required"
@@ -133,7 +133,7 @@ export default {
           if(this.input.password && this.input.password.length < 7){
               this.msg.password  = "password must be more 6 character"
           }
-          if(this.input.first_name && this.input.password.length >= 6 && this.input.email){
+          if(this.input.full_name && this.input.password.length >= 6 && this.input.email){
               return true
           }
       },
