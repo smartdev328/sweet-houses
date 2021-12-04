@@ -156,6 +156,11 @@ const routes = [
     path:'/home-details',
     name:'HomeDetails',
     component:()=>import('../components/base/HomeDetails.vue')
+  },
+  {
+    path:'/report-home',
+    name:"RerportHome",
+    component:()=>import('../components/base/ReportHome.vue')
   }
   
   

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.412" height="16.599" viewBox="0 0 16.412 16.599">
+  <g id="edit" transform="translate(0.75 0.91)">
+    <g id="Edit_Square" data-name="Edit Square">
+      <path id="Stroke_1" data-name="Stroke 1" d="M6.921,0H3.961A3.84,3.84,0,0,0,0,4.163v6.582a3.837,3.837,0,0,0,3.961,4.163h6.986a3.837,3.837,0,0,0,3.962-4.163V7.556" transform="translate(0 0.031)" fill="none" stroke="#ffb600" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M.577,6.468,6.493.552a1.888,1.888,0,0,1,2.669,0l.963.963a1.887,1.887,0,0,1,0,2.669L4.181,10.129a1.719,1.719,0,0,1-1.215.5H0L.074,7.64A1.718,1.718,0,0,1,.577,6.468Z" transform="translate(4.234 0)" fill="none" stroke="#ffb600" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Stroke_5" data-name="Stroke 5" d="M0,0,3.615,3.615" transform="translate(9.828 1.466)" fill="none" stroke="#ffb600" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
