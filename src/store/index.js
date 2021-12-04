@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'https://zeekoo90.pythonanywhere.com/api/'
+axios.defaults.baseURL = 'https://zeekoo90.pythonanywhere.com/api/auth/'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
