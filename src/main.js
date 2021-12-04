@@ -40,7 +40,7 @@ if (token) {
 }
 import GAuth from 'vue-google-oauth2'
 const gauthOption = {
-  clientId: '413252505448-7f6s54ll803efdbcp9uq5lfvb0g096nh.apps.googleusercontent.com',
+  clientId: '280245313331-9a9gr4kmfpougbbr1ln1juhdqljs6q2l.apps.googleusercontent.com',
   scope: 'profile email',
   prompt: 'consent',
   fetch_basic_profile:true
