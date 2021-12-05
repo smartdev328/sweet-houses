@@ -161,17 +161,31 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                     <p class="Roboto-Regular text-color-2">Kick off your sale by getting a more detailed estimate from one of our <br>
 agents. Learn more about our <span> selling services.</span></p>
                 </div>
-                <div class="item5c">
+                <div class="item5c text-center">
                     <button class="btn Roboto-Regular mb-2">Get personalized home caluation</button>
-                    <p class="text-color-2  Roboto-Regular text-center">It's free. There's no commitment.</p>
+                    <p class="text-color-2  Roboto-Regular">It's free. There's no commitment.</p>
                 </div>
             </div>
-
+            <div class="item6">
+                <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
+                <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sod nearby are the best indication of market value. The most similar homes sold in the past 3
+months are shown below. </p>
+            </div>
+            <div>
+                <address-map></address-map>
+            </div>
         </div>
     </div>
 </template>
 <script>
+import AddressMap from './AddressMap.vue';
 export default {
+  components: { AddressMap },
+  data(){
+      return{
+         
+      }
+  },
     methods:{
         copyURL(){
             var Url = this.$refs.mylink;
@@ -334,6 +348,7 @@ export default {
 }
 .reporthome .item5{
     background: #EDF3F2;
+    border-radius: 8px;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 30px;
@@ -358,6 +373,12 @@ export default {
 .reporthome .item5 .item5c button{
     background: #FFB600;
     color: #fff;
-
+}
+.reporthome .item6 p:first-child{
+      font-weight: 600;
+     font-size: 26px;
+}
+.reporthome .item6 p:nth-child(2){
+     font-size: 18px;
 }
 </style>

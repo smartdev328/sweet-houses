@@ -17,7 +17,6 @@
                 :clickable="true"
                 :draggable="false"
                 @click="center=m.position"
-
             />
             </GmapMap>
                 </div>
@@ -44,6 +43,7 @@ export default {
         disableDefaultUi: false,
         draggable:false
         },
+        icon:{url:'../../assets/image/icon/markerhome.svg'}
     }),
     computed: {
     google: gmapApi,
