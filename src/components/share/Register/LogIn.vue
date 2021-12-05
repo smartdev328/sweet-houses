@@ -133,9 +133,10 @@ export default {
                 // });
                   Swal.fire({
                   title: 'success!',
-                  text: 'Success..! you are login',
+                  text: 'Success, you are logged in!',
                   icon: 'success',
                   confirmButtonText: 'Ok',
+                  showConfirmButton:false,
                   timer: 1500
                 })
                   this.loading = false
@@ -150,13 +151,6 @@ export default {
                 //   duration:6000,
                 //   speed:500
                 // });
-                Swal.fire({
-                  title: 'Error!',
-                  text: err.response.data.msg,
-                  icon: 'error',
-                  confirmButtonText: 'Ok',
-                  timer: 1500
-                })
                this.errors = err.response.data.errors || {};
                 this.loading = false
           });

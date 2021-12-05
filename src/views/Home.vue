@@ -51,7 +51,7 @@
                 Get Maximum Value! Skip Public Showings And Choose Your Moving
                 Day
               </p>
-              <p class="Roboto-Regular">
+              <p class="Roboto-Regular mb-2">
                 The Sweet Sale is the smartest way to sell.
               </p>
             </div>

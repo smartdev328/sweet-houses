@@ -188,6 +188,7 @@ export default {
             text: 'you are logout!',
             icon: 'warning',
             confirmButtonText: 'Ok',
+             showConfirmButton:false,
             timer: 1500
           })
       },
