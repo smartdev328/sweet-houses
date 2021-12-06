@@ -684,7 +684,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
           logout({commit,state}){
 
             return new Promise((resolve) => {
-                axios({url: 'logout/',  method: 'POST',headers:{
+                axios({url: 'auth/logout/',  method: 'POST',headers:{
                     'Content-Type':'application/json',
                     'Authorization':`Token ${state.token}`
                 } }).then(() =>{
