@@ -153,8 +153,12 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
 
             <div class="item5 p-3 my-5">
 
-                <div class="item5a">
-                    <img src="../../assets/image/icon/progree.svg" class="w-100 h-100" alt="">
+                <div class="item5a dropdown">
+                    <img  src="../../assets/image/icon/progree.svg" class="w-100 h-100 dropbtn" alt="">
+                    <div class="dropdown-content">
+                        <img  src="../../assets/image/icon/Component 61 – 1.svg" class="w-100 h-100" alt="">
+                    </div>
+
                 </div>
                 <div class="item5b">
                     <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>
@@ -171,9 +175,20 @@ agents. Learn more about our <span> selling services.</span></p>
                 <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sod nearby are the best indication of market value. The most similar homes sold in the past 3
 months are shown below. </p>
             </div>
-            <div>
+            <div class="my-5 pb-5">
                 <address-map></address-map>
             </div>
+        <div class="item7 cards my-5">
+            <div>
+                <card-report></card-report>
+            </div>
+            <div>
+                <card-report></card-report>
+            </div>
+            <div>
+                <card-report></card-report>
+            </div>
+        </div>
         </div>
     </div>
 </template>
@@ -380,5 +395,23 @@ export default {
 }
 .reporthome .item6 p:nth-child(2){
      font-size: 18px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  min-width: 340px;
+  left: -18px;
+}
+.dropdown:hover .dropdown-content {display: block;}
+.reporthome .cards {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
 }
 </style>

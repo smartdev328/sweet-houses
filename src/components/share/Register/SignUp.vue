@@ -154,13 +154,6 @@ export default {
                 );
               this.$store
           .dispatch("register", this.formData).then((res)=>{
-            //  this.$notify({
-            //       group: 'foo',
-            //       type: "success",
-            //        text: 'Success..! you are login',
-            //       duration:6000,
-            //       speed:500
-            //     });
              Swal.fire({
                   title: 'success!',
                   text: 'Success..! you are login',
@@ -176,13 +169,6 @@ export default {
               }) .catch((err) => {
                 this.loading = false
                 this.formData = new FormData(),
-                //  this.$notify({
-                //   group: 'foo',
-                //   type: "error",
-                //   text: err.response.data.msg,
-                //   duration:6000,
-                //   speed:500
-                // });
               this.errors = err.response.data.errors || {};
                 this.loading = false
                 console.log(err.response.data)
@@ -193,25 +179,42 @@ export default {
              this.emailisvalid = false;
             this.emailnotmaildmsg = "please enter a real email";
            }
-          })
-
-            
-            
-          
-              
+          })  
       }
+      },
+      registerGauth(id_token){
+        this.$store.dispatch('registerGauth',{auth_token:id_token}).then((res) =>{
+            Swal.fire({
+                  title: 'success!',
+                  text: 'Success..! you are login',
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
+                return res;
+        }).catch((err) => {
+                 Swal.fire({
+                  title: 'Failed !',
+                  text: err.response.data.msg,
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                })
+          });
       },
     async signupgoogle() {
       const googleUser = await this.$gAuth.signIn();
-      console.log("googleUser", googleUser);
-      console.log("getId", googleUser.getId());
-      console.log("getBaseProfile", googleUser.getBasicProfile());
-      console.log("getAuthResponse", googleUser.getAuthResponse());
-      console.log(
-        "getAuthResponse$G",
-        this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
-      );
-      this.isLogin = this.$gAuth.isAuthorized;
+      // console.log("googleUser", googleUser);
+      // console.log("getId", googleUser.getId());
+      // console.log("getBaseProfile", googleUser.getBasicProfile());
+     console.log("getAuthResponse", googleUser.getAuthResponse());
+      let id_token = googleUser.getAuthResponse().id_token;
+      this.registerGauth(id_token)
+      
+      // console.log(
+      //   "getAuthResponse$G",
+      //   this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
+      // );
+     // this.isLogin = this.$gAuth.isAuthorized;
     },
     }
 }
