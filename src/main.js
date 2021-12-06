@@ -111,8 +111,10 @@ Vue.component('address-map',require('./components/base/AddressMap.vue').default)
 Vue.component('show-map',require('./components/base/ShowMap.vue').default)
 Vue.component('show-list',require('./components/base/ShowList.vue').default)
 
+const CardReport = () => import('./components/share/CardReport.vue');
+Vue.component('card-report',CardReport);
 
-Vue.component('card-home',require('./components/share/CardHome.vue').default)
+Vue.component('card-home',require('./components/share/CardHome.vue').default);
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {

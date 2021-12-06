@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'https://zeekoo90.pythonanywhere.com/api/auth/'
+axios.defaults.baseURL = 'https://zeekoo90.pythonanywhere.com/api/'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
@@ -618,7 +618,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         login({commit , state} , input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
-              axios({url: 'login/', data: input, method: 'POST' })
+              axios({url: 'auth/login/', data: input, method: 'POST' })
               .then(resp => {
                const token = resp.data.token
                 const user = resp.data.user
@@ -640,7 +640,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         register({commit , state}, input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
-              axios({url: 'register/', data: input, method: 'POST' })
+              axios({url: 'auth/register/', data: input, method: 'POST' })
               .then(resp => {
                 const token = resp.data.token
                 const user = resp.data.user
@@ -658,6 +658,28 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
                 reject(err)
               })
             })
+          },
+          registerGauth({commit, state} , atoken){
+            return new Promise((resolve, reject) => {
+                commit('auth_request')
+                axios({url: 'social_auth/google/', data: atoken, method: 'POST' })
+                .then(resp => {
+                  const token = resp.data.token
+                  const user = resp.data.user
+                  localStorage.setItem('token', token)
+                  localStorage.setItem('user', user)
+                  axios.defaults.headers.common['Authorization'] = token
+                  commit('auth_success', token)
+                  state.user = resp.data.user
+                  state.token = resp.data.token
+                  resolve(resp)
+                })
+                .catch(err => {
+                  commit('auth_error', err)
+                  localStorage.removeItem('token')
+                  reject(err)
+                })
+              })
           },
           logout({commit,state}){
 
