@@ -161,16 +161,37 @@ export default {
       }
           
       },
+        registerGauth(id_token){
+        this.$store.dispatch('registerGauth',{auth_token:id_token}).then((res) =>{
+            Swal.fire({
+                  title: 'success!',
+                  text: 'Success..! you are login',
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
+                return res;
+        }).catch((err) => {
+                 Swal.fire({
+                  title: 'Failed !',
+                  text: err.response.data.msg,
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                })
+          });
+      },
       async logingoogle() {
       const googleUser = await this.$gAuth.signIn();
-      console.log("googleUser", googleUser);
-      console.log("getId", googleUser.getId());
-      console.log("getBaseProfile", googleUser.getBasicProfile());
-      console.log("getAuthResponse", googleUser.getAuthResponse());
-      console.log(
-        "getAuthResponse$G",
-        this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
-      );
+        let id_token = googleUser.getAuthResponse().id_token;
+      this.registerGauth(id_token)
+      // console.log("googleUser", googleUser);
+      // console.log("getId", googleUser.getId());
+      // console.log("getBaseProfile", googleUser.getBasicProfile());
+      // console.log("getAuthResponse", googleUser.getAuthResponse());
+      // console.log(
+      //   "getAuthResponse$G",
+      //   this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
+      // );
       this.isLogin = this.$gAuth.isAuthorized;
     },
     }
