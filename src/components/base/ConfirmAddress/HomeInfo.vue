@@ -71,6 +71,7 @@
                   >
                 </select>  -->
                  <v-select 
+                 :reduce="hometypes => hometypes.value"
                   class="form-control form-control-lg Roboto-Regular"
                  v-model="hometype"
                     :options="hometypes" 
@@ -118,6 +119,7 @@
                   >
                 </select> -->
                   <v-select 
+                  :reduce="StoreysType => StoreysType.value"
                   class="form-control form-control-lg Roboto-Regular"
                  v-model="storeys"
                     :options="StoreysType" 
@@ -135,18 +137,18 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error':  (msgone.bedboveg && bedboveg < 0) || (msgone.bedboveg && bedboveg == null) }"
+              :class="{ 'input--error':  (msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) }"
             >
-              <label for="bedboveg" class="col-sm-5 col-form-label text-left"
+              <label for="bedrooms_bg" class="col-sm-5 col-form-label text-left"
                 >Bedrooms (above ground)</label
               >
               <div class="d-style">
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="bedboveg < 1"
+                    :disabled="bedrooms_bg < 1"
                     type="button"
-                    @click="bedboveg--"
+                    @click="bedrooms_bg--"
                   >
                     <img src="../../../assets/image/icon/minus.svg" alt="">
                   </button>
@@ -156,15 +158,15 @@
                     type="number"
                     min="0"
                     max="5"
-                    id="bedboveg"
-                    v-model.number="bedboveg"
+                    id="bedrooms_bg"
+                    v-model.number="bedrooms_bg"
                     class="pl-0 pl-md-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                     required
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if="(msgone.bedboveg && bedboveg < 0) || (msgone.bedboveg && bedboveg == null) "
+                    v-if="(msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) "
                     >required</span
                   >
                 </div>
@@ -172,7 +174,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="bedboveg++"
+                    @click="bedrooms_bg++"
                   >
                   <img src="../../../assets/image/icon/plus.svg" alt="">
                   </button>
@@ -181,7 +183,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error':  (msgone.bedbelowg && bedbelowg < 0) || (msgone.bedbelowg && bedbelowg == null) }"
+              :class="{ 'input--error':  (msgone.bedrooms_ag && bedrooms_ag < 0) || (msgone.bedrooms_ag && bedrooms_ag == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
                 >Bedrooms (below ground)</label
@@ -190,9 +192,9 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="bedbelowg < 1"
+                    :disabled="bedrooms_ag < 1"
                     type="button"
-                    @click="bedbelowg--"
+                    @click="bedrooms_ag--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                   <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -204,13 +206,13 @@
                     min="0"
                     max="5"
                     id="hometype"
-                    v-model.number="bedbelowg"
+                    v-model.number="bedrooms_ag"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if="(msgone.bedbelowg && bedbelowg < 0) || (msgone.bedbelowg && bedbelowg == null)"
+                    v-if="(msgone.bedrooms_ag && bedrooms_ag < 0) || (msgone.bedrooms_ag && bedrooms_ag == null)"
                     >required</span
                   >
                 </div>
@@ -218,7 +220,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="bedbelowg++"
+                    @click="bedrooms_ag++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                     <img src="../../../assets/image/icon/plus.svg" alt="">
@@ -228,7 +230,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-               :class="{ 'input--error':  (msgone.fullbathroom && fullbathroom < 0) || (msgone.fullbathroom && fullbathroom == null) }"
+               :class="{ 'input--error':  (msgone.bathrooms_full && bathrooms_full < 0) || (msgone.bathrooms_full && bathrooms_full == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
                 >Full bathrooms</label
@@ -237,9 +239,9 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="fullbathroom < 1"
+                    :disabled="bathrooms_full < 1"
                     type="button"
-                    @click="fullbathroom--"
+                    @click="bathrooms_full--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                    <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -251,13 +253,13 @@
                     min="0"
                     max="5"
                     id="hometype"
-                    v-model.number="fullbathroom"
+                    v-model.number="bathrooms_full"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if="(msgone.fullbathroom && fullbathroom < 0) || (msgone.fullbathroom && fullbathroom == null)"
+                    v-if="(msgone.bathrooms_full && bathrooms_full < 0) || (msgone.bathrooms_full && bathrooms_full == null)"
                     >required</span
                   >
                 </div>
@@ -265,7 +267,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="fullbathroom++"
+                    @click="bathrooms_full++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                    <img src="../../../assets/image/icon/plus.svg" alt="">
@@ -275,7 +277,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error':  (msgone.parbathroom && parbathroom < 0) || (msgone.parbathroom && parbathroom == null) }"
+              :class="{ 'input--error':  (msgone.bathrooms_partial && bathrooms_partial < 0) || (msgone.bathrooms_partial && bathrooms_partial == null) }"
             >
               <label for="Partial" class="col-sm-5 col-form-label text-left"
                 >Partial bathrooms</label
@@ -284,9 +286,9 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="parbathroom < 1"
+                    :disabled="bathrooms_partial < 1"
                     type="button"
-                    @click="parbathroom--"
+                    @click="bathrooms_partial--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                   <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -298,13 +300,13 @@
                     min="0"
                     max="5"
                     id="Partial"
-                    v-model.number="parbathroom"
+                    v-model.number="bathrooms_partial"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if=" (msgone.parbathroom && parbathroom < 0) || (msgone.parbathroom && parbathroom == null) "
+                    v-if=" (msgone.bathrooms_partial && bathrooms_partial < 0) || (msgone.bathrooms_partial && bathrooms_partial == null) "
                     >required</span
                   >
                 </div>
@@ -312,7 +314,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="parbathroom++"
+                    @click="bathrooms_partial++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                    <img src="../../../assets/image/icon/plus.svg" alt="">
@@ -347,7 +349,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-               :class="{ 'input--error':  (msgone.parkspaces && parkspaces < 0) || (msgone.parkspaces && parkspaces == null) }"
+               :class="{ 'input--error':  (msgone.parking_spaces && parking_spaces < 0) || (msgone.parking_spaces && parking_spaces == null) }"
             >
               <label for="Parking" class="col-sm-5 col-form-label text-left"
                 >Parking spaces</label
@@ -356,9 +358,9 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="parkspaces < 1"
+                    :disabled="parking_spaces < 1"
                     type="button"
-                    @click="parkspaces--"
+                    @click="parking_spaces--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                  <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -370,13 +372,13 @@
                     min="0"
                     max="5"
                     id="Parking"
-                    v-model.number="parkspaces"
+                    v-model.number="parking_spaces"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if="(msgone.parkspaces && parkspaces < 0) || (msgone.parkspaces && parkspaces == null) "
+                    v-if="(msgone.parking_spaces && parking_spaces < 0) || (msgone.parking_spaces && parking_spaces == null) "
                     >required</span
                   >
                 </div>
@@ -384,7 +386,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="parkspaces++"
+                    @click="parking_spaces++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                     <img src="../../../assets/image/icon/plus.svg" alt="">
@@ -426,40 +428,41 @@
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
               :class="{
-                'input--error': msgtwo.homecondition && !homecondition,
+                'input--error': msgtwo.home_condition && !home_condition,
               }"
             >
               <label
-                for="homecondition"
+                for="home_condition"
                 class="col-sm-4 col-form-label text-left Roboto-Regular"
                 >Home Condition
               </label>
               <div
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
-                :class="{ selectspecchanged: changedhomecondition }"
+                :class="{ selectspecchanged: changedhome_condition }"
               >
                 <!-- <select
                   name="canadianprovince"
-                  id="homecondition "
+                  id="home_condition "
                   @change="changehcond()"
                   class="form-control form-control-lg Roboto-Regular text-left"
-                  v-model="homecondition"
+                  v-model="home_condition"
                   required
                 >
                   <option value="null" disabled hidden selected>
                     Choose an option
                   </option>
                   <option
-                    v-for="homecondition in homeconditions"
-                    :key="homecondition.id"
-                    :value="homecondition.value"
-                    >{{ homecondition.name }}</option
+                    v-for="home_condition in home_conditions"
+                    :key="home_condition.id"
+                    :value="home_condition.value"
+                    >{{ home_condition.name }}</option
                   >
                 </select> -->
                  <v-select 
+                 :reduce="home_conditions => home_conditions.value"
                   class="form-control form-control-lg Roboto-Regular"
-                 v-model="homecondition"
-                    :options="homeconditions" 
+                 v-model="home_condition"
+                    :options="home_conditions" 
                     label="name"
                     placeholder="Choose an option"
                     :searchable=false
@@ -467,44 +470,45 @@
                   ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
-                  v-if="msgtwo.homecondition && !homecondition"
-                  >{{ msgtwo.homecondition }}</span
+                  v-if="msgtwo.home_condition && !home_condition"
+                  >{{ msgtwo.home_condition }}</span
                 >
               </div>
             </div>
             <div
               class="form-group row ol-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgtwo.dercrube && !dercrube }"
+              :class="{ 'input--error': msgtwo.parking_desc && !parking_desc }"
             >
-              <label for="dercrubes" class="col-sm-4 col-form-label text-left"
+              <label for="parking_descs" class="col-sm-4 col-form-label text-left"
                 >Describe Parking</label
               >
               <div
                 class="col-sm-8 selectspecbg Roboto-Regular text-left"
-                :class="{ selectspecchanged: changeddercrube }"
+                :class="{ selectspecchanged: changedparking_desc }"
               >
                 <!-- <select
                   name="canadianprovince"
-                  id="dercrubes"
+                  id="parking_descs"
                   @change="changedescibe()"
                   class="form-control form-control-lg Roboto-Regular"
-                  v-model="dercrube"
+                  v-model="parking_desc"
                   required
                 >
                   <option value="null" disabled hidden selected>
                     Choose an option
                   </option>
                   <option
-                    v-for="dercrube in dercrubes"
-                    :key="dercrube.id"
-                    :value="dercrube.value"
-                    >{{ dercrube.name }}</option
+                    v-for="parking_desc in parking_descs"
+                    :key="parking_desc.id"
+                    :value="parking_desc.value"
+                    >{{ parking_desc.name }}</option
                   >
                 </select> -->
                  <v-select 
-                  class="form-control form-control-lg Roboto-Regular"
-                 v-model="dercrube"
-                    :options="dercrubes" 
+                 :reduce="parking_descs => parking_descs.value"
+                    class="form-control form-control-lg Roboto-Regular"
+                    v-model="parking_desc"
+                    :options="parking_descs" 
                     label="name"
                     placeholder="Choose an option"
                     :searchable=false
@@ -512,8 +516,8 @@
                   ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
-                  v-if="msgtwo.dercrube && !dercrube"
-                  >{{ msgtwo.dercrube }}</span
+                  v-if="msgtwo.parking_desc && !parking_desc"
+                  >{{ msgtwo.parking_desc }}</span
                 >
               </div>
             </div>
@@ -564,7 +568,7 @@
             </div>
             <div
               class="form-group row ol-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error': msgtwo.yourbasement && !yourbasement }"
+              :class="{ 'input--error': msgtwo.basement_desc && !basement_desc }"
             >
               <label for="hometype" class="col-sm-4 col-form-label text-left"
                 >Please describe your basement</label
@@ -578,7 +582,7 @@
                   @change="changebasement()"
                   class="form-control form-control-lg Roboto-Regular"
                   id=""
-                  v-model="yourbasement"
+                  v-model="basement_desc"
                   required
                 >
                   <option value="null" disabled hidden selected>
@@ -592,8 +596,9 @@
                   >
                 </select> -->
                   <v-select 
+                  :reduce="basements => basements.value"
                     class="form-control form-control-lg Roboto-Regular"
-                    v-model="yourbasement"
+                    v-model="basement_desc"
                     :options="basements" 
                     label="name"
                     placeholder="Choose an option"
@@ -602,8 +607,8 @@
                   ></v-select>
                 <span
                   style="color: #dc3545;font-size: 16px;"
-                  v-if="msgtwo.yourbasement && !yourbasement"
-                  >{{ msgtwo.yourbasement }}</span
+                  v-if="msgtwo.basement_desc && !basement_desc"
+                  >{{ msgtwo.basement_desc }}</span
                 >
               </div>
             </div>
@@ -686,6 +691,7 @@
                   >
                 </select> -->
                  <v-select 
+                 :reduce="CurrentOccupancies => CurrentOccupancies.value"
                     class="form-control form-control-lg Roboto-Regular"
                     v-model="CurrentOccupancy"
                     :options="CurrentOccupancies" 
@@ -759,13 +765,13 @@ export default {
         { value: "3 Storey or more", name: "3 Storey or more" },
         { value: "Multi/Split", name: "Multi/Split" },
       ],
-      homeconditions: [
+      home_conditions: [
         { value: "Look s New", name: "Look s New" },
         { value: "About Average", name: "About Average" },
         { value: "Mostly Original", name: "Mostly Original" },
         { value: "Needs Work", name: "Needs Work" },
       ],
-      dercrubes: [
+      parking_descs: [
         { value: "Attached Garage", name: "Attached Garage" },
         { value: "Detached Garage", name: "Detached Garage" },
         { value: "1 of each", name: "1 of each" },
@@ -805,24 +811,24 @@ export default {
       changedsubcategory: false,
       changedStorey: false,
       hometype: null,
-      dercrube: null,
+      parking_desc: null,
       storeys: null,
       vehiclesnNo: null,
-      bedboveg: null, //Bedrooms (above ground)
-      bedbelowg: null, //Bedrooms (below ground)
-      fullbathroom: null, //Full bathrooms
-      parbathroom: null, //Partial bathrooms
+      bedrooms_bg: null, //Bedrooms (above ground)
+      bedrooms_ag: null, //Bedrooms (below ground)
+      bathrooms_full: null, //Full bathrooms
+      bathrooms_partial: null, //Partial bathrooms
       squfeet: null, //Square feet (approx.)
-      parkspaces: null, //Parking spaces
-      changedhomecondition: false,
-      changeddercrube: false,
+      parking_spaces: null, //Parking spaces
+      changedhome_condition: false,
+      changedparking_desc: false,
       changedbasement: false,
       changedprioritysale: false,
       changedCurrentOccupancy: false,
-      yourbasement: null,
+      basement_desc: null,
       prioritysale: null,
       CurrentOccupancy: null,
-      homecondition: null,
+      home_condition: null,
       msgone: {},
       msgtwo: {},
     };
@@ -849,10 +855,10 @@ export default {
       return (tab = true);
     },
     changehcond() {
-      this.changedhomecondition = true;
+      this.changedhome_condition = true;
     },
     changedescibe() {
-      this.changeddercrube = true;
+      this.changedparking_desc = true;
     },
     changebasement() {
       this.changedbasement = true;
@@ -874,20 +880,20 @@ export default {
       if (!this.storeys) {
         this.msgone.storeys = "Storeys is required";
       }
-      if (this.bedboveg==null || this.bedboveg < 0) {
-        this.msgone.bedboveg = "required";
+      if (this.bedrooms_bg==null || this.bedrooms_bg < 0) {
+        this.msgone.bedrooms_bg = "required";
       }
-      if (this.bedbelowg == null || this.bedbelowg < 0) {
-        this.msgone.bedbelowg = "required";
+      if (this.bedrooms_ag == null || this.bedrooms_ag < 0) {
+        this.msgone.bedrooms_ag = "required";
       }
-      if (this.fullbathroom ==null || this.fullbathroom < 0) {
-        this.msgone.fullbathroom = "required";
+      if (this.bathrooms_full ==null || this.bathrooms_full < 0) {
+        this.msgone.bathrooms_full = "required";
       }
-      if (this.parbathroom   ==null || this.parbathroom < 0) {
-        this.msgone.parbathroom = "required";
+      if (this.bathrooms_partial   ==null || this.bathrooms_partial < 0) {
+        this.msgone.bathrooms_partial = "required";
       }
-      if (this.parkspaces  ==null || this.parkspaces < 0) {
-        this.msgone.parkspaces = "require";
+      if (this.parking_spaces  ==null || this.parking_spaces < 0) {
+        this.msgone.parking_spaces = "require";
       }
       if (this.squfeet ==null || this.squfeet < 0) {
         this.msgone.squfeet = "required";
@@ -895,10 +901,10 @@ export default {
       if (
         this.hometype &&
         this.storeys &&
-        this.bedboveg >= 0 &&
-        this.bedbelowg >= 0 &&
-        this.parbathroom >= 0 &&
-        this.fullbathroom >= 0 &&
+        this.bedrooms_bg >= 0 &&
+        this.bedrooms_ag >= 0 &&
+        this.bathrooms_partial >= 0 &&
+        this.bathrooms_full >= 0 &&
         this.squfeet >= 0
       ) {
         return true;
@@ -909,10 +915,10 @@ export default {
         let inputdata = {};
         (inputdata.hometype = this.hometype),
           (inputdata.storeys = this.storeys),
-          (inputdata.bedboveg = this.bedboveg),
-          (inputdata.bedbelowg = this.bedbelowg),
-          (inputdata.parbathroom = this.parbathroom),
-          (inputdata.fullbathroom = this.fullbathroom),
+          (inputdata.bedrooms_bg = this.bedrooms_bg),
+          (inputdata.bedrooms_ag = this.bedrooms_ag),
+          (inputdata.bathrooms_partial = this.bathrooms_partial),
+          (inputdata.bathrooms_full = this.bathrooms_full),
           (inputdata.squfeet = this.squfeet);
         this.$store.commit("sethomedata", inputdata);
         this.tab_visible = "menu_three";
@@ -921,14 +927,14 @@ export default {
     },
     twocheckform() {
       this.msgtwo = {};
-      if (!this.homecondition) {
-        this.msgtwo.homecondition = "Home Condition is required";
+      if (!this.home_condition) {
+        this.msgtwo.home_condition = "Home Condition is required";
       }
-      if (!this.dercrube) {
-        this.msgtwo.dercrube = "dercrube is required";
+      if (!this.parking_desc) {
+        this.msgtwo.parking_desc = "parking_desc is required";
       }
-      if (!this.yourbasement) {
-        this.msgtwo.yourbasement = "yourbasement is required";
+      if (!this.basement_desc) {
+        this.msgtwo.basement_desc = "basement_desc is required";
       }
       if (!this.prioritysale) {
         this.msgtwo.prioritysale = "prioritysale is required";
@@ -940,9 +946,9 @@ export default {
         this.msgtwo.vehiclesnNo = "required";
       }
       if (
-        this.homecondition &&
-        this.dercrube &&
-        this.yourbasement &&
+        this.home_condition &&
+        this.parking_desc &&
+        this.basement_desc &&
         this.prioritysale &&
         this.CurrentOccupancy &&
         this.vehiclesnNo >= 0
@@ -964,9 +970,9 @@ export default {
     twoFunc() {
       if (this.twocheckform() && Object.keys(this.msgtwo).length == 0) {
         let secondinputdata = {};
-        secondinputdata.homecondition = this.homecondition;
-        secondinputdata.dercrube = this.dercrube;
-        secondinputdata.yourbasement = this.yourbasement;
+        secondinputdata.home_condition = this.home_condition;
+        secondinputdata.parking_desc = this.parking_desc;
+        secondinputdata.basement_desc = this.basement_desc;
         secondinputdata.prioritysale = this.prioritysale;
         secondinputdata.CurrentOccupancy = this.CurrentOccupancy;
         secondinputdata.vehiclesnNo = this.vehiclesnNo;

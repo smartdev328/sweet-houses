@@ -181,6 +181,7 @@
   </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 export default {
   data: () => ({
     tab_visible: "menu_one",
@@ -208,6 +209,7 @@ export default {
     loadvalid: false,
     emailisvalid: false,
     emailnotmaildmsg: "",
+    errors:{}
   }),
   methods: {
     // checkemail() {
@@ -269,7 +271,26 @@ export default {
       this.$emit("openhomeinfopage");
     },
     scheduleEvent() {
-      this.$router.push({ name: "SuceessMsg" });
+      this.$store.dispatch('Post_Instant').then((res) =>{
+         Swal.fire({
+                  title: 'success!',
+                  text: 'Success..! you are login',
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
+                this.$router.push({ name: "RerportHome" });
+                return res;
+      }).catch((err) =>{
+           Swal.fire({
+                  title: 'ERROR!',
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                  timer: 1500
+                })
+                this.errors = err || {};
+      })
+      
     },
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {
