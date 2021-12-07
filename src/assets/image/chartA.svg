@@ -1,0 +1,125 @@
+<svg id="chartA" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="532" height="756" viewBox="0 0 532 756">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.509" y1="-0.051" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffb600"/>
+      <stop offset="0.058" stop-color="#feb500"/>
+      <stop offset="0.255" stop-color="#feb500"/>
+      <stop offset="0.481" stop-color="#ffd364"/>
+      <stop offset="0.899" stop-color="#ffe388"/>
+      <stop offset="1" stop-color="#fffffe"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_3878" data-name="Rectangle 3878" width="532" height="756" fill="#f8f7f5"/>
+  <g id="Component_58_1" data-name="Component 58 – 1" transform="translate(312 20)">
+    <g id="Rectangle_3879" data-name="Rectangle 3879" fill="#fff" stroke="#aaa" stroke-width="1">
+      <rect width="198" height="42" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="197" height="41" rx="4.5" fill="none"/>
+    </g>
+    <text id="All_Sweetly_types" data-name="All Sweetly types" transform="translate(15 29)" fill="#707070" font-size="19" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">All Sweetly types</tspan></text>
+    <g id="Iconly_Light_Arrow_-_Right_2" data-name="Iconly/Light/Arrow - Right 2" transform="translate(188 12) rotate(90)">
+      <g id="Arrow_-_Right_2" data-name="Arrow - Right 2" transform="translate(8.5 19) rotate(-90)">
+        <path id="Stroke_1" data-name="Stroke 1" d="M14,0,7,7,0,0" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+  <text id="Prices_._Aug_2021" data-name="Prices . Aug 2021" transform="translate(19 44)" fill="#232323" font-size="24" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Prices .</tspan><tspan y="0" fill="#aaa"> </tspan><tspan y="0" fill="#707070" font-family="Roboto-Regular, Roboto" font-weight="400">Aug 2021</tspan></text>
+  <text id="_1_060_000" data-name="$1,060,000" transform="translate(19 147)" fill="#232323" font-size="26" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">$1,060,000</tspan></text>
+  <text id="_17.4_" data-name="+17.4%" transform="translate(425 160)" fill="#ffb600" font-size="26" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">+17.4%</tspan></text>
+  <text id="_0.5_" data-name="+0.5%" transform="translate(461 564)" fill="#ffb600" font-size="19" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">+0.5%</tspan></text>
+  <text id="_1.3_" data-name="+1.3%" transform="translate(461 608)" fill="#ffb600" font-size="19" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">+1.3%</tspan></text>
+  <text id="_17.4_2" data-name="+17.4%" transform="translate(452 652)" fill="#ffb600" font-size="19" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">+17.4%</tspan></text>
+  <text id="Average_home_price" data-name="Average home price" transform="translate(19 115)" fill="#707070" font-size="18" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Average home price</tspan></text>
+  <text id="Change_since_1_month_ago" data-name="Change since 1 month ago" transform="translate(19 563)" fill="#707070" font-size="18" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Change since 1 month ago</tspan></text>
+  <text id="Change_since_3_months_ago" data-name="Change since 3 months ago" transform="translate(17 609)" fill="#707070" font-size="18" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Change since 3 months ago</tspan></text>
+  <text id="Change_since_1_year_ago" data-name="Change since 1 year ago" transform="translate(19 652)" fill="#707070" font-size="18" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Change since 1 year ago</tspan></text>
+  <text id="Housing_price_variations_mostly_reflect_interest_rates_population_and_economic_growth_and_government_tax_policies._" data-name="Housing price variations mostly reflect interest rates, population and
+economic growth, and government tax policies. " transform="translate(25 702)" fill="#707070" font-size="15" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Housing price variations mostly reflect interest rates, population and</tspan><tspan x="0" y="18">economic growth, and government tax policies. </tspan></text>
+  <text id="Year_on_year" data-name="Year on year" transform="translate(414 124)" fill="#707070" font-size="18" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Year on year</tspan></text>
+  <text id="_1.08M" data-name="1.08M" transform="translate(20 213)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">1.08M</tspan></text>
+  <text id="_990K" data-name="990K" transform="translate(25 301)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">990K</tspan></text>
+  <text id="_900K" data-name="900K" transform="translate(25 393)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">900K</tspan></text>
+  <text id="_810K" data-name="810K" transform="translate(25 481)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">810K</tspan></text>
+  <text id="Aug_20" data-name="Aug &apos;20" transform="translate(44 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Aug &apos;20</tspan></text>
+  <text id="Oct_20" data-name="Oct &apos;20" transform="translate(119 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Oct &apos;20</tspan></text>
+  <text id="Dec_20" data-name="Dec &apos;20" transform="translate(192 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Dec &apos;20</tspan></text>
+  <text id="Feb_21" data-name="Feb &apos;21" transform="translate(266 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Feb &apos;21</tspan></text>
+  <text id="Apr_21" data-name="Apr &apos;21" transform="translate(339 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Apr &apos;21</tspan></text>
+  <text id="Jun_21" data-name="Jun &apos;21" transform="translate(412 507)" fill="#707070" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">Jun &apos;21</tspan></text>
+  <line id="Line_40" data-name="Line 40" x2="442" transform="translate(68.5 210.5)" fill="none" stroke="#aaa" stroke-width="1.55"/>
+  <line id="Line_41" data-name="Line 41" x2="442" transform="translate(68.5 302.5)" fill="none" stroke="#aaa" stroke-width="1.55"/>
+  <line id="Line_42" data-name="Line 42" x2="442" transform="translate(68 394.5)" fill="none" stroke="#aaa" stroke-width="1.55"/>
+  <line id="Line_43" data-name="Line 43" x2="442" transform="translate(68 481.5)" fill="none" stroke="#aaa" stroke-width="1.55"/>
+  <g id="Group_13423" data-name="Group 13423" transform="translate(-193.262 -2457.788)">
+    <path id="Path_44677" data-name="Path 44677" d="M-4078.238,9810.288l-.262,247.643h-437.34v-89.713s64.977-.795,111.3-12.114,73.994-33.161,73.994-33.161,33.491-38.749,60.95-61.6,48.886-29.794,48.886-29.794l58.306-9.733Z" transform="translate(4777 -7117)" opacity="0.79" fill="url(#linear-gradient)"/>
+    <path id="Path_44676" data-name="Path 44676" d="M-4083.141,9807.812s-72.193,4.188-117.052,14.175-66.549,32.518-66.549,32.518-46,48.178-82.661,73.787a196.811,196.811,0,0,1-23.11,13.992c-22.94,11.743-36.792,11.927-36.792,11.927l-111.174,9.517" transform="translate(4781.641 -7113.227)" fill="none" stroke="#f2af0a" stroke-width="6"/>
+  </g>
+  <g id="Component_59_13" data-name="Component 59 – 13" transform="translate(59 384)">
+    <g id="Ellipse_32" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_11" data-name="Component 59 – 11" transform="translate(121 378)">
+    <g id="Ellipse_32-2" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_6" data-name="Component 59 – 6" transform="translate(317 268)">
+    <g id="Ellipse_32-3" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_5" data-name="Component 59 – 5" transform="translate(351 248)">
+    <g id="Ellipse_32-4" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_4" data-name="Component 59 – 4" transform="translate(386 239)">
+    <g id="Ellipse_32-5" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_3" data-name="Component 59 – 3" transform="translate(420 236)">
+    <g id="Ellipse_32-6" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_2" data-name="Component 59 – 2" transform="translate(460 230)">
+    <g id="Ellipse_32-7" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_1" data-name="Component 59 – 1" transform="translate(497 227)">
+    <g id="Ellipse_32-8" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_9" data-name="Component 59 – 9" transform="translate(184 371)">
+    <g id="Ellipse_32-9" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <line id="Line_45" data-name="Line 45" x2="223" transform="translate(232 558.5)" fill="none" stroke="#707070" stroke-width="2" stroke-dasharray="3"/>
+  <line id="Line_46" data-name="Line 46" x2="218.5" transform="translate(239.5 601.5)" fill="none" stroke="#707070" stroke-width="2" stroke-dasharray="3"/>
+  <line id="Line_47" data-name="Line 47" x2="223" transform="translate(218.5 645)" fill="none" stroke="#707070" stroke-width="2" stroke-dasharray="3"/>
+  <g id="Component_59_8" data-name="Component 59 – 8" transform="translate(244 340)">
+    <g id="Ellipse_32-10" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_59_7" data-name="Component 59 – 7" transform="translate(281 304)">
+    <g id="Ellipse_32-11" data-name="Ellipse 32" fill="#fff" stroke="#ffb600" stroke-width="2">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7.5" fill="none"/>
+    </g>
+  </g>
+</svg>

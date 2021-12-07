@@ -60,7 +60,10 @@
     font-family: "Roboto-ThinItalic";
     src: url("Roboto-ThinItalic.ttf"),
   } 
-
+@font-face {
+  font-family:"DiwaniBentRegular" ;
+  src: url("Diwani Bent Regular.ttf");
+}
 .Poppins{
   font-family: 'Poppins', sans-serif;
 }
@@ -117,6 +120,9 @@ body{
 }
 .Roboto-ThinItalic{
   font-family: 'Roboto-ThinItalic' , sans-serif  !important;
+}
+.DiwaniBentRegular{
+  font-family: 'DiwaniBentRegular',sans-serif  !important;
 }
 /* .font-robot {
   font-family: "Roboto", sans-serif;

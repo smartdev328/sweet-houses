@@ -2,11 +2,18 @@
     <div class="reporthome">
         <div class="container my-5">
             <div class="item1">
-                <div class="item1a d-flex">
-                    <div class="image">
+                <div class="item1a">
+                    <!-- <div class="image">
                               <img src="../../assets/image/icon/searchreport.svg" alt="">
                     </div>
-                    <p class="text-color-3 Roboto-Medium">Find more homes</p>
+                    <input type="text" placeholder="Find more homes" class="text-color-3 px-2 Roboto-Medium border-0"> -->
+                             <div class="searchBox">
+
+            <input class="searchInput shadow-sm " type="text" name="" placeholder="Find more homes">
+            <button class="searchButton" href="#">
+                 <img src="../../assets/image/icon/searchreport.svg" alt="">
+            </button>
+        </div>
                 </div>
                 <div class="item1b">
                         <p class="text-color-1 Roboto-Medium mb-0">18 Merrywood Crescent</p>
@@ -15,7 +22,7 @@
                             <span class="pl-1 br-left">City Name</span>
                         </div>
                 </div>
-                <div class="item1c">
+                <div class="item1c mt-3 mt-md-0">
                         <b-button v-b-modal="'modal-share'" class="btn bg-transparent text-color-1 Roboto-Regular">
                             <img src="../../assets/image/icon/share.svg" alt="icon">
                              Share</b-button>
@@ -98,7 +105,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                          <p class="text-center Roboto-Medium px-5">$387,375</p>
                      </div>
                 </div>
-                <div class="item3d text-center  Roboto-Medium">
+                <div class="item3d text-center px-2 Roboto-Medium">
                     <p><span>Swift Sale:</span> We'll buy it at our discounted fee </p>
                 </div>
                   <div class="item3c p-3">
@@ -188,6 +195,97 @@ months are shown below. </p>
             <div>
                 <card-report></card-report>
             </div>
+            
+        </div>
+        <div class="item8 my-4">
+            <p class="Roboto-Medium text-color-1">Edmonton - Housing market update</p>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="image">
+                        <img src="../../assets/image/chartA.svg" class="w-100 h-100" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="image">
+                        <img src="../../assets/image/chartB.svg" class="w-100 h-100" alt="">
+                    </div>
+                </div>
+            </div>
+            <P class="my-3 ml-2 text-color-1 Roboto-Regular">Edmonton, Alberta is the province's second largest municipality & capital.</P>
+        </div>
+        <div class="item9 my-5">
+            <p>Similar homes for sale</p>
+             <div class="cards">
+            <div>
+                <card-home></card-home>
+            </div>
+            <div>
+                <card-home></card-home>
+            </div>
+            <div>
+                <card-home></card-home>
+            </div>
+            <div>
+                <card-home></card-home>
+            </div>
+        </div>
+        </div>
+        <div class="item10">
+            <div class="item10a">
+                    <img src="../../assets/image/ico-home.svg"  alt="">
+                    <span class="text-color-1 Roboto-Medium ml-2">Want to see more comparable listings?</span>
+            </div>
+            <div class="item10b">
+                <button class="btn Roboto-Regular">Browse homes</button>
+            </div>
+        </div>
+        <div class="item11 my-4 p-4 d-flex row">
+            <div class="col-12 col-md-7">
+                <div class="element11  pr-1 pr-md-5">
+                    <div class="item5a dropdown">
+                    <img  src="../../assets/image/icon/progree.svg" class="w-100 h-100 dropbtn" alt="">
+                    <div class="dropdown-content">
+                        <img  src="../../assets/image/icon/Component 61 – 1.svg" class="w-100 h-100" alt="">
+                    </div>
+                </div>
+                <div class="item5b mr-1 mr-md-5"> 
+                    <p class="text-color-1 Roboto-Medium">Thinking of moving ?</p>
+                    <p class="Roboto-Regular">Sweetly helps you buy, move, then sell.</p>
+                </div>
+                </div>
+                <div class="element1 pl-1 pl-md-5 mt-3">
+                    <p class="Roboto-Regular">
+                The next step is to get a detailed home estimate prepared by an 
+            independent team of expert home evaluators. We'll also start
+            crafting your custom moving plan to take advantage of Sweetly's
+            unique approaches to buying and selling. Learn more
+
+                    </p>
+                    <button class="btn Roboto-Regular text-white">Get personalized home valuation</button>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-5 mt-4 mt-md-0">
+                 <div class="h-75">
+                          <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/HBITrtY5DaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
+                    </div>
+                    <div class="element3 d-flex align-items-center">
+                        <span class="DiwaniBentRegular">،،</span>
+                        <span class="Roboto-Regular pt-3">" It was a huge relief to not have to live through
+the showings. " -Emily Glynn- James</span>
+                    </div>
+            </div>
+        </div>
+        <div class="item12 my-3">
+            <p class="text-color-1 DMSerifRegular">
+                Help us improve this Instant Estimate
+            </p>
+            <div class="item12a text-color-2 Roboto-Regular px-3"> 
+                <div>
+                   <textarea placeholder="What do you think of this Instant Estimate for your home?" class="p-3 w-100" name="" id="" rows="3"></textarea>
+                </div>
+                <button class="btn">Submit</button>
+            </div>
         </div>
         </div>
     </div>
@@ -212,15 +310,82 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+.searchBox {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform:  translate(-50%,50%); */
+    /* background: #2f3640; */
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background: #2f3640; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border: 0;
+    background-color: #fff;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:right;
+    padding: 0;
+    color: #232323;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    background: #fff;
+    border-radius: 12px;
+
+
+}
 .reporthome .item1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 .reporthome .item1 .item1a .image{
     width: 22px;
     height: 22px;
 }
+.reporthome .item1 .item1a .image:focus .reporthome .item1 .item1a{
+     border: 1px solid #70707059 !important;
+    background: #f5f5f5;
+}
+
+.reporthome .item1 .item1a input:focus{
+    outline: none;
+}
+/* .reporthome .item1 .item1a input:focus {
+    border: 1px solid #70707059 !important;
+    background: #f5f5f5;
+    border-radius: 12px;
+} */
 .reporthome .item1 .item1a p{
         font-size: 22px;
 }
@@ -413,5 +578,165 @@ export default {
     grid-template-columns: auto auto auto ;
     grid-column-gap: 40px;
     grid-row-gap: 40px;
+}
+.reporthome .item8 p:first-child,
+.reporthome .item9 p:first-child{
+     font-weight: 600;
+     font-size: 26px;
+}
+.reporthome .item10{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.reporthome .item10 .item10a span{
+    font-size: 16px;
+    font-weight: 600;
+}
+.reporthome .item10 .item10b button{
+    border: 1px solid #FFB600;
+    border-radius: 8px;
+    color:#434242;
+    height: 44px;
+}
+.reporthome .item10 .item10b button:hover{
+    border: 1px solid #707070;
+}
+.reporthome .item11{
+    background: #EDF3F2;
+}
+.reporthome .item11 .item5a{
+    width: 110px;
+    height: 110px;
+}
+.reporthome .item11 .item5b p:first-child{
+    font-size: 26px;
+    font-weight: 600;
+}
+.reporthome .item11 .item5b p:nth-child(2){
+    color: #434242;
+    font-size: 18px;
+}
+.reporthome .item11 .element1 p{
+    color: #434242;
+    font-size: 18px;
+}
+.reporthome .item11 .element1 button{
+    background: #FFB600;
+    border-radius: 8px;
+    font-size: 18px;
+    height: 48px;
+}
+.reporthome .item11 .element3 span:first-child{
+    font-size: 60px;
+    color: #232323;
+}
+.reporthome .item11 .element3 span:nth-child(2){
+    color: #434242;
+}
+.reporthome .item12 p:first-child{
+    font-weight: 600;
+    font-size: 26px;
+}
+textarea{
+    resize: none;
+    border: 0;
+}
+textarea:focus{
+    border: 0;
+    outline: none;
+}
+.reporthome .item12 .item12a{
+    border: 1px solid #70707059;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.reporthome .item12 .item12a div{
+    width: 90%;
+}
+.reporthome .item12 .item12a button{
+    border: 1px solid #FFB600;
+    border-radius: 8px;
+    height: 44px;
+    color: #FFB600;
+}
+.reporthome .item12 .item12a button:hover{
+    border: 1px solid #707070;
+    
+}
+.reporthome .item11 .element11{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 600px){
+    .reporthome .cards{
+        grid-template-columns: auto ;
+    }
+    .reporthome .item3{
+        width: 100%;
+    }
+    .reporthome .item2 .item3a p{
+        font-size: 22px;
+    }
+    .reporthome .item3 .item3c .item3c1 p:first-child,
+    .reporthome .item3 .item3c .item3c1 p:nth-child(2),
+    .reporthome .item3 .item3c .item3c2 p:first-child,
+    .reporthome .item3 .item3c .item3c2 p:nth-child(2){
+        font-size: 14px;
+    }
+    .reporthome .item3 .item3d p{
+        font-size: 18px;
+    }
+    .reporthome .item3 .item3d p span{
+        font-size: 20px;
+    }
+    .reporthome .item4 p:first-child{
+        font-size: 16px;
+    }
+    .reporthome .item4 .item4a{
+        display: block !important;
+    }
+    .reporthome .item5{
+         grid-template-columns: auto ;
+    }
+    .reporthome .item6 p:first-child {
+        font-size: 20px;
+    }
+    .reporthome .item6 p:nth-child(2){
+        font-size: 16px;
+    }
+    .reporthome .item10 .item10a span{
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .reporthome .item10{
+    flex-direction: column;
+}
+.reporthome .item11 .item5b p:first-child {
+    font-size: 20px;
+}
+.reporthome .item12 p:first-child {
+    font-size: 20px;
+}
+.reporthome .item12 .item12a{
+    font-size: 14px;
+}
+.reporthome .item11 .element11{
+    display: block;
+}
+.reporthome .item1 {
+    flex-direction: column;
+}
+
+}
+@media only screen and (min-width: 780){
+.reporthome .cards {
+    display: grid;
+    grid-template-columns: auto auto ;
+
+}
 }
 </style>

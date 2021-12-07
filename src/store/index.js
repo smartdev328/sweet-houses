@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'https://zeekoo90.pythonanywhere.com/api/'
+axios.defaults.baseURL = 'https://adamsweetly.pythonanywhere.com/api/'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
@@ -429,6 +429,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         {title:`What if I have more questions?`,
         content:`Call us! Our number is 780-477-9338.`},
         ],
+        instant_estimate_data:{},
         agent:{},
         status:'',
         homeaddress:'',
@@ -567,7 +568,8 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
                 "latitude" : 64.2823274,
                 "longitude" : -135
             }
-          ]
+          ],
+        formData: new FormData(),
 
     },
     mutations:{
@@ -609,9 +611,51 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         },
         editHomeaddressdata(state,payload){
             state.editdatainput = payload
+        },
+        instant_estimate(state,payload){
+            state.instant_estimate_data = payload
         }
     },
     actions:{
+        Post_Instant({commit,state}){
+            let input={}
+            input.full_address = state.homeaddress,
+            input.storeys = state.homedatafirst.storeys,
+            input.sqft = state.homedatafirst.sqft,
+            input.home_type = state.homedatafirst.home_type,
+            input.bathrooms_full = state.homedatafirst.bathrooms_full,
+            input.bathrooms_partial = state.homedatafirst.bathrooms_partial,
+            input.bedrooms_bg = state.homedatafirst.bedrooms_bg,
+            input.bedrooms_ag = state.homedatafirst.bedrooms_ag,
+            input.parking_spaces = state.homedatasecond.parking_spaces,
+            input.home_condition = state.homedatasecond.home_condition,
+            input.parking_desc = state.homedatasecond.parking_desc,
+            input.vehicles = state.homedatasecond.vehiclesnNo,
+            input.basement_desc = state.homedatasecond.basement_desc,
+            input.priority = state.homedatasecond.prioritysale,
+            input.occupancy = state.homedatasecond.CurrentOccupancy,
+            input.hear_about_us = state.contactinput.socialchanel,
+            input.full_name = state.contactinput.fullname,
+            input.email = state.contactinput.email
+            input.phone_number = state.contactinput.phone
+            Object.entries(input).forEach((entry) =>
+            state.formData.append(entry[0], entry[1])
+            );
+            return new Promise((resolve, reject) => {
+                axios({url: 'homes/instant_estimate/', data:  state.formData, method: 'POST' })
+                .then(resp => {
+                  commit('instant_estimate', resp.data)
+                  state.formData = new FormData(),
+                  resolve(resp)
+                 
+                })
+                .catch(err => {
+                    state.formData = new FormData(),
+                  reject(err)
+                })
+              })
+
+        },
         ScrollTop(){
             window.scrollTo(0,0);
         },

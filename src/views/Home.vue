@@ -425,6 +425,19 @@ export default {
   width: 160px !important;
   text-align: end;
 }
+@media only screen and (max-width: 770px){
+  .item1b .item1b3 {
+    display: none;
+  }
+    .item1b .item1b3-sm {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .home .item1 {
     width: 100%;
