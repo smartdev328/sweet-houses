@@ -918,6 +918,7 @@ export default {
           (inputdata.bedrooms_bg = this.bedrooms_bg),
           (inputdata.bedrooms_ag = this.bedrooms_ag),
           (inputdata.bathrooms_partial = this.bathrooms_partial),
+          (inputdata.parking_spaces = this.parking_spaces),
           (inputdata.bathrooms_full = this.bathrooms_full),
           (inputdata.squfeet = this.squfeet);
         this.$store.commit("sethomedata", inputdata);
