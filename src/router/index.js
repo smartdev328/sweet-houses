@@ -161,6 +161,16 @@ const routes = [
     path:'/report-home',
     name:"RerportHome",
     component:()=>import('../components/base/ReportHome.vue')
+  },
+  {
+    path:'/saved',
+    name:'Saved',
+    component:()=>import('../components/base/SavedListings.vue')
+  },
+  {
+    path:'/edithomeinfo',
+    name:'EditHomeInof',
+    component:()=>import('../components/base/EditHomeinfo.vue')
   }
   
   

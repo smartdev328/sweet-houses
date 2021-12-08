@@ -26,7 +26,10 @@
                                     <p class="ml-3">Contact Details</p>
                                 </li> 
                             </ul>
-                        </div>
+                        </div>  
+                        <!-- <div class="map-address" v-if="latlong" > 
+                        <address-map :zoom=18></address-map>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -65,6 +68,11 @@ export default {
         channelitem:null,
       //  contactinput:{}
     }),
+    computed:{
+        latlong(){
+            return this.$store.state.latlong
+        }
+    },
     methods:{
         getclass(tab) {
         if (tab == this.selected_menu) {
