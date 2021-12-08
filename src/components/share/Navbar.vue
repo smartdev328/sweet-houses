@@ -20,7 +20,7 @@
         </router-link>
       </li>
        <li class="nav-item">
-        <router-link to="/Whats-My-Home-Worth" class="nav-link">
+        <router-link to="/saved" class="nav-link">
           <div class="d-flex">
             <img src="../../assets/image/icon/Heart.svg" alt="icon" class="heart-icon"> 
             <p>Saved (0)</p>

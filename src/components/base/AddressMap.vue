@@ -5,7 +5,7 @@
                 
             <GmapMap
             :center="{lat:this.lat, lng:this.lon}"
-            :zoom="15"
+            :zoom="zoom"
             ref="map"
             map-type-id="terrain"
             draggable=false
@@ -16,6 +16,7 @@
                 :position="{lat:this.lat, lng:this.lon}"
                 :clickable="true"
                 :draggable="false"
+                :icon="icon"
                 @click="center=m.position"
             />
             </GmapMap>
@@ -30,6 +31,7 @@ export default {
     props: {
         lon: { type: Number,default:-79.383184},
         lat: { type: Number,default:43.653226},
+        zoom:{type:Number , default:15}
     },
     data:() =>({
         options:{
@@ -43,7 +45,7 @@ export default {
         disableDefaultUi: false,
         draggable:false
         },
-        icon:{url:'../../assets/image/icon/markerhome.svg'}
+        icon:require('../../assets/image/icon/markerhome.svg')
     }),
     computed: {
     google: gmapApi,
