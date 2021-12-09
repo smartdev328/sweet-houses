@@ -274,9 +274,9 @@ export default {
       this.$store.dispatch('Post_Instant').then((res) =>{
          Swal.fire({
                   title: 'success!',
-                  text: 'Success..! you are login',
                   icon: 'success',
                   confirmButtonText: 'Ok',
+                  showConfirmButton:false,
                   timer: 1500
                 })
                 this.$router.push({ name: "RerportHome" });
@@ -302,7 +302,6 @@ export default {
           .then((res) => {
            if (res.data) {
               this.emailisvalid = true;
-            //  this.loadvalid = false;
             this.emailnotmaildmsg = "";
               let contactinput = {};
               contactinput.socialchanel = this.socialchanel;
@@ -312,7 +311,6 @@ export default {
               this.$store.commit("setContactDetail", contactinput);
               this.scheduleEvent()
               window.scrollTo(0,0);
-             // this.$emit("submitparent2",contactinput);
             } else {
              this.loadvalid = false;
              this.emailisvalid = false;
