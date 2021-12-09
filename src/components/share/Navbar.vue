@@ -16,7 +16,7 @@
       </li>
         <li class="nav-item">
         <router-link to="/Whats-My-Home-Worth" class="nav-link">
-          Instant Estimates 
+          Sweetly Estimates 
         </router-link>
       </li>
        <li class="nav-item">

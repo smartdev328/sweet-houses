@@ -74,7 +74,7 @@
             </div>
             <div class="item2 p-4 mt-4 mb-2 rounded">
                 <div class="item2a d-flex align-items-baseline">
-                    <p class="text-white Roboto-Medium mr-2">Instant Estimate </p>
+                    <p class="text-white Roboto-Medium mr-2">Sweetly Estimate</p>
                     <img src="../../assets/image/icon/warning.svg" class="" alt="">
                 </div>
                 <div class="item3a text-white d-flex align-items-center">
@@ -135,7 +135,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                     Sweetly Estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detects the closest house that we have data for, the address used for this listing is 
                      "<span v-if="instant_estimate_data">{{instant_estimate_data.address_found}}</span>"
                      <code><br></code>
-                    Calculated 1 minute ago . Instant estimate doesn't factor in renovations, condition, or unique features.</p>
+                    Calculated 1 minute ago . Sweetly Estimate doesn't factor in renovations, condition, or unique features.</p>
                 <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
                         <p>
                             <span>{{homedatafirst.bedrooms_bg}}</span>
@@ -282,12 +282,12 @@ the showings. " -Emily Glynn- James</span>
             </div>
         </div>
         <div class="item12 my-3">
-            <p class="text-color-1 DMSerifRegular">
-                Help us improve this Instant Estimate
+            <p class="text-color-1 DMSerifRegular text-capitalize">
+                Help us improve this Sweetly  Estimate
             </p>
             <div class="item12a text-color-2 Roboto-Regular px-3"> 
                 <div>
-                   <textarea placeholder="What do you think of this Instant Estimate for your home?" class="p-3 w-100" name="" id="" rows="3"></textarea>
+                   <textarea placeholder="What did you think of this estimate for your home?" class="p-3 w-100" name="" id="" rows="3"></textarea>
                 </div>
                 <button class="btn">Submit</button>
             </div>

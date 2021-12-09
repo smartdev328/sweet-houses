@@ -47,7 +47,7 @@
               class="text-center text-white DMSerifRegular"
               :class="tab_visible('Sweet_Sale')"
             >
-              <p class="DMSerifRegular">
+              <p class="DMSerifRegular font-weight-bold">
                 Get Maximum Value! Skip Public Showings And Choose Your Moving
                 Day
               </p>
@@ -59,7 +59,7 @@
               class="text-center text-white DMSerifRegular mb-5"
               :class="tab_visible('Swift_Sale')"
             >
-              <p class="DMSerifRegular">Your offer in minutes, SOLD in days</p>
+              <p class="DMSerifRegular font-weight-bold">Your offer in minutes, SOLD in days</p>
               <p class="Roboto-Regular">
                 Market Value less Our Fee = SOLD! Hassle-free.
               </p>
@@ -68,7 +68,7 @@
               class="text-center text-white DMSerifRegular mb-5"
               :class="tab_visible('Equity_Advance')"
             >
-              <p class="DMSerifRegular">
+              <p class="DMSerifRegular font-weight-bold">
                 Your Home Equity, Before Your First Showing!
               </p>
               <p>Access $25,000, $50,000, $150,000, or more!</p>
@@ -77,7 +77,7 @@
               class="text-center text-white DMSerifRegular mb-5"
               :class="tab_visible('Traditional_Real_Estate')"
             >
-              <p class="DMSerifRegular">Sweetened Listing, With Muscle!</p>
+              <p class="DMSerifRegular font-weight-bold">Sweetened Listing, With Muscle!</p>
               <p class="Roboto-Regular">Compare our services.</p>
             </div>
           
