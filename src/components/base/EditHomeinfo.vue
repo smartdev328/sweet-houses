@@ -26,11 +26,11 @@
                         <div>
                             <p class="text-color-2 Roboto-Regular">Which type best describes your home? </p>
                             <div class="types">
-                                <a class="btn Roboto-Regular" :class="{hometypeselected:hometype == 'Detached'}" @click="selectHometype('Detached')"> Detached  </a>
-                                <a class="btn Roboto-Regular" :class="{hometypeselected:hometype == 'Semi-detachd'}" @click="selectHometype('Semi-detachd')"> Semi-detachd  </a>
-                                <a class="btn Roboto-Regular" :class="{hometypeselected:hometype == 'Townhouse'}" @click="selectHometype('Townhouse')">Townhouse  </a>
-                                <a class="btn Roboto-Regular" :class="{hometypeselected:hometype == 'Condo or apartment'}" @click="selectHometype('Condo or apartment')" > Condo or apartment  </a>
-                                <a class="btn Roboto-Regular" :class="{hometypeselected:hometype == 'Other'}" @click="selectHometype('Other')"> Other </a>
+                                <a class="btn Roboto-Regular" :class="{hometypeselected:homedatafirst.hometype == 'Detached'}" @click="selectHometype('Detached')"> Detached  </a>
+                                <a class="btn Roboto-Regular" :class="{hometypeselected:homedatafirst.hometype == 'Semi-detachd'}" @click="selectHometype('Semi-detachd')"> Semi-detachd  </a>
+                                <a class="btn Roboto-Regular" :class="{hometypeselected:homedatafirst.hometype == 'Townhouse'}" @click="selectHometype('Townhouse')">Townhouse  </a>
+                                <a class="btn Roboto-Regular" :class="{hometypeselected:homedatafirst.hometype == 'Condo or apartment'}" @click="selectHometype('Condo or apartment')" > Condo or apartment  </a>
+                                <a class="btn Roboto-Regular" :class="{hometypeselected:homedatafirst.hometype == 'Other'}" @click="selectHometype('Other')"> Other </a>
                             </div>
                         </div>
                         <div class="my-3">
@@ -105,7 +105,8 @@
                         <div class="element1 text-left">
                               <p class="Roboto-Regular">Internal area</p>
                             <div class="form-group">
-                                 <input type="number" class="pl-0 pl-md-2 w-75 form-control form-control-lg border bg-white no-arrow Roboto-Regular">
+                                 <input type="number" v-model="squfeet"
+                                class="pl-0 pl-md-2 w-75 form-control form-control-lg border bg-white no-arrow Roboto-Regular">
                             </div>
                               <span class="text-color-2 Roboto-Regular">Public records say this home is 1500-2000 sqft</span><br>
                               <span class="text-color-2 Roboto-Regular">Typical 3-bedroom Toronto detached homes are 1,700-2,200 sqft</span>
@@ -122,25 +123,15 @@
                         </div>
                     </div>
                     <br>
-                     <div class="item4a d-flex">
-                        <div class="element1 text-left">
-                              <p class="Roboto-Regular">What best describes the finish of your basement ?</p>
-                            <div class="form-group">
-                                 <input type="number" class="pl-0 pl-md-2 w-75 form-control form-control-lg border bg-white no-arrow Roboto-Regular">
-                            </div>
-                              <span class="text-color-2 Roboto-Regular">It's okay to guess if you're unsure</span>
-                        </div>
-                    </div>
-                    <br>
                     <div class="item5">
                         <div class="element1 text-left">
                             <p class=" Roboto-Regular">What best describes the finish of your basement ?</p>
                              <div class="types">
-                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:hometype == 'Detached'}" @click="selectHometype('Detached')"> Detached  </a>
-                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:hometype == 'Semi-detachd'}" @click="selectHometype('Semi-detachd')"> Semi-detachd  </a>
-                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:hometype == 'Townhouse'}" @click="selectHometype('Townhouse')">Townhouse  </a>
-                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:hometype == 'Condo or apartment'}" @click="selectHometype('Condo or apartment')" > Condo or apartment  </a>
-                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:hometype == 'Other'}" @click="selectHometype('Other')"> Other </a>
+                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:basement_desc == 'Fully Finished'}" @click="selectbasement_desc('Fully Finished')"> Fully Finished  </a>
+                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:basement_desc == 'Partially Finished'}" @click="selectbasement_desc('Partially Finished')">Partially Finished</a>
+                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:basement_desc == 'Unfinished'}" @click="selectbasement_desc('Unfinished')">Unfinished  </a>
+                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:basement_desc == 'Separate Suite'}" @click="selectbasement_desc('Separate Suite')" >Separate Suite </a>
+                                <a class="btn Roboto-Regular mr-2" :class="{hometypeselected:basement_desc == 'No Basement'}" @click="selectbasement_desc('No Basement')"> No Basement </a>
                             </div>
                         </div>
                     </div>
@@ -195,8 +186,8 @@
                            <div class="col-sm-6  px-0 Roboto-Regular  text-left">
                             <v-select 
                             class="form-control form-control-lg Roboto-Regular"
-                            v-model="storeys"
-                            :options="StoreysType" 
+                            v-model="parking_desc"
+                            :options="parking_descs" 
                             label="name"
                             placeholder="Choose an option"
                             :searchable=false
@@ -281,19 +272,12 @@
                         <p class="Roboto-Medium">Taxes </p>
                     </div>
                     <div class="col-12 col-md-8 item6b">
-                           <div>
+                           <div class="texinput">
                             <p class="Roboto-Regular">Property taxes </p>
-                           <div class="col-sm-6  px-0 Roboto-Regular  text-left">
-                            <v-select 
-                            class="form-control form-control-lg Roboto-Regular"
-                            v-model="storeys"
-                            :options="StoreysType" 
-                            label="name"
-                            placeholder="Choose an option"
-                            :searchable=false
-                            :clearable=false
-                            ></v-select>
+                            <div class="form-group">
+                                 <input type="number" class="pl-0 pl-md-2 form-control form-control-lg border bg-white no-arrow Roboto-Regular ">
                             </div>
+                           <span class="Roboto-Regular hintspan" style="">Per year</span>
                             <br>
                             <span class="Roboto-Regular text-color-2">Typical townhomes taxes are $3,500 per year, typical detached homes taxes are $6,800 per year</span>
                         </div>
@@ -308,8 +292,6 @@
 export default {
     data(){
         return{
-            hometype:'Detached',
-            storeys:'2-Storey',
              StoreysType: [
         "1 (Bungalow)",
          "2-Storey",
@@ -319,14 +301,52 @@ export default {
          "3 Storey or more",
       "Multi/Split"
       ],
-      bathrooms_full:2,
-      bathrooms_partial:2
+      parking_descs: [
+        { value: "Attached Garage", name: "Attached Garage" },
+        { value: "Detached Garage", name: "Detached Garage" },
+        { value: "1 of each", name: "1 of each" },
+        { value: "No Garage", name: "No Garage" },
+        { value: "Other", name: "Other" },
+      ],
         }
     },
     methods:{
         selectHometype(item){
             this.hometype = item
+        },
+        selectbasement_desc(item){
+            this.basement_desc = item
         }
+    },
+    computed:{
+        homedatafirst(){
+            return this.$store.state.homedatafirst || {}
+        },
+        hometype(){
+            return this.$store.state.homedatafirst.hometype
+        },
+        storeys(){
+            return this.$store.state.homedatafirst.storeys
+        },
+        bathrooms_full(){
+            return this.$store.state.homedatafirst.bathrooms_full
+        },
+        bathrooms_partial(){
+            return this.$store.state.homedatafirst.bathrooms_partial
+        },
+        squfeet(){
+            return this.$store.state.homedatafirst.squfeet
+        },
+        homedatasecond(){
+            return this.$store.state.homedatasecond || {}
+        },
+        basement_desc(){
+            return this.$store.state.homedatasecond.basement_desc
+        },
+        parking_desc(){
+            return this.$store.state.homedatasecond.parking_desc
+        }
+        
     }
 }
 </script>
@@ -420,6 +440,10 @@ font-weight: 600;
     color: #FFB600;
     border: 1px solid #FFB600;
 }
+.types .hometypeselected{
+    color: #FFB600 !important;
+    border: 1px solid #FFB600 !important;
+}
 .item5 .element1 .types a:hover{
     background: #FFB600;
     color: #fff;
@@ -487,6 +511,16 @@ border: 1px solid rgb(194, 200, 200);
 .item6 .item6b .element {
     flex-direction: row;
 }
+.texinput input{
+    width: 50%;
+}
+.texinput .hintspan{
+    position: absolute;
+    top: 55px;
+    left: 294px;
+    font-size: 18px;
+    color: #434242;
+}
 @media only screen and (max-width: 600px){
     .item1 p:first-child{
         font-size: 18px;
@@ -513,6 +547,12 @@ border: 1px solid rgb(194, 200, 200);
     .item6 .item6b .element {
     flex-direction: column;
 }
-    
+    .texinput input{
+    width: 75%;
+}
+.texinput .hintspan{
+    left: 52%;
+    font-size: 16px;
+}
 }
 </style>
