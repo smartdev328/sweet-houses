@@ -616,38 +616,20 @@
               class="form-group row ol-12 col-md-10 mx-auto px-0"
               :class="{ 'input--error': msgtwo.prioritysale && !prioritysale }"
             >
-              <label for="hometype" class="col-sm-4 col-form-label text-left"
+              <label for="hometype" class="col-sm-6 col-form-label text-left"
                 >Top priority for this sale</label
               >
               <div
-                class="col-sm-8 selectspecbg Roboto-Regular text-left"
+                class="col-sm-12 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedprioritysale }"
               >
-                <!-- <select
-                  name="canadianprovince"
-                  @change="changesale()"
-                  class="form-control form-control-lg Roboto-Regular"
-                  id=""
-                  v-model="prioritysale"
-                  required
-                >
-                  <option value="null" disabled hidden selected>
-                    Choose an option
-                  </option>
-                  <option
-                    v-for="prioritysale in prioritysales"
-                    :key="prioritysale.id"
-                    :value="prioritysale.value"
-                    >{{ prioritysale.name }}</option
-                  >
-                </select> -->
                  <v-select 
                     :reduce="prioritysales => prioritysales.value"
                     class="form-control form-control-lg Roboto-Regular"
                     v-model="prioritysale"
                     :options="prioritysales" 
                   
-                    :get-option-label="({name}) => `${name}`" 
+                    :get-option-label="({value}) => `${value}`" 
                     placeholder="Choose an option"
                     :searchable=false
                     :clearable=false

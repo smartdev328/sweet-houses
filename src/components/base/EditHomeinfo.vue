@@ -282,7 +282,7 @@
                     </div>
                     <div class="col-12 col-md-8 item6b">
                            <div>
-                            <p class="Roboto-Regular">Sweetly taxes </p>
+                            <p class="Roboto-Regular">Property taxes </p>
                            <div class="col-sm-6  px-0 Roboto-Regular  text-left">
                             <v-select 
                             class="form-control form-control-lg Roboto-Regular"

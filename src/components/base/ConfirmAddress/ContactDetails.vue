@@ -302,7 +302,7 @@ export default {
           .then((res) => {
            if (res.data) {
               this.emailisvalid = true;
-              this.loadvalid = false;
+            //  this.loadvalid = false;
             this.emailnotmaildmsg = "";
               let contactinput = {};
               contactinput.socialchanel = this.socialchanel;
