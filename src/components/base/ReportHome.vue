@@ -15,11 +15,12 @@
             </button>
         </div>
                 </div>
-                <div class="item1b">
-                        <p class="text-color-1 Roboto-Medium mb-0">18 Merrywood Crescent</p>
+                <div class="item1b" >
+                        <p class="text-color-1 Roboto-Medium mb-0" v-if="address_format">{{address_format[0]}}</p>
                         <div class="text-color-2 Roboto-Regular d-flex justify-content-around">
-                            <span>Millshaven</span>
-                            <span class="pl-1 br-left">City Name</span>
+                            <span>{{address_format[1]}}</span>
+                            <span class="pl-1 br-left" v-if="address_format[2]">{{address_format[2]}}</span>
+                             <span class="pl-1 br-left" v-else>Canada</span>
                         </div>
                 </div>
                 <div class="item1c mt-3 mt-md-0">
@@ -77,17 +78,17 @@
                     <img src="../../assets/image/icon/warning.svg" class="" alt="">
                 </div>
                 <div class="item3a text-white d-flex align-items-center">
-                    <p class="Roboto-Medium mr-5 mb-0">$984,150</p>
-                    <button class="btn btn-track Roboto-Regular px-2">
+                    <p class="Roboto-Medium mr-5 mb-0" v-if="prices">{{prices.offer_price}}$</p>
+                    <!-- <button class="btn btn-track Roboto-Regular px-2">
                         <img src="../../assets/image/icon/iconhome.svg" alt="">
                             Track
-                    </button>
+                    </button> -->
                 </div>
             </div>
             <div class="item3 my-3  text-center">
                 <div class="item3a p-3">
-                    <p class="text-color-1 Roboto-Medium mb-0">$392,500</p>
-                    <p class="text-color-1 Roboto-Medium mb-0">18, Merry wood Crescent, Sherwood Park </p>
+                    <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">{{prices.offer_price}}$</p>
+                    <p class="text-color-1 Roboto-Medium mb-0" v-if="instant_estimate_data">{{instant_estimate_data.address_searched}} </p>
                 </div>
                 <div class="item3b p-3 py-4">
                     <p class="text-color-1 Roboto-Medium">Sweet Sale: We buy it, improve it, and sell it, You Get More!</p>
@@ -98,11 +99,11 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                  <div class="item3c p-3 py-4">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5">$422,500</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_price}}$</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5">$387,375</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_net}}$</p>
                      </div>
                 </div>
                 <div class="item3d text-center px-2 Roboto-Medium">
@@ -111,7 +112,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                   <div class="item3c p-3">
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5">$353,500</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.swift_net}}$</p>
                      </div>
                 </div>
                    <div class="item3d text-center  Roboto-Medium">
@@ -120,36 +121,40 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                    <div class="item3c p-3">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5">$422,500</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_price}}$</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5">$387,375</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_net}}$</p>
                      </div>
                 </div>
             </div>
 
             <div class="item4 px-2 my-5">
-                <p class="text-color-2 Roboto-Regular">Calculated 1 minute ago . Instant estimate doesn't factor in renovations, condition, or unique features.</p>
+                <p class="text-color-2 Roboto-Regular">
+                    Sweetly Estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detects the closest house that we have data for, the address used for this listing is 
+                     "<span v-if="instant_estimate_data">{{instant_estimate_data.address_found}}</span>"
+                     <code><br></code>
+                    Calculated 1 minute ago . Instant estimate doesn't factor in renovations, condition, or unique features.</p>
                 <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
                         <p>
-                            <span>4</span>
+                            <span>{{homedatafirst.bedrooms_bg}}</span>
                             <span>bed</span>
                         </p>
                            <p>
-                            <span>4</span>
+                            <span>{{homedatafirst.bathrooms_full}}</span>
                             <span>bath</span>
                         </p>
                            <p>
-                            <span>900</span>
+                            <span>{{homedatafirst.squfeet}}</span>
                             <span>sqft</span>
                         </p>
                            <p>
-                            <span>3</span>
+                            <span>{{homedatafirst.parking_spaces}}</span>
                             <span>parking</span>
                         </p>
                          <p>
-                            <span>Townhouse</span>
+                            <span>{{homedatafirst.hometype}}</span>
                         </p>
                         <div class="element1">
                             <img src="../../assets/image/icon/edit.svg" alt="">
@@ -183,7 +188,7 @@ agents. Learn more about our <span> selling services.</span></p>
 months are shown below. </p>
             </div>
             <div class="my-5 pb-5">
-                <address-map></address-map>
+                <address-map  :lat="latlong.lat" :lon="latlong.lng"></address-map>
             </div>
         <div class="item7 cards my-5">
             <div>
@@ -197,7 +202,7 @@ months are shown below. </p>
             </div>
             
         </div>
-        <div class="item8 my-4">
+        <!-- <div class="item8 my-4">
             <p class="Roboto-Medium text-color-1">Edmonton - Housing market update</p>
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -212,7 +217,7 @@ months are shown below. </p>
                 </div>
             </div>
             <P class="my-3 ml-2 text-color-1 Roboto-Regular">Edmonton, Alberta is the province's second largest municipality & capital.</P>
-        </div>
+        </div> -->
         <div class="item9 my-5">
             <p>Similar homes for sale</p>
              <div class="cards">
@@ -297,6 +302,23 @@ export default {
   data(){
       return{
          
+      }
+  },
+  computed:{
+      instant_estimate_data(){
+          return this.$store.state.instant_estimate_data || {}
+      },
+      address_format(){
+          return this.instant_estimate_data.address_found.split(',');
+      },
+      prices(){
+             return this.$store.state.instant_estimate_data.prices || {}
+      },
+      homedatafirst(){
+          return this.$store.state.homedatafirst || {}
+      },
+      latlong(){
+          return this.$store.state.latlong || {}
       }
   },
     methods:{
