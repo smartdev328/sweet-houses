@@ -286,6 +286,7 @@ export default {
                   title: 'ERROR!',
                   icon: 'error',
                   confirmButtonText: 'Ok',
+                  showConfirmButton:false,
                   timer: 1500
                 })
                 this.errors = err || {};

@@ -156,7 +156,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                          <p>
                             <span>{{homedatafirst.hometype}}</span>
                         </p>
-                        <div class="element1">
+                        <div class="element1" @click="editHome()">
                             <img src="../../assets/image/icon/edit.svg" alt="">
                             <span class="mb-0 ml-2">Edit home Info</span>
                         </div>
@@ -326,6 +326,9 @@ export default {
             var Url = this.$refs.mylink;
             Url.select();
             document.execCommand("copy");
+        },
+        editHome(){
+            this.$router.push({name:'EditHomeInof'})
         }
         
     }
