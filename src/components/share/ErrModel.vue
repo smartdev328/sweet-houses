@@ -10,6 +10,7 @@
                 780-477-9338
                 <b>info@sellsweetly.ca</b>
             </p>
+            <br>
             <button class="btn Roboto-Regular text-white px-5" @click="routehome()">Ok</button>
         </div>
 
@@ -65,5 +66,6 @@ height: 90px;
     background:  #FFB600;
     font-size: 18px;
     height: 44px;
+    border-radius: 8px;
 }
 </style>
