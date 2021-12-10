@@ -178,6 +178,16 @@
       </div>
     </div>
      </div>
+           <b-modal id="err-model" 
+           v-model="errmodel"
+           ref="errmodel"
+        header-bg-variant="white"
+        body-bg-variant="white"
+        modal-ok="confirm"
+        no-close-on-backdrop
+        footer-bg-variant="white">
+           <err-model></err-model>
+        </b-modal>
   </div>
 </template>
 <script>
@@ -209,26 +219,10 @@ export default {
     loadvalid: false,
     emailisvalid: false,
     emailnotmaildmsg: "",
-    errors:{}
+    errors:{},
+    errmodel:false
   }),
   methods: {
-    // checkemail() {
-    //   this.loadvalid = true;
-    //   this.$http
-    //     .get(
-    //       `https://deva.dillilabs.com/api/1e48daa0-4d56-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
-    //     )
-    //     .then((res) => {
-    //       if (res.data) {
-    //         this.emailisvalid = true;
-    //         this.loadvalid = false;
-    //         return true;
-    //       }
-    //       this.loadvalid = false;
-    //       this.emailisvalid = false;
-    //       this.emailnotmaildmsg = "please enter a real email";
-    //     });
-    // },
     checkform() {
       this.msg = {};
       this.emailnotmaildmsg = "";
@@ -272,15 +266,34 @@ export default {
     },
     scheduleEvent() {
       this.$store.dispatch('Post_Instant').then((res) =>{
-         Swal.fire({
+        if(res.status ===200 ){
+           Swal.fire({
                   title: 'success!',
                   icon: 'success',
                   confirmButtonText: 'Ok',
                   showConfirmButton:false,
                   timer: 1500
                 })
-                this.$router.push({ name: "RerportHome" });
-                return res;
+                this.$router.push({ name: "RerportHome" })
+        }else{
+           this.$bvModal.show('err-model')
+            // Swal.fire({
+            //       title: 'ERROR!',
+            //       icon: 'error',
+            //       confirmButtonText: 'Ok',
+            //       showConfirmButton:'Ok',
+            //       confirmButtonColor:'#ffb600',
+            //       html: `We were unable to find your address in our database  <br>
+            //       Please contact Sweetly directly so we can assist you in getting Maximum Value for your home.<br>
+            //       780-477-9338<br>
+            //       <b>info@sellsweetly.ca</b>
+
+            //       `,
+            //     })
+        }
+        
+                
+               
       }).catch((err) =>{
            Swal.fire({
                   title: 'ERROR!',
@@ -319,13 +332,6 @@ export default {
            }
           });
       }
-      //  let contactinput = {}
-      //  contactinput.socialchanel =  this.socialchanel
-      //  contactinput.fullname =  this.socialchanel
-      //  contactinput.email =  this.email
-      //  contactinput.phone =  this.phone
-      //  this.$store.commit('setContactDetail',contactinput)
-      //  this.$emit('submitparent2')
     },
   },
 };

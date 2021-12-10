@@ -114,6 +114,9 @@ Vue.component('show-list',require('./components/base/ShowList.vue').default)
 const CardReport = () => import('./components/share/CardReport.vue');
 Vue.component('card-report',CardReport);
 
+const ErrModel = () => import('./components/share/ErrModel.vue');
+Vue.component('err-model',ErrModel);
+
 Vue.component('card-home',require('./components/share/CardHome.vue').default);
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
