@@ -174,7 +174,6 @@ export default {
   watch: {},
   methods: {
     yourFunctinNameToBeCall(){
-      console.log('0000')
       this.place_choosed = false;
     },
     getAddressData(addressData, placeResultData) {

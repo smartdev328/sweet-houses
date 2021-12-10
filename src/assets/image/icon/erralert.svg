@@ -1,0 +1,11 @@
+<svg id="erralert" xmlns="http://www.w3.org/2000/svg" width="83" height="83" viewBox="0 0 83 83">
+  <g id="erralert-2" data-name="erralert" transform="translate(-205 -720.729)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="41.5" cy="41.5" r="41.5" transform="translate(205 720.729)" fill="#ffb600"/>
+  </g>
+  <g id="Iconly_Light_Close_Square" data-name="Iconly/Light/Close Square" transform="translate(33.229 33.229)">
+    <g id="Close_Square" data-name="Close Square">
+      <path id="Stroke_1" data-name="Stroke 1" d="M19.983,0,0,16.526" transform="translate(0.01 0.007)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <path id="Stroke_2" data-name="Stroke 2" d="M20,16.543,0,0" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    </g>
+  </g>
+</svg>

@@ -230,9 +230,6 @@ months are shown below. </p>
             <div>
                 <card-home></card-home>
             </div>
-            <div>
-                <card-home></card-home>
-            </div>
         </div>
         </div>
         <div class="item10">

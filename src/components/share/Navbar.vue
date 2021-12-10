@@ -122,7 +122,8 @@ Estate</a>
         header-bg-variant="white"
         body-bg-variant="white"
         footer-bg-variant="white">
-         <sign-up @hidesignupmodal="hidesignupmodal"
+         <sign-up 
+         @hidesignupmodal="hidesignupmodal"
          @XsignupOlogin="XsignupOlogin"
          ></sign-up>
         </b-modal>
