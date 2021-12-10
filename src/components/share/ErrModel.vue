@@ -7,7 +7,7 @@
             <p class="p2 text-color-2 Roboto-Regular text-center">
                 We were unable to find your address in our database<br> {{homeaddress}}<br>
                 Please contact Sweetly directly so we can assist you in getting Maximum Value for your home.<br>
-                780-477-9338
+                780-477-9338<br>
                 <b>info@sellsweetly.ca</b>
             </p>
             <br>
