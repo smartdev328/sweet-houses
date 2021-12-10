@@ -266,7 +266,8 @@ export default {
     },
     scheduleEvent() {
       this.$store.dispatch('Post_Instant').then((res) =>{
-        if(res.status ===200 ){
+        console.log(res)
+        if(res.status ==201){
            Swal.fire({
                   title: 'success!',
                   icon: 'success',
