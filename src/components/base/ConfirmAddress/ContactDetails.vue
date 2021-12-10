@@ -184,6 +184,7 @@
         header-bg-variant="white"
         body-bg-variant="white"
         modal-ok="confirm"
+        hide-header-close
         no-close-on-backdrop
         footer-bg-variant="white">
            <err-model></err-model>
@@ -266,8 +267,7 @@ export default {
     },
     scheduleEvent() {
       this.$store.dispatch('Post_Instant').then((res) =>{
-        console.log(res)
-        if(res.data.status ==201){
+        if(res.data.status == 200){
            Swal.fire({
                   title: 'success!',
                   icon: 'success',
@@ -277,6 +277,7 @@ export default {
                 })
                 this.$router.push({ name: "RerportHome" })
         }else{
+          this.loadvalid = false;
            this.$bvModal.show('err-model')
             // Swal.fire({
             //       title: 'ERROR!',
@@ -296,6 +297,7 @@ export default {
                 
                
       }).catch((err) =>{
+        this.loadvalid = false;
            Swal.fire({
                   title: 'ERROR!',
                   icon: 'error',
