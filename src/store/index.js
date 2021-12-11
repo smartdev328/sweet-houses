@@ -658,6 +658,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
               })
 
         },
+        Get_Image(){
+            
+        },
         ScrollTop(){
             window.scrollTo(0,0);
         },

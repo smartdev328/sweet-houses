@@ -78,7 +78,7 @@
                     <img src="../../assets/image/icon/warning.svg" class="" alt="">
                 </div>
                 <div class="item3a text-white d-flex align-items-center">
-                    <p class="Roboto-Medium mr-5 mb-0" v-if="prices">{{prices.offer_price}}$</p>
+                    <p class="Roboto-Medium mr-5 mb-0" v-if="prices">{{prices.offer_price.toLocaleString('ja-JP')}}$</p>
                     <!-- <button class="btn btn-track Roboto-Regular px-2">
                         <img src="../../assets/image/icon/iconhome.svg" alt="">
                             Track
@@ -87,7 +87,7 @@
             </div>
             <div class="item3 my-3  text-center">
                 <div class="item3a p-3">
-                    <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">{{prices.offer_price}}$</p>
+                    <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">{{prices.offer_price.toLocaleString('ja-JP')}}$</p>
                     <p class="text-color-1 Roboto-Medium mb-0" v-if="instant_estimate_data">{{instant_estimate_data.address_searched}} </p>
                 </div>
                 <div class="item3b p-3 py-4">
@@ -99,11 +99,11 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                  <div class="item3c p-3 py-4">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_price}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_price.toLocaleString('ja-JP')}}$</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_net}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_net.toLocaleString('ja-JP')}}$</p>
                      </div>
                 </div>
                 <div class="item3d text-center px-2 Roboto-Medium">
@@ -112,7 +112,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                   <div class="item3c p-3">
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.swift_net}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.swift_net.toLocaleString('ja-JP')}}$</p>
                      </div>
                 </div>
                    <div class="item3d text-center  Roboto-Medium">
@@ -121,11 +121,11 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                    <div class="item3c p-3">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_price}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_price.toLocaleString('ja-JP')}}$</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_net}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_net.toLocaleString('ja-JP')}}$</p>
                      </div>
                 </div>
             </div>
@@ -219,29 +219,25 @@ months are shown below. </p>
             <P class="my-3 ml-2 text-color-1 Roboto-Regular">Edmonton, Alberta is the province's second largest municipality & capital.</P>
         </div> -->
         <div class="item9 my-5">
-            <p>Similar homes for sale</p>
-             <div class="cards">
+            <p v-if="Object.keys(similar_homes).length" class="mb-4">Similar homes for sale</p>
+            <div class="cards" v-if="Object.keys(similar_homes).length">
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest sqft</h3>
-                <card-home :homedata="closest_sqft"></card-home>
+                <h3  class="text-left text-color-1 DMSerifRegular ">Closest Sqft</h3>
+                <card-home :homedata="closest_sqft" v-if="Object.keys(closest_sqft).length"></card-home>
+                <p v-else>We Can't Find any Closest Sqft</p>
             </div>
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest location</h3>
-                <card-home :homedata="closest_location"></card-home>
+                <h3 class="text-left text-color-1 DMSerifRegular ">Closest Location</h3>
+                <card-home :homedata="closest_location" v-if="Object.keys(closest_location).length"></card-home>
+                <p v-else>We Can't Find any Closest Location</p>
             </div>
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest bedrooms</h3>
-                <card-home :homedata="closest_bedrooms"></card-home>
+                <h3 class="text-left text-color-1 DMSerifRegular ">Closest Bedrooms</h3>
+                <card-home :homedata="closest_bedrooms"  v-if="Object.keys(closest_bedrooms).length"></card-home>
+                <p v-else>We Can't Find any Closest Bedroom</p>
             </div>
-            <!-- <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
-                <card-home></card-home>
-            </div> -->
-            <!-- <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
-                <card-home></card-home>
-            </div> -->
         </div>
+        <p v-if="!Object.keys(similar_homes).length">We Can't Find any Similar homes</p>
         </div>
         <div class="item10">
             <div class="item10a">
@@ -328,14 +324,17 @@ export default {
       latlong(){
           return this.$store.state.latlong || {}
       },
+      similar_homes(){
+           return this.$store.state.instant_estimate_data.similar_homes
+      },
       closest_sqft(){
-          return this.$store.state.instant_estimate_data.similar_homes.closest_sqft
+          return this.$store.state.instant_estimate_data.similar_homes.closest_sqft || {}
       },
       closest_location(){
-           return this.$store.state.instant_estimate_data.similar_homes.closest_location
+           return this.$store.state.instant_estimate_data.similar_homes.closest_location || {}
       },
       closest_bedrooms(){
-          return this.$store.state.instant_estimate_data.similar_homes.closest_bedrooms
+          return this.$store.state.instant_estimate_data.similar_homes.closest_bedrooms || {}
       }
   },
     methods:{
@@ -624,7 +623,7 @@ export default {
 .reporthome .item8 p:first-child,
 .reporthome .item9 p:first-child{
      font-weight: 600;
-     font-size: 26px;
+     font-size: 28px;
 }
 .reporthome .item10{
     display: flex;
@@ -712,6 +711,9 @@ textarea:focus{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.card div p{
+    font-size: 18px;
 }
 @media only screen and (max-width: 600px){
     .reporthome .cards{

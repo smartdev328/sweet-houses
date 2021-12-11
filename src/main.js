@@ -22,7 +22,7 @@ Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'https://adamsweetly.pythonanywhere.com/api/auth/',
+  baseURL: 'https://adamsweetly.pythonanywhere.com/api/',
   headers: {
      /*  "x-rapidapi-key": "da7185aeb9msh0e13b327cf70bc8p10a2abjsn259d1f854d02",
       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com" */
@@ -142,7 +142,7 @@ new Vue({
 
   created(){
  
-      this.$http.get('user/',{headers:{
+      this.$http.get('auth/user/',{headers:{
         'Authorization':`Token ${this.$store.state.token}` 
       }}).then(res =>{
         this.$store.state.user = res.data
