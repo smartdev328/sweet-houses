@@ -19,20 +19,25 @@
                 </div>
                 <div class="element2 d-flex">
                 
-                    <p class="Roboto-Regular">{{homedata.sweetly_price}} Instant Estimate</p>
+                    <p class="Roboto-Regular">{{homedata.sweetly_price}} Sweetly Estimate</p>
                 </div>
                 <div class="element3">
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}}</span>
-                    <span class="mr-2 color2 Roboto-Regular">bd</span>
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}}</span>
-                    <span class="mr-2 color2 Roboto-Regular">ba</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} + {{homedata.details.numBedroomsPlus}} </span>
+                    <span class="mr-4 ml-2  color2 Roboto-Regular">bd</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}} + {{homedata.details.numBathroomsPlus}}</span>
+                    <span class="mr-4  ml-2  color2 Roboto-Regular">ba</span>
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
-                    <span class="mr-2 color2 Roboto-Medium">sqft</span>
+                    <span class="mr-4  ml-2  color2 Roboto-Medium">sqft</span>
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
-                    <span class="color2 Roboto-Regular">prkg</span>
+                    <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
                 </div>
                 <div class="element5 mt-2">
-                    <p class="Roboto-Regular">{{homedata.address.streetNumber}}  {{homedata.address.streetName}} ( {{homedata.details.style}} )</p>
+                    <p class="Roboto-Regular">{{homedata.address.unitNumber}}  {{homedata.address.streetNumber}}  {{homedata.address.streetName}}   {{homedata.address.streetSuffix}}   {{homedata.address.streetDirection}}  ({{homedata.details.style}}) 
+                        <br>
+                        {{homedata.address.neighborhood}}   {{homedata.address.city}}  {{homedata.address.area}}
+
+
+                    </p>
                 </div>
             </div>
                 <div class="ellipsesicon">
