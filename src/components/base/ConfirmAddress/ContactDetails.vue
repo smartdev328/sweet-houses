@@ -312,28 +312,35 @@ export default {
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {
         this.loadvalid = true;
-      this.$http
-      .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
-          )
-          .then((res) => {
-           if (res.data) {
-              this.emailisvalid = true;
-            this.emailnotmaildmsg = "";
-              let contactinput = {};
-              contactinput.socialchanel = this.socialchanel;
-              contactinput.fullname = this.fullname;
-              contactinput.email = this.email;
-              contactinput.phone = this.phone;
-              this.$store.commit("setContactDetail", contactinput);
-              this.scheduleEvent()
-              window.scrollTo(0,0);
-            } else {
-             this.loadvalid = false;
-             this.emailisvalid = false;
-            this.emailnotmaildmsg = "please enter a real email";
-           }
-          });
+         let contactinput = {};
+         contactinput.socialchanel = this.socialchanel;
+         contactinput.fullname = this.fullname;
+         contactinput.email = this.email;
+         contactinput.phone = this.phone;
+         this.$store.commit("setContactDetail", contactinput);
+        this.scheduleEvent()
+      // this.$http
+      // .get(
+      //     `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+      //     )
+      //     .then((res) => {
+      //      if (res.data) {
+      //         this.emailisvalid = true;
+      //       this.emailnotmaildmsg = "";
+      //         let contactinput = {};
+      //         contactinput.socialchanel = this.socialchanel;
+      //         contactinput.fullname = this.fullname;
+      //         contactinput.email = this.email;
+      //         contactinput.phone = this.phone;
+      //         this.$store.commit("setContactDetail", contactinput);
+      //         this.scheduleEvent()
+      //         window.scrollTo(0,0);
+      //       } else {
+      //        this.loadvalid = false;
+      //        this.emailisvalid = false;
+      //       this.emailnotmaildmsg = "please enter a real email";
+      //      }
+      //     });
       }
     },
   },

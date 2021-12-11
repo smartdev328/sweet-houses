@@ -25,7 +25,7 @@
              <div class="counter">{{currentcount}}/{{homedata.images.count}}</div>
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
-                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">{{homedata.for_sale_price.toLocaleString('ja-JP')}} $</p>
+                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">${{homedata.for_sale_price.toLocaleString('ja-JP')}} </p>
                     <p class="Roboto-Regular">{{ gettime(homedata.listDate)}}</p>
                 </div>
                 <div class="element2 d-flex">
@@ -33,9 +33,9 @@
                     <p class="Roboto-Regular">${{homedata.sweetly_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
                 </div>
                 <div class="element3">
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}}+{{homedata.details.numBedroomsPlus}} </span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} <span v-if="homedata.details.numBedroomsPlus > 0">+{{(homedata.details.numBedroomsPlus)}}</span> </span>
                     <span class="mr-3 ml-1  color2 Roboto-Regular">bd</span>
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}}+{{homedata.details.numBathroomsPlus}}</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}} <span v-if="homedata.details.numBathroomsPlus > 0">+{{homedata.details.numBathroomsPlus}}</span></span>
                     <span class="mr-3 ml-1   color2 Roboto-Regular">ba</span>
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
                     <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
@@ -206,6 +206,13 @@ export default {
                this.currentcount -=1
                 return res
             })
+        },
+        customizeNum(num){
+            if(num > 0){
+                return num
+            }else{
+                return ''
+            }
         }
     },
     components:{

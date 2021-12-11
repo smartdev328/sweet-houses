@@ -78,7 +78,7 @@
                     <img src="../../assets/image/icon/warning.svg" class="" alt="">
                 </div>
                 <div class="item3a text-white d-flex align-items-center">
-                    <p class="Roboto-Medium mr-5 mb-0" v-if="prices">{{prices.offer_price.toLocaleString('ja-JP')}}$</p>
+                    <p class="Roboto-Medium mr-5 mb-0" v-if="prices">${{prices.offer_price.toLocaleString('ja-JP')}}</p>
                     <!-- <button class="btn btn-track Roboto-Regular px-2">
                         <img src="../../assets/image/icon/iconhome.svg" alt="">
                             Track
@@ -87,7 +87,7 @@
             </div>
             <div class="item3 my-3  text-center">
                 <div class="item3a p-3">
-                    <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">{{prices.offer_price.toLocaleString('ja-JP')}}$</p>
+                    <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">${{prices.offer_price.toLocaleString('ja-JP')}}</p>
                     <p class="text-color-1 Roboto-Medium mb-0" v-if="instant_estimate_data">{{instant_estimate_data.address_searched}} </p>
                 </div>
                 <div class="item3b p-3 py-4">
@@ -99,11 +99,11 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                  <div class="item3c p-3 py-4">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_price.toLocaleString('ja-JP')}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">${{prices.sweet_price.toLocaleString('ja-JP')}}</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.sweet_net.toLocaleString('ja-JP')}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">${{prices.sweet_net.toLocaleString('ja-JP')}}</p>
                      </div>
                 </div>
                 <div class="item3d text-center px-2 Roboto-Medium">
@@ -112,7 +112,7 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                   <div class="item3c p-3">
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.swift_net.toLocaleString('ja-JP')}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">${{prices.swift_net.toLocaleString('ja-JP')}}</p>
                      </div>
                 </div>
                    <div class="item3d text-center  Roboto-Medium">
@@ -121,11 +121,11 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                    <div class="item3c p-3">
                      <div class="item3c1">
                          <p class="text-center Roboto-Medium">Expected Sale Price</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_price.toLocaleString('ja-JP')}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">${{prices.trad_price.toLocaleString('ja-JP')}}</p>
                      </div>
                     <div class="item3c2">
                          <p class="text-center Roboto-Medium">Sale Expected Net</p>
-                         <p class="text-center Roboto-Medium px-5" v-if="prices">{{prices.trad_net.toLocaleString('ja-JP')}}$</p>
+                         <p class="text-center Roboto-Medium px-5" v-if="prices">${{prices.trad_net.toLocaleString('ja-JP')}}</p>
                      </div>
                 </div>
             </div>
@@ -714,6 +714,9 @@ textarea:focus{
 }
 .card div p{
     font-size: 18px;
+}
+.cards h3{
+    font-weight: 600;
 }
 @media only screen and (max-width: 600px){
     .reporthome .cards{
