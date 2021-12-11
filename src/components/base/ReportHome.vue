@@ -222,16 +222,16 @@ months are shown below. </p>
             <p>Similar homes for sale</p>
              <div class="cards">
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest sqft</h3>
                 <card-home :homedata="closest_sqft"></card-home>
             </div>
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
-                <card-home :homedata="closest_sqft"></card-home>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest location</h3>
+                <card-home :homedata="closest_location"></card-home>
             </div>
             <div>
-                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
-                <card-home :homedata="closest_sqft"></card-home>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest bedrooms</h3>
+                <card-home :homedata="closest_bedrooms"></card-home>
             </div>
             <!-- <div>
                 <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
@@ -331,6 +331,12 @@ export default {
       closest_sqft(){
           return this.$store.state.instant_estimate_data.similar_homes.closest_sqft
       },
+      closest_location(){
+           return this.$store.state.instant_estimate_data.similar_homes.closest_location
+      },
+      closest_bedrooms(){
+          return this.$store.state.instant_estimate_data.similar_homes.closest_bedrooms
+      }
   },
     methods:{
         copyURL(){
