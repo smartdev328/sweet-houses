@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card">
+        <div class="card position-relative">
             <div class="overlay" v-if="sold">
                 <div class="text-white Roboto-Medium">
                     <p>See this home's photos and sale price</p>
@@ -9,9 +9,14 @@
                 </div>
                 
             </div>
-            <img  v-if="sold" :src="homedata.images[0]" class="card-img-top" alt="...">
-             <img v-if="!sold" :src="homedata.images[0]" class="card-img-top" alt="...">
-
+               <!-- <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
+             <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="..."> -->
+             <VueSlickCarousel v-bind="settings" class="card-img-top">
+            <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
+             <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="...">
+            
+            </VueSlickCarousel>
+             <div class="counter">1/3</div>
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
                     <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">{{homedata.for_sale_price}} $</p>
@@ -19,22 +24,22 @@
                 </div>
                 <div class="element2 d-flex">
                 
-                    <p class="Roboto-Regular">{{homedata.sweetly_price}} Sweetly Estimate</p>
+                    <p class="Roboto-Regular">${{homedata.sweetly_price}}  Sweetly Estimate</p>
                 </div>
                 <div class="element3">
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} + {{homedata.details.numBedroomsPlus}} </span>
-                    <span class="mr-4 ml-2  color2 Roboto-Regular">bd</span>
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}} + {{homedata.details.numBathroomsPlus}}</span>
-                    <span class="mr-4  ml-2  color2 Roboto-Regular">ba</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}}+{{homedata.details.numBedroomsPlus}} </span>
+                    <span class="mr-3 ml-1  color2 Roboto-Regular">bd</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}}+{{homedata.details.numBathroomsPlus}}</span>
+                    <span class="mr-3 ml-1   color2 Roboto-Regular">ba</span>
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
-                    <span class="mr-4  ml-2  color2 Roboto-Medium">sqft</span>
+                    <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
                     <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
                 </div>
                 <div class="element5 mt-2">
-                    <p class="Roboto-Regular">{{homedata.address.unitNumber}}  {{homedata.address.streetNumber}}  {{homedata.address.streetName}}   {{homedata.address.streetSuffix}}   {{homedata.address.streetDirection}}  ({{homedata.details.style}}) 
+                    <p class="Roboto-Regular">{{homedata.address.unitNumber}} {{homedata.address.streetNumber}} {{homedata.address.streetName}}  {{homedata.address.streetSuffix}}  {{homedata.address.streetDirection}} ({{homedata.details.style}}) 
                         <br>
-                        {{homedata.address.neighborhood}}   {{homedata.address.city}}  {{homedata.address.area}}
+                        {{homedata.address.neighborhood}},{{homedata.address.city}},{{homedata.address.area}}
 
 
                     </p>
@@ -50,80 +55,125 @@
     </div>
 </template>
 <script>
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// // optional style for arrows & dots
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import moment from 'moment';
 export default {
-    props:{
-        homedata:{
-            // type:Object,
-            default:` {
-            "details": {
-                "numBedrooms": "2",
-                "numBedroomsPlus": "1",
-                "numBathrooms": "2",
-                "numBathroomsPlus": "0",
-                "sqft": "934.00",
-                "numParkingSpaces": "4",
-                "style": "Bungalow"
-            },
-            "address": {
-                "unitNumber": "",
-                "streetNumber": "47",
-                "streetName": "Falworth",
-                "streetSuffix": "Place",
-                "streetDirection": "E",
-                "neighborhood": "Falconridge",
-                "city": "Calgary",
-                "area": "Alberta"
-            },
-            "images": [
-                "https://cdn.repliers.io/area/IMG-A1139441_1.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_2.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_3.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_4.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_5.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_6.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_7.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_8.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_9.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_10.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_11.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_12.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_13.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_14.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_15.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_16.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_17.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_18.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_19.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_20.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_21.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_22.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_23.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_24.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_25.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_26.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_27.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_28.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_29.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_30.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_31.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_32.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_33.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_34.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_35.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_36.jpg",
-                "https://cdn.repliers.io/area/IMG-A1139441_37.jpg"
-            ]
-        }`
-        }
-    },
+     props:{
+         homedata:{
+             // type:Object,
+    //         default:` {
+    //         "details": {
+    //             "numBedrooms": "2",
+    //             "numBedroomsPlus": "1",
+    //             "numBathrooms": "2",
+    //             "numBathroomsPlus": "0",
+    //             "sqft": "934.00",
+    //             "numParkingSpaces": "4",
+    //             "style": "Bungalow"
+    //         },
+    //         "address": {
+    //             "unitNumber": "",
+    //             "streetNumber": "47",
+    //             "streetName": "Falworth",
+    //             "streetSuffix": "Place",
+    //             "streetDirection": "E",
+    //             "neighborhood": "Falconridge",
+    //             "city": "Calgary",
+    //             "area": "Alberta"
+    //         },
+    //         "images": [
+    //             "https://cdn.repliers.io/area/IMG-A1139441_1.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_2.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_3.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_4.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_5.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_6.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_7.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_8.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_9.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_10.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_11.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_12.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_13.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_14.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_15.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_16.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_17.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_18.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_19.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_20.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_21.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_22.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_23.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_24.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_25.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_26.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_27.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_28.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_29.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_30.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_31.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_32.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_33.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_34.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_35.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_36.jpg",
+    //             "https://cdn.repliers.io/area/IMG-A1139441_37.jpg"
+    //         ]
+    //     }`
+         }
+     },
     data:() =>({
-        sold:false
+        sold:false,
+               settings:{
+            "dots": false,
+            "focusOnSelect": true,
+            "infinite": true,
+            "speed": 500,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "touchThreshold": 1,
+            "arrows":false,
+            "lazyLoad": "ondemand",
+             "responsive": [
+            {
+            "breakpoint": 1024,
+            "settings": {
+                "slidesToShow": 3,
+                "slidesToScroll": 1,
+                "infinite": false,
+            }
+            },
+            {
+            "breakpoint": 600,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "initialSlide": 1,
+                "arrows":false,
+            }
+            },
+            {
+            "breakpoint": 480,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "arrows":false,
+            }
+            }
+        ]
+            }
     }),
     methods:{
         gettime(item){
             return moment(item).endOf('day').fromNow();   
         }
+    },
+    components:{
+        // VueSlickCarousel
     }
 }
 </script>
@@ -178,7 +228,8 @@ export default {
 }
 .element2 p{
     color: #FFB600;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
 }
 .element3 .color2{
     color: #AAAAAA;
@@ -208,5 +259,15 @@ export default {
 }
 .card .soldclass{
     color: #C95055 !important;
+}
+.counter{
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    color: #fff;
+    background: #434242a3;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 18px;
 }
 </style>
