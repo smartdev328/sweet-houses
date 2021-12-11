@@ -498,7 +498,7 @@ body{
 /* .slick-prev{
   left: 0px !important;
 } */
-.slick-next{
+.homedetails .slick-next{
   right: 0px !important;
 }
 .vue-notification {
