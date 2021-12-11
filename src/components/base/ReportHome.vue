@@ -222,14 +222,25 @@ months are shown below. </p>
             <p>Similar homes for sale</p>
              <div class="cards">
             <div>
-                <card-home></card-home>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <card-home :homedata="closest_sqft"></card-home>
             </div>
             <div>
-                <card-home></card-home>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <card-home :homedata="closest_sqft"></card-home>
             </div>
             <div>
-                <card-home></card-home>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <card-home :homedata="closest_sqft"></card-home>
             </div>
+            <!-- <div>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <card-home></card-home>
+            </div> -->
+            <!-- <div>
+                <h3 class="text-center text-color-1 Roboto-Regular ">closest_sqft</h3>
+                <card-home></card-home>
+            </div> -->
         </div>
         </div>
         <div class="item10">
@@ -303,20 +314,23 @@ export default {
   },
   computed:{
       instant_estimate_data(){
-          return this.$store.state.instant_estimate_data || {}
+          return this.$store.state.instant_estimate_data.prices_offer || {}
       },
       address_format(){
           return this.instant_estimate_data.address_found.split(',');
       },
       prices(){
-             return this.$store.state.instant_estimate_data.prices || {}
+             return this.instant_estimate_data.prices || {}
       },
       homedatafirst(){
           return this.$store.state.homedatafirst || {}
       },
       latlong(){
           return this.$store.state.latlong || {}
-      }
+      },
+      closest_sqft(){
+          return this.$store.state.instant_estimate_data.similar_homes.closest_sqft
+      },
   },
     methods:{
         copyURL(){

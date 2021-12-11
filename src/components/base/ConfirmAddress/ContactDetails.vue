@@ -267,7 +267,7 @@ export default {
     },
     scheduleEvent() {
       this.$store.dispatch('Post_Instant').then((res) =>{
-        if(res.data.status == 200){
+        if(res.data.prices_offer.status == 200){
            Swal.fire({
                   title: 'success!',
                   icon: 'success',

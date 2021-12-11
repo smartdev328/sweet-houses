@@ -429,7 +429,13 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         {title:`What if I have more questions?`,
         content:`Call us! Our number is 780-477-9338.`},
         ],
-        instant_estimate_data:{},
+        instant_estimate_data:{"prices_offer":
+        {"status":"200","address_searched":"1200 W Georgia St, Vancouver, BC V6E 4R4, Canada","address_found":"PH2 1200 W GEORGIA ST, Vancouver",
+        "prices":{"offer_price":1924000,"sweet_price":1954000,"sweet_net":1842300,"swift_net":1733524,"trad_price":1924000,"trad_net":1862280},
+        "details":""},
+        
+        "similar_homes":{"closest_sqft":{"details":{"numBedrooms":"3","numBedroomsPlus":"2","numBathrooms":"5","numBathroomsPlus":"0","sqft":"1311.00","numParkingSpaces":"5"},"address":{"unitNumber":"","streetNumber":"119","streetName":"Mountain","streetSuffix":"Avenue","streetDirection":"S","neighborhood":"NONE","city":"Banff","area":"Alberta"},
+        "images":["https://cdn.repliers.io/area/IMG-A1152903_1.jpg","https://cdn.repliers.io/area/IMG-A1152903_2.jpg","https://cdn.repliers.io/area/IMG-A1152903_3.jpg","https://cdn.repliers.io/area/IMG-A1152903_4.jpg","https://cdn.repliers.io/area/IMG-A1152903_5.jpg","https://cdn.repliers.io/area/IMG-A1152903_6.jpg","https://cdn.repliers.io/area/IMG-A1152903_7.jpg","https://cdn.repliers.io/area/IMG-A1152903_8.jpg","https://cdn.repliers.io/area/IMG-A1152903_9.jpg","https://cdn.repliers.io/area/IMG-A1152903_10.jpg","https://cdn.repliers.io/area/IMG-A1152903_11.jpg","https://cdn.repliers.io/area/IMG-A1152903_12.jpg","https://cdn.repliers.io/area/IMG-A1152903_13.jpg","https://cdn.repliers.io/area/IMG-A1152903_14.jpg","https://cdn.repliers.io/area/IMG-A1152903_15.jpg","https://cdn.repliers.io/area/IMG-A1152903_16.jpg","https://cdn.repliers.io/area/IMG-A1152903_17.jpg","https://cdn.repliers.io/area/IMG-A1152903_18.jpg","https://cdn.repliers.io/area/IMG-A1152903_19.jpg","https://cdn.repliers.io/area/IMG-A1152903_20.jpg","https://cdn.repliers.io/area/IMG-A1152903_21.jpg","https://cdn.repliers.io/area/IMG-A1152903_22.jpg","https://cdn.repliers.io/area/IMG-A1152903_23.jpg","https://cdn.repliers.io/area/IMG-A1152903_24.jpg","https://cdn.repliers.io/area/IMG-A1152903_25.jpg","https://cdn.repliers.io/area/IMG-A1152903_26.jpg","https://cdn.repliers.io/area/IMG-A1152903_27.jpg","https://cdn.repliers.io/area/IMG-A1152903_28.jpg","https://cdn.repliers.io/area/IMG-A1152903_29.jpg","https://cdn.repliers.io/area/IMG-A1152903_30.jpg","https://cdn.repliers.io/area/IMG-A1152903_31.jpg","https://cdn.repliers.io/area/IMG-A1152903_32.jpg","https://cdn.repliers.io/area/IMG-A1152903_33.jpg","https://cdn.repliers.io/area/IMG-A1152903_34.jpg","https://cdn.repliers.io/area/IMG-A1152903_35.jpg","https://cdn.repliers.io/area/IMG-A1152903_36.jpg"],"listDate": "2021-08-18T00:00:00.000Z","for_sale_price":999999,"sweetly_price":888888}}},
         agent:{},
         status:'',
         homeaddress:'',
@@ -637,7 +643,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             input.hear_about_us = state.contactinput.socialchanel,
             input.full_name = state.contactinput.fullname,
             input.email = state.contactinput.email
-            input.phone_number = state.contactinput.phone
+            input.phone_number = state.contactinput.phone,
+            input.longitude = state.latlong.lng,
+            input.latitude = state.latlong.lat
             Object.entries(input).forEach((entry) =>
             state.formData.append(entry[0], entry[1])
             );
