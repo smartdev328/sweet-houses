@@ -11,20 +11,26 @@
             </div>
                <!-- <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
              <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="..."> -->
-             <VueSlickCarousel v-bind="settings" class="card-img-top">
+            
             <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
              <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="...">
             
-            </VueSlickCarousel>
-             <div class="counter">1/3</div>
+        
+            <div class="arrow-dir" @click="getImage()" v-if="currentcount < homedata.images.count">
+                <img src="../../assets/image/icon/Iconarrows.svg" alt="">
+            </div>
+             <div class="arrow-dir-before" @click="getImagebefor()" v-if="currentcount > 1">
+                <img src="../../assets/image/icon/Iconarrows.svg" alt="">
+            </div>
+             <div class="counter">{{currentcount}}/{{homedata.images.count}}</div>
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
-                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">{{homedata.for_sale_price}} $</p>
+                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">{{homedata.for_sale_price.toLocaleString('ja-JP')}} $</p>
                     <p class="Roboto-Regular">{{ gettime(homedata.listDate)}}</p>
                 </div>
                 <div class="element2 d-flex">
                 
-                    <p class="Roboto-Regular">${{homedata.sweetly_price}}  Sweetly Estimate</p>
+                    <p class="Roboto-Regular">${{homedata.sweetly_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
                 </div>
                 <div class="element3">
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}}+{{homedata.details.numBedroomsPlus}} </span>
@@ -128,7 +134,8 @@ export default {
      },
     data:() =>({
         sold:false,
-               settings:{
+        currentcount:1,
+            settings:{
             "dots": false,
             "focusOnSelect": true,
             "infinite": true,
@@ -165,11 +172,39 @@ export default {
             }
             }
         ]
-            }
+            },
+            formData: new FormData(),
     }),
     methods:{
         gettime(item){
             return moment(item).endOf('day').fromNow();   
+        },
+        getImage(){
+            this.currentcount +=1
+            let input = {
+                mls:  this.homedata.mlsNumber,
+                image_num : this.currentcount
+            }
+
+            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+                this.homedata.images.image = res.data.image;
+                console.log(res.data.image)
+                this.currentcount +=1
+                return res
+            })
+        },
+        getImagebefor(){
+               let input = {
+                mls:  this.homedata.mlsNumber,
+                image_num : this.currentcount
+            }
+
+            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+                this.homedata.images.image = res.data.image;
+                console.log(res.data.image)
+                this.currentcount -=1
+                return res
+            })
         }
     },
     components:{
@@ -270,4 +305,41 @@ export default {
     border-radius: 16px;
     font-size: 18px;
 }
+.arrow-dir{
+     position: absolute;
+     cursor: pointer;
+    top: 20%;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-dir-before{
+       position: absolute;
+     cursor: pointer;
+    top: 20%;
+    left: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-dir-before img{
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+}
+.arrow-dir img{
+    width: 16px;
+    height: 16px;
+
+}
+
 </style>
