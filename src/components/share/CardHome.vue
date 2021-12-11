@@ -9,32 +9,30 @@
                 </div>
                 
             </div>
-            <img  v-if="sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="...">
-             <img v-if="!sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="...">
+            <img  v-if="sold" :src="homedata.images[0]" class="card-img-top" alt="...">
+             <img v-if="!sold" :src="homedata.images[0]" class="card-img-top" alt="...">
 
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
-                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">$2,488,800</p>
-                    <p class="Roboto-Regular">Listed 13 days ago</p>
+                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">{{homedata.for_sale_price}} $</p>
+                    <p class="Roboto-Regular">{{ gettime(homedata.listDate)}}</p>
                 </div>
                 <div class="element2 d-flex">
-                    <div class="icon mr-2">
-                        <img src="../../assets/image/icon/Group 13227.svg" class="w-100 h-100" alt="icon">
-                    </div>
-                    <p class="Roboto-Regular">Sweetly  Estimate Available</p>
+                
+                    <p class="Roboto-Regular">{{homedata.sweetly_price}} Instant Estimate</p>
                 </div>
                 <div class="element3">
-                    <span class="text-color-1 Roboto-Regular">4</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}}</span>
                     <span class="mr-2 color2 Roboto-Regular">bd</span>
-                    <span class="text-color-1 Roboto-Regular">3</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}}</span>
                     <span class="mr-2 color2 Roboto-Regular">ba</span>
-                    <span class="text-color-1 Roboto-Medium">3,500-5,000</span>
+                    <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
                     <span class="mr-2 color2 Roboto-Medium">sqft</span>
-                    <span class="text-color-1 Roboto-Regular">14</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
                     <span class="color2 Roboto-Regular">prkg</span>
                 </div>
                 <div class="element5 mt-2">
-                    <p class="Roboto-Regular">99 Balmoral Ave (Detached)</p>
+                    <p class="Roboto-Regular">{{homedata.address.streetNumber}}  {{homedata.address.streetName}} ( {{homedata.details.style}} )</p>
                 </div>
             </div>
                 <div class="ellipsesicon">
@@ -47,10 +45,81 @@
     </div>
 </template>
 <script>
+import moment from 'moment';
 export default {
+    props:{
+        homedata:{
+            // type:Object,
+            default:` {
+            "details": {
+                "numBedrooms": "2",
+                "numBedroomsPlus": "1",
+                "numBathrooms": "2",
+                "numBathroomsPlus": "0",
+                "sqft": "934.00",
+                "numParkingSpaces": "4",
+                "style": "Bungalow"
+            },
+            "address": {
+                "unitNumber": "",
+                "streetNumber": "47",
+                "streetName": "Falworth",
+                "streetSuffix": "Place",
+                "streetDirection": "E",
+                "neighborhood": "Falconridge",
+                "city": "Calgary",
+                "area": "Alberta"
+            },
+            "images": [
+                "https://cdn.repliers.io/area/IMG-A1139441_1.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_2.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_3.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_4.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_5.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_6.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_7.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_8.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_9.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_10.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_11.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_12.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_13.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_14.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_15.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_16.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_17.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_18.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_19.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_20.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_21.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_22.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_23.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_24.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_25.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_26.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_27.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_28.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_29.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_30.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_31.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_32.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_33.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_34.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_35.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_36.jpg",
+                "https://cdn.repliers.io/area/IMG-A1139441_37.jpg"
+            ]
+        }`
+        }
+    },
     data:() =>({
         sold:false
-    })
+    }),
+    methods:{
+        gettime(item){
+            return moment(item).endOf('day').fromNow();   
+        }
+    }
 }
 </script>
 <style scoped>
