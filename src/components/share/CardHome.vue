@@ -180,7 +180,7 @@ export default {
             return moment(item).endOf('day').fromNow();   
         },
         getImage(){
-            this.currentcount +=1
+            // this.currentcount +=1
             let input = {
                 mls:  this.homedata.mlsNumber,
                 image_num : this.currentcount
@@ -194,6 +194,7 @@ export default {
             })
         },
         getImagebefor(){
+             this.currentcount -=1
                let input = {
                 mls:  this.homedata.mlsNumber,
                 image_num : this.currentcount
@@ -202,7 +203,7 @@ export default {
             this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
                 this.homedata.images.image = res.data.image;
                 console.log(res.data.image)
-                this.currentcount -=1
+               // this.currentcount -=1
                 return res
             })
         }
