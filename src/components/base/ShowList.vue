@@ -4,52 +4,46 @@
                 <div class="space-40"></div>
             <div class="item1">
             <div class="item1a">
-                <p>8485 <span class="DMSerifRegular text-color-2">Result</span> </p>
+                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count}} <span class="DMSerifRegular text-color-2">Result</span> </p>
             </div>
-            <div>
+            <div class="item1b">
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
             </div>
             <div class="item1c">
                 <div class="text-color-2 Roboto-Regular dropdown">
                     <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Date listed (new to old)
+                    {{filerdata.name}}
                     </a>
-                    <div class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Date listed (new to old)</a>
-                    <a class="dropdown-item" href="#">Price (low to high)</a>
-                    <a class="dropdown-item" href="#">Price (high to low)</a>
-                    <a class="dropdown-item" href="#">Beds (most to least)</a>
-                    <a class="dropdown-item" href="#">Internal sqft (most to least)</a>
+                    <div v-if="type == 'forsale'" class="dropdown-menu shadow-sm bg-white border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
+                    </div>
+                     <div v-else class="dropdown-menu shadow-sm bg-white border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  v-for="filter in filerlistsold" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cards my-5">
-            <div>
-                <card-home></card-home>
-            </div>
-            <div>
-                <card-home></card-home>
-            </div>
-            <div>
-                <card-home></card-home>
-            </div>
-            <div>
-                <card-home></card-home>
-            </div>
-            <div>
-                <card-home></card-home>
-            </div>
+        <div class="cards my-5" v-if="loadedlistingsold">
+            <card-list v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"></card-list>
         </div>
-        <div class="my-5 row">
+        <div class="text-center my-5"> 
+            <b-spinner v-if="!loadedlistingsold && loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+        </div>
+        <div class="my-5 row" v-if="loadedlistingsold">
             <div class="col-12 d-flex justify-content-center">
                  <pagination
                     v-model="paginationpage"
-                    :records="15"
-                    :perPage="5"
+                    :records="tatal"
+                    :perPage="30"
                     :prev-text="'Prev'"
                     :next-text="'Next'"
                     count-text=""
+                     :options="{
+                            chunk: 8,
+                            texts: {
+                            count: ''
+                            }
+                        }"
                     @paginate="myCallback"
                   />
             </div>
@@ -57,19 +51,46 @@
         </div>
               
         </div>
-        
-      
-       <!--  <div class="togglemap">
-      <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
-    </div> -->
     </div>
 </template>
 <script>
 export default {
+    props:{homedata:{},type:{default:'forsale'}},
     data(){
         return{
-            paginationpage:1
+            paginationpage:1,
+            city:'Calgary',
+            filerlist:[
+              {name:'Date listed (new to old)',value:'createdOnDesc'},
+              {name:'Price (low to high)',value:'listPriceAsc'},
+              {name:'Price (high to low)',value:'listPriceDesc'},
+            //   {name:'Price (high to low)',value:'listPriceDesc'},
+            //   {name:'Price (high to low)',value:'listPriceDesc'},
+            ],
+            filerlistsold:[
+              {name:'Date solid (new to old)',value:'soldDateDesc'},
+              {name:'Price (low to high)',value:'soldPriceAsc'},
+              {name:'Price (high to low)',value:'soldPriceDesc'},
+            //   {name:'Price (high to low)',value:'listPriceDesc'},
+            //   {name:'Price (high to low)',value:'listPriceDesc'},
+            ],
+            listingsold:{},
+            listings:[],
+            loading:null,
+            loadedlistingsold:null,
+            tatal:0
+            
+            
         }
+    },
+    computed:{
+    filerdata(){
+        if(this.type == 'sold'){
+            return {name:'Date solid (new to old)',value:'soldDateDesc'}
+        }else{
+            return  {name:'Date listed (new to old)',value:'createdOnDesc'}
+        }
+    }
     },
     components: {
   
@@ -78,9 +99,58 @@ export default {
         submit(){
             this.$emit('submit')
         },
+        changeFilter(filter){
+            this.filerdata = filter;
+            this.paginationpage = 1;
+
+             if(this.type == 'sold'){
+                this.find_listings_Sold();
+            }else{
+            this.find_listings_forSale();
+            }
+        },
         myCallback() {
-        console.log(this.paginationpage)
+            if(this.type == 'sold'){
+                this.find_listings_Sold();
+            }else{
+            this.find_listings_forSale();
+            }
+        
+        window.scrollTo(0,200);
     },
+    find_listings_Sold(){
+        let sortBy = this.filerdata.value;
+        let pageNum = this.paginationpage;
+        this.loading = true 
+        this.loadedlistingsold = false
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold`).then((res) =>{
+            this.loading = false 
+            console.log(res.data)
+            this.listingsold = res.data
+            this.listings = res.data.listings
+            this.tatal = res.data.count
+             this.loading = false
+             this.loadedlistingsold=true
+        })
+    },
+    find_listings_forSale(){
+        let sortBy = this.filerdata.value;
+        let pageNum = this.paginationpage;
+        this.loading = true 
+        this.loadedlistingsold = false
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale`).then((res) =>{
+            this.loading = false 
+            console.log(res.data)
+            this.listingsold = res.data
+            this.listings = res.data.listings
+            this.tatal = res.data.count
+             this.loading = false
+             this.loadedlistingsold=true
+        })
+    }
+    },
+    created(){
+        this.find_listings_forSale();
     }
 }
 </script>
@@ -120,10 +190,22 @@ export default {
     grid-row-gap: 40px;
 }
 .showlist .item1 .item1a{
-    font-size: 16px;
+    font-size: 20px;
+    width: 33%;
 }
+/* .showlist .item1 .item1b{
+    display: inline-block;
+    height: 40px;
+    position: absolute;
+    left: calc(50% - 43px);
+    bottom: 24px;
+    top: 0px;
+    z-index: 1;
+} */
 .showlist .item1 .item1c{
     font-size: 16px;
+    width: 33%;
+    text-align: right;
 }
 .space-40{
     height: 40px;
@@ -134,6 +216,9 @@ export default {
 .showlist .dropdown-menu .dropdown-item:hover{
     background: #FFB600;
     color: #fff;
+}
+.dropdown-menu{
+    left: 35% !important;
 }
 .item1c .dropdown-toggle{
     z-index: 1000;

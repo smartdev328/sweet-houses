@@ -1,0 +1,267 @@
+<template>
+    <div class="card">
+        <div class=" position-relative">
+            <div class="overlay" v-if="sold">
+                <div class="text-white Roboto-Medium">
+                    <p>See this home's photos and sale price</p>
+                    <p>Local laws require yo to sign up to see sold details</p>
+                    <button class="btn">Sign Up</button>
+                </div>
+                
+            </div>
+           <img  v-if="!homedata.images.image" src="../../assets/image/notimg.jpeg" class="card-img-top" alt="">
+            <img  v-if="sold && homedata.images.image" :src="homedata.images.image" class="card-img-top" alt="...">
+             <img v-if="!sold && homedata.images.image" :src="homedata.images.image" class="card-img-top" alt="...">
+            <div class="arrow-dir" @click="getImage()" v-if="currentcount < homedata.images.count">
+                <img src="../../assets/image/icon/Iconarrows.svg" alt="">
+            </div>
+             <div class="arrow-dir-before" @click="getImagebefor()" v-if="currentcount > 1">
+                <img src="../../assets/image/icon/Iconarrows.svg" alt="">
+            </div>
+               <div class="counter" v-if="homedata.images.count">{{currentcount}}/{{homedata.images.count}}</div>
+            <div class="card-body">
+                <div class="element1 d-flex align-items-baseline justify-content-between">
+                          <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">${{homedata.listPrice.toLocaleString('ja-JP')}} </p>
+                     <p class="Roboto-Regular" v-if="type == 'forsale' ">{{ gettime(homedata.listDate)}}</p>
+                     <p class="Roboto-Regular" v-if="type == 'sold' ">{{ gettime(homedata.soldDate)}}</p>
+                </div>
+                <div class="element2 d-flex" v-if="type == 'forsale' ">
+                    <div class="icon mr-2" v-if="!isLoggedIn">
+                        <img src="../../assets/image/icon/Group 13227.svg" class="w-100 h-100" alt="icon">
+                    </div>
+                    <p class="Roboto-Regular" v-if="!isLoggedIn" >Sweetly  Estimate Available</p>
+                   <p class="Roboto-Regular" v-if="isLoggedIn" >$3,500,800 Sweetly  Estimate</p>
+                </div>
+                 <div class="element2sold d-flex" v-if="type == 'sold' ">
+                     <p class="Roboto-Regular font-weight-bold" v-if="isLoggedIn" style="color:#C95055">Sold for ${{homedata.soldPrice.toLocaleString('ja-JP')}}</p>
+                     <p class="Roboto-Regular font-weight-bold" v-else style="color:#C95055">Sold for $xxx,xxx</p>
+                    
+                </div>
+               <div class="element3">
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} <span v-if="homedata.details.numBedroomsPlus > 0">+{{(homedata.details.numBedroomsPlus)}}</span> </span>
+                    <span class="mr-3 ml-1  color2 Roboto-Regular">bd</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numBathrooms}} <span v-if="homedata.details.numBathroomsPlus > 0">+{{homedata.details.numBathroomsPlus}}</span></span>
+                    <span class="mr-3 ml-1   color2 Roboto-Regular">ba</span>
+                    <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
+                    <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
+                    <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
+                </div>
+                    <div class="element5 mt-2">
+                    <p class="Roboto-Regular">{{homedata.address.unitNumber}} {{homedata.address.streetNumber}} {{homedata.address.streetName}}  {{homedata.address.streetSuffix}}  {{homedata.address.streetDirection}} ({{homedata.details.style}}) 
+                        <br>
+                        {{homedata.address.neighborhood}},{{homedata.address.city}},{{homedata.address.area}}
+
+
+                    </p>
+                </div>
+            </div>
+                <div class="ellipsesicon">
+                    <div class="ellipsis p-2">
+                <img src="../../assets/image/icon/Heart.svg" class="w-100 h-100" alt="icon">
+            </div>
+            </div>
+
+            </div>
+    </div>
+</template>
+<script>
+
+import moment from 'moment';
+export default {
+  props:{
+         homedata:{
+         },
+         type:{
+             default:'forsale'
+         }
+     },
+    data:() =>({
+        currentcount:1,
+        sold:false,
+    }),
+    computed:{
+        username(){
+        return this.$store.state.user.first_name || "";
+      },
+       isLoggedIn() {
+      if (this.username) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    },
+    methods:{
+
+ gettime(item){
+            return moment(item).endOf('day').fromNow();   
+        },
+        getImage(){
+            //  this.currentcount +=1
+            let input = {
+                mls:  this.homedata.mlsNumber,
+                image_num : this.currentcount+1
+            }
+
+            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+                this.homedata.images.image = res.data.image;
+                console.log(res.data.image)
+                 this.currentcount +=1
+                return res
+            })
+        },
+        getImagebefor(){
+            //  this.currentcount -=1
+               let input = {
+                mls:  this.homedata.mlsNumber,
+                image_num : this.currentcount - 1
+            }
+
+            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+                this.homedata.images.image = res.data.image;
+                console.log(res.data.image)
+               this.currentcount -=1
+                return res
+            })
+        }
+    },
+    components:{
+        // VueSlickCarousel
+    }
+}
+</script>
+<style scoped>
+.card{
+    border-radius: 12px;
+    border: 0;
+}
+.card .card-body{
+    background: #fff;
+    /* z-index: 1000; */
+}
+.card img{
+    border-radius: 12px;
+    height: 240px;
+}
+.card .overlay{
+    background: rgb(0 0 0 / 48%);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    padding: 20% 1%;
+    text-align: center;
+}
+.card .overlay p:first-child{
+    font-size: 18px;
+}
+.card .overlay p:nth-child(2){
+    font-size: 16px;
+}
+.card .overlay + img{
+    filter: blur(10px);
+}
+.card .overlay button{
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    color: #fff;
+}
+.element1 p:first-child{
+    font-size: 26px;
+}
+.element1 p:nth-child(2){
+    color: #707070;
+    font-size: 14px;
+}
+.element2 .icon{
+    width: 20px;
+    height: 20px;
+}
+.element2 p{
+    color: #FFB600;
+    font-size: 20px;
+    font-weight: 600;
+}
+.element3 .color2{
+    color: #AAAAAA;
+}
+.element3 span{
+    font-size: 18px;
+}
+.element5 p{
+    color: #707070;
+    font-size: 16px;
+}
+.card .ellipsesicon{
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    position: absolute;
+    z-index: 999;
+}
+.card .ellipsis{
+    background-color: #fff;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.card .ellipsis:hover{
+    border: 1px solid #A7A7A7;
+}
+.card .soldclass{
+    color: #C95055 !important;
+}
+.counter{
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    color: #fff;
+    background: #434242a3;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 18px;
+}
+.arrow-dir{
+     position: absolute;
+     cursor: pointer;
+    top: 20%;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-dir-before{
+       position: absolute;
+     cursor: pointer;
+    top: 20%;
+    left: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-dir-before img{
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+}
+.arrow-dir img{
+    width: 16px;
+    height: 16px;
+
+}
+.element2sold p{
+    font-size: 24px;
+}
+
+</style>

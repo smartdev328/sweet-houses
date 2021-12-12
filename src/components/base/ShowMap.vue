@@ -12,6 +12,7 @@
   map-type-id="terrain"
   :options="options"
   style="width: 100%; height: 90vh"
+  class="mt-n5"
 >
   <GmapMarker
     :position="{lat:this.latitude, lng:this.longitude}"
