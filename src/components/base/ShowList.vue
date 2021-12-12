@@ -63,10 +63,12 @@
             </div>
            
         </div>
-              
+            <div class="my-5 disclaimer-content">
+                <p class="Roboto-Regular">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
+            </div> 
         </div>
           <b-modal
-            id="my-modal"
+            ref="my-modal"
             header-bg-variant="white"
             body-bg-variant="white"
             footer-bg-variant="white"
@@ -77,7 +79,7 @@
             ></sign-up>
           </b-modal>
           <b-modal
-            id="my-modallogin"
+            ref="my-modallogin"
             header-bg-variant="white"
             body-bg-variant="white"
             footer-bg-variant="white"
@@ -187,21 +189,21 @@ watch:{
         })
     },
      SignUp() {
-      this.$bvModal.show("my-modal");
+      this.$refs['my-modal'].show();
     },
     XsignupOlogin() {
-      this.$bvModal.hide("my-modal");
-      this.$bvModal.show("my-modallogin");
+        this.$refs['my-modal'].hide();
+       this.$refs['my-modallogin'].show();
     },
     hidesignupmodal() {
-      this.$bvModal.hide("my-modal");
+     this.$refs['my-modal'].hide();
     },
     hideloginmodal() {
-      this.$bvModal.hide("my-modallogin");
+      this.$refs['my-modallogin'].hide();
     },
     xloginOsignup() {
-      this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("my-modal");
+      this.$refs['my-modallogin'].hide();
+      this.$refs['my-modal'].show();
     },
     },
     created(){
@@ -292,6 +294,9 @@ watch:{
 }
 .pointer{
     cursor: pointer;
+}
+.disclaimer-content p{
+    color: #434242;
 }
 @media only screen and (max-width: 600px){
     .showlist .cards{
