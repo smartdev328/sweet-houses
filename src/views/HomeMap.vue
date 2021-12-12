@@ -14,6 +14,14 @@
                             <img src="../assets/image/icon/Iconly-Light-outline-Search.svg" alt="">
                       </button>
                       <input type="text" placeholder="Any area or listing ">
+                     
+                      <button>
+                            <img src="../assets/image/icon/iconfilter.svg" alt="">
+                            <span class="Roboto-Regular ml-2">Filters</span>
+                      </button>
+                    <!-- <multiselect v-model="value" tag-placeholder="Add this as new tag" 
+                    placeholder="Search or add a tag" label="name" track-by="code" :options="optionsdata" :multiple="true" 
+                    :taggable="true" @tag="addTag"></multiselect> -->
                   </div>
                   <div>
                     <div class="item1b">
@@ -21,26 +29,130 @@
                   </div>
               </div>
             </div>
-        </div>
-        </div>
+
        
+           
+         
+        </div>
+          <div class="modelfilter" v-show="showfilter">   
+           <div class="px-4 pt-0 pb-4">
+              <div class="element1 px-0">
+                <label for="propertytype" class="text-color-1 Roboto-Medium">Property Type</label>
+                <div class="element1a">
+           
+                     <b-form-checkbox-group
+                  
+                      id="checkbox-group-1"
+                      v-model="selectedpropertytype"
+                      :options="optionsdata"
+                      name="flavour-1"
+                    ></b-form-checkbox-group>
+                  </div>
+              </div>
+              <div class="element2">
+                <label for="" class="text-color-1 Roboto-Medium">Price Range</label>
+                <div class="element2a">
+                  <div class="w-100 position-relative">
+                      <v-select 
+                 :reduce="hometypes => hometypes.value"
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="hometype"
+                    :options="hometypes" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
+                  </div>
+                  <div></div>
+              
+                  <div class="w-100 position-relative">
+                      <v-select 
+                 :reduce="hometypes => hometypes.value"
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="hometype"
+                    :options="hometypes" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
+                  </div>
+                </div>
+             
+           </div>
+           <div class="element3 mt-3">
+             <div class="row">
+               <div class="col-12 col-md-6">
+                 <p>Bedrooms</p>
+                  <div class="types">
+                      <a class="btn Roboto-Regular"> Any  </a>
+                      <a class="btn Roboto-Regular" > 1+ </a>
+                      <a class="btn Roboto-Regular">2+  </a>
+                      <a class="btn Roboto-Regular" > 3+ </a>
+                      <a class="btn Roboto-Regular"> 4+ </a>
+                       <a class="btn Roboto-Regular"> 5+ </a>
+                        <a class="btn Roboto-Regular"> 6+ </a>
+                  </div>
+               </div>
+                <div class="col-12 col-md-6">
+                 <p>Bathrooms</p>
+                  <div class="types">
+                      <a class="btn Roboto-Regular"> Any  </a>
+                      <a class="btn Roboto-Regular" > 1+ </a>
+                      <a class="btn Roboto-Regular">2+  </a>
+                      <a class="btn Roboto-Regular" > 3+ </a>
+                      <a class="btn Roboto-Regular"> 4+ </a>
+                       <a class="btn Roboto-Regular"> 5+ </a>
+                        <a class="btn Roboto-Regular"> 6+ </a>
+                  </div>
+               </div>
+             </div>
+           </div>
+               <div class="element3">
+             <div class="row">
+               <div class="col-12 col-md-6">
+                 <p>Parking</p>
+                  <div class="types">
+                      <a class="btn Roboto-Regular"> Any  </a>
+                      <a class="btn Roboto-Regular" > 1+ </a>
+                      <a class="btn Roboto-Regular">2+  </a>
+                      <a class="btn Roboto-Regular" > 3+ </a>
+                      <a class="btn Roboto-Regular"> 4+ </a>
+                       <a class="btn Roboto-Regular"> 5+ </a>
+                        <a class="btn Roboto-Regular"> 6+ </a>
+                  </div>
+               </div>
+                <div class="col-12 col-md-6">
+                 <p>Internal Sqft</p>
+                  <input type="range" class="form-control-range"  min="100" max="4500" v-model="rangevalue" id="formControlRange">
+                  <!-- <b-form-input id="range-1" v-model="rangevalue" type="range" min="100" max="4500"></b-form-input> -->
+                  <!-- {{rangevalue}} -->
+               </div>
+             </div>
+           </div>
+          </div>
+        </div>
+        </div>
       </div>
 
             <div :class="tab_visible('show-map')" class="h-100">
-                      <show-map @submit="submitmap"></show-map>
+                      <show-map  @submit="submitmap"></show-map>
           </div>
           <div :class="tab_visible('show-list')" class="h-100">
-                      <show-list @submit="submitlist"></show-list>
+                      <show-list ref="showlist" :type="typesale" @submit="submitlist"></show-list>
             </div>
     </div>
 </template>
 <script>
 import ShowMap from '../components/base/ShowMap.vue';
-
+// import Multiselect from 'vue-multiselect'
 export default {
-  components: { ShowMap },
+  components: { ShowMap  },
     
     data: () => ({
+      showfilter:null,
+      rangevalue:0,
       selected_menu:"show-list",
         centerLatitude: 0,
         centerLongitude: 0,
@@ -69,15 +181,46 @@ export default {
         disableDefaultUi: false
         },
         typesale:"forsale",
-        bn:null
+        bn:null,
+        value:null,
+        optionsdata:  [
+          { text: 'Detached Homes (no shared wells)', value: 'Detached' },
+          { text: 'Semi-Detached Homes (1 shared well)', value: 'Semi-Detached' },
+          { text: 'Townhouses (multi-level & shared wells)', value: 'Townhouses' },
+          { text: 'Low Rise Condos (4 or fewer levels)', value: 'LowRise' },
+           { text: 'High Rise Condos (5 or more levels)', value: 'HighRise' }
+        ],
+        selectedpropertytype:[],
+        hometypes: [
+        { value: "Detached", name: "Detached" },
+        { value: "Semi-Detached", name: "Semi-Detached" },
+        { value: "Townhouse", name: "Townhouse" },
+        { value: "Condo or apartment", name: "Condo or apartment" },
+        { value: "Other", name: "Other" },
+      ],
+      hometype:null
 
     }),
+    computed:{
+       range() {
+      return Array(1000000 - 30000 ).fill().map((_, idx) => 30000 + idx + 5000)
+}
+    },
     methods:{
+          addTag (newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+      }
+      this.options.push(tag)
+      this.value.push(tag)
+    },
       submitmap(){
         this.selected_menu = "show-list"
       },
       submitlist(){
         this.selected_menu = "show-map"
+
       },
       tab_visible(tab) {
       if (tab == this.selected_menu) {
@@ -93,10 +236,17 @@ export default {
         console.log(evt.latLng.lat())
       },
       openforsale(){
-        this.typesale = 'forsale'
+        if(this.selected_menu == "show-list"){
+          this.typesale = 'forsale';
+          this.$refs.showlist.find_listings_forSale();
+        }
+        
       },
       opensold(){
-        this.typesale = 'sold'
+         if(this.selected_menu == "show-list"){
+          this.typesale = 'sold';
+           this.$refs.showlist.find_listings_Sold();
+        }
       }
     },
   
@@ -130,7 +280,10 @@ export default {
 
 }
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
 <style scoped>
+
 footer{
   z-index: -1;
   display: none;
@@ -159,8 +312,8 @@ footer{
   display: inline-block;
     height: 40px;
     width: 100%;
-    position: fixed;
-    top: 120px;
+    position: sticky;
+    top: 140px;
     z-index: 1;
     padding-left: 50px;
     margin: auto;
@@ -280,6 +433,15 @@ footer{
     padding-left: 0px;
     padding-right: 0px;
 }
+.searchpage .element1 .searchform .item1 .item1a button span{
+  color: #232323;
+  font-size: 18px;
+  font-weight: 600;
+}
+.searchpage .element1 .searchform .item1 .item1a button:last-child img{
+  width: 22px;
+  height: 22px;
+}
 input:focus{
   outline: none;
   border: none;
@@ -306,6 +468,53 @@ input:focus{
 }
 .bgdark{
   background-color: #F3F3F3 !important;
+}
+  .multiselect__tag{
+  position: relative !important;
+}
+
+.modelfilter{
+background: #fff;
+}
+.modelfilter .element1 label{
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+    font-size: 18px;
+}
+.modelfilter .element1 .element1a{
+  width: 70%;
+}
+.modelfilter .element2 label{
+      font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+    font-size: 18px;
+}
+.modelfilter .element2{
+  width: 50%;
+}
+.modelfilter .element2 .element2a{
+      display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.modelfilter .element2 .element2a div:nth-child(2){
+      width: 12px;
+    height: 2px;
+    margin: 0px 8px;
+    background-color: black;
+}
+.modelfilter .element3 .types a{
+    font-size: 20px;
+    color: #434242;
+    display: inline-block;
+    border: 1px solid currentColor;
+    margin: 0 4px 5px 0;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #707070;
 }
 @media only screen and (max-width:600px) {
   .searchpage{

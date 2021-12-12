@@ -114,6 +114,10 @@ Vue.component('show-list',require('./components/base/ShowList.vue').default)
 const CardReport = () => import('./components/share/CardReport.vue');
 Vue.component('card-report',CardReport);
 
+const CardList = () => import('./components/share/CardList.vue');
+Vue.component('card-list',CardList);
+
+
 const ErrModel = () => import('./components/share/ErrModel.vue');
 Vue.component('err-model',ErrModel);
 

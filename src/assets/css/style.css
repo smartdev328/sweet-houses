@@ -557,6 +557,27 @@ body{
   background-size: contain;
   background-repeat: no-repeat;
 }
+.modelfilter .element1 .element1a .bv-no-focus-ring .custom-control-inline{
+  width: 45%;
+}
+.modelfilter .element1 .element1a .bv-no-focus-ring .custom-control-inline label{
+  color: #434242;
+  font-family: 'Roboto-Regular' , sans-serif !important;
+}
+.modelfilter .element1 .element1a .custom-control-input:checked ~ .custom-control-label::before{
+  color: #fff;
+    border-color: #00A19B !important;
+    background-color: #00A19B !important;
+}
+.page-item:first-child .page-link{
+  cursor: pointer;
+}
+.VuePagination__pagination li .page-link{
+  cursor: pointer;
+}
+.page-item:last-child .page-link{
+  cursor: pointer;
+}
 @media only screen and (max-width: 600px){
   .home header{
     height: 85vh;
