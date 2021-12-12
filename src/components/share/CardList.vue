@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="position-relative">
+    <div class="position-relative" style="    overflow: hidden;">
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
         <div class="text-white Roboto-Medium">
           <p>See this home's photos and sale price</p>
@@ -9,6 +9,12 @@
             >Sign Up</b-button
           >
       
+        </div>
+      </div>
+       <div class="overlay d-flex align-items-center justify-content-center" v-if="currentcount > 6 && homedata.images.count > 6">
+        <div class="text-white Roboto-Medium pointer">
+            <img src="../../assets/image/download.svg" alt="">
+          <p>View all {{homedata.images.count}} images</p>
         </div>
       </div>
       <img
@@ -342,5 +348,17 @@ export default {
 }
 .card-body .element5 {
   height: 84px;
+}
+.card img{
+     overflow: hidden; 
+     transform-origin: 50% 65%;
+  transition: transform 2s, filter 3s ease-in-out;
+}
+.card img:hover{
+  transform: scale(1.2);
+}
+.card .overlay img{
+    width: 34px;
+    height: 34px;
 }
 </style>
