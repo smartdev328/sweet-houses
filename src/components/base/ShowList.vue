@@ -78,19 +78,14 @@ export default {
             listings:[],
             loading:null,
             loadedlistingsold:null,
-            tatal:0
+            tatal:0,
+            filerdata:null,
             
             
         }
     },
     computed:{
-    filerdata(){
-        if(this.type == 'sold'){
-            return {name:'Date solid (new to old)',value:'soldDateDesc'}
-        }else{
-            return  {name:'Date listed (new to old)',value:'createdOnDesc'}
-        }
-    }
+
     },
     components: {
   
@@ -100,6 +95,7 @@ export default {
             this.$emit('submit')
         },
         changeFilter(filter){
+            console.log(filter)
             this.filerdata = filter;
             this.paginationpage = 1;
 
@@ -150,6 +146,11 @@ export default {
     }
     },
     created(){
+          if(this.type == 'sold'){
+            this.filerdata  =  {name:'Date solid (new to old)',value:'soldDateDesc'}
+        }else{
+            this.filerdata  =   {name:'Date listed (new to old)',value:'createdOnDesc'}
+        }
         this.find_listings_forSale();
     }
 }
