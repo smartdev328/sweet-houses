@@ -14,11 +14,11 @@
                     <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{filerdata.name}}
                     </a>
-                    <div v-if="type == 'forsale'" class="dropdown-menu shadow-sm bg-white border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
+                    <div v-if="type == 'forsale'" class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  :class="{filteractive : filerdata.name == filter.name }"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)" >{{filter.name}}</a>
                     </div>
-                     <div v-else class="dropdown-menu shadow-sm bg-white border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item pointer"  v-for="filter in filerlistsold" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
+                     <div v-else class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item pointer"   :class="{filteractive : filerdata.name == filter.name }"  v-for="filter in filerlistsold" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
                     </div>
                 </div>
             </div>
@@ -278,8 +278,14 @@ watch:{
     color: #fff;
      cursor: pointer;
 }
+.dropdown-menu .filteractive{
+     background: #FFB600;
+    color: #fff !important;
+}
 .dropdown-menu{
     left: 35% !important;
+       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 29%), 0 -1px 2px -1px rgb(0 0 0 / 24%);
+
 }
 .item1c .dropdown-toggle{
     z-index: 1000;
