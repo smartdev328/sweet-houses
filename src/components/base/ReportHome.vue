@@ -174,17 +174,17 @@ $30,000. You net The Full Resale Price Less Our Fee And The Cost Of Improvements
                 </div>
                 <div class="item5b">
                     <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>
-                    <p class="Roboto-Regular text-color-2">Kick off your sale by getting a more detailed estimate from one of our <br>
+                    <p class="Roboto-Regular text-color-2">Kick off your sale by getting a more detailed appraisal from one of our <br>
 agents. Learn more about our <span> selling services.</span></p>
                 </div>
                 <div class="item5c text-center">
-                    <button class="btn Roboto-Regular mb-2">Get personalized home caluation</button>
-                    <p class="text-color-2  Roboto-Regular">It's free. There's no commitment.</p>
+                    <button class="btn Roboto-Regular mb-2">Get a personalized home appraisal</button>
+                    <p class="text-color-2  Roboto-Regular">It's free when you list with us</p>
                 </div>
             </div>
             <div class="item6">
                 <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
-                <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sod nearby are the best indication of market value. The most similar homes sold in the past 3
+                <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sold nearby are the best indication of market value. The most similar homes sold in the past 3
 months are shown below. </p>
             </div>
             <div class="my-5 pb-5">
