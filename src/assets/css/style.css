@@ -486,6 +486,7 @@ body{
   color: #FFB600 !important;
   font-size: 18px;
   font-family: 'Roboto-Medium', sans-serif  !important;
+  width: 60px;
 }
 .pagination .page-item{
   margin: 0 4px;
