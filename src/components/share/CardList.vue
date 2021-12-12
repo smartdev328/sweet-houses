@@ -196,20 +196,6 @@ export default {
     SignUp() {
       this.$emite('SignUp');
     },
-    XsignupOlogin() {
-      this.$bvModal.hide("my-modal");
-      this.$bvModal.show("my-modallogin");
-    },
-    hidesignupmodal() {
-      this.$bvModal.hide("my-modal");
-    },
-    hideloginmodal() {
-      this.$bvModal.hide("my-modallogin");
-    },
-    xloginOsignup() {
-      this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("my-modal");
-    },
   },
   components: {
     // VueSlickCarousel
