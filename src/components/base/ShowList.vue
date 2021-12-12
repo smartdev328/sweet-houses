@@ -4,7 +4,7 @@
                 <div class="space-40"></div>
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Result</span> </p>
+                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Results</span> </p>
             </div>
             <div class="item1b">
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
