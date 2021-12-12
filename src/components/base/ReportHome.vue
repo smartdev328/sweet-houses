@@ -184,7 +184,7 @@ agents. Learn more about our <span> selling services.</span></p>
             </div>
             <div class="item6">
                 <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
-                <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sod nearby are the best indication of market value. The most similar homes sold in the past 3
+                <p class="Roboto-Regular text-color-2">Actual selling prices for homes recently sold nearby are the best indication of market value. The most similar homes sold in the past 3
 months are shown below. </p>
             </div>
             <div class="my-5 pb-5">
