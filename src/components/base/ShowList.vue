@@ -114,6 +114,11 @@ export default {
         
         window.scrollTo(0,200);
     },
+    find_listings_SoldMain(){
+         this.paginationpage = 1;
+         this.filerdata = {name:'Date solid (new to old)',value:'soldDateDesc'};
+         this.find_listings_Sold();
+    },
     find_listings_Sold(){
         let sortBy = this.filerdata.value;
         let pageNum = this.paginationpage;
@@ -128,6 +133,11 @@ export default {
              this.loading = false
              this.loadedlistingsold=true
         })
+    },
+    find_listings_forSaleMain(){
+        this.paginationpage = 1;
+        this.filerdata =  {name:'Date listed (new to old)',value:'createdOnDesc'};
+        this.find_listings_forSale();
     },
     find_listings_forSale(){
         let sortBy = this.filerdata.value;

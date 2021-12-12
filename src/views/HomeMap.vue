@@ -238,14 +238,14 @@ export default {
       openforsale(){
         if(this.selected_menu == "show-list"){
           this.typesale = 'forsale';
-          this.$refs.showlist.find_listings_forSale();
+          this.$refs.showlist.find_listings_forSaleMain();
         }
         
       },
       opensold(){
          if(this.selected_menu == "show-list"){
           this.typesale = 'sold';
-           this.$refs.showlist.find_listings_Sold();
+           this.$refs.showlist.find_listings_SoldMain();
         }
       }
     },
