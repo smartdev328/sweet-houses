@@ -4,7 +4,7 @@
                 <div class="space-40"></div>
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count}} <span class="DMSerifRegular text-color-2">Result</span> </p>
+                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Result</span> </p>
             </div>
             <div class="item1b">
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
@@ -18,39 +18,75 @@
                     <a class="dropdown-item"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
                     </div>
                      <div v-else class="dropdown-menu shadow-sm bg-white border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  v-for="filter in filerlistsold" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
+                    <a class="dropdown-item pointer"  v-for="filter in filerlistsold" :key="filter.id" @click="changeFilter(filter)">{{filter.name}}</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="cards my-5" v-if="loadedlistingsold">
-            <card-list v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"></card-list>
+            <card-list v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
+            @SignUp="SignUp"
+             ></card-list>
         </div>
         <div class="text-center my-5"> 
             <b-spinner v-if="!loadedlistingsold && loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
         </div>
         <div class="my-5 row" v-if="loadedlistingsold">
             <div class="col-12 d-flex justify-content-center">
-                 <pagination
+                  <!-- <pagination
                     v-model="paginationpage"
                     :records="tatal"
                     :perPage="30"
                     :prev-text="'Prev'"
                     :next-text="'Next'"
                     count-text=""
+                    last-number
                      :options="{
                             chunk: 8,
+                            lastnumber,
                             texts: {
                             count: ''
                             }
                         }"
                     @paginate="myCallback"
-                  />
+                  />  -->
+                   <b-pagination
+                    v-model="paginationpage"
+                    :total-rows="tatal"
+                    :per-page="30"
+                    prev-text="←  Prev"
+                    next-text="Next  →"
+                    first-number
+                    last-number
+                   
+                ></b-pagination>
             </div>
            
         </div>
               
         </div>
+          <b-modal
+            id="my-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <sign-up
+              @hidesignupmodal="hidesignupmodal"
+              @XsignupOlogin="XsignupOlogin"
+            ></sign-up>
+          </b-modal>
+          <b-modal
+            id="my-modallogin"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <log-in
+              @hideloginmodal="hideloginmodal"
+              @xloginOsignup="xloginOsignup"
+            ></log-in>
+          </b-modal>
     </div>
 </template>
 <script>
@@ -84,11 +120,10 @@ export default {
             
         }
     },
-    computed:{
-
-    },
-    components: {
-  
+watch:{
+    paginationpage:function(){
+        this.myCallback()
+    }
 },
     methods:{
         submit(){
@@ -111,8 +146,12 @@ export default {
             }else{
             this.find_listings_forSale();
             }
-        
         window.scrollTo(0,200);
+    },
+    find_listings_SoldMain(){
+         this.paginationpage = 1;
+         this.filerdata = {name:'Date solid (new to old)',value:'soldDateDesc'};
+         this.find_listings_Sold();
     },
     find_listings_Sold(){
         let sortBy = this.filerdata.value;
@@ -121,13 +160,17 @@ export default {
         this.loadedlistingsold = false
         this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold`).then((res) =>{
             this.loading = false 
-            console.log(res.data)
             this.listingsold = res.data
             this.listings = res.data.listings
             this.tatal = res.data.count
              this.loading = false
              this.loadedlistingsold=true
         })
+    },
+    find_listings_forSaleMain(){
+        this.paginationpage = 1;
+        this.filerdata =  {name:'Date listed (new to old)',value:'createdOnDesc'};
+        this.find_listings_forSale();
     },
     find_listings_forSale(){
         let sortBy = this.filerdata.value;
@@ -136,14 +179,30 @@ export default {
         this.loadedlistingsold = false
         this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale`).then((res) =>{
             this.loading = false 
-            console.log(res.data)
             this.listingsold = res.data
             this.listings = res.data.listings
             this.tatal = res.data.count
              this.loading = false
              this.loadedlistingsold=true
         })
-    }
+    },
+     SignUp() {
+      this.$bvModal.show("my-modal");
+    },
+    XsignupOlogin() {
+      this.$bvModal.hide("my-modal");
+      this.$bvModal.show("my-modallogin");
+    },
+    hidesignupmodal() {
+      this.$bvModal.hide("my-modal");
+    },
+    hideloginmodal() {
+      this.$bvModal.hide("my-modallogin");
+    },
+    xloginOsignup() {
+      this.$bvModal.hide("my-modallogin");
+      this.$bvModal.show("my-modal");
+    },
     },
     created(){
           if(this.type == 'sold'){
@@ -217,6 +276,7 @@ export default {
 .showlist .dropdown-menu .dropdown-item:hover{
     background: #FFB600;
     color: #fff;
+     cursor: pointer;
 }
 .dropdown-menu{
     left: 35% !important;
@@ -224,10 +284,14 @@ export default {
 .item1c .dropdown-toggle{
     z-index: 1000;
 }
+.pointer{
+    cursor: pointer;
+}
 @media only screen and (max-width: 600px){
     .showlist .cards{
         grid-template-columns: auto ;
     }
+   
     .showlist .item1{
         flex-direction: column;
     }
@@ -239,7 +303,7 @@ export default {
 @media only screen and (min-width: 900px){
 .showlist .cards {
     display: grid;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto;
 
 }
 }
