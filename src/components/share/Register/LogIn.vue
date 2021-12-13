@@ -141,6 +141,7 @@ export default {
                 })
                   this.loading = false
                   this.$emit('hideloginmodal')
+                  
                   return res;
               }) .catch((err) => {
                 this.formData =  new FormData(),
