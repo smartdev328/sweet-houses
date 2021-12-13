@@ -122,7 +122,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Buy & Sells
+              Buy & Sell
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
             </router-link>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
