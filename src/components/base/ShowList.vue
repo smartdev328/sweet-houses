@@ -150,16 +150,34 @@ computed:{
         return this.filteropt.minBaths
     },
     minSqft(){
+        if(this.filteropt.minSqft == null || this.filteropt.maxSqft == 1){
+            return ""
+        }else{
         return this.filteropt.minSqft
+        }
+       
     },
     maxSqft(){
+           if(this.filteropt.maxSqft == null || this.filteropt.maxSqft == 4500){
+            return ""
+        }else{
         return this.filteropt.maxSqft
+        }
     },
      maxPrice(){
-        return this.filteropt.maxPrice
+         if(this.filteropt.maxPrice > 0){
+             return this.filteropt.maxPrice.replace(',','')
+         }else{
+              return ""
+         }  
+       
     },
      minPrice(){
-        return this.filteropt.minPrice
+         if(this.filteropt.minPrice > 0){
+             return this.filteropt.minPrice.replace(',','')
+         }else{
+              return ""
+         }  
     },
     propertyType(){
         return this.filteropt.propertyType
@@ -200,9 +218,19 @@ computed:{
     find_listings_Sold(){
         let sortBy = this.filerdata.value;
         let pageNum = this.paginationpage;
+        this.loading = true ;
+        let minBeds = this.minBeds;
+        let minParkingSpaces = this.minParkingSpaces;
+        let minSqft= this.minSqft;
+        let maxSqft = this.maxSqft;
+        let minPrice = "";
+        let maxPrice = "";
+        let propertyType = this.propertyType;
+        let style = this.style;
+        let minBaths = this.minBaths;
         this.loading = true 
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -219,9 +247,18 @@ computed:{
     find_listings_forSale(){
         let sortBy = this.filerdata.value;
         let pageNum = this.paginationpage;
-        this.loading = true 
+        this.loading = true ;
+        let minBeds = this.minBeds;
+        let minParkingSpaces = this.minParkingSpaces;
+        let minSqft= this.minSqft;
+        let maxSqft = this.maxSqft;
+        let minPrice = this.minPrice;
+        let maxPrice =this.maxPrice;
+        let propertyType = this.propertyType;
+        let style = this.style;
+        let minBaths = this.minBaths;
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -318,7 +355,7 @@ computed:{
     color: #434242;
 }
 .showlist .dropdown-menu .dropdown-item:hover{
-    background: #FFB600;
+    background: #ffbf00ad;
     color: #fff;
      cursor: pointer;
 }
