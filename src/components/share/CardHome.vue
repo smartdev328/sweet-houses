@@ -4,7 +4,7 @@
             <div class="overlay" v-if="sold">
                 <div class="text-white Roboto-Medium">
                     <p>See this home's photos and sale price</p>
-                    <p>Local laws require yo to sign up to see sold details</p>
+                    <p>Local laws require you to sign up to see sold details</p>
                     <button class="btn">Sign Up</button>
                 </div>
                 
