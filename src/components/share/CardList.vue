@@ -308,7 +308,7 @@ export default {
   top: 0px;
   padding: 10px;
   position: absolute;
-  z-index: 999;
+  z-index: 900;
 }
 .card .ellipsis {
   background-color: #fff;
@@ -357,11 +357,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 .arrow-dir-before img {
   width: 16px;
   height: 16px;
-  transform: rotate(180deg);
+ transform: rotate(180deg);
+ transform-origin: unset !important;
 }
 .arrow-dir img {
   width: 16px;
@@ -379,7 +381,7 @@ export default {
   transition: transform 2s, filter 3s ease-in-out;
 }
 .card img:hover {
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 .card .overlay img {
   width: 34px;

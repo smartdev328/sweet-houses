@@ -57,16 +57,31 @@
              <div class="modelfilter shadow-sm" v-show="showfilter">
           <div class="px-4 pt-0 pb-4">
             <div class="element1 px-0">
-              <label for="propertytype" class="text-color-1 Roboto-Medium"
+              <div class="w-50">
+                <label for="propertytype" class="text-color-1 Roboto-Medium"
                 >Property Type</label
               >
               <div class="element1a">
                 <b-form-checkbox-group
-                  id="checkbox-group-1"
+                style="display:grid"
                   v-model="propertyType"
                   :options="optionsdata"
                   name="flavour-1"
                 ></b-form-checkbox-group>
+              </div>
+              </div>
+               <div class="w-50">
+                <label for="optionstyle" class="text-white Roboto-Medium"
+                >4</label
+              >
+              <div class="element1a">
+                <b-form-checkbox-group
+                style="display:grid"
+                  v-model="style"
+                  :options="styleoptions"
+                  name="flavour-2"
+                ></b-form-checkbox-group>
+              </div>
               </div>
             </div>
             <div class="element2">
@@ -178,7 +193,11 @@
             </div>
             <div class="element5 mt-3">
               <button class="btn text-color-1 Roboto-Regular" @click="CancelFilter">X Cancel</button>
-              <button class="btn px-5 text-white Roboto-Regular" @click="saveFilterdata()">Save</button>
+              <div>
+                 <button class="btn text-color-2 Roboto-Regular" @click="clearFilter">Clear all</button>
+                <button class="btn btn-save px-5 text-white Roboto-Regular" @click="saveFilterdata()">Save</button>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -210,7 +229,7 @@ export default {
     return{
     showfilter: false,
     rangevalue: 0,
-    range: [220, 3000],
+    range: [1, 4500],
     selected_menu: "show-list",
     centerLatitude: 0,
     centerLongitude: 0,
@@ -240,11 +259,13 @@ export default {
     bn: null,
     value: null,
     optionsdata: [
-      { text: "Detached Homes (no shared wells)", value: "Detached" },
-      { text: "Semi-Detached Homes (1 shared well)", value: "Semi-Detached" },
-      { text: "Townhouses (multi-level & shared wells)", value: "Townhouses" },
-      { text: "Low Rise Condos (4 or fewer levels)", value: "LowRise" },
-      { text: "High Rise Condos (5 or more levels)", value: "HighRise" },
+      { text: "Detached Homes (no shared wells)", value: "SDetached" },
+      { text: "Semi-Detached Homes (1 shared well)", value: "Semi Detached" },
+      { text: "Townhouses (multi-level & shared wells)", value: "Row/Townhouse"}
+    ],
+    styleoptions:[
+      { text: "Low Rise Condos (4 or fewer levels)", value: "l_rise" },
+      { text: "High Rise Condos (5 or more levels)", value: "h_rise" }
     ],
     // propertyType: [],
     // minPrice: null,
@@ -258,6 +279,7 @@ export default {
     minBaths:this.$store.state.filteroptdata.minBaths,
     minBeds:this.$store.state.filteroptdata.minBeds,
     propertyType:this.$store.state.filteroptdata.propertyType,
+    style:this.$store.state.filteroptdata.style,
     }
   },
 
@@ -272,6 +294,15 @@ export default {
     CancelFilter(){
       this.showfilter  = false
     },
+    clearFilter(){
+      this.minPrice="";
+      this.maxPrice="";
+      this.minParkingSpaces="";
+      this.minBaths="";
+      this.minBeds="";
+      this.propertyType=[];
+      this.style=[];
+    },
     saveFilterdata(){
       this.showfilter  = false;
      let input = {};
@@ -284,8 +315,13 @@ export default {
      input.minPrice = this.minPrice,
      input.propertyType = this.propertyType,
      input.style = ["l_rise","h_rise"]
-
-      this.$store.commit('SAVE_FILTER_OPT',input)
+    this.$store.commit('SAVE_FILTER_OPT',input);
+    if (this.selected_menu == "show-list" && this.typesale == "forsale")  {
+        this.$refs.showlist.find_listings_forSaleMain();
+      }
+        if (this.selected_menu == "show-list" &&  this.typesale == "sold") {
+        this.$refs.showlist.find_listings_SoldMain();
+      }
     },
     submitmap() {
       this.selected_menu = "show-list";
@@ -396,7 +432,9 @@ footer {
 .searchpage .element1 {
   max-width: 100%;
   padding: 20px;
-  display: block;
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 .searchpage .element1 .togglesearch {
   /* max-width: 260px; */
@@ -552,6 +590,13 @@ input:focus {
   right: 15%;
   /* border: 1px solid #707070; */
 }
+.modelfilter .element1 {
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
 .modelfilter .element1 label {
   font-weight: 600;
   margin-bottom: 12px;
@@ -638,7 +683,7 @@ input:focus {
   background: transparent;
   font-size: 18px;
 }
-.modelfilter .element5 button:nth-child(2){
+.modelfilter .element5 .btn-save{
   background: #FFB600;
   border-radius: 8px;
   font-size: 18px;

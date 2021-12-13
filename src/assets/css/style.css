@@ -629,6 +629,9 @@ body{
 .vue-slider-process {
 background-color: #00A19B !important;
 }
+.modelfilter .element1 .element1a .bv-no-focus-ring .custom-control-inline {
+  width: 100%;
+}
 @media only screen and (max-width: 600px){
   .home header{
     height: 85vh;
