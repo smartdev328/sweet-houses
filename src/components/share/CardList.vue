@@ -4,7 +4,7 @@
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
         <div class="text-white Roboto-Medium">
           <p>See this home's photos and sale price</p>
-          <p>Local laws require yo to sign up to see sold details</p>
+          <p>Local laws require you to sign up to see sold details</p>
           <b-button v-b-modal="'my-modal'" @click="SignUp()" class="btn"
             >Sign Up</b-button
           >
