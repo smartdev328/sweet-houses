@@ -438,6 +438,17 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         homedatasecond:{},
         contactinput:{},
         editdatainput:{},
+        filteroptdata:{
+            minBeds:'',
+            minBaths:'',
+            minParkingSpaces:'',
+            minSqft:0,
+            maxSqft:4500,
+            maxPrice:null,
+            minPrice:null,
+            propertyType:null,
+            style:null
+        },
         canadianprovinces:[
             {
                 "name" : "Alberta",
@@ -573,6 +584,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
 
     },
     mutations:{
+        SAVE_FILTER_OPT(state,payload){
+            state.filteroptdata = payload
+        },
         setagent(state,payload){
             state.agent = payload
         },

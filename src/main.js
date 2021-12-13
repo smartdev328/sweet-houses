@@ -17,6 +17,9 @@ import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 import VueGoogleAutocomplete from 'vue-google-autocomplete'
 Vue.component('vue-google-autocomplete',VueGoogleAutocomplete)
 
+import VueSlider from 'vue-slider-component'
+Vue.component('VueSlider', VueSlider);
+import 'vue-slider-component/theme/antd.css'
 
 Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 

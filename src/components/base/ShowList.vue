@@ -118,6 +118,15 @@ export default {
             loadedlistingsold:null,
             tatal:0,
             filerdata:null,
+            // minBeds:this.$store.state.filteroptdata.minBeds,
+            // minParkingSpaces:this.$store.state.filteroptdata.minParkingSpaces,
+            // minSqft:this.$store.state.filteroptdata.minSqft,
+            // maxSqft:this.$store.state.filteroptdata.maxSqft,
+            // maxPrice:this.$store.state.filteroptdata.maxPrice,
+            // minPrice:this.$store.state.filteroptdata.minPrice,
+            // propertyType:this.$store.state.filteroptdata.propertyType,
+            // style:this.$store.state.filteroptdata.style,
+
             
             
         }
@@ -126,6 +135,39 @@ watch:{
     paginationpage:function(){
         this.myCallback()
     }
+},
+computed:{
+    filteropt(){
+        return this.$store.state.filteroptdata || {}
+    },
+    minBeds(){
+        return this.filteropt.minBeds
+    },
+    minParkingSpaces(){
+        return this.filteropt.minParkingSpaces
+    },
+    minBaths(){
+        return this.filteropt.minBaths
+    },
+    minSqft(){
+        return this.filteropt.minSqft
+    },
+    maxSqft(){
+        return this.filteropt.maxSqft
+    },
+     maxPrice(){
+        return this.filteropt.maxPrice
+    },
+     minPrice(){
+        return this.filteropt.minPrice
+    },
+    propertyType(){
+        return this.filteropt.propertyType
+    },
+    style(){
+        return this.filteropt.style
+    }
+   
 },
     methods:{
         submit(){
