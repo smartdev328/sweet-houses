@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="position-relative" style="    overflow: hidden;">
+    <div class="position-relative" style="overflow: hidden">
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
         <div class="text-white Roboto-Medium">
           <p>See this home's photos and sale price</p>
@@ -8,13 +8,15 @@
           <b-button v-b-modal="'my-modal'" @click="SignUp()" class="btn"
             >Sign Up</b-button
           >
-      
         </div>
       </div>
-       <div class="overlay d-flex align-items-center justify-content-center" v-if="currentcount > 6 && homedata.images.count > 6">
+      <div
+        class="overlay d-flex align-items-center justify-content-center"
+        v-if="currentcount > 6 && homedata.images.count > 6"
+      >
         <div class="text-white Roboto-Medium pointer">
-            <img src="../../assets/image/download.svg" alt="">
-          <p>View all {{homedata.images.count}} images</p>
+          <img src="../../assets/image/download.svg" alt="" />
+          <p>View all {{ homedata.images.count }} images</p>
         </div>
       </div>
       <img
@@ -76,10 +78,20 @@
           >
             Sold for $xxx,xxx
           </p>
-          <p class="Roboto-Regular" v-if="type == 'forsale'">
+          <p v-if="createdToday">
+            Listed today
+            <img
+              style="    width: 20px;
+    height: 20px;
+}"
+              src="../../assets/image/icon/elesign.svg"
+              alt=""
+            />
+          </p>
+          <p class="Roboto-Regular" v-if="type == 'forsale' && !createdToday">
             {{ gettime(homedata.listDate) }}
           </p>
-          <p class="Roboto-Regular" v-if="type == 'sold'">
+          <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
             {{ gettime(homedata.soldDate) }}
           </p>
         </div>
@@ -123,17 +135,23 @@
           </p>
         </div>
       </div>
-      <div class="ellipsesicon">
+      <div class="ellipsesicon" @click="saved = !saved">
         <div class="ellipsis p-2">
           <img
             src="../../assets/image/icon/Heart.svg"
             class="w-100 h-100"
             alt="icon"
+            v-if="!saved"
+          />
+          <img
+            src="../../assets/image/icon/savedheart.svg"
+            class="w-100 h-100"
+            alt="icon"
+            v-if="saved"
           />
         </div>
       </div>
     </div>
-      
   </div>
 </template>
 <script>
@@ -148,6 +166,7 @@ export default {
   data: () => ({
     currentcount: 1,
     sold: false,
+    saved: null,
   }),
   computed: {
     username() {
@@ -155,6 +174,25 @@ export default {
     },
     isLoggedIn() {
       if (this.username) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    taday() {
+      return new Date().getTime();
+    },
+    homestartdate() {
+      if (this.type == "forsale") {
+        return new Date(this.homedata.listDate).getTime();
+      } else {
+        return new Date(this.homedata.soldDate).getTime();
+      }
+    },
+    createdToday() {
+      let timestamp = this.taday - this.homestartdate;
+      let numhr = Math.floor(timestamp / 1000 / 60 / 60 / 24);
+      if (numhr < 2) {
         return true;
       } else {
         return false;
@@ -194,7 +232,7 @@ export default {
       });
     },
     SignUp() {
-      this.$emite('SignUp');
+      this.$emite("SignUp");
     },
   },
   components: {
@@ -335,16 +373,16 @@ export default {
 .card-body .element5 {
   height: 84px;
 }
-.card img{
-     overflow: hidden; 
-     transform-origin: 50% 65%;
+.card img {
+  overflow: hidden;
+  transform-origin: 50% 65%;
   transition: transform 2s, filter 3s ease-in-out;
 }
-.card img:hover{
+.card img:hover {
   transform: scale(1.2);
 }
-.card .overlay img{
-    width: 34px;
-    height: 34px;
+.card .overlay img {
+  width: 34px;
+  height: 34px;
 }
 </style>

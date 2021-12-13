@@ -82,7 +82,7 @@
                     </VueSlickCarousel>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-9">
+                    <div class="col-12 col-md-8">
                         <div class="item3 d-flex align-items-center justify-content-between">
                             <p class="text-color-1 Roboto-Medium">$1,488,000</p>
                             <p class="Roboto-Regular">Listed 5 days ago</p>
@@ -448,10 +448,34 @@ Ground)</p>
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-4">
                         <div class="part2 shadow p-3">
                             <div class="item1">
                                 <p class="Roboto-Medium">Tour this home</p>
+                            </div>
+                            <div class="item2">
+                                <div class="item2a px-3 py-1 align-items-center">
+                                     <img src="../../assets/image/icon/home.svg" alt="">
+                                    <span class="text-color-1 Roboto-Regular ml-2">In Person</span>
+                                </div>
+                                <div class="item2b ml-4">
+                                     <img src="../../assets/image/icon/smartphone.svg" alt="">
+                                    <span class="Roboto-Regular text-color-1 ml-2">Live Video</span>
+                                </div>
+                            </div>
+                            <div class="item3 px-2 mt-4 mb-2">
+                                <p class="mb-0 text-color-1 Roboto-Regular form-control form-control-lg">Tuesday, Oct 05, 2021</p>
+                            </div>
+                             <div class="item3 px-2 mt-4 mb-2">
+                                <p class="mb-0 text-color-1 Roboto-Regular form-control form-control-lg">10:00am - 10:30am</p>
+                            </div>
+                             <div class="item4 px-2 mt-4 mb-2 w-100">
+                                <button class="btn px-3  Roboto-Medium">Request tour</button>
+                                <p class="my-3 Roboto-Medium">
+                                    Tour homes with a Sweetly Real 
+                                    Estate Agent. It's free, there's no 
+                                    commitment. 
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -789,6 +813,43 @@ export default {
     color: #FFB600;
     font-size: 26px;
     font-weight: 600;
+}
+.homedetails .part2 .item2{
+    display: flex;
+    font-size: 18px;
+}
+.homedetails .part2 .item2 .item2a{
+    display: flex;
+    background: #F8F5E4;
+    border-radius: 20px;
+}
+.homedetails .part2 .item2 .item2a img{
+    width: 22px;
+    height: 22px;
+}
+.homedetails .part2 .item3{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    
+}
+.homedetails .part2 .item3 p{
+font-size: 22px !important;
+}
+.homedetails .part2 .item4 button{
+    border: 1px solid  #FFB600;
+    height: 46px;
+    font-size: 22px;
+    border-radius: 6x;
+    color: #FFB600;
+}
+.homedetails .part2 .item4 button:hover{
+    background: #f0e9d4fc;
+}
+.homedetails .part2 .item4  p{
+    color: #434242;
+    font-size: 18px;
 }
 @media (min-width: 760px){
 .modal-dialog {

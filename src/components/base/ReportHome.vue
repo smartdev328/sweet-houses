@@ -2,18 +2,12 @@
     <div class="reporthome">
         <div class="container my-5">
             <div class="item1">
-                <div class="item1a">
-                    <!-- <div class="image">
+                <div class="item1a d-flex pointer"  @click="routrMap()">
+                   <div class="image">
                               <img src="../../assets/image/icon/searchreport.svg" alt="">
                     </div>
-                    <input type="text" placeholder="Find more homes" class="text-color-3 px-2 Roboto-Medium border-0"> -->
-                             <div class="searchBox">
-
-            <input class="searchInput shadow-sm " type="text" name="" placeholder="Find more homes">
-            <button class="searchButton" href="#">
-                 <img src="../../assets/image/icon/searchreport.svg" alt="">
-            </button>
-        </div>
+                    <p class="mb-0 ml-2 Roboto-Medium">Find more homes</p>
+              
                 </div>
                 <div class="item1b" >
                         <p class="text-color-1 Roboto-Medium mb-0" v-if="address_format">{{address_format[0]}}</p>
@@ -296,6 +290,9 @@ the showings. " -Emily Glynn- James</span>
                 <button class="btn">Submit</button>
             </div>
         </div>
+         <div class="my-5 disclaimer-content">
+                <p class="Roboto-Regular">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
+            </div> 
         </div>
     </div>
 </template>
@@ -345,6 +342,9 @@ export default {
         },
         editHome(){
             this.$router.push({name:'EditHomeInof'})
+        },
+        routrMap(){
+            this.$router.push({name:'MapHome'})
         }
         
     }
@@ -429,6 +429,7 @@ export default {
 } */
 .reporthome .item1 .item1a p{
         font-size: 22px;
+        color: #434242;
 }
 .reporthome .item1 .item1b p{
     font-size: 24px;
@@ -717,6 +718,9 @@ textarea:focus{
 }
 .cards h3{
     font-weight: 600;
+}
+.disclaimer-content p{
+    color: #434242;
 }
 @media only screen and (max-width: 600px){
     .reporthome .cards{
