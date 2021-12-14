@@ -7,7 +7,7 @@
       <p cRoboto-Regular>Schedule your introduction call</p>
     </div>
     <div v-if="tab_visible == 'menu_one'">
-      <div class="item2 mb-5">
+      <!-- <div class="item2 mb-5">
         <VueCtkDateTimePicker
           v-model="yourtime"
           buttonColor="#FFB600"
@@ -20,7 +20,7 @@
           firstDayOfWeek="1"
 
         />
-      </div>
+      </div> -->
       <div class="col-8 col-md-4 mx-auto element4 pl-0">
         <button
           class="btn w-100 Roboto-Medium "

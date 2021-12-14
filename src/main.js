@@ -62,10 +62,12 @@ Vue.use(IconsPlugin)
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
 
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
-import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+// import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+// import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
-Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
+// Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
+
+//  "vue-ctk-date-time-picker": "^2.5.0",
 import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
 
