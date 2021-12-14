@@ -314,7 +314,7 @@ export default {
      input.maxPrice = this.maxPrice,
      input.minPrice = this.minPrice,
      input.propertyType = this.propertyType,
-     input.style = ["l_rise","h_rise"]
+     input.style = this.style
     this.$store.commit('SAVE_FILTER_OPT',input);
     if (this.selected_menu == "show-list" && this.typesale == "forsale")  {
         this.$refs.showlist.find_listings_forSaleMain();
