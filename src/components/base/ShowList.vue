@@ -12,7 +12,8 @@
             <div class="item1c">
                 <div class="text-color-2 Roboto-Regular dropdown">
                     <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{filerdata.name}}
+                  {{filerdata.name}} <img class="arrow-bottom" src="../../assets/image/icon/arrowbottom.svg" alt=""> 
+                  <img class="arrow-top" src="../../assets/image/icon/arrowtop2.svg" alt=""> 
                     </a>
                     <div v-if="type == 'forsale'" class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  :class="{filteractive : filerdata.name == filter.name }"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)" >{{filter.name}}</a>
@@ -365,8 +366,12 @@ computed:{
 }
 .dropdown-menu{
     left: 35% !important;
-       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 29%), 0 -1px 2px -1px rgb(0 0 0 / 24%);
+    width: 65%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 29%), 0 -1px 2px -1px rgb(0 0 0 / 24%);
 
+}
+.dropdown-toggle::after{
+    display: none;
 }
 .item1c .dropdown-toggle{
     z-index: 1000;
@@ -376,6 +381,15 @@ computed:{
 }
 .disclaimer-content p{
     color: #434242;
+}
+.dropdown .arrow-top{
+    display: none;
+}
+.show .arrow-top{
+    display: initial;
+}
+.show .arrow-bottom{
+    display: none;
 }
 @media only screen and (max-width: 600px){
     .showlist .cards{
