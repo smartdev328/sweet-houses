@@ -6,11 +6,11 @@
     >
       <div class="container">
         <div
-          class="element1 row d-flex align-items-center"
+          class="element1  d-flex align-items-center"
           :class="{ bgwhite: selected_menu === 'show-list' }"
         >
           <div
-            class="togglesearch col-12 col-md-3 mx-2"
+            class="togglesearch col-12 col-md-3 mxr-2"
             :class="{ bgdark: selected_menu === 'show-list' }"
           >
             <button
@@ -28,7 +28,7 @@
               Sold last 90days
             </button>
           </div>
-          <div class="searchform col-12 col-md-8 mx-0">
+          <div class="searchform col-12 col-md-9 mx-0">
             <div class="item1">
               <div
                 class="item1a rounded"
@@ -40,16 +40,26 @@
                     alt=""
                   />
                 </button>
-                <input type="text" placeholder="Any area or listing " />
-
-                <button @click="showfilter = !showfilter">
+                <!-- <input type="text" placeholder="Any area or listing " /> -->
+                 <multiselect v-model="value2"
+                  tag-placeholder="Any area or listing " 
+                  placeholder="Any area or listing " label="name"
+                   track-by="code" :options="options3"
+                   deselectLabel=""
+                   selectLabel=""
+                   :hideSelected="true"
+                    :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+                    
+                <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
                 </button>
               </div>
+              
               <div>
                 <div class="item1b"></div>
               </div>
+              
             </div>
           </div>
         </div>
@@ -84,6 +94,7 @@
               </div>
               </div>
             </div>
+             
             <div class="element2">
               <label for="" class="text-color-1 Roboto-Medium"
                 >Price Range</label
@@ -222,9 +233,9 @@
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
 
-// import Multiselect from 'vue-multiselect'
+import Multiselect from 'vue-multiselect'
 export default {
-  components: { ShowMap },
+  components: { ShowMap,Multiselect },
   data(){
     return{
     showfilter: false,
@@ -255,6 +266,14 @@ export default {
       fullscreenControl: true,
       disableDefaultUi: false,
     },
+      value2: [
+        { name: 'Javascript', code: 'js' }
+      ],
+      options3: [
+        { name: 'Vue.js', code: 'vu' },
+        { name: 'Javascript', code: 'js' },
+        { name: 'Open Source', code: 'os' }
+      ],
     typesale: "forsale",
     bn: null,
     value: null,
@@ -293,6 +312,14 @@ export default {
   methods: {
     CancelFilter(){
       this.showfilter  = false
+    },
+    addTag (newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+      }
+      this.options3.push(tag)
+      this.value2.push(tag)
     },
     clearFilter(){
       this.minPrice="";
@@ -421,7 +448,7 @@ footer {
   position: sticky;
   top: 140px;
   z-index: 1;
-  padding-left: 50px;
+  /* padding-left: 50px; */
   margin: auto;
   /*    padding-right: 74px; */
 }
@@ -525,6 +552,9 @@ footer {
   background: none;
   border: none;
   color: #707070;
+}
+.searchpage .element1 .searchform .item1 .item1a button:hover{
+  background: #fff;
 }
 .searchpage .element1 .searchform .item1 .item1a button img {
   width: 24px;

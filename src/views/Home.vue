@@ -121,16 +121,16 @@
       </div>
     </header>
     <div class="my-5">
-      <div class="container" :class="tab_visible('Sweet_Sale')">
+      <div class="container" :class="tab_visible('Sweet_Sale')" v-if="readyStateComplete"> 
         <sweet-sale></sweet-sale>
       </div>
-      <div class="container" :class="tab_visible('Swift_Sale')">
+      <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
         <swift-sale></swift-sale>
       </div>
-      <div class="container" :class="tab_visible('Equity_Advance')">
+      <div class="container" :class="tab_visible('Equity_Advance')" v-if="readyStateComplete">
         <equity-advance></equity-advance>
       </div>
-      <div :class="tab_visible('Traditional_Real_Estate')">
+      <div :class="tab_visible('Traditional_Real_Estate')" v-if="readyStateComplete">
         <traditional-realestate></traditional-realestate>
       </div>
     </div>
@@ -159,6 +159,7 @@ export default {
       resultsExample:{},
       addressData:{},
       placeResultData:{},
+      readyStateComplete:null
     };
   },
 
@@ -238,6 +239,17 @@ export default {
         this.$store.dispatch("ScrollTop");
       }
     },
+  },
+  mounted(){
+     document.onreadystatechange = () => {
+    if (document.readyState == "complete") {
+      console.log('Page completed with image and files!')
+
+      // HOW LOAD COMPONENTS HERE?
+      this.readyStateComplete = true
+
+    }
+  }
   },
   created() {
     eventBus.$on("fireMethod", (tab) => {
