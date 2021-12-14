@@ -106,7 +106,7 @@ export default {
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             ],
             filerlistsold:[
-              {name:'Date solid (new to old)',value:'soldDateDesc'},
+              {name:'Date Sold (new to old)',value:'soldDateDesc'},
               {name:'Price (low to high)',value:'soldPriceAsc'},
               {name:'Price (high to low)',value:'soldPriceDesc'},
             //   {name:'Price (high to low)',value:'listPriceDesc'},

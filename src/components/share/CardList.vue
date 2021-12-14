@@ -31,12 +31,18 @@
         class="card-img-top"
         alt="..."
       />
-      <img
+
+              <img
         v-if="!sold && homedata.images.image"
         :src="homedata.images.image"
         class="card-img-top"
+        ref="slidepic"
         alt="..."
       />
+
+
+      
+  
       <div
         class="arrow-dir"
         @click="getImage()"
@@ -49,7 +55,7 @@
         @click="getImagebefor()"
         v-if="currentcount > 1"
       >
-        <img src="../../assets/image/icon/Iconarrows.svg" alt="" />
+        <img src="../../assets/image/icon/iconbefore.svg" alt="" />
       </div>
       <div class="counter" v-if="homedata.images.count">
         {{ currentcount }}/{{ homedata.images.count }}
@@ -211,6 +217,13 @@ export default {
       };
 
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
+        const element = this.$refs.slidepic;
+        element.classList.add('fadeOut');
+            element.classList.remove('fadeIn');
+        setTimeout(() => {
+                element.classList.remove('fadeOut');
+                element.classList.add('fadeIn');
+            }, 300);
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
         this.currentcount += 1;
@@ -225,7 +238,15 @@ export default {
       };
 
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
+        const element = this.$refs.slidepic;
+        element.classList.add('fadeOut');
+            element.classList.remove('fadeIn');
+        setTimeout(() => {
+                element.classList.remove('fadeOut');
+                element.classList.add('fadeIn');
+            }, 300);
         this.homedata.images.image = res.data.image;
+         
         console.log(res.data.image);
         this.currentcount -= 1;
         return res;
@@ -238,6 +259,9 @@ export default {
   components: {
     // VueSlickCarousel
   },
+  created(){
+    
+  }
 };
 </script>
 <style scoped>
@@ -362,7 +386,7 @@ export default {
 .arrow-dir-before img {
   width: 16px;
   height: 16px;
- transform: rotate(180deg);
+ /* transform: rotate(180deg); */
  transform-origin: unset !important;
 }
 .arrow-dir img {
@@ -379,12 +403,33 @@ export default {
   overflow: hidden;
   transform-origin: 50% 65%;
   transition: transform 2s, filter 3s ease-in-out;
+
 }
 .card img:hover {
-  /* transform: scale(1.2); */
+  transform: scale(1.2);
 }
 .card .overlay img {
   width: 34px;
   height: 34px;
 }
+.fadeIn {
+    opacity: 1;
+}
+.fadeOut {
+    opacity: .3;
+}
+/* .fadeOut{
+animation: fadeOut 1s ease-in-out !important;
+}
+@keyframes fadeOut {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    opacity: 1;
+  }
+} */
 </style>

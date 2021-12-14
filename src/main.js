@@ -22,7 +22,8 @@ Vue.component('VueSlider', VueSlider);
 import 'vue-slider-component/theme/antd.css'
 
 Vue.component('vue-phone-number-input', VuePhoneNumberInput);
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import axios from 'axios'
 const api = axios.create({
   baseURL: 'https://adamsweetly.pythonanywhere.com/api/',
@@ -146,7 +147,9 @@ Vue.use(VueMeta, {
 new Vue({
   router,
   store,
-
+  mounted() {
+    AOS.init()
+  },
   created(){
  
       this.$http.get('auth/user/',{headers:{
