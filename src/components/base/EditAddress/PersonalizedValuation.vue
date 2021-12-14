@@ -5,11 +5,11 @@
             <p cRoboto-Regular>Schedule your introduction call</p>
         </div>
         <div class="item2 mb-5">
-            <VueCtkDateTimePicker v-model="yourValue" buttonColor="#FFB600" color="#FFB600" minuteInterval="5" 
+            <!-- <VueCtkDateTimePicker v-model="yourValue" buttonColor="#FFB600" color="#FFB600" minuteInterval="5" 
             input-size="lg"	 maxDate='2019-06-24 09:14' 
 
 
-             />
+             /> -->
         </div>
         <div class="item3 mt-5 mb-0">
             <p class="text-center DMSerifRegular text-color-1">What to expect on the call</p>
