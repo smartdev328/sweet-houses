@@ -92,12 +92,22 @@
     </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 export default {
     computed:{
         agent(){
-            return this.$store.state.agent
+            return this.$store.state.agent[0]
         }
     },
+    methods:{
+        ...mapMutations(['SET_CURRENT_AGENT']),
+        getcurrntagent(){
+            this.SET_CURRENT_AGENT(this.$route.params.name)
+        }
+    },
+    created(){
+        this.getcurrntagent();
+    }
 }
 </script>
 <style scoped>
