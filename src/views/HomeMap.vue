@@ -41,179 +41,350 @@
                   />
                 </button>
                 <!-- <input type="text" placeholder="Any area or listing " /> -->
-                 <multiselect v-model="value2"
-                  tag-placeholder="Any area or listing " 
-                  placeholder="Any area or listing " label="name"
-                   track-by="code" :options="options3"
-                   deselectLabel=""
-                   selectLabel=""
-                   :hideSelected="true"
-                    :multiple="true" :taggable="true" @tag="addTag"></multiselect>
-                    
+                <multiselect
+                  v-model="value2"
+                  tag-placeholder="Any area or listing "
+                  placeholder="Any area or listing "
+                  label="name"
+                  track-by="code"
+                  :options="options3"
+                  deselectLabel=""
+                  selectLabel=""
+                  :hideSelected="true"
+                  :multiple="true"
+                  :taggable="true"
+                  @tag="addTag"
+                  @remove="remove"
+                ></multiselect>
+
                 <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
                 </button>
               </div>
-              
+
               <div>
                 <div class="item1b"></div>
               </div>
-              
             </div>
           </div>
         </div>
-        <transition  name="list">
-             <div class="modelfilter shadow-sm" v-show="showfilter">
-          <div class="px-4 pt-0 pb-4">
-            <div class="element1 px-0">
-              <div class="w-50">
-                <label for="propertytype" class="text-color-1 Roboto-Medium"
-                >Property Type</label
-              >
-              <div class="element1a">
-                <b-form-checkbox-group
-                style="display:grid"
-                  v-model="propertyType"
-                  :options="optionsdata"
-                  name="flavour-1"
-                ></b-form-checkbox-group>
-              </div>
-              </div>
-               <div class="w-50">
-                <label for="optionstyle" class="text-white Roboto-Medium"
-                >4</label
-              >
-              <div class="element1a">
-                <b-form-checkbox-group
-                style="display:grid"
-                  v-model="style"
-                  :options="styleoptions"
-                  name="flavour-2"
-                ></b-form-checkbox-group>
-              </div>
-              </div>
-            </div>
-             
-            <div class="element2">
-              <label for="" class="text-color-1 Roboto-Medium"
-                >Price Range</label
-              >
-              <div class="element2a">
-                <div class="w-100 position-relative">
-                  <v-select
-                    class="form-control form-control-lg Roboto-Regular"
-                    v-model="minPrice"
-                    :options="itemsnumberlist"
-                    label="name"
-                    placeholder="No Min"
-                    :searchable="false"
-                    :clearable="false"
-                  ></v-select>
+        <transition name="list">
+          <div class="modelfilter shadow-sm" v-show="showfilter">
+            <div class="px-4 pt-0 pb-4">
+              <div class="element1 px-0">
+                <div class="w-50">
+                  <label for="propertytype" class="text-color-1 Roboto-Medium"
+                    >Property Type</label
+                  >
+                  <div class="element1a">
+                    <b-form-checkbox-group
+                      style="display:grid"
+                      v-model="propertyType"
+                      :options="optionsdata"
+                      name="flavour-1"
+                    ></b-form-checkbox-group>
+                  </div>
                 </div>
-                <div></div>
+                <div class="w-50">
+                  <label for="optionstyle" class="text-white Roboto-Medium"
+                    >4</label
+                  >
+                  <div class="element1a">
+                    <b-form-checkbox-group
+                      style="display:grid"
+                      v-model="style"
+                      :options="styleoptions"
+                      name="flavour-2"
+                    ></b-form-checkbox-group>
+                  </div>
+                </div>
+              </div>
 
-                <div class="w-100 position-relative">
-                  <v-select
-                    class="form-control form-control-lg Roboto-Regular"
-                    v-model="maxPrice"
-                    :options="itemsnumberlist"
-                    label="name"
-                    placeholder="No Max"
-                    :searchable="false"
-                    :clearable="false"
-                  ></v-select>
-                </div>
-              </div>
-            </div>
-            <div class="element3 mt-3">
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <p>Bedrooms</p>
-                  <div class="types">
-                    <a class="btn Roboto-Regular" @click="minBeds = ''" :class="{active : minBeds=='' }"> Any </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 1" :class="{active : minBeds==1 }"> 1+ </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 2" :class="{active : minBeds==2 }"> 2+ </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 3" :class="{active : minBeds==3 }"> 3+ </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 4" :class="{active : minBeds==4 }"> 4+ </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 5" :class="{active : minBeds==5 }"> 5+ </a>
-                    <a class="btn Roboto-Regular" @click="minBeds= 6" :class="{active : minBeds==6 }"> 6+ </a>
+              <div class="element2">
+                <label for="" class="text-color-1 Roboto-Medium"
+                  >Price Range</label
+                >
+                <div class="element2a">
+                  <div class="w-100 position-relative">
+                    <v-select
+                      class="form-control form-control-lg Roboto-Regular"
+                      v-model="minPrice"
+                      :options="itemsnumberlist"
+                      label="name"
+                      placeholder="No Min"
+                      :searchable="false"
+                      :clearable="false"
+                    ></v-select>
                   </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <p>Bathrooms</p>
-                  <div class="types">
-                 <a class="btn Roboto-Regular" @click="minBaths = ''" :class="{active : minBaths=='' }"> Any </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 1" :class="{active : minBaths==1 }"> 1+ </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 2" :class="{active : minBaths==2 }"> 2+ </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 3" :class="{active : minBaths==3 }"> 3+ </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 4" :class="{active : minBaths==4 }"> 4+ </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 5" :class="{active : minBaths==5 }"> 5+ </a>
-                    <a class="btn Roboto-Regular" @click="minBaths= 6" :class="{active : minBaths==6 }"> 6+ </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="element3">
-              <div class="row mt-3">
-                <div class="col-12 col-md-6">
-                  <p>Parking</p>
-                  <div class="types">
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces = ''" :class="{active : minParkingSpaces=='' }"> Any </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 1" :class="{active : minParkingSpaces==1 }"> 1+ </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 2" :class="{active : minParkingSpaces==2 }"> 2+ </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 3" :class="{active : minParkingSpaces==3 }"> 3+ </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 4" :class="{active : minParkingSpaces==4 }"> 4+ </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 5" :class="{active : minParkingSpaces==5 }"> 5+ </a>
-                    <a class="btn Roboto-Regular" @click="minParkingSpaces= 6" :class="{active : minParkingSpaces==6 }"> 6+ </a>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="d-flex align-items-baseline justify-content-between"> 
-                    <p style="float:left">Internal Sqft</p>
-                  <p style="float:right" class="text-color-1 Roboto-Regular p2">
-                   <span class="text-color-1 Roboto-Regular" v-if="range[0] == 0 && range[1]==4500">Any #</span>
-                    <span class="text-color-1 Roboto-Regular" v-if="range[0] == 0 && range[1] < 4500">Up to {{range[1]}}</span>
-                     <span class="text-color-1 Roboto-Regular" v-if="range[0] > 0 && range[1] < 4500">{{range[0]}} - {{range[1]}}</span>
-                      <span class="text-color-1 Roboto-Regular" v-if="range[0] > 0 && range[1] == 4500"> {{range[0]}} - Any</span>
-                     Sqft</p>
-                  </div>
-                  <vue-slider v-model="range"
-                  :min=0
-                  :max=4500
-                  :height="8"
-                  :dotSize=32
+                  <div></div>
 
-                   ></vue-slider>
-                  <!-- <b-form-input id="range-1" v-model="rangevalue" type="range" min="100" max="4500"></b-form-input> -->
-                  <!-- {{rangevalue}} -->
-                  <div class="text-color-2 Roboto-Regular">
-                     <span c>No Min</span>
-                     <span style="float:right">No Max </span>
+                  <div class="w-100 position-relative">
+                    <v-select
+                      class="form-control form-control-lg Roboto-Regular"
+                      v-model="maxPrice"
+                      :options="itemsnumberlist"
+                      label="name"
+                      placeholder="No Max"
+                      :searchable="false"
+                      :clearable="false"
+                    ></v-select>
                   </div>
-                 
                 </div>
               </div>
-            </div>
-            <div class="element4 py-3">
+              <div class="element3 mt-3">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <p>Bedrooms</p>
+                    <div class="types">
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = ''"
+                        :class="{ active: minBeds == '' }"
+                      >
+                        Any
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 1"
+                        :class="{ active: minBeds == 1 }"
+                      >
+                        1+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 2"
+                        :class="{ active: minBeds == 2 }"
+                      >
+                        2+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 3"
+                        :class="{ active: minBeds == 3 }"
+                      >
+                        3+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 4"
+                        :class="{ active: minBeds == 4 }"
+                      >
+                        4+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 5"
+                        :class="{ active: minBeds == 5 }"
+                      >
+                        5+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBeds = 6"
+                        :class="{ active: minBeds == 6 }"
+                      >
+                        6+
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <p>Bathrooms</p>
+                    <div class="types">
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = ''"
+                        :class="{ active: minBaths == '' }"
+                      >
+                        Any
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 1"
+                        :class="{ active: minBaths == 1 }"
+                      >
+                        1+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 2"
+                        :class="{ active: minBaths == 2 }"
+                      >
+                        2+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 3"
+                        :class="{ active: minBaths == 3 }"
+                      >
+                        3+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 4"
+                        :class="{ active: minBaths == 4 }"
+                      >
+                        4+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 5"
+                        :class="{ active: minBaths == 5 }"
+                      >
+                        5+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minBaths = 6"
+                        :class="{ active: minBaths == 6 }"
+                      >
+                        6+
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="element3">
+                <div class="row mt-3">
+                  <div class="col-12 col-md-6">
+                    <p>Parking</p>
+                    <div class="types">
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = ''"
+                        :class="{ active: minParkingSpaces == '' }"
+                      >
+                        Any
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 1"
+                        :class="{ active: minParkingSpaces == 1 }"
+                      >
+                        1+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 2"
+                        :class="{ active: minParkingSpaces == 2 }"
+                      >
+                        2+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 3"
+                        :class="{ active: minParkingSpaces == 3 }"
+                      >
+                        3+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 4"
+                        :class="{ active: minParkingSpaces == 4 }"
+                      >
+                        4+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 5"
+                        :class="{ active: minParkingSpaces == 5 }"
+                      >
+                        5+
+                      </a>
+                      <a
+                        class="btn Roboto-Regular"
+                        @click="minParkingSpaces = 6"
+                        :class="{ active: minParkingSpaces == 6 }"
+                      >
+                        6+
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p style="float:left">Internal Sqft</p>
+                      <p
+                        style="float:right"
+                        class="text-color-1 Roboto-Regular p2"
+                      >
+                        <span
+                          class="text-color-1 Roboto-Regular"
+                          v-if="range[0] == 0 && range[1] == 4500"
+                          >Any #</span
+                        >
+                        <span
+                          class="text-color-1 Roboto-Regular"
+                          v-if="range[0] == 0 && range[1] < 4500"
+                          >Up to {{ range[1] }}</span
+                        >
+                        <span
+                          class="text-color-1 Roboto-Regular"
+                          v-if="range[0] > 0 && range[1] < 4500"
+                          >{{ range[0] }} - {{ range[1] }}</span
+                        >
+                        <span
+                          class="text-color-1 Roboto-Regular"
+                          v-if="range[0] > 0 && range[1] == 4500"
+                        >
+                          {{ range[0] }} - Any</span
+                        >
+                        Sqft
+                      </p>
+                    </div>
+                    <vue-slider
+                      v-model="range"
+                      :min="0"
+                      :max="4500"
+                      :height="8"
+                      :dotSize="32"
+                    ></vue-slider>
+                    <!-- <b-form-input id="range-1" v-model="rangevalue" type="range" min="100" max="4500"></b-form-input> -->
+                    <!-- {{rangevalue}} -->
+                    <div class="text-color-2 Roboto-Regular">
+                      <span c>No Min</span>
+                      <span style="float:right">No Max </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="element4 py-3">
                 <div>
-                  <p class="text-color-1 Roboto-Regular mb-0">Get Alerts When Homes Matching These Filters Come Up For Sale</p>
-                  <p class="text-color-2 Roboto-Regular">Stop alerts at any time by unsubscribing from your email</p>
+                  <p class="text-color-1 Roboto-Regular mb-0">
+                    Get Alerts When Homes Matching These Filters Come Up For
+                    Sale
+                  </p>
+                  <p class="text-color-2 Roboto-Regular">
+                    Stop alerts at any time by unsubscribing from your email
+                  </p>
                 </div>
-
-            </div>
-            <div class="element5 mt-3">
-              <button class="btn text-color-1 Roboto-Regular" @click="CancelFilter">X Cancel</button>
-              <div>
-                 <button class="btn text-color-2 Roboto-Regular" @click="clearFilter">Clear all</button>
-                <button class="btn btn-save px-5 text-white Roboto-Regular" @click="saveFilterdata()">Save</button>
               </div>
-              
+              <div class="element5 mt-3">
+                <button
+                  class="btn text-color-1 Roboto-Regular"
+                  @click="CancelFilter"
+                >
+                  X Cancel
+                </button>
+                <div>
+                  <button
+                    class="btn text-color-2 Roboto-Regular"
+                    @click="clearFilter"
+                  >
+                    Clear all
+                  </button>
+                  <button
+                    class="btn btn-save px-5 text-white Roboto-Regular"
+                    @click="saveFilterdata()"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         </transition>
-     
       </div>
     </div>
 
@@ -233,73 +404,70 @@
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
 
-import Multiselect from 'vue-multiselect'
+import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap,Multiselect },
-  data(){
-    return{
-    showfilter: false,
-    rangevalue: 0,
-    range: [1, 4500],
-    selected_menu: "show-list",
-    centerLatitude: 0,
-    centerLongitude: 0,
-    latitude: 0,
-    longitude: 0,
-    marker: {},
-    map: {},
-    coordinates: null,
-    currentLocation: { lat: 0, lng: 0 },
-    zoom: 12,
-    Pa: null,
-    yb: null,
-    bounds: {
-      Pa: {},
-      yb: {},
-    },
-    options: {
-      zoomControl: true,
-      mapTypeControl: false,
-      scaleControl: true,
-      streetViewControl: true,
-      rotateControl: true,
-      fullscreenControl: true,
-      disableDefaultUi: false,
-    },
-      value2: [
-        { name: 'Javascript', code: 'js' }
+  components: { ShowMap, Multiselect },
+  data() {
+    return {
+      showfilter: false,
+      rangevalue: 0,
+      range: [1, 4500],
+      selected_menu: "show-list",
+      centerLatitude: 0,
+      centerLongitude: 0,
+      latitude: 0,
+      longitude: 0,
+      marker: {},
+      map: {},
+      coordinates: null,
+      currentLocation: { lat: 0, lng: 0 },
+      zoom: 12,
+      Pa: null,
+      yb: null,
+      bounds: {
+        Pa: {},
+        yb: {},
+      },
+      options: {
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: true,
+        rotateControl: true,
+        fullscreenControl: true,
+        disableDefaultUi: false,
+      },
+      value2: [],
+      options3: [],
+      typesale: "forsale",
+      bn: null,
+      value: null,
+      optionsdata: [
+        { text: "Detached Homes (no shared wells)", value: "SDetached" },
+        { text: "Semi-Detached Homes (1 shared well)", value: "Semi Detached" },
+        {
+          text: "Townhouses (multi-level & shared wells)",
+          value: "Row/Townhouse",
+        },
       ],
-      options3: [
-        { name: 'Vue.js', code: 'vu' },
-        { name: 'Javascript', code: 'js' },
-        { name: 'Open Source', code: 'os' }
+      styleoptions: [
+        { text: "Low Rise Condos (4 or fewer levels)", value: "l_rise" },
+        { text: "High Rise Condos (5 or more levels)", value: "h_rise" },
       ],
-    typesale: "forsale",
-    bn: null,
-    value: null,
-    optionsdata: [
-      { text: "Detached Homes (no shared wells)", value: "SDetached" },
-      { text: "Semi-Detached Homes (1 shared well)", value: "Semi Detached" },
-      { text: "Townhouses (multi-level & shared wells)", value: "Row/Townhouse"}
-    ],
-    styleoptions:[
-      { text: "Low Rise Condos (4 or fewer levels)", value: "l_rise" },
-      { text: "High Rise Condos (5 or more levels)", value: "h_rise" }
-    ],
-    // propertyType: [],
-    // minPrice: null,
-    // maxPrice: null,
-    // minBeds:'',
-    // minBaths:'',
-    // minParkingSpaces:'',
-    minPrice:this.$store.state.filteroptdata.minPrice,
-    maxPrice:this.$store.state.filteroptdata.maxPrice,
-    minParkingSpaces:this.$store.state.filteroptdata.minParkingSpaces,
-    minBaths:this.$store.state.filteroptdata.minBaths,
-    minBeds:this.$store.state.filteroptdata.minBeds,
-    propertyType:this.$store.state.filteroptdata.propertyType,
-    style:this.$store.state.filteroptdata.style,
-    }
+      // propertyType: [],
+      // minPrice: null,
+      // maxPrice: null,
+      // minBeds:'',
+      // minBaths:'',
+      // minParkingSpaces:'',
+      minPrice: this.$store.state.filteroptdata.minPrice,
+      maxPrice: this.$store.state.filteroptdata.maxPrice,
+      minParkingSpaces: this.$store.state.filteroptdata.minParkingSpaces,
+      minBaths: this.$store.state.filteroptdata.minBaths,
+      minBeds: this.$store.state.filteroptdata.minBeds,
+      propertyType: this.$store.state.filteroptdata.propertyType,
+      style: this.$store.state.filteroptdata.style,
+    };
   },
 
   computed: {
@@ -307,46 +475,54 @@ export default {
       const result = itemsnumber.items;
       return Array.from(result, (x) => x.toLocaleString("ja-JP"));
     },
-      
+    keywords() {
+      return this.value2.map((word) => word.name);
+    },
   },
   methods: {
-    CancelFilter(){
-      this.showfilter  = false
+    CancelFilter() {
+      this.showfilter = false;
     },
-    addTag (newTag) {
+    addTag(newTag) {
       const tag = {
         name: newTag,
-        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-      }
-      this.options3.push(tag)
-      this.value2.push(tag)
+        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
+      };
+      this.options3.push(tag);
+      this.value2.push(tag);
+      this.saveFilterdata();
+    },  
+    remove(OldTage){
+      this.value2 = this.value2.filter((item) => item.code !== OldTage.code);
+      this.saveFilterdata();
     },
-    clearFilter(){
-      this.minPrice="";
-      this.maxPrice="";
-      this.minParkingSpaces="";
-      this.minBaths="";
-      this.minBeds="";
-      this.propertyType=[];
-      this.style=[];
+    clearFilter() {
+      this.minPrice = "";
+      this.maxPrice = "";
+      this.minParkingSpaces = "";
+      this.minBaths = "";
+      this.minBeds = "";
+      this.propertyType = [];
+      this.style = [];
     },
-    saveFilterdata(){
-      this.showfilter  = false;
-     let input = {};
-     input.minBeds = this.minBeds,
-     input.minBaths = this.minBaths,
-     input.minParkingSpaces = this.minParkingSpaces,
-     input.minSqft = this.range[0],
-     input.maxSqft = this.range[1],
-     input.maxPrice = this.maxPrice,
-     input.minPrice = this.minPrice,
-     input.propertyType = this.propertyType,
-     input.style = this.style
-    this.$store.commit('SAVE_FILTER_OPT',input);
-    if (this.selected_menu == "show-list" && this.typesale == "forsale")  {
+    saveFilterdata() {
+      this.showfilter = false;
+      let input = {};
+      (input.minBeds = this.minBeds),
+        (input.minBaths = this.minBaths),
+        (input.minParkingSpaces = this.minParkingSpaces),
+        (input.minSqft = this.range[0]),
+        (input.maxSqft = this.range[1]),
+        (input.maxPrice = this.maxPrice),
+        (input.minPrice = this.minPrice),
+        (input.propertyType = this.propertyType),
+        (input.style = this.style);
+      input.keywords = this.keywords;
+      this.$store.commit("SAVE_FILTER_OPT", input);
+      if (this.selected_menu == "show-list" && this.typesale == "forsale") {
         this.$refs.showlist.find_listings_forSaleMain();
       }
-        if (this.selected_menu == "show-list" &&  this.typesale == "sold") {
+      if (this.selected_menu == "show-list" && this.typesale == "sold") {
         this.$refs.showlist.find_listings_SoldMain();
       }
     },
@@ -396,7 +572,7 @@ export default {
       this.lat = this.centerLatitude;
       this.lng = this.longitude;
     },
-    bounds: function (newval, oldval) {
+    bounds: function(newval, oldval) {
       console.log(oldval);
       this.Pa = newval.Pa;
       this.yb = newval.yb;
@@ -553,7 +729,7 @@ footer {
   border: none;
   color: #707070;
 }
-.searchpage .element1 .searchform .item1 .item1a button:hover{
+.searchpage .element1 .searchform .item1 .item1a button:hover {
   background: #fff;
 }
 .searchpage .element1 .searchform .item1 .item1a button img {
@@ -656,19 +832,19 @@ input:focus {
   margin: 0px 8px;
   background-color: black;
 }
-.modelfilter .element3 p{
-    font-weight: 600;
+.modelfilter .element3 p {
+  font-weight: 600;
   margin-bottom: 12px;
   display: block;
   font-size: 20px;
 }
-.modelfilter .element3 .p2{
-    font-weight: normal;
+.modelfilter .element3 .p2 {
+  font-weight: normal;
   margin-bottom: 12px;
   display: block;
   font-size: 14px;
 }
-.modelfilter .element3 .p2 span{
+.modelfilter .element3 .p2 span {
   font-size: 14px;
 }
 .modelfilter .element3 .types a {
@@ -681,45 +857,45 @@ input:focus {
   border-radius: 8px;
   text-decoration: none;
   border: 1px solid #707070;
-  transition: all .3 ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
-.modelfilter .element3 .types a:hover{
-    border: 1px solid #00A19B;
-  background: #EDF3F2;
+.modelfilter .element3 .types a:hover {
+  border: 1px solid #00a19b;
+  background: #edf3f2;
 }
-.modelfilter .element3 .types  .active{
-  border: 1px solid #00A19B;
-  background: #EDF3F2;
+.modelfilter .element3 .types .active {
+  border: 1px solid #00a19b;
+  background: #edf3f2;
 }
-.modelfilter .element3 span{
+.modelfilter .element3 span {
   font-size: 12px;
 }
-.modelfilter .element4{
+.modelfilter .element4 {
   border-top: 1px solid #707070;
-   border-bottom: 1px solid #a7a2a2;
+  border-bottom: 1px solid #a7a2a2;
 }
-.modelfilter .element4 div:first-child p:first-child{
+.modelfilter .element4 div:first-child p:first-child {
   font-size: 18px;
 }
-.modelfilter .element4 div:first-child p:nth-child(2){
+.modelfilter .element4 div:first-child p:nth-child(2) {
   font-size: 16px;
 }
-.modelfilter .element5{
+.modelfilter .element5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.modelfilter .element5 button:first-child{
+.modelfilter .element5 button:first-child {
   background: transparent;
   font-size: 18px;
 }
-.modelfilter .element5 .btn-save{
-  background: #FFB600;
+.modelfilter .element5 .btn-save {
+  background: #ffb600;
   border-radius: 8px;
   font-size: 18px;
-
 }
-.list-enter-active, .list-leave-active {
+.list-enter-active,
+.list-leave-active {
   transition: all 1s;
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {

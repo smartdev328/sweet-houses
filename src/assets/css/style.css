@@ -3,11 +3,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap');
+/* @font-face {
   font-family: "DMSerifRegular";
   src: url("DMSerifText-Regular.ttf"),
-  }
+  } */
   @font-face {
     font-family: "DMSerifRegularItalic";
     src: url("DMSerifText-RegularItalic.ttf"),
@@ -78,8 +78,7 @@ body{
   height: 100%;
 }
 .DMSerifRegular {
-  /* font-family: 'DMSerifRegular'  !important; */
-  font-family: "DMSerifRegular","Playfair Display",serif;
+  font-family: 'DM Serif Display', "Playfair Display",serif;
 }
 .DMSerifRegularItalic{
   font-family: 'DMSerifRegularItalic'  !important;
@@ -144,7 +143,7 @@ body{
 }
 .navbar .logo {
   width: 140px;
-  height: 80px;
+  height: 50px;
 }
 .navbar-nav .nav-item a {
   color: #232323 !important;
