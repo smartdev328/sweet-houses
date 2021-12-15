@@ -65,13 +65,13 @@
               </p>
             </div>
             <div
-              class="text-center text-white DMSerifRegular mb-5"
+              class="text-center text-white DMSerifRegular"
               :class="tab_visible('Equity_Advance')"
             >
               <p class="DMSerifRegular font-weight-bold">
                 Your Home Equity, Before Your First Showing!
               </p>
-              <p>Access $25,000, $50,000, $150,000, or more!</p>
+              <p class="Roboto-Regular mb-2">Access $25,000, $50,000, $150,000, or more!</p>
             </div>
             <div
               class="text-center text-white DMSerifRegular mb-5"
