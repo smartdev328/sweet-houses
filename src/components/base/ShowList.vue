@@ -213,7 +213,7 @@ computed:{
     },
     find_listings_SoldMain(){
          this.paginationpage = 1;
-         this.filerdata = {name:'Date solid (new to old)',value:'soldDateDesc'};
+         this.filerdata = {name:'Date Sold (new to old)',value:'soldDateDesc'};
          this.find_listings_Sold();
     },
     find_listings_Sold(){

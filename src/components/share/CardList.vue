@@ -31,14 +31,19 @@
         class="card-img-top"
         alt="..."
       />
-
-              <img
+      <VueSlickCarousel v-bind="settings" >
+         <div v-for="i in homedata.images.count" :key="i" class="img-wrapper">
+                  <img
         v-if="!sold && homedata.images.image"
         :src="homedata.images.image"
         class="card-img-top"
-        ref="slidepic"
+      
         alt="..."
       />
+      </div>
+       
+      </VueSlickCarousel>
+     
 
 
       
@@ -162,6 +167,10 @@
 </template>
 <script>
 import moment from "moment";
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   props: {
     homedata: {},
@@ -173,7 +182,47 @@ export default {
     currentcount: 1,
     sold: false,
     saved: null,
+     settings:{
+            "dots": false,
+            "focusOnSelect": true,
+            "infinite": true,
+            "speed": 500,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "touchThreshold": 1,
+            "arrows":false,
+             "responsive": [
+            {
+            "breakpoint": 1024,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "infinite": true,
+            }
+            },
+            {
+            "breakpoint": 600,
+            "settings": {
+                "slidesToShow":1,
+                "slidesToScroll": 1,
+                "initialSlide": 1,
+                "arrows":true,
+            }
+            },
+            {
+            "breakpoint": 480,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "arrows":true,
+            }
+            }
+        ]
+            }
   }),
+  components:{
+    VueSlickCarousel
+  },
   computed: {
     username() {
       return this.$store.state.user.first_name || "";
@@ -217,13 +266,13 @@ export default {
       };
 
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
-        const element = this.$refs.slidepic;
-        element.classList.add('fadeOut');
-            element.classList.remove('fadeIn');
-        setTimeout(() => {
-                element.classList.remove('fadeOut');
-                element.classList.add('fadeIn');
-            }, 300);
+       // const element = this.$refs.slidepic;
+       // element.classList.add('fadeOut');
+         //   element.classList.remove('fadeIn');
+        // setTimeout(() => {
+        //         element.classList.remove('fadeOut');
+        //         element.classList.add('fadeIn');
+        //     }, 300);
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
         this.currentcount += 1;
@@ -238,13 +287,13 @@ export default {
       };
 
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
-        const element = this.$refs.slidepic;
-        element.classList.add('fadeOut');
-            element.classList.remove('fadeIn');
-        setTimeout(() => {
-                element.classList.remove('fadeOut');
-                element.classList.add('fadeIn');
-            }, 300);
+        // const element = this.$refs.slidepic;
+        // element.classList.add('fadeOut');
+        //     element.classList.remove('fadeIn');
+        // setTimeout(() => {
+        //         element.classList.remove('fadeOut');
+        //         element.classList.add('fadeIn');
+        //     }, 300);
         this.homedata.images.image = res.data.image;
          
         console.log(res.data.image);
@@ -255,9 +304,6 @@ export default {
     SignUp() {
       this.$emite("SignUp");
     },
-  },
-  components: {
-    // VueSlickCarousel
   },
   created(){
     
@@ -416,7 +462,7 @@ export default {
     opacity: 1;
 }
 .fadeOut {
-    opacity: .3;
+    opacity: 0;
 }
 /* .fadeOut{
 animation: fadeOut 1s ease-in-out !important;
