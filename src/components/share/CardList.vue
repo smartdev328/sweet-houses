@@ -314,6 +314,7 @@ export default {
 .card {
   border-radius: 12px;
   border: 0;
+  z-index: 50;
 }
 .card .card-body {
   background: #fff;

@@ -30,7 +30,10 @@
              ></card-list>
         </div>
         <div class="text-center my-5"> 
-            <b-spinner v-if="!loadedlistingsold && loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+            <b-spinner v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+        </div>
+        <div class="text-center my-5 DMSerifRegular" v-if="!loading && loadedlistingsold && tatal == 0">
+            No Matchig Data
         </div>
         <div class="my-5 row" v-if="loadedlistingsold">
             <div class="col-12 d-flex justify-content-center">
@@ -185,8 +188,11 @@ computed:{
     },
     style(){
         return this.filteropt.style
-    }
-   
+    },
+    keywords()
+   {
+       return this.filteropt.keywords
+   }
 },
     methods:{
         submit(){
@@ -229,9 +235,10 @@ computed:{
         let propertyType = this.propertyType;
         let style = this.style;
         let minBaths = this.minBaths;
+        let keywords = this.keywords.toString().replace(',',' ');
         this.loading = true 
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -258,8 +265,9 @@ computed:{
         let propertyType = this.propertyType;
         let style = this.style;
         let minBaths = this.minBaths;
+        let keywords = this.keywords.toString().replace(',',' ');
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -365,8 +373,8 @@ computed:{
     color: #fff !important;
 }
 .dropdown-menu{
-    left: 35% !important;
-    width: 65%;
+    left: 5% !important;
+    width: 95%;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 29%), 0 -1px 2px -1px rgb(0 0 0 / 24%);
 
 }
