@@ -1,6 +1,6 @@
 <template>
   <div class="homedetails">
-    <div class="container" v-if="!loading">
+    <div class="container">
       <div class="my-5">
         <div class="item1">
           <div class="item1a">
@@ -119,7 +119,7 @@
               <p class="text-color-1 Roboto-Medium">
                 ${{ homedata.listPrice.toLocaleString("ja-JP") }}
               </p>
-              <p class="Roboto-Regular">Listed {{ gettime(homedata.listDate) }}</p>
+              <p class="Roboto-Regular">{{ gettime(homedata.listDate) }}</p>
             </div>
             <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -199,7 +199,7 @@
               </div>
             </div>
             <div class="item7 my-3">
-              <p class="DMSerifRegular text-color-1">Propperty History</p>
+              <p class="DMSerifRegular text-color-1">Sweetly History</p>
               <div class="item7a py-3 text-center mx-auto">
                 <div
                   class="
@@ -248,25 +248,72 @@
                   justify-content-between
                   align-items-center
                 "
-                v-for="history in homedata.history" :key="history.id"
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                    <p class="mb-0">{{gettime(history.listDate)}}</p>
-                    <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
-                    </div>
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">Now</div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
-                  <!-- <p class="mb-0 text-color-2 Roboto-Medium">
+                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                  <p class="mb-0 text-color-2 Roboto-Medium">
                     8 days on market
-                  </p> -->
+                  </p>
                 </div>
                 <div class="image col-3">
                   <img
                     src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100 withoutlogin"
+                    class="w-100 h-100"
                     alt="image"
                   />
-                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt="">
+                </div>
+              </div>
+              <div
+                class="
+                  item9a
+                  sold
+                  my-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                  8 month ago
+                </div>
+                <div class="col-5">
+                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                  <p class="mb-0 text-color-2 Roboto-Medium">
+                    8 days on market
+                  </p>
+                </div>
+                <div class="image col-3">
+                  <img
+                    src="../../assets/image/blog/hand.png"
+                    class="w-100 h-100"
+                    alt="image"
+                  />
+                </div>
+              </div>
+              <div
+                class="
+                  item9a
+                  listed
+                  my-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">2021</div>
+                <div class="col-5">
+                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
+                  <p class="mb-0 text-color-2 Roboto-Medium">
+                    8 days on market
+                  </p>
+                </div>
+                <div class="image col-3">
+                  <img
+                    src="../../assets/image/blog/hand.png"
+                    class="w-100 h-100"
+                    alt="image"
+                  />
                 </div>
               </div>
             </div>
@@ -531,25 +578,21 @@
               </div>
             </div>
 
-            <div class="item14 py-4 my-3">
-                <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
-            </div>
-
             <!-- <div class="item12 my-2 py-3">
                             <div class="item1">
-                                <p class="text-color-1 DMSerifRegular">Listing Brokerage</p>
+                                <p class="text-color-1  Roboto-Medium">Listing Brokerage</p>
                             </div>
                             <div class="item2 Roboto-Regular">
                                 <div class="row">
                                     <div class="col-3">MLS &#174; Listing </div>
-                                    <div class="col-9">E5371141</div>
+                                    <div class="col-9">{{mlsnum}}</div>
                                 </div>
                                  <div class="row">
                                     <div class="col-3">Brokerage</div>
                                     <div class="col-9">RE/MAX HALLMARK FIRST GROUP REALTY LTD., BROKERAGE</div>
                                 </div>
                             </div>
-                        </div> -->
+            </div> -->
           </div>
           <!-- <div class="col-12 col-md-4">
                         <div class="part2 shadow p-3">
@@ -585,9 +628,6 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto text-center" v-if="loading">
-          <b-spinner v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
-    </div>
   </div>
 </template>
 <script>
@@ -605,12 +645,9 @@ export default {
         infinite: true,
         speed: 500,
         edgeFriction: 0.35,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        "variableWidth": true,
-        "centerMode": true,
-        "centerPadding": "20px",
         responsive: [
           {
             breakpoint: 1024,
@@ -651,6 +688,9 @@ export default {
     longitude() {
       return this.homedata.map.longitude * 1;
     },
+    mlsnum(){
+        return this.$route.params.mls;
+    }
   },
   components: {
     VueSlickCarousel,
@@ -675,12 +715,6 @@ export default {
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
     },
-    formatdatehistory(item){
-        return moment(item).format("MMM Do YY");   
-    },
-    getnumber(item){
-        return item * 1;
-    }
   },
   created() {
     this.gethomedetails();
@@ -734,7 +768,7 @@ export default {
   font-size: 30px;
 }
 .homedetails .item3 p:last-child {
-  font-size: 22px;
+  font-size: 18px;
   color: #707070;
 }
 .homedetails .item4 {
@@ -998,17 +1032,6 @@ export default {
 .homedetails .part2 .item4 p {
   color: #434242;
   font-size: 18px;
-}
-.homedetails .withoutlogin{
-    filter: blur(5px) !important;
-}
-.homedetails .lockimg{
-        filter: none;
-    position: absolute;
-    top: 20px;
-    left: 99px;
-    width: 44px !important;
-    height: 44px !important;
 }
 @media (min-width: 760px) {
   .modal-dialog {
