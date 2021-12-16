@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="openhomedetails">
+  <div class="card" >
     <div class="position-relative" style="overflow: hidden">
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
         <div class="text-white Roboto-Medium">
@@ -24,12 +24,18 @@
         src="../../assets/image/notimg.jpeg"
         class="card-img-top"
         alt=""
+        @click="openhomedetails"
       />
       <img
         v-if="sold && homedata.images.image"
         :src="homedata.images.image"
         class="card-img-top"
+       data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0"
         alt="..."
+        @click="openhomedetails"
       />
 
                   <img
@@ -37,7 +43,12 @@
         :src="homedata.images.image"
         class="card-img-top"
         ref="slidepic"
+        data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0"
         alt="..."
+        @click="openhomedetails"
       />
 
        
@@ -64,7 +75,7 @@
       <div class="counter" v-if="homedata.images.count">
         {{ currentcount }}/{{ homedata.images.count }}
       </div>
-      <div class="card-body">
+      <div class="card-body" @click="openhomedetails">
         <div
           class="element1 d-flex align-items-baseline justify-content-between"
         >
