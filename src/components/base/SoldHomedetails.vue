@@ -100,8 +100,9 @@
             </b-modal>
           </div>
         </div>
-        <div class="item2 my-5">
-          <VueSlickCarousel v-bind="settings">
+        <div class="item2 my-5 row">
+          <div class="col-12 col-md-8"> 
+             <VueSlickCarousel v-bind="settings">
             <div class="slideimg px-1" v-for="image in homedata.images" :key="image.id">
               <img
                 :src="image"
@@ -109,17 +110,34 @@
                 alt="image"
               />
             </div>
-          </VueSlickCarousel>
+          </VueSlickCarousel></div>
+          <div class="col-12 col-md-4 item2p2">
+          <p class="Roboto-Medium text-color-1 p1">Similar homes for sale</p> 
+          <div class="px-3 py-4 part2">
+            <div class="mx-auto text-center">
+              <img src="../../assets/image/icon/simihome.svg" class="" alt="">
+            </div>
+            <p class="text-color-1  Roboto-Medium my-2">This home is unique! There aren't 
+any similar listings in the area right
+now</p>
+<p class="my-2 Roboto-Regular text-color-1">Try searching other areas or come back
+later</p>
+          </div>
+          </div>
+        
         </div>
         <div class="row">
           <div class="col-12 col-md-10">
             <div
               class="item3 d-flex align-items-center justify-content-between"
             >
-              <p class="text-color-1 Roboto-Medium">
-                ${{ homedata.listPrice.toLocaleString("ja-JP") }}
+              <p class=" Roboto-Medium" v-if="isLoggedIn">
+               Sold for ${{ homedata.soldPrice.toLocaleString("ja-JP") }}
               </p>
-              <p class="Roboto-Regular">{{ gettime(homedata.listDate) }}</p>
+               <p class=" Roboto-Medium" v-if="!isLoggedIn">
+               Sold for $xxx,xxx
+              </p>
+              <p class="Roboto-Regular">{{ formatdatehistory(homedata.soldDate  ) }}</p>
             </div>
             <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -238,8 +256,8 @@
                 </div>
               </div>
             </div>
-            <div class="item9 my-2 py-3">
-              <div
+            <div v-if="homedata.history.length > 0">
+               <div
                 class="
                   item9a
                   new
@@ -248,75 +266,27 @@
                   justify-content-between
                   align-items-center
                 "
-              >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">Now</div>
-                <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
-                  <p class="mb-0 text-color-2 Roboto-Medium">
-                    8 days on market
-                  </p>
-                </div>
-                <div class="image col-3">
-                  <img
-                    src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100"
-                    alt="image"
-                  />
-                </div>
-              </div>
-              <div
-                class="
-                  item9a
-                  sold
-                  my-3
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
+                
+                v-for="history in homedata.history" :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  8 month ago
-                </div>
+                    <p class="mb-0">{{gettime(history.listDate)}}</p>
+                    <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
+                    </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
-                  <p class="mb-0 text-color-2 Roboto-Medium">
-                    8 days on market
-                  </p>
+                  <p class="mb-0 Roboto-Medium">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
                 </div>
                 <div class="image col-3">
                   <img
                     src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100"
+                    class="w-100 h-100 withoutlogin"
                     alt="image"
                   />
-                </div>
-              </div>
-              <div
-                class="
-                  item9a
-                  listed
-                  my-3
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
-              >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">2021</div>
-                <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for $649,900</p>
-                  <p class="mb-0 text-color-2 Roboto-Medium">
-                    8 days on market
-                  </p>
-                </div>
-                <div class="image col-3">
-                  <img
-                    src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100"
-                    alt="image"
-                  />
+                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt="">
                 </div>
               </div>
             </div>
+              
             <!-- <div class="item10 my-2 py-3">
                             <div class="item1">
                                 <p class="text-color-1 DMSerifRegular">Commute Time</p>
@@ -645,14 +615,14 @@ export default {
         infinite: true,
         speed: 500,
         edgeFriction: 0.35,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               slidesToScroll: 1,
               infinite: true,
             },
@@ -690,11 +660,22 @@ export default {
     },
     mlsnum(){
         return this.$route.params.mls;
-    }
+    },
+     username() {
+      return this.$store.state.user.first_name || "";
+    },
+    isLoggedIn() {
+      if (this.username) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   components: {
     VueSlickCarousel,
   },
+
   methods: {
     copyURL() {
       var Url = this.$refs.mylink;
@@ -714,6 +695,9 @@ export default {
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
+    },
+      formatdatehistory(item){
+        return moment(item).format("MMM Do YYYY");   
     },
   },
   created() {
@@ -766,6 +750,8 @@ export default {
 }
 .homedetails .item3 p:first-child {
   font-size: 30px;
+  color:#C95055;
+  font-weight: 600;
 }
 .homedetails .item3 p:last-child {
   font-size: 18px;
@@ -1032,6 +1018,20 @@ export default {
 .homedetails .part2 .item4 p {
   color: #434242;
   font-size: 18px;
+}
+.homedetails .item2 .item2p2 .p1{
+  font-size: 28px;
+}
+.homedetails .item2 .item2p2 .part2{
+  background: #F8F5E4;
+  border-radius: 0;
+}
+.homedetails .item2 .item2p2 .part2 p:nth-child(3){
+  font-size: 18px;
+}
+.homedetails .item2 .item2p2 .part2 p:nth-child(2){
+  font-size: 20px;
+  font-weight: 600;
 }
 @media (min-width: 760px) {
   .modal-dialog {
