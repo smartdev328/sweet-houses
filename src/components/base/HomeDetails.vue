@@ -199,7 +199,7 @@
               </div>
             </div>
             <div class="item7 my-3">
-              <p class="DMSerifRegular text-color-1">Propperty History</p>
+              <p class="DMSerifRegular text-color-1">Property History</p>
               <div class="item7a py-3 text-center mx-auto">
                 <div
                   class="
