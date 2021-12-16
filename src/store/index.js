@@ -582,6 +582,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             }
           ],
         formData: new FormData(),
+        currentHome:null
 
     },
     mutations:{
@@ -589,6 +590,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             state.agent = state.agents.filter(agent => {
                 return agent.name.replace(/\s+/g, '-') === payload
             })
+        },
+        SET_CURRENT_HOME(state,payload){
+            state.currentHome = payload
         },
         SAVE_FILTER_OPT(state,payload){
             state.filteroptdata = payload

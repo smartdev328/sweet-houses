@@ -650,6 +650,33 @@ font-size: 16px;
 .multiselect__option--selected.multiselect__option--highlight{
   background-color: #707070 !important;
 }
+
+.homedetails button.slick-next:before {
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-left: -57px;
+  opacity: 1;
+  padding-bottom: 10px;
+  color: #fff !important;
+}
+
+
+.homedetails .slick-next:before {
+    /* content: '˃'; */
+    background-image: url(../image/icon/arrowslide.svg) !important;
+    font-weight: bold;
+    font-size: 50px;
+    color: #434242;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    font-size: unset!important;
+
+}
 @media only screen and (max-width: 600px){
   .home header{
     height: 85vh;

@@ -153,9 +153,16 @@ const routes = [
     component:()=>import('../components/base/SuceessMsg.vue')
   },
   {
-    path:'/home-details',
+    path:'/home-details-forsale/:mls',
     name:'HomeDetails',
-    component:()=>import('../components/base/HomeDetails.vue')
+    component:()=>import('../components/base/HomeDetails.vue'),
+    props:true
+  },
+  {
+    path:'/home-details-sold/:mls',
+    name:'SoldHomeDetails',
+    component:()=>import('../components/base/SoldHomedetails.vue'),
+    props:true
   },
   {
     path:'/report-home',
