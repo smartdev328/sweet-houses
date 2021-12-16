@@ -22,8 +22,8 @@ Vue.component('VueSlider', VueSlider);
 import 'vue-slider-component/theme/antd.css'
 
 Vue.component('vue-phone-number-input', VuePhoneNumberInput);
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
 import axios from 'axios'
 const api = axios.create({
   baseURL: 'https://adamsweetly.pythonanywhere.com/api/',
@@ -44,7 +44,7 @@ if (token) {
 }
 import GAuth from 'vue-google-oauth2'
 const gauthOption = {
-  clientId: '413252505448-vlut2fe05l36avh14q2hvkpjovg70rl8.apps.googleusercontent.com',
+  clientId: '757112928722-eovh240mcqm119egdpuhg7kdpv7h8i9v.apps.googleusercontent.com',
   scope: 'profile email',
   prompt: 'consent',
   fetch_basic_profile:true
@@ -150,7 +150,7 @@ new Vue({
   router,
   store,
   mounted() {
-    AOS.init()
+  
   },
   created(){
  
