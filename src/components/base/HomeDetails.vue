@@ -56,7 +56,7 @@
                     <form>
                       <input
                         ref="mylink"
-                        value="https://www.properly.ca/buy/home/view/RPJwXDrGTB61DB-zR_gwsQ/on/toronto"
+                        value="https://www.sweetly.ca/to"
                         type="text"
                         name=""
                         id=""
@@ -261,12 +261,12 @@
                   </p> -->
                 </div>
                 <div class="image col-3">
-                  <img
+                  <!-- <img
                     src="../../assets/image/blog/hand.png"
                     class="w-100 h-100 withoutlogin"
                     alt="image"
                   />
-                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt="">
+                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt=""> -->
                 </div>
               </div>
             </div>

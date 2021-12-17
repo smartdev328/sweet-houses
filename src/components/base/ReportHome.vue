@@ -35,7 +35,7 @@
                                     <div class="item1a">
                                         <img @click="copyURL" class="pointer" src="../../assets/image/icon/noun_linked_4211117.svg" alt="">
                                         <form>
-                                            <input ref="mylink" value="https://www.properly.ca/buy/home/view/RPJwXDrGTB61DB-zR_gwsQ/on/toronto" type="text" name="" id="">
+                                            <input ref="mylink" value="https://www.sweetly.ca/" type="text" name="" id="">
                                         </form>
                                     </div>
                                     <div class="item1b">
