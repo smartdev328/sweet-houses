@@ -274,15 +274,13 @@ export default {
         mls: this.homedata.mlsNumber,
         image_num: this.currentcount + 1,
       };
-
+      const element = this.$refs.slidepic;
+         element.classList.add("ac1");
+  
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
        const element = this.$refs.slidepic;
-       element.classList.add('fadeOut');
-           element.classList.remove('fadeIn');
-        setTimeout(() => {
-                element.classList.remove('fadeOut');
-                element.classList.add('fadeIn');
-            }, 300);
+        element.classList.remove("ac1");
+      
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
         this.currentcount += 1;
@@ -479,24 +477,10 @@ export default {
   width: 34px;
   height: 34px;
 }
-.fadeIn {
-    opacity: 1;
+.ac1{
+  transform: translateX(200%) !important;
+   transition : transform 0s !important;
+ /* transition-delay: 0.1s !important; */
 }
-.fadeOut {
-    transform: translateX(-2500px,0,0);
-}
-/* .fadeOut{
-animation: fadeOut 1s ease-in-out !important;
-}
-@keyframes fadeOut {
-  0%{
-    opacity: 0;
-  }
-  50%{
-    opacity: .5;
-  }
-  100%{
-    opacity: 1;
-  }
-} */
+
 </style>
