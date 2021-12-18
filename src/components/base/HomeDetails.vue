@@ -56,7 +56,7 @@
                     <form>
                       <input
                         ref="mylink"
-                        value="https://www.sweetly.ca/to"
+                        :value="fullPath"
                         type="text"
                         name=""
                         id=""
@@ -80,7 +80,7 @@
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
                       <img
-                      style="width:30px !important;height:30px !important;"
+                        style="width:30px !important;height:30px !important;"
                         src="../../assets/image/icon/iconwhatsapp.svg"
                         alt=""
                       />
@@ -103,12 +103,12 @@
         </div>
         <div class="item2 my-5">
           <VueSlickCarousel v-bind="settings">
-            <div class="slideimg px-1" v-for="image in homedata.images" :key="image.id">
-              <img
-                :src="image"
-                class="w-100 h-100"
-                alt="image"
-              />
+            <div
+              class="slideimg px-1"
+              v-for="image in homedata.images"
+              :key="image.id"
+            >
+              <img :src="image" class="w-100 h-100" alt="image" />
             </div>
           </VueSlickCarousel>
         </div>
@@ -120,7 +120,9 @@
               <p class="text-color-1 Roboto-Medium">
                 ${{ homedata.listPrice.toLocaleString("ja-JP") }}
               </p>
-              <p class="Roboto-Regular">Listed {{ gettime(homedata.listDate) }}</p>
+              <p class="Roboto-Regular">
+                Listed {{ gettime(homedata.listDate) }}
+              </p>
             </div>
             <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -128,7 +130,9 @@
               <p>
                 <span>{{ homedata.details.numBedrooms }}</span>
                 <span v-if="homedata.details.numBedroomsPlus > 0">+ </span>
-                <span v-if="homedata.details.numBedroomsPlus > 0">{{ homedata.details.numBedroomsPlus }}</span>
+                <span v-if="homedata.details.numBedroomsPlus > 0">{{
+                  homedata.details.numBedroomsPlus
+                }}</span>
                 <span class="ml-1">bed</span>
               </p>
               <p>
@@ -194,7 +198,6 @@
                   {{ homedata.address.state }}
                 </span>
                 <span class="p3 px-2">{{ homedata.address.city }}</span>
-
               </div>
               <div>
                 <address-map :lat="latitude" :lon="longitude"></address-map>
@@ -251,14 +254,19 @@
                   justify-content-between
                   align-items-center
                 "
-                v-for="history in homedata.history" :key="history.id"
+                v-for="history in homedata.history"
+                :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                    <p class="mb-0">{{gettime(history.listDate)}}</p>
-                    <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
-                    </div>
+                  <p class="mb-0">{{ gettime(history.listDate) }}</p>
+                  <p class="mb-0">{{ formatdatehistory(history.listDate) }}</p>
+                </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
+                  <p class="mb-0 Roboto-Medium">
+                    Listed for ${{
+                      getnumber(history.listPrice).toLocaleString("ja-JP")
+                    }}
+                  </p>
                   <!-- <p class="mb-0 text-color-2 Roboto-Medium">
                     8 days on market
                   </p> -->
@@ -347,9 +355,7 @@
                   </div>
                   <div class="col-8">
                     <p>
-                      {{
-                        homedata.taxes.annualAmount.toLocaleString("ja-JP")
-                      }}
+                      {{ homedata.taxes.annualAmount.toLocaleString("ja-JP") }}
                       per year /
                       {{ getpermonth(homedata.taxes.annualAmount) }} per month
                     </p>
@@ -389,22 +395,22 @@
                   </div>
                 </div>
 
-                  <div class="row">
+                <div class="row">
                   <div class="col-3">
                     <p>Lot Acres</p>
                   </div>
                   <div class="col-8">
-                    <p v-if="homedata.lot.acres">{{homedata.lot.acres}}</p>
+                    <p v-if="homedata.lot.acres">{{ homedata.lot.acres }}</p>
                     <p v-else>-</p>
                   </div>
                 </div>
-                
+
                 <div class="row">
                   <div class="col-3">
                     <p>Lot Width</p>
                   </div>
                   <div class="col-8">
-                    <p v-if="homedata.lot.width">{{homedata.lot.width}}</p>
+                    <p v-if="homedata.lot.width">{{ homedata.lot.width }}</p>
                     <p v-else>-</p>
                   </div>
                 </div>
@@ -413,7 +419,7 @@
                     <p>Lot Depth</p>
                   </div>
                   <div class="col-8">
-                    <p v-if="homedata.lot.depth">{{homedata.lot.depth}}</p>
+                    <p v-if="homedata.lot.depth">{{ homedata.lot.depth }}</p>
                     <p v-else>-</p>
                   </div>
                 </div>
@@ -537,7 +543,7 @@
             </div>
 
             <div class="item14 py-4 my-3">
-                <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
+              <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
             </div>
 
             <!-- <div class="item12 my-2 py-3">
@@ -588,42 +594,64 @@
                         </div>
                     </div> -->
         </div>
-          <b-modal
-            ref="my-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <sign-up
-              @hidesignupmodal="hidesignupmodal"
-              @XsignupOlogin="XsignupOlogin"
-            ></sign-up>
-          </b-modal>
-          <b-modal
-            ref="my-modallogin"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <log-in
-              @hideloginmodal="hideloginmodal"
-              @xloginOsignup="xloginOsignup"
-            ></log-in>
-          </b-modal>
+        <b-modal
+          ref="my-modal"
+          header-bg-variant="white"
+          body-bg-variant="white"
+          footer-bg-variant="white"
+        >
+          <sign-up
+            @hidesignupmodal="hidesignupmodal"
+            @XsignupOlogin="XsignupOlogin"
+          ></sign-up>
+        </b-modal>
+        <b-modal
+          ref="my-modallogin"
+          header-bg-variant="white"
+          body-bg-variant="white"
+          footer-bg-variant="white"
+        >
+          <log-in
+            @hideloginmodal="hideloginmodal"
+            @xloginOsignup="xloginOsignup"
+          ></log-in>
+        </b-modal>
       </div>
     </div>
     <div class="container mx-auto text-center" v-if="loading">
-          <b-spinner v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+      <b-spinner
+        v-if="loading"
+        style="width: 4rem; height: 4rem;"
+        variant="warning"
+        label="Large Spinner"
+      ></b-spinner>
     </div>
     <div class="my-5 disclaimer-content container">
-                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
-                 <p class="Roboto-Regular" v-if="MainboardId == 21">
-                     Copyright 2021 by the REALTORS® Association of Edmonton. All Rights Reserved.<code><br></code>
-                     The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
-                     Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
-
-                 </p>
-            </div> 
+      <p class="Roboto-Regular" v-if="MainboardId == 18">
+        Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the
+        copyright in its MLS® System. Data is deemed reliable but is not
+        guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing
+        Service® and the associated logos are owned by The Canadian Real Estate
+        Association (CREA) and identify the quality of services provided by real
+        estate professionals who are members of CREA. Used under license.
+      </p>
+      <p class="Roboto-Regular" v-if="MainboardId == 21">
+        Copyright 2021 by the REALTORS® Association of Edmonton. All Rights
+        Reserved.<code><br /></code> The MLS® System Data is made available from
+        the REALTORS® Association of Edmonton. Data is deemed reliable but is
+        not guaranteed accurate by the REALTORS® Association of Edmonton. Days
+        on Site and market statistics values are calculated by Sierra
+        Interactive based on values provided in the REALTORS® Association of
+        Edmonton listing data feed. Mortgage values are calculated by Sierra
+        Interactive and are provided for estimate purposes only.<code
+          ><br
+        /></code>
+        Trademarks are owned or controlled by the Canadian Real Estate
+        Association (CREA) and identify real estate professionals who are
+        members of CREA (REALTOR®, REALTORS®) and/or the quality of services
+        they provide (MLS®, Multiple Listing Service®)
+      </p>
+    </div>
   </div>
 </template>
 <script>
@@ -644,9 +672,9 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        "variableWidth": true,
-        "centerMode": true,
-        "centerPadding": "20px",
+        variableWidth: true,
+        centerMode: true,
+        centerPadding: "20px",
         responsive: [
           {
             breakpoint: 1024,
@@ -687,10 +715,13 @@ export default {
     longitude() {
       return this.homedata.map.longitude * 1;
     },
-    MainboardId(){
+    MainboardId() {
       return this.$route.params.boardId;
     },
-        username() {
+    fullPath() {
+      return window.location.href;
+    },
+    username() {
       return this.$store.state.user.first_name || "";
     },
     isLoggedIn() {
@@ -714,39 +745,43 @@ export default {
       let mls = this.$route.params.mls;
       let boardId = this.$route.params.boardId;
       this.loading = true;
-      this.$http.get(`listings/find_home/?mlsNumber=${mls}&boardId=${boardId}`).then((res) => {
-        this.loading = false;
-        this.$store.commit("SET_CURRENT_HOME", res.data);
-      });
+      this.$http
+        .get(`listings/find_home/?mlsNumber=${mls}&boardId=${boardId}`)
+        .then((res) => {
+          this.loading = false;
+          this.$store.commit("SET_CURRENT_HOME", res.data);
+        });
     },
     gettime(item) {
-      return moment(item).endOf("day").fromNow();
+      return moment(item)
+        .endOf("day")
+        .fromNow();
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
     },
-    formatdatehistory(item){
-        return moment(item).format("MMM Do YY");   
+    formatdatehistory(item) {
+      return moment(item).format("MMM Do YY");
     },
-    getnumber(item){
-        return item * 1;
+    getnumber(item) {
+      return item * 1;
     },
-    makeAuth(){
-      this.$refs['my-modallogin'].show();
+    makeAuth() {
+      this.$refs["my-modallogin"].show();
     },
-        XsignupOlogin() {
-        this.$refs['my-modal'].hide();
-       this.$refs['my-modallogin'].show();
+    XsignupOlogin() {
+      this.$refs["my-modal"].hide();
+      this.$refs["my-modallogin"].show();
     },
     hidesignupmodal() {
-     this.$refs['my-modal'].hide();
+      this.$refs["my-modal"].hide();
     },
     hideloginmodal() {
-      this.$refs['my-modallogin'].hide();
+      this.$refs["my-modallogin"].hide();
     },
     xloginOsignup() {
-      this.$refs['my-modallogin'].hide();
-      this.$refs['my-modal'].show();
+      this.$refs["my-modallogin"].hide();
+      this.$refs["my-modal"].show();
     },
   },
   created() {
@@ -794,8 +829,8 @@ export default {
 .homedetails .item3 {
   width: 50%;
 }
-.homedetails .item14 p{
-    font-size: 28px;
+.homedetails .item14 p {
+  font-size: 28px;
 }
 .homedetails .item3 p:first-child {
   font-size: 30px;
@@ -872,8 +907,8 @@ export default {
   font-size: 28px;
   font-weight: 600;
 }
-.disclaimer-content p{
-    color: #434242;
+.disclaimer-content p {
+  color: #434242;
 }
 .homedetails .item7 .item7a {
   background: #edf3f2;
@@ -975,8 +1010,8 @@ export default {
   font-size: 20px;
   color: #707070;
 }
-.homedetails .item13{
-    border-bottom: 1px solid #7070706b;
+.homedetails .item13 {
+  border-bottom: 1px solid #7070706b;
 }
 .homedetails .item13 .item1 .title {
   font-size: 24;
@@ -1069,16 +1104,16 @@ export default {
   color: #434242;
   font-size: 18px;
 }
-.homedetails .withoutlogin{
-    filter: blur(5px) !important;
+.homedetails .withoutlogin {
+  filter: blur(5px) !important;
 }
-.homedetails .lockimg{
-        filter: none;
-    position: absolute;
-    top: 20px;
-    left: 99px;
-    width: 44px !important;
-    height: 44px !important;
+.homedetails .lockimg {
+  filter: none;
+  position: absolute;
+  top: 20px;
+  left: 99px;
+  width: 44px !important;
+  height: 44px !important;
 }
 @media (min-width: 760px) {
   .modal-dialog {
