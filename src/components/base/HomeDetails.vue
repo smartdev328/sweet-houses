@@ -127,7 +127,7 @@
               <p>
                 <span>{{ homedata.details.numBedrooms }}</span>
                 <span v-if="homedata.details.numBedroomsPlus > 0">+ </span>
-                <span>{{ homedata.details.numBedroomsPlus }}</span>
+                <span v-if="homedata.details.numBedroomsPlus > 0">{{ homedata.details.numBedroomsPlus }}</span>
                 <span class="ml-1">bed</span>
               </p>
               <p>
@@ -146,7 +146,7 @@
               </p>
               <p>
                 <span>{{ homedata.lot.acres }}</span>
-                <span>lot</span>
+                <span>(acres) lot</span>
               </p>
               <p>
                 <span>{{ homedata.details.propertyType }}</span>
@@ -193,6 +193,7 @@
                   {{ homedata.address.state }}
                 </span>
                 <span class="p3 px-2">{{ homedata.address.city }}</span>
+
               </div>
               <div>
                 <address-map :lat="latitude" :lon="longitude"></address-map>
@@ -386,21 +387,23 @@
                   </div>
                 </div>
 
-                <div class="row">
+                  <div class="row">
                   <div class="col-3">
-                    <p>External Features</p>
+                    <p>Lot Acres</p>
                   </div>
                   <div class="col-8">
-                    <p>Brick</p>
+                    <p v-if="homedata.lot.acres">{{homedata.lot.acres}}</p>
+                    <p v-else>-</p>
                   </div>
                 </div>
-
+                
                 <div class="row">
                   <div class="col-3">
-                    <p>Lot Frontage</p>
+                    <p>Lot Width</p>
                   </div>
                   <div class="col-8">
-                    <p>100 ft</p>
+                    <p v-if="homedata.lot.width">{{homedata.lot.width}}</p>
+                    <p v-else>-</p>
                   </div>
                 </div>
                 <div class="row">
@@ -408,10 +411,10 @@
                     <p>Lot Depth</p>
                   </div>
                   <div class="col-8">
-                    <p>-</p>
+                    <p v-if="homedata.lot.depth">{{homedata.lot.depth}}</p>
+                    <p v-else>-</p>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-3">
                     <p>Internal Area (Above Ground)</p>
