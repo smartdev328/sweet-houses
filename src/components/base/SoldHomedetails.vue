@@ -213,7 +213,7 @@ later</p>
                 <span class="p3 px-2">{{ homedata.address.city }}</span>
               </div>
               <div>
-                <address-map :lat="longitude" :lon="latitude"></address-map>
+                <address-map :lat="latitude" :lon="longitude"></address-map>
               </div>
             </div>
             <div class="item7 my-3">
@@ -596,6 +596,15 @@ later</p>
                         </div>
                     </div> -->
         </div>
+         <div class="my-5 disclaimer-content container">
+                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
+                 <p class="Roboto-Regular" v-if="MainboardId == 21">
+                     Copyright 2021 by the REALTORS® Association of Edmonton. All Rights Reserved.<code><br></code>
+                     The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
+                     Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
+
+                 </p>
+            </div>
       </div>
     </div>
   </div>
@@ -671,6 +680,9 @@ export default {
         return false;
       }
     },
+     MainboardId(){
+      return this.$route.params.boardId;
+    }
   },
   components: {
     VueSlickCarousel,
@@ -684,8 +696,9 @@ export default {
     },
     gethomedetails() {
       let mls = this.$route.params.mls;
+      let boardId = this.$route.params.boardId;
       this.loading = true;
-      this.$http.get(`listings/find_home/?mls=${mls}`).then((res) => {
+      this.$http.get(`listings/find_home/?mlsNumber=${mls}&boardId=${boardId}`).then((res) => {
         this.loading = false;
         this.$store.commit("SET_CURRENT_HOME", res.data);
       });
@@ -839,6 +852,9 @@ export default {
 .homedetails .item7 .item7a .p1 img {
   width: 24px;
   height: 24px;
+}
+.disclaimer-content p{
+    color: #434242;
 }
 .homedetails .item7 .item7a .p1 p {
   font-size: 1em;
