@@ -153,7 +153,7 @@ const routes = [
     component:()=>import('../components/base/SuceessMsg.vue')
   },
   {
-    path:'/home-details-forsale/:mls',
+    path:'/home-details-forsale/:mls&:boardId',
     name:'HomeDetails',
     component:()=>import('../components/base/HomeDetails.vue'),
     props:true
