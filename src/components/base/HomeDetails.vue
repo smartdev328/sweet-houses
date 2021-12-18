@@ -1,4 +1,5 @@
 <template>
+<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="homedetails">
     <div class="container" v-if="!loading">
       <div class="my-5">
@@ -80,11 +81,11 @@
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
                       <img
-                        style="width:30px !important;height:30px !important;"
-                        src="../../assets/image/icon/iconwhatsapp.svg"
+                     
+                       src="../../assets/image/icon/Group 13353.svg"
                         alt=""
                       />
-                      <span>Whatsapp</span>
+                      <span>SMS</span>
                     </button>
                   </div>
                   <div class="item2c">
@@ -138,8 +139,8 @@
               <p>
                 <span>{{ homedata.details.numBathrooms }}</span>
                 <span v-if="homedata.details.numBathroomsPlus > 0">+ </span>
-                <span>{{ homedata.details.numBathroomsPlus }}</span>
-                <span>bath</span>
+                <span>{{ homedata.details.numBathroomsPlus }} </span>
+                <span class="ml-1">bath</span>
               </p>
               <p>
                 <span>{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
@@ -376,7 +377,7 @@
                     <p>Bedrooms</p>
                   </div>
                   <div class="col-8">
-                    <p>{{ homedata.details.numBedrooms }} Full</p>
+                    <p> <span> {{ homedata.details.numBedrooms }} Full</span> <span v-if="homedata.details.numBedroomsPlus > 0"> | {{homedata.details.numBedroomsPlus}} Partial</span></p>
                   </div>
                 </div>
                 <div class="row">
@@ -384,7 +385,7 @@
                     <p>Bathrooms</p>
                   </div>
                   <div class="col-8">
-                    <p>{{ homedata.details.numBathrooms }} Full</p>
+                    <p> <span> {{ homedata.details.numBathrooms }} Full</span> <span v-if="homedata.details.numBathroomsPlus > 0"> | {{homedata.details.numBathroomsPlus}} Partial</span></p>
                   </div>
                 </div>
                 <div class="row">
@@ -529,7 +530,7 @@
               <div class="item1">
                 <p class="title Roboto-Medium">Rooms</p>
 
-                <div class="row" v-for="room in homedata.rooms" :key="room.id">
+                <div class="row" v-for="room in homedata.rooms" :key="room.id" v-if="room.level">
                   <div class="col-3">
                     <p>{{ room.level }}</p>
                   </div>

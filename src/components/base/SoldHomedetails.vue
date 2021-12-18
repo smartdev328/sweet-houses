@@ -154,7 +154,7 @@ later</p>
                 <span>{{ homedata.details.numBathrooms }}</span>
                 <span v-if="homedata.details.numBathroomsPlus > 0">+ </span>
                 <span>{{ homedata.details.numBathroomsPlus }}</span>
-                <span>bath</span>
+                <span class="ml-1">bath</span>
               </p>
               <p>
                 <span>{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
@@ -390,15 +390,15 @@ later</p>
                     <p>Bedrooms</p>
                   </div>
                   <div class="col-8">
-                    <p>{{ homedata.details.numBedrooms }} Full</p>
+                      <p> <span> {{ homedata.details.numBedrooms }} Full</span> <span v-if="homedata.details.numBedroomsPlus > 0"> | {{homedata.details.numBedroomsPlus}} Partial</span></p>
                   </div>
                 </div>
-                <div class="row">
+                  <div class="row">
                   <div class="col-3">
                     <p>Bathrooms</p>
                   </div>
                   <div class="col-8">
-                    <p>{{ homedata.details.numBathrooms }} Full</p>
+                    <p> <span> {{ homedata.details.numBathrooms }} Full</span> <span v-if="homedata.details.numBathroomsPlus > 0"> | {{homedata.details.numBathroomsPlus}} Partial</span></p>
                   </div>
                 </div>
                 <div class="row">
