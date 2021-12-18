@@ -206,6 +206,7 @@
             <div class="item7 my-3">
               <p class="DMSerifRegular text-color-1">Propperty History</p>
               <div class="item7a py-3 text-center mx-auto" v-if="!isLoggedIn">
+
                 <div
                   class="
                     p1
