@@ -159,7 +159,7 @@ const routes = [
     props:true
   },
   {
-    path:'/home-details-sold/:mls',
+    path:'/home-details-sold/:mls&:boardId',
     name:'SoldHomeDetails',
     component:()=>import('../components/base/SoldHomedetails.vue'),
     props:true

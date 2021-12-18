@@ -80,10 +80,11 @@
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
                       <img
-                        src="../../assets/image/icon/Group 13353.svg"
+                      style="width:30px !important;height:30px !important;"
+                        src="../../assets/image/icon/iconwhatsapp.svg"
                         alt=""
                       />
-                      <span>SMS</span>
+                      <span>Whatsapp</span>
                     </button>
                   </div>
                   <div class="item2c">
@@ -201,7 +202,7 @@
             </div>
             <div class="item7 my-3">
               <p class="DMSerifRegular text-color-1">Propperty History</p>
-              <div class="item7a py-3 text-center mx-auto">
+              <div class="item7a py-3 text-center mx-auto" v-if="!isLoggedIn">
                 <div
                   class="
                     p1
@@ -210,6 +211,7 @@
                     px-3
                     justify-content-around
                   "
+                  @click="makeAuth"
                 >
                   <img src="../../assets/image/icon/lock.svg" alt="" />
                   <p class="mb-0 text-white Roboto-Regular">
@@ -586,6 +588,28 @@
                         </div>
                     </div> -->
         </div>
+          <b-modal
+            ref="my-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <sign-up
+              @hidesignupmodal="hidesignupmodal"
+              @XsignupOlogin="XsignupOlogin"
+            ></sign-up>
+          </b-modal>
+          <b-modal
+            ref="my-modallogin"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <log-in
+              @hideloginmodal="hideloginmodal"
+              @xloginOsignup="xloginOsignup"
+            ></log-in>
+          </b-modal>
       </div>
     </div>
     <div class="container mx-auto text-center" v-if="loading">
@@ -665,7 +689,17 @@ export default {
     },
     MainboardId(){
       return this.$route.params.boardId;
-    }
+    },
+        username() {
+      return this.$store.state.user.first_name || "";
+    },
+    isLoggedIn() {
+      if (this.username) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   components: {
     VueSlickCarousel,
@@ -696,7 +730,24 @@ export default {
     },
     getnumber(item){
         return item * 1;
-    }
+    },
+    makeAuth(){
+      this.$refs['my-modallogin'].show();
+    },
+        XsignupOlogin() {
+        this.$refs['my-modal'].hide();
+       this.$refs['my-modallogin'].show();
+    },
+    hidesignupmodal() {
+     this.$refs['my-modal'].hide();
+    },
+    hideloginmodal() {
+      this.$refs['my-modallogin'].hide();
+    },
+    xloginOsignup() {
+      this.$refs['my-modallogin'].hide();
+      this.$refs['my-modal'].show();
+    },
   },
   created() {
     this.gethomedetails();
