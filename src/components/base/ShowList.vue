@@ -112,6 +112,8 @@ export default {
               {name:'Date listed (new to old)',value:'createdOnDesc'},
               {name:'Price (low to high)',value:'listPriceAsc'},
               {name:'Price (high to low)',value:'listPriceDesc'},
+              {name:'Internal sqft (most to least)',value:'sqftDsc'},
+              {name:'Internal sqft (least to most)',value:'sqftAsc'}
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             ],
@@ -119,6 +121,8 @@ export default {
               {name:'Date Sold (new to old)',value:'soldDateDesc'},
               {name:'Price (low to high)',value:'soldPriceAsc'},
               {name:'Price (high to low)',value:'soldPriceDesc'},
+              {name:'Internal sqft (most to least)',value:'sqftDsc'},
+              {name:'Internal sqft (least to most)',value:'sqftAsc'}
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             ],
@@ -175,16 +179,16 @@ computed:{
         }
     },
      maxPrice(){
-         if(this.filteropt.maxPrice > 0){
-             return this.filteropt.maxPrice.replace(',','')
+         if(this.filteropt.maxPrice){
+             return this.filteropt.maxPrice.replace(/,/g, "");
          }else{
               return ""
          }  
        
     },
      minPrice(){
-         if(this.filteropt.minPrice > 0){
-             return this.filteropt.minPrice.replace(',','')
+         if(this.filteropt.minPrice){
+             return this.filteropt.minPrice.replace(/,/g, "");
          }else{
               return ""
          }  
@@ -243,15 +247,15 @@ computed:{
         let minParkingSpaces = this.minParkingSpaces;
         let minSqft= this.minSqft;
         let maxSqft = this.maxSqft;
-        let minPrice = "";
-        let maxPrice = "";
+        let minPrice = this.minPrice;
+        let maxPrice =this.maxPrice;
         let propertyType = this.propertyType;
         let style = this.style;
         let minBaths = this.minBaths;
         let keywords = this.keywords.toString().replace(',',' ');
         this.loading = true 
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
