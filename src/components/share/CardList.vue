@@ -316,9 +316,11 @@ export default {
       let mls = this.homedata.mlsNumber;
       let boardId = this.homedata.boardId;
       if(this.type == "forsale"){
-        this.$router.push({name:'HomeDetails',params:{mls:mls,boardId:boardId}})
+        let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
+        window.open(routeData.href, '_blank');
       }else{
-        this.$router.push({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}})
+          let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+        window.open(routeData.href, '_blank');
         
       }
     }

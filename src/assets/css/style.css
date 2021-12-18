@@ -135,6 +135,9 @@ body{
 .text-color-3{
   color: #434242;
 }
+.text-color-4{
+  color: #FFB600;
+}
 .pointer{
   cursor: pointer;
 }
@@ -238,6 +241,7 @@ body{
   overflow: hidden;
   text-overflow: ellipsis;
   border: none;
+  font-size: 18px;
 }
 #modal-share .element1 .item1 .item1a form input:focus{
   border: 0 !important;

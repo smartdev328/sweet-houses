@@ -1,4 +1,6 @@
 <template>
+<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
+
   <div class="homedetails">
     <div class="container">
       <div class="my-5">
@@ -56,7 +58,7 @@
                     <form>
                       <input
                         ref="mylink"
-                        value="https://www.sweetly.ca/"
+                        :value="fullPath"
                         type="text"
                         name=""
                         id=""
@@ -212,31 +214,33 @@ later</p>
                 </span>
                 <span class="p3 px-2">{{ homedata.address.city }}</span>
               </div>
-              <div>
-                <address-map :lat="latitude" :lon="longitude"></address-map>
-              </div>
+         
             </div>
-            <div class="item7 my-3">
-              <p class="DMSerifRegular text-color-1">Sweetly History</p>
-              <div class="item7a py-3 text-center mx-auto">
-                <div
+            <div class="item12 text-center my-3 pointer" v-if="!isLoggedIn">
+               <div
                   class="
                     p1
                     d-flex
                     align-items-center
                     px-3
-                    justify-content-around
+                    justify-content-center
                   "
+                  @click="makeAuth"
                 >
-                  <img src="../../assets/image/icon/lock.svg" alt="" />
-                  <p class="mb-0 text-white Roboto-Regular">
-                    See what agents see
+                  <img src="../../assets/image/icon/lockyellow.svg" alt="" />
+                  <p class="mb-0 Roboto-Regular text-color-4 mx-2">Sign up</p>
+                  <p class="mb-0 text-color-2 Roboto-Regular">
+                    to see sold details
                   </p>
                 </div>
-                <p class="p2 text-color-2 Roboto-Regular my-3">
-                  Access sold prices, more photos, and insights about this home
-                </p>
-              </div>
+            </div>
+            <div class="item15 d-flex py-4 Roboto-Medium">
+              <p class="mb-0" v-if="!isLoggedIn">Today's Instant Estimate $xxx,xxx</p>
+              <p class="mb-0" v-if="isLoggedIn">Today's Instant Estimate $590,560</p>
+              <img class="mx-3" src="../../assets/image/icon/noun_Warning_855733.svg" alt="">
+            </div>
+            <div class="item7 my-3">
+              <p class="DMSerifRegular text-color-1">Sweetly History</p>
             </div>
             <div class="item8 my-2 py-2">
               <div class="d-flex justify-content-between w-50">
@@ -314,6 +318,9 @@ later</p>
                                 </div>
                             </div>
                         </div> -->
+                             <div>
+                <address-map :lat="longitude" :lon="latitude"></address-map>
+              </div>
             <div class="item11 my-2 py-3">
               <div class="item1">
                 <p class="text-color-1 DMSerifRegular">Home Details</p>
@@ -534,7 +541,7 @@ later</p>
               <div class="item1">
                 <p class="title Roboto-Medium">Rooms</p>
 
-                <div class="row" v-for="room in homedata.rooms" :key="room.id">
+                <div class="row" v-for="room in homedata.rooms" :key="room.id" v-if="room.level">
                   <div class="col-3">
                     <p>{{ room.level }}</p>
                   </div>
@@ -595,6 +602,28 @@ later</p>
                             </div>
                         </div>
                     </div> -->
+                       <b-modal
+            ref="my-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <sign-up
+              @hidesignupmodal="hidesignupmodal"
+              @XsignupOlogin="XsignupOlogin"
+            ></sign-up>
+          </b-modal>
+          <b-modal
+            ref="my-modallogin"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+          >
+            <log-in
+              @hideloginmodal="hideloginmodal"
+              @xloginOsignup="xloginOsignup"
+            ></log-in>
+          </b-modal>
         </div>
          <div class="my-5 disclaimer-content container">
                 <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
@@ -670,6 +699,9 @@ export default {
     mlsnum(){
         return this.$route.params.mls;
     },
+    fullPath(){
+      return window.location.href
+    },
      username() {
       return this.$store.state.user.first_name || "";
     },
@@ -711,6 +743,23 @@ export default {
     },
       formatdatehistory(item){
         return moment(item).format("MMM Do YYYY");   
+    },
+        makeAuth(){
+      this.$refs['my-modallogin'].show();
+    },
+        XsignupOlogin() {
+        this.$refs['my-modal'].hide();
+       this.$refs['my-modallogin'].show();
+    },
+    hidesignupmodal() {
+     this.$refs['my-modal'].hide();
+    },
+    hideloginmodal() {
+      this.$refs['my-modallogin'].hide();
+    },
+    xloginOsignup() {
+      this.$refs['my-modallogin'].hide();
+      this.$refs['my-modal'].show();
     },
   },
   created() {
@@ -832,7 +881,13 @@ export default {
   color: #707070;
 }
 .homedetails .item6 {
+  /* border-bottom: 2px solid #707070b6; */
+}
+.homedetails .item15{
   border-bottom: 2px solid #707070b6;
+  border-top: 2px solid #707070b6;
+  color: #434242;
+  font-size: 20px;
 }
 .homedetails .item7 p {
   font-size: 28px;
@@ -1048,6 +1103,9 @@ export default {
 .homedetails .item2 .item2p2 .part2 p:nth-child(2){
   font-size: 20px;
   font-weight: 600;
+}
+.item12 p{
+  font-size: 20px;
 }
 @media (min-width: 760px) {
   .modal-dialog {
