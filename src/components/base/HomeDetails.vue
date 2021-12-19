@@ -65,7 +65,10 @@
                     </form>
                   </div>
                   <div class="item1b">
-                    <button class="btn" @click="copyURL()">Copy Link</button>
+                    <button class="btn" :class="{copied : copied}" @click="copyURL()">
+                      <span v-if="!copied">Copy Link</span>
+                      <span v-if="copied" >Link Copied</span>
+                    </button>
                   </div>
                 </div>
                 <div class="item2 mb-2">
@@ -93,7 +96,7 @@
                     </ShareNetwork>
                   </div>
                   <div class="item2b">
-                    <button class="btn Roboto-Medium">
+                    <button class="btn Roboto-Medium" @click="shareSMS">
                       <img
                         src="../../assets/image/icon/Group 13353.svg"
                         alt=""
@@ -102,11 +105,27 @@
                     </button>
                   </div>
                   <div class="item2c">
-                    <button class="btn Roboto-Medium">
-                      <Email :url="fullPath" scale="2"></Email>
-                      <span class="ml-2">Email</span>
-                    </button>
+                    <ShareNetwork
+                      class="btn Roboto-Medium font-weight-bold"
+                      network="email"
+                      :url="fullPath"
+                      title="Say hi .."
+                      @open="open"
+                      @change="change"
+                      @close="close"
+                    >
+                      <button class="btn Roboto-Medium">
+                        <img
+                          src="../../assets/image/icon/noun_Email_4292826.svg"
+                          alt=""
+                        />
+                        <span>Email</span>
+                      </button>
+                    </ShareNetwork>
                   </div>
+                </div>
+                <div class="text-center my-3" v-if="errsms">
+                  <p style="color: #fc5353;font-size:18px" class="Roboto-Regular mb-0">Sorry, this feature isn’t active yet</p>
                 </div>
               </div>
             </b-modal>
@@ -704,7 +723,6 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
-import { Email } from "vue-socialmedia-share";
 import { mapState } from "vuex";
 
 export default {
@@ -751,6 +769,8 @@ export default {
       checkstatus: null,
       loading: null,
       windowFeatures: {},
+      copied:false,
+      errsms:false
     };
   },
   computed: {
@@ -790,17 +810,19 @@ export default {
   },
   components: {
     VueSlickCarousel,
-    Email,
   },
   methods: {
-    onClose() {},
-    onOpen() {},
-    onBlock() {},
-    onFocus() {},
+    shareSMS(){
+      this.errsms = true
+      setTimeout(() =>{
+        this.errsms = false
+      },5000)
+    },
     copyURL() {
       var Url = this.$refs.mylink;
       Url.select();
       document.execCommand("copy");
+      this.copied=true
     },
     gethomedetails() {
       let mls = this.$route.params.mls;
@@ -856,6 +878,7 @@ export default {
           this.$store.commit("SETSimilarBymls", res.data);
         });
     },
+ 
     open(e) {
       console.log(e);
     },

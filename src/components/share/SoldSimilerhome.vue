@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-3">
         <div class="item1 w-100">
             <div class="item1a" @click="openHomePage">
                 <img :src="homedata.images.image" alt="">

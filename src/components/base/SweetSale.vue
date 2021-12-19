@@ -3,7 +3,7 @@
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
                 <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How It Works</p></div>
                 <div class="row d-flex align-items-center item1b">
-                    <div class="col-12 col-md-8"><p>We establish value by recent appraisal or comparison to other sales in your area.
+                    <div class="col-12 col-md-8"><p class="Roboto-Medium">We establish value by recent appraisal or comparison to other sales in your area.
 
 You get two payments. Sweetly pays 75% of value on the moving day yo choose. 
 Then (if needed) Sweetly invests up to $25,000 in upgrades that you approve- 
