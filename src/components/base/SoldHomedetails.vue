@@ -370,7 +370,7 @@ later</p>
                     <p>Sweetly Taxes</p>
                   </div>
                   <div class="col-8">
-                    <p>
+                    <p v-if="homedata.taxes.annualAmount">
                       {{
                         homedata.taxes.annualAmount.toLocaleString("ja-JP")
                       }}

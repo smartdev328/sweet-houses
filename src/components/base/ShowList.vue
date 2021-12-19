@@ -255,7 +255,7 @@ computed:{
         let keywords = this.keywords.toString().replace(',',' ');
         this.loading = true 
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -284,7 +284,7 @@ computed:{
         let minBaths = this.minBaths;
         let keywords = this.keywords.toString().replace(',',' ');
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=Calgary&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?city=&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings

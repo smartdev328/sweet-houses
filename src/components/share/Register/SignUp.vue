@@ -2,7 +2,7 @@
     <div>
            
         <div class="text-center element1  mt-n3">
-          <p class="font-robot text8">Sign Up</p>
+          <p class="font-robot text8">Sign up</p>
         </div>
         <div class="w-75 mx-auto element2">
             <a class="btn w-100 mb-1 btn-auth" @click="signupgoogle()">

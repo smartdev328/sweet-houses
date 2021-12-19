@@ -47,7 +47,7 @@ const gauthOption = {
   clientId: '413252505448-vlut2fe05l36avh14q2hvkpjovg70rl8.apps.googleusercontent.com',
   scope: 'profile email',
   prompt: 'consent',
-  fetch_basic_profile:true
+  fetch_basic_profile:false
 }
 Vue.use(GAuth, gauthOption)
 
