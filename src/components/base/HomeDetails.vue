@@ -1,5 +1,5 @@
 <template>
-<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
+  <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="homedetails">
     <div class="container" v-if="!loading">
       <div class="my-5">
@@ -23,7 +23,7 @@
               }}</span>
             </p>
           </div>
-          <div class="item1c">
+          <div class="item1c mt-3 mt-md-0">
             <button class="btn text-color-1 Roboto-Regular">
               <img src="../../assets/image/icon/Heart.svg" alt="icon" />
               Save
@@ -70,38 +70,40 @@
                 </div>
                 <div class="item2 mb-2">
                   <div class="item2a">
-                      <!-- <img
+                    <!-- <img
                         src="../../assets/image/icon/noun_messenger_3202205.svg"
                         alt=""
                       /> -->
-                      <ShareNetwork
+                    <ShareNetwork
                       class="btn Roboto-Medium font-weight-bold"
                       network="facebook"
                       :url="fullPath"
                       title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                      @open="open" @change="change" @close="close"
+                      @open="open"
+                      @change="change"
+                      @close="close"
                     >
                       <button class="btn Roboto-Medium">
-                      <img src="../../assets/image/icon/noun_messenger_3202205.svg" alt=""/>
-                         <span>Messenger</span> 
-                           </button>
-                  </ShareNetwork>
-               
+                        <img
+                          src="../../assets/image/icon/noun_messenger_3202205.svg"
+                          alt=""
+                        />
+                        <span>Messenger</span>
+                      </button>
+                    </ShareNetwork>
                   </div>
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
                       <img
-                     
-                       src="../../assets/image/icon/Group 13353.svg"
+                        src="../../assets/image/icon/Group 13353.svg"
                         alt=""
                       />
                       <span>SMS</span>
                     </button>
                   </div>
                   <div class="item2c">
-                    
                     <button class="btn Roboto-Medium">
-                     <Email  :url=fullPath scale=2></Email>
+                      <Email :url="fullPath" scale="2"></Email>
                       <span class="ml-2">Email</span>
                     </button>
                   </div>
@@ -167,7 +169,15 @@
               </p>
             </div>
             <div
-              class="item5 bg-white shadow px-3 py-3 d-flex align-items-center"
+              class="
+                item5
+                bg-white
+                shadow
+                px-0 px-md-3
+                py-3
+                d-flex
+                align-items-center
+              "
             >
               <div class="col-5 item5a Roboto-Regular">
                 <p>No Sweetly Estimate Yet</p>
@@ -215,7 +225,6 @@
             <div class="item7 my-3">
               <p class="DMSerifRegular text-color-1">Property History</p>
               <div class="item7a py-3 text-center mx-auto" v-if="!isLoggedIn">
-
                 <div
                   class="
                     p1
@@ -236,19 +245,22 @@
                 </p>
               </div>
             </div>
-            <div class="item8 my-2 py-2" v-if="Object.keys(homedata.history_details).length">
+            <div
+              class="item8 my-2 py-2"
+              v-if="Object.keys(homedata.history_details).length"
+            >
               <div class="d-flex justify-content-between w-50">
                 <div class="item8a" v-if="homedata.history_details">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">$ x,xxx,xxx</p>
+                    <p class="mb-0 Roboto-Medium ml-3" v-if="homedata.history_details.comparedToLastSold">${{homedata.history_details.comparedToLastSold.toLocaleString("ja-JP")}}</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Compared to last sold</p>
                 </div>
                 <div class="item8a">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">x%</p>
+                    <p class="mb-0 Roboto-Medium ml-3">%{{homedata.history_details.yearlyAppreciation}}</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Yearly appreciation</p>
                 </div>
@@ -328,7 +340,7 @@
               </div>
               <div class="item2 my-4">
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Type</p>
                   </div>
                   <div class="col-8">
@@ -337,7 +349,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Basement</p>
                   </div>
                   <div class="col-8">
@@ -360,7 +372,7 @@
                                     </div> -->
 
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Sweetly Taxes</p>
                   </div>
                   <div class="col-8">
@@ -373,7 +385,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Maintenance Fees</p>
                   </div>
                   <div class="col-8">
@@ -381,23 +393,33 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Bedrooms</p>
                   </div>
                   <div class="col-8">
-                    <p> <span> {{ homedata.details.numBedrooms }} Full</span> <span v-if="homedata.details.numBedroomsPlus > 0"> | {{homedata.details.numBedroomsPlus}} Partial</span></p>
+                    <p>
+                      <span> {{ homedata.details.numBedrooms }} Full</span>
+                      <span v-if="homedata.details.numBedroomsPlus > 0">
+                        | {{ homedata.details.numBedroomsPlus }} Partial</span
+                      >
+                    </p>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Bathrooms</p>
                   </div>
                   <div class="col-8">
-                    <p> <span> {{ homedata.details.numBathrooms }} Full</span> <span v-if="homedata.details.numBathroomsPlus > 0"> | {{homedata.details.numBathroomsPlus}} Partial</span></p>
+                    <p>
+                      <span> {{ homedata.details.numBathrooms }} Full</span>
+                      <span v-if="homedata.details.numBathroomsPlus > 0">
+                        | {{ homedata.details.numBathroomsPlus }} Partial</span
+                      >
+                    </p>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Parking</p>
                   </div>
                   <div class="col-8">
@@ -406,7 +428,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Lot Acres</p>
                   </div>
                   <div class="col-8">
@@ -416,7 +438,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Lot Width</p>
                   </div>
                   <div class="col-8">
@@ -425,7 +447,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Lot Depth</p>
                   </div>
                   <div class="col-8">
@@ -434,7 +456,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4">
                     <p>Internal Area (Above Ground)</p>
                   </div>
                   <div class="col-8">
@@ -538,7 +560,12 @@
               <div class="item1">
                 <p class="title Roboto-Medium">Rooms</p>
 
-                <div class="row" v-for="room in homedata.rooms" :key="room.id" v-if="room.level">
+                <div
+                  class="row"
+                  v-for="room in homedata.rooms"
+                  :key="room.id"
+                  v-if="room.level"
+                >
                   <div class="col-3">
                     <p>{{ room.level }}</p>
                   </div>
@@ -554,10 +581,13 @@
 
             <div class="item14 py-4 my-3">
               <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
-               <div class="cards my-5" v-if="similar.length">
-            <card-list v-for="listing in similar" :key="listing.id" :homedata="listing"
-             ></card-list>
-        </div>
+              <div class="cards my-5" v-if="similar.length">
+                <card-list
+                  v-for="listing in similar"
+                  :key="listing.id"
+                  :homedata="listing"
+                ></card-list>
+              </div>
             </div>
 
             <!-- <div class="item12 my-2 py-3">
@@ -635,7 +665,7 @@
     <div class="container mx-auto text-center" v-if="loading">
       <b-spinner
         v-if="loading"
-        style="width: 4rem; height: 4rem;"
+        style="width: 4rem; height: 4rem"
         variant="warning"
         label="Large Spinner"
       ></b-spinner>
@@ -674,8 +704,8 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
-import { Email  } from 'vue-socialmedia-share';
-import { mapState } from 'vuex';
+import { Email } from "vue-socialmedia-share";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -704,7 +734,7 @@ export default {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 1,
               slidesToScroll: 1,
               initialSlide: 1,
             },
@@ -720,7 +750,7 @@ export default {
       },
       checkstatus: null,
       loading: null,
-        windowFeatures: {},
+      windowFeatures: {},
     };
   },
   computed: {
@@ -751,26 +781,22 @@ export default {
       }
     },
 
-    similar(){
-      if(this.similerbymsl){
-        return this.similerbymsl.similar
-      }  
-      return []
-       
-    }
+    similar() {
+      if (this.similerbymsl) {
+        return this.similerbymsl.similar;
+      }
+      return [];
+    },
   },
   components: {
     VueSlickCarousel,
-    Email 
-
-    
-    
+    Email,
   },
   methods: {
-     onClose() {},
-      onOpen() {},
-      onBlock() {},
-      onFocus() {},
+    onClose() {},
+    onOpen() {},
+    onBlock() {},
+    onFocus() {},
     copyURL() {
       var Url = this.$refs.mylink;
       Url.select();
@@ -788,9 +814,7 @@ export default {
         });
     },
     gettime(item) {
-      return moment(item)
-        .endOf("day")
-        .fromNow();
+      return moment(item).endOf("day").fromNow();
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
@@ -818,27 +842,29 @@ export default {
       this.$refs["my-modallogin"].hide();
       this.$refs["my-modal"].show();
     },
-    getsimiler(){
+    getsimiler() {
       let input = {
-        mlsNumber:this.$route.params.mls,
-        boardId:this.$route.params.boardId
-      }
+        mlsNumber: this.$route.params.mls,
+        boardId: this.$route.params.boardId,
+      };
       this.$http
-        .get(`listings/find_similar/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`)
+        .get(
+          `listings/find_similar/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
+        )
         .then((res) => {
           this.loading = false;
           this.$store.commit("SETSimilarBymls", res.data);
         });
     },
-    open(e){
-console.log(e)
+    open(e) {
+      console.log(e);
     },
-    change(e){
-console.log(e)
+    change(e) {
+      console.log(e);
     },
-    close(e){
-console.log(e)
-    }
+    close(e) {
+      console.log(e);
+    },
   },
   created() {
     this.gethomedetails();
@@ -851,6 +877,7 @@ console.log(e)
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 }
 .homedetails .item1 .item1a p {
   font-size: 22px;
@@ -898,6 +925,7 @@ console.log(e)
 }
 .homedetails .item4 {
   width: 80%;
+  flex-direction: row;
 }
 .homedetails .item4 p span:first-child {
   color: #232323;
@@ -1173,36 +1201,92 @@ console.log(e)
   height: 44px !important;
 }
 .cards {
-    display: grid;
-    grid-template-columns: auto auto auto ;
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
 }
-@media (min-width: 760px) {
+/* @media (min-width: 760px) {
   .modal-dialog {
     max-width: 780px;
     margin: 1.75rem auto;
   }
 
-}
-@media only screen and (max-width: 600px){
-     .cards{
-        grid-template-columns: auto ;
-    }
-   
+} */
+@media only screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: auto;
+  }
+  .homedetails .item1 {
+    flex-direction: column;
+  }
+  .homedetails .item3 {
+    width: 90%;
+  }
+  .homedetails .item3 p:first-child {
+    font-size: 22px;
+  }
+  .homedetails .item3 p:last-child {
+    font-size: 18px;
+  }
+  .homedetails .item4 {
+    flex-direction: column;
+  }
+  .homedetails .item5 .item5a p {
+    font-size: 12px;
+  }
+  .homedetails .item5 .item5b .p1 {
+    font-size: 12px;
+  }
+  .homedetails .item6 .p1 {
+    font-size: 16px;
+  }
+  .homedetails .item6 .p3 {
+    font-size: 14px;
+  }
+  .homedetails .item7 p {
+    font-size: 22px;
+  }
+  .homedetails .item7 .item7a .p1{
+    width: 60%;
+  }
+  .homedetails .item7 .item7a .p1 p{
+    font-size: .8em;
+  }
+  .homedetails .item7 .item7a .p2{
+    font-size: 16px;
+  }
+  .homedetails .item11 .item1 p:first-child {
+    font-size: 24px;
+  }
+  .homedetails .item11 .item1 p:nth-child(2) {
+    font-size: 20px;
+  }
+  .homedetails .item11 .item1 p:nth-child(3) {
+    font-size: 16px;
+  }
+  .homedetails .item11 .item2 p{
+    font-size: 14px;
+  }
+  .homedetails .item13 .item1 {
+    font-size: 14px;
+  }
+  .homedetails .item14 p {
+    font-size: 24px;
+  }
+
 
 }
-@media only screen and (min-width: 900px){
- .cards {
+@media only screen and (min-width: 900px) {
+  .cards {
     display: grid;
     grid-template-columns: auto auto;
-
+  }
 }
-}
-@media only screen and (min-width: 1200px){ .cards {
+@media only screen and (min-width: 1200px) {
+  .cards {
     display: grid;
     grid-template-columns: auto auto auto;
-
-}
+  }
 }
 </style>
