@@ -70,14 +70,23 @@
                 </div>
                 <div class="item2 mb-2">
                   <div class="item2a">
-                    <button class="btn Roboto-Medium">
                       <!-- <img
                         src="../../assets/image/icon/noun_messenger_3202205.svg"
                         alt=""
                       /> -->
-                      <Messenger :url=fullPath scale=2></Messenger>
-                      <span>Messenger</span>
-                    </button>
+                      <ShareNetwork
+                      class="btn Roboto-Medium font-weight-bold"
+                      network="facebook"
+                      :url="fullPath"
+                      title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+                      @open="open" @change="change" @close="close"
+                    >
+                      <button class="btn Roboto-Medium">
+                      <img src="../../assets/image/icon/noun_messenger_3202205.svg" alt=""/>
+                         <span>Messenger</span> 
+                           </button>
+                  </ShareNetwork>
+               
                   </div>
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
@@ -93,7 +102,7 @@
                     
                     <button class="btn Roboto-Medium">
                      <Email  :url=fullPath scale=2></Email>
-                      <span>Email</span>
+                      <span class="ml-2">Email</span>
                     </button>
                   </div>
                 </div>
@@ -546,8 +555,7 @@
             <div class="item14 py-4 my-3">
               <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
                <div class="cards my-5" v-if="similar.length">
-            <card-list v-for="listing in similar" :key="listing.id" :homedata="listing" :type="type"
-            @SignUp="SignUp"
+            <card-list v-for="listing in similar" :key="listing.id" :homedata="listing"
              ></card-list>
         </div>
             </div>
@@ -666,7 +674,7 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
-import { Email  , Messenger } from 'vue-socialmedia-share';
+import { Email  } from 'vue-socialmedia-share';
 import { mapState } from 'vuex';
 
 export default {
@@ -712,6 +720,7 @@ export default {
       },
       checkstatus: null,
       loading: null,
+        windowFeatures: {},
     };
   },
   computed: {
@@ -752,11 +761,16 @@ export default {
   },
   components: {
     VueSlickCarousel,
-    Email ,
-    Messenger
+    Email 
+
+    
     
   },
   methods: {
+     onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
     copyURL() {
       var Url = this.$refs.mylink;
       Url.select();
@@ -816,6 +830,15 @@ export default {
           this.$store.commit("SETSimilarBymls", res.data);
         });
     },
+    open(e){
+console.log(e)
+    },
+    change(e){
+console.log(e)
+    },
+    close(e){
+console.log(e)
+    }
   },
   created() {
     this.gethomedetails();

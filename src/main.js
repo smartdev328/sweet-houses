@@ -51,6 +51,9 @@ const gauthOption = {
 }
 Vue.use(GAuth, gauthOption)
 
+import VueSocialSharing from 'vue-social-sharing'
+
+Vue.use(VueSocialSharing);
 
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
