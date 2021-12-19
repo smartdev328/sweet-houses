@@ -115,7 +115,7 @@
           </VueSlickCarousel></div>
           <div class="col-12 col-md-4 item2p2">
           <p class="Roboto-Medium text-color-1 p1">Similar homes for sale</p> 
-          <div class="px-3 py-4 part2">
+          <div class="px-3 py-4 part2" v-if="!similar.length">
             <div class="mx-auto text-center">
               <img src="../../assets/image/icon/simihome.svg" class="" alt="">
             </div>
@@ -124,6 +124,9 @@ any similar listings in the area right
 now</p>
 <p class="my-2 Roboto-Regular text-color-1">Try searching other areas or come back
 later</p>
+          </div>
+          <div v-if="similar.length"> 
+            <sold-similerhome v-for="homedata in similar" :key="homedata.id" :homedata="homedata"></sold-similerhome>
           </div>
           </div>
         
@@ -644,6 +647,7 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
@@ -687,6 +691,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["similerbymsl"]),
     homedata() {
       return this.$store.state.currentHome;
     },
@@ -714,6 +719,13 @@ export default {
     },
      MainboardId(){
       return this.$route.params.boardId;
+    },
+    similar(){
+      if(this.similerbymsl){
+        return this.similerbymsl.similar
+      }  
+      return []
+       
     }
   },
   components: {
@@ -761,9 +773,22 @@ export default {
       this.$refs['my-modallogin'].hide();
       this.$refs['my-modal'].show();
     },
+     getsimiler(){
+      let input = {
+        mlsNumber:this.$route.params.mls,
+        boardId:this.$route.params.boardId
+      }
+      this.$http
+        .get(`listings/find_similar/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}&max=5`)
+        .then((res) => {
+          this.loading = false;
+          this.$store.commit("SETSimilarBymls", res.data);
+        });
+    },
   },
   created() {
     this.gethomedetails();
+    this.getsimiler();
   },
 };
 </script>
