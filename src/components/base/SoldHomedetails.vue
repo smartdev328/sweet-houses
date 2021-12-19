@@ -2,7 +2,7 @@
 <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
 
   <div class="homedetails">
-    <div class="container">
+    <div class=" w-75 mx-auto">
       <div class="my-5">
         <div class="item1">
           <div class="item1a">
@@ -135,29 +135,9 @@
                 alt="image"
               />
             </div>
-          </VueSlickCarousel></div>
-          <div class="col-12 col-md-4 item2p2">
-          <p class="Roboto-Medium text-color-1 p1">Similar homes for sale</p> 
-          <div class="px-3 py-4 part2" v-if="!similar.length">
-            <div class="mx-auto text-center">
-              <img src="../../assets/image/icon/simihome.svg" class="" alt="">
-            </div>
-            <p class="text-color-1  Roboto-Medium my-2">This home is unique! There aren't 
-any similar listings in the area right
-now</p>
-<p class="my-2 Roboto-Regular text-color-1">Try searching other areas or come back
-later</p>
-          </div>
-          <div v-if="similar.length"> 
-            <sold-similerhome v-for="homedata in similar" :key="homedata.id" :homedata="homedata"></sold-similerhome>
-          </div>
-          </div>
-        
-        </div>
-        <div class="row">
-          <div class="col-12 col-md-10">
-            <div
-              class="item3 d-flex align-items-center justify-content-between"
+          </VueSlickCarousel>
+          <div
+              class="item3 d-flex align-items-center justify-content-between my-3"
             >
               <p class=" Roboto-Medium" v-if="isLoggedIn">
                Sold for ${{ homedata.soldPrice.toLocaleString("ja-JP") }}
@@ -167,7 +147,7 @@ later</p>
               </p>
               <p class="Roboto-Regular">{{ formatdatehistory(homedata.soldDate  ) }}</p>
             </div>
-            <div
+               <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
             >
               <p>
@@ -198,6 +178,7 @@ later</p>
                 <span>{{ homedata.details.propertyType }}</span>
               </p>
             </div>
+
             <div
               class="item5 bg-white shadow px-3 py-3 d-flex align-items-center"
             >
@@ -227,7 +208,8 @@ later</p>
                                 </div> -->
               </div>
             </div>
-            <div class="item6 my-2 py-5">
+
+             <div class="item6 my-2 py-5">
               <div class="mb-3 Roboto-Regular">
                 <span class="p1"
                   >{{ homedata.address.streetNumber }}
@@ -242,7 +224,8 @@ later</p>
               </div>
          
             </div>
-            <div class="item12 text-center my-3 pointer" v-if="!isLoggedIn">
+
+              <div class="item12 text-center my-3 pointer" v-if="!isLoggedIn">
                <div
                   class="
                     p1
@@ -260,7 +243,8 @@ later</p>
                   </p>
                 </div>
             </div>
-            <div class="item15 d-flex py-4 Roboto-Medium">
+
+         <div class="item15 d-flex py-4 Roboto-Medium">
               <p class="mb-0" v-if="!isLoggedIn">Today's Instant Estimate $xxx,xxx</p>
               <p class="mb-0" v-if="isLoggedIn && estimatevalue.prices.offer_price">Today's Instant Estimate ${{estimatevalue.prices.offer_price.toLocaleString("ja-JP")}}</p>
               <img class="mx-3" src="../../assets/image/icon/noun_Warning_855733.svg" alt="">
@@ -316,35 +300,8 @@ later</p>
                 </div>
               </div>
             </div>
-              
-            <!-- <div class="item10 my-2 py-3">
-                            <div class="item1">
-                                <p class="text-color-1 DMSerifRegular">Commute Time</p>
-                            </div>
-                            <div class="item2 px-2 d-flex">
-                                <div>
-                                    <img src="../../assets/image/icon/commute.svg" alt="">
-                                </div>
-                                <div class="w-100 ml-2">
-                                    <p class="mb-0 item2a Roboto-Regular">
-                                        <span>19555 Shaws </span>
-                                        <span>Yonge-St. Clair </span>
-                                        <span class="px-2">City Name</span>
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between w-100 item2b my-2">
-                                        <div class="form-group mb-0 w-75">
-                                            <input type="text" class="w-100 form-control form-control-lg shadow-sm" placeholder="Enter a location to view travel times">
-                                        </div>
-                                        <button class="btn">Show Travel Time</button>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" id="package-area-0" type="checkbox" checked="checked" />
-                                        <label class="custom-control-label" for="package-area-0">During peak traffic </label>  
-                                    </div> 
-                                </div>
-                            </div>
-                        </div> -->
-                             <div>
+
+                     <div>
                 <address-map :lat="longitude" :lon="latitude"></address-map>
               </div>
             <div class="item11 my-2 py-3">
@@ -472,6 +429,92 @@ later</p>
                 </div>
               </div>
             </div>
+
+            <div class="item13 my-2 py-5">
+              <div class="item1">
+                <p class="title Roboto-Medium">Rooms</p>
+
+                <div class="row" v-for="room in homedata.rooms" :key="room.id" v-if="room.level">
+                  <div class="col-3">
+                    <p>{{ room.level }}</p>
+                  </div>
+                  <div class="col-4">
+                    <p>{{ room.description }}</p>
+                  </div>
+                  <div class="col-5">
+                    <p>{{ room.length }} x {{ room.width }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+<div class="my-5 disclaimer-content">
+                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
+                 <p class="Roboto-Regular" v-if="MainboardId == 21">
+                     Copyright 2021 by the REALTORS® Association of Edmonton. All Rights Reserved.<code><br></code>
+                     The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
+                     Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
+
+                 </p>
+            </div>
+          </div>
+
+
+                    <div class="col-12 col-md-4 item2p2">
+          <p class="Roboto-Medium text-color-1 p1">Similar homes for sale</p> 
+          <div class="px-3 py-4 part2" v-if="!similar.length">
+            <div class="mx-auto text-center">
+              <img src="../../assets/image/icon/simihome.svg" class="" alt="">
+            </div>
+            <p class="text-color-1  Roboto-Medium my-2">This home is unique! There aren't 
+any similar listings in the area right
+now</p>
+<p class="my-2 Roboto-Regular text-color-1">Try searching other areas or come back
+later</p>
+          </div>
+          <div v-if="similar.length"> 
+            <sold-similerhome v-for="homedata in similar" :key="homedata.id" :homedata="homedata"></sold-similerhome>
+          </div>
+          </div>
+
+
+        </div>
+            
+         
+          
+           
+          
+           
+              
+            <!-- <div class="item10 my-2 py-3">
+                            <div class="item1">
+                                <p class="text-color-1 DMSerifRegular">Commute Time</p>
+                            </div>
+                            <div class="item2 px-2 d-flex">
+                                <div>
+                                    <img src="../../assets/image/icon/commute.svg" alt="">
+                                </div>
+                                <div class="w-100 ml-2">
+                                    <p class="mb-0 item2a Roboto-Regular">
+                                        <span>19555 Shaws </span>
+                                        <span>Yonge-St. Clair </span>
+                                        <span class="px-2">City Name</span>
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between w-100 item2b my-2">
+                                        <div class="form-group mb-0 w-75">
+                                            <input type="text" class="w-100 form-control form-control-lg shadow-sm" placeholder="Enter a location to view travel times">
+                                        </div>
+                                        <button class="btn">Show Travel Time</button>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" id="package-area-0" type="checkbox" checked="checked" />
+                                        <label class="custom-control-label" for="package-area-0">During peak traffic </label>  
+                                    </div> 
+                                </div>
+                            </div>
+                        </div> -->
+     
             <!-- <div class="item13 my-2 py-3"> 
                             <div class="item1">
                                 <p class="title Roboto-Medium">Main Level</p>
@@ -563,23 +606,7 @@ later</p>
 
                             </div>
                         </div> -->
-            <div class="item13 my-2 py-5">
-              <div class="item1">
-                <p class="title Roboto-Medium">Rooms</p>
 
-                <div class="row" v-for="room in homedata.rooms" :key="room.id" v-if="room.level">
-                  <div class="col-3">
-                    <p>{{ room.level }}</p>
-                  </div>
-                  <div class="col-4">
-                    <p>{{ room.description }}</p>
-                  </div>
-                  <div class="col-5">
-                    <p>{{ room.length }} x {{ room.width }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <!-- <div class="item12 my-2 py-3">
                             <div class="item1">
@@ -596,7 +623,6 @@ later</p>
                                 </div>
                             </div>
             </div> -->
-          </div>
           <!-- <div class="col-12 col-md-4">
                         <div class="part2 shadow p-3">
                             <div class="item1">
@@ -649,17 +675,8 @@ later</p>
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
             ></log-in>
-          </b-modal>
-        </div>
-         <div class="my-5 disclaimer-content container">
-                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
-                 <p class="Roboto-Regular" v-if="MainboardId == 21">
-                     Copyright 2021 by the REALTORS® Association of Edmonton. All Rights Reserved.<code><br></code>
-                     The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
-                     Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
-
-                 </p>
-            </div>
+ </b-modal>
+         
       </div>
     </div>
   </div>
