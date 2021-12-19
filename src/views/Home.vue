@@ -44,19 +44,19 @@
           </div>
           <div class="item1b px-3 py-5 p-md-5">
             <div
-              class="text-center text-white DMSerifRegular"
+              class="text-center text-white DMSerifRegular h-75"
               :class="tab_visible('Sweet_Sale')"
             >
               <p class="DMSerifRegular">
                 Get Maximum Value! Skip Public Showings And Choose Your Moving
                 Day
               </p>
-              <p class="Roboto-Regular mb-2">
+              <p class="Roboto-Regular ">
                 The Sweet Sale is the smartest way to sell.
               </p>
             </div>
             <div
-              class="text-center text-white DMSerifRegular mb-5"
+              class="text-center text-white DMSerifRegular  h-75"
               :class="tab_visible('Swift_Sale')"
             >
               <p class="DMSerifRegular">Your offer in minutes, SOLD in days</p>
@@ -65,16 +65,16 @@
               </p>
             </div>
             <div
-              class="text-center text-white DMSerifRegular  mb-5"
+              class="text-center text-white DMSerifRegular   h-75"
               :class="tab_visible('Equity_Advance')"
             >
               <p class="DMSerifRegular">
                 Your Home Equity, Before Your First Showing!
               </p>
-              <p class="Roboto-Regular mb-2">Access $25,000, $50,000, $150,000, or more!</p>
+              <p class="Roboto-Regular ">Access $25,000, $50,000, $150,000, or more!</p>
             </div>
             <div
-              class="text-center text-white DMSerifRegular mb-5"
+              class="text-center text-white DMSerifRegular  h-75"
               :class="tab_visible('Traditional_Real_Estate')"
             >
               <p class="DMSerifRegular">Sweetened Listing, With Muscle!</p>

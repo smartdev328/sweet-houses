@@ -227,9 +227,9 @@
                 </p>
               </div>
             </div>
-            <div class="item8 my-2 py-2">
+            <div class="item8 my-2 py-2" v-if="Object.keys(homedata.history_details).length">
               <div class="d-flex justify-content-between w-50">
-                <div class="item8a">
+                <div class="item8a" v-if="homedata.history_details">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
                     <p class="mb-0 Roboto-Medium ml-3">$ x,xxx,xxx</p>
@@ -820,7 +820,6 @@ export default {
   created() {
     this.gethomedetails();
     this.getsimiler();
-
   },
 };
 </script>
