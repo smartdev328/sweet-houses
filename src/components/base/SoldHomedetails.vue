@@ -240,7 +240,7 @@ later</p>
               <img class="mx-3" src="../../assets/image/icon/noun_Warning_855733.svg" alt="">
             </div>
             <div class="item7 my-3">
-              <p class="DMSerifRegular text-color-1">Sweetly History</p>
+              <p class="DMSerifRegular text-color-1">Property History</p>
             </div>
             <div class="item8 my-2 py-2">
               <div class="d-flex justify-content-between w-50">

@@ -582,7 +582,8 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             }
           ],
         formData: new FormData(),
-        currentHome:null
+        currentHome:null,
+        similerbymsl:null
 
     },
     mutations:{
@@ -638,6 +639,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         },
         instant_estimate(state,payload){
             state.instant_estimate_data = payload
+        },
+        SETSimilarBymls(state,payload){
+            state.similerbymsl = payload
         }
     },
     actions:{
@@ -752,7 +756,6 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
               })
           },
           logout({commit,state}){
-
             return new Promise((resolve) => {
                 axios({url: 'auth/logout/',  method: 'POST',headers:{
                     'Content-Type':'application/json',
