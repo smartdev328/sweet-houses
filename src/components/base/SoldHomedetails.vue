@@ -66,18 +66,31 @@
                     </form>
                   </div>
                   <div class="item1b">
-                    <button class="btn" @click="copyURL()">Copy Link</button>
+                    <button class="btn" :class="{copied : copied}" @click="copyURL()">
+                      <span v-if="!copied">Copy Link</span>
+                      <span v-if="copied" >Link Copied</span>
+                    </button>
                   </div>
                 </div>
                 <div class="item2 mb-2">
                   <div class="item2a">
-                    <button class="btn Roboto-Medium">
-                      <img
-                        src="../../assets/image/icon/noun_messenger_3202205.svg"
-                        alt=""
-                      />
-                      <span>Messenger</span>
-                    </button>
+                   <ShareNetwork
+                      class="btn Roboto-Medium font-weight-bold"
+                      network="facebook"
+                      :url="fullPath"
+                      title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+                      @open="open"
+                      @change="change"
+                      @close="close"
+                    >
+                      <button class="btn Roboto-Medium">
+                        <img
+                          src="../../assets/image/icon/noun_messenger_3202205.svg"
+                          alt=""
+                        />
+                        <span>Messenger</span>
+                      </button>
+                    </ShareNetwork>
                   </div>
                   <div class="item2b">
                     <button class="btn Roboto-Medium">
@@ -89,13 +102,23 @@
                     </button>
                   </div>
                   <div class="item2c">
-                    <button class="btn Roboto-Medium">
-                      <img
-                        src="../../assets/image/icon/noun_Email_4292826.svg"
-                        alt=""
-                      />
-                      <span>Email</span>
-                    </button>
+                     <ShareNetwork
+                      class="btn Roboto-Medium font-weight-bold"
+                      network="email"
+                      :url="fullPath"
+                      title="Say hi .."
+                      @open="open"
+                      @change="change"
+                      @close="close"
+                    >
+                      <button class="btn Roboto-Medium">
+                        <img
+                          src="../../assets/image/icon/noun_Email_4292826.svg"
+                          alt=""
+                        />
+                        <span>Email</span>
+                      </button>
+                    </ShareNetwork>
                   </div>
                 </div>
               </div>
@@ -239,7 +262,7 @@ later</p>
             </div>
             <div class="item15 d-flex py-4 Roboto-Medium">
               <p class="mb-0" v-if="!isLoggedIn">Today's Instant Estimate $xxx,xxx</p>
-              <p class="mb-0" v-if="isLoggedIn">Today's Instant Estimate $590,560</p>
+              <p class="mb-0" v-if="isLoggedIn && estimatevalue.prices.offer_price">Today's Instant Estimate ${{estimatevalue.prices.offer_price.toLocaleString("ja-JP")}}</p>
               <img class="mx-3" src="../../assets/image/icon/noun_Warning_855733.svg" alt="">
             </div>
             <div class="item7 my-3">
@@ -281,7 +304,7 @@ later</p>
                     <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
                     </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
+                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
                 </div>
                 <div class="image col-3">
                   <!-- <img
@@ -688,10 +711,11 @@ export default {
       },
       checkstatus: null,
       loading: null,
+      copied:false
     };
   },
   computed: {
-    ...mapState(["similerbymsl"]),
+    ...mapState(["similerbymsl","estimatevalue"]),
     homedata() {
       return this.$store.state.currentHome;
     },
@@ -733,10 +757,20 @@ export default {
   },
 
   methods: {
+       open(e) {
+      console.log(e);
+    },
+    change(e) {
+      console.log(e);
+    },
+    close(e) {
+      console.log(e);
+    },
     copyURL() {
       var Url = this.$refs.mylink;
       Url.select();
       document.execCommand("copy");
+      this.copied = true
     },
     gethomedetails() {
       let mls = this.$route.params.mls;
@@ -785,10 +819,28 @@ export default {
           this.$store.commit("SETSimilarBymls", res.data);
         });
     },
+    getnumber(item) {
+      return item * 1;
+    },
+       find_estimate(){
+      let input = {
+        mlsNumber: this.$route.params.mls,
+        boardId: this.$route.params.boardId,
+      };
+        this.$http
+        .get(
+          `listings/find_estimate/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
+        )
+        .then((res) => {
+          this.loading = false;
+          this.$store.commit("SETestimatevalue", res.data);
+        });
+    },
   },
   created() {
     this.gethomedetails();
     this.getsimiler();
+    this.find_estimate()
   },
 };
 </script>

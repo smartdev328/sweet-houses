@@ -270,6 +270,10 @@ body{
   padding: 9px 16px;
   width: 100%;
 }
+#modal-share .element1 .item1 .item1b .copied{
+  background-color: #FFB600 !important;
+  color: #fff !important;
+}
 .modal-body {
   padding: unset !important;
 }

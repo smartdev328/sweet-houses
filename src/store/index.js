@@ -583,7 +583,8 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
           ],
         formData: new FormData(),
         currentHome:null,
-        similerbymsl:null
+        similerbymsl:null,
+        estimatevalue:null
 
     },
     mutations:{
@@ -642,6 +643,9 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         },
         SETSimilarBymls(state,payload){
             state.similerbymsl = payload
+        },
+        SETestimatevalue(state,payload){
+            state.estimatevalue = payload
         }
     },
     actions:{
