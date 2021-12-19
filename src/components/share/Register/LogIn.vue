@@ -2,12 +2,12 @@
     <div>
            
         <div class="text-center element1  mt-n3">
-          <p class="font-robot text8">LogIn</p>
+          <p class="font-robot text8">Log in</p>
         </div>
         <div class="w-75 mx-auto element2">
             <a class="btn w-100 mb-1 btn-auth" @click="logingoogle()" >
             <img src="@/assets/image/icons8-google.svg" alt="">
-            <span>Log In with Google</span>
+            <span>Log in with Google</span>
             </a>
             <p class="hnXNtF">
               or
@@ -45,7 +45,7 @@
             </div>
               <button type="submit" class="btn btn-primary w-100 submit-btn mt-4">
                 <span v-if="loading">Loading ...</span>
-                <span v-else>Log In</span>
+                <span v-else>Log in</span>
               </button>
             </form>
           
