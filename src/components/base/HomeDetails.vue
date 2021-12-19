@@ -71,10 +71,11 @@
                 <div class="item2 mb-2">
                   <div class="item2a">
                     <button class="btn Roboto-Medium">
-                      <img
+                      <!-- <img
                         src="../../assets/image/icon/noun_messenger_3202205.svg"
                         alt=""
-                      />
+                      /> -->
+                      <Messenger :url=fullPath scale=2></Messenger>
                       <span>Messenger</span>
                     </button>
                   </div>
@@ -89,11 +90,9 @@
                     </button>
                   </div>
                   <div class="item2c">
+                    
                     <button class="btn Roboto-Medium">
-                      <img
-                        src="../../assets/image/icon/noun_Email_4292826.svg"
-                        alt=""
-                      />
+                     <Email  :url=fullPath scale=2></Email>
                       <span>Email</span>
                     </button>
                   </div>
@@ -114,7 +113,7 @@
           </VueSlickCarousel>
         </div>
         <div class="row">
-          <div class="col-12 col-md-10">
+          <div class="col-12">
             <div
               class="item3 d-flex align-items-center justify-content-between"
             >
@@ -205,7 +204,7 @@
               </div>
             </div>
             <div class="item7 my-3">
-              <p class="DMSerifRegular text-color-1">Propperty History</p>
+              <p class="DMSerifRegular text-color-1">Property History</p>
               <div class="item7a py-3 text-center mx-auto" v-if="!isLoggedIn">
 
                 <div
@@ -546,6 +545,11 @@
 
             <div class="item14 py-4 my-3">
               <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
+               <div class="cards my-5" v-if="similar.length">
+            <card-list v-for="listing in similar" :key="listing.id" :homedata="listing" :type="type"
+            @SignUp="SignUp"
+             ></card-list>
+        </div>
             </div>
 
             <!-- <div class="item12 my-2 py-3">
@@ -662,6 +666,9 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
+import { Email  , Messenger } from 'vue-socialmedia-share';
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -708,6 +715,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["similerbymsl"]),
     homedata() {
       return this.$store.state.currentHome;
     },
@@ -733,9 +741,20 @@ export default {
         return false;
       }
     },
+
+    similar(){
+      if(this.similerbymsl){
+        return this.similerbymsl.similar
+      }  
+      return []
+       
+    }
   },
   components: {
     VueSlickCarousel,
+    Email ,
+    Messenger
+    
   },
   methods: {
     copyURL() {
@@ -785,9 +804,23 @@ export default {
       this.$refs["my-modallogin"].hide();
       this.$refs["my-modal"].show();
     },
+    getsimiler(){
+      let input = {
+        mlsNumber:this.$route.params.mls,
+        boardId:this.$route.params.boardId
+      }
+      this.$http
+        .get(`listings/find_similar/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`)
+        .then((res) => {
+          this.loading = false;
+          this.$store.commit("SETSimilarBymls", res.data);
+        });
+    },
   },
   created() {
     this.gethomedetails();
+    this.getsimiler();
+
   },
 };
 </script>
@@ -1117,10 +1150,37 @@ export default {
   width: 44px !important;
   height: 44px !important;
 }
+.cards {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
 @media (min-width: 760px) {
   .modal-dialog {
     max-width: 780px;
     margin: 1.75rem auto;
   }
+
+}
+@media only screen and (max-width: 600px){
+     .cards{
+        grid-template-columns: auto ;
+    }
+   
+
+}
+@media only screen and (min-width: 900px){
+ .cards {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+}
+@media only screen and (min-width: 1200px){ .cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
 }
 </style>

@@ -7,7 +7,7 @@
         <div class="w-75 mx-auto element2">
             <a class="btn w-100 mb-1 btn-auth" @click="logingoogle()" >
             <img src="@/assets/image/icons8-google.svg" alt="">
-            <span>log In with Google</span>
+            <span>Log In with Google</span>
             </a>
             <p class="hnXNtF">
               or

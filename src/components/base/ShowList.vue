@@ -112,7 +112,7 @@ export default {
               {name:'Date listed (new to old)',value:'createdOnDesc'},
               {name:'Price (low to high)',value:'listPriceAsc'},
               {name:'Price (high to low)',value:'listPriceDesc'},
-              {name:'Internal sqft (most to least)',value:'sqftDsc'},
+              {name:'Internal sqft (most to least)',value:'sqftDesc'},
               {name:'Internal sqft (least to most)',value:'sqftAsc'}
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             //   {name:'Price (high to low)',value:'listPriceDesc'},
@@ -121,7 +121,7 @@ export default {
               {name:'Date Sold (new to old)',value:'soldDateDesc'},
               {name:'Price (low to high)',value:'soldPriceAsc'},
               {name:'Price (high to low)',value:'soldPriceDesc'},
-              {name:'Internal sqft (most to least)',value:'sqftDsc'},
+              {name:'Internal sqft (most to least)',value:'sqftDesc'},
               {name:'Internal sqft (least to most)',value:'sqftAsc'}
             //   {name:'Price (high to low)',value:'listPriceDesc'},
             //   {name:'Price (high to low)',value:'listPriceDesc'},

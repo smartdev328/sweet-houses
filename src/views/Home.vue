@@ -65,7 +65,7 @@
               </p>
             </div>
             <div
-              class="text-center text-white DMSerifRegular"
+              class="text-center text-white DMSerifRegular  mb-5"
               :class="tab_visible('Equity_Advance')"
             >
               <p class="DMSerifRegular">

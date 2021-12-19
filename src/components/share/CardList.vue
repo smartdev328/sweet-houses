@@ -274,12 +274,12 @@ export default {
         mls: this.homedata.mlsNumber,
         image_num: this.currentcount + 1,
       };
-      const element = this.$refs.slidepic;
-         element.classList.add("ac1");
+      // const element = this.$refs.slidepic;
+      //    element.classList.add("ac1");
   
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
-       const element = this.$refs.slidepic;
-        element.classList.remove("ac1");
+      //  const element = this.$refs.slidepic;
+      //   element.classList.remove("ac1");
       
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
