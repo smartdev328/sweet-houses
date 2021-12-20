@@ -273,13 +273,14 @@ export default {
       let input = {
         mls: this.homedata.mlsNumber,
         image_num: this.currentcount + 1,
+        boardId:this.homedata.boardId
       };
-      // const element = this.$refs.slidepic;
-      //    element.classList.add("ac1");
-  
+        const element = this.$refs.slidepic;
+         element.classList.add("ac1");
+         
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
-      //  const element = this.$refs.slidepic;
-      //   element.classList.remove("ac1");
+       const element = this.$refs.slidepic;
+        element.classList.remove("ac1");
       
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
@@ -292,9 +293,13 @@ export default {
       let input = {
         mls: this.homedata.mlsNumber,
         image_num: this.currentcount - 1,
+        boardId:this.homedata.boardId
       };
-
+      const element = this.$refs.slidepic;
+         element.classList.add("ac2");
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
+        const element = this.$refs.slidepic;
+        element.classList.remove("ac2");
         // const element = this.$refs.slidepic;
         // element.classList.add('fadeOut');
         //     element.classList.remove('fadeIn');
@@ -481,9 +486,13 @@ export default {
   height: 34px;
 }
 .ac1{
-  transform: translateX(200%) !important;
+  transform: translateX(300%) !important;
    transition : transform 0s !important;
  /* transition-delay: 0.1s !important; */
 }
-
+.ac2{
+  transform: translateX(-300%) !important;
+   transition : transform 0s !important;
+ /* transition-delay: 0.1s !important; */
+}
 </style>

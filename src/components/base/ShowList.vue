@@ -12,7 +12,7 @@
             <div class="item1c">
                 <div class="text-color-2 Roboto-Regular dropdown">
                     <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{filerdata.name}} <img class="arrow-bottom" src="../../assets/image/icon/arrowbottom.svg" alt=""> 
+                  {{filerdata.value}} <img class="arrow-bottom" src="../../assets/image/icon/arrowbottom.svg" alt=""> 
                   <img class="arrow-top" src="../../assets/image/icon/arrowtop2.svg" alt=""> 
                     </a>
                     <div v-if="type == 'forsale'" class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
@@ -422,11 +422,21 @@ computed:{
     }
    
     .showlist .item1{
-        flex-direction: column;
+        /* flex-direction: column; */
     }
     .space-40{
         height: 100px;
     }
+    .showlist .item1 .item1a{
+        font-size: 14px;
+    }
+    .showlist .item1 .item1a{
+        font-size: 14px;
+    }
+    .dropdown-menu {
+    left: -20% !important;
+    width: 14em;
+}
 
 }
 @media only screen and (min-width: 900px){

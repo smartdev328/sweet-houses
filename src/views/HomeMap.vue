@@ -638,6 +638,7 @@ footer {
   display: flex;
   width: 100%;
   align-items: center;
+  flex-direction: row;
 }
 .searchpage .element1 .togglesearch {
   /* max-width: 260px; */
@@ -910,6 +911,23 @@ input:focus {
   .searchpage .element1 .searchform .item1 .item1a button img {
     width: 20px;
     height: 20px;
+  }
+  .searchpage .element1{
+    flex-direction: column;
+  }
+  .searchpage .element1 .searchform .item1 .item1a{
+    flex-wrap: nowrap;
+  }
+  .searchpage .element1 .searchform .item1 .item1a button span{
+    font-size: 14px;
+  }
+  .searchpage .element1 .searchform .item1 .item1a button:last-child img{
+    width: 16px;
+    height: 16px;
+  }
+  .searchpage .element1 .searchform .item1 .item1a button{
+    display: flex;
+    align-items: center;
   }
 }
 </style>
