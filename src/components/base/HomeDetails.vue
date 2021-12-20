@@ -151,7 +151,7 @@
             <div
               class="item3 d-flex align-items-center justify-content-between"
             >
-              <p class="text-color-1 Roboto-Medium">
+              <p class="text-color-1 Roboto-Medium" v-if="homedata.listPrice">
                 ${{ homedata.listPrice.toLocaleString("ja-JP") }}
               </p>
               <p class="Roboto-Regular">
@@ -172,11 +172,11 @@
               <p>
                 <span>{{ homedata.details.numBathrooms }}</span>
                 <span v-if="homedata.details.numBathroomsPlus > 0">+ </span>
-                <span>{{ homedata.details.numBathroomsPlus }} </span>
+                <span v-if="homedata.details.numBathroomsPlus > 0">{{ homedata.details.numBathroomsPlus }} </span>
                 <span class="ml-1">bath</span>
               </p>
               <p>
-                <span>{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
+                <span v-if="homedata.details.sqft">{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
                 <span>sqft</span>
               </p>
               <p>
@@ -184,7 +184,8 @@
                 <span>parking</span>
               </p>
               <p>
-                <span>{{ homedata.lot.acres }}</span>
+                <span v-if="homedata.lot.acres">{{ homedata.lot.acres }}</span>
+                <span v-else>-</span>
                 <span>(acres) lot</span>
               </p>
               <p>
@@ -307,7 +308,7 @@
                   <p class="mb-0">{{ formatdatehistory(history.listDate) }}</p>
                 </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium">
+                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">
                     Listed for ${{
                       getnumber(history.listPrice).toLocaleString("ja-JP")
                     }}
@@ -399,7 +400,7 @@
                     <p>Sweetly Taxes</p>
                   </div>
                   <div class="col-8">
-                    <p>
+                    <p v-if="homedata.taxes.annualAmount">
                       {{ homedata.taxes.annualAmount.toLocaleString("ja-JP") }}
                       per year /
                       {{ getpermonth(homedata.taxes.annualAmount) }} per month
