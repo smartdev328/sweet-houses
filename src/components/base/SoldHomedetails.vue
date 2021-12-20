@@ -142,7 +142,7 @@
           <div
               class="item3 d-flex align-items-center justify-content-between my-3"
             >
-              <p class=" Roboto-Medium" v-if="isLoggedIn">
+              <p class=" Roboto-Medium" v-if="isLoggedIn && homedata.soldPrice">
                Sold for ${{ homedata.soldPrice.toLocaleString("ja-JP") }}
               </p>
                <p class=" Roboto-Medium" v-if="!isLoggedIn">
@@ -166,7 +166,7 @@
                 <span class="ml-1">bath</span>
               </p>
               <p>
-                <span>{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
+                <span v-if="homedata.details.sqft">{{ homedata.details.sqft.toLocaleString("ja-JP") }}</span>
                 <span>sqft</span>
               </p>
               <p>
