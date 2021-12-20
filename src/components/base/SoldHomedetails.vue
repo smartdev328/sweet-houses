@@ -2,11 +2,14 @@
 <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
 
   <div class="homedetails">
-    <div class=" w-75 mx-auto">
+    <div class="mx-auto w-screen">
       <div class="my-5">
         <div class="item1">
-          <div class="item1a">
-            <p class="Roboto-Medium">Find more homes</p>
+          <div class="item1a d-flex pointer"  @click="routrMap()">
+             <div class="image">
+                              <img src="../../assets/image/icon/searchreport.svg" alt="">
+                    </div>
+                    <p class="mb-0 ml-2 Roboto-Medium">Find more homes</p>
           </div>
           <div class="item1b text-center">
             <p class="text-color-1 mb-0 Roboto-Medium">
@@ -24,7 +27,7 @@
               }}</span>
             </p>
           </div>
-          <div class="item1c">
+          <div class="item1c mt-3 mt-md-0">
             <button class="btn text-color-1 Roboto-Regular">
               <img src="../../assets/image/icon/Heart.svg" alt="icon" />
               Save
@@ -153,13 +156,13 @@
               <p>
                 <span>{{ homedata.details.numBedrooms }}</span>
                 <span v-if="homedata.details.numBedroomsPlus > 0">+ </span>
-                <span>{{ homedata.details.numBedroomsPlus }}</span>
+                <span v-if="homedata.details.numBedroomsPlus > 0">{{ homedata.details.numBedroomsPlus }}</span>
                 <span class="ml-1">bed</span>
               </p>
               <p>
                 <span>{{ homedata.details.numBathrooms }}</span>
                 <span v-if="homedata.details.numBathroomsPlus > 0">+ </span>
-                <span>{{ homedata.details.numBathroomsPlus }}</span>
+                <span v-if="homedata.details.numBathroomsPlus > 0">{{ homedata.details.numBathroomsPlus }}</span>
                 <span class="ml-1">bath</span>
               </p>
               <p>
@@ -253,7 +256,7 @@
               <p class="DMSerifRegular text-color-1">Property History</p>
             </div>
             <div class="item8 my-2 py-2">
-              <div class="d-flex justify-content-between w-50">
+              <div class="d-flex justify-content-between w-100 w-md-50">
                 <div class="item8a">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
@@ -283,11 +286,11 @@
                 
                 v-for="history in homedata.history" :key="history.id"
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
                     <p class="mb-0">{{gettime(history.listDate)}}</p>
                     <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
                     </div>
-                <div class="col-5">
+                <div class="col-6 col-md-5">
                   <p class="mb-0 Roboto-Medium" v-if="history.listPrice">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
                 </div>
                 <div class="image col-3">
@@ -474,7 +477,7 @@ now</p>
 later</p>
           </div>
           <div v-if="similar.length"> 
-            <sold-similerhome v-for="homedata in similar" :key="homedata.id" :homedata="homedata"></sold-similerhome>
+            <sold-similerhome v-for="homedata in similar" :key="homedata.id" :homedata="homedata" :MainboardId="MainboardId"></sold-similerhome>
           </div>
           </div>
 
@@ -789,6 +792,9 @@ export default {
       document.execCommand("copy");
       this.copied = true
     },
+    routrMap(){
+            this.$router.push({name:'MapHome'})
+        },
     gethomedetails() {
       let mls = this.$route.params.mls;
       let boardId = this.$route.params.boardId;
@@ -862,6 +868,9 @@ export default {
 };
 </script>
 <style scoped>
+.homedetails .w-screen{
+  width: 75%;
+}
 .homedetails .item1 {
   display: flex;
   justify-content: space-between;
@@ -1200,6 +1209,82 @@ export default {
 }
 .item12 p{
   font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .homedetails .w-screen{
+  width: 90%;
+}
+  .cards {
+    grid-template-columns: auto;
+  }
+  .homedetails .item1 {
+    flex-direction: column;
+  }
+  .homedetails .item3 {
+    width: 90%;
+  }
+  .homedetails .item3 p:first-child {
+    font-size: 18px;
+  }
+  .homedetails .item3 p:last-child {
+    font-size: 16px;
+  }
+  .homedetails .item4 {
+    flex-direction: column;
+  }
+  .homedetails .item5 .item5a p {
+    font-size: 12px;
+  }
+  .homedetails .item5 .item5b .p1 {
+    font-size: 12px;
+  }
+  .homedetails .item6 .p1 {
+    font-size: 16px;
+  }
+  .homedetails .item6 .p3 {
+    font-size: 14px;
+  }
+  .homedetails .item7 p {
+    font-size: 22px;
+  }
+  .homedetails .item7 .item7a .p1{
+    width: 60%;
+  }
+  .homedetails .item7 .item7a .p1 p{
+    font-size: .8em;
+  }
+  .homedetails .item7 .item7a .p2{
+    font-size: 16px;
+  }
+  .homedetails .item11 .item1 p:first-child {
+    font-size: 24px;
+  }
+  .homedetails .item11 .item1 p:nth-child(2) {
+    font-size: 20px;
+  }
+  .homedetails .item11 .item1 p:nth-child(3) {
+    font-size: 16px;
+  }
+  .homedetails .item11 .item2 p{
+    font-size: 14px;
+  }
+  .homedetails .item13 .item1 {
+    font-size: 14px;
+  }
+  .homedetails .item14 p {
+    font-size: 24px;
+  }
+  .disclaimer-content p{
+    font-size: 14px;
+  }
+  .slideimg {
+  /* width: 420px; */
+  height: 200px !important;
+}
+.homedetails .item15{
+  font-size: 18px;
+}
+
 }
 @media (min-width: 760px) {
   .modal-dialog {

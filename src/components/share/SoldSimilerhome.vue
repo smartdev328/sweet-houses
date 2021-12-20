@@ -1,7 +1,7 @@
 <template>
     <div class="mb-3">
         <div class="item1 w-100">
-            <div class="item1a" @click="openHomePage">
+            <div class="item1a pointer" @click="openhomedetails">
                 <img :src="homedata.images.image" alt="">
                 <div class="item2">
                     <div class="Roboto-Regular mb-1" v-if="homedata.listPrice">$ {{homedata.listPrice.toLocaleString("ja-JP")}}</div>
@@ -37,11 +37,16 @@
 </template>
 <script>
 export default {
-    props:['homedata'],
+    props:['homedata','MainboardId'],
     methods:{
-        openHomePage(){
-            
-        }
+        openhomedetails(){
+      let mls = this.homedata.mlsNumber;
+      let boardId = this.MainboardId;
+        let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+        window.open(routeData.href, '_blank');
+        
+      
+    }
     }
 }
 </script>

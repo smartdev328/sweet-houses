@@ -2,10 +2,13 @@
   <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="homedetails">
     <div class="container" v-if="!loading">
-      <div class="my-5">
+      <div class="my-2 my-md-5">
         <div class="item1">
-          <div class="item1a">
-            <p class="Roboto-Medium">Find more homes</p>
+          <div class="item1a d-flex pointer"  @click="routrMap()">
+             <div class="image">
+                              <img src="../../assets/image/icon/searchreport.svg" alt="">
+                    </div>
+                    <p class="mb-0 ml-2 Roboto-Medium">Find more homes</p>
           </div>
           <div class="item1b text-center">
             <p class="text-color-1 mb-0 Roboto-Medium">
@@ -131,13 +134,14 @@
             </b-modal>
           </div>
         </div>
-        <div class="item2 my-5">
+        <div class="item2 my-2 my-md-5">
           <VueSlickCarousel v-bind="settings">
             <div
               class="slideimg px-1"
               v-for="image in homedata.images"
               :key="image.id"
             >
+            <!-- <h1>asdcva </h1> -->
               <img :src="image" class="w-100 h-100" alt="image" />
             </div>
           </VueSlickCarousel>
@@ -155,7 +159,7 @@
               </p>
             </div>
             <div
-              class="item4 my-4 d-flex justify-content-between Roboto-Regular"
+              class="item4 my-2 my-md-4 d-flex justify-content-between Roboto-Regular"
             >
               <p>
                 <span>{{ homedata.details.numBedrooms }}</span>
@@ -600,7 +604,7 @@
 
             <div class="item14 py-4 my-3">
               <p class="DMSerifRegular text-color-1">Similar homes for sale</p>
-              <div class="cards my-5" v-if="similar.length">
+              <div class="cards my-2 my-md-5" v-if="similar.length">
                 <card-list
                   v-for="listing in similar"
                   :key="listing.id"
@@ -689,7 +693,7 @@
         label="Large Spinner"
       ></b-spinner>
     </div>
-    <div class="my-5 disclaimer-content container">
+    <div class="my-2 my-md-5 disclaimer-content container">
       <p class="Roboto-Regular" v-if="MainboardId == 18">
         Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the
         copyright in its MLS® System. Data is deemed reliable but is not
@@ -740,31 +744,33 @@ export default {
         variableWidth: true,
         centerMode: true,
         centerPadding: "20px",
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              infinite: true,
+        "responsive": [
+            {
+            "breakpoint": 1024,
+            "settings": {
+                "slidesToShow": 3,
+                "slidesToScroll": 1,
+                "infinite": true,
+            }
             },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 1,
+            {
+            "breakpoint": 600,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "initialSlide": 1,
+                "arrows":true,
+            }
             },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
+            {
+            "breakpoint": 480,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "arrows":true,
+            }
+            }
+        ]
       },
       checkstatus: null,
       loading: null,
@@ -888,6 +894,9 @@ export default {
     close(e) {
       console.log(e);
     },
+    routrMap(){
+            this.$router.push({name:'MapHome'})
+        },
   },
   created() {
     this.gethomedetails();
@@ -930,8 +939,8 @@ export default {
   border: 1px solid #3f3e3e;
 }
 .slideimg {
-  width: 420px;
-  height: 320px;
+  /* width: 420px; */
+  height: 320px !important;
 }
 .homedetails .item3 {
   width: 50%;
@@ -1017,6 +1026,7 @@ export default {
 }
 .disclaimer-content p {
   color: #434242;
+  font-size: 18px;
 }
 .homedetails .item7 .item7a {
   background: #edf3f2;
@@ -1297,7 +1307,13 @@ export default {
   .homedetails .item14 p {
     font-size: 24px;
   }
-
+  .disclaimer-content p{
+    font-size: 14px;
+  }
+  .slideimg {
+  /* width: 420px; */
+  height: 200px !important;
+}
 
 }
 @media only screen and (min-width: 900px) {
