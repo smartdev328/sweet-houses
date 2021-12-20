@@ -121,8 +121,10 @@
                     <ShareNetwork
                       class="btn Roboto-Medium font-weight-bold"
                       network="email"
+                      
+                      title="Your friend or relative has shared a listing with you"
+                      description="Listing Details"
                       :url="fullPath"
-                      title="Say hi .."
                       @open="open"
                       @change="change"
                       @close="close"
@@ -213,30 +215,17 @@
                 align-items-center
               "
             >
-              <div class="col-5 item5a Roboto-Regular">
-                <p>No Sweetly Estimate Yet</p>
-                <!-- <p>$ x,xxx,xxx</p>
-                                <button class="btn d-flex align-items-center shadow-sm">
-                                    <img src="../../assets/image/icon/report.svg" alt="icon">
-                                    <p class="mb-0">See full report</p>
-                                </button> -->
+              <div class="col-5 item5a Roboto-Regular" v-if="!estimatevalue.prices || !estimatevalue.prices.offer_price">
+                <p class="mb-0">No Sweetly Estimate Yet</p>
               </div>
-              <div class="col-7 item5b Roboto-Regular">
-                <p class="p1">
+              <div class="col-8 item5a Roboto-Regular" v-if="estimatevalue.prices && estimatevalue.prices.offer_price">
+                <p v-if="estimatevalue.prices.offer_price" class="mb-0">Today's Sweetly Estimate ${{estimatevalue.prices.offer_price.toLocaleString("ja-JP")}}</p>
+              </div>
+              <div class="col-7 item5b Roboto-Regular" v-if="!estimatevalue.prices || !estimatevalue.prices.offer_price">
+                <p class="p1 mb-0" >
                   Sorry, we’re still analyzing the data we need to accurately
                   value this home
                 </p>
-                <!-- <div class="d-flex justify-content-between p2">
-                                    <p class="p2a">41 Spruce St</p>
-                                    <p class="p2b">Sold for <span class="Roboto-Medium">$ x,xxx,xxx</span> </p>
-                                </div> -->
-                <!-- <div class="d-flex justify-content-between p2">
-                                    <p class="p2a">543 C Parliament  St</p>
-                                    <p class="p2b">Sold for <span class="Roboto-Medium">$ x,xxx,xxx</span> </p>
-                                </div>
-                                <div class="d-flex justify-content-between p2">
-                                    <p class="p2a">+10 more comparable home sales</p>
-                                </div> -->
               </div>
             </div>
             <div class="item6 my-2 py-5">
@@ -791,7 +780,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["similerbymsl"]),
+    ...mapState(["similerbymsl","estimatevalue"]),
     homedata() {
       return this.$store.state.currentHome;
     },
@@ -908,10 +897,25 @@ export default {
     routrMap(){
             this.$router.push({name:'MapHome'})
         },
+             find_estimate(){
+      let input = {
+        mlsNumber: this.$route.params.mls,
+        boardId: this.$route.params.boardId,
+      };
+        this.$http
+        .get(
+          `listings/find_estimate/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
+        )
+        .then((res) => {
+          this.loading = false;
+          this.$store.commit("SETestimatevalue", res.data);
+        });
+    },
   },
   created() {
     this.gethomedetails();
     this.getsimiler();
+     this.find_estimate();
   },
 };
 </script>
