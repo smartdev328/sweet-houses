@@ -622,7 +622,7 @@ footer {
   height: 40px;
   width: 100%;
   position: sticky;
-  top: 140px;
+  /* top: 140px; */
   z-index: 1;
   /* padding-left: 50px; */
   margin: auto;
@@ -703,6 +703,18 @@ footer {
 }
 .searchpage .element1 .searchform .item1 {
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 6px;
+  z-index: 10;
+  /* background: white; */
+  /* border: 1px solid transparent; */
+  transition: background 0.25s ease 0s, border-color 0.25s ease 0s,
+    box-shadow 0.25s ease 0s;
+}
+.fixedtop .element1 .searchform .item1{
+    display: flex;
   -webkit-box-align: center;
   align-items: center;
   position: relative;

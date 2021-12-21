@@ -4,6 +4,7 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 axios.defaults.baseURL = 'https://adamsweetly.pythonanywhere.com/api/'
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
