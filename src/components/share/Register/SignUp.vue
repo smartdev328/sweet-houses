@@ -15,7 +15,7 @@
             <form @submit.prevent="SignUp">
                  <div class="form-group">
               <input type="text" class="form-control form-control-lg" v-model="input.full_name" placeholder="Full Name">
-               <span v-if="msg.full_name && !input.full_name" style="color: #fc5353;">{{
+               <span v-if="msg.full_name && input.full_name.length < 4" style="color: #fc5353;">{{
                   msg.full_name
                 }}</span>
                  <div v-for="(error, index) in this.errors" :key="index">
@@ -46,7 +46,7 @@
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
-              <span v-if="msg.password && !input.password" style="color: #fc5353;">{{
+              <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;">{{
                   msg.password
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index">
@@ -90,7 +90,11 @@ export default {
         fullname:"",
         FieldType:"password",
         formData: new FormData(),
-        input: {},
+        input: {
+          full_name:"",
+          email:"",
+          password:""
+        },
         errors: {},
         msg: {},
         loading:false,
@@ -130,8 +134,8 @@ export default {
           if(!this.input.password){
               this.msg.password = "password is required"
           }
-          if(this.input.password && this.input.password.length < 7){
-              this.msg.password  = "password must be more 6 character"
+          if(this.input.password && this.input.password.length < 6){
+              this.msg.password  = "Password must be at least 6 characters"
           }
           if(this.input.full_name && this.input.password.length >= 6 && this.input.email){
               return true
@@ -142,7 +146,9 @@ export default {
             this.loading = true
               this.$http
       .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`,
+          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`,{headers:{
+            'Access-Control-Allow-Origin': '*'
+      }}
           
           ).then((res) =>{
              if (res.data) {
