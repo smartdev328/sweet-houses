@@ -26,7 +26,7 @@
      <div class="group">
         <div class="group1">
           <div class="group1a px-1 px-md-4 py-4">
-            <p class="DMSerifRegular text-white">Sell Without Showings </p>
+            <p class="DMSerifRegular text-white mb-1">Sell Without Showings </p>
             <div style="height:4px;width:34px;background:#FFB600"></div>
             <p class="Roboto-Regular text-white text-center">Get an Sweetly Estimate on the value of your home</p>
           </div>
@@ -38,7 +38,7 @@
                 <input type="text" class="Roboto-Regular" placeholder="Enter your home address">
               </div>
               <div class="item1b3">
-                <button class="">Get Started </button>
+                <button class="">Get Estimate</button>
               </div>
           </div>
 
@@ -172,7 +172,7 @@ showLocation(evt){
   left: 50px;
   height: 200px;
   top: 200px;
-  z-index: 1;
+  z-index: 0;
   width: 30%;
   padding: 12px;
 }
