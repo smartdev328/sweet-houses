@@ -28,7 +28,7 @@
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
-              <span v-if="msg.password && !input.password" style="color: #fc5353;" class="position-absolute">{{
+              <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;" class="position-absolute">{{
                   msg.password
                 }}</span>
                 <div v-for="(error, index) in this.errors" :key="index" class="position-absolute">
@@ -74,7 +74,11 @@ export default {
         fullname:"",
         FieldType:"password",
         formData: new FormData(),
-        input: {},
+         input: {
+          full_name:"",
+          email:"",
+          password:""
+        },
         errors: {},
         msg: {},
         loading:false,
@@ -105,8 +109,8 @@ export default {
         ) {
                 this.msg.email = "please enter emai correctly"
         }
-          if(this.input.password && this.input.password.length < 7){
-              this.msg.password  = "password must be more 6 character"
+          if(this.input.password && this.input.password.length < 6){
+              this.msg.password  = "Password must be at least 6 characters"
           }
           if(this.input.password.length > 6){
               return true

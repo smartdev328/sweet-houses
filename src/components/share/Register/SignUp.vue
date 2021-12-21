@@ -129,7 +129,7 @@ export default {
             this.msg.email = "Please enter the email correctly"
       }
           if(this.input.full_name && this.input.full_name.length < 4){
-              this.msg.full_name = "full_name must be more 4 character"
+              this.msg.full_name = "full_name must be at least 4 character"
           }
           if(!this.input.password){
               this.msg.password = "password is required"
