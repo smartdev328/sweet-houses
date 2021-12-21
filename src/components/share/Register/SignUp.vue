@@ -146,9 +146,7 @@ export default {
             this.loading = true
               this.$http
       .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`,{headers:{
-            'Access-Control-Allow-Origin': '*'
-      }}
+          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
           
           ).then((res) =>{
              if (res.data) {

@@ -33,6 +33,7 @@ const api = axios.create({
       }
     
 })
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 Vue.prototype.$http = api
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user')
