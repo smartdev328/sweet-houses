@@ -283,13 +283,43 @@
                 <div class="item8a">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">%{{homedata.history_details.yearlyAppreciation}}</p>
+                    <p class="mb-0 Roboto-Medium ml-3">{{homedata.history_details.yearlyAppreciation}}%</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Yearly appreciation</p>
                 </div>
               </div>
             </div>
             <div class="item9 my-2 py-3">
+
+                <div
+                class="
+                  item9a
+                  new
+                  my-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                  <p class="mb-0">{{ (homedata.lastStatus) }}</p>
+                 
+                  <!-- <p class="mb-0">{{ formatdatehistory(homedata.listDate) }}</p> -->
+                </div>
+                <div class="col-5">
+                  <p class="mb-0 Roboto-Medium" v-if="homedata.listPrice">
+                    Listed for ${{
+                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                    }}
+                  </p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on market</p>
+                </div>
+                <div class="image col-3">
+                </div>
+              </div>
+
+
+
               <div
                 class="
                   item9a
@@ -613,21 +643,23 @@
               </div>
             </div>
 
-            <!-- <div class="item12 my-2 py-3">
+            <div class="item12 my-1 py-1">
                             <div class="item1">
-                                <p class="text-color-1 DMSerifRegular">Listing Brokerage</p>
+                                <p class="text-color-1  Roboto-Medium">Listing Brokerage</p>
                             </div>
                             <div class="item2 Roboto-Regular">
                                 <div class="row">
-                                    <div class="col-3">MLS &#174; Listing </div>
-                                    <div class="col-9">E5371141</div>
+                                    <div class="col-12">
+                                      Listing Provided by {{homedata.agents[0].name}} of {{homedata.agents[0].brokerage.name}} , {{mlsnum}}
+                                       </div>
+                                    <!-- <div class="col-9">{{mlsnum}}</div> -->
                                 </div>
-                                 <div class="row">
+                                 <!-- <div class="row">
                                     <div class="col-3">Brokerage</div>
-                                    <div class="col-9">RE/MAX HALLMARK FIRST GROUP REALTY LTD., BROKERAGE</div>
-                                </div>
+                                    <div class="col-9">{{homedata.agents[0].name}},{{homedata.agents[0].brokerage.name}}</div>
+                                </div> -->
                             </div>
-                        </div> -->
+            </div>
           </div>
           <!-- <div class="col-12 col-md-4">
                         <div class="part2 shadow p-3">
@@ -795,6 +827,9 @@ export default {
     },
     fullPath() {
       return window.location.href;
+    },
+     mlsnum(){
+        return this.$route.params.mls;
     },
     username() {
       return this.$store.state.user.first_name || "";

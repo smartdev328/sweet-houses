@@ -650,7 +650,7 @@ export default {
          font-weight: 600;
      }
      .page1 .flex-revers-sm{
-         flex-direction: row;
+         flex-direction: row !important;
      }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
@@ -723,7 +723,7 @@ export default {
         font-size: 32px;
     }
      .page1 .flex-revers-sm{
-         flex-direction: column-reverse;
+         flex-direction: column-reverse !important;
      }
     }
 

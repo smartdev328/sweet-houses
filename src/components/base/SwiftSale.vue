@@ -158,7 +158,7 @@ When listing traditionally, market conditions and results will vary</p>
         </div>
 
         <div class="mmy-2 my-md-5 item3">
-            <div class="row align-items-center">
+            <div class="row align-items-center ">
                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
@@ -180,15 +180,15 @@ choose) within days </li>
                     </ul>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6 d-flex flex-row-reverse">
+                <div class="col-12 col-md-6 d-flex ">
                 <div class="image">
-                        <img src="../../assets/image/homepage/Component 79 – 1.svg" class="w-100 h-100" alt="">
+                        <img src="../../assets/image/Component97-2.png" class="w-100 h-100" alt="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="my-2 my-md-5 item4">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-row-reverse">
                 <div class="col-12 col-md-6 d-flex">
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 90 – 1.svg" class="w-100 h-100" alt="">
@@ -246,7 +246,7 @@ day - like a traditional listing/selling process.</li>
             </div>
         </div>
         <div class="my-2 my-md-5 item6">
-            <div class="row align-items-center">
+            <div class="row align-items-center flex-row-reverse">
                 <div class="col-12 col-md-6 d-flex">
                      <div class="image">
                         <img  src="../../assets/image/homepage/Component 85 – 1.svg" class="w-100 h-100" alt="">
@@ -548,7 +548,7 @@ export default {
               
     }
     .page2 .flex-row-reverse{
-        flex-direction: row;
+        flex-direction: row !important;
     }
 
     @media only screen and (max-width: 600px){
@@ -616,7 +616,7 @@ export default {
         font-size: 32px;
     }
      .page2 .flex-row-reverse{
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
     }
     }
 

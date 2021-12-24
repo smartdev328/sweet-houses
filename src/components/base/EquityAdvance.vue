@@ -424,7 +424,7 @@ export default {
     }
 
     .page3 .flex-row-reverse{
-        flex-direction: row;
+        flex-direction: row !important;
     }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
@@ -478,7 +478,7 @@ export default {
         font-size: 14px;
     }
     .page3 .flex-row-reverse{
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
     }
     }
 
