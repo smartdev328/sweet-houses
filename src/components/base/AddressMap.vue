@@ -10,7 +10,7 @@
             map-type-id="terrain"
             draggable=false
             :options="options"
-            style="width: 100%; height: 50vh"
+            style="width: 100%; height: 360px"
             >
             <GmapMarker
                 :position="{lat:this.lat, lng:this.lon}"

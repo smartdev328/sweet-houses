@@ -6,7 +6,7 @@
           <p>See this home's photos and sale price</p>
           <p>Local laws require you to sign up to see sold details</p>
           <b-button v-b-modal="'my-modal'" @click="SignUp()" class="btn"
-            >Sign Up</b-button
+            >Sign up</b-button
           >
         </div>
       </div>
@@ -315,7 +315,7 @@ export default {
       });
     },
     SignUp() {
-      this.$emite("SignUp");
+      this.$emit("SignUp");
     },
     openhomedetails(){
       let mls = this.homedata.mlsNumber;
@@ -324,8 +324,14 @@ export default {
         let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
       }else{
-          let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
-        window.open(routeData.href, '_blank');
+          if(this.isLoggedIn){
+            let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+          }else{
+            console.log('000')
+            this.SignUp();
+          }
+          
         
       }
     }

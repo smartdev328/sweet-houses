@@ -429,15 +429,7 @@
             </div>
 
 
-<div class="my-5 disclaimer-content">
-                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
-                 <p class="Roboto-Regular" v-if="MainboardId == 21">
-                     Copyright 2021 by the REALTORS® Association of Edmonton. All Rights Reserved.<code><br></code>
-                     The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
-                     Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
 
-                 </p>
-            </div>
           </div>
 
 
@@ -588,21 +580,36 @@ later</p>
                         </div> -->
 
 
-            <!-- <div class="item12 my-2 py-3">
+            <div class="item12 my-2 py-3">
                             <div class="item1">
                                 <p class="text-color-1  Roboto-Medium">Listing Brokerage</p>
                             </div>
                             <div class="item2 Roboto-Regular">
                                 <div class="row">
-                                    <div class="col-3">MLS &#174; Listing </div>
-                                    <div class="col-9">{{mlsnum}}</div>
+                                    <div class="col-12">
+                                        Listing Provided by {{homedata.agents[0].name}} of {{homedata.agents[0].brokerage.name}} , {{mlsnum}}
+                                         </div>
+                                    <!-- <div class="col-9">{{mlsnum}}</div> -->
                                 </div>
-                                 <div class="row">
+                                 <!-- <div class="row">
                                     <div class="col-3">Brokerage</div>
-                                    <div class="col-9">RE/MAX HALLMARK FIRST GROUP REALTY LTD., BROKERAGE</div>
-                                </div>
+                                    <div class="col-9">{{homedata.agents[0].name}},{{homedata.agents[0].brokerage.name}}</div>
+                                </div> -->
                             </div>
-            </div> -->
+            </div>
+            <div class="my-5 disclaimer-content">
+                <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
+                 <p class="Roboto-Regular" v-if="MainboardId == 21">
+                    Copyright 2022 by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
+The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.<code><br></code>
+Days on Site and market statistics values are calculated by Sweetly Real Estate Inc based on values provided in the REALTORS® Association of Edmonton listing data feed.<code><br></code>
+Mortgage values are calculated by Sweetly Real Estate Inc and are provided for estimate purposes only.<code><br></code>
+The Sweetly Estimate is calculated by Sweetly Real Estate Inc and is provided as a general estimate only.<code><br></code>
+Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
+
+                 </p>
+            </div>
+                </div>
           <!-- <div class="col-12 col-md-4">
                         <div class="part2 shadow p-3">
                             <div class="item1">
@@ -658,7 +665,7 @@ later</p>
  </b-modal>
          
       </div>
-    </div>
+
   </div>
 </template>
 <script>
