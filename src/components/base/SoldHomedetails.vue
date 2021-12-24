@@ -250,7 +250,36 @@
                 </div>
               </div>
             </div>
-            <div v-if="homedata.history.length > 0">
+
+        <div class="item9">
+            <div
+                class="
+                  item9a
+                  new
+                  my-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
+                  <p class="mb-0">{{formatdatehistory(homedata.listDate)}}</p>
+                    <p class="mb-0" >{{gettime(homedata.soldDate)}}</p>
+                    
+                    </div>
+                <div class="col-6 col-md-5">
+                  <p class="mb-0 Roboto-Medium" v-if="isLoggedIn && homedata.soldPrice">Sold for ${{ homedata.soldPrice.toLocaleString("ja-JP") }}</p>
+                   <p class="mb-0 Roboto-Medium" v-if="!isLoggedIn && homedata.soldPrice">Sold for $xxx,xxx
+                     
+                   </p>
+                </div>
+                <div class="image col-3">
+                </div>
+              </div>
+        </div>
+         
+
+            <div v-if="homedata.history.length > 0" class="item9">
                <div
                 class="
                   item9a
@@ -268,7 +297,7 @@
                     <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
                     </div>
                 <div class="col-6 col-md-5">
-                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">Listed for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
+                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">Sold for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
                 </div>
                 <div class="image col-3">
                   <!-- <img
