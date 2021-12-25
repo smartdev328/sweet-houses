@@ -199,7 +199,7 @@ export default {
       }
       },
       registerGauth(id_token,access_token){
-        this.$store.dispatch('registerGauth',{auth_token:id_token,access_token:access_token}).then((res) =>{
+        this.$store.dispatch('registerGauth',{id_token:id_token,access_token:access_token}).then((res) =>{
             Swal.fire({
                   title: 'success!',
                   text: 'Success..! you are login',
