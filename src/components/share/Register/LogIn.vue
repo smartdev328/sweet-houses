@@ -28,6 +28,7 @@
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
+              
               <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;" class="position-absolute">{{
                   msg.password
                 }}</span>
@@ -38,6 +39,7 @@
                     >{{ error.msg }}</span
                   >
                 </div>
+                <p class="fpass pt-2 Roboto-Medium" @click="Openforgetcode()">Forgot your password?</p>
               <div class="passinput">
                   <span v-if="FieldType === 'password'"  @click="switchVisibility">Show</span>
               <span v-else  @click="switchVisibility">Hide</span>
@@ -55,7 +57,7 @@
               </span>
               </div> -->
             
-              <div class="element3 align-items-baseline">
+              <div class="element3 align-items-baseline mb-3">
                 <p class="font-robot text-color-2 mr-2">Don't have a profile yet? </p>
                 <button @click="xloginOsignup">
                 Join now
@@ -86,6 +88,9 @@ export default {
         }
     },
     methods:{
+      Openforgetcode(){
+        this.$emit("Openforgetcode")
+      },
         xloginOsignup(){
             this.$emit('xloginOsignup')
         },
@@ -204,5 +209,12 @@ export default {
 }
 </script>
 <style scoped>
-
+.fpass{
+  color: #FFB600;
+  font-size: 18px;
+  cursor: pointer;
+}
+.fpass:hover{
+  text-decoration: underline;
+}
 </style>

@@ -56,7 +56,7 @@
                     >{{ error.msg }}</span
                   >
                 </div>
-              <div class="passinput">
+              <div class="passinput2">
                   <span v-if="FieldType === 'password'"  @click="switchVisibility">Show</span>
               <span v-else  @click="switchVisibility">Hide</span>
               </div>

@@ -373,7 +373,15 @@ body{
   }
   .modal-body .passinput span{
     position: absolute;
-    bottom: 12px;
+    bottom: 46px;
+    right: 20px;
+    cursor: pointer;
+    color: #00A19B;
+    font-family: "Roboto", sans-serif;
+  }
+  .modal-body .passinput2 span{
+    position: absolute;
+    bottom: 14px;
     right: 20px;
     cursor: pointer;
     color: #00A19B;

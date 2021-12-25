@@ -118,6 +118,9 @@ Vue.component('personalized-valuationedit',require('./components/base/ConfirmAdd
 Vue.component('sign-up',require('./components/share/Register/SignUp.vue').default)
 Vue.component('log-in',require('./components/share/Register/LogIn.vue').default)
 Vue.component('verification-code',require('./components/share/Register/VerificationCode.vue').default)
+Vue.component('forget-code',require('./components/share/Register/ForgetCode.vue').default)
+
+
 Vue.component('address-map',require('./components/base/AddressMap.vue').default)
 Vue.component('show-map',require('./components/base/ShowMap.vue').default)
 Vue.component('show-list',require('./components/base/ShowList.vue').default)

@@ -223,6 +223,7 @@
             <log-in
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
+              @Openforgetcode="Openforgetcode"
             ></log-in>
           </b-modal>
           <b-button
@@ -257,6 +258,20 @@
               @closeVerify="closeVerify"
             ></verification-code>
           </b-modal>
+
+        <b-modal
+            id="forget-code"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <forget-code
+              @closepopup="closepopup"
+            ></forget-code>
+          </b-modal>
+          
         </div>
       </div>
     </nav>
@@ -311,6 +326,14 @@ export default {
     XsignupOlogin() {
       this.$bvModal.hide("my-modal");
       this.$bvModal.show("my-modallogin");
+    },
+    Openforgetcode(){
+      this.$bvModal.hide("my-modallogin");
+      this.$bvModal.show("forget-code");
+
+    },
+    closepopup(){
+      this.$bvModal.hide("forget-code");
     },
     logout() {
       this.$store.dispatch("logout");
