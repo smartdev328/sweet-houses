@@ -585,10 +585,14 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         formData: new FormData(),
         currentHome:null,
         similerbymsl:null,
-        estimatevalue:null
+        estimatevalue:null,
+        localemail:null
 
     },
     mutations:{
+        setlocalemail(state,payload){
+            state.localemail = payload
+        },
         SET_CURRENT_AGENT(state,payload){
             state.agent = state.agents.filter(agent => {
                 return agent.name.replace(/\s+/g, '-') === payload
@@ -716,19 +720,19 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
               })
             })
         },
-        register({commit , state}, input){
+        register({commit }, input){
             return new Promise((resolve, reject) => {
               commit('auth_request')
               axios({url: 'auth/register/', data: input, method: 'POST' })
               .then(resp => {
-                const token = resp.data.token
-                const user = resp.data.user
-                localStorage.setItem('token', token)
-                localStorage.setItem('user', user)
-                axios.defaults.headers.common['Authorization'] = token
-                commit('auth_success', token)
-                state.user = resp.data.user
-                state.token = resp.data.token
+                // const token = resp.data.token
+                // const user = resp.data.user
+                // localStorage.setItem('token', token)
+                // localStorage.setItem('user', user)
+                // axios.defaults.headers.common['Authorization'] = token
+                // commit('auth_success', token)
+                // state.user = resp.data.user
+                // state.token = resp.data.token
                 resolve(resp)
               })
               .catch(err => {

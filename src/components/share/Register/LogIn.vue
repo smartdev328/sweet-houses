@@ -166,8 +166,8 @@ export default {
       }
           
       },
-        registerGauth(id_token){
-        this.$store.dispatch('registerGauth',{auth_token:id_token}).then((res) =>{
+        registerGauth(id_token,access_token){
+        this.$store.dispatch('registerGauth',{auth_token:id_token,access_token:access_token}).then((res) =>{
             Swal.fire({
                   title: 'success!',
                   text: 'Success..! you are login',
@@ -188,7 +188,8 @@ export default {
       async logingoogle() {
       const googleUser = await this.$gAuth.signIn();
         let id_token = googleUser.getAuthResponse().id_token;
-      this.registerGauth(id_token)
+        let access_token = googleUser.getAuthResponse().access_token;
+      this.registerGauth(id_token,access_token)
       // console.log("googleUser", googleUser);
       // console.log("getId", googleUser.getId());
       // console.log("getBaseProfile", googleUser.getBasicProfile());

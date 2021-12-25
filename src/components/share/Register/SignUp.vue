@@ -107,6 +107,9 @@ export default {
         XsignupOlogin(){
             this.$emit('XsignupOlogin')
         },
+        OpenVerifycode(){
+          this.$emit('OpenVerifycode')
+        },
         switchVisibility(){
         this.FieldType = this.FieldType === 'password' ? 'text':'password'
       },
@@ -158,19 +161,28 @@ export default {
                 );
               this.$store
           .dispatch("register", this.formData).then((res)=>{
-             Swal.fire({
-                  title: 'success!',
-                  text: 'Success..! you are login',
-                  icon: 'success',
-                  confirmButtonText: 'Ok',
-                  timer: 1500
-                })
-                  return res;
-              }).then(()=>{
-                this.loading = false; 
+            this.loading = false; 
                 this.$emit('hidesignupmodal');
+            let localemail = res.data.email
+           this.$store.commit('setlocalemail',localemail)
+            this.OpenVerifycode()
+
+            //  Swal.fire({
+            //       title: 'success!',
+            //       text: 'Success..! you are login',
+            //       icon: 'success',
+            //       confirmButtonText: 'Ok',
+            //       timer: 1500
+            //     })
+                  return res;
+              }
+              )
+              // .then(()=>{
+              //   // this.loading = false; 
+              //   // this.$emit('hidesignupmodal');
                 
-              }) .catch((err) => {
+              // }) 
+              .catch((err) => {
                 this.loading = false
                 this.formData = new FormData(),
               this.errors = err.response.data.errors || {};
@@ -186,8 +198,8 @@ export default {
           })  
       }
       },
-      registerGauth(id_token){
-        this.$store.dispatch('registerGauth',{auth_token:id_token}).then((res) =>{
+      registerGauth(id_token,access_token){
+        this.$store.dispatch('registerGauth',{auth_token:id_token,access_token:access_token}).then((res) =>{
             Swal.fire({
                   title: 'success!',
                   text: 'Success..! you are login',
@@ -212,7 +224,8 @@ export default {
       // console.log("getBaseProfile", googleUser.getBasicProfile());
      console.log("getAuthResponse", googleUser.getAuthResponse());
       let id_token = googleUser.getAuthResponse().id_token;
-      this.registerGauth(id_token)
+      let access_token = googleUser.getAuthResponse().access_token;
+      this.registerGauth(id_token,access_token)
       
       // console.log(
       //   "getAuthResponse$G",

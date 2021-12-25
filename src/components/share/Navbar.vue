@@ -207,6 +207,7 @@
           </li>
         </ul>
         <div class="">
+          <!-- <button @click="openverify">verify</button> -->
           <button
             v-b-modal="'my-modallogin'"
             class="bg-transparent border-0 mr-3"
@@ -240,7 +241,21 @@
             <sign-up
               @hidesignupmodal="hidesignupmodal"
               @XsignupOlogin="XsignupOlogin"
+              @OpenVerifycode="OpenVerifycode"
             ></sign-up>
+          </b-modal>
+          <b-modal
+            id="verify-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <verification-code
+              @OpenVerifycode="OpenVerifycode"
+              @closeVerify="closeVerify"
+            ></verification-code>
           </b-modal>
         </div>
       </div>
@@ -270,12 +285,21 @@ export default {
     },
   },
   methods: {
+    openverify(){
+      this.$bvModal.show("verify-modal");
+    },
     switchVisibility() {
       this.FieldType = this.FieldType === "password" ? "text" : "password";
     },
     hidesignupmodal() {
       console.log("success");
       this.$bvModal.hide("my-modal");
+    },
+    OpenVerifycode(){
+      this.$bvModal.show("verify-modal");
+    },
+    closeVerify(){
+      this.$bvModal.hide("verify-modal");
     },
     hideloginmodal() {
       this.$bvModal.hide("my-modallogin");
