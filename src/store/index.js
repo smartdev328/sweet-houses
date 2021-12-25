@@ -698,6 +698,29 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         ScrollTop(){
             window.scrollTo(0,0);
         },
+        
+        verifycodeactive({commit , state} , input){
+            return new Promise((resolve, reject) => {
+              commit('auth_request')
+              axios({url: 'auth/activate_by_code/', data: input, method: 'POST' })
+              .then(resp => {
+               const token = resp.data.token
+                const user = resp.data.user
+                localStorage.setItem('token', token)
+                localStorage.setItem('user', user)
+                axios.defaults.headers.common['Authorization'] = token
+                commit('auth_success', token,user)
+                state.user = resp.data.user
+                state.token = resp.data.token
+                resolve(resp)
+              })
+              .catch(err => {
+              commit('auth_error')
+              localStorage.removeItem('token')
+                reject(err)
+              })
+            })
+        },
         login({commit , state} , input){
             return new Promise((resolve, reject) => {
               commit('auth_request')

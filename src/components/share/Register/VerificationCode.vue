@@ -26,11 +26,13 @@
     </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 export default {
     data(){
         return{
             verifycode:null,
-            loading:null
+            loading:null,
+            formData: new FormData(),
         }
     },
     computed:{
@@ -40,6 +42,49 @@ export default {
     },
     methods:{
         verify(){
+            this.loading = true
+            let input={
+                verify_code : this.verifycode,
+                email:this.localemail
+            }
+              Object.entries(input).forEach((entry) =>
+                this.formData.append(entry[0], entry[1])
+                );
+                  this.$store
+          .dispatch("verifycodeactive", this.formData).then((res)=>{
+                //   this.$notify({
+                //   group: 'foo',
+                //   type: "success",
+                //   text: 'Success..! you are login',
+                //   duration:6000,
+                //   speed:500
+                // });
+                  Swal.fire({
+                  title: 'success!',
+                  text: 'Success, you are logged in!',
+                  icon: 'success',
+                  confirmButtonText: 'Ok',
+                  showConfirmButton:false,
+                  timer: 1500
+                })
+                  this.loading = false
+                  this.closeVerify();
+                  
+                  return res;
+              }) .catch((err) => {
+                this.formData =  new FormData(),
+                // this.$notify({
+                //   group: 'foo',
+                //   type: "error",
+                //   text: err.response.data.msg,
+                //   duration:6000,
+                //   speed:500
+                // });
+               this.errors = err.response.data.errors || {};
+                this.loading = false
+          });
+            
+  
 
         },
         closeVerify(){
