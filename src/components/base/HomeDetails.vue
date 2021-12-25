@@ -649,8 +649,9 @@
                             </div>
                             <div class="item2 Roboto-Regular">
                                 <div class="row">
-                                    <div class="col-12">
-                                      Listing Provided by {{homedata.agents[0].name}} of {{homedata.agents[0].brokerage.name}} , {{mlsnum}}
+                                    <div class="col-12" v-for="agent in homedata.agents" :key="agent.id">
+                                      <p>Listing Provided by {{agent.name}} OF {{agent.brokerage.name}} , {{mlsnum}}</p>
+                                      
                                        </div>
                                     <!-- <div class="col-9">{{mlsnum}}</div> -->
                                 </div>
