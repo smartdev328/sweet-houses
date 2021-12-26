@@ -147,15 +147,7 @@ export default {
       SignUp(){
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
             this.loading = true
-              this.$http
-      .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.input.email}`
-          
-          ).then((res) =>{
-             if (res.data) {
-              this.emailisvalid = true;
-              this.loadvalid = false;
-            this.emailnotmaildmsg = "";
+
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
@@ -189,13 +181,7 @@ export default {
                 this.loading = false
                 console.log(err.response.data)
           });
-            } else {
-              this.loading = false;
-             this.loadvalid = false;
-             this.emailisvalid = false;
-            this.emailnotmaildmsg = "please enter a real email";
-           }
-          })  
+            
       }
       },
       registerGauth(id_token,access_token){
