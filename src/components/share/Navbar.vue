@@ -126,20 +126,20 @@
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
             </router-link>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
+              <a class="dropdown-item btn" @click="editselectedmenu('Sweet_Sale')"
                 >Sweet Sale</a
               >
-              <a class="dropdown-item btn" @click="opensweetsale('Swift_Sale')"
+              <a class="dropdown-item btn" @click="editselectedmenu('Swift_Sale')"
                 >Swift Sale</a
               >
               <a
                 class="dropdown-item btn"
-                @click="opensweetsale('Equity_Advance')"
+                @click="editselectedmenu('Equity_Advance')"
                 >Equity Advance</a
               >
               <a
                 class="dropdown-item btn"
-                @click="opensweetsale('Traditional_Real_Estate')"
+                @click="editselectedmenu('Traditional_Real_Estate')"
                 >Traditional Real Estate</a
               >
             </div>
@@ -207,7 +207,7 @@
           </li>
         </ul>
         <div class="">
-          <!-- <button @click="openverify">verify</button> -->
+          <!-- <button @click="openresetpassword">verify</button> -->
           <button
             v-b-modal="'my-modallogin'"
             class="bg-transparent border-0 mr-3"
@@ -269,7 +269,21 @@
           >
             <forget-code
               @closepopup="closepopup"
+              @Xopenresetpasswprd="Xopenresetpasswprd"
             ></forget-code>
+          </b-modal>
+           <b-modal
+            id="reset-password"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <reset-password
+              @closepopup="closepopup"
+              @Xresetpassword="Xresetpassword"
+            ></reset-password>
           </b-modal>
           
         </div>
@@ -335,6 +349,13 @@ export default {
     closepopup(){
       this.$bvModal.hide("forget-code");
     },
+    Xopenresetpasswprd(){
+      this.$bvModal.hide("forget-code");
+      this.$bvModal.show('reset-password');
+    },
+    Xresetpassword(){
+      this.$bvModal.hide('reset-password');
+    },
     logout() {
       this.$store.dispatch("logout");
       // this.$notify({
@@ -355,7 +376,13 @@ export default {
       // this.$router.push({name:'Home'})
       eventBus.$emit("fireMethod", tab);
     },
+    editselectedmenu(tab){
+      this.$store.commit('editSelectedMenu',tab)
+    },
   },
+  created(){
+ 
+  }
 };
 </script>
 <style scoped>

@@ -373,7 +373,7 @@ body{
   }
   .modal-body .passinput span{
     position: absolute;
-    bottom: 46px;
+    bottom: 48px;
     right: 20px;
     cursor: pointer;
     color: #00A19B;

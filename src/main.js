@@ -90,9 +90,9 @@ Vue.component('sale-question',require('./components/share/SaleQuestion.vue').def
 
 
 
-const SweetSale = () => import('./components/base/SweetSale.vue');
-Vue.component('sweet-sale', SweetSale)
 
+
+// Vue.component('sweet-sale',require('./components/base/SweetSale.vue').default)
 const SwiftSale = () => import('./components/base/SwiftSale.vue');
 Vue.component('swift-sale', SwiftSale)
 
@@ -119,6 +119,8 @@ Vue.component('sign-up',require('./components/share/Register/SignUp.vue').defaul
 Vue.component('log-in',require('./components/share/Register/LogIn.vue').default)
 Vue.component('verification-code',require('./components/share/Register/VerificationCode.vue').default)
 Vue.component('forget-code',require('./components/share/Register/ForgetCode.vue').default)
+Vue.component('reset-password',require('./components/share/Register/ResetPassword.vue').default)
+
 
 
 Vue.component('address-map',require('./components/base/AddressMap.vue').default)

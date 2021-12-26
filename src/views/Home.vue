@@ -14,28 +14,28 @@
         <div class="item1 mt-4 mb-3">
           <div class="item1a">
             <button
-              @click="selected_menu = 'Sweet_Sale'"
+              @click="editselectedmenu('Sweet_Sale')"
               :style="getclass('Sweet_Sale')"
             >
               Sweet Sale
               <div :style="getline('Sweet_Sale')"></div>
             </button>
             <button
-              @click="selected_menu = 'Swift_Sale'"
+              @click="editselectedmenu('Swift_Sale')"
               :style="getclass('Swift_Sale')"
             >
               Swift Sale
               <div :style="getline('Swift_Sale')"></div>
             </button>
             <button
-              @click="selected_menu = 'Equity_Advance'"
+              @click="editselectedmenu('Equity_Advance')"
               :style="getclass('Equity_Advance')"
             >
               Equity Advance
               <div :style="getline('Equity_Advance')"></div>
             </button>
             <button
-              @click="selected_menu = 'Traditional_Real_Estate'"
+              @click="editselectedmenu('Traditional_Real_Estate')"
               :style="getclass('Traditional_Real_Estate')"
             >
               Traditional Real Estate
@@ -121,8 +121,8 @@
       </div>
     </header>
     <div class="my-5">
-      <div class="container" :class="tab_visible('Sweet_Sale')" v-if="readyStateComplete"> 
-        <sweet-sale></sweet-sale>
+      <div class="container" :class="tab_visible('Sweet_Sale')" > 
+        <SweetSale></SweetSale>
       </div>
       <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
         <swift-sale></swift-sale>
@@ -138,14 +138,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 // @ is an alias to /src
 import { eventBus } from "../main";
-
+import SweetSale from '../components/base/SweetSale.vue'
 export default {
   name: "Home",
   data() {
     return {
-      selected_menu: "Sweet_Sale",
       input: {
         homeaddress: null,
       },
@@ -164,14 +164,20 @@ export default {
   },
 
   computed: {
+    ...mapState(["selected_menu"]),
      checkhasstreet(){
     return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
     },
     location(){
       return this.placeResultData.formatted_address
-    }
+    },
+    // selected_menu(){
+    //   return this.selected_menu;
+    // },
   },
-  components: {},
+  components: {
+    SweetSale
+  },
   watch: {},
   methods: {
     yourFunctinNameToBeCall(){
@@ -201,13 +207,10 @@ export default {
         return "d-none";
       }
     },
-
-    opensweetsale(tab) {
-      this.tab_visible(tab);
-      this.getline(tab);
-      this.getclass(tab);
-      console.log(tab)
+    editselectedmenu(tab){
+      this.$store.commit('editSelectedMenu',tab)
     },
+
     checkform() {
       this.errmsg = "";
       this.searchResults = [];
