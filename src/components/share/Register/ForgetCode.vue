@@ -8,16 +8,27 @@
                 <!-- <p>{{localemail}}</p> -->
                 <!-- <p class="mb-0">Verification code</p> -->
             </div>
+            <form @submit.prevent="Sendcode"
+            >
             <div class="form-group item3 text-center">
-                <input type="email" class="form-control form-control-lg" v-model="verifycode">
-                <!-- <p>Resend code</p> -->
+                <input type="email" class="form-control form-control-lg" required placeholder="email" v-model="email">
+                 <div v-for="(error, index) in errors" :key="index" class="">
+                  <span
+                    v-if="error.param === 'email'"
+                    style="color: #fc5353;"
+                    >{{ error.msg }}</span
+                  >
+                </div>
             </div><br>
-            <div>
-            <button type="submit" class="btn btn-primary w-100 submit-btn" @click="Sendcode()">
+            <div class="mb-3">
+            <button type="submit" class="btn btn-primary w-100 submit-btn" :disabled="!email">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Send Code</span>
                </button>
             </div>
+            
+            </form>
+            
 
         </div>
     </div>
@@ -26,8 +37,10 @@
 export default {
     data(){
         return{
-            verifycode:null,
-            loading:null
+            email:null,
+            loading:null,
+            formData: new FormData(),
+            errors: {},
         }
     },
     computed:{
@@ -37,10 +50,35 @@ export default {
     },
     methods:{
         Sendcode(){
-
+            this.loading = true;
+           this.errors = {};
+            let input={
+                email:this.email
+            }
+            Object.entries(input).forEach((entry) =>
+                this.formData.append(entry[0], entry[1])
+        );
+        this.$http.post('auth/pass_reset_send_code/',this.formData).then((res) =>{
+                this.formData = new FormData();
+                this.loading = false;
+                this.Xopenresetpasswprd();
+                this.$store.commit('setlocalemail',res.data.email)
+                console.log(res)
+            }) .catch((err) => {
+                this.formData =  new FormData(),
+                this.loading = false;
+                // this.$notify({
+                //   group: 'foo',
+                //   type: "error",
+                //   text: err.response.data.msg,
+                //   duration:6000,
+                //   speed:500
+                // });
+               this.errors = err.response.data.errors || {};
+          });
         },
-        closepopup(){
-            this.$emit('closepopup');
+        Xopenresetpasswprd(){
+            this.$emit('Xopenresetpasswprd');
         }
     }
 }

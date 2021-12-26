@@ -27,12 +27,12 @@
                 </div>
             </div>
             <div class="form-group position-relative">
-              <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
+              <input :type="FieldType" class="form-control form-control-lg" @input="checkPass" v-model="input.password"  placeholder="Password">
               
-              <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;" class="position-absolute">{{
+              <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;">{{
                   msg.password
                 }}</span>
-                <div v-for="(error, index) in this.errors" :key="index" class="position-absolute">
+                <div v-for="(error, index) in this.errors" :key="index">
                   <span
                     v-if="error.param === 'password'"
                     style="color: #fc5353;"
@@ -96,6 +96,18 @@ export default {
         },
         switchVisibility(){
         this.FieldType = this.FieldType === 'password' ? 'text':'password'
+      },
+      checkPass(){
+        if(this.msg.password){
+          this.msg.password = ""
+        }
+        if(this.errors){
+          this.errors.map((item) =>{
+            if (item.param === 'password'){
+              return item.msg = ""
+            }
+          })
+        }
       },
       ckeckform(){
           this.msg={};
