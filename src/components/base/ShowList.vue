@@ -86,6 +86,7 @@
             <sign-up
               @hidesignupmodal="hidesignupmodal"
               @XsignupOlogin="XsignupOlogin"
+              @OpenVerifycode="OpenVerifycode"
             ></sign-up>
           </b-modal>
           <b-modal
@@ -97,7 +98,34 @@
             <log-in
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
+               @Openforgetcode="Openforgetcode"
             ></log-in>
+          </b-modal>
+                <b-modal
+            id="verify-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <verification-code
+              @OpenVerifycode="OpenVerifycode"
+              @closeVerify="closeVerify"
+            ></verification-code>
+          </b-modal>
+
+        <b-modal
+            id="forget-code"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <forget-code
+              @closepopup="closepopup"
+            ></forget-code>
           </b-modal>
     </div>
 </template>
@@ -309,6 +337,20 @@ computed:{
     xloginOsignup() {
       this.$refs['my-modallogin'].hide();
       this.$refs['my-modal'].show();
+    },
+    OpenVerifycode(){
+      this.$bvModal.show("verify-modal");
+    },
+    closeVerify(){
+      this.$bvModal.hide("verify-modal");
+    },
+     Openforgetcode(){
+      this.$bvModal.hide("my-modallogin");
+      this.$bvModal.show("forget-code");
+
+    },
+    closepopup(){
+      this.$bvModal.hide("forget-code");
     },
     },
     created(){
