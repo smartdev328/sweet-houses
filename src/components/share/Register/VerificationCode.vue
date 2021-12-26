@@ -54,7 +54,8 @@ export default {
     },
     methods:{
         verify(){
-            this.loading = true
+            this.loading = true;
+            this.errors = {};
             let input={
                 verify_code : this.verifycode,
                 email:this.localemail
@@ -98,6 +99,7 @@ export default {
 
         },
         resendCode(){
+            this.errors = {};
             this.resendloading = true
             let input = {
                 email :this.localemail
