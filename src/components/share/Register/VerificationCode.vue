@@ -13,10 +13,17 @@
             </div>
             <div class="form-group item3 text-center">
                 <input type="text" class="form-control form-control-lg" v-model="verifycode">
+                 <div v-for="(error, index) in errors" :key="index" class="position-absolute">
+                  <span
+                    v-if="error.param === 'verify_code'"
+                    style="color: #fc5353;"
+                    >{{ error.msg }}</span
+                  >
+                </div><br>
                 <p>Resend code</p>
             </div><br>
             <div>
-            <button type="submit" class="btn btn-primary w-100 submit-btn" @click="verify()">
+            <button type="submit" class="btn btn-primary w-100 submit-btn" :disabled="!verifycode" @click="verify()">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Verify</span>
                </button>
@@ -33,6 +40,7 @@ export default {
             verifycode:null,
             loading:null,
             formData: new FormData(),
+            errors: {},
         }
     },
     computed:{
