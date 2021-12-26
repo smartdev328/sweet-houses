@@ -13,15 +13,16 @@
             </div>
             <div class="form-group item3 text-center">
                 <input type="text" class="form-control form-control-lg" v-model="verifycode">
-                 <div v-for="(error, index) in errors" :key="index" class="position-absolute">
+                    <p @click="resendCode()">Resend code  <b-spinner v-if="resendloading" style="width:18px;height:18px" variant="warning" label="Spinning"></b-spinner></p>
+                 <div v-for="(error, index) in errors" :key="index" class="">
                   <span
                     v-if="error.param === 'verify_code'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div><br>
-                <p>Resend code</p>
-            </div><br>
+                </div>
+            
+            </div>
             <div>
             <button type="submit" class="btn btn-primary w-100 submit-btn" :disabled="!verifycode" @click="verify()">
                 <span v-if="loading">Loading ...</span>
@@ -41,6 +42,9 @@ export default {
             loading:null,
             formData: new FormData(),
             errors: {},
+            resendstatus:false,
+            status:null,
+            resendloading:null
         }
     },
     computed:{
@@ -77,7 +81,7 @@ export default {
                 })
                   this.loading = false
                   this.closeVerify();
-                  
+                  this.formData = new FormData();
                   return res;
               }) .catch((err) => {
                 this.formData =  new FormData(),
@@ -91,9 +95,34 @@ export default {
                this.errors = err.response.data.errors || {};
                 this.loading = false
           });
-            
-  
 
+        },
+        resendCode(){
+            this.resendloading = true
+            let input = {
+                email :this.localemail
+            }
+              Object.entries(input).forEach((entry) =>
+                this.formData.append(entry[0], entry[1])
+                );
+            this.$http.post('auth/resend_code/',this.formData).then((res) =>{
+                this.formData = new FormData();
+                this.status = res.data.status
+                this.resendstatus = true;
+                this.resendloading = false;
+                console.log(res)
+            }) .catch((err) => {
+                this.formData =  new FormData(),
+                this.resendloading = false;
+                // this.$notify({
+                //   group: 'foo',
+                //   type: "error",
+                //   text: err.response.data.msg,
+                //   duration:6000,
+                //   speed:500
+                // });
+               this.errors = err.response.data.errors || {};
+          });
         },
         closeVerify(){
             this.$emit('closeVerify');

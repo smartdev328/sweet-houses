@@ -680,6 +680,7 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
             <sign-up
               @hidesignupmodal="hidesignupmodal"
               @XsignupOlogin="XsignupOlogin"
+              @OpenVerifycode="OpenVerifycode"
             ></sign-up>
           </b-modal>
           <b-modal
@@ -691,8 +692,35 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
             <log-in
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
+              @Openforgetcode="Openforgetcode"
             ></log-in>
  </b-modal>
+   <b-modal
+            id="verify-modal"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <verification-code
+              @OpenVerifycode="OpenVerifycode"
+              @closeVerify="closeVerify"
+            ></verification-code>
+          </b-modal>
+
+        <b-modal
+            id="forget-code"
+            header-bg-variant="white"
+            body-bg-variant="white"
+            footer-bg-variant="white"
+            
+            no-close-on-backdrop
+          >
+            <forget-code
+              @closepopup="closepopup"
+            ></forget-code>
+          </b-modal>
          
       </div>
 
@@ -858,6 +886,20 @@ export default {
     },
     getnumber(item) {
       return item * 1;
+    },
+     OpenVerifycode(){
+      this.$bvModal.show("verify-modal");
+    },
+    closeVerify(){
+      this.$bvModal.hide("verify-modal");
+    },
+      Openforgetcode(){
+      this.$bvModal.hide("my-modallogin");
+      this.$bvModal.show("forget-code");
+
+    },
+    closepopup(){
+      this.$bvModal.hide("forget-code");
     },
   
   },
