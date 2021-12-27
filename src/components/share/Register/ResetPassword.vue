@@ -11,23 +11,31 @@
             <form @submit.prevent="Confirm"
             >
             <div class="form-group item3 text-center">
-                <input type="text" class="form-control form-control-lg" placeholder="Verification code" v-model="verifycode">
-                    <p @click="resendCode()">Resend code  <b-spinner v-if="resendloading" style="width:18px;height:18px" variant="warning" label="Spinning"></b-spinner></p>
+                <input type="text" class="form-control form-control-lg" @input="checkcode" placeholder="Verification code" v-model="verifycode">
+                  
                  <div v-for="(error, index) in errors" :key="index" class="">
                   <span
-                    v-if="error.param === 'verify_code'"
+                    v-if="error.param === 'pass_reset_code'"
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
                 </div>
-            
+                  <p @click="resendCode()">Resend code  <b-spinner v-if="resendloading" style="width:18px;height:18px" variant="warning" label="Spinning"></b-spinner></p>
+                     <div v-for="(error, index) in errors" :key="index" class="">
+                  <span
+                    v-if="error.param === 'email'"
+                    style="color: #fc5353;"
+                    >{{ error.msg }}</span
+                  >
+                </div>
             </div>
             <div class="form-group item3 text-center">
-                <input type="password" class="form-control form-control-lg" required placeholder="Create new password" v-model="password">
-            </div><br>
+                <input type="password" class="form-control form-control-lg" required placeholder="Create new password" @input="checkpass" v-model="password">
+            </div>
               <div class="form-group item3 text-center">
-                <input type="password" class="form-control form-control-lg" required placeholder="Confirm password" v-model="confirmpassword">
-            </div><br>
+                <input type="password" class="form-control form-control-lg" required placeholder="Confirm password" @input="checkpass" v-model="confirmpassword">
+            </div>
+            <p v-if="msgconfirm" style="color: #fc5353;">{{msgconfirm}}</p>
             <div class="mb-3">
             <button type="submit" class="btn btn-primary w-100 submit-btn" :disabled="!verifycode">
                 <span v-if="loading">Loading ...</span>
@@ -53,7 +61,8 @@ export default {
             password:null,
             confirmpassword:null,
             verifycode:null,
-            resendloading:null
+            resendloading:null,
+            msgconfirm:""
         }
     },
     computed:{
@@ -62,8 +71,38 @@ export default {
         }
     },
     methods:{
+        checkpass(){
+            if(this.msgconfirm){
+                this.msgconfirm = ""
+            }
+        },
+        checkcode(){
+            if(this.errors){
+          this.errors.map((item) =>{
+            if (item.param === 'pass_reset_code'){
+              return item.msg = ""
+            }
+             if (item.param === 'email'){
+              return item.msg = ""
+            }
+          })
+        }
+        },
+        checkpassword(){
+            this.msgconfirm = ""
+            if(this.password && this.confirmpassword){
+                if(this.password === this.confirmpassword){
+                    return true
+                }else{
+                    this.msgconfirm =" password must be equal"
+                }
+            }else{
+                this.msgconfirm =" password must be equal"
+            }
+        },
         Confirm(){
-            this.loading = true;
+            if(this.checkpassword()){
+                 this.loading = true;
            this.errors = {};
             let input={
                 email:this.localemail,
@@ -98,6 +137,8 @@ export default {
                 // });
                this.errors = err.response.data.errors || {};
           });
+            }
+           
         },
         resendCode(){
             this.resendloading = true;
