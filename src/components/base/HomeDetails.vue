@@ -121,10 +121,8 @@
                     <ShareNetwork
                       class="btn Roboto-Medium font-weight-bold"
                       network="email"
-                      
+                      :url="'Listing Details : '+fullPath"
                       title="Your friend or relative has shared a listing with you"
-                      description="Listing Details"
-                      :url="fullPath"
                       @open="open"
                       @change="change"
                       @close="close"
