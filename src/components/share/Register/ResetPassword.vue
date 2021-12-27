@@ -57,7 +57,7 @@ export default {
             email:null,
             loading:null,
             formData: new FormData(),
-            errors: {},
+            errors: [],
             password:null,
             confirmpassword:null,
             verifycode:null,
@@ -77,7 +77,7 @@ export default {
             }
         },
         checkcode(){
-            if(this.errors){
+            if(this.errors.length){
           this.errors.map((item) =>{
             if (item.param === 'pass_reset_code'){
               return item.msg = ""

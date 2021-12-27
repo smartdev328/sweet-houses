@@ -12,7 +12,7 @@
                 <p class="mb-0">Verification code</p>
             </div>
             <div class="form-group item3 text-center">
-                <input type="text" class="form-control form-control-lg" v-model="verifycode">
+                <input type="text" class="form-control form-control-lg" @input="checkerrcode" v-model="verifycode">
                     <p @click="resendCode()">Resend code  <b-spinner v-if="resendloading" style="width:18px;height:18px" variant="warning" label="Spinning"></b-spinner></p>
                  <div v-for="(error, index) in errors" :key="index" class="">
                   <span
@@ -41,7 +41,7 @@ export default {
             verifycode:null,
             loading:null,
             formData: new FormData(),
-            errors: {},
+            errors: [],
             resendstatus:false,
             status:null,
             resendloading:null
@@ -53,6 +53,15 @@ export default {
         }
     },
     methods:{
+        checkerrcode(){
+            if(this.errors.length){
+                this.errors.map((item) =>{
+            if (item.param === 'verify_code'){
+              return item.msg = ""
+            }
+          })
+            }
+        },
         verify(){
             this.loading = true;
             this.errors = {};

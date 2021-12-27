@@ -81,7 +81,7 @@ export default {
           email:"",
           password:""
         },
-        errors: {},
+        errors: [],
         msg: {},
         loading:false,
         isLogin:false,
@@ -101,7 +101,7 @@ export default {
         if(this.msg.password){
           this.msg.password = ""
         }
-        if(this.errors){
+        if(this.errors.length){
           this.errors.map((item) =>{
             if (item.param === 'password'){
               return item.msg = ""

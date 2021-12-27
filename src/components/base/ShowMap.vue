@@ -139,7 +139,8 @@ showLocation(evt){
         this.lng = this.longitude;
       },
       bounds :function(newval,oldval){
-        console.log(oldval)
+        console.log( "SW =>" + oldval.getSouthWest().lat() + "...." + oldval.getSouthWest().lng())
+        console.log( "NE =>" + oldval.getNorthEast().lat() + "...." + oldval.getNorthEast().lng())
         this.Pa = newval.Pa
         this.yb = newval.yb
 

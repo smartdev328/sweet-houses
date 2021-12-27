@@ -11,7 +11,7 @@
             <form @submit.prevent="Sendcode"
             >
             <div class="form-group item3 text-center">
-                <input type="email" class="form-control form-control-lg" required placeholder="email" v-model="email">
+                <input type="email" class="form-control form-control-lg" @input="cheackmail" required placeholder="email" v-model="email">
                  <div v-for="(error, index) in errors" :key="index" class="">
                   <span
                     v-if="error.param === 'email'"
@@ -40,7 +40,7 @@ export default {
             email:null,
             loading:null,
             formData: new FormData(),
-            errors: {},
+            errors: [],
         }
     },
     computed:{
@@ -49,6 +49,15 @@ export default {
         }
     },
     methods:{
+        cheackmail(){
+               if(this.errors.length){
+          this.errors.map((item) =>{
+             if (item.param === 'email'){
+              return item.msg = ""
+            }
+          })
+        }
+        },
         Sendcode(){
             this.loading = true;
            this.errors = {};
