@@ -5,6 +5,7 @@
 
   <GmapMap
   ref="map"
+  @click="checkClick"
   @zoom_changed="changezoom($event)"
   :center="{lat:this.currentLocation.lat, lng:this.currentLocation.lng}"
   :zoom=zoom
@@ -20,10 +21,14 @@
                             :opened="infoWindowOpened"
                             @closeclick="handleInfoWindowClose"
                         >
-                            <div class="info-window" style="padding:16px">
+                            <div class="info-window">
                                
-                                  <div class="name" >use case</div>
-                                 
+                                  <div v-if="activehomelad" class="text-center">
+                                    <b-spinner variant="success" style="width: 3rem; height: 3rem;" label="Spinning"></b-spinner>
+                                  </div>
+                                 <div v-if="Object.keys(activehome).length">
+                                    <homemap-sale :homedata="activehome" :boardId="boardId"></homemap-sale>
+                                 </div>
                                     
                                    
                             </div>
@@ -129,13 +134,8 @@ export default {
         coordinates: null,
         currentLocation : { lat : 0, lng : 0},
         zoom:15,
-        Pa:null,
-        yb:null,
         bounds:{
-        Pa:{
-        },
-        yb:{
-        }
+    
         },
         options:{
         zoomControl: true,
@@ -172,10 +172,19 @@ export default {
         }
     },
   
-    activehome:[],
-    infoWindowPosition:{lat:0,lng:0}
+    activehome:{},
+    infoWindowPosition:{lat:0,lng:0},
+    activehomelad:null
     }),
     methods:{
+      checkClick(){
+        if(this.infoWindowOpened){
+          console.log("00000")
+          this.infoWindowOpened = false,
+          this.activehome = {}
+        }
+        
+      },
       getpos(item){
         return {
           lat:item.latitude * 1,
@@ -196,10 +205,20 @@ export default {
         this.infoWindowOpened=false
       },
        handleMarkerClicked(m) {
-            this.activehome = m;
-            this.infoWindowPosition.lat = m.map.latitude * 1;
-            this.infoWindowPosition.lng = m.map.longitude * 1
-            this.infoWindowOpened = true;
+         this.infoWindowPosition.lat = m.map.latitude * 1;
+        this.infoWindowPosition.lng = m.map.longitude * 1
+        this.infoWindowOpened = true;
+         this.activehomelad = true;
+         this.boardId =m.boardId; 
+        let mlsNumber = m.mlsNumber;
+        this.$http.get(`listings/find_home/?mlsNumber=${mlsNumber}&boardId=${this.boardId}`).then((res) =>{
+          this.activehome = res.data
+          this.activehomelad = false;
+        }).catch(()=>{
+          this.activehomelad = false;
+        })
+           
+            
         },
         submit(){
             this.$emit('submit')
@@ -209,6 +228,7 @@ export default {
       },
          changezoom($event){
         this.zoom = $event;
+        this.find_listings_forSale();
       },
       find_listings_forSaleMain(){
         this.paginationpage = 1;
@@ -245,6 +265,7 @@ export default {
     },
     changebounds:function($event){
       this.bounds = $event
+      this.find_listings_forSale();
     },
       getCoords() {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -288,9 +309,7 @@ export default {
         this.sw_lat = oldval.getSouthWest().lat(),
         this.ne_long = oldval.getNorthEast().lng(),
         this.ne_lat = oldval.getNorthEast().lat()
-        this.Pa = newval.Pa
-        this.yb = newval.yb
-        this.find_listings_forSale();
+        
 
       }
     },
@@ -416,6 +435,9 @@ border-radius: 8px;
 }
 input:focus{
      outline: none;
+}
+.info-window{
+  width: 27em;
 }
 @media only screen and (max-width: 600px){
   .group{

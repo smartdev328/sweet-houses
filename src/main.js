@@ -133,6 +133,8 @@ Vue.component('card-report',CardReport);
 const CardList = () => import('./components/share/CardList.vue');
 Vue.component('card-list',CardList);
 
+const HomemapSale = () => import('./components/share/HomemapSale');
+Vue.component('homemap-sale',HomemapSale);
 
 const ErrModel = () => import('./components/share/ErrModel.vue');
 Vue.component('err-model',ErrModel);
