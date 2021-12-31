@@ -192,6 +192,7 @@ export default {
     currentcount: 1,
     sold: false,
     saved: null,
+    slideimgs:[]
     //  settings:{
     //         "dots": false,
     //         "focusOnSelect": true,
@@ -263,6 +264,7 @@ export default {
         return false;
       }
     },
+    
   },
   methods: {
     gettime(item) {
@@ -281,7 +283,10 @@ export default {
       this.$http.post("homes/get_image_by_mls/", input).then((res) => {
        const element = this.$refs.slidepic;
         element.classList.remove("ac1");
-      
+        this.slideimgs.push({
+          imageurl:res.data.image,
+          c_count:this.currentcount += 1
+        })
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
         this.currentcount += 1;
