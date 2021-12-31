@@ -412,7 +412,7 @@ export default {
       showfilter: false,
       rangevalue: 0,
       range: [1, 4500],
-      selected_menu: "show-list",
+      selected_menu: "show-map",
       centerLatitude: 0,
       centerLongitude: 0,
       latitude: 0,
@@ -538,12 +538,6 @@ export default {
       } else {
         return "d-none";
       }
-    },
-
-    showLocation(evt) {
-      this.latitude = parseFloat(evt.latLng.lat());
-      this.longitude = parseFloat(evt.latLng.lat());
-      console.log(evt.latLng.lat());
     },
     openforsale() {
       if (this.selected_menu == "show-list") {

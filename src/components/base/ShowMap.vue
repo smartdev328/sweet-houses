@@ -14,13 +14,27 @@
   style="width: 100%; height: 90vh"
   class="mt-n5"
 >
+  <gmap-info-window
+                            :options="infoWindowOptions"
+                            :position="infoWindowPosition"
+                            :opened="infoWindowOpened"
+                            @closeclick="handleInfoWindowClose"
+                        >
+                            <div class="info-window" style="padding:16px">
+                               
+                                  <div class="name" >use case</div>
+                                 
+                                    
+                                   
+                            </div>
+                        </gmap-info-window> 
+<GmapCluster  :styles="clusterStyles" :zoom-on-click="true">
   <GmapMarker
-    :position="{lat:this.latitude, lng:this.longitude}"
-    :clickable="true"
-    :draggable="false"
-    @drag="showLocation"
-    @click="center=m.position"
-  />
+    v-for="m in listings" :key="m.id" :position="getpos(m.map)" :clickable="true"  @click="handleMarkerClicked(m)"
+      :draggable="false"  :icon="icon"  :label="{'text':numFormatter(m.listPrice) , 'color': 'white' , 'size':'28' }"
+  > 
+  </GmapMarker>
+    </GmapCluster>
 </GmapMap>
     </div>
      <div class="group">
@@ -60,11 +74,52 @@
 </template>
 <script>
 import { gmapApi } from 'vue2-google-maps';
+import GmapCluster from "vue2-google-maps/dist/components/cluster";
+
 export default {
     computed:{
         google: gmapApi,
+    //   infoWindowPosition() {
+    //     return {
+    //         lat: 0,
+    //         lng: 0
+    //     };
+    // },
     },
+    components:{GmapCluster},
     data:() => ({
+      visInfoWindow:false,
+      markers: [
+        {
+        
+            position: {
+              lat: 32.246744456213257,
+              lng: 35.36345035612393,
+              
+            },
+            label:'2M'
+          },
+        {
+        
+            position: {
+              lat: 31.246744456213257,
+              lng: 36.36345035612393,
+              
+            },
+            label:'sold'
+          },
+           {
+            position: {
+              lat: 31.000000, 
+              lng: 36.000035612393,
+              
+            },
+            label:"2000"
+          }],
+          shape: {
+            coords: [10, 10, 10, 15, 15, 15, 15, 10],
+            type: 'poly'
+          },
         centerLatitude: 0,
         centerLongitude: 0,
         latitude:0,
@@ -73,7 +128,7 @@ export default {
         map: {},
         coordinates: null,
         currentLocation : { lat : 0, lng : 0},
-        zoom:12,
+        zoom:15,
         Pa:null,
         yb:null,
         bounds:{
@@ -89,10 +144,63 @@ export default {
         streetViewControl: true,
         rotateControl: true,
         fullscreenControl: true,
-        disableDefaultUi: false
+        disableDefaultUi: false,
+        minzoom:8
         },
+        listings:[],
+        sw_long:null,
+        sw_lat:null,
+        ne_long:null,
+        ne_lat:null,
+        total:0,
+        icon:require('../../assets/image/icon/Recsale.svg'),
+         clusterStyles: [
+        {
+          url: require('../../assets/image/icon/circluster.svg'),
+           textColor: "#fff",
+          height: 50,
+          width: 50,
+          textSize: 20
+  
+        }
+      ],
+      infoWindowOpened:false,
+       infoWindowOptions: { 
+        pixelOffset: {
+            width: 0,
+            height: -35
+        }
+    },
+  
+    activehome:[],
+    infoWindowPosition:{lat:0,lng:0}
     }),
     methods:{
+      getpos(item){
+        return {
+          lat:item.latitude * 1,
+          lng: item.longitude * 1
+        }
+      },
+      numFormatter(num) {
+    if(num > 999 && num < 1000000){
+        return (num/1000).toFixed(0) + 'K'; // convert to K for number from > 1000 < 1 million 
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(0) + 'M'; // convert to M for number from > 1 million 
+    }else if(num < 900){
+        return num; // if value < 1000, nothing to do
+    }
+},
+      handleInfoWindowClose(){
+        this.activehome = {}
+        this.infoWindowOpened=false
+      },
+       handleMarkerClicked(m) {
+            this.activehome = m;
+            this.infoWindowPosition.lat = m.map.latitude * 1;
+            this.infoWindowPosition.lng = m.map.longitude * 1
+            this.infoWindowOpened = true;
+        },
         submit(){
             this.$emit('submit')
         },
@@ -102,11 +210,39 @@ export default {
          changezoom($event){
         this.zoom = $event;
       },
-showLocation(evt){
-        this.latitude = parseFloat(evt.latLng.lat());
-        this.longitude = parseFloat(evt.latLng.lat());
-        console.log(evt.latLng.lat())
-      },
+      find_listings_forSaleMain(){
+        this.paginationpage = 1;
+        this.filerdata =  {name:'Date listed (new to old)',value:'createdOnDesc'};
+        this.find_listings_forSale();
+    },
+    find_listings_forSale(){
+      let sw_long = this.sw_long;
+      let sw_lat = this.sw_lat;
+      let ne_long = this.ne_long;
+      let ne_lat = this.ne_lat;
+        // let sortBy = this.filerdata.value;
+        // let pageNum = this.paginationpage;
+        // this.loading = true ;
+        // let minBeds = this.minBeds;
+        // let minParkingSpaces = this.minParkingSpaces;
+        // let minSqft= this.minSqft;
+        // let maxSqft = this.maxSqft;
+        // let minPrice = this.minPrice;
+        // let maxPrice =this.maxPrice;
+        // let propertyType = this.propertyType;
+        // let style = this.style;
+        // let minBaths = this.minBaths;
+        // let keywords = this.keywords.toString().replace(',',' ');
+        // this.loadedlistingsold = false
+        this.$http.get(`map/get_homes/?type=forsale&sw_long=${sw_long}&sw_lat=${sw_lat}&ne_long=${ne_long}&ne_lat=${ne_lat}`).then((res) =>{
+            this.loading = false 
+            // this.listingsold = res.data
+            this.listings = res.data.listings
+            this.tatal = res.data.count
+             this.loading = false
+             this.loadedlistingsold=true
+        })
+    },
     changebounds:function($event){
       this.bounds = $event
     },
@@ -120,13 +256,19 @@ showLocation(evt){
             };
         
     }, () => {
-        this.notify('error', 'قم بتفعيل تحديد موقعك لتتمكن من الطلب', 'error');
+      // this.zoom=8;
+      // this.currentLocation = {
+      //               lat: 53.702018651928924,
+      //               lng: -113.09359784375
+      //       };
+        //this.notify('error', 'قم بتفعيل تحديد موقعك لتتمكن من الطلب', 'error');
     });
     },
     },
     created(){
         this.getCoords();
         this.changebounds();  
+        this.find_listings_forSale();
     },
     watch: {
       latitude() {
@@ -139,10 +281,16 @@ showLocation(evt){
         this.lng = this.longitude;
       },
       bounds :function(newval,oldval){
+        
         console.log( "SW =>" + oldval.getSouthWest().lat() + "...." + oldval.getSouthWest().lng())
         console.log( "NE =>" + oldval.getNorthEast().lat() + "...." + oldval.getNorthEast().lng())
+        this.sw_long = oldval.getSouthWest().lng(),
+        this.sw_lat = oldval.getSouthWest().lat(),
+        this.ne_long = oldval.getNorthEast().lng(),
+        this.ne_lat = oldval.getNorthEast().lat()
         this.Pa = newval.Pa
         this.yb = newval.yb
+        this.find_listings_forSale();
 
       }
     },
