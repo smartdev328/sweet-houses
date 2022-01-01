@@ -10,7 +10,7 @@
           >
         </div>
       </div>
-        <div>
+        <div v-if="homedata.images.length > 0">
              <VueSlickCarousel v-bind="settings">
             <div
               class="slideimg px-1"
@@ -21,6 +21,14 @@
               <img :src="image" class="w-100 h-100" alt="image" />
             </div>
           </VueSlickCarousel>
+        </div>
+        <div v-else>
+             <img
+        src="../../assets/image/notimg.jpeg"
+        class="card-img-top"
+        alt=""
+        @click="openhomedetails"
+      />
         </div>
       <div class="card-body" @click="openhomedetails">
         <div

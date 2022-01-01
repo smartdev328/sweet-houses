@@ -192,7 +192,7 @@ computed:{
         return this.filteropt.minBaths
     },
     minSqft(){
-        if(this.filteropt.minSqft == null || this.filteropt.maxSqft == 1){
+        if(this.filteropt.minSqft == null || this.filteropt.minSqft == 1){
             return ""
         }else{
         return this.filteropt.minSqft
