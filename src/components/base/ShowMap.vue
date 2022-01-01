@@ -10,6 +10,7 @@
   :center="{lat:this.currentLocation.lat, lng:this.currentLocation.lng}"
   :zoom=zoom
   @bounds_changed="changebounds($event)"
+  @drag="dragmap"
   map-type-id="terrain"
   :options="options"
   style="width: 100%; height: 90vh"
@@ -265,6 +266,10 @@ export default {
     },
     changebounds:function($event){
       this.bounds = $event
+      // this.find_listings_forSale();
+    },
+    dragmap(){
+      console.log("draged")
       this.find_listings_forSale();
     },
       getCoords() {
@@ -438,6 +443,8 @@ input:focus{
 }
 .info-window{
   width: 27em;
+  max-height: 360px;
+  overflow-y: auto;
 }
 @media only screen and (max-width: 600px){
   .group{
