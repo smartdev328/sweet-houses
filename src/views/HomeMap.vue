@@ -389,7 +389,7 @@
     </div>
 
     <div :class="tab_visible('show-map')" class="h-100">
-      <show-map @submit="submitmap"></show-map>
+      <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
       <show-list
@@ -525,6 +525,12 @@ export default {
       if (this.selected_menu == "show-list" && this.typesale == "sold") {
         this.$refs.showlist.find_listings_SoldMain();
       }
+      if (this.selected_menu == "show-map" && this.typesale == "forsale") {
+        this.$refs.showmap.find_listings_forSaleMain();
+      }
+       if (this.selected_menu == "show-map" && this.typesale == "sold") {
+        this.$refs.showmap.find_listings_SoldMain();
+      }
     },
     submitmap() {
       this.selected_menu = "show-list";
@@ -544,11 +550,20 @@ export default {
         this.typesale = "forsale";
         this.$refs.showlist.find_listings_forSaleMain();
       }
+      if (this.selected_menu == "show-map") {
+        this.typesale = "forsale";
+        this.$refs.showmap.find_listings_forSaleMain();
+      }
+
     },
     opensold() {
       if (this.selected_menu == "show-list") {
         this.typesale = "sold";
         this.$refs.showlist.find_listings_SoldMain();
+      }
+      if (this.selected_menu == "show-map") {
+        this.typesale = "sold";
+        this.$refs.showmap.find_listings_SoldMain();
       }
     },
   },
