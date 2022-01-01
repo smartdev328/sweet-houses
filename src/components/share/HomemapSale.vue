@@ -1,5 +1,5 @@
 <template>
-  <div class="card" >
+  <div class="card homemapsale" >
     <div class="position-relative" style="overflow: hidden">
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
         <div class="text-white Roboto-Medium">
@@ -10,7 +10,18 @@
           >
         </div>
       </div>
-
+        <div>
+             <VueSlickCarousel v-bind="settings">
+            <div
+              class="slideimg px-1"
+              v-for="image in homedata.images"
+              :key="image.id"
+            >
+            <!-- <h1>asdcva </h1> -->
+              <img :src="image" class="w-100 h-100" alt="image" />
+            </div>
+          </VueSlickCarousel>
+        </div>
       <div class="card-body" @click="openhomedetails">
         <div
           class="element1 d-flex align-items-baseline justify-content-between"
@@ -113,10 +124,10 @@
 </template>
 <script>
 import moment from "moment";
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// // optional style for arrows & dots
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   props: {
     homedata: {},
@@ -129,47 +140,47 @@ export default {
     currentcount: 1,
     sold: false,
     saved: null,
-    slideimgs:[]
-    //  settings:{
-    //         "dots": false,
-    //         "focusOnSelect": true,
-    //         "infinite": true,
-    //         "speed": 500,
-    //         "slidesToShow": 1,
-    //         "slidesToScroll": 1,
-    //         "touchThreshold": 1,
-    //         "arrows":false,
-    //          "responsive": [
-    //         {
-    //         "breakpoint": 1024,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "infinite": true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 600,
-    //         "settings": {
-    //             "slidesToShow":1,
-    //             "slidesToScroll": 1,
-    //             "initialSlide": 1,
-    //             "arrows":true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 480,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "arrows":true,
-    //         }
-    //         }
-    //     ]
-    //         }
+    slideimgs:[],
+     settings:{
+            "dots": false,
+            "focusOnSelect": true,
+            "infinite": false,
+            "speed": 500,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "touchThreshold": 1,
+            "arrows":true,
+             "responsive": [
+            {
+            "breakpoint": 1024,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "infinite": true,
+            }
+            },
+            {
+            "breakpoint": 600,
+            "settings": {
+                "slidesToShow":1,
+                "slidesToScroll": 1,
+                "initialSlide": 1,
+                "arrows":true,
+            }
+            },
+            {
+            "breakpoint": 480,
+            "settings": {
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "arrows":true,
+            }
+            }
+        ]
+            }
   }),
   components:{
-    
+    VueSlickCarousel
   },
   computed: {
     username() {
@@ -318,6 +329,10 @@ export default {
   padding: 4px 16px;
   border-radius: 16px;
   font-size: 18px;
+}
+.slideimg {
+  /* width: 420px; */
+  height: 200px !important;
 }
 .arrow-dir {
   position: absolute;
