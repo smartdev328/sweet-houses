@@ -10,7 +10,7 @@
   :center="{lat:this.currentLocation.lat, lng:this.currentLocation.lng}"
   :zoom=zoom
   @bounds_changed="changebounds($event)"
-  @drag="dragmap"
+  @dragend="dropmap"
   map-type-id="terrain"
   :options="options"
   style="width: 100%; height: 90vh"
@@ -36,7 +36,7 @@
                         </gmap-info-window> 
 <GmapCluster  :styles="clusterStyles" :zoom-on-click="true">
   <GmapMarker
-    v-for="m in listings" :key="m.id" :position="getpos(m.map)" :clickable="true"  @click="handleMarkerClicked(m)"
+    v-for="m in listings" :key="m.id" :position="getpos(m.map)" :clickable="true"  :animation="0" @click="handleMarkerClicked(m)"
       :draggable="false"  :icon="icon"  :label="{'text':numFormatter(m.listPrice) , 'color': 'white' , 'size':'28' }"
   > 
   </GmapMarker>
@@ -133,8 +133,8 @@ export default {
         marker: {},
         map: {},
         coordinates: null,
-        currentLocation : { lat : 0, lng : 0},
-        zoom:15,
+        currentLocation : { lat : 53.177338695404515, lng : -114.0218292213596},
+        zoom:9,
         bounds:{
     
         },
@@ -146,13 +146,15 @@ export default {
         rotateControl: true,
         fullscreenControl: true,
         disableDefaultUi: false,
-        minzoom:8
+        scrollwheel:true,
+        minZoom:8,
+        maxZoom:15,
         },
         listings:[],
-        sw_long:null,
-        sw_lat:null,
-        ne_long:null,
-        ne_lat:null,
+        sw_long:-116.49237975846899,
+        sw_lat:52.90900663926977,
+        ne_long:-111.55127868425024,
+        ne_lat:53.44400274231901,
         total:0,
         icon:require('../../assets/image/icon/Recsale.svg'),
          clusterStyles: [
@@ -266,10 +268,8 @@ export default {
     },
     changebounds:function($event){
       this.bounds = $event
-      // this.find_listings_forSale();
     },
-    dragmap(){
-      console.log("draged")
+    dropmap(){
       this.find_listings_forSale();
     },
       getCoords() {
@@ -307,9 +307,8 @@ export default {
         this.lng = this.longitude;
       },
       bounds :function(newval,oldval){
-        
-        console.log( "SW =>" + oldval.getSouthWest().lat() + "...." + oldval.getSouthWest().lng())
-        console.log( "NE =>" + oldval.getNorthEast().lat() + "...." + oldval.getNorthEast().lng())
+       // console.log( "SW =>" + oldval.getSouthWest().lat() + "...." + oldval.getSouthWest().lng())
+        //console.log( "NE =>" + oldval.getNorthEast().lat() + "...." + oldval.getNorthEast().lng())
         this.sw_long = oldval.getSouthWest().lng(),
         this.sw_lat = oldval.getSouthWest().lat(),
         this.ne_long = oldval.getNorthEast().lng(),
