@@ -11,36 +11,40 @@
           >
         </div>
       </div>
-        <div v-if="homedata.images.length > 0">
+        <div v-if="homedata.images.length > 0" >
              <VueSlickCarousel v-bind="settings">
             <div
               class="slideimg px-1 position-relative"
-              v-for="(image,index) in homedata.images"
+              v-for="(image,index) in homedata.images.slice(0, 8)"
               :key="image.id"
             >
             <!-- <h1>asdcva </h1> -->
-              <img :src="image" v-if="index < 7" class="w-100 h-100" alt="image" />
-                    <img
-        src="../../assets/image/notimg.jpeg"
-        class="card-img-top"
-        alt=""
+              <img :src="image" v-if="index < 7" class="w-100 h-100" alt="image"  @click="openhomedetails"/>
+                 <div
+             class="overlay d-flex align-items-center justify-content-center"
+              v-if="index > 6 && homedata.images.length > 6"
+            >
+              <div class="text-white Roboto-Medium pointer" @click="openhomedetails">
+                <img src="../../assets/image/download.svg" alt="" />
+                <p>View all {{ homedata.images.length }} images</p>
+              </div>
+            </div>
 
-      v-else
-      />
+
     <div class="counter"   v-if="homedata.images.length > 1" >
         {{ index  + 1}}/{{ homedata.images.length }}
       </div>
             </div>
           </VueSlickCarousel>
         </div>
-        <div v-else>
-             <img
+         <img
+        v-else
         src="../../assets/image/notimg.jpeg"
         class="card-img-top"
         alt=""
         @click="openhomedetails"
       />
-        </div>
+    
         
       <div class="card-body" @click="openhomedetails">
         <div
