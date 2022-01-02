@@ -34,6 +34,7 @@
             <div v-if="Object.keys(activehome).length">
               <homemap-sale
                 :homedata="activehome"
+                :type="type"
                 :boardId="boardId"
               ></homemap-sale>
             </div>
@@ -245,7 +246,7 @@ export default {
       disableDefaultUi: false,
       scrollwheel: true,
       minZoom: 8,
-      maxZoom: 15,
+      maxZoom: 18,
     },
     listings: [],
     sw_long: -116.49237975846899,
@@ -269,7 +270,6 @@ export default {
   methods: {
     checkClick() {
       if (this.infoWindowOpened) {
-        console.log("00000");
         (this.infoWindowOpened = false), (this.activehome = {});
       }
     },
@@ -280,13 +280,19 @@ export default {
       };
     },
     numFormatter(num) {
-      if (num > 999 && num < 1000000) {
+      if(this.type == 'sold'){
+        return 'Sold'
+      }
+      if(this.type !== 'sold'){
+        if (num > 999 && num < 1000000) {
         return (num / 1000).toFixed(0) + "K"; // convert to K for number from > 1000 < 1 million
       } else if (num > 1000000) {
         return (num / 1000000).toFixed(0) + "M"; // convert to M for number from > 1 million
       } else if (num < 900) {
         return num; // if value < 1000, nothing to do
       }
+      }
+      
     },
     handleInfoWindowClose() {
       this.activehome = {};
