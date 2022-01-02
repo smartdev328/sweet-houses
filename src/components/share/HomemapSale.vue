@@ -28,7 +28,7 @@
       v-else
       />
     <div class="counter"   v-if="homedata.images.length > 1" >
-        {{ index }}/{{ homedata.images.length }}
+        {{ index  + 1}}/{{ homedata.images.length }}
       </div>
             </div>
           </VueSlickCarousel>
@@ -79,7 +79,7 @@
           <p class="Roboto-Regular" v-if="type == 'forsale' && !createdToday">
             {{ gettime(homedata.listDate) }}
           </p>
-          <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
+          <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday && homedata.soldDate">
             {{ gettime(homedata.soldDate) }}
           </p>
         </div>
