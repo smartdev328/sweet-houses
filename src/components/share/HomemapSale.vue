@@ -94,18 +94,18 @@
               >+{{ homedata.details.numBedroomsPlus }}</span
             >
           </span>
-          <span class="mr-3 ml-1 color2 Roboto-Regular">bd</span>
+          <span class="mr-2 ml-1 color2 Roboto-Regular">bd</span>
           <span class="text-color-1 Roboto-Regular"
             >{{ homedata.details.numBathrooms }}
             <span v-if="homedata.details.numBathroomsPlus > 0"
               >+{{ homedata.details.numBathroomsPlus }}</span
             ></span
           >
-          <span class="mr-3 ml-1 color2 Roboto-Regular">ba</span>
+          <span class="mr-2 ml-1 color2 Roboto-Regular">ba</span>
           <span class="text-color-1 Roboto-Medium">{{
             homedata.details.sqft
           }}</span>
-          <span class="mr-3 ml-1 color2 Roboto-Medium">sqft</span>
+          <span class="mr-2 ml-1 color2 Roboto-Medium">sqft</span>
           <span class="text-color-1 Roboto-Regular">{{
             homedata.details.numParkingSpaces
           }}</span>
