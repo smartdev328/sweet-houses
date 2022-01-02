@@ -584,8 +584,8 @@ input:focus {
 }
 .info-window {
   width: 27em;
-  max-height: 360px;
-  overflow-y: auto;
+  /* max-height: 360px;
+  overflow-y: auto; */
 }
 @media only screen and (max-width: 600px) {
   .group {
