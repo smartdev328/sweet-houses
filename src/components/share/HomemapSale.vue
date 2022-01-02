@@ -1,4 +1,5 @@
 <template>
+<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="card homemapsale" >
     <div class="position-relative" style="overflow: hidden">
       <div class="overlay" v-if="type == 'sold' && !isLoggedIn">
@@ -13,12 +14,22 @@
         <div v-if="homedata.images.length > 0">
              <VueSlickCarousel v-bind="settings">
             <div
-              class="slideimg px-1"
-              v-for="image in homedata.images"
+              class="slideimg px-1 position-relative"
+              v-for="(image,index) in homedata.images"
               :key="image.id"
             >
             <!-- <h1>asdcva </h1> -->
-              <img :src="image" class="w-100 h-100" alt="image" />
+              <img :src="image" v-if="index < 7" class="w-100 h-100" alt="image" />
+                    <img
+        src="../../assets/image/notimg.jpeg"
+        class="card-img-top"
+        alt=""
+
+      v-else
+      />
+    <div class="counter"   v-if="homedata.images.length > 1" >
+        {{ index }}/{{ homedata.images.length }}
+      </div>
             </div>
           </VueSlickCarousel>
         </div>
@@ -30,6 +41,7 @@
         @click="openhomedetails"
       />
         </div>
+        
       <div class="card-body" @click="openhomedetails">
         <div
           class="element1 d-flex align-items-baseline justify-content-between"
@@ -262,7 +274,7 @@ export default {
 .card .overlay {
   background: rgb(0 0 0 / 72%);
   width: 100%;
-  height: 240px;
+  height: 220px;
   z-index: 999;
   position: absolute;
   border-radius: 12px;
@@ -275,7 +287,7 @@ export default {
 .card .overlay p:nth-child(2) {
   font-size: 16px;
 }
-.card .overlay + img {
+.card .overlay  img {
   filter: blur(10px);
 }
 .card .overlay button {
@@ -330,7 +342,7 @@ export default {
 }
 .counter {
   position: absolute;
-  top: 43%;
+  top: 80%;
   right: 10px;
   color: #fff;
   background: #434242a3;
@@ -340,7 +352,7 @@ export default {
 }
 .slideimg {
   /* width: 420px; */
-  height: 200px !important;
+  height: 220px !important;
 }
 .arrow-dir {
   position: absolute;

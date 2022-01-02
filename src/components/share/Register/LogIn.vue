@@ -14,7 +14,7 @@
             </p>
             <form @submit.prevent="login">
                 <div class="form-group">
-              <input type="email" class="form-control form-control-lg"  v-model="input.email" placeholder="Email">
+              <input type="email" class="form-control form-control-lg" @input="cheackmail" v-model="input.email" placeholder="Email">
               <span v-if="msg.email" style="color: #fc5353;">{{
                   msg.email
                 }}</span>
@@ -109,6 +109,22 @@ export default {
           })
         }
       },
+      cheackmail(){
+         if(this.msg.email){
+           this.msg.email = ""
+            
+         }
+        if(this.errors.length){
+          console.log("asdasd")
+          this.errors.map((item) =>{
+            if (item.param === 'email'){
+              return item.msg = ""
+            }
+          })
+        }
+
+      },
+
       ckeckform(){
           this.msg={};
           this.errors=[]
