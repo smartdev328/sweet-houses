@@ -17,6 +17,8 @@
         style="width: 100%; height: 90vh"
         class="mt-n5"
       >
+      <!-- <gmap-polygon  v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000' , fillColor:'#FF0000'}">
+         </gmap-polygon> -->
         <gmap-info-window
           :options="infoWindowOptions"
           :position="infoWindowPosition"
@@ -66,7 +68,7 @@
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
           <div style="height:4px;width:34px;background:#FFB600"></div>
           <p class="Roboto-Regular text-white text-center">
-            Get an Sweetly Estimate on the value of your home
+            Get a Sweetly Estimate on the value of your home
           </p>
         </div>
         <div class="px-2 px-md-3">
@@ -84,8 +86,9 @@
               />
             </div>
             <div class="item1b3">
-              <button class="">Get Estimate</button>
+              <button class="" @click="getresult()">Get Estimate</button>
             </div>
+          
           </div>
         </div>
 
@@ -110,10 +113,12 @@
 <script>
 import { gmapApi } from "vue2-google-maps";
 import GmapCluster from "vue2-google-maps/dist/components/cluster";
+import { mapState } from 'vuex';
 
 export default {
   props: ["type"],
   computed: {
+    ...mapState(["city"]),
     google: gmapApi,
     icon() {
       if (this.type == "sold") {
@@ -191,40 +196,10 @@ export default {
     style() {
       return this.filteropt.style;
     },
-    keywords() {
-      return this.filteropt.keywords;
-    },
   },
-  components: { GmapCluster },
+  components: { GmapCluster ,  },
   data: () => ({
     visInfoWindow: false,
-    markers: [
-      {
-        position: {
-          lat: 32.246744456213257,
-          lng: 35.36345035612393,
-        },
-        label: "2M",
-      },
-      {
-        position: {
-          lat: 31.246744456213257,
-          lng: 36.36345035612393,
-        },
-        label: "sold",
-      },
-      {
-        position: {
-          lat: 31.0,
-          lng: 36.000035612393,
-        },
-        label: "2000",
-      },
-    ],
-    shape: {
-      coords: [10, 10, 10, 15, 15, 15, 15, 10],
-      type: "poly",
-    },
     centerLatitude: 0,
     centerLongitude: 0,
     latitude: 0,
@@ -253,6 +228,13 @@ export default {
     sw_lat: 52.90900663926977,
     ne_long: -111.55127868425024,
     ne_lat: 53.44400274231901,
+      path: [
+            {lat: 51.42661449707482, lng: -115.64208984374999 },
+            {lat: 51.42661449707482, lng:-111.8408203125 },
+            {lat: 53.61857936489517, lng: -111.8408203125 },
+            {lat: 53.61857936489517, lng: -115.64208984374999},
+            {lat: 51.42661449707482, lng: -115.64208984374999 }
+],
     total: 0,
 
     infoWindowOpened: false,
@@ -344,6 +326,8 @@ export default {
       this.find_listings_Sold();
     },
     find_listings_forSale() {
+      let city = this.city;
+      console.log(this.city)
       let sw_long = this.sw_long;
       let sw_lat = this.sw_lat;
       let ne_long = this.ne_long;
@@ -360,11 +344,11 @@ export default {
       let propertyType = this.propertyType;
       let style = this.style;
       let minBaths = this.minBaths;
-      let keywords = this.keywords.toString().replace(",", " ");
+      
       // this.loadedlistingsold = false
       this.$http
         .get(
-          `map/get_homes/?type=forsale&sw_long=${sw_long}&sw_lat=${sw_lat}&ne_long=${ne_long}&ne_lat=${ne_lat}&minBeds=${minBeds}&minBaths=${minBaths}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&keywords=${keywords}`
+          `map/get_homes/?type=forsale&sw_long=${sw_long}&sw_lat=${sw_lat}&ne_long=${ne_long}&ne_lat=${ne_lat}&minBeds=${minBeds}&minBaths=${minBaths}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&city=${city}`
         )
         .then((res) => {
           this.loading = false;
@@ -376,6 +360,7 @@ export default {
         });
     },
     find_listings_Sold() {
+       let city = this.city;
       let sw_long = this.sw_long;
       let sw_lat = this.sw_lat;
       let ne_long = this.ne_long;
@@ -389,11 +374,10 @@ export default {
       let propertyType = this.propertyType;
       let style = this.style;
       let minBaths = this.minBaths;
-      let keywords = this.keywords.toString().replace(",", " ");
       // this.loadedlistingsold = false
       this.$http
         .get(
-          `map/get_homes/?type=sold&sw_long=${sw_long}&sw_lat=${sw_lat}&ne_long=${ne_long}&ne_lat=${ne_lat}&minBeds=${minBeds}&minBaths=${minBaths}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&keywords=${keywords}`
+          `map/get_homes/?type=sold&sw_long=${sw_long}&sw_lat=${sw_lat}&ne_long=${ne_long}&ne_lat=${ne_lat}&minBeds=${minBeds}&minBaths=${minBaths}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&city=${city}`
         )
         .then((res) => {
           this.loading = false;
@@ -408,7 +392,16 @@ export default {
       this.bounds = $event;
     },
     dropmap() {
-      this.find_listings_forSale();
+     this.findlistingsevent()
+      
+    },
+    findlistingsevent(){
+ if(this.type == "forsale"){
+        this.find_listings_forSale();
+      }
+      else{
+        this.find_listings_Sold();
+      }
     },
     getCoords() {
       navigator.geolocation.getCurrentPosition(
@@ -430,6 +423,18 @@ export default {
         }
       );
     },
+    updateaddressdata(data){
+      if(data){
+        this.currentLocation = {
+        lat:data.latitude,
+        lng:data.longitude
+      }
+      }
+       this.findlistingsevent()
+
+      
+      console.log(data)
+    }
   },
   created() {
     this.getCoords();
@@ -446,12 +451,14 @@ export default {
       this.lng = this.longitude;
     },
     bounds: function(newval, oldval) {
-      // console.log( "SW =>" + oldval.getSouthWest().lat() + "...." + oldval.getSouthWest().lng())
-      //console.log( "NE =>" + oldval.getNorthEast().lat() + "...." + oldval.getNorthEast().lng())
-      (this.sw_long = oldval.getSouthWest().lng()),
-        (this.sw_lat = oldval.getSouthWest().lat()),
-        (this.ne_long = oldval.getNorthEast().lng()),
-        (this.ne_lat = oldval.getNorthEast().lat());
+      // if(oldval){
+      //    (this.sw_long = oldval.getSouthWest().lng()),
+      //   (this.sw_lat = oldval.getSouthWest().lat()),
+      //   (this.ne_long = oldval.getNorthEast().lng()),
+      //   (this.ne_lat = oldval.getNorthEast().lat());
+      // }
+      console.log(newval, oldval)
+     
     },
   },
 };

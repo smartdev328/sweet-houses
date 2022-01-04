@@ -41,7 +41,7 @@
                   />
                 </button>
                 <!-- <input type="text" placeholder="Any area or listing " /> -->
-                <multiselect
+                <!-- <multiselect
                   v-model="value2"
                   tag-placeholder="Any area or listing "
                   placeholder="Any area or listing "
@@ -55,8 +55,20 @@
                   :taggable="true"
                   @tag="addTag"
                   @remove="remove"
-                ></multiselect>
-
+                ></multiselect> -->
+                   <vue-google-autocomplete
+                  id="map"
+                    ref="addressmap"
+                  classname="form-control"
+                  placeholder="Enter City,Address"
+                  country="ca"
+                  v-on:placechanged="getAddressData"
+                  v-on:keyup="clearcity"
+                  types="(cities)"
+                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                  :enable-geolocation="true"
+                >
+                </vue-google-autocomplete>
                 <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
@@ -404,9 +416,9 @@
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
 
-import Multiselect from "vue-multiselect";
+// import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap, Multiselect },
+  components: { ShowMap,  },
   data() {
     return {
       showfilter: false,
@@ -475,13 +487,24 @@ export default {
       const result = itemsnumber.items;
       return Array.from(result, (x) => x.toLocaleString("ja-JP"));
     },
-    keywords() {
-      return this.value2.map((word) => word.name);
-    },
   },
   methods: {
     CancelFilter() {
       this.showfilter = false;
+    },
+     getAddressData(addressData) {
+      let city = addressData.locality
+      this.$store.commit("setCity",city)
+      this.$refs.showmap.updateaddressdata(addressData)
+     
+     
+    },
+    clearcity(){
+     if(this.$refs.addressmap.$el._value == ''){
+        let city = ""
+      this.$store.commit("setCity",city)
+      this.$refs.showmap.updateaddressdata()
+       }
     },
     addTag(newTag) {
       const tag = {
@@ -517,7 +540,6 @@ export default {
         (input.minPrice = this.minPrice),
         (input.propertyType = this.propertyType),
         (input.style = this.style);
-      input.keywords = this.keywords;
       this.$store.commit("SAVE_FILTER_OPT", input);
       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
         this.$refs.showlist.find_listings_forSaleMain();
@@ -923,6 +945,11 @@ input:focus {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
+}
+input:focus{
+  outline: none;
+  box-shadow: none;
+  border: 0;
 }
 @media only screen and (max-width: 600px) {
   .searchpage {

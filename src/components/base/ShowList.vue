@@ -130,12 +130,12 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
     props:{homedata:{},type:{default:'forsale'}},
     data(){
         return{
             paginationpage:1,
-            city:'Calgary',
             filerlist:[
               {name:'Date listed (new to old)',value:'createdOnDesc'},
               {name:'Price (low to high)',value:'listPriceAsc'},
@@ -179,6 +179,7 @@ watch:{
     }
 },
 computed:{
+    ...mapState(["city"]),
     filteropt(){
         return this.$store.state.filteroptdata || {}
     },
@@ -227,10 +228,9 @@ computed:{
     style(){
         return this.filteropt.style
     },
-    keywords()
-   {
-       return this.filteropt.keywords
-   },
+    // city(){
+    //   return this.city
+    // },
    MainboardId(){
        if(this.listings){
            return this.listings[0].boardId;
@@ -280,10 +280,10 @@ computed:{
         let propertyType = this.propertyType;
         let style = this.style;
         let minBaths = this.minBaths;
-        let keywords = this.keywords.toString().replace(',',' ');
+        let city = this.city;
         this.loading = true 
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&city=${city}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings
@@ -309,10 +309,10 @@ computed:{
         let maxPrice =this.maxPrice;
         let propertyType = this.propertyType;
         let style = this.style;
+        let city = this.city;
         let minBaths = this.minBaths;
-        let keywords = this.keywords.toString().replace(',',' ');
         this.loadedlistingsold = false
-        this.$http.get(`listings/find_listings/?city=&sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&keywords=${keywords}`).then((res) =>{
+        this.$http.get(`listings/find_listings/?sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&city=${city}`).then((res) =>{
             this.loading = false 
             this.listingsold = res.data
             this.listings = res.data.listings

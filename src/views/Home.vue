@@ -146,11 +146,7 @@ export default {
   name: "Home",
   data() {
     return {
-      input: {
-        homeaddress: null,
-      },
       searchResults: [],
-      service: null,
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
@@ -171,6 +167,13 @@ export default {
     location(){
       return this.placeResultData.formatted_address
     },
+    pathes(){
+      let swlat =  this.placeResultData.geometry.viewport.zb.g;
+      let swlng =  this.placeResultData.geometry.viewport.Qa.g;
+       let nelat =  this.placeResultData.geometry.viewport.zb.h;
+       let nelng =  this.placeResultData.geometry.viewport.Qa.h;
+      return ({swlat,swlng, nelat , nelng});
+    }
     // selected_menu(){
     //   return this.selected_menu;
     // },
@@ -189,6 +192,7 @@ export default {
       this.latlong.lat = addressData.latitude
       this.latlong.lng = addressData.longitude
       this.place_choosed = true;
+      console.log(placeResultData)
     },
     getclass(tab) {
       if (tab == this.selected_menu) {

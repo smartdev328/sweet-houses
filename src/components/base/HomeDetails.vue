@@ -12,18 +12,18 @@
           </div>
           <div class="item1b text-center">
             <p class="text-color-1 mb-0 Roboto-Medium">
-            <span v-if="homedata.address.unitNumber">{{homedata.address.unitNumber}}</span>
-             <span v-if="homedata.address.streetNumber"> {{ homedata.address.streetNumber  }}</span>
-             <span v-if="homedata.address.streetName ">{{ homedata.address.streetName  }}</span>
-               <span v-if="homedata.address.streetSuffix  ">{{ homedata.address.streetSuffix   }}</span>
-                <span v-if="homedata.address.streetDirection   ">{{ homedata.address.streetDirection    }}</span>
+            <span v-if="homedata.address.unitNumber" class="mr-1">{{homedata.address.unitNumber}}</span>
+             <span v-if="homedata.address.streetNumber" class="mr-1"> {{ homedata.address.streetNumber  }}</span>
+             <span v-if="homedata.address.streetName " class="mr-1">{{ homedata.address.streetName  }}</span>
+               <span v-if="homedata.address.streetSuffix  " class="mr-1">{{ homedata.address.streetSuffix   }}</span>
+                <span v-if="homedata.address.streetDirection   " class="mr-1">{{ homedata.address.streetDirection    }}</span>
             </p>
             <p class="mb-0">
               <span class="Roboto-Regular" v-if="homedata.address.neighborhood "
                 >{{ homedata.address.neighborhood }}.
              
               </span>
-              <span class="Roboto-Regular" v-if="homedata.address.city">
+              <span class="Roboto-Regular px-1" v-if="homedata.address.city">
                
                 {{ homedata.address.city }}
               </span>
