@@ -221,7 +221,7 @@ export default {
       disableDefaultUi: false,
       scrollwheel: true,
       minZoom: 8,
-      maxZoom: 18,
+      maxZoom: 23,
     },
     listings: [],
     sw_long: -116.49237975846899,
