@@ -449,7 +449,6 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             minPrice:null,
             propertyType:[],
             style:[],
-            keywords:[]
         },
         canadianprovinces:[
             {
@@ -587,12 +586,16 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         similerbymsl:null,
         estimatevalue:null,
         localemail:null,
-        selected_menu:"Sweet_Sale"
+        selected_menu:"Sweet_Sale",
+        city:""
 
     },
     mutations:{
         editSelectedMenu(state,payload){
             state. selected_menu  = payload
+        },
+        setCity(state,payload){
+            state.city = payload
         },
         setlocalemail(state,payload){
             state.localemail = payload

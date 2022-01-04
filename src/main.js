@@ -142,13 +142,16 @@ Vue.component('err-model',ErrModel);
 const SoldSimilerhome = () => import('./components/share/SoldSimilerhome.vue');
 Vue.component('sold-similerhome',SoldSimilerhome);
 
+
+const AutocompleteMap = () => import('./components/share/AutocompleteMap.vue');
+Vue.component('autocomplete-map',AutocompleteMap);
 Vue.component('card-home',require('./components/share/CardHome.vue').default);
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyBqme0IYqZWLPzvRdU7yTguMKMDVSdY6tI',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
+    libraries: 'places', 
   }
 })
 

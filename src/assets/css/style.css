@@ -720,6 +720,11 @@ font-size: 16px;
     left: 12px;
     z-index: 999;
   }
+  .homemapsale .hover .slick-prev , 
+  .homemapsale .hover .slick-next
+  {
+      display: none !important;
+  }
   .homemapsale .slick-prev:before,.homemapsale .slick-next:before{
     font-size: 26px;
   }
