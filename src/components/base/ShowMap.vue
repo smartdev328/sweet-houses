@@ -311,8 +311,8 @@ export default {
     },
     changezoom($event) {
       this.zoom = $event;
-      this.city = ""
-      this.find_listings_forSale();
+      this.$store.commit('CITYEMPLTY')
+      this. findlistingsevent();
     },
     find_listings_forSaleMain() {
       this.paginationpage = 1;
@@ -332,7 +332,6 @@ export default {
     },
     find_listings_forSale() {
       let city = this.city;
-      console.log(this.city)
       let sw_long = this.sw_long;
       let sw_lat = this.sw_lat;
       let ne_long = this.ne_long;
@@ -397,7 +396,7 @@ export default {
       this.bounds = $event;
     },
     dropmap() {
-      this.city = ""
+      this.$store.commit('CITYEMPLTY')
      this.findlistingsevent()
       
     },
@@ -451,7 +450,6 @@ export default {
       let res = {lat:0,lng:0}
       res.lat = item[1];
       res.lng = item[0];
-      console.log(res)
       return res
       
 }
