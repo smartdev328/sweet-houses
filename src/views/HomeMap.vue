@@ -57,7 +57,7 @@
                   @remove="remove"
                 ></multiselect> -->
                    <vue-google-autocomplete
-                  id="map"
+                  id="mapautoinput"
                     ref="addressmap"
                   classname="form-control"
                   placeholder="Enter City,Address"
@@ -69,6 +69,7 @@
                   :enable-geolocation="true"
                 >
                 </vue-google-autocomplete>
+                
                 <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
@@ -496,6 +497,7 @@ export default {
       let city = addressData.locality
       this.$store.commit("setCity",city)
       this.$refs.showmap.updateaddressdata(addressData)
+      this.$refs.showmap.getpath(city)
      
      
     },
