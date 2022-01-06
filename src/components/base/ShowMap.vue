@@ -5,13 +5,12 @@
         ref="map"
         @click="checkClick"
         @zoom_changed="changezoom($event)"
-        :center="{
-          lat: this.currentLocation.lat,
-          lng: this.currentLocation.lng,
-        }"
+        :center="mapCenter"
         :zoom="zoom"
+        @center_changed="updateCenter"
+        @idle="sync"
         @bounds_changed="changebounds($event)"
-        @dragend="dropmap"
+        @dragend="dropmap()"
         map-type-id="terrain"
         :options="options"
         style="width: 100%; height: 90vh"
@@ -224,7 +223,6 @@ export default {
       disableDefaultUi: false,
       scrollwheel: true,
       minZoom: 8,
-      maxZoom: 23,
     },
     listings: [],
     sw_long: -116.49237975846899,
@@ -434,16 +432,18 @@ export default {
         lat:data.latitude,
         lng:data.longitude
       }
+      this.sync()
+      console.log(data)
       }
        this.findlistingsevent()
 
       
-      console.log(data)
+      console.log(data.latitude , data.longitude)
     },
     getpath(city){
       this.$http.get(`https://nominatim.openstreetmap.org/search.php?q=${city}&polygon_geojson=1&format=json`).then((res) =>{
         this.path = res.data[0].geojson.coordinates[0]
-        console.log(res.data[0].geojson.coordinates)
+      //  console.log(res.data[0].geojson.coordinates)
       })
     },
     getFullName(item) {
@@ -451,13 +451,24 @@ export default {
       res.lat = item[1];
       res.lng = item[0];
       return res
-      
-}
+},
+updateCenter(latLng){
+  this.currentLocation = {
+              lat: latLng.lat(),
+              lng: latLng.lng(),
+            }
+  console.log(latLng.lat())
+},
+sync () {
+            this.mapCenter = this.currentLocation
+          }
   },
   created() {
     this.getCoords();
+    this.sync()
     this.changebounds();
     this.find_listings_forSale();
+    
   },
   watch: {
     latitude() {
