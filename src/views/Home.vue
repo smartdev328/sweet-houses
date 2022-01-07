@@ -98,6 +98,7 @@
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
+                   v-on:inputChange="inputChange"
                   :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
                 >
                 </vue-google-autocomplete>
@@ -146,7 +147,6 @@ export default {
   name: "Home",
   data() {
     return {
-      searchResults: [],
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
@@ -217,7 +217,6 @@ export default {
 
     checkform() {
       this.errmsg = "";
-      this.searchResults = [];
       if (!this.location) {
         this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`;
@@ -245,6 +244,9 @@ export default {
         this.$router.push({ name: "ConfirmAddress" });
         this.$store.dispatch("ScrollTop");
       }
+    },
+    inputChange(){
+      this.errmsg=""
     },
   },
   mounted(){

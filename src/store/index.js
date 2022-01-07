@@ -691,7 +691,7 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
             state.formData.append(entry[0], entry[1])
             );
             return new Promise((resolve, reject) => {
-                axios({url: 'homes/instant_estimate/', data:  state.formData, method: 'POST' })
+                axios({url: 'listings/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
                 .then(resp => {
                   commit('instant_estimate', resp.data)
                   state.formData = new FormData(),

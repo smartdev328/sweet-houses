@@ -186,7 +186,7 @@ export default {
                 image_num : this.currentcount+1
             }
 
-            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+            this.$http.post('listings/image_bymls/',input).then((res)=>{
                 this.homedata.images.image = res.data.image;
                 console.log(res.data.image)
                  this.currentcount +=1
@@ -200,7 +200,7 @@ export default {
                 image_num : this.currentcount - 1
             }
 
-            this.$http.post('homes/get_image_by_mls/',input).then((res)=>{
+            this.$http.post('listings/image_bymls/',input).then((res)=>{
                 this.homedata.images.image = res.data.image;
                 console.log(res.data.image)
                this.currentcount -=1
