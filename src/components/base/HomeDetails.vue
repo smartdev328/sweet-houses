@@ -904,7 +904,7 @@ export default {
       let boardId = this.$route.params.boardId;
       this.loading = true;
       this.$http
-        .get(`listings/find_home/?mlsNumber=${mls}&boardId=${boardId}`)
+        .get(`listings/alldetails_bymls/?mlsNumber=${mls}&boardId=${boardId}`)
         .then((res) => {
           this.loading = false;
           this.$store.commit("SET_CURRENT_HOME", res.data);
@@ -946,7 +946,7 @@ export default {
       };
       this.$http
         .get(
-          `listings/find_similar/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
+          `listings/similar_forsale_bymls/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
         )
         .then((res) => {
           this.loading = false;
@@ -973,7 +973,7 @@ export default {
       };
         this.$http
         .get(
-          `listings/find_estimate/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
+          `listings/estimates_bymls/?mlsNumber=${input.mlsNumber}&boardId=${input.boardId}`
         )
         .then((res) => {
           this.loading = false;

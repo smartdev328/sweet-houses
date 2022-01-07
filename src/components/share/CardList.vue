@@ -280,7 +280,7 @@ export default {
         const element = this.$refs.slidepic;
          element.classList.add("ac1");
          
-      this.$http.post("homes/get_image_by_mls/", input).then((res) => {
+      this.$http.post("listings/image_bymls/", input).then((res) => {
        const element = this.$refs.slidepic;
         element.classList.remove("ac1");
         this.slideimgs.push({
@@ -302,7 +302,7 @@ export default {
       };
       const element = this.$refs.slidepic;
          element.classList.add("ac2");
-      this.$http.post("homes/get_image_by_mls/", input).then((res) => {
+      this.$http.post("listings/image_bymls/", input).then((res) => {
         const element = this.$refs.slidepic;
         element.classList.remove("ac2");
         // const element = this.$refs.slidepic;
