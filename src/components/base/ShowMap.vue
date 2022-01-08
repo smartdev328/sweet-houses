@@ -221,6 +221,9 @@ export default {
     location(){
       return this.placeResultData.formatted_address
     },
+    boundsvalue(){
+      return  new window.google.maps.LatLngBounds()
+    }
   },
   components: { GmapCluster },
   data: () => ({
@@ -233,7 +236,10 @@ export default {
     map: {},
     coordinates: null,
     //   currentLocation : { lat : 53.177338695404515, lng : -114.0218292213596},
-    currentLocation: { lat: 0, lng: 0 },
+    currentLocation: {
+      lat : localStorage.getItem('currentLocationlat') *1 || 0,
+      lng :  localStorage.getItem('currentLocationlng')*1 || 0,
+    },
     mapCenter:{},
     zoom: 10,
     bounds: {},
@@ -249,10 +255,10 @@ export default {
       minZoom: 8,
     },
     listings: [],
-    sw_long: -116.49237975846899,
-    sw_lat: 52.90900663926977,
-    ne_long: -111.55127868425024,
-    ne_lat: 53.44400274231901,
+    sw_long: localStorage.getItem('sw_long')*1 || 0,
+    sw_lat: localStorage.getItem('sw_lat')*1 || 0,
+    ne_long: localStorage.getItem('ne_long')*1 || 0,
+    ne_lat: localStorage.getItem('ne_lat')*1 || 0,
     path: [],
     total: 0,
     latlong: { lat: 0, lng: 0 },
@@ -432,6 +438,8 @@ export default {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             });
+            localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+            localStorage.setItem("currentLocationlng", this.currentLocation.lng);
           this.sync();
         },
         () => {
@@ -450,6 +458,8 @@ export default {
           lat: data.latitude,
           lng: data.longitude,
         };
+         localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+          localStorage.setItem("currentLocationlng", this.currentLocation.lng);
         this.sync();
       }
       this.findlistingsevent();
@@ -519,6 +529,8 @@ export default {
         lat: latLng.lat(),
         lng: latLng.lng(),
       };
+       localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+      localStorage.setItem("currentLocationlng", this.currentLocation.lng);
       console.log(latLng.lat());
     },
     sync() {
@@ -526,8 +538,8 @@ export default {
     },
   },
   created() {
-    this.getCoords();
-
+    this.currentLocation.lat == 0 ? this.getCoords() : ''
+    // this.getCoords();
     this.changebounds();
     this.find_listings_forSale();
   },
@@ -546,6 +558,10 @@ export default {
           (this.sw_lat = oldval.getSouthWest().lat()),
           (this.ne_long = oldval.getNorthEast().lng()),
           (this.ne_lat = oldval.getNorthEast().lat());
+           localStorage.setItem("sw_long", this.sw_long);
+           localStorage.setItem("sw_lat", this.sw_lat);
+           localStorage.setItem("ne_long", this.ne_long);
+           localStorage.setItem("ne_lat", this.ne_lat);
       }
       //  console.log(newval, oldval)
     },
