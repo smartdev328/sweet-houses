@@ -129,7 +129,7 @@
               <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
                 >Sweet Sale</a
               >
-              <a class="dropdown-item btn" @click="editselectedmenu('Swift_Sale')"
+              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
                 >Swift Sale</a
               >
               <a
@@ -374,6 +374,9 @@ export default {
     opensweetsale() {
        this.$router.push({name:'SweetSale'})
       
+    },
+    openswiftsale(){
+      this.$router.push({name:"SwiftSale"})
     },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
