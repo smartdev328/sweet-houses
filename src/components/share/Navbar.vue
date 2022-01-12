@@ -113,7 +113,7 @@
       >
         <ul class="navbar-nav mx-auto">
           <li class="nav-item dropdown">
-            <router-link
+            <p
               class="nav-link dropdown-toggle DMSerifRegular"
               to="/"
               id="navbarDropdown"
@@ -124,9 +124,9 @@
             >
               Buy & Sell
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
-            </router-link>
+            </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item btn" @click="editselectedmenu('Sweet_Sale')"
+              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
                 >Sweet Sale</a
               >
               <a class="dropdown-item btn" @click="editselectedmenu('Swift_Sale')"
@@ -292,7 +292,6 @@
   </div>
 </template>
 <script>
-import { eventBus } from "../../main";
 import Swal from "sweetalert2";
 export default {
   data() {
@@ -372,9 +371,9 @@ export default {
         timer: 1500,
       });
     },
-    opensweetsale(tab) {
-      // this.$router.push({name:'Home'})
-      eventBus.$emit("fireMethod", tab);
+    opensweetsale() {
+       this.$router.push({name:'SweetSale'})
+      
     },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
@@ -417,6 +416,13 @@ nav a:focus {
 .navbar-nav .nav-item a:hover {
   color: #707070 !important;
   text-decoration: underline;
+}
+.navbar-nav .nav-item p{
+  color: #232323 !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    /* font-family: 'DMSerifRegular' !important; */
+    font-family: "DMSerifRegular","Playfair Display",serif;
 }
 .navbar-nav .nav-item .router-link-exact-active {
   color: #04847f !important;

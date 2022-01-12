@@ -86,10 +86,6 @@
                 </div>
                 <div class="item2 mb-2">
                   <div class="item2a">
-                    <!-- <img
-                        src="../../assets/image/icon/noun_messenger_3202205.svg"
-                        alt=""
-                      /> -->
                     <ShareNetwork
                       class="btn Roboto-Medium font-weight-bold"
                       network="facebook"

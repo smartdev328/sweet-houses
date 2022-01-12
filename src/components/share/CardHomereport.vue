@@ -9,20 +9,23 @@
                 </div>
                 
             </div>
-               <!-- <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
-             <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="..."> -->
-            
-            <img  v-if="sold" :src="homedata.images.image" class="card-img-top" alt="...">
-             <img v-if="!sold" :src="homedata.images.image" class="card-img-top" alt="...">
+          
+             <img
+        v-if="homedata.images == null"
+        src="../../assets/image/notimg.jpeg"
+        class="card-img-top"
+        alt=""
+      />
+            <img  v-if="homedata.images" :src="homedata.images[0]" class="card-img-top" alt="...">
             
         
-            <div class="arrow-dir" @click="getImage()" v-if="currentcount < homedata.images.count">
+            <div class="arrow-dir"  @click="getImage()" v-if="homedata.images">
                 <img src="../../assets/image/icon/Iconarrows.svg" alt="">
             </div>
              <div class="arrow-dir-before" @click="getImagebefor()" v-if="currentcount > 1">
                 <img src="../../assets/image/icon/Iconarrows.svg" alt="">
             </div>
-             <div class="counter">{{currentcount}}/{{homedata.images.count}}</div>
+             <div class="counter">{{currentcount}}</div>
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
                     <p class="text-color-1 Roboto-Medium" v-if="homedata.for_sale_price" :class="{soldclass : sold}">${{homedata.for_sale_price.toLocaleString('ja-JP')}} </p>
@@ -42,20 +45,9 @@
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
                     <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
                 </div>
-                <div class="element5 mt-2" v-if="homedata.address">
-                    <p class="Roboto-Regular">{{homedata.address.unitNumber}} {{homedata.address.streetNumber}} {{homedata.address.streetName}}  {{homedata.address.streetSuffix}}  {{homedata.address.streetDirection}} ({{homedata.details.style}}) 
-                        <br>
-                        {{homedata.address.neighborhood}},{{homedata.address.city}},{{homedata.address.area}}
-
-
-                    </p>
-                </div>
+             
             </div>
-                <div class="ellipsesicon">
-                    <div class="ellipsis p-2">
-                <img src="../../assets/image/icon/Heart.svg" class="w-100 h-100" alt="icon">
-            </div>
-            </div>
+               
 
             </div>
     </div>

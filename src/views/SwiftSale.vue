@@ -14,18 +14,44 @@
             <img class="mt-n5 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
           </span>
         </div>
-        <div class="item1 mb-3">
-          <div class="item1b px-3 py-3 p-md-5">
+        <div class="item1  mb-3">
+          <div class="item1a">
+            <button
+              @click="opensweetsale('Sweet_Sale')"
+              :style="getclass('Sweet_Sale')"
+            >
+              Sweet Sale
+              <div :style="getline('Sweet_Sale')"></div>
+            </button>
+            <button
+              @click="editselectedmenu('Swift_Sale')"
+              :style="getclass('Swift_Sale')"
+            >
+              Swift Sale
+              <div :style="getline('Swift_Sale')"></div>
+            </button>
+            <button
+              @click="editselectedmenu('Traditional_Real_Estate')"
+              :style="getclass('Traditional_Real_Estate')"
+            >
+              Traditional Real Estate
+              <div :style="getline('Traditional_Real_Estate')"></div>
+            </button>
+          </div>
+          <div class="item1b px-3 py-5 p-md-5">
             <div
-              class="text-center text-white DMSerifRegular h-50"
-              :class="tab_visible('Sweet_Sale')"
+              class="text-center text-white DMSerifRegular h-75"
+              
             >
               <p class="DMSerifRegular">
-                The Easiest Way to Sell, Buy, or Both
+               ‘Sold! Get market value on the day you choose.  Hassle free.’ 
               </p>
-           
+              <p class="Roboto-Regular ">
+                Simple. Certain. Easy.
+              </p>
             </div>
-
+         
+        
           
             <div class="w-100 inputaddress">
               <img
@@ -40,7 +66,7 @@
                   id="map"
                     ref="addressmap"
                   classname="form-control"
-                  placeholder="Enter an address"
+                 placeholder="Enter an address"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
@@ -58,10 +84,10 @@
             </div>
             <div class="item1b3-sm">
               <button class="Poppins" type="button" @click="getresult()">
-                Get value
+               Get value
               </button>
             </div>
-            <span class="spanalgorithm mt-2 text-white Poppins">
+        <span class="spanalgorithm mt-2 text-white Poppins">
               Algorithm values are provided as examples. Purchase price is set by independent appraiser & home inspection
             </span>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
@@ -71,19 +97,23 @@
     </header>
     <div class="my-5">
       <div class="container" > 
-  
-            
-        <SweetSale></SweetSale>
+        <swiftsale-page></swiftsale-page>
       </div>
+      <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
+        <swift-sale></swift-sale>
+      </div> -->
+      <!-- <div class="container" :class="tab_visible('Equity_Advance')" v-if="readyStateComplete">
+        <equity-advance></equity-advance>
+      </div> -->
+      <!-- <div :class="tab_visible('Traditional_Real_Estate')" v-if="readyStateComplete">
+        <traditional-realestate></traditional-realestate>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
 // @ is an alias to /src
-import { eventBus } from "../main";
-import SweetSale from '../components/base/SweetSale.vue'
 export default {
   name: "Home",
   data() {
@@ -91,17 +121,17 @@ export default {
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
-      words: ["Buy", "Trade","List","Finance"],
+       words: ["Buy", "Trade","List","Finance"],
       place_choosed:null,
       resultsExample:{},
       addressData:{},
       placeResultData:{},
-      readyStateComplete:null
+      readyStateComplete:null,
+     selected_menu :"Swift_Sale"
     };
   },
 
   computed: {
-    ...mapState(["selected_menu"]),
      checkhasstreet(){
     return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
     },
@@ -120,7 +150,7 @@ export default {
     // },
   },
   components: {
-    SweetSale
+    
   },
   watch: {},
   methods: {
@@ -189,6 +219,9 @@ export default {
     inputChange(){
       this.errmsg=""
     },
+    opensweetsale(){
+      this.$router.push({name:"SweetSale"})
+    }
   },
   mounted(){
      document.onreadystatechange = () => {
@@ -202,11 +235,7 @@ export default {
   }
   },
   created() {
-    eventBus.$on("fireMethod", (tab) => {
-      console.log(`${tab}`);
-      this.getclass(tab);
-      //  this.opensweetsale(tab);
-    });
+
   },
 };
 </script>
@@ -220,7 +249,7 @@ export default {
     max-width: 311px; */
   margin: 0px auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 .home .item1a button {
@@ -241,7 +270,7 @@ export default {
 }
 .item1 .item1b {
   background: #00a19b;
-  border-radius:12px;
+  border-radius: 0px 0px 12px 12px;
   height: auto;
   /*    max-width: 678px; */
   margin: 0px;
@@ -380,14 +409,11 @@ export default {
   color: aliceblue;
 }
 .itemnew11 span {
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 .textra {
   width: 160px !important;
   text-align: end;
-}
-.spanalgorithm{
-  font-size: 13px;
 }
 @media only screen and (max-width: 770px){
   .item1b .item1b3 {

@@ -4,160 +4,71 @@
                 <div class="item1a text-center"><p class="text-color-1">How It Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
-                        <p>Simple. Certain. Easy</p>
-                        <p>You choose the moving day and Sweetly will buy your home at current value,
-less our fee. Our offer is only conditional to a property inspection which we
-arrange - at our cost. Once completed, you'll have a firm commitment for the 
-sale price and the moving day that you choose. </p></div>
+                 
+                        <p>You choose the moving day and Sweetly will buy your home at market value, less our fee.
+                              You’ll have a firm sale price and the completion date you choose, and skip all showings.</p></div>
                     <div class="col-12 col-md-4">
-                        <iframe width="100%" height="100%" src="https://youtu.be/lm6lGa_4Ci0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lm6lGa_4Ci0"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                 </div>
         </div>
-        <div class="my-5 item2">
-            <div class="text-center title text-color-1"><p class="DMSerifRegular">Why Choose a Swift Sale?</p></div>
-            <div class="item2a d-flex justify-content-around  mx-auto">
-                <div class="text-color-1 item2b">
-                    <p @click="selected_part = 'traditionalpart'" class="mb-0 DMSerifRegular">Traditional Listing With Sweetly</p>
-                       <div :class="{ active:  selected_part == 'traditionalpart' }"></div>
-                </div>
-                  <div class="text-color-1 item2b">
-                    <p @click="selected_part = 'Swiftpart'" class="mb-0 DMSerifRegular">Swift Sale With Sweetly</p>
-                        <div :class="{ active:  selected_part == 'Swiftpart' }"></div>
-                </div>
-            </div>
-            <div class="bg-color-1 px-4 py-5 item2c my-5" v-if="selected_part == 'Swiftpart'">
-                    <div class="row mx-0">
-                        <div class="col-12 col-md-5 position-relative">
-                         <div class="p1">
-                                <img src="../../assets/image/homepage/pic1.svg"  class="w-100 h-100" alt="">
-                            </div>
-                            <div class="p2">
-                                <img src="../../assets/image/homepage/pic2.png" class="w-100 h-100" alt="">
-                            </div> 
-                        </div>
-                        <div class="col-12 col-md-7">
-                            <ul>
-                                <li class="mb-2 Roboto-Regular">  <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>We'll make repairs after you move out with the cost
-deducted so there's no out of pocket expenses. </li>
-                                <li class="mb-2  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>We give 1 payment which you get on the day you choose.</li>   
-                                <li class="mb-2  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>cash offer.</li>
-                                <li class="mb-2  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>Skip showings and repairs.</li>
-                                    <li class="mb-2  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>Choose your close date.</li>
-                            </ul>
-                        </div>
+           <div class="my-2 my-md-5 item3new">
+            <div class="cards">
+                    <div class="card border-0">
+                    <img src="../../assets/image/IpadwithForm.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 1</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
+</h3>
+                        <p class="card-text text-color-2">Tell us about your property to get our computer-generated evaluation and a list of comparable sales.
+</p>
                     </div>
-                    <div class="space-50"></div>
-                    <div class="space-50"></div>
-                    <div class="my-2 bg-white py-3 px-1 gridcontainer rounded">
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4 mb-md-3">Example Current 
-Value</p>
-                            <p class="pt-3 pt-md-1">$400,000</p>
-                        </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4 mb-md-3">Estimated Seller 
-Concession </p>
-                            <p class="pt-3 pt-md-1">N/A</p>
-                        </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4">Repairs</p>
-                            <p class="mb-0 pt-3 pt-md-2">Based on our inspection</p>
-                        </div>
-                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Service Charge</p><br>
-                            <p>9.9%</p>
-                        </div>
-                        <div class="gridcol px-2 text-center">
-                            <p class="mx-1 mb-4">Estimated Proceeds </p>
-                            <p class="pt-3 pt-md-1"> the total should be $364,400</p>
-                        </div>
-                         <!-- <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated NET</p>
-                            <p>$400,000</p>
-                        </div> -->
                     </div>
-                    <div class="text-center  mx-auto lastitem">
-                        <p class="text-color-1 font-robot">*These numbers are examples provided for educational purposes. Offer eligibility and price will vary.
-When listing traditionally, market conditions and results will vary</p>
-                    </div>
-            </div>
+                 
+                 <div class="card border-0">
+                    <img src="../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 2</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection
 
-               <div class="bg-color-1 px-4 py-5 item2c2 my-5" v-if="selected_part == 'traditionalpart'">
-                    <div class="row mx-0">
-                        <div class="col-12 col-md-5 position-relative">
-                         <div class="p1">
-                                <img src="../../assets/image/homepage/pic1.svg" class="w-100 h-100" alt="image">
-                            </div>
-                        <div class="p2">
-                                <img src="../../assets/image/homepage/pic2.png" class="w-100 h-100" alt="image">
-                            </div> 
-                        </div>
-                        <div class="col-12 col-md-7">
-                            <ul>
-                                <li class="mb-3 Roboto-Regular">  <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div> List with Sweetly and get professional advice and options
-to make good real estate decisions. </li>
-                                <li class="mb-3  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div> Be professionally guided through a sale.</li>   
-                                <li class="mb-3  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>All showing booked with your approval.</li>
-                                <li class="mb-3  Roboto-Regular"> <div class="icon mr-3">
-                                        <img src="../../assets/image/homepage/iconli.svg"  class="w-100 h-100" alt="">
-                                    </div>Professional help in negotiating with buyers.</li>
-                            </ul>
-                        </div>
+</h3>
+                        <p class="card-text text-color-2">
+                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                        </p>
                     </div>
-                    <div class="space-50"></div>
-                    <div class="space-30"></div>
-                    <div class="space-50"></div>
-                    <div class="my-2 bg-white py-3 px-1 gridcontainer rounded">
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4 mb-md-3">Example Current Value</p>
-                            <p class="pt-3 pt-md-2">$390,000 to $410,000</p>
-                        </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4 mb-md-2">Estimated Seller 
-Concession</p>
-                            <p class="pt-3">1 - 3%</p>
-                        </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-4 mb-md-3">Repairs</p>
-                            <p class="pt-3">Based on buyers'
-inspection</p>
-                        </div>
-                         <div class="gridcol px-3 text-center">
-                            <p class="mx-1 mb-md-4">Commission</p>
-                            <span class="Roboto-Regular">(7%/3%)</span>
-                            <p>$15,700-$16,300</p>
-                        </div>
-                        <div class="gridcol px-3 text-center">
-                            <p class="mx-1">Estimated NET</p><br>
-                            <p class="pt-0 pt-md-3">$363,000 to $389,000</p>
-                        </div>
-                        
                     </div>
-                    <div class="text-center  mx-auto lastitem">
-                        <p class="text-color-1 font-robot">*These numbers are examples provided for educational purposes. Offer eligibility and price will vary.
-When listing traditionally, market conditions and results will vary</p>
+                  
+                  <div class="card border-0">
+                    <img src="../../assets/image/HappyFamilyMorning.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 3</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Close & Move
+</h3>
+                        <p class="card-text text-color-2">Once we resell the improved home you get a second payment for the full resale price less our fee and our cost for improvements.</p>
+                    </div>
                     </div>
             </div>
         </div>
 
-        <div class="mmy-2 my-md-5 item3">
+           <div class="my-2 my-md-5 item11 mx-3">
+            <div class="item11a DMSerifRegular text-center">
+                <p>Why Choose a Swift Sale?</p>
+            </div>
+            <div class="item11b row p-0">
+                <div class="element1 p-0 col-12 col-md-6">
+                    <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
+                    <img src="../../assets/image/pic2a.svg" class="w-100 h-100" alt="">
+                </div>
+                <div class="element2 p-0 col-12 col-md-6">
+                     <img src="../../assets/image/pic2b.svg" class="w-100 h-100" alt="">
+                </div>
+            </div>
+            <div>
+                <p class="Roboto-Regular text-color-1 my-2">These comparisons are examples only. When listing traditionally market conditions and results will vary.  Commission is assumed to be 7% of $100,000 plus 3% balance.  A 3% concession to the asking price vs. sale price is average based on this data. 
+                     Repairs necessary to complete a sale are final property specific.</p>
+            </div>
+        </div>
+        <div class="my-2 my-md-5 item3">
             <div class="row align-items-center ">
                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular text-capitalize">Certainty</p>
@@ -166,17 +77,19 @@ When listing traditionally, market conditions and results will vary</p>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        With a Swift Sale, we buy your home at market 
-value, less our fee</li>
+                       
+                        A firm sale within days
+
+                       </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Make compelling offers on your next home knowing 
-your current home is SOLD!
+                            </div>Negotiate a better price & terms for your next home, knowing the one you have is sold!
+
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>You'll have a firm price and fixed closing day (that you 
-choose) within days </li>
+                            </div>You choose your moving day
+</li>
                     </ul>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
@@ -202,21 +115,21 @@ choose) within days </li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            When you sell your home to Sweetly, you can skip 
-all the hassles of being for sale.</li>
+                            Never receive a request to vacate your home for a showing
+</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>There's no need for you to list your home for sale 
-or keep your home in "show ready" condition.</li>
+                            </div>No open house days
+.</li>
                     <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>The price we pay is net to you - no hidden fees or 
-commissions apply.</li>
+                            </div>Our purchase price is net to you, without hidden fees
+.</li>
                     </ul>
                 </div>
             </div>
         </div>
-         <div class="mmy-2 my-md-5 item5">
+         <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
                     <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
@@ -225,16 +138,16 @@ commissions apply.</li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Select the moving day that work best for you,
-aligned with whatever is next</li>
+                        Select the moving day that works best
+</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>changes to your moving day are no charge and 
-hassle-free.</li>
+                            </div>Changes to your moving day are free and hassle-free
+.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>No need to negotiate the sale price or the closing 
-day - like a traditional listing/selling process.</li>
+                            </div>There’s no negotiation price vs possession like a traditional sale
+</li>
                     </ul>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
@@ -271,23 +184,7 @@ traditional Realtor commission will apply.</li>
                 </div>
             </div>
         </div>
-        <div class="my-2 my-md-5 item12">
-            <google-review></google-review>
-        </div>
-        <div class="my-2 my-md-5 item11 mx-3">
-            <div class="item11a DMSerifRegular text-center">
-                <p>Why Choose a Swift Sale?</p>
-            </div>
-            <div class="item11b row p-0">
-                <div class="element1 p-0 col-12 col-md-6">
-                    <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-                    <img src="../../assets/image/pic2a.svg" class="w-100 h-100" alt="">
-                </div>
-                <div class="element2 p-0 col-12 col-md-6">
-                     <img src="../../assets/image/pic2b.svg" class="w-100 h-100" alt="">
-                </div>
-            </div>
-        </div>
+     
         <div class="my-2 my-md-5 item8">
 
  
@@ -550,7 +447,18 @@ export default {
     .page2 .flex-row-reverse{
         flex-direction: row !important;
     }
-
+       .page2 .item3new .cards{
+         display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+     }
+     .page2 .item3new .cards .card img{
+         border-radius: 8px;
+     }
+     .page2 .item3new .cards .card .card-body h3:first-child{
+         color: #00A19B;
+     }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
     .item2c2 .gridcontainer{
@@ -618,6 +526,9 @@ export default {
      .page2 .flex-row-reverse{
         flex-direction: column-reverse !important;
     }
+    .page2 .item3new .cards{
+         grid-template-columns: auto ;
+     }
     }
 
 </style>

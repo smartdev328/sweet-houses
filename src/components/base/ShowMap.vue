@@ -531,7 +531,6 @@ export default {
       };
        localStorage.setItem("currentLocationlat", this.currentLocation.lat);
       localStorage.setItem("currentLocationlng", this.currentLocation.lng);
-      console.log(latLng.lat());
     },
     sync() {
       this.mapCenter = this.currentLocation;
