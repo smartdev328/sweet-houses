@@ -4,41 +4,75 @@
                 <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How Sweetly Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8"><p class="Roboto-Medium">
-                        Sweetly is a new kind of real estate brokerage that offers solutions not available anywhere else. We use our own money to make your process easier, more profitable, and less risky! We’re a blend of real estate, finance, and technology brought together to meet your real estate needs in ways that are more customer friendly than the solutions available from traditional real estate brokerages    
-                    </p></div>
+                        You get 2 payments. We pay 75% of appraised value on the moving day you choose. 
+                        We’ll invest up to $25,000 on upgrades that you approve to maximize the resale price. Once re-sold, you’ll receive the full balance of our resale price less our fee & the improvement costs. 
+                         Choose your own moving day, skip public showings, and net the after renovation value from the comfort of your couch
+                    </p>
+                     <router-link to="about-us" class="Roboto-Regular btn btn-route px-3">Start Now</router-link>
+                     </div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ECGVslh3ovY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
                     <div class="col-12">
-                        <router-link to="about-us" class="Roboto-Regular">Read More</router-link>
+                       
                     </div>
                 </div>
         </div>
-  
 
-        <div class="mmy-2 my-md-5 item3">
+        <div class="my-2 my-md-5 item3new">
+            <div class="cards">
+                    <div class="card border-0">
+                    <img src="../../assets/image/IpadwithForm.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 1</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
+</h3>
+                        <p class="card-text text-color-2">You’ll get a computer-generated evaluation of the value of your home and a list of recent comparable sales.</p>
+                    </div>
+                    </div>
+                 
+                 <div class="card border-0">
+                    <img src="../../assets/image/Renovation.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 2</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection
+</h3>
+                        <p class="card-text text-color-2">
+                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                        </p>
+                    </div>
+                    </div>
+                  
+                  <div class="card border-0">
+                    <img src="../../assets/image/SoldSign.jpg" class="card-img-top" alt="...">
+                    <div class="card-body pl-0">
+                        <h3 class="card-title text-primary Playfair">Step 3</h3>
+                        <h3 class="card-title Roboto-Medium text-color-1">Close & Move
+</h3>
+                        <p class="card-text text-color-2">Once we resell the improved home you get a second payment for the full resale price less our fee and our cost for improvements.</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <div class="my-2 my-md-5 item3">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Swift Sale</p>
+                    <p class="DMSerifRegular text-capitalize">You get MORE money from a sweet sale</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Skip all public showings</li>
+                        Sweetly makes the right improvements to  increase the re-sale price</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                                Choose your own moving day
-                            </li>
+                            </div> We invest our money (up to $25,000) to improve 
+the property - with your permission.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                            A certain sale within days
-</li>
-            <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
-            </li>
+                            </div> You get the full value of the re-sale price (even if 
+over asking) less our hard costs for improvements 
+and our fee.</li>
                     </ul>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
@@ -58,59 +92,45 @@
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                  <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Sweet Sale</p>
+                    <p class="DMSerifRegular text-capitalize">Skip Public Showings</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            You get more money from a Sweet Sale
-                            </li>
+                            With a Sweet Sale, the showing start after you've
+moved out.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                            Skip all public showings
-
-                            </li>
+                            </div>You choose the day. Sweetly buys your home on
+your schedule.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Choose your own moving day
-</li>
-<li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
-            </li>
+                            </div>Unlike a permanent buyer, we don't live there so
+Sweetly takes the home whenever it works for you.</li>
                     </ul>
                 </div>
             </div>
         </div>
-         <div class="mmy-2 my-md-5 item5">
+         <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Home Swap
-</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                                Buy your new home before selling the one you have
-
-                            </li>
+                        Select the moving day that work best for you,
+aligned with whatever is next</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                                Negotiate better terms & price as a cash buyer
-
-                            </li>
+                            </div>changes to your moving day are no charge and 
+hassle-free.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                                Skip public showing & choose your moving day
-
-                            </li>
-<li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
-            </li>
+                            </div>We sell your home vacant and the next owner can
+conflicts with price.</li>
                     </ul>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
@@ -130,92 +150,50 @@
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Buy a Home</p>
+                    <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Get qualified for a mortgage in minutes
-</li>
+                            Sweetly offers are unconditional within days.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Receive e-mail updates on homes matching your specific buying criteria
-</li>
+                            </div>Buy your next home in confidence and avoid paying
+more with cluttered 'subject-to-sale' contracts.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Get professional guidance throughout the process
-</li>
-<li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
-            </li>
+                            </div>We buy single family homes valued at $200,000 to
+$2,000,000 in any major Alberta market.</li>
                     </ul>
                 </div>
             </div>
         </div>
-                <div class="mmy-2 my-md-5 item5">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Equity Advance
-
-</p>
-                    <ul>
-                        <li>
-                            <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                                Your money is locked in the home you own.  We’ll advance it to you when you list with Sweetly
-
-
-                            </li>
-                        <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                                Interest free.  We earn commission when you sell with Sweetl
-
-
-                            </li>
-                       <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>
-                                Use your money as you wish
-
-
-                            </li>
-<li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
-            </li>
-                    </ul>
+        <div class="my-2 my-md-5 item11">
+            <div class="item11a DMSerifRegular text-center">
+                <p>Why Choose a Sweet Sale?</p>
+            </div>
+            <div class="item11b row p-0 mx-2">
+                <div class="element1 p-0 col-12 col-md-6">
+                    <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
+                    <img src="../../assets/image/pica1.svg" class="w-100 h-100" alt="">
                 </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6 d-flex flex-row-reverse">
-                    <div class="image">
-                        <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">
-                    </div> 
+                <div class="element2 p-0 col-12 col-md-6">
+                     <img src="../../assets/image/picb1.svg" class="w-100 h-100" alt="">
                 </div>
             </div>
         </div>
-        <div class="my-2 my-md-5 item7">
-            <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
-                <p>What Sweetly customers are saying!</p>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 px-3 px-md-0 pr-md-1">
-                    <div class="h-300px">
-                          <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/ZuG6KMMRu8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 px-3 px-md-0  pl-md-1 mt-4 mt-md-0">
-                    <div class="h-300px">  <iframe width="100%" class="rounded" height="100%" src="https://www.youtube.com/embed/UoCHcEQTNdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe></div>
-                </div>
-            </div>
+        <div class="my-2 my-md-5">
+            <p class="Roboto-Regular text-color-1">These comparisons are examples only.
+                 The increase to the resale price after improvements cannot be guaranteed and are subject to market conditions.  When listing traditionally buyers expectations and results will vary.  Commission assumed to be 7% if $100,000 plus 3% on balance.  A 3% concession to the asking price vs final sale price is the average based on MLS data.
+                  Repairs necessary to complete a sale are property specific.</p>
         </div>
         <div class="my-2 my-md-5 item8">
-            <div class="text-color-1 element1 mx-0 mx-md-5 text-center DMSerifRegular"><p class="">Compare Sweetly</p>
+            <!-- <div class="text-color-1 element1 mx-0 mx-md-5 text-center DMSerifRegular"><p class="">Compare Sweetly</p>
                 <p class="Roboto-Regular">Only Sweetly assists with the entire selling and buying process by actually buying your current home on your schedule. The certainty of a sale for your
 current home lets you make a more compelling offer on your next home without a condition-of- sale.</p>
-            </div>
-            <div class="element2 shadow px-4 table-responsive">
+            </div> -->
+            <!-- <div class="element2 shadow px-4 table-responsive">
                 <table class="w-100">
                     <tbody>
                         <tr>
@@ -288,10 +266,10 @@ current home lets you make a more compelling offer on your next home without a c
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
             <div class="my-2 my-md-5 item12">
             <!-- <google-review></google-review> -->
-            <div class="elfsight-app-3f411fcb-35bd-44e4-b1ce-551508d164d9"></div>
+      
         </div>
             <div class="my-2 my-md-5 element4">
                 <p class="text-center text-color-1 DMSerifRegular">Sweet Sale Questions and Answers</p>
@@ -328,6 +306,9 @@ export default {
 </script>
 
 <style scoped>
+p{
+    font-size: 18px;
+}
     .page1 .item1 .item1a p{
         font-size: 36px;
     }
@@ -517,7 +498,7 @@ export default {
     .page1 .item8 .element2 table tbody tr:nth-child(8) td:nth-child(2){
         font-size: 16px !important;
     }
-    .page1 .item8 .element4{
+    .page1 .item8 .element4 p{
         font-size: 38px;
         font-weight: 600;
     }
@@ -538,7 +519,7 @@ export default {
     .page1 .item2c  ul{
          margin-top: unset;
     }
-    .page1 .item11 .item11a{
+    .page1 .item11 .item11a p{ 
         font-size: 36px;
         font-weight: 600;
     }
@@ -559,6 +540,28 @@ export default {
      }
      .page1 .flex-revers-sm{
          flex-direction: row !important;
+     }
+     .page1 .btn-route{
+         background: #ffb600;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1.2em;
+            translate: 0.3s ease-in-out;
+     }
+     .page1 .btn-route:hover{
+         background: #ffb700d2;
+     }
+     .page1 .item3new .cards{
+         display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+     }
+     .page1 .item3new .cards .card img{
+         border-radius: 8px;
+     }
+     .page1 .item3new .cards .card .card-body h3:first-child{
+         color: #00A19B;
      }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
@@ -632,6 +635,9 @@ export default {
     }
      .page1 .flex-revers-sm{
          flex-direction: column-reverse !important;
+     }
+     .page1 .item3new .cards{
+         grid-template-columns: auto ;
      }
     }
 

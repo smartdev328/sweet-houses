@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* @font-face {
   font-family: "DMSerifRegular";
   src: url("DMSerifText-Regular.ttf"),
@@ -122,6 +123,9 @@ body{
 }
 .DiwaniBentRegular{
   font-family: 'DiwaniBentRegular',sans-serif  !important;
+}
+.Playfair{
+  font-family: 'Playfair Display', serif;
 }
 /* .font-robot {
   font-family: "Roboto", sans-serif;
@@ -727,6 +731,9 @@ font-size: 16px;
   }
   .homemapsale .slick-prev:before,.homemapsale .slick-next:before{
     font-size: 26px;
+  }
+  .jEiTCs {
+    max-width: unset !important;
   }
 @media only screen and (max-width: 600px){
   .home header{

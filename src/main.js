@@ -93,8 +93,11 @@ Vue.component('sale-question',require('./components/share/SaleQuestion.vue').def
 
 
 // Vue.component('sweet-sale',require('./components/base/SweetSale.vue').default)
-const SwiftSale = () => import('./components/base/SwiftSale.vue');
-Vue.component('swift-sale', SwiftSale)
+const SwiftsalePage = () => import('./components/base/SwiftsalePage.vue');
+Vue.component('swiftsale-page', SwiftsalePage)
+
+const SweetsalePage = () => import('./components/base/SweetsalePage.vue');
+Vue.component('sweetsale-page', SweetsalePage)
 
 const EquityAdvance = () => import('./components/base/EquityAdvance.vue');
 Vue.component('equity-advance', EquityAdvance)
@@ -146,6 +149,8 @@ Vue.component('sold-similerhome',SoldSimilerhome);
 const AutocompleteMap = () => import('./components/share/AutocompleteMap.vue');
 Vue.component('autocomplete-map',AutocompleteMap);
 Vue.component('card-home',require('./components/share/CardHome.vue').default);
+Vue.component('card-homereport',require('./components/share/CardHomereport.vue').default);
+
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {

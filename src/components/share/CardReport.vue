@@ -17,11 +17,11 @@
                     <p class="Roboto-Medium text-color-1">3109-825 Church St</p>
                 </div>
                 <div class="element1 d-flex align-items-baseline justify-content-between">
-                    <p class="text-color-1 Roboto-Medium" :class="{soldclass : sold}">Sold $953,000</p>
-                    <p class="Roboto-Regular mb-0">3 month ago</p>
+                    <p class="text-color-1 Roboto-Medium" v-if="closest_home_data.soldPrice" :class="{soldclass : sold}">Sold ${{closest_home_data.soldPrice.toLocaleString('ja-JP')}}</p>
+                    <p class="Roboto-Regular mb-0">{{gettime(closest_home_data.soldDate)}}</p>
                 </div>
                 <div class="element3">
-                    <span class="text-color-2 Roboto-Regular">Listed $989,800</span>
+                    <span class="text-color-2 Roboto-Regular" v-if="closest_home_data.listPrice">Listed ${{closest_home_data.listPrice.toLocaleString('ja-JP')}}</span>
                 </div>
                 <br>
                 <div class="element5">
@@ -29,10 +29,12 @@
                             <thead style="border-bottom: 1px solid #dee2e6;" class="Roboto-Regular">
                                 <tr>
                                 <th scope="col"></th>
-                                <th  scope="col" class="item5a btn Roboto-Regular text-white px-2" >$971K</th>
+                                <th  scope="col" class="item5a btn Roboto-Regular text-white px-2" >${{numFormatter(closest_home_data.soldPrice)}}</th>
                                 <th scope="col" colspan="2" class="item5b pt-0 Roboto-Regular text-center">
-                                   <button class="btn px-3"> <img src="../../assets/image/icon/blackhome.svg" style="width:22px;height:22px" alt=""> 
-                                            $971K</button>
+                                   <button class="btn px-3">
+                                        <!-- <img src="../../assets/image/icon/blackhome.svg" style="width:22px;height:22px" alt="">  -->
+                                        <span v-if="prices">${{numFormatter(prices.offer_price)}}</span>        
+                                    </button>
                                        
                                         
                                 </th>
@@ -42,26 +44,26 @@
                             <tbody style="border-bottom: 1px solid #dee2e6;" class="Roboto-Regular">
                                 <tr>
                                     <td>Beds</td>
-                                    <td>2</td>
-                                    <td>2</td>
+                                    <td>{{closest_home_data.details.numBedrooms}}</td>
+                                    <td>{{homedatafirst.bedrooms_bg}}</td>
                                     <td></td>
                                 </tr>
                                  <tr>
                                     <td>Baths</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <td>{{closest_home_data.details.numBathrooms}}</td>
+                                    <td>{{homedatafirst.bathrooms_full}}</td>
                                     <td></td>
                                 </tr>
                                  <tr>
                                     <td>Sqft</td>
-                                    <td>2</td>
-                                    <td>2</td>
+                                    <td>~{{closest_home_data.details.sqft}}</td>
+                                    <td>~{{homedatafirst.squfeet}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Parking</td>
-                                    <td>0</td>
-                                    <td>2</td>
+                                    <td>{{closest_home_data.details.numParkingSpaces}}</td>
+                                    <td>{{homedatafirst.parking_spaces}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -87,10 +89,34 @@
     </div>
 </template>
 <script>
+import moment from 'moment';
 export default {
+    props:["instant_estimate_data","closest_home_data"],
     data:() =>({
         sold:true
-    })
+    }),
+    computed:{
+        prices(){
+             return this.instant_estimate_data.prices || {}
+      },
+      homedatafirst(){
+          return this.$store.state.homedatafirst || {}
+      },
+    },
+    methods:{
+        gettime(item){
+            return moment(item).endOf('day').fromNow();   
+        },
+        numFormatter(num) {
+        if (num > 999 && num < 1000000) {
+          return (num / 1000).toFixed(0) + "K"; // convert to K for number from > 1000 < 1 million
+        } else if (num > 1000000) {
+          return (num / 1000000).toFixed(0) + "M"; // convert to M for number from > 1 million
+        } else if (num < 900) {
+          return num; // if value < 1000, nothing to do
+        }
+    },
+    }
 }
 </script>
 <style scoped>
@@ -197,6 +223,7 @@ export default {
     height: 44px;
     border-radius: 8px;
     border: 1px solid #707070;
+    font-size: 22px;
 }
 .card .element6 button{
     border: 1px solid #FFB600;

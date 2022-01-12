@@ -87,7 +87,8 @@ export const store = new Vuex.Store({
         
         ],
         sweetsalefags:[
-            {title:'What is Sweetly?',content:`Sweetly is a full service, licensed brokerage offering more than just the traditional real estate model. Our owners are ex Re/Max agents who came together to form Canada's first ibuyer. Sweetly is the only brokerage that invests its’ own resources to literally buy your home so that you don't need to be 'for sale'. We offer a Swift Sale where we'll pay 90.1% of current market value on whatever day you choose as the date for possession (move out). We also offer a Sweet Sale where we'll buy your home in two payments - we'll make the necessary improvements to maximize the resale price, and pay you the full balance of the improved resale price less our fee. We also offer a Sweet Swap where you can trade your current home for your next one - you can buy any home you want, not just our inventory, And we offer an Equity Advance if you just want some of the cash from the home equity you've built up - you pay us back when the home sells.
+            {title:'What is Sweetly?',
+            content:`Sweetly is a full service, licensed brokerage offering more than just the traditional real estate model. Our owners are ex Re/Max agents who came together to form Canada's first ibuyer. Sweetly is the only brokerage that invests its’ own resources to literally buy your home so that you don't need to be 'for sale'. We offer a Swift Sale where we'll pay 90.1% of current market value on whatever day you choose as the date for possession (move out). We also offer a Sweet Sale where we'll buy your home in two payments - we'll make the necessary improvements to maximize the resale price, and pay you the full balance of the improved resale price less our fee. We also offer a Sweet Swap where you can trade your current home for your next one - you can buy any home you want, not just our inventory, And we offer an Equity Advance if you just want some of the cash from the home equity you've built up - you pay us back when the home sells.
             `},
             {title:`What's the cost of a Sweet Sale?
             `,content:`The Sweet Sale is the SMARTEST WAY to sell a house! Our fee to buy and resell your home is 2% of the value of the property plus our standard real estate commission (7/3) or 7% of $100,000 plus 3% on the balance of the sale price. The extra 2% covers the expenses we take on, like property tax, utilities, insurance, lawn/snow care, and mortgage payments. The fee is fixed and never increases regardless of how long it takes to sell the property.`},
@@ -429,6 +430,30 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         then resell it under the terms of our Sweet Sale program; Our we'll pay you out under our Swift Sale program.`},
         {title:`What if I have more questions?`,
         content:`Call us! Our number is 780-477-9338.`},
+        ],
+        Homefaqs:[
+            {
+                title:"How do I know that I’m getting fair market value from Sweetly?",
+                content:"Because Sweetly is the Best"
+            },
+            {
+                title:"Why does Sweetly offer these very different incentives, and why isn’t anyone else doing this?",
+                content:"Because Sweetly is the Best"
+            },
+            {
+                title:"What types of homes will you buy and not buy?",
+                content:`We’re currently interested in buying single-family homes of 850 square feet or more, with 2 or more bedrooms above grade. The homes we buy must have a value of $200,000 and up. Some exceptions can be made and all deals are carefully considered.`
+            },
+            {
+                title:"What is Sweetly?",
+                content:`Sweetly is a full service, licensed brokerage offering more than just the traditional real estate model. Our owners are ex Re/Max agents who came together to form Canada's first ibuyer. Sweetly is the only brokerage that invests its’ own resources to literally buy your home so that you don't need to be 'for sale'. We offer a Swift Sale where we'll pay 90.1% of current market value on whatever day you choose as the date for possession (move out). We also offer a Sweet Sale where we'll buy your home in two payments - we'll make the necessary improvements to maximize the resale price, and pay you the full balance of the improved resale price less our fee. We also offer a Sweet Swap where you can trade your current home for your next one - you can buy any home you want, not just our inventory, And we offer an Equity Advance if you just want some of the cash from the home equity you've built up - you pay us back when the home sells.`
+            },
+            {
+                title:"What’s the catch?",
+                content:`
+            We get this question every day — actually. There's really no catch! The Sweet Sale is NOT a buy low sell high model, so we don’t ‘low-ball’. With a Sweet Sale you get ALL the equity from your (fully renovated and ready to sell) home. You benefit from having us make the right improvements to sell your home for the highest price possible. Our Sweet Sale process is simply the easiest and smartest way to sell a home for the most money possible AND avoiding the stresses of public showings.
+            The difference is more money for you, and the convenience of no public showings.
+            `}
         ],
         instant_estimate_data:{},
         agent:{},
