@@ -46,31 +46,47 @@
                                     <td>Beds</td>
                                     <td>{{closest_home_data.details.numBedrooms}}</td>
                                     <td>{{homedatafirst.bedrooms_bg}}</td>
-                                    <td></td>
+                                    <td>
+                                        <img v-if="homedatafirst.bedrooms_bg > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.bedrooms_bg < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
+                                        
+                                    </td>
                                 </tr>
                                  <tr>
                                     <td>Baths</td>
                                     <td>{{closest_home_data.details.numBathrooms}}</td>
                                     <td>{{homedatafirst.bathrooms_full}}</td>
-                                    <td></td>
+                                    <td>
+                                        <img v-if="homedatafirst.bathrooms_full > closest_home_data.details.numBathrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.bathrooms_full < closest_home_data.details.numBathrooms" src="../../assets/image/icon/arrowless.svg" alt="">
+                                    </td>
                                 </tr>
                                  <tr>
                                     <td>Sqft</td>
                                     <td>~{{closest_home_data.details.sqft}}</td>
                                     <td>~{{homedatafirst.squfeet}}</td>
-                                    <td></td>
+                                     <td>
+                                        <img v-if="homedatafirst.squfeet > closest_home_data.details.sqft" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.squfeet < closest_home_data.details.sqft" src="../../assets/image/icon/arrowless.svg" alt="">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Parking</td>
                                     <td>{{closest_home_data.details.numParkingSpaces}}</td>
                                     <td>{{homedatafirst.parking_spaces}}</td>
-                                    <td></td>
+                                     <td>
+                                        <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Basement</td>
                                     <td>0</td>
                                     <td>2</td>
-                                    <td></td>
+                                    <td>
+                                        <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
+                                    </td>
                                 </tr>
                             </tbody>
                             </table>
@@ -116,6 +132,20 @@ export default {
           return num; // if value < 1000, nothing to do
         }
     },
+    openhomedetails(){
+      let mls = this.closest_home_data.mlsNumber;
+      let boardId = this.closest_home_data.boardId;
+    
+          if(this.isLoggedIn){
+            let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+          }else{
+            this.SignUp();
+          }
+          
+        
+      
+    }
     }
 }
 </script>
@@ -236,5 +266,9 @@ export default {
 .card .element6 button:hover{
     background: #FFB600;;
     color: #fff;
+}
+.card table tbody tr td img{
+    width: 17px !important;
+    height: 17px !important;
 }
 </style>

@@ -49,6 +49,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/SwiftSale.vue')
   },
   {
+    path:'/equity-advance',
+    name:'EquityAdvance',
+    component: () => import ('../views/EquityAdvance.vue')
+  },
+  {
     path: '/cities',
     name: 'cities',
     // route level code-splitting

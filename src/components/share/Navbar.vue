@@ -134,13 +134,12 @@
               >
               <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
                 >Home Swap</a
-              >
-<!--               
+              >              
               <a
                 class="dropdown-item btn"
-                @click="editselectedmenu('Equity_Advance')"
+                @click="openeduityadvanced('Equity_Advance')"
                 >Equity Advance</a
-              > -->
+              > 
               <a
                 class="dropdown-item btn"
                 @click="opentraditionestate()"
@@ -388,6 +387,9 @@ export default {
     opentraditionestate(){
       this.$router.push({name:"TraditionalRealestate"})
     },
+    openeduityadvanced(){
+      this.$router.push({name:"EquityAdvance"})
+    },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
     },
@@ -432,7 +434,7 @@ nav a:focus {
 }
 .navbar-nav .nav-item p{
   color: #232323 !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
     font-weight: bold;
 }
 .navbar-nav .nav-item .router-link-exact-active {
