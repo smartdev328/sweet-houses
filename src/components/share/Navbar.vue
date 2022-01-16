@@ -132,6 +132,10 @@
               <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
                 >Swift Sale</a
               >
+              <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
+                >Home Swap</a
+              >
+              
               <a
                 class="dropdown-item btn"
                 @click="editselectedmenu('Equity_Advance')"
@@ -378,6 +382,9 @@ export default {
     openswiftsale(){
       this.$router.push({name:"SwiftSale"})
     },
+    openhomeswap(){
+      this.$router.push({name:"HomeSwap"})
+    },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
     },
@@ -424,8 +431,6 @@ nav a:focus {
   color: #232323 !important;
     font-size: 20px !important;
     font-weight: bold;
-    /* font-family: 'DMSerifRegular' !important; */
-    font-family: "DMSerifRegular","Playfair Display",serif;
 }
 .navbar-nav .nav-item .router-link-exact-active {
   color: #04847f !important;

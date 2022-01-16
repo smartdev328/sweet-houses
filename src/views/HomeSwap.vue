@@ -18,12 +18,14 @@
           <div class="item1b px-3 py-3 p-md-5">
             <div
               class="text-center text-white DMSerifRegular h-50"
-              :class="tab_visible('Sweet_Sale')"
+           
             >
               <p class="DMSerifRegular">
-                The Easiest Way to Sell, Buy, or Both
+                You see yourself in one home.  But your money is in the one you have?
               </p>
-           
+                  <p class="Roboto-Regular ">
+                Don’t lose out on your dream home, unlock your equity today!
+              </p>
             </div>
 
           
@@ -52,13 +54,13 @@
 
               <div class="item1b3">
                 <button class="Poppins" type="button" @click="getresult()">
-                  Get Value
+                  Get value
                 </button>
               </div>
             </div>
             <div class="item1b3-sm">
               <button class="Poppins" type="button" @click="getresult()">
-                Get Value
+                Get value
               </button>
             </div>
             <span class="spanalgorithm mt-2 text-white Poppins">
@@ -71,19 +73,14 @@
     </header>
     <div class="my-5">
       <div class="container" > 
-  
-            
-        <SweetSale></SweetSale>
+          <HomeSwap></HomeSwap>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-// @ is an alias to /src
-import { eventBus } from "../main";
-import SweetSale from '../components/base/SweetSale.vue'
+import HomeSwap from '../components/base/HomeSwap.vue'
 export default {
   name: "Home",
   data() {
@@ -96,12 +93,10 @@ export default {
       resultsExample:{},
       addressData:{},
       placeResultData:{},
-      readyStateComplete:null
     };
   },
 
   computed: {
-    ...mapState(["selected_menu"]),
      checkhasstreet(){
     return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
     },
@@ -115,12 +110,10 @@ export default {
        let nelng =  this.placeResultData.geometry.viewport.Qa.h;
       return ({swlat,swlng, nelat , nelng});
     }
-    // selected_menu(){
-    //   return this.selected_menu;
-    // },
+
   },
   components: {
-    SweetSale
+    HomeSwap
   },
   watch: {},
   methods: {
@@ -135,27 +128,8 @@ export default {
       this.place_choosed = true;
       console.log(placeResultData)
     },
-    getclass(tab) {
-      if (tab == this.selected_menu) {
-        return "background:#00A19B;";
-      }
-    },
-    getline(tab) {
-      if (tab == this.selected_menu) {
-        return " background: rgb(255, 182, 0);margin-bottom: 0px;  position: absolute; bottom: 0px;    width: 50%;   height: 5px;";
-      }
-    },
-    tab_visible(tab) {
-      if (tab == this.selected_menu) {
-        return "d-block";
-      } else {
-        return "d-none";
-      }
-    },
-    editselectedmenu(tab){
-      this.$store.commit('editSelectedMenu',tab)
-    },
-
+  
+ 
     checkform() {
       this.errmsg = "";
       if (!this.location) {
@@ -191,22 +165,10 @@ export default {
     },
   },
   mounted(){
-     document.onreadystatechange = () => {
-    if (document.readyState == "complete") {
-      console.log('Page completed with image and files!')
-
-      // HOW LOAD COMPONENTS HERE?
-      this.readyStateComplete = true
-
-    }
-  }
+ 
   },
   created() {
-    eventBus.$on("fireMethod", (tab) => {
-      console.log(`${tab}`);
-      this.getclass(tab);
-      //  this.opensweetsale(tab);
-    });
+ 
   },
 };
 </script>

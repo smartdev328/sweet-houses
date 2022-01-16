@@ -64,7 +64,15 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            You get more money from a Sweet Sale
+                            You get 
+                            <div class="dropdown">
+                                 <span class="mx-2"> <u>more money</u> </span> 
+                                 <div class="dropdown-content">
+                                <p>We make the right improvements to resell your home at the highest price possible. 
+                                     You get the full resale amount (after improvements) less our fee and improvement cost</p>
+                                </div>
+                            </div>
+                             from a Sweet Sale
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
@@ -99,7 +107,15 @@
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Negotiate better terms & price as a cash buyer
+                                Negotiate better terms & price as 
+                                 <div class="dropdown">
+                                 <span class="mx-2"> <u>a cash buyer</u> </span> 
+                                 <div class="dropdown-content">
+                                <p>A buyer who can proceed without a condition for the sale of another or a bank appraisal for financing</p>
+                                </div>
+                            </div>
+                                
+                                
 
                             </li>
                        <li>  <div class="icon mr-3">
@@ -560,6 +576,28 @@ export default {
      .page1 .flex-revers-sm{
          flex-direction: row !important;
      }
+     .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 270px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown-content p{
+        font-size: 16px !important;
+    width: 100% !important;
+    font-weight: normal !important;
+}
+.dropdown:hover .dropdown-content {
+  display: block !important;
+}
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
     .item2c2 .gridcontainer{
