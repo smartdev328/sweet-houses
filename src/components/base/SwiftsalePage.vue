@@ -57,10 +57,10 @@
             <div class="item11b row p-0">
                 <div class="element1 p-0 col-12 col-md-6">
                     <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-                    <img src="../../assets/image/pic2a.svg" class="w-100 h-100" alt="">
+                    <img src="../../assets/image/wswift1.png" class="w-100 h-100" alt="">
                 </div>
                 <div class="element2 p-0 col-12 col-md-6">
-                     <img src="../../assets/image/pic2b.svg" class="w-100 h-100" alt="">
+                     <img src="../../assets/image/wswift2.png" class="w-100 h-100" alt="">
                 </div>
             </div>
             <div>

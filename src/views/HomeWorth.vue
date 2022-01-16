@@ -6,20 +6,32 @@
                     <p class="text-center p1 text-white DMSerifRegular">What's My Home Worth?</p>
                     <p class="text-center p2 my-4 text-white Roboto-Regular">Start your search for your next home with our comprehensive, personalized home valuation.</p>
                     <div class="w-100 inputaddress">
-                      <img src="../../assets/image/icon/Iconly-Light-Location.svg" alt="">
+                      <!-- <img src="../assets/image/icon/Iconly-Light-Location.svg" alt=""> -->
                       <div class="item1b2">
                         <span class="space"></span>
-                        <input type="text" class="Roboto-Regular" placeholder="Enter your home address" 
-                        v-model="input.homeaddress"  @input="getinputhome()"
-                        >
+                        <vue-google-autocomplete
+                  id="map"
+                    ref="addressmap"
+                  classname="form-control"
+                  placeholder="Enter an address"
+                  country="ca"
+                  v-on:keyup="yourFunctinNameToBeCall"
+                  v-on:placechanged="getAddressData"
+                   v-on:inputChange="inputChange"
+                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                >
+                </vue-google-autocomplete>
                       </div>
                       <div class="item1b3">
-                        <button class="Roboto-Regular" type="button" @click="getresult()">Get An Estimate</button>
+                        <button class="Roboto-Regular" type="button" @click="getresult()">Get Started</button>
                       </div>
+                      
                   </div>
-                  <div class="spanerr" v-if="errmsg && !input.homeaddress">
-                     <span>{{errmsg}}</span>  </div>
+                   <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
+                  <div >
+                    
                 </div>
+            </div>
             </div>
     </div>
     </div>
@@ -38,23 +50,44 @@ export default {
         getinputhome(){
       console.log(this.input.homeaddress)
     },
-      checkform(){
-    this.errmsg = ""
-    if(!this.input.homeaddress){
-      this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
-       If you're having trouble, just contact us.`
-    }
-    if(this.input.homeaddress){
-      return true
-    }
-  },
-    getresult(){
-      if(this.checkform()){
-        console.log(this.input.homeaddress)
-        this.$store.commit('sethomeaddress',this.input.homeaddress)
-        this.$router.push({name:'ConfirmAddress'})
+  getAddressData(addressData, placeResultData) {
+      this.addressData= addressData
+      this.placeResultData = placeResultData
+      this.latlong.lat = addressData.latitude
+      this.latlong.lng = addressData.longitude
+      this.place_choosed = true;
+      console.log(placeResultData)
+    },
+    checkform() {
+      this.errmsg = "";
+      if (!this.location) {
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`;
       }
-    }
+      if (!this.place_choosed) {
+        this.errmsg = `Oops! Please select from the dropdown.
+       If you're having trouble, just contact us.`;
+      }
+      if (!this.checkhasstreet) {
+          this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`;
+      }
+      if (
+        this.location &&
+        this.place_choosed &&
+        this.checkhasstreet
+      ) {
+        return true;
+      }
+    },
+    getresult() {
+      if (this.checkform()) {
+        this.$store.commit("sethomeaddress", this.location);
+        this.$store.commit("setlatlong", this.latlong);
+        this.$router.push({ name: "ConfirmAddress" });
+        this.$store.dispatch("ScrollTop");
+      }
+    },
     }
 }
 </script>
@@ -82,7 +115,7 @@ export default {
     box-sizing: border-box;
     border-radius: 6px;
     text-align: left;
-    background: white;
+    background: #008080f0;
     min-height: 48px;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -160,11 +193,9 @@ input:focus{
      outline: none;
 }
   .spanerr{
-    font-size: 16px;
+    font-size: 18px;
     width: 75%;
-    background-color: rgb(255, 219, 220);
-    padding: 8px;
-    color: #043a30;
+    color: #fff;
     margin-top: 6px;
     border-radius: 4px;
   }

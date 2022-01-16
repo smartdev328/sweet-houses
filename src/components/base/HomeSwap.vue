@@ -1,9 +1,9 @@
 <template>
     <div class="page1">
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
-                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How a Sweet Sale Works</p></div>
+                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How Sweetly Works</p></div>
                 <div class="row d-flex align-items-center item1b">
-                    <div class="col-12 col-md-8"><p class="Roboto-Medium">
+                    <div class="col-12 col-md-12"><p class="Roboto-Medium">
                         You get 2 payments. We pay 75% of appraised value on the moving day you choose. 
                         We’ll invest up to $25,000 on upgrades that you approve to maximize the resale price. Once re-sold, you’ll receive the full balance of our resale price less our fee & the improvement costs. 
                          Choose your own moving day, skip public showings, and net the after renovation value from the comfort of your couch
@@ -11,7 +11,7 @@
                      <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link>
                      </div>
                     <div class="col-12 col-md-4">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ECGVslh3ovY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
+                      
                     </div>
                     <div class="col-12">
                        
@@ -22,12 +22,16 @@
         <div class="my-2 my-md-5 item3new">
             <div class="cards">
                     <div class="card border-0">
-                    <img src="../../assets/image/IpadwithForm.jpg" class="card-img-top" alt="...">
+                    <img src="../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
-                        <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
+                        <h3 class="card-title Roboto-Medium text-color-1">Appraised Value
+
 </h3>
-                        <p class="card-text text-color-2">You’ll get a computer-generated evaluation of the value of your home and a list of recent comparable sales.</p>
+                        <p class="card-text text-color-2">
+                            Get the appraised value and determine how much equity you have in your current home.
+
+                            </p>
                     </div>
                     </div>
                  
@@ -35,10 +39,12 @@
                     <img src="../../assets/image/Renovation.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
                         <h3 class="card-title text-primary Playfair">Step 2</h3>
-                        <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection
+                        <h3 class="card-title Roboto-Medium text-color-1">Buy Your Dream Home
+
 </h3>
                         <p class="card-text text-color-2">
-                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                         Use our money to buy the home you love.  Get better terms as a cash buyer.
+
                         </p>
                     </div>
                     </div>
@@ -47,9 +53,10 @@
                     <img src="../../assets/image/SoldSign.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
                         <h3 class="card-title text-primary Playfair">Step 3</h3>
-                        <h3 class="card-title Roboto-Medium text-color-1">Close & Move
-</h3>
-                        <p class="card-text text-color-2">Once we resell the improved home you get a second payment for the full resale price less our fee and our cost for improvements.</p>
+                        <h3 class="card-title Roboto-Medium text-color-1">Sell Your Old Home</h3>
+                        <p class="card-text text-color-2">Close - Stress free.  We’ll sell the home you have.  Pay us back
+
+                            </p>
                     </div>
                     </div>
             </div>
@@ -174,12 +181,12 @@ $2,000,000 in any major Alberta market.</li>
                 <p>Why Choose a Sweet Sale?</p>
             </div>
             <div class="item11b row p-0 mx-2">
-                <div class=" p-0 col-12 col-md-6">
+                <div class="element1 p-0 col-12 col-md-6">
                     <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-                    <img src="../../assets/image/wsweet1.png" class="w-100 h-100" alt="">
+                    <img src="../../assets/image/pica1.svg" class="w-100 h-100" alt="">
                 </div>
                 <div class="element2 p-0 col-12 col-md-6">
-                     <img src="../../assets/image/wsweet2.png" class="w-100 h-100" alt="">
+                     <img src="../../assets/image/picb1.svg" class="w-100 h-100" alt="">
                 </div>
             </div>
         </div>
