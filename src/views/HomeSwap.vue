@@ -198,7 +198,7 @@ export default {
   justify-content: center;
   padding: 10px;
   position: relative;
-  font-family: "DMSerifRegular", "Playfair Display", serif;
+font-family: 'DM Serif Display', "Playfair Display",serif;
   font-size: 24px;
 }
 .item1 .item1b {

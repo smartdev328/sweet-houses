@@ -15,9 +15,9 @@
           </span>
         </div>
         <div class="item1 mb-3">
-          <div class="item1b px-3 py-3 p-md-5">
+          <div class="item1b px-3 py-3 px-md-5 py-md-5">
             <div
-              class="text-center text-white DMSerifRegular h-50"
+              class="text-center text-white DMSerifRegular"
               :class="tab_visible('Sweet_Sale')"
             >
               <p class="DMSerifRegular">
@@ -236,7 +236,7 @@ export default {
   justify-content: center;
   padding: 10px;
   position: relative;
-  font-family: "DMSerifRegular", "Playfair Display", serif;
+  font-family: 'DM Serif Display', "Playfair Display",serif;
   font-size: 24px;
 }
 .item1 .item1b {
@@ -252,7 +252,7 @@ export default {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 420px;
+  /* height: 420px; */
 }
 .home .item1 .item1b p:first-child {
   font-size: 38px;

@@ -28,12 +28,12 @@
              <div class="counter">{{currentcount}}</div>
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
-                    <p class="text-color-1 Roboto-Medium" v-if="homedata.for_sale_price" :class="{soldclass : sold}">${{homedata.for_sale_price.toLocaleString('ja-JP')}} </p>
-                    <p class="Roboto-Regular">{{ gettime(homedata.listDate)}}</p>
+                    <p class="text-color-1 Roboto-Medium" v-if="homedata.listPrice">${{homedata.listPrice.toLocaleString('ja-JP')}} </p>
+                    <p class="Roboto-Regular" v-if="homedata.listDate">{{ gettime(homedata.listDate)}}</p>
                 </div>
                 <div class="element2 d-flex">
                 
-                    <p class="Roboto-Regular" v-if="homedata.sweetly_price">${{homedata.sweetly_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
+                    <p class="Roboto-Regular" v-if="homedata.sweetly_price">${{homedata.sweetly_price.prices.offer_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
                 </div>
                 <div class="element3">
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} <span v-if="homedata.details.numBedroomsPlus > 0">+{{(homedata.details.numBedroomsPlus)}}</span> </span>
@@ -42,8 +42,8 @@
                     <span class="mr-3 ml-1   color2 Roboto-Regular">ba</span>
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
                     <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
-                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numParkingSpaces}}</span>
-                    <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
+                    <span class="text-color-1 Roboto-Regular">{{homedata.details.numGarageSpaces}}</span>
+                    <span class="text-color-1  ml-2  Roboto-Regular">GarageSpaces</span>
                 </div>
              
             </div>
