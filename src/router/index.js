@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import HomeSwap from '../views/HomeSwap.vue'
+
 import store from '../store/index'
 Vue.use(VueRouter)
 
@@ -36,6 +37,11 @@ const routes = [
     path:'/sweet-sale',
     name:"SweetSale",
     component: () => import(/* webpackChunkName: "about" */ '../views/SweetSale.vue')
+  },
+  {
+    path:'/traditional-real-estate',
+    name:"TraditionalRealestate",
+    component: () => import(/* webpackChunkName: "about" */ '../views/TraditionalRealestate.vue')
   },
   {
     path:'/swift-sale',
