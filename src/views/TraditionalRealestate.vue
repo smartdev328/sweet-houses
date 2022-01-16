@@ -17,6 +17,7 @@
         <div class="item1  mb-3">
           <div class="item1a">
             <button
+              @click="opensweetsale('Sweet_Sale')"
               :style="getclass('Sweet_Sale')"
             >
               Sweet Sale
@@ -29,7 +30,6 @@
               <div :style="getline('Swift_Sale')"></div>
             </button>
             <button
-              @click="opentraditionalpage('Traditional_Real_Estate')"
               :style="getclass('Traditional_Real_Estate')"
             >
               Traditional Real Estate
@@ -119,7 +119,7 @@
     </header>
     <div class="my-5">
       <div class="container" > 
-        <sweetsale-page></sweetsale-page>
+        <TraditionalPage></TraditionalPage>
       </div>
       <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
         <swift-sale></swift-sale>
@@ -135,6 +135,7 @@
 </template>
 
 <script>
+import TraditionalPage from '../components/base/TraditionalPage.vue'
 // @ is an alias to /src
 export default {
   name: "Home",
@@ -149,7 +150,7 @@ export default {
       addressData:{},
       placeResultData:{},
       readyStateComplete:null,
-      selected_menu:"Sweet_Sale"
+      selected_menu:"Traditional_Real_Estate"
     };
   },
 
@@ -172,7 +173,7 @@ export default {
     // },
   },
   components: {
-    
+    TraditionalPage
   },
   watch: {},
   methods: {
@@ -203,9 +204,6 @@ export default {
       } else {
         return "d-none";
       }
-    },
-    editselectedmenu(tab){
-      this.$store.commit('editSelectedMenu',tab)
     },
     openswiftsale(){
       this.$router.push({name:"SwiftSale"})
@@ -245,10 +243,7 @@ export default {
     },
     opensweetsale(){
       this.$router.push({name:"SweetSale"})
-    },
-    opentraditionalpage(){
-       this.$router.push({name:"TraditionalRealestate"})
-    },
+    }
   },
   mounted(){
      document.onreadystatechange = () => {

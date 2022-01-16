@@ -102,7 +102,7 @@ Vue.component('sweetsale-page', SweetsalePage)
 const EquityAdvance = () => import('./components/base/EquityAdvance.vue');
 Vue.component('equity-advance', EquityAdvance)
 
-const TraditionalRealestate = () => import('./components/base/TraditionalRealestate.vue');
+const TraditionalRealestate = () => import('./views/TraditionalRealestate.vue');
 Vue.component('traditional-realestate', TraditionalRealestate)
 
 /* Edit Address Component */

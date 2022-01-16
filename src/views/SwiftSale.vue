@@ -24,14 +24,13 @@
               <div :style="getline('Sweet_Sale')"></div>
             </button>
             <button
-              @click="editselectedmenu('Swift_Sale')"
               :style="getclass('Swift_Sale')"
             >
               Swift Sale
               <div :style="getline('Swift_Sale')"></div>
             </button>
             <button
-              @click="editselectedmenu('Traditional_Real_Estate')"
+              @click="opentraditionalpage('Traditional_Real_Estate')"
               :style="getclass('Traditional_Real_Estate')"
             >
               Traditional Real Estate
@@ -184,6 +183,9 @@ export default {
     },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
+    },
+    opentraditionalpage(){
+      this.$router.push({name:"TraditionalRealestate"})
     },
 
     checkform() {

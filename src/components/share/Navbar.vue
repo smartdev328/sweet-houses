@@ -135,15 +135,15 @@
               <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
                 >Home Swap</a
               >
-              
+<!--               
               <a
                 class="dropdown-item btn"
                 @click="editselectedmenu('Equity_Advance')"
                 >Equity Advance</a
-              >
+              > -->
               <a
                 class="dropdown-item btn"
-                @click="editselectedmenu('Traditional_Real_Estate')"
+                @click="opentraditionestate()"
                 >Traditional Real Estate</a
               >
             </div>
@@ -384,6 +384,9 @@ export default {
     },
     openhomeswap(){
       this.$router.push({name:"HomeSwap"})
+    },
+    opentraditionestate(){
+      this.$router.push({name:"TraditionalRealestate"})
     },
     editselectedmenu(tab){
       this.$store.commit('editSelectedMenu',tab)
