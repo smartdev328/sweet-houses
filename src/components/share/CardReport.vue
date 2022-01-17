@@ -92,7 +92,7 @@
                             </table>
                 </div>
                 <div class="element6">
-                    <button class="btn text-center w-100 Roboto-Regular">Show more details</button>
+                    <button class="btn text-center w-100 Roboto-Regular" @click="openhomedetails()">Show more details</button>
                 </div>
             </div>
                 <div class="ellipsesicon">
@@ -135,16 +135,8 @@ export default {
     openhomedetails(){
       let mls = this.closest_home_data.mlsNumber;
       let boardId = this.closest_home_data.boardId;
-    
-          if(this.isLoggedIn){
-            let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
-          window.open(routeData.href, '_blank');
-          }else{
-            this.SignUp();
-          }
-          
-        
-      
+        let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+        window.open(routeData.href, '_blank');
     }
     }
 }

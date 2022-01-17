@@ -5,7 +5,7 @@
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
                  
-                        <p>You choose the moving day and Sweetly will buy your home at market value, less our fee.
+                        <p class="Roboto-Medium">You choose the moving day and Sweetly will buy your home at market value, less our fee.
                               You’ll have a firm sale price and the completion date you choose, and skip all showings.</p></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lm6lGa_4Ci0"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>

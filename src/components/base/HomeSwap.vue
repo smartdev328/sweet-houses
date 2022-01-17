@@ -61,140 +61,26 @@
                     </div>
             </div>
         </div>
-        <div class="my-2 my-md-5 item3">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">You get MORE money from a sweet sale</p>
-                    <ul>
-                        <li>
-                            <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                        Sweetly makes the right improvements to  increase the re-sale price</li>
-                        <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> We invest our money (up to $25,000) to improve 
-the property - with your permission.</li>
-                       <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> You get the full value of the re-sale price (even if 
-over asking) less our hard costs for improvements 
-and our fee.</li>
-                    </ul>
-                </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6 d-flex flex-row-reverse">
-                     <div class="image">
-                        <img src="../../assets/image/homepage/Component 80 – 1.svg" class="w-100 h-100" alt="">
-                    </div> 
-                </div>
-            </div>
-        </div>
-          <div class="my-2 my-md-5 item4">
-            <div class="row align-items-center flex-revers-sm">
-                <div class="col-12 col-md-6 d-flex">
-                    <div class="image">
-                        <img src="../../assets/image/homepage/Component 81 – 1.svg" class="w-100 h-100" alt="">
-                    </div>
-                </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
-                 <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Skip Public Showings</p>
-                    <ul>
-                        <li>
-                            <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                            With a Sweet Sale, the showing start after you've
-moved out.</li>
-                        <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>You choose the day. Sweetly buys your home on
-your schedule.</li>
-                       <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Unlike a permanent buyer, we don't live there so
-Sweetly takes the home whenever it works for you.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-         <div class="my-2 my-md-5 item5">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
-                    <ul>
-                        <li>
-                            <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                        Select the moving day that work best for you,
-aligned with whatever is next</li>
-                        <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>changes to your moving day are no charge and 
-hassle-free.</li>
-                       <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>We sell your home vacant and the next owner can
-conflicts with price.</li>
-                    </ul>
-                </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6 d-flex flex-row-reverse">
-                    <div class="image">
-                        <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <div class="my-2 my-md-5 item6">
-            <div class="row align-items-center flex-revers-sm">
-                <div class="col-12 col-md-6 d-flex">
-                    <div class="image">
-                        <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">
-                    </div> 
-                </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6">
-                    <p class="DMSerifRegular text-capitalize">Certainty</p>
-                    <ul>
-                        <li>
-                            <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div> 
-                            Sweetly offers are unconditional within days.</li>
-                        <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Buy your next home in confidence and avoid paying
-more with cluttered 'subject-to-sale' contracts.</li>
-                       <li>  <div class="icon mr-3">
-                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>We buy single family homes valued at $200,000 to
-$2,000,000 in any major Alberta market.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="my-2 my-md-5 item11">
+    
+     
+      
+   
+        <div class="my-2 mt-md-5 item11">
             <div class="item11a DMSerifRegular text-center">
-                <p>Why Choose a Sweet Sale?</p>
+                <p>Why Choose a Home Swap?</p>
             </div>
             <div class="item11b row p-0 mx-2">
                 <div class="element1 p-0 col-12 col-md-6">
                     <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-                    <img src="../../assets/image/pica1.svg" class="w-100 h-100" alt="">
+                    <img src="../../assets/image/whomeswap1.png" class="w-100 h-100" alt="">
                 </div>
                 <div class="element2 p-0 col-12 col-md-6">
-                     <img src="../../assets/image/picb1.svg" class="w-100 h-100" alt="">
+                     <img src="../../assets/image/whomeswap2.png" class="w-100 h-100" alt="">
                 </div>
+               
             </div>
         </div>
-        <div class="my-2 my-md-5">
-            <p class="Roboto-Regular text-color-1">These comparisons are examples only.
-                 The increase to the resale price after improvements cannot be guaranteed and are subject to market conditions.  When listing traditionally buyers expectations and results will vary.  Commission assumed to be 7% if $100,000 plus 3% on balance.  A 3% concession to the asking price vs final sale price is the average based on MLS data.
-                  Repairs necessary to complete a sale are property specific.</p>
-        </div>
+         <p class="Roboto-Regular text-color-1 text-center"> Sweetly is a different kind of real estate company.  We use our money to make your life easier.</p>
         <div class="my-2 my-md-5 item8">
             <!-- <div class="text-color-1 element1 mx-0 mx-md-5 text-center DMSerifRegular"><p class="">Compare Sweetly</p>
                 <p class="Roboto-Regular">Only Sweetly assists with the entire selling and buying process by actually buying your current home on your schedule. The certainty of a sale for your

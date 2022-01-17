@@ -37,7 +37,7 @@
                             A certain sale within days
 </li>
             <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -85,7 +85,7 @@
                             </div>Choose your own moving day
 </li>
 <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -125,7 +125,7 @@
 
                             </li>
 <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -163,7 +163,7 @@
                             </div>Get professional guidance throughout the process
 </li>
 <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -199,7 +199,7 @@
 
                             </li>
 <li>
-                <router-link to="about-us" class="Playfair">Learn More</router-link>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -245,7 +245,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
-                                <p class="h3"> No </p>
+                                <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -254,7 +254,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
-                                <p class="Roboto-Regular">Not likely</p>
+                               <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -263,7 +263,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
-                                <p class="h3"> No </p>
+                                <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -272,7 +272,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
-                                <p class="h3">No </p>
+                                <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -281,7 +281,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
-                                <p class="Roboto-Regular">Hardly ever</p>
+                                 <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -290,7 +290,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="Roboto-Regular"> 7/3</p>
                             </td>
                             <td class="text-center">
-                                <p class="Roboto-Regular">$$$$</p>
+                                 <p class="h4"> No </p>
                             </td>
                         </tr>
                         <tr>
@@ -299,7 +299,7 @@ current home lets you make a more compelling offer on your next home without a c
                                 <p class="Roboto-Regular">2%</p>
                             </td>
                             <td class="text-center">
-                                <p class="Roboto-Regular">?</p>
+                                <p class="h4"> No </p>
                             </td>
                         </tr>
                     </tbody>
@@ -589,6 +589,10 @@ export default {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
+}
+ul li a{
+    color:#00A19B;
+    font-size: 22px;
 }
 .dropdown-content p{
         font-size: 16px !important;
