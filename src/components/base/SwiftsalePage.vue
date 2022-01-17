@@ -6,7 +6,8 @@
                     <div class="col-12 col-md-8">
                  
                         <p class="Roboto-Medium">You choose the moving day and Sweetly will buy your home at market value, less our fee.
-                              You’ll have a firm sale price and the completion date you choose, and skip all showings.</p></div>
+                              You’ll have a firm sale price and the completion date you choose, and skip all showings.</p>
+                               <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lm6lGa_4Ci0"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
@@ -228,7 +229,7 @@ export default {
     }
     .page2 .item1 .item1b p:first-child{
     color:#232323;
-    font-size: 30px;
+    font-size: 18px;
     }
     .page2 .item1 .item1b p:last-child{
         color:#434242;
@@ -458,6 +459,16 @@ export default {
      }
      .page2 .item3new .cards .card .card-body h3:first-child{
          color: #00A19B;
+     }
+      .page2 .btn-route{
+         background: #ffb600;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1.2em;
+            translate: 0.3s ease-in-out;
+     }
+     .page2 .btn-route:hover{
+         background: #ffb700d2;
      }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
