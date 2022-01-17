@@ -47,8 +47,11 @@ export default {
         }
     },
     methods:{
-        getinputhome(){
-      console.log(this.input.homeaddress)
+    inputChange(){
+      this.errmsg=""
+    },
+    yourFunctinNameToBeCall(){
+      this.place_choosed = false;
     },
   getAddressData(addressData, placeResultData) {
       this.addressData= addressData
@@ -97,7 +100,7 @@ export default {
         margin: auto;
     }
     .homeworth .item1 .item1a .item1b{
-         width: 80%; 
+         width: 100%; 
         margin: auto;
     }
     .homeworth .item1 .item1a .p1{
@@ -115,7 +118,7 @@ export default {
     box-sizing: border-box;
     border-radius: 6px;
     text-align: left;
-    background: #008080f0;
+    background: #00A19B;
     min-height: 48px;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -139,7 +142,7 @@ height: 30px;
 }
 .homeworth .item1 .item1a .inputaddress .item1b2{
     display: inline-flex;
-    width: 100%;
+    width: 84%;
     flex-direction: column;
 }
 .homeworth .item1 .item1a .space{
@@ -176,7 +179,7 @@ height: 30px;
 .homeworth .item1 .item1a button{
     background-color: rgb(255, 192, 67);
     color: #232323;
-    height: 48px;
+    height: 54px;
     border: 2px solid transparent;
     border-radius: 6px;
     width: 100%;
