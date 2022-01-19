@@ -187,7 +187,7 @@
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Interest free.  We earn commission when you sell with Sweetl
+                                Interest free.  We earn commission when you sell with Sweetly
 
 
                             </li>
