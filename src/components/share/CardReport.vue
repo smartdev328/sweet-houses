@@ -10,11 +10,29 @@
                 
             </div> -->
             <!-- <img  v-if="sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="..."> -->
-             <img src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="...">
+             <img  v-if="closest_home_data.images" :src="closest_home_data.images[0]" class="card-img-top" alt="...">
+             <img
+                        v-if="!closest_home_data.images"
+                        src="../../assets/image/notimg.jpeg"
+                        class="card-img-top"
+                        alt=""
+                    />
 
             <div class="card-body">
                 <div class="element1a">
-                    <p class="Roboto-Medium text-color-1">3109-825 Church St</p>
+                             <div class=" mt-2">
+          <p class="Roboto-Regular">
+            {{ closest_home_data.address.unitNumber }}
+            {{ closest_home_data.address.streetNumber }}
+            {{ closest_home_data.address.streetName }}
+            {{ closest_home_data.address.streetSuffix }}
+            {{ closest_home_data.address.streetDirection }} 
+            <br />
+            {{ closest_home_data.address.neighborhood }},{{ closest_home_data.address.city }},{{
+              closest_home_data.address.area
+            }}
+          </p>
+        </div>
                 </div>
                 <div class="element1 d-flex align-items-baseline justify-content-between">
                     <p class="text-color-1 Roboto-Medium" v-if="closest_home_data.soldPrice" :class="{soldclass : sold}">Sold ${{closest_home_data.soldPrice.toLocaleString('ja-JP')}}</p>
@@ -29,8 +47,7 @@
                             <thead style="border-bottom: 1px solid #dee2e6;" class="Roboto-Regular">
                                 <tr>
                                 <th scope="col"></th>
-                                <th  scope="col" class="item5a btn Roboto-Regular text-white px-2" >${{numFormatter(closest_home_data.soldPrice)}}</th>
-                                <th scope="col" colspan="2" class="item5b pt-0 Roboto-Regular text-center">
+                                 <th scope="col" colspan="2" class="item5b pt-0 Roboto-Regular text-center">
                                    <button class="btn px-3">
                                         <!-- <img src="../../assets/image/icon/blackhome.svg" style="width:22px;height:22px" alt="">  -->
                                         <span v-if="prices">${{numFormatter(prices.offer_price)}}</span>        
@@ -38,59 +55,70 @@
                                        
                                         
                                 </th>
+                                <th  scope="col" class="item5a btn Roboto-Regular text-white px-2" >${{numFormatter(closest_home_data.soldPrice)}}</th>
+                               
                                
                                 </tr>
                             </thead>
                             <tbody style="border-bottom: 1px solid #dee2e6;" class="Roboto-Regular">
                                 <tr>
                                     <td>Beds</td>
-                                    <td>{{closest_home_data.details.numBedrooms}}</td>
-                                    <td>{{homedatafirst.bedrooms_bg}}</td>
                                     <td>
                                         <img v-if="homedatafirst.bedrooms_bg > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
                                         <img v-if="homedatafirst.bedrooms_bg < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
                                         
                                     </td>
+                                     <td>{{homedatafirst.bedrooms_bg}}</td>
+                                    <td>{{closest_home_data.details.numBedrooms}}</td>
+                                   
+                                    
                                 </tr>
                                  <tr>
                                     <td>Baths</td>
-                                    <td>{{closest_home_data.details.numBathrooms}}</td>
-                                    <td>{{homedatafirst.bathrooms_full}}</td>
-                                    <td>
+                                     <td>
                                         <img v-if="homedatafirst.bathrooms_full > closest_home_data.details.numBathrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
                                         <img v-if="homedatafirst.bathrooms_full < closest_home_data.details.numBathrooms" src="../../assets/image/icon/arrowless.svg" alt="">
                                     </td>
+                                     <td>{{homedatafirst.bathrooms_full}}</td>
+                                    <td>{{closest_home_data.details.numBathrooms}}</td>
+                                   
+                                   
                                 </tr>
                                  <tr>
                                     <td>Sqft</td>
-                                    <td>~{{closest_home_data.details.sqft}}</td>
-                                    <td>~{{homedatafirst.squfeet}}</td>
                                      <td>
                                         <img v-if="homedatafirst.squfeet > closest_home_data.details.sqft" src="../../assets/image/icon/arrowmore.svg" alt="">
                                         <img v-if="homedatafirst.squfeet < closest_home_data.details.sqft" src="../../assets/image/icon/arrowless.svg" alt="">
                                     </td>
+                                     <td>~{{homedatafirst.squfeet}}</td>
+                                    <td>~{{closest_home_data.details.sqft}}</td>
+                                   
+                                    
                                 </tr>
                                 <tr>
-                                    <td>Parking</td>
-                                    <td>{{closest_home_data.details.numParkingSpaces}}</td>
-                                    <td>{{homedatafirst.parking_spaces}}</td>
+                                    <td>Garage</td>
                                      <td>
                                         <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
                                         <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
                                     </td>
+                                      <td>{{homedatafirst.parking_spaces}}</td>
+                                    <td>{{closest_home_data.details.numParkingSpaces}}</td>
+                                  
+                                    
                                 </tr>
                                 <tr>
                                     <td>Basement</td>
-                                    <td>0</td>
-                                    <td>2</td>
-                                    <td>
-                                        <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
-                                        <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
+                                     <td>
+                                       
                                     </td>
+                                    <td>{{homedatafirst.basement1}}</td>
+                                    <td>{{closest_home_data.basement1}}</td>
+                                   
                                 </tr>
                             </tbody>
                             </table>
                 </div>
+        
                 <div class="element6">
                     <button class="btn text-center w-100 Roboto-Regular" @click="openhomedetails()">Show more details</button>
                 </div>
@@ -142,6 +170,10 @@ export default {
 }
 </script>
 <style scoped>
+.element6b{
+    color: #707070;
+  font-size: 16px;
+}
 .card{
     border-radius: 12px;
     border: 0;

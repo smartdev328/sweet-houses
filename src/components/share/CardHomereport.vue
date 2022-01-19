@@ -45,6 +45,21 @@
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numGarageSpaces}}</span>
                     <span class="text-color-1  ml-2  Roboto-Regular">GarageSpaces</span>
                 </div>
+                      <div class="element6b mt-2">
+          <p class="Roboto-Regular">
+            {{ homedata.address.unitNumber }}
+            {{ homedata.address.streetNumber }}
+            {{ homedata.address.streetName }}
+            {{ homedata.address.streetSuffix }}
+            {{ homedata.address.streetDirection }} ({{
+              homedata.details.style
+            }})
+            <br />
+            {{ homedata.address.neighborhood }},{{ homedata.address.city }},{{
+              homedata.address.area
+            }}
+          </p>
+        </div>
              
             </div>
                
@@ -260,6 +275,10 @@ export default {
 .element2 .icon{
     width: 20px;
     height: 20px;
+}
+.element6b{
+    color: #707070;
+  font-size: 16px;
 }
 .element2 p{
     color: #FFB600;
