@@ -1,7 +1,7 @@
 <template>
     <div class="page1">
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
-                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How Sweetly Works</p></div>
+                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How a Home Swap Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-12"><p class="Roboto-Medium">
                         You get 2 payments. We pay 75% of appraised value on the moving day you choose. 

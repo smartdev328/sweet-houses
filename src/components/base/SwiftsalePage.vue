@@ -1,7 +1,7 @@
 <template>
     <div class="page2">
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
-                <div class="item1a text-center"><p class="text-color-1">How It Works</p></div>
+                <div class="item1a text-center"><p class="text-color-1">How a Swift Sale Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
                  
