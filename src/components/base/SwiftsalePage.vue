@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div>
-                <p class="Roboto-Regular text-color-1 my-2">These comparisons are examples only. When listing traditionally market conditions and results will vary.  Commission is assumed to be 7% of $100,000 plus 3% balance.  A 3% concession to the asking price vs. sale price is average based on this data. 
-                     Repairs necessary to complete a sale are final property specific.</p>
+                <p class="Roboto-Regular text-color-1 my-2">These comparisons are examples only. When listing traditionally market conditions and results will vary.  Commission is assumed to be 7% of $100,000 plus 3% balance.  A 3% concession to the asking price vs. sale price is average based on MLS data. 
+                     Repairs necessary to complete a sale are property specific.</p>
             </div>
         </div>
         <div class="my-2 my-md-5 item3">
