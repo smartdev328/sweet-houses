@@ -29,6 +29,17 @@ const routes = [
     component: Home
   },
   {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicy.vue')
+  },
+  {
+    path: '/terms-of-service',
+    name: 'TermsofService',
+    component: () => import(/* webpackChunkName: "about" */ '../views/TermsofService.vue')
+  },
+  
+  {
     path:'/home-swap',
     name:"HomeSwap",
     component:HomeSwap

@@ -61,6 +61,31 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
+             <div class="element4 d-flex">
+              <div class="form-group form-check mb-0">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                  value="agree"
+                  v-model="checked"
+                />
+                <label
+                  class="form-check-label element4"
+                  for="exampleCheck1"
+                  >
+                   <p>
+                By creating your account, you agree to our<code><br></code>
+              <a  href="/terms-of-service"  target="_blank" class="text-color-2">Terms of Use</a>
+                and <a href="/privacy-policy" target="_blank" class="text-color-2">Privacy Policy</a> </p>
+                </label>
+              </div>
+              <!-- <p>
+                By creating your account, you agree to our<code><br></code>
+              <a  href="/terms-of-service"  target="_blank" class="text-color-2">Terms of Use</a>
+                and <a href="/privacy-policy" target="_blank" class="text-color-2">Privacy Policy</a> </p> -->
+              </div>
+              <span v-if="checkedmsg && !checked" style="color:#9b211b">{{checkedmsg}}</span>
               <button type="submit" class="btn btn-primary w-100 submit-btn">
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Join Now</span>
@@ -72,11 +97,7 @@
                 <p class="font-robot text-color-2 mr-2">Already have a profile? </p>
                 <button @click="XsignupOlogin">log in</button>
               </div>
-              <div class="element4 d-flex justify-content-center text-center mb-4">
-              <p>
-                By creating your account, you agree to our<code><br></code>
-              <a href="" class="text-color-2">Terms of Use</a>  and <a href="" class="text-color-2">Privacy Policy</a> </p>
-              </div>
+             
              
         </div>
 
@@ -87,6 +108,7 @@ import Swal from 'sweetalert2'
 export default {
     data(){
         return{
+          checked:null,
         fullname:"",
         FieldType:"password",
         formData: new FormData(),
@@ -104,6 +126,10 @@ export default {
         }
     },
     methods:{
+      opentermsofservice(){
+        let routeData = this.$router.resolve({name:'TermsofService'});
+          window.open(routeData.href, '_blank');
+      },
         XsignupOlogin(){
             this.$emit('XsignupOlogin')
         },
@@ -117,6 +143,9 @@ export default {
           this.msg={};
           this.errors =  {};
           this.emailnotmaildmsg =  "";
+          if(!this.checked){
+            this.checkedmsg = "Please accept the Sweetly Terms of Service before continuing"
+          }
           if(!this.input.full_name){
               this.msg.full_name = "full name is required"
           }
@@ -140,7 +169,7 @@ export default {
           if(this.input.password && this.input.password.length < 6){
               this.msg.password  = "Password must be at least 6 characters"
           }
-          if(this.input.full_name && this.input.password.length >= 6 && this.input.email){
+          if(this.input.full_name && this.input.password.length >= 6 && this.input.email && this.checked){
               return true
           }
       },
@@ -223,5 +252,8 @@ export default {
 }
 </script>
 <style scoped>
-
+input[type=checkbox]{
+  width: 16px;
+  height: 16px;
+}
 </style>
