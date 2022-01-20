@@ -79,8 +79,8 @@
                    
                 </div>
                 <div class="row py-2">
-                    <a href="/privacy-policy" >Privacy Policy</a>
-                   <a  href="/terms-of-service" class="ml-3">Terms of Service</a>
+                    <a href="/privacy-policy"  class="Roboto-Medium">Privacy Policy</a>
+                   <a  href="/terms-of-service" class="ml-3 Roboto-Medium">Terms of Service</a>
                 </div>
             </div>
         </footer>
@@ -140,5 +140,10 @@ export default {
      footer .br-bottom{
          border-bottom: 1px solid #434242;
      }
-   
+    footer a{
+       color: #3333339e;
+    }
+    footer a:hover{
+        color:#FFB600;
+    }
 </style>
