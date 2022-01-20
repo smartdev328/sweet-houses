@@ -1,8 +1,8 @@
 <template>
     <div>
         <footer>
-            <div class="container py-4">
-                <div class="row d-flex align-items-baseline">
+            <div class="container py-4 ">
+                <div class="row br-bottom d-flex align-items-baseline">
                     <div class="col-12 col-md-3 col-lg-3 elementa">
                         <div class="logo-img">
                             <img src="@/assets/image/logo.svg" class="w-100 h-100" alt="logo" />
@@ -78,6 +78,10 @@
                     </div>
                    
                 </div>
+                <div class="row py-2">
+                    <a href="/privacy-policy" >Privacy Policy</a>
+                   <a  href="/terms-of-service" class="ml-3">Terms of Service</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -133,4 +137,8 @@ export default {
         font-size: 16px;
         margin: 0;
      }
+     footer .br-bottom{
+         border-bottom: 1px solid #434242;
+     }
+   
 </style>
