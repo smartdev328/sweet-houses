@@ -256,4 +256,11 @@ input[type=checkbox]{
   width: 16px;
   height: 16px;
 }
+/* 
+input[type=checkbox]:checked:after {
+	content: '\2714';
+	color: #fff;
+  background: #FFB600;
+} */
+
 </style>
