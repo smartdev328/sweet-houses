@@ -1,6 +1,6 @@
 <template>
     <div class="aboutus">
-    <div class="item1">
+    <!-- <div class="item1">
             <div class="item1a py-5">
                 <div class="mt-5 item1b">
                     <p class="text-center p1 text-white DMSerifRegular">Ready, Set Sold</p>
@@ -17,8 +17,10 @@
                   </div>
                 </div>
             </div>
-    </div>
-    <div class="item2">
+    </div> -->
+
+
+    <!-- <div class="item2">
         <div class="container my-5">
             <div class="row d-flex align-items-center">
                 <div class="col-12 col-md-6">
@@ -34,8 +36,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="item3">
+    </div> -->
+   
+   
+    <!-- <div class="item3">
         <div class="container">
             <div class="px-4 py-3">
                 <div class="text-center element1 my-3">
@@ -78,8 +82,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="item4">
+    </div> -->
+
+
+
+    <!-- <div class="item4">
         <div class="container">
             <div class="my-5">
                 <div class="text-center title">
@@ -125,7 +132,10 @@ For More Value</p></div>
             </div>
         </div>
     </div>
-    <div class="item5">
+     -->
+   
+   
+    <!-- <div class="item5">
         <div class="container">
             <div class="py-4">
                 <div class="element1 text-center">
@@ -302,7 +312,10 @@ For More Value</p></div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
+
     <div class="item6 my-5">
         <div class="container">
             <div>
@@ -351,51 +364,79 @@ For More Value</p></div>
             </div>
         </div>
     </div>
+
+    <div class="item7 my-5 container">
+        <h3 class="Roboto-Medium ">Our Story:</h3>
+        <p class="Roboto-Regular text-color-1">Sweetly does real estate differently. We blend finance, technology and real estate together to make your process of selling, buying or both far easier and more fun.
+</p>
+    </div>
+    <div class="item7 my-5 container">
+        <h3 class="Roboto-Medium ">Read more:</h3>
+        <p class="Roboto-Regular text-color-1">Our ownership team is made up of ex ‘big brand’ Realtors. For a combined 50 years plus, we’ve watched customers struggle with seller pains like regular showings, keeping a home show-ready, having strangers tour the home you live in while not home, doors left open or unlocked. Add in the financial logistics involved with selling one home to buy another and it’s easy to see why those who have gone through the process understand the need for change.
+        </p>
+        <p class="Roboto-Regular text-color-1">So, we re-built the real estate wheel to serve customers with better solutions.</p>
+        <p class="Roboto-Regular text-color-1">
+So, we re-built the real estate wheel to serve customers with better solutions.
+We’re often asked questions like: Why would you do this? Why would you take so much risk? Why isn’t anyone else doing this? We’re encouraged by these questions. We feel that the risk should be with the brokerage and not the customer; further, we feel that a brokerage should have a program available to buy a house at a fair value –
+ without the requirement of the customer to list their home for sale and live through seller pains.
+        </p>
+        <p class="Roboto-Regular text-color-1">
+We use bank certified appraisers and home inspectors to determine the fair market value of property. Our processes and fees are completely transparent and posted all over our website. We use our money to make our customers’ process easier, less costly, and less risky. In doing so we earn commissions just like any other Realtor.
+        </p>
+        <p class="Roboto-Regular text-color-1">
+            My name is Ed DePrato, and I’m one of the owners, as well as the broker at Sweetly Real Estate. Thanks for connecting with us! I welcome your feedback. At Sweetly, we’re never too busy to answer any questions. If there’s anything I can help with, please feel free to contact me directly.
+With gratitude,
+        </p>
+        <p class="Roboto-Regular text-color-1">
+            Ed DePrato Partner, Broker, Dog dad
+    
+        </p>    
+    </div>
     </div>
 </template>
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
     data(){
         return{
-            settings:{
-            "dots": false,
-            "focusOnSelect": true,
-            "infinite": true,
-            "speed": 500,
-            "slidesToShow": 3,
-            "slidesToScroll": 1,
-            "touchThreshold": 1,
-            "arrows":false,
-             "responsive": [
-            {
-            "breakpoint": 1024,
-            "settings": {
-                "slidesToShow": 3,
-                "slidesToScroll": 1,
-                "infinite": true,
-            }
-            },
-            {
-            "breakpoint": 600,
-            "settings": {
-                "slidesToShow": 2,
-                "slidesToScroll": 2,
-                "initialSlide": 1
-            }
-            },
-            {
-            "breakpoint": 480,
-            "settings": {
-                "slidesToShow": 1,
-                "slidesToScroll": 1
-            }
-            }
-        ]
-            }
+        //     settings:{
+        //     "dots": false,
+        //     "focusOnSelect": true,
+        //     "infinite": true,
+        //     "speed": 500,
+        //     "slidesToShow": 3,
+        //     "slidesToScroll": 1,
+        //     "touchThreshold": 1,
+        //     "arrows":false,
+        //      "responsive": [
+        //     {
+        //     "breakpoint": 1024,
+        //     "settings": {
+        //         "slidesToShow": 3,
+        //         "slidesToScroll": 1,
+        //         "infinite": true,
+        //     }
+        //     },
+        //     {
+        //     "breakpoint": 600,
+        //     "settings": {
+        //         "slidesToShow": 2,
+        //         "slidesToScroll": 2,
+        //         "initialSlide": 1
+        //     }
+        //     },
+        //     {
+        //     "breakpoint": 480,
+        //     "settings": {
+        //         "slidesToShow": 1,
+        //         "slidesToScroll": 1
+        //     }
+        //     }
+        // ]
+        //     }
         }
     },
     methods:{
@@ -408,7 +449,7 @@ export default {
     }
     },
     components:{
-        VueSlickCarousel 
+      //  VueSlickCarousel 
     }
 }
 </script>
@@ -671,6 +712,13 @@ box-shadow: 20px -20px 0px 0px #70707085;
 .aboutus .item6 .element2 p{
     font-size: 20px;
 }
+.aboutus .item7 h3{
+        font-size: 28px;
+    color: #434242;
+}
+.aboutus .item7 p{
+    font-size: 18px;
+}
 @media only screen and (max-width: 600px){
     .aboutus .item4 .element2{
             grid-template-columns: auto;
@@ -714,9 +762,16 @@ box-shadow: 20px -20px 0px 0px #70707085;
 .aboutus .item1 .item1a .p2{
         font-size: 24px;
     }
-    .aboutus .item1 .item1a .inputaddress{
-        font-size: 12px;
-    }
+.aboutus .item1 .item1a .inputaddress{
+    font-size: 12px;
+}
+.aboutus .item7 h3{
+font-size: 20px;
+color: #434242;
+}
+.aboutus .item7 p{
+    font-size: 16px;
+}
 
 }
 </style>

@@ -1,17 +1,19 @@
 <template>
     <div class="page1">
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
-                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How Sweetly Works</p></div>
+                <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">Our Story</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8"><p class="Roboto-Medium">
-                        Sweetly is a new kind of real estate brokerage that offers solutions not available anywhere else. We use our own money to make your process easier, more profitable, and less risky! We’re a blend of real estate, finance, and technology brought together to meet your real estate needs in ways that are more customer friendly than the solutions available from traditional real estate brokerages    
-                    </p></div>
+                        Sweetly does real estate differently. We blend finance, technology and real estate together to make your process of selling,
+                         buying or both far easier and more fun.   
+                    </p>
+                       <router-link to="about-us" class="Roboto-Regular">About us</router-link></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ECGVslh3ovY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
-                    <div class="col-12">
-                        <router-link to="about-us" class="Roboto-Regular">Read More</router-link>
-                    </div>
+                    <!-- <div class="col-12">
+                        <router-link to="about-us" class="Roboto-Regular">About us</router-link>
+                    </div> -->
                 </div>
         </div>
   
@@ -349,7 +351,7 @@ export default {
     }
     .page1 .item1 .item1b p{
     color:#434242;
-    font-size: 18px;
+    font-size: 20px;
     }
     .page1 .item2 .title p{
         font-size: 36px;
