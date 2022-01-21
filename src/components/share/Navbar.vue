@@ -213,7 +213,7 @@
           <!-- <button @click="openresetpassword">verify</button> -->
           <button
             v-b-modal="'my-modallogin'"
-            class="bg-transparent border-0 mr-3"
+            class="bg-transparent border-0 mr-3 py-1"
           >
             Log In
           </button>
