@@ -111,8 +111,8 @@
                                      <td>
                                        
                                     </td>
-                                    <td>{{homedatafirst.basement1}}</td>
-                                    <td>{{closest_home_data.basement1}}</td>
+                                    <td>{{homedatasecond.basement_desc}}</td>
+                                    <td>{{closest_home_data.details.basement1}}</td>
                                    
                                 </tr>
                             </tbody>
@@ -145,6 +145,9 @@ export default {
       },
       homedatafirst(){
           return this.$store.state.homedatafirst || {}
+      },
+      homedatasecond(){
+          return this.$store.state.homedatasecond || {}
       },
     },
     methods:{
