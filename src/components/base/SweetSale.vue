@@ -289,7 +289,7 @@ current home lets you make a more compelling offer on your next home without a c
                         <tr>
                             <td class="Roboto-Regular">Brokerage pays your mortgage until sold</td>
                             <td class="text-center">
-                                <p class="Roboto-Regular"> 7/3</p>
+                            <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
                                  <p class="h4"> No </p>
@@ -298,7 +298,7 @@ current home lets you make a more compelling offer on your next home without a c
                         <tr>
                             <td class="Roboto-Regular">Buy before you sell without condition of sale</td>
                             <td class="text-center">
-                                <p class="Roboto-Regular">2%</p>
+                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>
                             </td>
                             <td class="text-center">
                                 <p class="h4"> No </p>

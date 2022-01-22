@@ -93,7 +93,7 @@ export default {
 </script>
 <style>
     footer{
-        background: #F3F3F3;
+        background:  #EDF3F2;
             
       /*   position: fixed;
         bottom: 0;

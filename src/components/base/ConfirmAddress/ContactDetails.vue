@@ -2,7 +2,7 @@
   <div class="contact-details-form">
     <div class="px-0 px-md-5 w-100 mx-0">
 
-   
+
     <div v-if="tab_visible == 'menu_one'">
       <div class="row">
         <div class="col-12 row p-0 col-md-6 mx-auto d-flex">
@@ -98,7 +98,7 @@
               style="color: #dc3545; font-size: 16px"
               v-if="emailnotmaildmsg && !emailisvalid"
               >{{ emailnotmaildmsg }}</span
-            > 
+            >
           </div>
           <div class="form-group mx-auto my-3 text-left">
             <div class="">
@@ -178,7 +178,7 @@
       </div>
     </div>
      </div>
-           <b-modal id="err-model" 
+           <b-modal id="err-model"
            v-model="errmodel"
            ref="errmodel"
         header-bg-variant="white"
@@ -252,7 +252,7 @@ export default {
         this.fullname &&
         this.email &&
         this.phone &&
-        this.resultsExample.isValid 
+        this.resultsExample.isValid
       //  this.emailisvalid
       ) {
         return true;
@@ -293,9 +293,9 @@ export default {
             //       `,
             //     })
         }
-        
-                
-               
+
+
+
       }).catch((err) =>{
         this.loadvalid = false;
            Swal.fire({
@@ -307,7 +307,7 @@ export default {
                 })
                 this.errors = err || {};
       })
-      
+
     },
     openPersonalized() {
       if (this.checkform() && Object.keys(this.msg).length == 0) {

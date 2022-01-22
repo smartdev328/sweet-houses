@@ -1,6 +1,6 @@
 <template>
     <div>
-           
+
         <div class="text-center element1  mt-n3">
           <p class="font-robot text8">Sign up</p>
         </div>
@@ -24,7 +24,7 @@
                     style="color: #fc5353;"
                     >{{ error.msg }}</span
                   >
-                </div> 
+                </div>
             </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
@@ -44,6 +44,23 @@
                   >
                 </div>
             </div>
+                <div class="form-group mx-auto my-3 text-left">
+            <div class="">
+              <vue-phone-number-input
+                v-model="phone"
+                @update="resultsExample = $event"
+                color="#ffb600"
+                error-color="orangered"
+                default-country-code="CA"
+              />
+            </div>
+            <span style="color: #dc3545; font-size: 16px" v-if="msg.phone && !phone">{{
+              msg.phone
+            }}</span>
+             <span style="color: #dc3545; font-size: 16px" v-if="phone && resultsExample && !resultsExample.isValid">{{
+              msg.phone
+            }}</span>
+          </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
               <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;">{{
@@ -92,13 +109,13 @@
                </button>
 
             </form>
-         
+
               <div class="element3 align-items-baseline">
                 <p class="font-robot text-color-2 mr-2">Already have a profile? </p>
                 <button @click="XsignupOlogin">log in</button>
               </div>
-             
-             
+
+
         </div>
 
     </div>
@@ -123,7 +140,19 @@ export default {
         loadvalid: false,
         emailisvalid: false,
        emailnotmaildmsg: "",
+        phone: null,
+    resultsExample: null,
+    checkedmsg:""
         }
+    },
+    computed : {
+      phonenumber(){
+        if(this.resultsExample){
+          return this.resultsExample.nationalNumber
+        }else{
+          return ""
+        }
+      }
     },
     methods:{
       opentermsofservice(){
@@ -169,20 +198,27 @@ export default {
           if(this.input.password && this.input.password.length < 6){
               this.msg.password  = "Password must be at least 6 characters"
           }
-          if(this.input.full_name && this.input.password.length >= 6 && this.input.email && this.checked){
+          if (!this.phone) {
+              this.msg.phone = "phone is required";
+            }
+            if (!this.resultsExample.isValid) {
+              this.msg.phone = "enter a correct phone number";
+            }
+          if(this.input.full_name && this.input.password.length >= 6 && this.input.email && this.checked && this.phone &&
+        this.resultsExample.isValid ){
               return true
           }
       },
       SignUp(){
           if(this.ckeckform() && Object.keys(this.msg).length == 0){
             this.loading = true
-
+              this.input.phone_number = this.phonenumber
               Object.entries(this.input).forEach((entry) =>
                 this.formData.append(entry[0], entry[1])
                 );
               this.$store
           .dispatch("register", this.formData).then((res)=>{
-            this.loading = false; 
+            this.loading = false;
                 this.$emit('hidesignupmodal');
             let localemail = res.data.email
            this.$store.commit('setlocalemail',localemail)
@@ -199,10 +235,10 @@ export default {
               }
               )
               // .then(()=>{
-              //   // this.loading = false; 
+              //   // this.loading = false;
               //   // this.$emit('hidesignupmodal');
-                
-              // }) 
+
+              // })
               .catch((err) => {
                 this.loading = false
                 this.formData = new FormData(),
@@ -210,7 +246,7 @@ export default {
                 this.loading = false
                 console.log(err.response.data)
           });
-            
+
       }
       },
       registerGauth(id_token,access_token){
@@ -241,7 +277,7 @@ export default {
       let id_token = googleUser.getAuthResponse().id_token;
       let access_token = googleUser.getAuthResponse().access_token;
       this.registerGauth(id_token,access_token)
-      
+
       // console.log(
       //   "getAuthResponse$G",
       //   this.$gAuth.GoogleAuth.currentUser.get().getAuthResponse()
@@ -256,7 +292,7 @@ input[type=checkbox]{
   width: 16px;
   height: 16px;
 }
-/* 
+/*
 input[type=checkbox]:checked:after {
 	content: '\2714';
 	color: #fff;
