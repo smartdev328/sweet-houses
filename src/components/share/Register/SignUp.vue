@@ -148,7 +148,7 @@ export default {
     computed : {
       phonenumber(){
         if(this.resultsExample){
-          return this.resultsExample.nationalNumber
+          return this.resultsExample.formatInternational
         }else{
           return ""
         }
