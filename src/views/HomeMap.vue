@@ -503,9 +503,12 @@ export default {
     },
     clearcity(){
      if(this.$refs.addressmap.$el._value == ''){
+       this.$refs.showmap.showboxselling()
         let city = ""
       this.$store.commit("setCity",city)
       this.$refs.showmap.updateaddressdata()
+       }else{
+         this.$refs.showmap.hideboxselling()
        }
     },
     addTag(newTag) {
@@ -590,6 +593,7 @@ export default {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
+    
   },
 
   created() {
