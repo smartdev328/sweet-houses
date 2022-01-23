@@ -65,7 +65,7 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="group">
+    <div class="group" v-if="showbox">
       <div class="group1">
         <div class="group1a px-1 px-md-4 py-4">
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
@@ -227,6 +227,7 @@ export default {
   },
   components: { GmapCluster },
   data: () => ({
+    showbox:true,
     visInfoWindow: false,
     centerLatitude: 0,
     centerLongitude: 0,
@@ -301,6 +302,12 @@ export default {
           return num; // if value < 1000, nothing to do
         }
       }
+    },
+    hideboxselling(){
+      this.showbox = false
+    },
+    showboxselling(){
+      this.showbox = true
     },
     handleInfoWindowClose() {
       this.activehome = {};
