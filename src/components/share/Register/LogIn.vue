@@ -163,13 +163,13 @@ export default {
           .dispatch("login", this.formData).then((res)=>{
                 //   this.$notify({
                 //   group: 'foo',
-                //   type: "success",
+                //   type: "Success",
                 //   text: 'Success..! you are login',
                 //   duration:6000,
                 //   speed:500
                 // });
                   Swal.fire({
-                  title: 'success!',
+                  title: 'Success!',
                   text: 'Success, you are logged in!',
                   icon: 'success',
                   confirmButtonText: 'Ok',
