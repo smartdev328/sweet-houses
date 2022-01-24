@@ -352,7 +352,7 @@
                :class="{ 'input--error':  (msgone.parking_spaces && parking_spaces < 0) || (msgone.parking_spaces && parking_spaces == null) }"
             >
               <label for="Parking" class="col-sm-5 col-form-label text-left"
-                >garage spaces</label
+                >Garage spaces</label
               >
               <div class="d-style">
                 <div class="col-sm-2">
