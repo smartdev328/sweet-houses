@@ -38,7 +38,7 @@
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
                   id="map"
-                  autocomplete="false"
+                  autocomplete="off"
                     ref="addressmap"
                   classname="form-control"
                   placeholder="Enter an address"

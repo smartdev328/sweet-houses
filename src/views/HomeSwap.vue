@@ -11,7 +11,7 @@
           />
           <span class="ml-2">
             <span>Your Home</span>
-            <img class="mt-n5 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
+            <img class="mt-n-4  mb-0" src="../assets/image/Underline_Dash.svg" alt="">
           </span>
         </div>
         <div class="item1 mb-3">
@@ -351,6 +351,9 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
 }
 .spanalgorithm{
   font-size: 13px;
+}
+.mt-n-4 {
+  margin-top:-4rem;
 }
 @media only screen and (max-width: 770px){
   .item1b .item1b3 {

@@ -66,6 +66,10 @@ Vue.use(IconsPlugin)
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
 
+import DisableAutocomplete from 'vue-disable-autocomplete';
+Vue.use(DisableAutocomplete);
+
+
 // import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 // import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
