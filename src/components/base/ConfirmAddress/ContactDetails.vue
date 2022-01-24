@@ -269,7 +269,7 @@ export default {
       this.$store.dispatch('Post_Instant').then((res) =>{
         if(res.data.prices_offer.status == 200){
            Swal.fire({
-                  title: 'success!',
+                  title: 'Success!',
                   icon: 'success',
                   confirmButtonText: 'Ok',
                   showConfirmButton:false,
