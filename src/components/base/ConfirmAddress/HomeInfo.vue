@@ -748,7 +748,7 @@ export default {
         { value: "Multi/Split", name: "Multi/Split" },
       ],
       home_conditions: [
-        { value: "Look s New", name: "Look s New" },
+        { value: "Look's New", name: "Look's New" },
         { value: "About Average", name: "About Average" },
         { value: "Mostly Original", name: "Mostly Original" },
         { value: "Needs Work", name: "Needs Work" },
