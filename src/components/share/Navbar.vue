@@ -366,8 +366,8 @@ export default {
       //   text: 'Hello user! This is a notification!',
       // });
       Swal.fire({
-        title: "success!",
-        text: "you are logout!",
+        title: "Success!",
+        text: "You are Logged Out!",
         icon: "warning",
         confirmButtonText: "Ok",
         showConfirmButton: false,
