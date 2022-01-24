@@ -412,20 +412,22 @@
         @submit="submitlist"
       ></show-list>
     </div>
-       <div class="my-5" :class="tab_visible('show-map')" >
+       <!-- <div class="my-5" :class="tab_visible('show-map')" >
       <div class="container" > 
         <SweetSale></SweetSale>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
-import SweetSale from '../components/base/SweetSale.vue'
+//import SweetSale from '../components/base/SweetSale.vue'
 // import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap, SweetSale },
+  components: { ShowMap,
+  // SweetSale 
+  },
   data() {
     return {
       showfilter: false,
@@ -500,6 +502,7 @@ export default {
       this.showfilter = false;
     },
      getAddressData(addressData) {
+      this.$refs.showmap.openfullscreenh()
       let city = addressData.locality
       this.$store.commit("setCity",city)
       this.$refs.showmap.updateaddressdata(addressData)

@@ -46,7 +46,7 @@
             </div>
           </div>
         </gmap-info-window>
-        <GmapCluster :styles="clusterStyles" :zoom-on-click="true">
+        <GmapCluster :styles="clusterStyles" :zoom-on-click="true" @click="openfullscreenh()">
           <GmapMarker
             v-for="m in listings"
             :key="m.id"
@@ -66,7 +66,7 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="group" v-if="showbox">
+    <div class="group" v-if="showbox && !fullscreenh">
       <div class="group1">
         <div class="group1a px-1 px-md-4 py-4">
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
@@ -126,13 +126,18 @@
         Show List
       </button>
     </div>
+    <div class="my-5" v-if="!fullscreenh">
+      <div class="container" > 
+        <SweetSale></SweetSale>
+      </div>
+    </div> 
   </div>
 </template>
 <script>
 import { gmapApi } from "vue2-google-maps";
 import GmapCluster from "vue2-google-maps/dist/components/cluster";
 import { mapState } from "vuex";
-
+import SweetSale from './SweetSale.vue'
 export default {
   props: ["type"],
   computed: {
@@ -227,7 +232,7 @@ export default {
       return  new window.google.maps.LatLngBounds()
     }
   },
-  components: { GmapCluster },
+  components: { GmapCluster , SweetSale},
   data: () => ({
     fullscreenh:false,
     showbox:true,
@@ -281,6 +286,9 @@ export default {
     placeResultData:{},
   }),
   methods: {
+    openfullscreenh(){
+      this.fullscreenh = true
+    },
     checkClick() {
       if (this.infoWindowOpened) {
         (this.infoWindowOpened = false), (this.activehome = {});
@@ -317,6 +325,7 @@ export default {
       this.infoWindowOpened = false;
     },
     handleMarkerClicked(m) {
+      this.openfullscreenh();
       this.activehome = {};
       this.infoWindowPosition.lat = m.map.latitude * 1;
       this.infoWindowPosition.lng = m.map.longitude * 1;
@@ -720,6 +729,10 @@ input:focus {
 .h-map{
   width: 100%;
    height: 60vh
+}
+.full-map{
+   width: 100%;
+   height: 90vh
 }
 @media only screen and (max-width: 600px) {
   .group {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+//import Home from '../views/Home.vue'
 import HomeSwap from '../views/HomeSwap.vue'
 
 import store from '../store/index'
@@ -23,11 +23,11 @@ function requireAddress(to, from, next) {
   next();
 }
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: Home
+  // },
   {
     path: '/privacy-policy',
     name: 'PrivacyPolicy',
@@ -155,7 +155,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/HomeWorth.vue')
   },
   {
-    path: '/maphome',
+    path: '/',
     name: 'MapHome',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
