@@ -121,18 +121,18 @@
         </div>
       </div>
     </div>
-      <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
+      <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
           <textra
             :data="words"
-            :timer="50"
-            :infinite="false"
+            :timer="2"
+            :infinite="true"
             filter="top-bottom"
           />
           <span class="ml-2">
             <span>Your Home</span>
-            <img class="mt-n-4  mb-0" src="../../assets/image/Underline_Dash.svg" alt=""> 
+            <!-- <img class="mt-n-4  mb-0" src="../../assets/image/Underline_Dash.svg" alt="">  -->
           </span>
-        </div> -->
+        </div>
     <div class="togglemap" v-if="fullscreenh">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
@@ -625,19 +625,19 @@ export default {
 }
 .itemnew11{
    position: absolute;
-  right: 50px;
+  right: 170px;
   height: 200px;
-  top: 200px;
+  top: 280px;
   z-index: 0;
   /* width: 30%; */
 }
 .itemnew11 .textra ,.itemnew11 span {
-  font-size: 3em;
-  color:#00a19b;
+  font-size: 90px;
+  color:#ffb600;
 }
 .textra {
-  width: 160px !important;
-  text-align: end;
+  /* width: 160px !important;
+  text-align: end; */
 }
 .group {
   position: absolute;
