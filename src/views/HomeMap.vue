@@ -59,7 +59,7 @@
                    <vue-google-autocomplete
                   id="mapautoinput"
                     ref="addressmap"
-                    autocomplete="off"
+                    autocomplete="false"
                   classname="form-control"
                   placeholder="Enter City,Address"
                   country="ca"
@@ -402,7 +402,7 @@
       </div>
     </div>
 
-    <div :class="tab_visible('show-map')" class="h-100">
+    <div :class="tab_visible('show-map')" class="h-50">
       <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
@@ -412,15 +412,20 @@
         @submit="submitlist"
       ></show-list>
     </div>
+       <div class="my-5" :class="tab_visible('show-map')" >
+      <div class="container" > 
+        <SweetSale></SweetSale>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
-
+import SweetSale from '../components/base/SweetSale.vue'
 // import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap,  },
+  components: { ShowMap, SweetSale },
   data() {
     return {
       showfilter: false,

@@ -13,8 +13,9 @@
         @dragend="dropmap()"
         map-type-id="terrain"
         :options="options"
-        style="width: 100%; height: 90vh"
-        class="mt-n5"
+        class="mt-n5 "
+       
+        :class="[fullscreenh ?  'full-map' : 'h-map']"
       >
         <gmap-polygon
           v-bind:paths.sync="objpaths"
@@ -83,7 +84,7 @@
             <div class="item1b2">
               <span class="space"></span>
               <vue-google-autocomplete
-              autocomplete="off"
+              autocomplete="false"
                 id="map_page"
                 ref="addressmap"
                 classname="form-control"
@@ -120,7 +121,7 @@
         </div>
       </div>
     </div>
-    <div class="togglemap">
+    <div class="togglemap" v-if="fullscreenh">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
       </button>
@@ -228,6 +229,7 @@ export default {
   },
   components: { GmapCluster },
   data: () => ({
+    fullscreenh:false,
     showbox:true,
     visInfoWindow: false,
     centerLatitude: 0,
@@ -714,6 +716,10 @@ input:focus {
   color: #043a30;
   margin-top: 6px;
   border-radius: 4px;
+}
+.h-map{
+  width: 100%;
+   height: 60vh
 }
 @media only screen and (max-width: 600px) {
   .group {
