@@ -11,7 +11,7 @@
           >
         </div>
       </div>
-        <div v-if="homedata.images.length > 0" :class="{hover:type == 'sold' && !isLoggedIn}">
+        <div v-if="homedata.images &&homedata.images.length > 0" :class="{hover:type == 'sold' && !isLoggedIn}">
              <VueSlickCarousel v-bind="settings">
             <div
               class="slideimg px-1 position-relative"
