@@ -83,6 +83,7 @@
             <div class="item1b2">
               <span class="space"></span>
               <vue-google-autocomplete
+              autocomplete="off"
                 id="map_page"
                 ref="addressmap"
                 classname="form-control"

@@ -39,6 +39,7 @@
                 <!-- <input type="text" class="Poppins" v-model="location"
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
+                autocomplete="off"
                   id="map"
                     ref="addressmap"
                   classname="form-control"
