@@ -117,9 +117,9 @@ export default {
                 this.loading = false;
                 this.Xresetpassword();
                   Swal.fire({
-                  title: 'success!',
+                  title: 'Success!',
                   text: 'Success, you are logged in!',
-                  icon: 'success',
+                  icon: 'Success',
                   confirmButtonText: 'Ok',
                   showConfirmButton:false,
                   timer: 1500

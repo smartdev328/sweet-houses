@@ -225,8 +225,8 @@ export default {
             this.OpenVerifycode()
 
             //  Swal.fire({
-            //       title: 'success!',
-            //       text: 'Success..! you are login',
+            //       title: 'Success!',
+            //       text: 'Success..! You are logged in',
             //       icon: 'success',
             //       confirmButtonText: 'Ok',
             //       timer: 1500
