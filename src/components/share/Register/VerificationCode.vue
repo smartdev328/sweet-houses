@@ -76,13 +76,13 @@ export default {
           .dispatch("verifycodeactive", this.formData).then((res)=>{
                 //   this.$notify({
                 //   group: 'foo',
-                //   type: "success",
-                //   text: 'Success..! you are login',
+                //   type: "Success",
+                //   text: 'Success..! You are logged in',
                 //   duration:6000,
                 //   speed:500
                 // });
                   Swal.fire({
-                  title: 'success!',
+                  title: 'Success!',
                   text: 'Success, you are logged in!',
                   icon: 'success',
                   confirmButtonText: 'Ok',
