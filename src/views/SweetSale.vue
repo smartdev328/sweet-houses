@@ -11,7 +11,7 @@
           />
           <span class="ml-2">
             <span>Your Home</span>
-            <img class="mt-n5 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
+            <img class="mt-n-4 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
           </span>
         </div>
         <div class="item1  mb-3">
@@ -86,10 +86,10 @@
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
                   id="map"
-                  autocomplete="false"
+                  autocomplete="off"
                     ref="addressmap"
                   classname="form-control"
-                 placeholder="Enter an address"
+                placeholder="Enter a home location"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
@@ -442,6 +442,9 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
 .textra {
   width: 160px !important;
   text-align: end;
+}
+.mt-n-4 {
+  margin-top:-5rem;
 }
 @media only screen and (max-width: 770px){
   .item1b .item1b3 {

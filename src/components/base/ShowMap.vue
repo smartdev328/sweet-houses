@@ -84,11 +84,11 @@
             <div class="item1b2">
               <span class="space"></span>
               <vue-google-autocomplete
-              autocomplete="false"
+              autocomplete="off"
                 id="map_page"
                 ref="addressmap"
                 classname="form-control"
-                placeholder="Enter your home address"
+                placeholder="Enter a home location"
                 country="ca"
                 v-on:keyup="yourFunctinNameToBeCall"
                 v-on:inputChange="inputChange"
@@ -121,6 +121,18 @@
         </div>
       </div>
     </div>
+      <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
+          <textra
+            :data="words"
+            :timer="50"
+            :infinite="false"
+            filter="top-bottom"
+          />
+          <span class="ml-2">
+            <span>Your Home</span>
+            <img class="mt-n-4  mb-0" src="../../assets/image/Underline_Dash.svg" alt=""> 
+          </span>
+        </div> -->
     <div class="togglemap" v-if="fullscreenh">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
@@ -234,6 +246,7 @@ export default {
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
+    words: ["Buy", "Trade","List","Finance"],
     fullscreenh:false,
     showbox:true,
     visInfoWindow: false,
@@ -609,6 +622,22 @@ export default {
   padding: 4px 16px;
   border-radius: 50px;
   font-size: 1rem;
+}
+.itemnew11{
+   position: absolute;
+  right: 50px;
+  height: 200px;
+  top: 200px;
+  z-index: 0;
+  /* width: 30%; */
+}
+.itemnew11 .textra ,.itemnew11 span {
+  font-size: 3em;
+  color:#00a19b;
+}
+.textra {
+  width: 160px !important;
+  text-align: end;
 }
 .group {
   position: absolute;
