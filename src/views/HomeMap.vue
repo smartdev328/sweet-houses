@@ -59,9 +59,9 @@
                    <vue-google-autocomplete
                   id="mapautoinput"
                     ref="addressmap"
-                    autocomplete="false"
+                    autocomplete="off"
                   classname="form-control"
-                  placeholder="Enter City,Address"
+                  placeholder="Enter City"
                   country="ca"
                   v-on:placechanged="getAddressData"
                   v-on:keyup="clearcity"

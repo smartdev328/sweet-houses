@@ -11,10 +11,10 @@
                         <span class="space"></span>
                         <vue-google-autocomplete
                   id="map"
-                  autocomplete="false"
+                  autocomplete="off"
                     ref="addressmap"
                   classname="form-control"
-                  placeholder="Enter an address"
+                  placeholder="Enter a home location"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
