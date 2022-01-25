@@ -91,7 +91,7 @@ and our fee.</li>
                     </div>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                 <div class="col-12 col-md-6">
+                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular text-capitalize">Skip Public Showings</p>
                     <ul>
                         <li>
@@ -114,7 +114,7 @@ Sweetly takes the home whenever it works for you.</li>
         </div>
          <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
@@ -149,7 +149,7 @@ conflicts with price.</li>
                     </div> 
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>

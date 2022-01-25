@@ -18,7 +18,7 @@
         </div>
   
 
-        <div class="mmy-2 my-md-5 item3">
+        <div class="my-2 my-md-5 item3">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Swift Sale</p>
@@ -42,7 +42,7 @@
                 <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
-                    
+
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                 <div class="col-12 col-md-6">
+                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular text-capitalize">Sweet Sale</p>
                     <ul>
                         <li>
@@ -94,9 +94,9 @@
                 </div>
             </div>
         </div>
-         <div class="mmy-2 my-md-5 item5">
+         <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Home Swap
 </p>
                     <ul>
@@ -148,7 +148,7 @@
                     </div> 
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular text-capitalize">Buy a Home</p>
                     <ul>
                         <li>
@@ -172,9 +172,9 @@
                 </div>
             </div>
         </div>
-                <div class="mmy-2 my-md-5 item5">
+                <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Equity Advance
 
 </p>
@@ -211,6 +211,38 @@
                     <div class="image">
                         <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
+                </div>
+            </div>
+        </div>
+         <div class="my-2 my-md-5 item6">
+            <div class="row align-items-center flex-revers-sm">
+                <div class="col-12 col-md-6 d-flex">
+                    <div class="image">
+                        <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">
+                    </div> 
+                </div>
+                <!-- <div class="col-12 col-md-1"></div> -->
+                <div class="col-12 col-md-6 bordered-right py-4 pr-4">
+                    <p class="DMSerifRegular text-capitalize">Traditional Listing With Muscle</p>
+                    <ul>
+                        <li>
+                            <div class="icon mr-3">
+                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
+                            </div> 
+                            Home improvement advance
+</li>
+                        <li>  <div class="icon mr-3">
+                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
+                            </div>Marketing power
+</li>
+                       <li>  <div class="icon mr-3">
+                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
+                            </div>An available backup cash offer
+</li>
+<li>
+                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+            </li>
+                    </ul>
                 </div>
             </div>
         </div>
