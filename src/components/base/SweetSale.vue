@@ -20,7 +20,7 @@
 
         <div class="mmy-2 my-md-5 item3">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Swift Sale</p>
                     <ul>
                         <li>
@@ -42,6 +42,7 @@
                 <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
+                    
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 d-flex flex-row-reverse">
