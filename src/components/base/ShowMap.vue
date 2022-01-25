@@ -138,7 +138,7 @@
         Show List
       </button>
     </div>
-    <div class="my-5" v-if="!fullscreenh">
+    <div class="my-5">
       <div class="container" > 
         <SweetSale></SweetSale>
       </div>
