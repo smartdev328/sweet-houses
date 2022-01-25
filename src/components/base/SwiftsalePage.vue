@@ -71,7 +71,7 @@
         </div>
         <div class="my-2 my-md-5 item3">
             <div class="row align-items-center ">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Certainty</p>
                     <ul>
                         <li>
@@ -109,7 +109,7 @@
                     </div> 
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular text-capitalize">Skip ALL Public Showings</p>
                     <ul>
                         <li>
@@ -132,7 +132,7 @@
         </div>
          <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 bordered-left py-4 pl-4">
                     <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
                     <ul>
                         <li>
@@ -167,7 +167,7 @@
                     </div> 
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
-                 <div class="col-12 col-md-6">
+                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">
                     <p class="DMSerifRegular">Consider Any Other Offers</p>
                     <ul>
                         <li>
