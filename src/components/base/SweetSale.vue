@@ -27,16 +27,16 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Skip all the seller pains</li>
+                        Skip all the seller pains.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Choose your own flexible moving day
+                                Choose your own flexible moving day.
                             </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Get a certain sale within days
+                            Get a certain sale within days.
 </li>
             <li>
                 <router-link to="swift-sale" class="DMSerifRegular">Learn More</router-link>
@@ -69,7 +69,7 @@
                             </div> 
                             Get 
                             <div class="dropdown">
-                                 <span class="mx-2"> <u>more money</u> </span>from the 'after renovation' sale of your home
+                                 <span class="mx-2"> <u>more money</u> </span>from the 'after renovation' sale of your home.
                                  <div class="dropdown-content">
                                 <p>We make the right improvements to resell your home at the highest price possible. 
                                      You get the full resale amount (after improvements) less our fee and improvement cost</p>
@@ -79,12 +79,12 @@
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                            Skip all the seller pains
+                            Skip all the seller pains.
 
                             </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Choose your own flexible moving day
+                            </div>Choose your own flexible moving day.
 </li>
 <li>
                 <router-link to="sweet-sale" class="DMSerifRegular">Learn More</router-link>
@@ -103,7 +103,7 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                                Secure the home you lve, before selling the one you have
+                                Secure the home you love, before selling the one you have.
 
                             </li>
                         <li>  <div class="icon mr-3">
@@ -111,7 +111,7 @@
                             </div>
                                 Negotiate better terms as 
                                  <div class="dropdown">
-                                 <span class="mx-2"> <u>a cash buyer</u> </span> 
+                                 <span class="mx-2"> <u>a cash buyer</u>. </span> 
                                  <div class="dropdown-content">
                                 <p>A buyer who can proceed without a condition for the sale of another or a bank appraisal for financing</p>
                                 </div>
@@ -123,7 +123,7 @@
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Skip all the seller pains
+                                Skip all the seller pains.
 
                             </li>
 <li>
@@ -154,15 +154,15 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Get FREE daily updates on new listings that match your unique buying criteria
+                            Get FREE daily updates on new listings that match your unique buying criteria.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Get pre-qualified for a mortgage in minutes
+                            </div>Get pre-qualified for a mortgage in minutes.
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Professional guidance throughout the process
+                            </div>Professional guidance throughout the process.
 </li>
 <li>
                 <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>
@@ -182,21 +182,21 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                                We'll advance you the equity currently locked in the home you plan to sell
+                                We'll advance you the equity currently locked in the home you plan to sell.
 
 
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Interest free! We earn commission when you sell with Sweetly
+                                Interest free! We earn commission when you sell with Sweetly.
 
 
                             </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Use your money as you wish
+                                Use your money as you wish.
 
 
                             </li>
@@ -228,15 +228,15 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Home improvement advance
+                            Home improvement advance.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Marketing power
+                            </div>Marketing power.
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>An available backup cash offer
+                            </div>An available backup cash offer.
 </li>
 <li>
                 <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>
