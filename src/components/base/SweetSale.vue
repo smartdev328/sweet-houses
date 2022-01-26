@@ -39,7 +39,7 @@
                             Get a certain sale within days
 </li>
             <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="swift-sale" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
 
@@ -87,7 +87,7 @@
                             </div>Choose your own flexible moving day
 </li>
 <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="sweet-sale" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -127,7 +127,7 @@
 
                             </li>
 <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="home-swap" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -165,7 +165,7 @@
                             </div>Professional guidance throughout the process
 </li>
 <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -201,7 +201,7 @@
 
                             </li>
 <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="equity-advance" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
@@ -239,7 +239,7 @@
                             </div>An available backup cash offer
 </li>
 <li>
-                <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
+                <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>
             </li>
                     </ul>
                 </div>
