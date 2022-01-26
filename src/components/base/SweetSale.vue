@@ -27,16 +27,16 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Skip all public showings</li>
+                        Skip all the seller pains</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Choose your own moving day
+                                Choose your own flexible moving day
                             </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            A certain sale within days
+                            Get a certain sale within days
 </li>
             <li>
                 <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
@@ -67,9 +67,9 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            You get 
+                            Get 
                             <div class="dropdown">
-                                 <span class="mx-2"> <u>more money</u> </span> 
+                                 <span class="mx-2"> <u>more money</u> </span> from the 'after renovation' sale of your home
                                  <div class="dropdown-content">
                                 <p>We make the right improvements to resell your home at the highest price possible. 
                                      You get the full resale amount (after improvements) less our fee and improvement cost</p>
