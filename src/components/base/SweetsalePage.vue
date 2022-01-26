@@ -270,16 +270,7 @@ current home lets you make a more compelling offer on your next home without a c
             <div class="my-2 my-md-5 item12">
             <!-- <google-review></google-review> -->
       
-        </div>
-            <div class="my-2 my-md-5 element4">
-                <p class="text-center text-color-1 DMSerifRegular">Sweet Sale Questions and Answers</p>
-            </div>
-            <div class="my-2 my-md-5 element5">
-                <sale-question :items="Homefaqs"></sale-question>
-            </div>
-            <div class="my-2 my-md-5 w-100 text-center element6">
-                <a  @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regula">View All FAQ's</a>
-            </div>
+        </div> 
         </div>
     </div>
 </template>
