@@ -27,7 +27,7 @@
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
 </h3>
-                        <p class="card-text text-color-2">You’ll get a computer-generated evaluation of the value of your home and a list of recent comparable sales.</p>
+                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate</a></p>
                     </div>
                     </div>
                  
