@@ -184,20 +184,7 @@ traditional Realtor commission will apply.</li>
                 </div>
             </div>
         </div>
-     
-        <div class="my-2 my-md-5 item8">
 
- 
-            <div class="my-2 my-md-5 element4">
-                <p class="text-center text-color-1 DMSerifRegular">Swift Sale Questions and Answers</p>
-            </div>
-            <div class="my-2 my-md-5 element5">
-                <sale-question :items="swiftsalefaqs"></sale-question>
-            </div>
-            <div class="my-2 my-md-5 w-100 text-center element6">
-                <a @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regular">View All FAQ's</a>
-            </div>
-        </div>
     </div>
 </template>
 <script>
