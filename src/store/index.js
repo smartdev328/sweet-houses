@@ -25,7 +25,7 @@ export const store = new Vuex.Store({
             `},
             {name:"Carlyna Greshuk",phone:'',position:"Marketing & Media",image:require('../assets/image/homepage/team/Carlyna.svg'),
             details:`
-                <p>Carlyna is the Media and Marketing Coordinator at Sweetly. Carlyna grew up in a trades family and started working in construction (doing concrete work) before she eventually made the switch into the Event Management industry. During her studies in Event Management, she studied a lot about interior design and marketing along the way. With these courses, along with her background being around homebuilders and trade professionals, she gravitated towards the Real Estate industry where she is now happily able to bring her creative abilities to help the Sweetly team.</p>
+                <p>Carlyna   Media and Marketing Coordinator at Sweetly. Carlyna grew up in a trades family and started working in construction (doing concrete work) before she eventually made the switch into the Event Management industry. During her studies in Event Management, she studied a lot about interior design and marketing along the way. With these courses, along with her background being around homebuilders and trade professionals, she gravitated towards the Real Estate industry where she is now happily able to bring her creative abilities to help the Sweetly team.</p>
             `},
             {name:"Dallas Moravec",phone:'(780) 707-7191',position:"REALTOR®",image:require('../assets/image/homepage/team/Dallas.svg'),
             details:`
@@ -433,26 +433,24 @@ Our Swift Sale fee is 9.9% of your property value. We'll pay 90.1% in one lump p
         ],
         Homefaqs:[
             {
-                title:"How do I know that I’m getting fair market value from Sweetly?",
-                content:"Because Sweetly is the Best"
+                title:"How do I know that I’m getting a fair price from Sweetly?",
+                content:"We use an independent bank-certified appraiser to view your home and provide an objective Relocation Appraisal to set our purchase price. Appraisals are used by lenders to ensure appropriate security for a mortgage and it's the same way we determine value for our purchase price."
             },
             {
-                title:"Why does Sweetly offer these very different incentives, and why isn’t anyone else doing this?",
-                content:"Because Sweetly is the Best"
+                title:"How does the Sweetly offer compare to actual market value?",
+                content:"They are the same. Sweetly pays market value which is determined by an independent bank-certified appraiser."
             },
             {
-                title:"What types of homes will you buy and not buy?",
-                content:`We’re currently interested in buying single-family homes of 850 square feet or more, with 2 or more bedrooms above grade. The homes we buy must have a value of $200,000 and up. Some exceptions can be made and all deals are carefully considered.`
+                title:"Does Sweetly negotiate on price?",
+                content:`Absolutely.  If you think the appraised value has overlooked anything, please let us know and we'll be happy to revisit the value.`
             },
             {
                 title:"What is Sweetly?",
-                content:`Sweetly is a full service, licensed brokerage offering more than just the traditional real estate model. Our owners are ex Re/Max agents who came together to form Canada's first ibuyer. Sweetly is the only brokerage that invests its’ own resources to literally buy your home so that you don't need to be 'for sale'. We offer a Swift Sale where we'll pay 90.1% of current market value on whatever day you choose as the date for possession (move out). We also offer a Sweet Sale where we'll buy your home in two payments - we'll make the necessary improvements to maximize the resale price, and pay you the full balance of the improved resale price less our fee. We also offer a Sweet Swap where you can trade your current home for your next one - you can buy any home you want, not just our inventory, And we offer an Equity Advance if you just want some of the cash from the home equity you've built up - you pay us back when the home sells.`
+                content:`Sweetly is a licensed real estate brokerage, blended with finance, and technology. We apply our finances to make our customers' selling and buying process easier, less risky, and more profitable! Sweetly offers solutions not available from traditional real estate brokerages.`
             },
             {
                 title:"What’s the catch?",
-                content:`
-            We get this question every day — actually. There's really no catch! The Sweet Sale is NOT a buy low sell high model, so we don’t ‘low-ball’. With a Sweet Sale you get ALL the equity from your (fully renovated and ready to sell) home. You benefit from having us make the right improvements to sell your home for the highest price possible. Our Sweet Sale process is simply the easiest and smartest way to sell a home for the most money possible AND avoiding the stresses of public showings.
-            The difference is more money for you, and the convenience of no public showings.
+                content:`We get this question almost every day, actually.  There's really no catch. We know, our programs make it easy - it's by design! It's not too good to be true, it's just very good.
             `}
         ],
         instant_estimate_data:{},
