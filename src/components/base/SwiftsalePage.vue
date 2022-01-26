@@ -5,8 +5,7 @@
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
                  
-                        <p class="Roboto-Medium">You choose the moving day and Sweetly will buy your home at market value, less our fee.
-                              You’ll have a firm sale price and the completion date you choose, and skip all showings.</p>
+                        <p class="Roboto-Medium">You choose the (flexible) moving day that works best for you. We pay the Appraisal value as determined by a bank-certified home appriaser and deduct our commission from the purchase price. Skip showings, fixups, weeks/months of being for sale, and all the seller pains that come from have a home listed for sale.</p>
                                <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lm6lGa_4Ci0"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
@@ -21,7 +20,8 @@
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
 </h3>
-                        <p class="card-text text-color-2">Tell us about your property to get our computer-generated evaluation and a list of comparable sales.
+                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate</a> of the current value of your property.
+
 </p>
                     </div>
                     </div>
@@ -34,7 +34,7 @@
 
 </h3>
                         <p class="card-text text-color-2">
-                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                            We will arrange for an independents, bank-certified appraisal and home inspection to establish our purchase price.
                         </p>
                     </div>
                     </div>
@@ -79,17 +79,16 @@
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
                        
-                        A firm sale within days
+                        A firm sale and your chosen moving date within days.
 
                        </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Negotiate a better price & terms for your next home, knowing the one you have is sold!
-
+                            </div>Skip all the seller pains of a home listed for sale.
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>You choose your moving day
+                            </div>Negotiate a better price and terms for your next home, knowing your current home is sold!
 </li>
                     </ul>
                 </div>
@@ -110,21 +109,21 @@
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">
-                    <p class="DMSerifRegular text-capitalize">Skip ALL Public Showings</p>
+                    <p class="DMSerifRegular text-capitalize">Skip ALL the Seller Pains</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Never receive a request to vacate your home for a showing
+                            Never a need to tolerate public showings.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>No open house days
+                            </div>Never have unqualified, unidentified strangers invited into your home right off the street during an open house.
 .</li>
                     <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Our purchase price is net to you, without hidden fees
+                            </div>Our purchase price is net to you, there are no hidden fees.
 .</li>
                     </ul>
                 </div>
@@ -133,21 +132,21 @@
          <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 bordered-left py-4 pl-4">
-                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Select the moving day that works best
+                        Choose the day that works best for you.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Changes to your moving day are free and hassle-free
+                            </div>Change your moving day for free, without hassles.
 .</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>There’s no negotiation price vs possession like a traditional sale
+                            </div>There's no negotiating price vs possession like a traditional sale
 </li>
                     </ul>
                 </div>
@@ -185,20 +184,7 @@ traditional Realtor commission will apply.</li>
                 </div>
             </div>
         </div>
-     
-        <div class="my-2 my-md-5 item8">
 
- 
-            <div class="my-2 my-md-5 element4">
-                <p class="text-center text-color-1 DMSerifRegular">Swift Sale Questions and Answers</p>
-            </div>
-            <div class="my-2 my-md-5 element5">
-                <sale-question :items="swiftsalefaqs"></sale-question>
-            </div>
-            <div class="my-2 my-md-5 w-100 text-center element6">
-                <a @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regular">View All FAQ's</a>
-            </div>
-        </div>
     </div>
 </template>
 <script>

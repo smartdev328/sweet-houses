@@ -3,10 +3,10 @@
         <div class="bg-color-1 p-3 item1 DMSerifRegular">
                 <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How a Sweet Sale Works</p></div>
                 <div class="row d-flex align-items-center item1b">
-                    <div class="col-12 col-md-8"><p class="Roboto-Medium">
-                        You get 2 payments. We pay 75% of appraised value on the moving day you choose. 
-                        We’ll invest up to $25,000 on upgrades that you approve to maximize the resale price. Once re-sold, you’ll receive the full balance of our resale price less our fee & the improvement costs. 
-                         Choose your own moving day, skip public showings, and net the after renovation value from the comfort of your couch
+                    <div class="col-12 col-md-8"><p class="Roboto-Medium">  
+                        We buy your home in 2 payments. We first pay you 75% of appraised value on the moving day you choose.
+                        We'll invest in the upgrades that you approve to maximize the resale price. Once re-sold, you'll receive the full balance of our resale price less our fee & the improvement costs.  
+                        Choose your own moving day, skip all seller pains, and net the after renovation value from the comfort of your couch.  It's easy and smart!                  
                     </p>
                      <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link>
                      </div>
@@ -27,18 +27,18 @@
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
 </h3>
-                        <p class="card-text text-color-2">You’ll get a computer-generated evaluation of the value of your home and a list of recent comparable sales.</p>
+                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate of the current value of your property.</a></p>
                     </div>
                     </div>
                  
                  <div class="card border-0">
-                    <img src="../../assets/image/Renovation.jpg" class="card-img-top" alt="...">
+                    <img src="../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
                         <h3 class="card-title text-primary Playfair">Step 2</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection
 </h3>
                         <p class="card-text text-color-2">
-                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                            We’ll arrange for an independent, bank-certified appraisal and home inspection to establish our purchase price. We'll also make recommendations on improvements for you to approve.
                         </p>
                     </div>
                     </div>
@@ -49,7 +49,7 @@
                         <h3 class="card-title text-primary Playfair">Step 3</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Close & Move
 </h3>
-                        <p class="card-text text-color-2">Once we resell the improved home you get a second payment for the full resale price less our fee and our cost for improvements.</p>
+                        <p class="card-text text-color-2">Receive your first payment on the day you choose. Once we improve and resell the property you get a second payment for the full balance of our resale (after reno's) price less our fee and reno costs.</p>
                     </div>
                     </div>
             </div>
@@ -63,7 +63,7 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Sweetly makes the right improvements to  increase the re-sale price</li>
+                        Sweetly makes the right improvements to  increase the re-sale price.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> We invest our money (up to $25,000) to improve 
@@ -98,7 +98,7 @@ and our fee.</li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            With a Sweet Sale, the showing start after you've
+                            With a Sweet Sale, the showings start after you've
 moved out.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
@@ -122,10 +122,10 @@ Sweetly takes the home whenever it works for you.</li>
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
                         Select the moving day that work best for you,
-aligned with whatever is next</li>
+aligned with whatever is next.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>changes to your moving day are no charge and 
+                            </div>Changes to your moving day are no charge and 
 hassle-free.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
@@ -270,16 +270,7 @@ current home lets you make a more compelling offer on your next home without a c
             <div class="my-2 my-md-5 item12">
             <!-- <google-review></google-review> -->
       
-        </div>
-            <div class="my-2 my-md-5 element4">
-                <p class="text-center text-color-1 DMSerifRegular">Sweet Sale Questions and Answers</p>
-            </div>
-            <div class="my-2 my-md-5 element5">
-                <sale-question :items="Homefaqs"></sale-question>
-            </div>
-            <div class="my-2 my-md-5 w-100 text-center element6">
-                <a  @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regula">View All FAQ's</a>
-            </div>
+        </div> 
         </div>
     </div>
 </template>
