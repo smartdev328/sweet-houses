@@ -79,12 +79,12 @@
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                            Skip all public showings
+                            Skip all the seller pains
 
                             </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Choose your own moving day
+                            </div>Choose your own flexible moving day
 </li>
 <li>
                 <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
@@ -103,13 +103,13 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                                Buy your new home before selling the one you have
+                                Secure the home you lve, before selling the one you have
 
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Negotiate better terms & price as 
+                                Negotiate better terms as 
                                  <div class="dropdown">
                                  <span class="mx-2"> <u>a cash buyer</u> </span> 
                                  <div class="dropdown-content">
@@ -123,7 +123,7 @@
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Skip public showing & choose your moving day
+                                Skip all the seller pains
 
                             </li>
 <li>
