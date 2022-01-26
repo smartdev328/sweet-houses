@@ -111,7 +111,7 @@
               </button>
             </div>
         <span class="spanalgorithm mt-2 text-white Poppins">
-              Algorithm values are provided as examples. Purchase price is set by independent appraiser & home inspection
+              Algorithm values are not intended to replace a professional opinion. Our purhcase price is set by certified Appraisers and Home Inspectors.
             </span>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
