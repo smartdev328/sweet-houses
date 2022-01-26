@@ -5,8 +5,7 @@
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8">
                  
-                        <p class="Roboto-Medium">You choose the moving day and Sweetly will buy your home at market value, less our fee.
-                              You’ll have a firm sale price and the completion date you choose, and skip all showings.</p>
+                        <p class="Roboto-Medium">You choose the (flexible) moving day that works best for you. We pay the Appraisal value as determined by a bank-certified home appriaser and deduct our commission from the purchase price. Skip showings, fixups, weeks/months of being for sale, and all the seller pains that come from have a home listed for sale.</p>
                                <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link></div>
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lm6lGa_4Ci0"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
@@ -21,7 +20,8 @@
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
 </h3>
-                        <p class="card-text text-color-2">Tell us about your property to get our computer-generated evaluation and a list of comparable sales.
+                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate</a> of the current value of your property.
+
 </p>
                     </div>
                     </div>
@@ -34,7 +34,7 @@
 
 </h3>
                         <p class="card-text text-color-2">
-                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                            We will arrange for an independents, bank-certified appraisal and home inspection to establish our purchase price.
                         </p>
                     </div>
                     </div>
