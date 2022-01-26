@@ -75,7 +75,7 @@
                                      You get the full resale amount (after improvements) less our fee and improvement cost</p>
                                 </div>
                             </div>
-                             from a Sweet Sale
+                   
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
