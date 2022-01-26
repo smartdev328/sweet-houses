@@ -344,7 +344,7 @@ current home lets you make a more compelling offer on your next home without a c
             <div class="elfsight-app-3f411fcb-35bd-44e4-b1ce-551508d164d9"></div>
         </div>
             <div class="my-2 my-md-5 element4">
-                <p class="text-center text-color-1 DMSerifRegular">Sweet Sale Questions and Answers</p>
+                <p class="text-center text-color-1 DMSerifRegular">Questions and Answers</p>
             </div>
             <div class="my-2 my-md-5 element5">
                 <sale-question :items="Homefaqs"></sale-question>
