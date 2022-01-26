@@ -27,18 +27,18 @@
                         <h3 class="card-title text-primary Playfair">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property
 </h3>
-                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate</a></p>
+                        <p class="card-text text-color-2">Answer some easy questions about your home. You'll get a computer generated <a href="/Whats-My-Home-Worth">estimate of the current value of your property.</a></p>
                     </div>
                     </div>
                  
                  <div class="card border-0">
-                    <img src="../../assets/image/Renovation.jpg" class="card-img-top" alt="...">
+                    <img src="../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
                         <h3 class="card-title text-primary Playfair">Step 2</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection
 </h3>
                         <p class="card-text text-color-2">
-                            We’ll arrange an appraisal & inspection to determine current value and review our recommendation for improvements designed to maximize the resale price.
+                            We’ll arrange for an independent, bank-certified appraisal and home inspection to establish our purchase price. We'll also make recommendations on improvements for you to approve.
                         </p>
                     </div>
                     </div>
@@ -49,7 +49,7 @@
                         <h3 class="card-title text-primary Playfair">Step 3</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Close & Move
 </h3>
-                        <p class="card-text text-color-2">Once we resell the improved home you get a second payment for the full resale price less our fee and our cost for improvements.</p>
+                        <p class="card-text text-color-2">Receive your first payment on the day you choose. Once we improve and resell the property you get a second payment for the full balance of our resale (after reno's) price less our fee and reno costs.</p>
                     </div>
                     </div>
             </div>
