@@ -69,13 +69,12 @@
                             </div> 
                             Get 
                             <div class="dropdown">
-                                 <span class="mx-2"> <u>more money</u> </span>
+                                 <span class="mx-2"> <u>more money</u> </span>from the 'after renovation' sale of your home
                                  <div class="dropdown-content">
                                 <p>We make the right improvements to resell your home at the highest price possible. 
                                      You get the full resale amount (after improvements) less our fee and improvement cost</p>
                                 </div>
                             </div>
-                   from the 'after renovation' sale of your home
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
