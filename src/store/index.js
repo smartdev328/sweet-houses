@@ -87,76 +87,40 @@ export const store = new Vuex.Store({
         
         ],
         sweetsalefags:[
-            {title:'What is Sweetly?',
-            content:`Sweetly is a full service, licensed brokerage offering more than just the traditional real estate model. Our owners are ex Re/Max agents who came together to form Canada's first ibuyer. Sweetly is the only brokerage that invests its’ own resources to literally buy your home so that you don't need to be 'for sale'. We offer a Swift Sale where we'll pay 90.1% of current market value on whatever day you choose as the date for possession (move out). We also offer a Sweet Sale where we'll buy your home in two payments - we'll make the necessary improvements to maximize the resale price, and pay you the full balance of the improved resale price less our fee. We also offer a Sweet Swap where you can trade your current home for your next one - you can buy any home you want, not just our inventory, And we offer an Equity Advance if you just want some of the cash from the home equity you've built up - you pay us back when the home sells.
-            `},
-            {title:`What's the cost of a Sweet Sale?
-            `,content:`The Sweet Sale is the SMARTEST WAY to sell a house! Our fee to buy and resell your home is 2% of the value of the property plus our standard real estate commission (7/3) or 7% of $100,000 plus 3% on the balance of the sale price. The extra 2% covers the expenses we take on, like property tax, utilities, insurance, lawn/snow care, and mortgage payments. The fee is fixed and never increases regardless of how long it takes to sell the property.`},
-            {title:`What's the catch?
-            `,content:`We get this question every day — actually. There's really no catch! The Sweet Sale is NOT a buy low sell high model, so we don’t ‘low-ball’. With a Sweet Sale you get ALL the equity from your (fully renovated and ready to sell) home. You benefit from having us make the right improvements to sell your home for the highest price possible. Our Sweet Sale process is simply the easiest and smartest way to sell a home for the most money possible AND avoiding the stresses of public showings. The difference is more money for you, and the convenience of no public showings.`},
-            {title:`Who gets the extra money if Sweetly re-sells my home for more than the original value?`,content:`You do! We re-sell homes for more than the original value by design of the Sweet Sale. It's because we make the right improvements that we know buyers can't resist, so our re-sales often sell for more than the original evaluated amount. You get that money! We only keep our fee (and our contractor costs for any improvements). You get the full balance of the resale price.`},
-            {title:`Is the Sweet Sale program available to me if I’m already listed with another Realtor?`,content:`Yes, you can consider our offer through your current listing brokerage. We normally re-list the property with the same Realtor and we pay 1% of the value which is roughly half of what most full service Realtors charge.`},
-            {title:`Who controls the asking/sale price once Sweetly puts the house for sale?`,content:`You do! Sweetly will list the house at the pre-determined value and we don’t accept any offer of less than 97% of that evaluation, without you’re permission. If we feel a price reduction is necessary we’ll tell you, and you can decide to either allow a reducton to attract more buyers, or leave it for sale at the same price – you’re in control for the first 30 days of our listing. If the home is not selling within 30 days, we'll adjust the price at our discretion to attract more buyers.`},
-            {title:`How can I be sure that I'll get the second payment?`,content:`Your second payment is protected by a caveat registered on the title of your home which requires us to pay you before we can sell to anyone else. It’s the same level of protection a bank gets when they lend money on a property in the form of a mortgage.`},
-            {title:`How do I know that Sweetly will seek the highest sale price?`,content:`Sweetly is the only Brokerage in Canada that buys and re-sells your home in a fair way. Our goal of getting the highest sale price is aligned with yours! We always seeks the highest price, and we commit to only accept offers no less than 97% of the original evaluation we provided to you. If for any reason, we can’t get to within 97% you’ll be consulted. We even give you the right to buy back the house by simply retuning our money any time before we’ve accepted an offer from anyone else.`},
-            {title:`Can Sweetly help me buy my next home, before I sell my current home?`,content:`Yes, Sweetly is a full service brokerage. We'd be happy to activate a free homes search based on your buying criteria. We'll show you any home for sale and when you find the right one we'll help you make an informed offer by showing you what the home last sold for (if available) and the recent comparable sales for the area to help you make good real estate decisions. Once you have a firm purchase Sweetly will buy your current home on the date that makes the most sense for you!`},
-            {title:`How fast will I receive my offer?`,content:`You'll have our offer on the same day we see the property.`},
-            {title:`Do I get to choose my own closing date?`,content:`Yes, you get to choose a date that works for you which is materially different than selling your home to a traditional buyer that may need the home on a date that works for them.`},
-            {title:`Is the offer I get subject to commissions?`,content:`No. You don't pay commissions when you sell to us. We make our money from the service fee we charge against the resale which includes commission. IF YOUR HOME IS LISTED WITH ANY OTHER BROKERAGE you can still get our offer, but only through your current brokerage.`},
-            {title:`How do the improvements I made affect the value of my home?`,content:`Improvements, additions and renovations are important factors for us to consider when determining the current value of your home as compared to others for sale or sold. Please tell us about them and include as many pictures as possible.`},
-            {title:`Where are you currently buying homes?`,content:`We are currently buying homes in Edmonton, Red Deer, Calgary, and other major centers in Alberta.`},
-            {title:`What types of homes are you buying?
-            `,content:`We’re currently interested in buying single family homes of 850 square feet or more, with 2 or more bedrooms above grade. The homes we buy must have a value of $200,000 and up. Some exceptions can be made and all deals are carefully considered.`},
-            {title:`What types of homes will you absolutely NOT buy?
-            `,content:`Homes we buy must be vacant on possession date. We cannot assume any tenancies. We can't buy any homes that require significant work such as foundation problems, etc.. We also cannot buy a mobile home or other type of property that doesn't include title to land or a city lot. At this time we are not buying most condominiums, or commercial property, and some smaller communities throughout Alberta.`},
-            {title:`Is this a Guaranteed Sale program?
-            `,content:`NO! A Guaranteed Sale is a gimmick some agents use to get your listing. Sweetly provides a clean offer and an actual sale - NO LISTING required. Guaranteed Sale programs require you to list the home for a period of time, then if the brokerage buys the home and resells it for more they keep the profit. That's not Sweetly.
-            `},
-            {title:`Should I include photos of my home?
-            `,content:`YES! We consider every home carefully and photos help us understand the condition and unique appeal of your home. Send photos!
-            `},
-            {title:`Does your offer expire?
-            `,content:`Our offer is valid for however long you want, but stale dated offers will be re-visited to ensure we are paying current value, and where the market has shifted substantially, we may just withdraw a stale offer.
-            `},
-            {title:`How long will the selling process take?
-            `,content:`We can move as fast as you need us to. Typically we need about 10 days to do our inspection of the home and finalize our commitment to you. We can move faster if necessary. You'll get your first payment on the possession date you choose.
-            `},
-            {title:`What happens to my house after you buy it?
-            `,content:`We’ll do any improvements needed (which you agree to in advance) to ensure the home shows its best and sells for maximum value. We take photos and measurements, introduce the home to the buying public, post the home on the MLS, hold open houses, book showings, deal with agents, buyers, inspectors and appraisers. We negotiate with buyers and re-sell the home on the open market. Basically, we do all the work, pay for all the holding costs and handle all the stress associated with selling a house.
-            `},
-            {title:`Is my information secure?
-            `,content:`Yes, we don't discuss or disclose your reasons for moving, nor will we disclose your home selling price until after a firm (unconditional) commitment is received. We may share your contact information with other top agents in your community to reassure you that our offer is at current market value. You're under no obligation to anyone and you may proceed with your sale as you see fit.
-            `},
-            {title:`How do you determine the price you'll pay?
-            `,content:`Our offer is based on the expected market value. We determine the current value of your home by direct comparison to other recent sales in your area, or we can use a recent appraisal if you have one.
-            `},
-            {title:`How does my offer compare to actual market value?
-            `,content:`Our offer is based on Current Market Value of your home! 
-            `},
-            {title:`Do you negotiate on your offer price?
-            `,content:`Yes, If you feel like we've missed something about your home that makes it worth more than our offer price please bring that to our attention, we'd be happy to revisit our offer.
-            `},
-            {title:`Can I change the possession date after we sign?
-            `,content:`Yes, it doesn't matter to us when we close so if you need more time just let us know and we can make that change.
+            {title:'How do I know that I’m getting a fair price from Sweetly?',
+            content:`We use an independent bank-certified appraiser to view your home and provide an objective Relocation Appraisal to set our purchase price. Appraisals are used by lenders to ensure appropriate security for a mortgage and it’s the same way we determine value for our purchase price.`},
+            {title:`How does the Sweetly offer compare to actual market value?
+            `,content:`They are the same. Sweetly pays market value which is determined by an independent bank-certified appraiser.`},
+            {title:`Does Sweetly negotiate on price?
+            `,content:`Absolutely. If you think the appraised value has overlooked anything, please let us know and we’ll be happy to revisit the value.`},
+            {title:`What is Sweetly?`,content:`We get this question almost every day, actually. There’s really no catch. We know, our programs make it easy – it’s by design! It’s not too good to be true, it’s just very good`},
+            {title:`What's the catch?`,content:`Yes, you can consider our offer through your current listing brokerage. We normally re-list the property with the same Realtor and we pay 1% of the value which is roughly half of what most full service Realtors charge.`},
+            {title:`What type of homes will you buy, not buy?`,content:`Our focus is on single family detached houses located in major centers within Alberta. We buy houses, duplex, townhomes, and row houses. We will consider condominiums ad-hawk but our focus is single family property. We do not purchase houses without a basement, those in extreme distress, in rural locations, vacant lots or commercial property.`},
+            {title:`Are Sweetly programs available to me if I'm already listed with another agent?`,content:`Yes, but you may only consider our offer through your current brokerage. Sweetly is a licensed brokerage in the Province of Alberta and as such we follow the rules. If your home is currently listed with any other brokerage you must comply with the terms of your listing agreement for the duration of that listing term. You may consider our offer during your listing through your brokerage, or you may wait until your listing expires, is terminated or cancelled.`},
+            {title:`Is there any obligation when I contact Sweetly?`,content:`No, there's never any obligation when you contact Sweetly.`},
+            {title:`Can Sweetly help me buy my next home?`,content:`Yes! We can activate a search to notify you by email of all listings (from all real estate companies) that match your buying criteria. We’ll show you any home for sale and help you secure the home you love.`},
+            {title:`How long does it take to get an offer for my home?`,content:`We can move as fast as you need. The first step is getting an appraisal to help set the price.`},
+            {title:`Do I get to set my own closing date?`,content:`Yes, you can set a closing date that works best for you, but the date you select must be within 45 days. You’re free to change the possession date with reasonable notice too, and the change is free of charge. Let us know how we can make it easy for you, we’ll do what we can.`},
+            {title:`Can I change the possession date after I sign?`,content:`Yes. You’re free to change the possession date as necessary, and at no cost. Just let us know how we can help.`},
+            {title:`When will I need to move out of my home?`,content:`The possession day you choose is the day that you need to be out of the home. You need to provide vacant and clean possession on the day you choose.`},
+            {title:`Do I have to pay a commission to sell to Sweetly?`,content:`No, we subtract our commission from the Appraised value which is the purchase price.`},
+            {title:`How do the improvements I made to my home affect the value?`,content:`Improvements have an impact on the value of your property and will be accounted for in the appraisal.`},
+            {title:`Is this a Guaranteed Sale program like those offered by other brokerages?`,content:`No! A Guaranteed Sale is a gimmick used by some Realtors to get your listing. They advertise a guaranteed sale that only takes place if your home doesn’t sell during a traditional listing period which requires you to list your home for sale and live through seller pains. We don’t require you to ‘list’ your home to sell to Sweetly.`},
+            {title:`Does the Sweetly offer expire?
+            `,content:`Not technically. However any stale or out dated offers may be withdrawn without notice.
             `},
             {title:`Will you want to see my house in person?
-            `,content:`Yes. We’ll want to see your property in order to make you an offer.
+            `,content:`Sometimes yes. We love seeing homes but unfortunately we cannot see all the houses we buy. If there’s something you’d like us to know or see at your home, please let us know.
             `},
-            {title:`Who does the inspection on my home?
-            `,content:`We use certified home inspectors.
+            {title:`What happens if the inspector finds a problem?
+            `,content:`Don’t worry. No house is perfect and all have some level of deficiencies. We share the inspection report with you. The home inspections we do are for us (and you) to know what deficiencies exist, if any. If something is uncovered we’ll review them and propose a remedy to have them resolved – just like any buyer.
             `},
-            {title:`What happens if the inspector finds problems in my home?
-            `,content:`Don't worry. We are not a nervous buyer. Home inspections most often (actually always) yield some kind of deficiency or maintenance requirement. Once we know what those are we'll review them with you and discuss possible remedies if needed. If there's something seriously wrong with your home (like a faulty foundation) we'll likely need to pass on buying your home as we simply don't have the resources to deal with substantial issues of that sort.
-            `},
-            {title:`When will I need to move out of my house?
-            `,content:`You'll need to provide clean, vacant possession on the closing day of your choosing.
-            `},
-            {title:`Can I take any appliances?
-            `,content:`Yes, but please note that all of the appliances (Chattels) listed on the contract need to stay with the home. These will normally include the Fridge, Stove, Hood fan, Washer and Dryer, Window coverings, Garage door opener and remotes, built in speaker systems, closet organizers, etc. If any of these items are important for you to take with you, you'll need to ensure they are not included in the sale.
+            {title:`Can I take any of my appliances?
+            `,content:`Yes, but please make us aware of what you want to take so that we can make the necessary adjustment to the purchase agreement.
             `},
             {title:`What if I have more questions?
-`,content:`What if I have more questions?
-`}
+            `,content:`Call us! We’re happy to answer your questions. Our number is 780-477-9338.
+            `},
         ],
         swiftsalefaqs:[
             {title:`What is Sweetly?
