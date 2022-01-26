@@ -154,15 +154,15 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Get qualified for a mortgage in minutes
+                            Get FREE daily updates on new listings that match your unique buying criteria
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Receive e-mail updates on homes matching your specific buying criteria
+                            </div>Get pre-qualified for a mortgage in minutes
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Get professional guidance throughout the process
+                            </div>Professional guidance throughout the process
 </li>
 <li>
                 <router-link to="about-us" class="DMSerifRegular">Learn More</router-link>
@@ -182,14 +182,14 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                                Your money is locked in the home you own.  We’ll advance it to you when you list with Sweetly
+                                We'll advance you the equity currently locked in the home you plan to sell
 
 
                             </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>
-                                Interest free.  We earn commission when you sell with Sweetly
+                                Interest free! We earn commission when you sell with Sweetly
 
 
                             </li>
