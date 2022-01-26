@@ -6,7 +6,7 @@
                     <div class="col-12 col-md-8"><p class="Roboto-Medium">  
                         We buy your home in 2 payments. We first pay you 75% of appraised value on the moving day you choose.
                         We'll invest in the upgrades that you approve to maximize the resale price. Once re-sold, you'll receive the full balance of our resale price less our fee & the improvement costs.  
-                        Choose your own moving day, skip all seller pains, and net the after renovation value from the comfort of your couch.  It's easy and samrt!                  
+                        Choose your own moving day, skip all seller pains, and net the after renovation value from the comfort of your couch.  It's easy and smart!                  
                     </p>
                      <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link>
                      </div>
@@ -63,7 +63,7 @@
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Sweetly makes the right improvements to  increase the re-sale price</li>
+                        Sweetly makes the right improvements to  increase the re-sale price.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> We invest our money (up to $25,000) to improve 
@@ -98,7 +98,7 @@ and our fee.</li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            With a Sweet Sale, the showing start after you've
+                            With a Sweet Sale, the showings start after you've
 moved out.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
@@ -122,10 +122,10 @@ Sweetly takes the home whenever it works for you.</li>
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
                         Select the moving day that work best for you,
-aligned with whatever is next</li>
+aligned with whatever is next.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>changes to your moving day are no charge and 
+                            </div>Changes to your moving day are no charge and 
 hassle-free.</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
