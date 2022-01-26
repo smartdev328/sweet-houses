@@ -79,17 +79,16 @@
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
                        
-                        A firm sale within days
+                        A firm sale and your chosen moving date within days.
 
                        </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Negotiate a better price & terms for your next home, knowing the one you have is sold!
-
+                            </div>Skip all the seller pains of a home listed for sale.
 </li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>You choose your moving day
+                            </div>Negotiate a better price and terms for your next home, knowing your current home is sold!
 </li>
                     </ul>
                 </div>
@@ -110,21 +109,21 @@
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->
                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">
-                    <p class="DMSerifRegular text-capitalize">Skip ALL Public Showings</p>
+                    <p class="DMSerifRegular text-capitalize">Skip ALL the Seller Pains</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                            Never receive a request to vacate your home for a showing
+                            Never a need to tolerate public showings.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>No open house days
+                            </div>Never have unqualified, unidentified strangers invited into your home right off the street during an open house.
 .</li>
                     <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Our purchase price is net to you, without hidden fees
+                            </div>Our purchase price is net to you, there are no hidden fees.
 .</li>
                     </ul>
                 </div>
@@ -133,21 +132,21 @@
          <div class="my-2 my-md-5 item5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 bordered-left py-4 pl-4">
-                    <p class="DMSerifRegular text-capitalize">Choose your own moving day</p>
+                    <p class="DMSerifRegular text-capitalize">Choose your moving day</p>
                     <ul>
                         <li>
                             <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div> 
-                        Select the moving day that works best
+                        Choose the day that works best for you.
 </li>
                         <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>Changes to your moving day are free and hassle-free
+                            </div>Change your moving day for free, without hassles.
 .</li>
                        <li>  <div class="icon mr-3">
                                 <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
-                            </div>There’s no negotiation price vs possession like a traditional sale
+                            </div>There's no negotiating price vs possession like a traditional sale
 </li>
                     </ul>
                 </div>
