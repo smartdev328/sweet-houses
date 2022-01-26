@@ -4,12 +4,9 @@
                 <div class="item1a text-center"><p class="text-color-1 DMSerifRegular">How a Sweet Sale Works</p></div>
                 <div class="row d-flex align-items-center item1b">
                     <div class="col-12 col-md-8"><p class="Roboto-Medium">  
-                        You get 2 payments. We pay 75% of appraised value on the moving day you choose. 
                         We buy your home in 2 payments. We first pay you 75% of appraised value on the moving day you choose.
                         We'll invest in the upgrades that you approve to maximize the resale price. Once re-sold, you'll receive the full balance of our resale price less our fee & the improvement costs.  
-                        Choose your own moving day, skip all seller pains, and net the after renovation value from the comfort of your couch.  It's easy and samrt!
-                        We’ll invest up to $25,000 on upgrades that you approve to maximize the resale price. Once re-sold, you’ll receive the full balance of our resale price less our fee & the improvement costs. 
-                         Choose your own moving day, skip public showings, and net the after renovation value from the comfort of your couch
+                        Choose your own moving day, skip all seller pains, and net the after renovation value from the comfort of your couch.  It's easy and samrt!                  
                     </p>
                      <router-link to="Whats-My-Home-Worth" class="Roboto-Regular btn btn-route px-3">Start Now</router-link>
                      </div>
