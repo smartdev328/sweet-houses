@@ -36,7 +36,7 @@
 
         <div v-show="isExpanded(key)">
           <div class="card-body">
-                    <p class="text-color-2 Roboto-Regular answercontent"> {{item.content}}</p>
+                    <p class="text-color-1 Roboto-Regular answercontent"> {{item.content}}</p>
           </div>
         </div>
       </div>

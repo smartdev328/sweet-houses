@@ -66,13 +66,13 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="group" v-if="showbox && !fullscreenh">
+    <!-- <div class="group" v-if="showbox && !fullscreenh">
       <div class="group1">
         <div class="group1a px-1 px-md-4 py-4">
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
           <div style="height:4px;width:34px;background:#FFB600"></div>
           <p class="Roboto-Regular text-white text-center">
-            Get a Sweetly Estimate on the value of your home
+            Get our estimate of value on any home
           </p>
         </div>
         <div class="px-2 px-md-3">
@@ -104,7 +104,7 @@
               </vue-google-autocomplete>
             </div>
             <div class="item1b3">
-              <button class="" @click="getresult()">Get Estimate</button>
+              <button class="" @click="getresult()">Get Started</button>
             </div>
           </div>
            <div class="spanerr mx-auto" v-if="errmsg">{{ errmsg }}</div>
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
       <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
           <textra
             :data="words"
