@@ -218,7 +218,7 @@
             <div class="row align-items-center flex-revers-sm">
                 <div class="col-12 col-md-6 d-flex">
                     <div class="image">
-                        <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">
+                        <img  src="../../assets/image/homepage/Component88.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
                 <!-- <div class="col-12 col-md-1"></div> -->

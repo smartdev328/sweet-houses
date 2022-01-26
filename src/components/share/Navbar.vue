@@ -157,34 +157,7 @@
               What's My Home Worth?
             </router-link>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Contact
-              <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
-            </a>
-            <div
-              class="dropdown-menu border-0 shadow-sm"
-              aria-labelledby="navbarDropdown"
-            >
-              <router-link class="dropdown-item pl-3" to="/agents"
-                >Agents</router-link
-              >
-              <router-link class="dropdown-item pl-3" to="/for-realtor"
-                >For Realtors</router-link
-              >
-              <router-link class="dropdown-item pl-3" to="/contact-us"
-                >Contact</router-link
-              >
-            </div>
-          </li>
+       
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -206,10 +179,22 @@
               <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
               >
+               <router-link class="dropdown-item pl-3" to="/contact-us"
+                >Contact</router-link
+              >
+               <router-link class="dropdown-item pl-3" to="/for-realtor"
+                >For Realtors</router-link
+              >
+               <router-link class="dropdown-item pl-3" to="/agents"
+                >Agents</router-link
+              >
             </div>
           </li>
         </ul>
         <div class="">
+          <span class="border-right px-3 mr-3 text-color-1 DMSerifRegular phonenumer">
+            <img class="phoneicon" src="../../assets/image/icon/phoneicon.svg" alt="">
+            780-477-9338 </span>
           <!-- <button @click="openresetpassword">verify</button> -->
           <button
             v-b-modal="'my-modallogin'"
@@ -439,5 +424,13 @@ nav a:focus {
 }
 .navbar-nav .nav-item .router-link-exact-active {
   color: #04847f !important;
+}
+.phoneicon{
+  width: 18px;
+  height: 18px;
+}
+.phonenumer{
+  font-weight: bold;
+  font-size: 20px;
 }
 </style>

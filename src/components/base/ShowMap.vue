@@ -66,7 +66,7 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="group" v-if="showbox && !fullscreenh">
+    <!-- <div class="group" v-if="showbox && !fullscreenh">
       <div class="group1">
         <div class="group1a px-1 px-md-4 py-4">
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
       <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
           <textra
             :data="words"
