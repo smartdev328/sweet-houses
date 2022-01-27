@@ -11,21 +11,21 @@
             </div>
           
              <img
-        v-if="homedata.images == null"
+        v-if="homedata.images.count == 0"
         src="../../assets/image/notimg.jpeg"
         class="card-img-top"
         alt=""
       />
-            <img  v-if="homedata.images" :src="homedata.images[0]" class="card-img-top" alt="...">
+            <img  v-if="homedata.images.count > 0" :src="homedata.images.image" class="card-img-top" alt="...">
             
         
-            <div class="arrow-dir"  @click="getImage()" v-if="homedata.images">
+            <!-- <div class="arrow-dir"  @click="getImage()" v-if="homedata.images">
                 <img src="../../assets/image/icon/Iconarrows.svg" alt="">
             </div>
              <div class="arrow-dir-before" @click="getImagebefor()" v-if="currentcount > 1">
                 <img src="../../assets/image/icon/Iconarrows.svg" alt="">
-            </div>
-             <div class="counter">{{currentcount}}</div>
+            </div> -->
+             <!-- <div class="counter">{{currentcount}}</div> -->
             <div class="card-body">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
                     <p class="text-color-1 Roboto-Medium" v-if="homedata.listPrice">${{homedata.listPrice.toLocaleString('ja-JP')}} </p>
