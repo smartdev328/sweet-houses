@@ -379,6 +379,7 @@ body{
     position: absolute;
     bottom: 48px;
     right: 20px;
+    top: 16px;
     cursor: pointer;
     color: #00A19B;
     font-family: "Roboto", sans-serif;

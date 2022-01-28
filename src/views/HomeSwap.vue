@@ -353,7 +353,7 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   font-size: 13px;
 }
 .mt-n-4 {
-  margin-top:-5rem;
+  margin-top:-3.5rem;
 }
 @media only screen and (max-width: 770px){
   .item1b .item1b3 {
