@@ -433,7 +433,7 @@ export default {
       showfilter: false,
       rangevalue: 0,
       range: [1, 4500],
-      selected_menu: "show-list",
+      selected_menu: "show-map",
       centerLatitude: 0,
       centerLongitude: 0,
       latitude: 0,
@@ -602,12 +602,21 @@ export default {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
+    openfullscreen(){
+       this.$refs.showmap.openfullscreenh()
+    }
+ 
     
   },
+  mounted(){
+      this.openfullscreen()
+  }
+  ,
 
   created() {
     /* this.getCoords(); */
     /*  this.changebounds();  */
+  //  this.openfullscreen()
   },
   watch: {
     latitude() {
@@ -623,12 +632,6 @@ export default {
       this.Pa = newval.Pa;
       this.yb = newval.yb;
     },
-  },
-  mounted() {
-    /* console.log(new window.google.maps.LatLngBounds());  */
-    /*  this.getbounds();  */
-    /* this.changezoom() */
-    /*   this.changebounds(); */
   },
 };
 </script>
