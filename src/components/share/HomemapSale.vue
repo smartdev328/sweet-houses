@@ -253,6 +253,16 @@ export default {
         let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
       }
+      else{
+          if(this.isLoggedIn){
+            let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+          }else{
+            this.SignUp();
+          }
+          
+        
+      }
     }
   },
   created(){

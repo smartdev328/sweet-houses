@@ -464,7 +464,7 @@ export default {
       bn: null,
       value: null,
       optionsdata: [
-        { text: "Detached Homes (no shared walls)", value: "SDetached" },
+        { text: "Detached Homes (no shared walls)", value: "Detached" },
         { text: "Semi-Detached Homes (1 shared wall)", value: "Semi Detached" },
         {
           text: "Townhouses (multi-level & shared walls)",
