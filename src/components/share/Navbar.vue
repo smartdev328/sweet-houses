@@ -35,6 +35,41 @@
         id="navbarSupportedContent"
       >
         <ul class="navbar-nav mx-auto">
+              <li class="nav-item dropdown">
+            <p
+              class="nav-link dropdown-toggle DMSerifRegular"
+              to="/"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Buy & Sell
+              <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+            </p>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
+                >Sweet Sale</a
+              > -->
+              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
+                >Swift Sale</a
+              >
+              <!-- <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
+                >Home Swap</a
+              >               -->
+              <!-- <a
+                class="dropdown-item btn"
+                @click="openeduityadvanced('Equity_Advance')"
+                >Equity Advance</a
+              >  -->
+              <a
+                class="dropdown-item btn"
+                @click="opentraditionestate()"
+                >Traditional Real Estate</a
+              >
+            </div>
+          </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/browse-home" exact-path
               >Browse Homes</router-link
@@ -126,20 +161,20 @@
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
+              <!-- <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
                 >Sweet Sale</a
-              >
+              > -->
               <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
                 >Swift Sale</a
               >
-              <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
+              <!-- <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
                 >Home Swap</a
-              >              
-              <a
+              >               -->
+              <!-- <a
                 class="dropdown-item btn"
                 @click="openeduityadvanced('Equity_Advance')"
                 >Equity Advance</a
-              > 
+              >  -->
               <a
                 class="dropdown-item btn"
                 @click="opentraditionestate()"

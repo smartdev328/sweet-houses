@@ -14,6 +14,7 @@
             <div class="form-group item3 text-center">
                 <input type="text" class="form-control form-control-lg" @input="checkerrcode" v-model="verifycode">
                     <p @click="resendCode()">Resend code  <b-spinner v-if="resendloading" style="width:18px;height:18px" variant="warning" label="Spinning"></b-spinner></p>
+                    <p v-if="alrtcodemsg" style="color: #fc5353;" class="Roboto-Medium">We've sent a new verification code</p>
                  <div v-for="(error, index) in errors" :key="index" class="">
                   <span
                     v-if="error.param === 'verify_code'"
@@ -44,7 +45,8 @@ export default {
             errors: [],
             resendstatus:false,
             status:null,
-            resendloading:null
+            resendloading:null,
+            alrtcodemsg:false,
         }
     },
     computed:{
@@ -117,11 +119,15 @@ export default {
                 this.formData.append(entry[0], entry[1])
                 );
             this.$http.post('auth/resend_code/',this.formData).then((res) =>{
+                 this.alrtcodemsg = true
                 this.formData = new FormData();
                 this.status = res.data.status
                 this.resendstatus = true;
                 this.resendloading = false;
+               
+                setTimeout(() => {this.alrtcodemsg = false}, 4000);
                 console.log(res)
+               
             }) .catch((err) => {
                 this.formData =  new FormData(),
                 this.resendloading = false;

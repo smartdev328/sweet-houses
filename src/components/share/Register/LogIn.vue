@@ -27,6 +27,13 @@
                     >{{ error.msg }}</span
                   >
                 </div>
+                 <div v-for="(error, index) in this.errors" :key="index">
+                  <span
+                    v-if="error.param === 'details'"
+                    style="color: #fc5353;"
+                    >{{ error.msg }}</span
+                  >
+                </div>
             </div>
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" @input="checkPass" v-model="input.password"  placeholder="Password">
@@ -240,6 +247,7 @@ export default {
                 })
                 return res;
         }).catch((err) => {
+           this.errors = err.response.data.errors || {};
                  Swal.fire({
                   title: 'Failed !',
                   text: err.response.data.msg,
