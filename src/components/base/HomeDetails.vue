@@ -710,6 +710,7 @@
             @hideloginmodal="hideloginmodal"
             @xloginOsignup="xloginOsignup"
             @Openforgetcode="Openforgetcode"
+            @Openverifyemailbtcode="Openverifyemailbtcode"
           ></log-in>
         </b-modal>
           <b-modal
@@ -869,6 +870,10 @@ export default {
     VueSlickCarousel,
   },
   methods: {
+    Openverifyemailbtcode(){
+      this.$bvModal.show("verify-modal");
+      this.$bvModal.hide("my-modallogin");
+    },
      OpenVerifycode(){
       this.$bvModal.show("verify-modal");
     },
