@@ -36,7 +36,7 @@
       >
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/maphome" exact-path
+            <router-link class="nav-link" to="/browse-home" exact-path
               >Browse Homes</router-link
             >
           </li>
@@ -148,7 +148,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/maphome"
+            <router-link class="nav-link" to="/browse-home"
               >Browse Homes</router-link
             >
           </li>

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
 import HomeSwap from '../views/HomeSwap.vue'
+import BrowswHome from '../views/BrowswHome.vue'
+
 
 import store from '../store/index'
 Vue.use(VueRouter)
@@ -34,6 +36,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicy.vue')
   },
   {
+    path: '/browse-home',
+    name: 'BrowswHome',
+    component:BrowswHome
+  },
+  {
     path: '/terms-of-service',
     name: 'TermsofService',
     component: () => import(/* webpackChunkName: "about" */ '../views/TermsofService.vue')
@@ -44,6 +51,7 @@ const routes = [
     name:"HomeSwap",
     component:HomeSwap
   },
+  
   {
     path:'/sweet-sale',
     name:"SweetSale",

@@ -66,8 +66,11 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="group" v-if="showbox && !fullscreenh">
-      <div class="group1">
+    <div class="group">
+      <div v-if="!showbox" class="d-flex justify-content-center">
+      <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>
+    </div>
+      <div class="group1"  v-if="showbox">
         <div class="group1a px-1 px-md-4 py-4">
           <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
           <div style="height:4px;width:34px;background:#FFB600"></div>
@@ -121,6 +124,9 @@
         </div>
       </div>
     </div>
+
+
+    
       <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
           <textra
             :data="words"
@@ -288,7 +294,7 @@ export default {
     infoWindowOptions: {
       pixelOffset: {
         width: 0,
-        height: -35,
+        he9ight: -35,
       },
     },
 
@@ -299,8 +305,10 @@ export default {
     placeResultData:{},
   }),
   methods: {
+  
     openfullscreenh(){
       this.fullscreenh = true
+      this.showbox = false
     },
     checkClick() {
       if (this.infoWindowOpened) {
@@ -721,6 +729,22 @@ export default {
   -webkit-box-align: center;
   align-items: center;
   flex-shrink: 0;
+}
+.group button:first-child{
+    background-color: #ffb600;
+  color: #fff;
+  height: 38px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  width: 50%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 9px 6px;
 }
 .group .group1 button {
   background-color: #ffb600;
