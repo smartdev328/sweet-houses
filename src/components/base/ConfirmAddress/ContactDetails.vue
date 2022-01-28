@@ -321,10 +321,11 @@ export default {
         // this.scheduleEvent()
       this.$http
       .get(
-          `https://deva.dillilabs.com/api/59fb17b0-4d6b-11ec-a6a6-a5ece6f0ccc5/email/${this.email}`
+          `https://adamsweetly.pythonanywhere.com/api/external/email_verif/?email=${this.email}`
           )
           .then((res) => {
-           if (res.data) {
+            console.log(res.data)
+           if (res.data.data) {
               this.emailisvalid = true;
             this.emailnotmaildmsg = "";
               let contactinput = {};
