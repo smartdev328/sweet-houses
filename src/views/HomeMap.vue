@@ -464,7 +464,7 @@ export default {
       bn: null,
       value: null,
       optionsdata: [
-        { text: "Detached Homes (no shared walls)", value: "SDetached" },
+        { text: "Detached Homes (no shared walls)", value: "Detached" },
         { text: "Semi-Detached Homes (1 shared wall)", value: "Semi Detached" },
         {
           text: "Townhouses (multi-level & shared walls)",
@@ -570,9 +570,21 @@ export default {
     },
     submitmap() {
       this.selected_menu = "show-list";
+       if(this.typesale == "forsale"){
+        this.$refs.showlist.find_listings_forSaleMain();    
+      }
+      if( this.typesale == "sold"){
+        this.$refs.showlist.find_listings_SoldMain();
+      }
     },
     submitlist() {
       this.selected_menu = "show-map";
+      if(this.typesale == "forsale"){
+        this.$refs.showmap.find_listings_forSaleMain();     
+      }
+      if( this.typesale == "sold"){
+        this.$refs.showmap.find_listings_SoldMain();
+      }
     },
     tab_visible(tab) {
       if (tab == this.selected_menu) {
