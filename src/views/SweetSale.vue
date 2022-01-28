@@ -120,9 +120,6 @@
     </header>
     <div class="my-5">
       <div class="container" > 
-        <div>
-          {{replaceCommaLine("اياد احمد عبد اللطيف الاشقر  شاهد&وليد محمد سعيد محمد  شاهد&")}}
-        </div>
         <sweetsale-page></sweetsale-page>
       </div>
       <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
@@ -171,10 +168,6 @@ export default {
        let nelng =  this.placeResultData.geometry.viewport.Qa.h;
       return ({swlat,swlng, nelat , nelng});
     },
-     replaceCommaLine(data) {
-    let dataToArray = data.split('&').map(item => item.trim());
-    return dataToArray.join("\n");
-}
     // selected_menu(){
     //   return this.selected_menu;
     // },

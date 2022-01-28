@@ -212,6 +212,7 @@
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
               @Openforgetcode="Openforgetcode"
+              @Openverifyemailbtcode="Openverifyemailbtcode"
             ></log-in>
           </b-modal>
           <b-button
@@ -301,7 +302,8 @@ export default {
     },
   },
   methods: {
-    openverify(){
+    Openverifyemailbtcode(){
+       this.$bvModal.hide("my-modallogin");
       this.$bvModal.show("verify-modal");
     },
     switchVisibility() {

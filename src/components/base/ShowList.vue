@@ -99,6 +99,7 @@
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
                @Openforgetcode="Openforgetcode"
+               @Openverifyemailbtcode="Openverifyemailbtcode"
             ></log-in>
           </b-modal>
                 <b-modal
@@ -340,6 +341,10 @@ computed:{
     },
     OpenVerifycode(){
       this.$bvModal.show("verify-modal");
+    },
+    Openverifyemailbtcode(){
+         this.$bvModal.show("verify-modal");
+         this.$bvModal.hide("my-modallogin");
     },
     closeVerify(){
       this.$bvModal.hide("verify-modal");

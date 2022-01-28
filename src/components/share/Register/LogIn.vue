@@ -1,4 +1,6 @@
 <template>
+<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
+
     <div>
            
         <div class="text-center element1  mt-n3">
@@ -45,10 +47,15 @@
               <span v-else  @click="switchVisibility">Hide</span>
               </div>
             </div>
-              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4">
+
+             <button type="submit" class="btn btn-primary w-100 submit-btn mt-4" @click="verifycode()" v-if="verifyrequire">
+                <span>Verify your email</span>
+              </button>
+              <button type="submit" class="btn btn-primary w-100 submit-btn mt-4" v-if="!verifyrequire" > 
                 <span v-if="loading">Loading ...</span>
                 <span v-else>Log in</span>
               </button>
+              
             </form>
           
               <!-- <div v-if="errors">
@@ -87,9 +94,26 @@ export default {
         isLogin:false,
         }
     },
+    computed:{
+      verifyrequire(){
+        let val = null
+           for(var i = 0; i<this.errors.length ; i++ ){
+          if (this.errors[i].msg == 'You Have to verify Your Email First!') {
+            val =  true;
+        }
+        
+       
+      }
+      return val;
+      }
+    },
     methods:{
+      verifycode(){
+        console.log("0000")
+        this.$emit('Openverifyemailbtcode')
+      },
       Openforgetcode(){
-        this.$emit("Openforgetcode")
+        this.$emit("Openverifyemail")
       },
         xloginOsignup(){
             this.$emit('xloginOsignup')
@@ -150,7 +174,8 @@ export default {
           }
       },
       login(){
-          if(this.ckeckform() && Object.keys(this.msg).length == 0){
+        if(!this.verifyrequire){
+             if(this.ckeckform() && Object.keys(this.msg).length == 0){
 
             this.loading = true
          
@@ -197,6 +222,11 @@ export default {
 
             
       }
+        }else{
+          this.$store.commit("setlocalemail",this.input.email)
+            this.verifycode()
+        }
+       
           
       },
         registerGauth(id_token,access_token){
