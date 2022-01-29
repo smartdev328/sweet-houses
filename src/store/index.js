@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'https://adamsweetly.pythonanywhere.com/api/'
+axios.defaults.baseURL = 'https://api.sweetly.cloud/api/'
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 export const store = new Vuex.Store({
     state:{

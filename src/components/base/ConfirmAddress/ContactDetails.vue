@@ -321,7 +321,7 @@ export default {
         // this.scheduleEvent()
       this.$http
       .get(
-          `https://adamsweetly.pythonanywhere.com/api/external/email_verif/?email=${this.email}`
+          `https://api.sweetly.cloud/api/external/email_verif/?email=${this.email}`
           )
           .then((res) => {
             console.log(res.data)
