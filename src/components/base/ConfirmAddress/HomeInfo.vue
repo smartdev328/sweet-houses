@@ -703,11 +703,20 @@
                 <input
                   type="file"
                   id="uploadimage"
+                  name="imagesArray"
+                  multiple
+                  @change="onChange"
                   accept="image/*"
                   class="form-control border bg-white"
                 />
               </div>
+
             </div>
+            <div v-if="lengthofimgarray > 0" class="imagesinfo">
+              <p style="font-size: 18px" class="mb-0 mr-1" >{{lengthofimgarray}} image</p>
+              <img src="../../../assets/image/icon/close.svg" alt=""  @click="clearimgarray()">
+            </div>
+<!--            <button @click="onUpload()" type="button">test</button>-->
             <div class="form-group ol-12 col-md-10 mx-auto px-0">
               <button
                 class="btn btn-continue w-100 px-4 d-flex justify-content-between align-items-baseline"
@@ -730,6 +739,7 @@
 export default {
   data() {
     return {
+      imagesArray: [],
       obj1: {},
       hometypes: [
         { value: "Detached", name: "Detached" },
@@ -824,11 +834,31 @@ export default {
     },
     val(){
       return document.getElementsByClassName('vs__selected')[3].innerText;  
-    }
+    },
+    lengthofimgarray(){
+      return this.imagesArray.length
+    },
  
   },
 
   methods: {
+    onChange (event) {
+      this.imagesArray = event.target.files
+    },
+    onUpload() {
+      const formData = new FormData();
+      for (const i of Object.keys(this.imagesArray)) {
+        formData.append('image', this.imagesArray[i])
+      }
+      formData.append('form_id', 2)
+      this.$http.post('listings/form_images/', formData, {
+      }).then((res) => {
+        console.log(res)
+      })
+    },
+    clearimgarray(){
+      this.imagesArray = []
+    },
     changestylesub() {
       this.changedsubcategory = true;
     },
@@ -960,6 +990,7 @@ export default {
         secondinputdata.CurrentOccupancy = this.CurrentOccupancy;
         secondinputdata.vehiclesnNo = this.vehiclesnNo;
         this.$store.commit("sethomedatasecond", secondinputdata);
+        this.$store.commit("Setuploadfile",this.imagesArray)
         this.$emit("gotoContactPage");
         window.scrollTo(0,0);
       }
@@ -969,7 +1000,14 @@ export default {
 </script>
 
 <style scoped>
-
+.imagesinfo {
+  display: flex;
+  justify-content: center;
+}
+.imagesinfo img{
+  width: 18px;
+  height: 18px;
+}
 .home-info-form2 p:first-child {
   font-size: 46px;
 }

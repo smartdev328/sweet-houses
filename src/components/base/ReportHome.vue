@@ -487,7 +487,7 @@ export default {
       return this.$store.state.instant_estimate_data.prices_offer || {};
     },
     address_format() {
-      return this.instant_estimate_data.address_found.split(",");
+      return this.instant_estimate_data.address_searched.split(",");
     },
     prices() {
       return this.instant_estimate_data.prices || {};
@@ -540,6 +540,15 @@ export default {
     },
   },
   methods: {
+    open(e) {
+      console.log(e);
+    },
+    change(e) {
+      console.log(e);
+    },
+    close(e) {
+      console.log(e);
+    },
     copyURL() {
       var Url = this.$refs.mylink;
       Url.select();

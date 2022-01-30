@@ -9,6 +9,10 @@ import { BootstrapVue , IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
+import vue2Dropzone from 'vue2-dropzone'
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+Vue.component('vueDropzone', vue2Dropzone);
+
 export const eventBus = new Vue();
 
 import VuePhoneNumberInput from 'vue-phone-number-input';
@@ -26,7 +30,7 @@ Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 // import 'aos/dist/aos.css'
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'https://adamsweetly.pythonanywhere.com/api/',
+  baseURL: process.env.VUE_APP_URL_API,
   headers: {
      /*  "x-rapidapi-key": "da7185aeb9msh0e13b327cf70bc8p10a2abjsn259d1f854d02",
       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com" */
@@ -175,7 +179,7 @@ new Vue({
   router,
   store,
   mounted() {
-  
+
   },
   created(){
  
