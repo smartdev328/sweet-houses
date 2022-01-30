@@ -26,6 +26,23 @@
                   >
                 </div>
             </div>
+            <div class="form-group mx-auto my-3 text-left">
+            <div class="">
+              <vue-phone-number-input
+                v-model="phone"
+                @update="resultsExample = $event"
+                color="#ffb600"
+                error-color="orangered"
+                default-country-code="CA"
+              />
+            </div>
+            <span style="color: #dc3545; font-size: 16px" v-if="msg.phone && !phone">{{
+              msg.phone
+            }}</span>
+             <span style="color: #dc3545; font-size: 16px" v-if="phone && resultsExample && !resultsExample.isValid">{{
+              msg.phone
+            }}</span>
+          </div>
             <div class="form-group">
               <input type="email" class="form-control form-control-lg" v-model="input.email" placeholder="Email">
                 <span v-if="msg.email" style="color: #fc5353;font-size: 16px">{{
@@ -44,23 +61,7 @@
                   >
                 </div>
             </div>
-                <div class="form-group mx-auto my-3 text-left">
-            <div class="">
-              <vue-phone-number-input
-                v-model="phone"
-                @update="resultsExample = $event"
-                color="#ffb600"
-                error-color="orangered"
-                default-country-code="CA"
-              />
-            </div>
-            <span style="color: #dc3545; font-size: 16px" v-if="msg.phone && !phone">{{
-              msg.phone
-            }}</span>
-             <span style="color: #dc3545; font-size: 16px" v-if="phone && resultsExample && !resultsExample.isValid">{{
-              msg.phone
-            }}</span>
-          </div>
+    
             <div class="form-group position-relative">
               <input :type="FieldType" class="form-control form-control-lg" v-model="input.password"  placeholder="Password">
               <span v-if="msg.password && input.password.length < 6" style="color: #fc5353;">{{
