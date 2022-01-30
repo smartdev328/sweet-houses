@@ -21,11 +21,14 @@ jobs:
 
       - name: Build and publish Sweetly Frontend
         uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+          VUE_APP_URL_API: "https://api.sweetly.cloud/api/"
         with:
          name: ${{ steps.reponame.outputs._0 }}/sweetly_app
          registry: ghcr.io
          username: ${{ steps.reponame.outputs._0 }}
          password: ${{ secrets.DOCKER_PAT }}
+         buildargs: VUE_APP_URL_API
          dockerfile: .docker/Dockerfile
          tags: latest
 
@@ -58,7 +61,7 @@ jobs:
           docker run --name sweetly_app -d \
           --restart always \
           --net sweetly \
-          -e API_URL="https://api.sweetly.cloud/api/" \
+          -e VUE_APP_URL_API="https://api.sweetly.cloud/api/" \
           -l traefik.enable=true \
           -l traefik.http.services.sweetly_app_https.loadbalancer.server.port=80 \
           -l 'traefik.http.routers.sweetly_app_https.rule=Host("'${DOMAIN}'")' \
