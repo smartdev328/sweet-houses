@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'https://adamsweetly.pythonanywhere.com/api/'
+axios.defaults.baseURL = process.env.VUE_APP_URL_API
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 export const store = new Vuex.Store({
     state:{
@@ -390,7 +390,8 @@ export const store = new Vuex.Store({
         estimatevalue:null,
         localemail:null,
         selected_menu:"Sweet_Sale",
-        city:""
+        city:"",
+        imageArr:[]
 
     },
     mutations:{
@@ -464,10 +465,13 @@ export const store = new Vuex.Store({
         },
         SETestimatevalue(state,payload){
             state.estimatevalue = payload
+        },
+        Setuploadfile(state,payload){
+            state.imageArr = payload
         }
     },
     actions:{
-        Post_Instant({commit,state}){
+        Post_Instant({commit,state,dispatch}){
             let input={}
             input.full_address = state.homeaddress,
             input.storeys = state.homedatafirst.storeys,
@@ -496,9 +500,17 @@ export const store = new Vuex.Store({
             return new Promise((resolve, reject) => {
                 axios({url: 'listings/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
                 .then(resp => {
+
                   commit('instant_estimate', resp.data)
-                  state.formData = new FormData(),
+
+                  state.formData = new FormData()
+                    if(state.imageArr.length){
+                        dispatch('UploadImage');
+                    }
+                    
                   resolve(resp)
+
+
                  
                 })
                 .catch(err => {
@@ -507,6 +519,30 @@ export const store = new Vuex.Store({
                 })
               })
 
+        },
+
+        UploadImage({state}){
+            const formData = new FormData();
+            for (const i of Object.keys(state.imageArr)) {
+                formData.append('image', state.imageArr[i])
+            }
+            formData.append('form_id', state.instant_estimate_data.form_id)
+            return new Promise((resolve, reject) => {
+                axios({url: 'listings/form_images/', data:  formData, method: 'POST' })
+                    .then(resp => {
+
+                            resolve(resp)
+
+                    })
+                    .catch(err => {
+                            reject(err)
+                    })
+            })
+
+            // this.$http.post('listings/form_images/', formData, {
+            // }).then((res) => {
+            //     console.log(res)
+            // })
         },
         ScrollTop(){
             window.scrollTo(0,0);

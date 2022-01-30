@@ -364,7 +364,7 @@ computed:{
         }else{
             this.filerdata  =   {name:'Date listed (new to old)',value:'createdOnDesc'}
         }
-        this.find_listings_forSale();
+     //   this.find_listings_forSale();
     }
 }
 </script>
