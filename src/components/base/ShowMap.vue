@@ -820,7 +820,7 @@ export default {
   top: 18vh;
 }
 .groupbtn button{
-     background-color: #ffb600;
+     background-color: rgb(10, 133, 110);
    color: #fff;
    border: 2px solid transparent;
    border-radius: 6px;
@@ -829,8 +829,8 @@ export default {
    align-items: center;
    -webkit-box-pack: center;
    justify-content: center;
-   font-size: 16px;
-   /* font-weight: bold; */
+   font-size: 18px;
+   font-weight: bold;
    padding: 9px 24px;
 }
 .info-window {
