@@ -75,7 +75,9 @@
       </div>
           
     </div>
-    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
+    <div class="groupcontent pt-5"  
+   :style="{  top: footerh + 'px' }"
+     v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
       <div class="container">
         <div class="mx-4 item1text mt-5 w-75" @click.self="hidecontent()"  >
           <p class="DMSerifRegular">Sold !</p>
@@ -260,7 +262,12 @@ export default {
     },
     boundsvalue(){
       return  new window.google.maps.LatLngBounds()
-    }
+    },
+   
+   footerh(){
+     return this.$store.state.footerh
+   }
+
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
@@ -782,7 +789,6 @@ export default {
   width: 100%;
   left: 0;
   background: rgba(0,0,0,.3);
-  top: 11vh;
   bottom: 0;
   height: 68vh;
 }
