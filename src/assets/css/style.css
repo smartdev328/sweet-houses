@@ -431,7 +431,7 @@ body{
   font-size: 28px;
 }
 .home header{
-    background-image: url(../image/blackandwhite.svg); 
+    background-image: url(../image/bgswiftsale.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -439,7 +439,7 @@ body{
     /* max-height: 430px; */
     width: 100%;
     /* height: auto; */
-    box-shadow: inset 0 0 0 2000px #58565673;
+    box-shadow: inset 0 0 0 2000px #5856565e;
     /* max-height: 85vh; */
 }
 .aboutus .item1{
