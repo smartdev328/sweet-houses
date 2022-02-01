@@ -3,6 +3,7 @@
     <div style="display: block; width:auto;">
 
       <GmapMap
+
         ref="map"
         @click="checkClick"
         @zoom_changed="changezoom($event)"
@@ -67,7 +68,9 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="groupbtn" v-if="fullscreenh || !showcontent">
+    <div class="groupbtn" 
+     :style="{  top: posY + 30  + 'px' }"
+     v-if="fullscreenh || !showcontent">
       <div class="container">
         <div class="mx-1 col-12">
            <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
@@ -266,12 +269,16 @@ export default {
    
    footerh(){
      return this.$store.state.footerh
+   },
+   gmaph(){
+     return this.$$refs.map.offsetHeight
    }
 
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
     showcontent:true,
+    posY:null,
     words: ["Buy", "Trade","List","Finance"],
     fullscreenh:false,
     showbox:true,
@@ -325,6 +332,9 @@ export default {
     placeResultData:{},
   }),
   methods: {
+     setposYsearchbar(value){
+        this.posY = value 
+      },
     hidecontent(){
       this.showcontent = false
     },
@@ -790,7 +800,7 @@ export default {
   left: 0;
   background: rgba(0,0,0,.3);
   bottom: 0;
-  height: 68vh;
+  height: calc(68vh + 6px);
 }
 .groupcontentfull{
   height: 90vh;
@@ -799,7 +809,6 @@ export default {
   position: absolute;
   left: 50px;
   height: 200px;
-  top: 200px;
   z-index: 0;
   width: 30%;
   padding: 12px;

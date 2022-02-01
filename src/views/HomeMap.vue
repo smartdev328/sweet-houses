@@ -2,6 +2,7 @@
   <div>
     <div
       class="searchpage"
+      id="searchpage"
       :class="{ fixedtop: selected_menu === 'show-list' }"
     >
       <div class="container">
@@ -434,6 +435,7 @@ export default {
   data() {
     return {
       showfilter: false,
+      posY:'',
       rangevalue: 0,
       range: [1, 4500],
       selected_menu: "show-map",
@@ -618,6 +620,10 @@ export default {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
+    getpositiontop(){
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
+      this.$refs.showmap.setposYsearchbar(this.posY)
+    }
     
   },
 
@@ -641,6 +647,7 @@ export default {
     },
   },
   mounted() {
+    this.getpositiontop()
     /* console.log(new window.google.maps.LatLngBounds());  */
     /*  this.getbounds();  */
     /* this.changezoom() */
