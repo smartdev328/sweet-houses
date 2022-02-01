@@ -49,7 +49,7 @@ jobs:
           DOCKER_TOKEN: ${{ secrets.DOCKER_PAT }}
           DOMAIN: "sweetly.cloud"
       with:
-        host: "3.96.215.160"
+        host: "15.223.58.191"
         username: root
         key: ${{ secrets.SSH_KEY }}
         envs: GITHUB_USERNAME, DOCKER_TOKEN, DOMAIN
