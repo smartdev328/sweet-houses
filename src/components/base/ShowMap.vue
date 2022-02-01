@@ -67,6 +67,14 @@
         </GmapCluster>
       </GmapMap>
     </div>
+    <div class="groupbtn" v-if="fullscreen || !showcontent">
+      <div class="container">
+        <div class="mx-1 col-12">
+           <button class="Roboto-Regular col-3">Get an Estimate</button>
+        </div>
+      </div>
+          
+    </div>
     <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()">
       <div class="container">
         <div class="mx-4 item1text mt-5" >
@@ -123,9 +131,9 @@
 
     </div>
     <div class="group">
-      <div v-if="!showbox" class="d-flex justify-content-center">
-      <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>
-    </div>
+<!--      <div v-if="!showbox" class="d-flex justify-content-center">-->
+<!--      <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>-->
+<!--    </div>-->
 
     </div>
 
@@ -787,10 +795,26 @@ export default {
   width: 30%;
   padding: 12px;
 }
-
-
-
-
+.groupbtn{
+    position: absolute;
+  width: 100%;
+  left: 0;
+  top: 18vh;
+}
+.groupbtn button{
+     background-color: #ffb600;
+   color: #fff;
+   border: 2px solid transparent;
+   border-radius: 6px;
+   display: flex;
+   -webkit-box-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   justify-content: center;
+   font-size: 16px;
+   /* font-weight: bold; */
+   padding: 9px 24px;
+}
 .info-window {
   width: 27em;
   /* max-height: 360px;
