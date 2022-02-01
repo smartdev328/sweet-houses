@@ -67,7 +67,7 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="groupbtn" v-if="fullscreen || !showcontent">
+    <div class="groupbtn" v-if="fullscreenh || !showcontent">
       <div class="container">
         <div class="mx-1 col-12">
            <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
@@ -75,9 +75,9 @@
       </div>
           
     </div>
-    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()" :class="{groupcontentfull :fullscreenh}">
+    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
       <div class="container">
-        <div class="mx-4 item1text mt-5" >
+        <div class="mx-4 item1text mt-5 w-75" @click.self="hidecontent()"  >
           <p class="DMSerifRegular">Sold !</p>
           <p>On the day you choose, at market value less normal commission</p>
           <div class="item1b  py-1">
@@ -637,7 +637,7 @@ export default {
   font-size: 28px;
 }
  .item1b {
-  width: 50%;
+  width: 75%;
   height: auto;
   margin: 0px;
   display: flex;
