@@ -70,12 +70,12 @@
     <div class="groupbtn" v-if="fullscreen || !showcontent">
       <div class="container">
         <div class="mx-1 col-12">
-           <button class="Roboto-Regular col-3">Get an Estimate</button>
+           <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
         </div>
       </div>
           
     </div>
-    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()">
+    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()" :class="{groupcontentfull :fullscreenh}">
       <div class="container">
         <div class="mx-4 item1text mt-5" >
           <p class="DMSerifRegular">Sold !</p>
@@ -785,6 +785,9 @@ export default {
   top: 11vh;
   bottom: 0;
   height: 68vh;
+}
+.groupcontentfull{
+  height: 90vh;
 }
 .group {
   position: absolute;
