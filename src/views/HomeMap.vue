@@ -9,6 +9,7 @@
           class="element1  d-flex align-items-center"
           :class="{ bgwhite: selected_menu === 'show-list' }"
         >
+
           <div
             class="togglesearch col-12 col-md-3 mxr-2"
             :class="{ bgdark: selected_menu === 'show-list' }"
@@ -70,7 +71,7 @@
                   :enable-geolocation="true"
                 >
                 </vue-google-autocomplete>
-                
+
                 <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
@@ -83,6 +84,7 @@
             </div>
           </div>
         </div>
+
         <transition name="list">
           <div class="modelfilter shadow-sm" v-show="showfilter">
             <div class="px-4 pt-0 pb-4">
@@ -400,6 +402,7 @@
           </div>
         </transition>
       </div>
+
     </div>
 
     <div :class="tab_visible('show-map')" class="h-50">
@@ -511,6 +514,7 @@ export default {
      
     },
     clearcity(){
+     // this.$refs.showmap.hideContent();
      if(this.$refs.addressmap.$el._value == ''){
        this.$refs.showmap.showboxselling()
         let city = ""

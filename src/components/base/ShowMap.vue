@@ -1,6 +1,7 @@
 <template>
   <div class="showmap">
     <div style="display: block; width:auto;">
+
       <GmapMap
         ref="map"
         @click="checkClick"
@@ -14,7 +15,7 @@
         map-type-id="terrain"
         :options="options"
         class="mt-n5 "
-       
+
         :class="[fullscreenh ?  'full-map' : 'h-map']"
       >
         <gmap-polygon
@@ -66,63 +67,66 @@
         </GmapCluster>
       </GmapMap>
     </div>
+    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()">
+      <div class="container">
+        <div class="mx-4 item1text mt-5" >
+          <p class="DMSerifRegular">Sold !</p>
+          <p>On the day you choose, at market value less normal commission</p>
+          <div class="item1b  py-1">
+
+            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+              Get an estimate value of any home
+
+            </p>
+            <div class="w-100 inputaddress">
+              <img
+                  src="../../assets/image/icon/Iconly-Light-Location.svg"
+                  alt=""
+              />
+              <div class="item1b2">
+                <span class="space"></span>
+                <!-- <input type="text" class="Poppins" v-model="location"
+                         placeholder="Enter your home address"> -->
+                <vue-google-autocomplete
+                    autocomplete="off"
+                    id="map"
+                    ref="addressmapcontent"
+                    classname="form-control"
+                    placeholder="Enter a home location"
+                    country="ca"
+                    v-on:keyup="yourFunctinNameToBeCall"
+                    v-on:placechanged="getAddressData"
+                    v-on:inputChange="inputChange"
+                    :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                >
+                </vue-google-autocomplete>
+              </div>
+
+              <div class="item1b3">
+                <button class="Poppins" type="button" @click="getresult()">
+                  Start
+                </button>
+              </div>
+            </div>
+            <div class="item1b3-sm">
+              <button class="Poppins" type="button" @click="getresult()">
+                Start
+              </button>
+            </div>
+            <!--        <span class="spanalgorithm mt-2 text-white Poppins">-->
+            <!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
+            <!--            </span>-->
+            <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="group">
       <div v-if="!showbox" class="d-flex justify-content-center">
       <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>
     </div>
-      <div class="group1"  v-if="showbox">
-        <div class="group1a px-1 px-md-4 py-4">
-          <p class="DMSerifRegular text-white mb-1">Sell Without Showings</p>
-          <div style="height:4px;width:34px;background:#FFB600"></div>
-          <p class="Roboto-Regular text-white text-center">
-            Get our estimate of value on any home
-          </p>
-        </div>
-        <div class="px-2 px-md-3">
-          <div class="w-100 inputaddress mb-3">
-            <img
-              src="../../assets/image/icon/Iconly-Light-Location.svg"
-              alt=""
-            />
-            <div class="item1b2">
-              <span class="space"></span>
-              <vue-google-autocomplete
-              autocomplete="off"
-                id="map_page"
-                ref="addressmap"
-                classname="form-control"
-                placeholder="Enter a home location"
-                country="ca"
-                v-on:keyup="yourFunctinNameToBeCall"
-                v-on:inputChange="inputChange"
-                v-on:placechanged="getAddressData"
-                :options="{
-                  fields: [
-                    'geometry',
-                    'formatted_address',
-                    'address_components',
-                  ],
-                }"
-              >
-              </vue-google-autocomplete>
-            </div>
-            <div class="item1b3">
-              <button class="" @click="getresult()">Get Started</button>
-            </div>
-          </div>
-           <div class="spanerr mx-auto" v-if="errmsg">{{ errmsg }}</div>
-        </div>
 
-        <div class="row mt-3 ">
-          <div class="col-5 mx-auto mb-3">
-            <div class="">
-              <button class="w-100 Roboto-Regular" @click="aboutusroute">
-                About Us
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
 
@@ -252,6 +256,7 @@ export default {
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
+    showcontent:true,
     words: ["Buy", "Trade","List","Finance"],
     fullscreenh:false,
     showbox:true,
@@ -305,12 +310,15 @@ export default {
     placeResultData:{},
   }),
   methods: {
-  
+    hidecontent(){
+      this.showcontent = false
+    },
     openfullscreenh(){
       this.fullscreenh = true
       this.showbox = false
     },
     checkClick() {
+      this.showcontent = false
       if (this.infoWindowOpened) {
         (this.infoWindowOpened = false), (this.activehome = {});
       }
@@ -340,6 +348,9 @@ export default {
     },
     showboxselling(){
       this.showbox = true
+    },
+    hideContent(){
+      this.showcontent = false
     },
     handleInfoWindowClose() {
       this.activehome = {};
@@ -608,6 +619,114 @@ export default {
 };
 </script>
 <style scoped>
+.groupcontent .item1text p:first-child{
+  color: #fff;
+  font-size: 60px;
+  margin-bottom: 0;
+}
+.groupcontent .item1text p:nth-child(2){
+  color: #fff;
+  font-size: 28px;
+}
+ .item1b {
+  width: 50%;
+  height: auto;
+  margin: 0px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /*height: 420px;*/
+}
+ .item1b p:first-child {
+  font-size: 22px !important;
+}
+ .item1b .inputaddress {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 6px;
+  text-align: left;
+  background: white;
+  min-height: 48px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  border-color: transparent;
+  box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  padding: 3px 10px;
+  flex-direction: row;
+  border-width: 1px;
+  border-style: solid;
+   z-index:999;
+}
+.item1b .inputaddress img {
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: 12px;
+  width: 30px;
+  height: 30px;
+}
+.item1b .inputaddress .item1b2 {
+   /* display: inline-flex; */
+   width: 100%;
+   flex-direction: column;
+ }
+ .item1b .space {
+   border: 0px;
+   clip: rect(0px, 0px, 0px, 0px);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0px;
+   position: absolute;
+   width: 1px;
+   white-space: nowrap;
+   overflow-wrap: normal;
+ }
+ .item1b input {
+   flex: 1 1 0%;
+   border: none;
+   padding-left: 12px;
+   border-radius: 8px;
+   width: 100%;
+   height: 100%;
+   min-height: 48px;
+   line-height: normal;
+   box-shadow: none !important;
+   outline: none;
+   font-size: 18px;
+ }
+ .item1b .item1b3,
+ .item1b .item1b3-sm {
+   display: flex;
+   -webkit-box-align: center;
+   align-items: center;
+   flex-shrink: 0;
+ }
+ .item1b .item1b3 button,
+ .item1b .item1b3-sm button {
+   background-color: #ffb600;
+   color: #fff;
+   height: 48px;
+   border: 2px solid transparent;
+   border-radius: 6px;
+   width: 100%;
+   display: flex;
+   -webkit-box-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   justify-content: center;
+   font-size: 16px;
+   /* font-weight: bold; */
+   padding: 9px 24px;
+ }
 .showmap .togglemap {
   display: inline-block;
   height: 40px;
@@ -617,6 +736,9 @@ export default {
   top: auto;
   z-index: 1;
 }
+ .item1b .item1b3-sm {
+   display: none;
+ }
 .showmap .togglemap button {
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
     rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
@@ -647,6 +769,15 @@ export default {
   /* width: 160px !important;
   text-align: end; */
 }
+.groupcontent{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: rgba(0,0,0,.3);
+  top: 11vh;
+  bottom: 0;
+  height: 68vh;
+}
 .group {
   position: absolute;
   left: 50px;
@@ -656,115 +787,10 @@ export default {
   width: 30%;
   padding: 12px;
 }
-.group .group1 {
-  background: #00a19b;
-  border-radius: 8px;
-}
-.group .group1 .group1a p:first-child {
-  font-size: 26px;
-}
-.group .group1 .group1a p:last-child {
-  font-size: 20px;
-}
-.group .group1 .inputaddress {
-  width: 100%;
-  display: flex;
-  box-sizing: border-box;
-  border-radius: 6px;
-  text-align: left;
-  background: white;
-  min-height: 30px;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  border-color: transparent;
-  box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
-  padding: 4px;
-  flex-direction: row;
-  border-width: 1px;
-  border-style: solid;
-}
-.group .group1 .inputaddress img {
-  flex-shrink: 0;
-  align-self: center;
-  margin-left: 8px;
-  width: 18px;
-  height: 18px;
-}
-.group .group1 .inputaddress .item1b2 {
-  display: inline-flex;
-  width: 100%;
-  flex-direction: column;
-}
-.group .group1 .space {
-  border: 0px;
-  clip: rect(0px, 0px, 0px, 0px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0px;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-  overflow-wrap: normal;
-}
-.group .group1 input {
-  flex: 1 1 0%;
-  border: none;
-  padding-left: 12px;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  min-height: 48px;
-  line-height: normal;
-  box-shadow: none !important;
-  border: 0 !important;
-  outline: none;
-}
-.group .group1 .item1b3 {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-.group button:first-child{
-    background-color: #ffb600;
-  color: #fff;
-  height: 38px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  width: 50%;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 9px 6px;
-}
-.group .group1 button {
-  background-color: #ffb600;
-  color: #fff;
-  height: 38px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  width: 100%;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 9px 6px;
-}
-input:focus {
-  outline: none;
-}
+
+
+
+
 .info-window {
   width: 27em;
   /* max-height: 360px;
@@ -781,12 +807,25 @@ input:focus {
 }
 .h-map{
   width: 100%;
-   height: 60vh
+   height: 68vh
 }
 .full-map{
    width: 100%;
    height: 90vh
 }
+ @media only screen and (max-width: 770px){
+   .item1b .item1b3 {
+     display: none;
+   }
+   .item1b .item1b3-sm {
+     display: flex;
+     -webkit-box-align: center;
+     align-items: center;
+     flex-shrink: 0;
+     width: 100%;
+     margin-top: 8px;
+   }
+ }
 @media only screen and (max-width: 600px) {
   .group {
     left: 25px;
@@ -794,27 +833,25 @@ input:focus {
     width: 55%;
     padding: 0px;
   }
-  .group .group1 .group1a p:first-child {
-    font-size: 18px;
-  }
-  .group .group1 .group1a p:last-child {
-    font-size: 18px;
-  }
-  .group .group1 .inputaddress img {
-    width: 14px;
-    height: 14px;
-  }
-  .group .group1 button {
-    padding: 6px 2px;
-    font-size: 12px;
-    border: 0;
-  }
-  .group .group1 input {
-    padding-left: 4px;
-  }
+
+
    .spanerr {
     font-size: 10px;
     width: 90%;
+  }
+ .item1b p {
+    font-size: 20px;
+  }
+ .item1b p:first-child {
+    font-size: 20px;
+  }
+.item1b .inputaddress {
+    padding: 0px 10px;
+  }
+.item1b .inputaddress img {
+    margin-left: 4px;
+    width: 20px;
+    height: 20px;
   }
 }
 </style>

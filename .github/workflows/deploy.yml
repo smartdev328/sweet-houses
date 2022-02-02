@@ -1,0 +1,75 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dockerization
+
+jobs:
+  build:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: jungwinter/split@v1
+        id: reponame
+        with:
+          msg: ${{github.repository}}
+          seperator: '/'
+
+      - name: Build and publish Sweetly Frontend
+        uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+          VUE_APP_URL_API: "https://api.sweetly.cloud/api/"
+        with:
+         name: ${{ steps.reponame.outputs._0 }}/sweetly_app
+         registry: ghcr.io
+         username: ${{ steps.reponame.outputs._0 }}
+         password: ${{ secrets.DOCKER_PAT }}
+         buildargs: VUE_APP_URL_API
+         dockerfile: .docker/Dockerfile
+         tags: latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build] 
+    steps:
+    - uses: jungwinter/split@v1
+      id: reponame
+      with:
+        msg: ${{github.repository}}
+        seperator: '/'
+
+    - name: Deploy Sweetly Frontend
+      uses: appleboy/ssh-action@master
+      env:
+          GITHUB_USERNAME: ${{ steps.reponame.outputs._0 }}
+          DOCKER_TOKEN: ${{ secrets.DOCKER_PAT }}
+          DOMAIN: "sweetly.cloud"
+      with:
+        host: "15.223.58.191"
+        username: root
+        key: ${{ secrets.SSH_KEY }}
+        envs: GITHUB_USERNAME, DOCKER_TOKEN, DOMAIN
+        script: |
+          docker login ghcr.io -u $GITHUB_USERNAME -p $DOCKER_TOKEN
+          docker pull ghcr.io/${{ steps.reponame.outputs._0 }}/sweetly_app:latest
+          docker stop sweetly_app || true
+          docker rm sweetly_app || true
+          docker run --name sweetly_app -d \
+          --restart always \
+          --net sweetly \
+          -e VUE_APP_URL_API="https://api.sweetly.cloud/api/" \
+          -l traefik.enable=true \
+          -l traefik.http.services.sweetly_app_https.loadbalancer.server.port=80 \
+          -l 'traefik.http.routers.sweetly_app_https.rule=Host("'${DOMAIN}'")' \
+          -l traefik.http.routers.sweetly_app_https.entrypoints=https \
+          -l traefik.http.routers.sweetly_app_https.tls=true \
+          -l traefik.http.routers.sweetly_app_https.tls.certresolver=myresolver \
+          -l 'traefik.http.routers.sweetly_app_http.rule=Host("'${DOMAIN}'")' \
+          -l traefik.http.routers.sweetly_app_http.entrypoints=http \
+          -l traefik.http.middlewares.https_redirect.redirectscheme.scheme=https \
+          -l traefik.http.routers.sweetly_app_http.middlewares=https_redirect \
+          ghcr.io/${{ steps.reponame.outputs._0 }}/sweetly_app:latest
