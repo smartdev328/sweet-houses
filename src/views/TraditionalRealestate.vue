@@ -1,125 +1,65 @@
 <template ref="home">
   <div class="home">
     <header>
-      <div class="p-5">
-        <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
-          <textra
-            :data="words"
-            :timer="2"
-            :infinite="true"
-            filter="top-bottom"
-          />
-          <span class="ml-2">
-            <span>Your Home</span>
-            <img class="mt-n-4  mb-0" src="../assets/image/Underline_Dash.svg" alt="">
-          </span>
-        </div>
-        <div class="item1  mb-3">
+      <div class="p-5 container">
+
+        <div class="item1  mb-3 my-5">
           <div class="item1a">
-            <button
-              @click="opensweetsale('Sweet_Sale')"
-              :style="getclass('Sweet_Sale')"
-            >
-              Sweet Sale
-              <div :style="getline('Sweet_Sale')"></div>
-            </button>
-            <button
-              @click="openswiftsale('Swift_Sale')"
-            >
-              Swift Sale
-              <div :style="getline('Swift_Sale')"></div>
-            </button>
-            <button
-              :style="getclass('Traditional_Real_Estate')"
-            >
-              Traditional Real Estate
-              <div :style="getline('Traditional_Real_Estate')"></div>
-            </button>
+            <p class="DMSerifRegular mb-0">A Traditional Listing - With Confidence !</p>
+            <p>Test the market with confidence, knowing you’ll have Swift Sale Available
+            </p>
           </div>
-          <div class="item1b px-3 py-5 p-md-5">
-            <div
-              class="text-center text-white DMSerifRegular h-75"
-              :class="tab_visible('Sweet_Sale')"
-            >
-              <p class="DMSerifRegular">
-                Get Maximum Value! Skip Public Showings And Choose Your Moving
-                Day
-              </p>
-              <p class="Roboto-Regular ">
-                The Sweet Sale is the smartest way to sell.
-              </p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular  h-75"
-              :class="tab_visible('Swift_Sale')"
-            >
-              <p class="DMSerifRegular">Your offer in minutes, SOLD in days</p>
-              <p class="Roboto-Regular">
-                Market Value less Our Fee = SOLD! Hassle-free.
-              </p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular   h-75"
-              :class="tab_visible('Equity_Advance')"
-            >
-              <p class="DMSerifRegular">
-                Your Home Equity, Before Your First Showing!
-              </p>
-              <p class="Roboto-Regular ">Access $25,000, $50,000, $150,000, or more!</p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular  h-75"
-              :class="tab_visible('Traditional_Real_Estate')"
-            >
-              <p class="DMSerifRegular">Sweetened Listing, With Muscle!</p>
-              <p class="Roboto-Regular">Compare our services.</p>
-            </div>
-          
+          <div class="item1b  py-5">
+
+            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+              Get an estimate value of any home
+
+            </p>
             <div class="w-100 inputaddress">
               <img
-                src="../assets/image/icon/Iconly-Light-Location.svg"
-                alt=""
+                  src="../assets/image/icon/Iconly-Light-Location.svg"
+                  alt=""
               />
               <div class="item1b2">
                 <span class="space"></span>
                 <!-- <input type="text" class="Poppins" v-model="location"
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
-                autocomplete="off"
-                  id="map"
+                    autocomplete="off"
+                    id="map"
                     ref="addressmap"
-                  classname="form-control"
-                placeholder="Enter a home location"
-                  country="ca"
-                  v-on:keyup="yourFunctinNameToBeCall"
-                  v-on:placechanged="getAddressData"
-                   v-on:inputChange="inputChange"
-                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                    classname="form-control"
+                    placeholder="Enter a home location"
+                    country="ca"
+                    v-on:keyup="yourFunctinNameToBeCall"
+                    v-on:placechanged="getAddressData"
+                    v-on:inputChange="inputChange"
+                    :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
                 >
                 </vue-google-autocomplete>
               </div>
 
               <div class="item1b3">
                 <button class="Poppins" type="button" @click="getresult()">
-                  Get value
+                  Start
                 </button>
               </div>
             </div>
             <div class="item1b3-sm">
               <button class="Poppins" type="button" @click="getresult()">
-               Get value
+                Start
               </button>
             </div>
-        <span class="spanalgorithm mt-2 text-white Poppins">
-              Algorithm values are provided as examples. Purchase price is set by independent appraiser & home inspection
-            </span>
+            <!--        <span class="spanalgorithm mt-2 text-white Poppins">-->
+            <!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
+            <!--            </span>-->
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
         </div>
       </div>
     </header>
     <div class="my-5">
-      <div class="container" > 
+      <div class="container" >
         <TraditionalPage></TraditionalPage>
       </div>
       <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
@@ -145,7 +85,7 @@ export default {
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
-       words: ["Buy", "Trade","List","Finance"],
+      words: ["Buy", "Trade","List","Finance"],
       place_choosed:null,
       resultsExample:{},
       addressData:{},
@@ -154,10 +94,9 @@ export default {
       selected_menu:"Traditional_Real_Estate"
     };
   },
-
   computed: {
-     checkhasstreet(){
-    return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
+    checkhasstreet(){
+      return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
     },
     location(){
       return this.placeResultData.formatted_address
@@ -165,8 +104,8 @@ export default {
     pathes(){
       let swlat =  this.placeResultData.geometry.viewport.zb.g;
       let swlng =  this.placeResultData.geometry.viewport.Qa.g;
-       let nelat =  this.placeResultData.geometry.viewport.zb.h;
-       let nelng =  this.placeResultData.geometry.viewport.Qa.h;
+      let nelat =  this.placeResultData.geometry.viewport.zb.h;
+      let nelng =  this.placeResultData.geometry.viewport.Qa.h;
       return ({swlat,swlng, nelat , nelng});
     }
     // selected_menu(){
@@ -220,13 +159,13 @@ export default {
        If you're having trouble, just contact us.`;
       }
       if (!this.checkhasstreet) {
-          this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`;
       }
       if (
-        this.location &&
-        this.place_choosed &&
-        this.checkhasstreet
+          this.location &&
+          this.place_choosed &&
+          this.checkhasstreet
       ) {
         return true;
       }
@@ -247,55 +186,36 @@ export default {
     }
   },
   mounted(){
-     document.onreadystatechange = () => {
-    if (document.readyState == "complete") {
-      console.log('Page completed with image and files!')
-
-      // HOW LOAD COMPONENTS HERE?
-      this.readyStateComplete = true
-
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        console.log('Page completed with image and files!')
+        // HOW LOAD COMPONENTS HERE?
+        this.readyStateComplete = true
+      }
     }
-  }
   },
   created() {
-
   },
 };
 </script>
 <style scoped>
 .home .item1 {
   margin: 0 auto;
-  width: 50%;
 }
-.home .item1a {
-  /*   width: 100vw;
-    max-width: 311px; */
-  margin: 0px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+.home .item1a p:first-child {
+  font-size: 5.2em;
+  color: #fff;
+  width: 80%;
+  line-height: 1.2;
 }
-.home .item1a button {
-  background: #04847f;
-  color: white;
-  border: none;
-  border-radius: 12px 12px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding: 10px;
-  position: relative;
-font-family: 'DM Serif Display', "Playfair Display",serif;
-  font-size: 24px;
+.home .item1a p:last-child{
+  font-size:28px;
+  color: #fff;
+  width: 70%;
 }
 .item1 .item1b {
-  background: #00a19b;
-  border-radius: 0px 0px 12px 12px;
+  width: 50%;
   height: auto;
-  /*    max-width: 678px; */
   margin: 0px;
   display: flex;
   -webkit-box-align: center;
@@ -304,14 +224,14 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 420px;
+  /*height: 420px;*/
 }
 .home .item1 .item1b p:first-child {
-  font-size: 38px;
+  font-size: 24px;
 }
-.home .item1 .item1b p:nth-child(2) {
-  font-size: 22px;
-}
+/*.home .item1 .item1b p:nth-child(2) {*/
+/*  font-size: 22px;*/
+/*}*/
 .item1 .item1b .inputaddress {
   width: 100%;
   display: flex;
@@ -324,11 +244,11 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
-  padding: 10px;
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
@@ -392,7 +312,7 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   justify-content: center;
   font-size: 16px;
   /* font-weight: bold; */
-  padding: 9px 16px;
+  padding: 9px 24px;
 }
 .spanerr {
   font-size: 16px;
@@ -434,10 +354,7 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
 .itemnew11 span {
   text-decoration: underline;
 }
-.textra {
-  width: 160px !important;
-  text-align: end;
-}
+
 .mt-n-4 {
   margin-top:-3.5rem;
 }
@@ -445,7 +362,7 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   .item1b .item1b3 {
     display: none;
   }
-    .item1b .item1b3-sm {
+  .item1b .item1b3-sm {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -509,8 +426,6 @@ font-family: 'DM Serif Display', "Playfair Display",serif;
   .itemnew11 {
     font-size: 20px;
   }
-  .textra {
-    width: 60px !important;
-  }
+
 }
 </style>

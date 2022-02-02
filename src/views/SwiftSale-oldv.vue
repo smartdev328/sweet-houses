@@ -1,18 +1,57 @@
 <template ref="home">
   <div class="home">
     <header>
-      <div class="p-5 container">
-
-        <div class="item1  mb-3 my-5">
+      <div class="p-5">
+        <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
+          <textra
+            :data="words"
+            :timer="2"
+            :infinite="true"
+            filter="top-bottom"
+          />
+          <span class="ml-2">
+            <span>Your Home</span>
+            <img class="mt-n-4 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
+          </span>
+        </div>
+        <div class="item1  mb-3">
           <div class="item1a">
-            <p class="DMSerifRegular">Market Value, Hassle Free</p>
+            <button
+              @click="opensweetsale('Sweet_Sale')"
+              :style="getclass('Sweet_Sale')"
+            >
+              Sweet Sale
+              <div :style="getline('Sweet_Sale')"></div>
+            </button>
+            <button
+              :style="getclass('Swift_Sale')"
+            >
+              Swift Sale
+              <div :style="getline('Swift_Sale')"></div>
+            </button>
+            <button
+              @click="opentraditionalpage('Traditional_Real_Estate')"
+              :style="getclass('Traditional_Real_Estate')"
+            >
+              Traditional Real Estate
+              <div :style="getline('Traditional_Real_Estate')"></div>
+            </button>
           </div>
-          <div class="item1b  py-5">
+          <div class="item1b px-3 py-5 p-md-5">
+            <div
+              class="text-center text-white DMSerifRegular h-75"
 
-              <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
-              Get an estimate value of any home
+            >
+              <p class="DMSerifRegular">
+               ‘Sold! Get market value on the day you choose.  Hassle free.’
+              </p>
+              <p class="Roboto-Regular ">
+                Simple. Certain. Easy.
+              </p>
+            </div>
 
-            </p>
+
+
             <div class="w-100 inputaddress">
               <img
                 src="../assets/image/icon/Iconly-Light-Location.svg"
@@ -39,18 +78,18 @@
 
               <div class="item1b3">
                 <button class="Poppins" type="button" @click="getresult()">
-                  Start
+                  Get value
                 </button>
               </div>
             </div>
             <div class="item1b3-sm">
               <button class="Poppins" type="button" @click="getresult()">
-                Start
+               Get value
               </button>
             </div>
-<!--        <span class="spanalgorithm mt-2 text-white Poppins">-->
-<!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
-<!--            </span>-->
+        <span class="spanalgorithm mt-2 text-white Poppins">
+              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.
+            </span>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
         </div>
@@ -206,15 +245,37 @@ export default {
 <style scoped>
 .home .item1 {
   margin: 0 auto;
-}
-.home .item1a p {
-font-size: 5.2em;
-  color: #fff;
-}
-
-.item1 .item1b {
   width: 50%;
+}
+.home .item1a {
+  /*   width: 100vw;
+    max-width: 311px; */
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.home .item1a button {
+  background: #04847f;
+  color: white;
+  border: none;
+  border-radius: 12px 12px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+font-family: 'DM Serif Display', "Playfair Display",serif;
+  font-size: 24px;
+}
+.item1 .item1b {
+  background: #00a19b;
+  border-radius: 0px 0px 12px 12px;
   height: auto;
+  /*    max-width: 678px; */
   margin: 0px;
   display: flex;
   -webkit-box-align: center;
@@ -223,10 +284,13 @@ font-size: 5.2em;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  /*height: 420px;*/
+  height: 420px;
 }
 .home .item1 .item1b p:first-child {
-  font-size: 24px;
+  font-size: 38px;
+}
+.home .item1 .item1b p:nth-child(2) {
+  font-size: 22px;
 }
 .item1 .item1b .inputaddress {
   width: 100%;
@@ -244,7 +308,7 @@ font-size: 5.2em;
     rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
     rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
     rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
-  padding: 3px 10px;
+  padding: 10px;
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
@@ -308,7 +372,7 @@ font-size: 5.2em;
   justify-content: center;
   font-size: 16px;
   /* font-weight: bold; */
-  padding: 9px 24px;
+  padding: 9px 16px;
 }
 .spanerr {
   font-size: 16px;
@@ -350,7 +414,10 @@ font-size: 5.2em;
 .itemnew11 span {
   text-decoration: underline;
 }
-
+.textra {
+  width: 160px !important;
+  text-align: end;
+}
 .mt-n-4 {
   margin-top:-3.5rem;
 }
@@ -422,6 +489,8 @@ font-size: 5.2em;
   .itemnew11 {
     font-size: 20px;
   }
-
+  .textra {
+    width: 60px !important;
+  }
 }
 </style>
