@@ -386,6 +386,8 @@ export default {
       this.activehome = {};
       this.infoWindowPosition.lat = m.map.latitude * 1;
       this.infoWindowPosition.lng = m.map.longitude * 1;
+      this.mapCenter.lat = m.map.latitude * 1;
+      this.mapCenter.lng = m.map.longitude * 1;
       this.infoWindowOpened = true;
       this.activehomelad = true;
       this.boardId = m.boardId;

@@ -75,332 +75,19 @@
                     <div class="col-12 col-md-4">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ECGVslh3ovY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="background:#EDF3F2;border-radius:8px" allowfullscreen></iframe>
                     </div>
-                    <!-- <div class="col-12">
-                        <router-link to="about-us" class="Roboto-Regular">About us</router-link>
-                    </div> -->
                 </div>
         </div>
-  
 
-<!--        <div class="my-2 my-md-5 item3">-->
-<!--            <div class="row align-items-center">-->
-<!--                <div class="col-12 col-md-6 bordered-left py-4 pl-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Swift Sale</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                        Skip all the seller pains.</li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                                Choose your own flexible moving day.-->
-<!--                            </li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                            Get a certain sale within days.-->
-<!--</li>-->
-<!--            <li>-->
-<!--                <router-link to="swift-sale" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
+          <div class="my-2 my-md-5 element4">
+            <p class="text-center text-color-1 DMSerifRegular">Questions and Answers</p>
+          </div>
+          <div class="my-2 my-md-5 element5">
+            <sale-question :items="Homefaqs"></sale-question>
+          </div>
+            <div class="my-2 my-md-5 w-100 text-center element6">
+              <a  @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regula">View All FAQ's</a>
+            </div>
 
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                <div class="col-12 col-md-6 d-flex flex-row-reverse">-->
-<!--                     <div class="image">-->
-<!--                        <img src="../../assets/image/homepage/Component 80 – 1.svg" class="w-100 h-100" alt="">-->
-<!--                    </div> -->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--          <div class="my-2 my-md-5 item4">-->
-<!--            <div class="row align-items-center flex-revers-sm">-->
-<!--                <div class="col-12 col-md-6 d-flex">-->
-<!--                    <div class="image">-->
-<!--                        <img src="../../assets/image/homepage/Component 81 – 1.svg" class="w-100 h-100" alt="">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                 <div class="col-12 col-md-6 bordered-right py-4 pr-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Sweet Sale</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                            Get -->
-<!--                            <div class="dropdown">-->
-<!--                                 <span class="mx-2"> <u>more money</u> </span>from the 'after renovation' sale of your home.-->
-<!--                                 <div class="dropdown-content">-->
-<!--                                <p>We make the right improvements to resell your home at the highest price possible. -->
-<!--                                     You get the full resale amount (after improvements) less our fee and improvement cost</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            </li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                            Skip all the seller pains.-->
-
-<!--                            </li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>Choose your own flexible moving day.-->
-<!--</li>-->
-<!--<li>-->
-<!--                <router-link to="sweet-sale" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--         <div class="my-2 my-md-5 item5">-->
-<!--            <div class="row align-items-center">-->
-<!--                <div class="col-12 col-md-6 bordered-left py-4 pl-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Home Swap-->
-<!--</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                                Secure the home you love, before selling the one you have.-->
-
-<!--                            </li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                                Negotiate better terms as -->
-<!--                                 <div class="dropdown">-->
-<!--                                 <span class="mx-2"> <u>a cash buyer</u>. </span> -->
-<!--                                 <div class="dropdown-content">-->
-<!--                                <p>A buyer who can proceed without a condition for the sale of another or a bank appraisal for financing</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                                -->
-<!--                                -->
-
-<!--                            </li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                                Skip all the seller pains.-->
-
-<!--                            </li>-->
-<!--<li>-->
-<!--                <router-link to="home-swap" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                <div class="col-12 col-md-6 d-flex flex-row-reverse">-->
-<!--                    <div class="image">-->
-<!--                        <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">-->
-<!--                    </div> -->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="my-2 my-md-5 item6">-->
-<!--            <div class="row align-items-center flex-revers-sm">-->
-<!--                <div class="col-12 col-md-6 d-flex">-->
-<!--                    <div class="image">-->
-<!--                        <img  src="../../assets/image/homepage/Component 83 – 1.svg" class="w-100 h-100" alt="">-->
-<!--                    </div> -->
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                <div class="col-12 col-md-6 bordered-right py-4 pr-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Buy a Home</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                            Get FREE daily updates on new listings that match your unique buying criteria.-->
-<!--</li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>Get pre-qualified for a mortgage in minutes.-->
-<!--</li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>Professional guidance throughout the process.-->
-<!--</li>-->
-<!--<li>-->
-<!--                <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--                <div class="my-2 my-md-5 item5">-->
-<!--            <div class="row align-items-center">-->
-<!--                <div class="col-12 col-md-6 bordered-left py-4 pl-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Equity Advance-->
-
-<!--</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                                We'll advance you the equity currently locked in the home you plan to sell.-->
-
-
-<!--                            </li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                                Interest free! We earn commission when you sell with Sweetly.-->
-
-
-<!--                            </li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>-->
-<!--                                Use your money as you wish.-->
-
-
-<!--                            </li>-->
-<!--<li>-->
-<!--                <router-link to="equity-advance" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                <div class="col-12 col-md-6 d-flex flex-row-reverse">-->
-<!--                    <div class="image">-->
-<!--                        <img src="../../assets/image/homepage/Component 82 – 1.svg" class="w-100 h-100" alt="">-->
-<!--                    </div> -->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--         <div class="my-2 my-md-5 item6">-->
-<!--            <div class="row align-items-center flex-revers-sm">-->
-<!--                <div class="col-12 col-md-6 d-flex">-->
-<!--                    <div class="image">-->
-<!--                        <img  src="../../assets/image/homepage/Component88.svg" class="w-100 h-100" alt="">-->
-<!--                    </div> -->
-<!--                </div>-->
-<!--                &lt;!&ndash; <div class="col-12 col-md-1"></div> &ndash;&gt;-->
-<!--                <div class="col-12 col-md-6 bordered-right py-4 pr-4">-->
-<!--                    <p class="DMSerifRegular text-capitalize">Traditional Listing With Muscle</p>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div> -->
-<!--                            Home improvement advance.-->
-<!--</li>-->
-<!--                        <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>Marketing power.-->
-<!--</li>-->
-<!--                       <li>  <div class="icon mr-3">-->
-<!--                                <img src="../../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">-->
-<!--                            </div>An available backup cash offer.-->
-<!--</li>-->
-<!--<li>-->
-<!--                <router-link to="traditional-real-estate" class="DMSerifRegular">Learn More</router-link>-->
-<!--            </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--      Compare Sweetly-->
-<!--        <div class="my-2 my-md-5 item8">-->
-<!--            <div class="text-color-1 element1 mx-0 mx-md-5 text-center DMSerifRegular"><p class="">Compare Sweetly</p>-->
-<!--                <p class="Roboto-Regular">Only Sweetly assists with the entire selling and buying process by actually buying your current home on your schedule. The certainty of a sale for your-->
-<!--current home lets you make a more compelling offer on your next home without a condition-of- sale.</p>-->
-<!--            </div>-->
-<!--            <div class="element2 shadow px-4 table-responsive">-->
-<!--                <table class="w-100">-->
-<!--                    <tbody>-->
-<!--                        <tr>-->
-<!--                            <td class="DMSerifRegular">Benefit </td>-->
-<!--                            <td class="text-center DMSerifRegular">Sweetly</td>-->
-<!--                            <td class="text-center DMSerifRegular">Other Area Brokerages</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">You can skip public showings</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular text-capitalize">You choose your own moving day</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                               <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">Brokerage provides up to $25,000 of home improvements</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">You get a firm sale within days</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">Brokerage provides cash advance to buy</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                 <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">Brokerage pays your mortgage until sold</td>-->
-<!--                            <td class="text-center">-->
-<!--                            <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                 <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="Roboto-Regular">Buy before you sell without condition of sale</td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h1"> <b-icon icon="check"  class="text-info"></b-icon></p>-->
-<!--                            </td>-->
-<!--                            <td class="text-center">-->
-<!--                                <p class="h4"> No </p>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                    </tbody>-->
-<!--                </table>-->
-<!--            </div>-->
-
-<!--            <div class="my-2 my-md-5 element4">-->
-<!--                <p class="text-center text-color-1 DMSerifRegular">Questions and Answers</p>-->
-<!--            </div>-->
-<!--            <div class="my-2 my-md-5 element5">-->
-<!--                <sale-question :items="Homefaqs"></sale-question>-->
-<!--            </div>-->
-<!--            <div class="my-2 my-md-5 w-100 text-center element6">-->
-<!--                <a  @click="openfaqspage"  class="btn  py-2 px-5 Roboto-Regula">View All FAQ's</a>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </template>
 <script>
@@ -615,18 +302,18 @@ export default {
     .page1 .item8 .element2 table tbody tr:nth-child(8) td:nth-child(2){
         font-size: 16px !important;
     }
-    .page1 .item8 .element4{
+    .element4{
         font-size: 38px;
         font-weight: 600;
     }
-    .page1 .item8 .element6 a{
+    .page1 .element6 a{
         border-radius: 8px;
         border: 1px solid #AAAAAA;
         color: #707070;
         font-family: "Roboto", sans-serif;
         font-size: 18px;
     }
-        .page1 .item8 .element6 a:hover{
+        .page1 .element6 a:hover{
         color: #FFB600;
         border: 1px solid #FFB600;
     }

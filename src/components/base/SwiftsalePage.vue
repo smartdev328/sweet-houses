@@ -37,13 +37,13 @@
         <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
           <p> A Swift Sale is Right For You, If You</p>
         </div>
-        <div>
+        <div class="item13a p-4 shadow-sm">
           <div class="image">
-            <img class="rounded" src="../../assets/image/ASwiftSaleisRightForYou.png" alt="">
+            <img class="rounded w-100 h-100" src="../../assets/image/ASwiftSaleisRightForYou.png"  alt="">
           </div>
-          <div class="col-12 col-md-8  py-4 pl-4 my-4 mx-auto">
-            <ul>
-              <li v-for="item in Traditionaldata" :key="item.id" class="text-color-1 Roboto-Regular">
+          <div class="py-4 pl-4 my-4 mx-auto">
+            <ul class="row">
+              <li v-for="item in Traditionaldata" :key="item.id" class="text-color-1 Roboto-Regular col-6">
                 <div class="icon mr-3">
                   <img src="../../assets/image/icon/checkicon.svg"  class="w-100 h-100" alt="">
                 </div>
@@ -298,8 +298,12 @@ export default {
       font-size: 38px;
       font-weight: 600;
     }
+    .page2 .item13 .item13a{
+    background: #EDF3F2;
+      border-radius: 6px;
+    }
     .page2 .item13 .image{
-      width: 600px;
+      height: 440px;
       margin: auto;
     }
     .item13 ul li{
