@@ -210,7 +210,7 @@
               class="dropdown-menu border-0 shadow-sm"
               aria-labelledby="navbarDropdown"
             >
-              <router-link to="/blog" class="dropdown-item">Blog</router-link>
+              <router-link to="https://sweetly.cloud/info/" class="dropdown-item">Blog</router-link>
               <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
               >
