@@ -70,8 +70,8 @@
     <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()">
       <div class="container">
         <div class="mx-4 item1text mt-5" >
-          <p class="DMSerifRegular">Sold !</p>
-          <p>On the day you choose, at market value less normal commission</p>
+          <p class="DMSerifRegular">Market Value, Hassle Free</p>
+          <p></p>
           <div class="item1b  py-1">
 
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
