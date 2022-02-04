@@ -82,9 +82,8 @@
    :style="{  top: footerh + 'px' }"
      v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
       <div class="container">
-        <div class="mx-4 item1text mt-5 w-75" @click.self="hidecontent()"  >
-          <p class="DMSerifRegular">Sold !</p>
-          <p>On the day you choose, at market value less normal commission</p>
+        <div class="mx-4 item1text mt-5 w-75" >
+          <p class="DMSerifRegular">Market Value, Hassle Free</p>
           <div class="item1b  py-1">
 
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
