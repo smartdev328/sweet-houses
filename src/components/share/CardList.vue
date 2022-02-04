@@ -50,14 +50,6 @@
         alt="..."
         @click="openhomedetails"
       />
-
-       
-
-     
-
-
-      
-  
       <div
         class="arrow-dir"
         @click="getImage()"
@@ -115,6 +107,9 @@
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
             {{ gettime(homedata.soldDate) }}
           </p>
+        </div>
+        <div class="element2" v-if="homedata.offer_price">
+          <p>${{ homedata.offer_price.toLocaleString("ja-JP") }}  Sweetly  Estimate</p>
         </div>
         <div class="element3">
           <span class="text-color-1 Roboto-Regular"
@@ -432,7 +427,7 @@ export default {
 }
 .counter {
   position: absolute;
-  top: 43%;
+  top:10.5em;
   right: 10px;
   color: #fff;
   background: #434242a3;

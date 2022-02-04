@@ -392,12 +392,16 @@ export const store = new Vuex.Store({
         localemail:null,
         selected_menu:"Sweet_Sale",
         city:"",
-        imageArr:[]
+        imageArr:[],
+        posY:null,
 
     },
     mutations:{
         setfooterh(state,payload){
             state.footerh = payload
+        },
+        setposY(state,payload){
+            state.posY = payload
         },
         editSelectedMenu(state,payload){
             state. selected_menu  = payload

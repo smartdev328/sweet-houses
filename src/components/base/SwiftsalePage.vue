@@ -305,6 +305,7 @@ export default {
     .page2 .item13 .image{
       height: 440px;
       margin: auto;
+      width: 640px;
     }
     .item13 ul li{
       list-style-type: none;

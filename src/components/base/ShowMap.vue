@@ -70,7 +70,7 @@
     </div>
     <div class="groupbtn" 
      :style="{  top: posY + 30  + 'px' }"
-     v-if="fullscreenh || !showcontent">
+     v-if="!showcontent">
       <div class="container">
         <div class="mx-1 col-12">
            <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
@@ -133,12 +133,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-    <div class="group">
-<!--      <div v-if="!showbox" class="d-flex justify-content-center">-->
-<!--      <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>-->
-<!--    </div>-->
 
     </div>
 
@@ -270,15 +264,17 @@ export default {
    footerh(){
      return this.$store.state.footerh
    },
+  posY(){
+    return this.$store.state.posY
+  },
    gmaph(){
-     return this.$$refs.map.offsetHeight
+     return this.$refs.map.offsetHeight
    }
 
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
     showcontent:true,
-    posY:null,
     words: ["Buy", "Trade","List","Finance"],
     fullscreenh:false,
     showbox:true,
@@ -332,9 +328,6 @@ export default {
     placeResultData:{},
   }),
   methods: {
-     setposYsearchbar(value){
-        this.posY = value 
-      },
     hidecontent(){
       this.showcontent = false
     },
@@ -819,7 +812,6 @@ export default {
     position: absolute;
   width: 100%;
   left: 0;
-  top: 18vh;
 }
 .groupbtn button{
      background-color: rgb(10, 133, 110);

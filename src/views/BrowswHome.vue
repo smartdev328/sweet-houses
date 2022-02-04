@@ -406,6 +406,9 @@
       <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
+      <div class="text-center my-5 container">
+        <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+      </div>
       <show-list
         ref="showlist"
         :type="typesale"
@@ -430,6 +433,8 @@ export default {
   },
   data() {
     return {
+      loading:false,
+      posY:null,
       showfilter: false,
       rangevalue: 0,
       range: [1, 4500],
@@ -556,9 +561,11 @@ export default {
         (input.style = this.style);
       this.$store.commit("SAVE_FILTER_OPT", input);
       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
+        this.loading= true
         this.$refs.showlist.find_listings_forSaleMain();
       }
       if (this.selected_menu == "show-list" && this.typesale == "sold") {
+        this.loading= true
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map" && this.typesale == "forsale") {
@@ -570,9 +577,23 @@ export default {
     },
     submitmap() {
       this.selected_menu = "show-list";
+      if(this.typesale == "forsale"){
+        this.loading= true
+        this.$refs.showlist.find_listings_forSaleMain();
+      }
+      if( this.typesale == "sold"){
+        this.loading= true
+        this.$refs.showlist.find_listings_SoldMain();
+      }
     },
     submitlist() {
       this.selected_menu = "show-map";
+      if(this.typesale == "forsale"){
+        this.$refs.showmap.find_listings_forSaleMain();
+      }
+      if( this.typesale == "sold"){
+        this.$refs.showmap.find_listings_SoldMain();
+      }
     },
     tab_visible(tab) {
       if (tab == this.selected_menu) {
@@ -584,6 +605,7 @@ export default {
     openforsale() {
       if (this.selected_menu == "show-list") {
         this.typesale = "forsale";
+        this.loading= true
         this.$refs.showlist.find_listings_forSaleMain();
       }
       if (this.selected_menu == "show-map") {
@@ -595,6 +617,7 @@ export default {
     opensold() {
       if (this.selected_menu == "show-list") {
         this.typesale = "sold";
+        this.loading= true
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map") {
@@ -605,11 +628,19 @@ export default {
     openfullscreen(){
        this.$refs.showmap.openfullscreenh()
     }
- 
+    ,
+    getpositiontop(){
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
+      this.$refs.showmap.setposYsearchbar(this.posY)
+    },
+    stoploading(){
+      this.loading = false
+    }
     
   },
   mounted(){
-      this.openfullscreen()
+      this.openfullscreen();
+    this.getpositiontop();
   }
   ,
 

@@ -13,13 +13,13 @@
 export default {
   data(){
     return{
-      footerheight : ''
+      navbarheight : ''
     }
   },
   methods:{
     matchHeight () {
-      this.footerheight = document.getElementById('navbar').offsetHeight
-      this.$store.commit("setfooterh",this.footerheight)
+      this.navbarheight = document.getElementById('navbar').offsetHeight
+      this.$store.commit("setfooterh",this.navbarheight)
 }
   },
   mounted(){

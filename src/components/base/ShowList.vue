@@ -1,10 +1,11 @@
 <template>
     <div class="showlist">
         <div class="container ">
-                <div class="space-40"></div>
+          <div class="space-40"></div>
+
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold" v-if="loadedlistingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Results</span> </p>
+                <p class="font-weight-bold" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Results</span> </p>
             </div>
             <div class="item1b">
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
@@ -12,8 +13,8 @@
             <div class="item1c">
                 <div class="text-color-2 Roboto-Regular dropdown">
                     <a class="nav-link dropdown-toggle text-color-2"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{filerdata.value}} <img class="arrow-bottom" src="../../assets/image/icon/arrowbottom.svg" alt=""> 
-                  <img class="arrow-top" src="../../assets/image/icon/arrowtop2.svg" alt=""> 
+                  {{filerdata.value}} <img class="arrow-bottom" src="../../assets/image/icon/arrowbottom.svg" alt="">
+                  <img class="arrow-top" src="../../assets/image/icon/arrowtop2.svg" alt="">
                     </a>
                     <div v-if="type == 'forsale'" class="dropdown-menu bg-white border-0" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  :class="{filteractive : filerdata.name == filter.name }"  v-for="filter in filerlist" :key="filter.id" @click="changeFilter(filter)" >{{filter.name}}</a>
@@ -24,36 +25,17 @@
                 </div>
             </div>
         </div>
-        <div class="cards my-5" v-if="loadedlistingsold">
+        <div class="cards my-5" v-if="listings">
             <card-list v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
             @SignUp="SignUp"
              ></card-list>
         </div>
-        <div class="text-center my-5"> 
-            <b-spinner v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
-        </div>
+
         <div class="text-center my-5 DMSerifRegular" v-if="!loading && loadedlistingsold && tatal == 0">
             No Matchig Data
         </div>
         <div class="my-5 row" v-if="loadedlistingsold">
             <div class="col-12 d-flex justify-content-center">
-                  <!-- <pagination
-                    v-model="paginationpage"
-                    :records="tatal"
-                    :perPage="30"
-                    :prev-text="'Prev'"
-                    :next-text="'Next'"
-                    count-text=""
-                    last-number
-                     :options="{
-                            chunk: 8,
-                            lastnumber,
-                            texts: {
-                            count: ''
-                            }
-                        }"
-                    @paginate="myCallback"
-                  />  -->
                    <b-pagination
                     v-model="paginationpage"
                     :total-rows="tatal"
@@ -62,10 +44,10 @@
                     next-text="Next  →"
                     first-number
                     last-number
-                   
+
                 ></b-pagination>
             </div>
-           
+
         </div>
             <div class="my-5 disclaimer-content">
                 <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
@@ -75,7 +57,7 @@
                      Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
 
                  </p>
-            </div> 
+            </div>
         </div>
           <b-modal
             ref="my-modal"
@@ -107,7 +89,7 @@
             header-bg-variant="white"
             body-bg-variant="white"
             footer-bg-variant="white"
-            
+
             no-close-on-backdrop
           >
             <verification-code
@@ -121,7 +103,7 @@
             header-bg-variant="white"
             body-bg-variant="white"
             footer-bg-variant="white"
-            
+
             no-close-on-backdrop
           >
             <forget-code
@@ -282,7 +264,6 @@ computed:{
         let style = this.style;
         let minBaths = this.minBaths;
         let city = this.city;
-        this.loading = true 
         this.loadedlistingsold = false
         this.$http.get(`listings/listings_pages/?sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&city=${city}`).then((res) =>{
             this.loading = false 
@@ -291,6 +272,7 @@ computed:{
             this.tatal = res.data.count
              this.loading = false
              this.loadedlistingsold=true
+          this.$parent.stoploading()
         })
     },
     find_listings_forSaleMain(){
@@ -320,6 +302,7 @@ computed:{
             this.tatal = res.data.count
              this.loading = false
              this.loadedlistingsold=true
+          this.$parent.stoploading()
         })
     },
      SignUp() {
