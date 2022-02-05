@@ -626,6 +626,12 @@ export default {
     getpositiontop(){
       this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
       this.$store.commit('setposY',this.posY)
+    },
+     stoploading(){
+      this.loading = false
+    },
+    runloading(){
+      this.loading = true
     }
     
   },

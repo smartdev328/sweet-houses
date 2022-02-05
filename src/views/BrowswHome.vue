@@ -635,6 +635,9 @@ export default {
     },
     stoploading(){
       this.loading = false
+    },
+    runloading(){
+      this.loading = true
     }
     
   },

@@ -3,10 +3,8 @@
     <div class="container my-5">
       <div class="item1">
         <div class="item1a d-flex pointer" @click="routrMap()">
-          <div class="image">
-            <img src="../../assets/image/icon/searchreport.svg" alt="" />
-          </div>
-          <p class="mb-0 ml-2 Roboto-Medium">Find more homes</p>
+
+          <p class="mb-0 ml-2 Roboto-Medium">Return to map</p>
         </div>
         <div class="item1b">
           <p class="text-color-1 Roboto-Medium mb-0" v-if="address_format">
@@ -23,13 +21,13 @@
           </div>
         </div>
         <div class="item1c mt-3 mt-md-0">
-          <b-button
+          <!-- <b-button
             v-b-modal="'modal-share'"
             class="btn bg-transparent text-color-1 Roboto-Regular"
           >
             <img src="../../assets/image/icon/share.svg" alt="icon" />
             Share</b-button
-          >
+          > -->
           <b-modal
             id="modal-share"
             size="lg"
@@ -623,7 +621,7 @@ export default {
 .reporthome .item1 .item1a .image {
   width: 22px;
   height: 22px;
-}
+} 
 .reporthome .item1 .item1a .image:focus .reporthome .item1 .item1a {
   border: 1px solid #70707059 !important;
   background: #f5f5f5;
@@ -639,7 +637,7 @@ export default {
 } */
 .reporthome .item1 .item1a p {
   font-size: 22px;
-  color: #434242;
+  color: #00a19b;
 }
 .reporthome .item1 .item1b p {
   font-size: 24px;

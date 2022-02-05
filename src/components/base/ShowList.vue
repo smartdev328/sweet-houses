@@ -25,16 +25,20 @@
                 </div>
             </div>
         </div>
-        <div class="cards my-5" v-if="listings">
-            <card-list v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
+        <div class="cards my-5" >
+            <card-list
+             v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
             @SignUp="SignUp"
              ></card-list>
         </div>
+         <div class="text-center my-5 container">
+        <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+      </div>
 
         <div class="text-center my-5 DMSerifRegular" v-if="!loading && loadedlistingsold && tatal == 0">
             No Matchig Data
         </div>
-        <div class="my-5 row" v-if="loadedlistingsold">
+        <div class="my-5 row">
             <div class="col-12 d-flex justify-content-center">
                    <b-pagination
                     v-model="paginationpage"
@@ -139,7 +143,7 @@ export default {
             ],
             listingsold:{},
             listings:[],
-            loading:null,
+            loading:false,
             loadedlistingsold:null,
             tatal:0,
             filerdata:null,
@@ -158,6 +162,7 @@ export default {
     },
 watch:{
     paginationpage:function(){
+        this.listings = []
         this.myCallback()
     }
 },
@@ -253,6 +258,7 @@ computed:{
     find_listings_Sold(){
         let sortBy = this.filerdata.value;
         let pageNum = this.paginationpage;
+        this.listings = 0
         this.loading = true ;
         let minBeds = this.minBeds;
         let minParkingSpaces = this.minParkingSpaces;
@@ -264,6 +270,8 @@ computed:{
         let style = this.style;
         let minBaths = this.minBaths;
         let city = this.city;
+
+     //   this.$parent.runloading()
         this.loadedlistingsold = false
         this.$http.get(`listings/listings_pages/?sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=sold&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minSoldPrice=${minPrice}&maxSoldPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&city=${city}`).then((res) =>{
             this.loading = false 
@@ -272,6 +280,7 @@ computed:{
             this.tatal = res.data.count
              this.loading = false
              this.loadedlistingsold=true
+
           this.$parent.stoploading()
         })
     },
@@ -283,6 +292,7 @@ computed:{
     find_listings_forSale(){
         let sortBy = this.filerdata.value;
         let pageNum = this.paginationpage;
+      this.listings = 0
         this.loading = true ;
         let minBeds = this.minBeds;
         let minParkingSpaces = this.minParkingSpaces;
@@ -294,6 +304,7 @@ computed:{
         let style = this.style;
         let city = this.city;
         let minBaths = this.minBaths;
+       // this.$parent.runloading()
         this.loadedlistingsold = false
         this.$http.get(`listings/listings_pages/?sortBy=${sortBy}&pageNum=${pageNum}&resultsPerPage=30&type=forsale&minBeds=${minBeds}&minParkingSpaces=${minParkingSpaces}&minSqft=${minSqft}&maxSqft=${maxSqft}&minPrice=${minPrice}&maxPrice=${maxPrice}&propertyType=${propertyType}&style=${style}&minBaths=${minBaths}&city=${city}`).then((res) =>{
             this.loading = false 
@@ -352,6 +363,9 @@ computed:{
 }
 </script>
 <style scoped>
+.hidden{
+  display: none !important;
+}
 .showlist .item1{
     display: flex;
     justify-content: space-between;
