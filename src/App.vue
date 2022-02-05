@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-        <Navbar/>
+    <Navbar id="navbar"></Navbar>
     <router-view  />
-    <Footer v-if="!$route.meta.hideNavbar"></Footer>
+    <Footer id="footer" v-if="!$route.meta.hideNavbar"></Footer>
   </div>
 </template>
 
@@ -11,10 +11,19 @@
 </style>
 <script>
 export default {
+  data(){
+    return{
+      navbarheight : ''
+    }
+  },
   methods:{
+    matchHeight () {
+      this.navbarheight = document.getElementById('navbar').offsetHeight
+      this.$store.commit("setfooterh",this.navbarheight)
+}
   },
   mounted(){
-
+      this.matchHeight()
   }
 }
 </script>

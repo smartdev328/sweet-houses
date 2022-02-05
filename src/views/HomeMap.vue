@@ -2,6 +2,7 @@
   <div>
     <div
       class="searchpage"
+      id="searchpage"
       :class="{ fixedtop: selected_menu === 'show-list' }"
     >
       <div class="container">
@@ -409,17 +410,15 @@
       <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
+      <div class="text-center my-5">
+        <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+      </div>
       <show-list
         ref="showlist"
         :type="typesale"
         @submit="submitlist"
       ></show-list>
     </div>
-       <!-- <div class="my-5" :class="tab_visible('show-map')" >
-      <div class="container" > 
-        <SweetSale></SweetSale>
-      </div>
-    </div> -->
   </div>
 </template>
 <script>
@@ -433,7 +432,9 @@ export default {
   },
   data() {
     return {
+      loading:false,
       showfilter: false,
+      posY:'',
       rangevalue: 0,
       range: [1, 4500],
       selected_menu: "show-map",
@@ -560,9 +561,11 @@ export default {
         (input.style = this.style);
       this.$store.commit("SAVE_FILTER_OPT", input);
       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
+        this.loading = true
         this.$refs.showlist.find_listings_forSaleMain();
       }
       if (this.selected_menu == "show-list" && this.typesale == "sold") {
+        this.loading = true
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map" && this.typesale == "forsale") {
@@ -575,9 +578,11 @@ export default {
     submitmap() {
       this.selected_menu = "show-list";
        if(this.typesale == "forsale"){
+         this.loading = true
         this.$refs.showlist.find_listings_forSaleMain();    
       }
       if( this.typesale == "sold"){
+        this.loading = true
         this.$refs.showlist.find_listings_SoldMain();
       }
     },
@@ -618,6 +623,16 @@ export default {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
+    getpositiontop(){
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
+      this.$store.commit('setposY',this.posY)
+    },
+     stoploading(){
+      this.loading = false
+    },
+    runloading(){
+      this.loading = true
+    }
     
   },
 
@@ -641,6 +656,7 @@ export default {
     },
   },
   mounted() {
+    this.getpositiontop()
     /* console.log(new window.google.maps.LatLngBounds());  */
     /*  this.getbounds();  */
     /* this.changezoom() */

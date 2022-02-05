@@ -3,6 +3,7 @@
     <div style="display: block; width:auto;">
 
       <GmapMap
+
         ref="map"
         @click="checkClick"
         @zoom_changed="changezoom($event)"
@@ -67,11 +68,22 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="groupcontent pt-5" v-if="showcontent" @click.self="hidecontent()">
+    <div class="groupbtn" 
+     :style="{  top: posY + 30  + 'px' }"
+     v-if="!showcontent">
       <div class="container">
-        <div class="mx-4 item1text mt-5" >
+        <div class="mx-1 col-12">
+           <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
+        </div>
+      </div>
+          
+    </div>
+    <div class="groupcontent pt-5"  
+   :style="{  top: footerh + 'px' }"
+     v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
+      <div class="container">
+        <div class="mx-4 item1text mt-5 w-75" >
           <p class="DMSerifRegular">Market Value, Hassle Free</p>
-          <p></p>
           <div class="item1b  py-1">
 
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
@@ -120,12 +132,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-    <div class="group">
-      <div v-if="!showbox" class="d-flex justify-content-center">
-      <button @click="showbox = true" class="Roboto-Regular">Get an Estimate</button>
-    </div>
 
     </div>
 
@@ -252,7 +258,18 @@ export default {
     },
     boundsvalue(){
       return  new window.google.maps.LatLngBounds()
-    }
+    },
+   
+   footerh(){
+     return this.$store.state.footerh
+   },
+  posY(){
+    return this.$store.state.posY
+  },
+   gmaph(){
+     return this.$refs.map.offsetHeight
+   }
+
   },
   components: { GmapCluster , SweetSale},
   data: () => ({
@@ -361,6 +378,8 @@ export default {
       this.activehome = {};
       this.infoWindowPosition.lat = m.map.latitude * 1;
       this.infoWindowPosition.lng = m.map.longitude * 1;
+      this.mapCenter.lat = m.map.latitude * 1;
+      this.mapCenter.lng = m.map.longitude * 1;
       this.infoWindowOpened = true;
       this.activehomelad = true;
       this.boardId = m.boardId;
@@ -629,7 +648,7 @@ export default {
   font-size: 28px;
 }
  .item1b {
-  width: 50%;
+  width: 75%;
   height: auto;
   margin: 0px;
   display: flex;
@@ -774,23 +793,39 @@ export default {
   width: 100%;
   left: 0;
   background: rgba(0,0,0,.3);
-  top: 11vh;
   bottom: 0;
-  height: 68vh;
+  height: calc(68vh + 6px);
+}
+.groupcontentfull{
+  height: 90vh;
 }
 .group {
   position: absolute;
   left: 50px;
   height: 200px;
-  top: 200px;
   z-index: 0;
   width: 30%;
   padding: 12px;
 }
-
-
-
-
+.groupbtn{
+    position: absolute;
+  width: 100%;
+  left: 0;
+}
+.groupbtn button{
+     background-color: rgb(10, 133, 110);
+   color: #fff;
+   border: 2px solid transparent;
+   border-radius: 6px;
+   display: flex;
+   -webkit-box-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   justify-content: center;
+   font-size: 18px;
+   font-weight: bold;
+   padding: 9px 24px;
+}
 .info-window {
   width: 27em;
   /* max-height: 360px;
