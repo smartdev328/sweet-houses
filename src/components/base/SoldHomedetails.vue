@@ -6,9 +6,6 @@
       <div class="my-5">
         <div class="item1">
           <div class="item1a d-flex pointer"  @click="routrMap()">
-             <div class="image">
-                              <img src="../../assets/image/icon/searchreport.svg" alt="">
-                    </div>
                     <p class="mb-0 ml-2 Roboto-Medium">Find more homes</p>
           </div>
           <div class="item1b text-center">
@@ -925,7 +922,7 @@ export default {
 }
 .homedetails .item1 .item1a p {
   font-size: 22px;
-  color: #434242;
+  color: #00a19b;
 }
 .homedetails .item1 .item1b {
   line-height: 1;

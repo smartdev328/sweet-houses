@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
     state:{
         token: localStorage.getItem('token') || '',
         user:{},
+        footerh:null,
         agents:[
             {name:"Barbara Diduch",phone:'(587) 984-2058',position:"REALTOR®",image:require('../assets/image/homepage/team/Barbara.svg'),
             details:`
@@ -391,10 +392,17 @@ export const store = new Vuex.Store({
         localemail:null,
         selected_menu:"Sweet_Sale",
         city:"",
-        imageArr:[]
+        imageArr:[],
+        posY:null,
 
     },
     mutations:{
+        setfooterh(state,payload){
+            state.footerh = payload
+        },
+        setposY(state,payload){
+            state.posY = payload
+        },
         editSelectedMenu(state,payload){
             state. selected_menu  = payload
         },
