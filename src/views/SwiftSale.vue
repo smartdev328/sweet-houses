@@ -1,17 +1,14 @@
 <template ref="home">
   <div class="home">
     <header>
-      <div class="p-5 container">
-
-        <div class="item1  mb-3 my-5">
+      <div class="p-4 p-md-5 container">
+        <div class="item1 mb-3 my-2 my-md-5">
           <div class="item1a">
             <p class="DMSerifRegular">Market Value, Hassle Free</p>
           </div>
-          <div class="item1b  py-5">
-
-              <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+          <div class="item1b py-2 py-md-5">
+            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
               Get an estimate value of any home
-
             </p>
             <div class="w-100 inputaddress">
               <img
@@ -20,19 +17,23 @@
               />
               <div class="item1b2">
                 <span class="space"></span>
-                <!-- <input type="text" class="Poppins" v-model="location"
-                         placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
-                autocomplete="off"
+                  autocomplete="off"
                   id="map"
-                    ref="addressmap"
+                  ref="addressmap"
                   classname="form-control"
-                 placeholder="Enter a home location"
+                  placeholder="Enter a home location"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
-                   v-on:inputChange="inputChange"
-                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                  v-on:inputChange="inputChange"
+                  :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
                 >
                 </vue-google-autocomplete>
               </div>
@@ -48,27 +49,15 @@
                 Start
               </button>
             </div>
-<!--        <span class="spanalgorithm mt-2 text-white Poppins">-->
-<!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
-<!--            </span>-->
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
         </div>
       </div>
     </header>
     <div class="my-5">
-      <div class="container" > 
+      <div class="container">
         <swiftsale-page></swiftsale-page>
       </div>
-      <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
-        <swift-sale></swift-sale>
-      </div> -->
-      <!-- <div class="container" :class="tab_visible('Equity_Advance')" v-if="readyStateComplete">
-        <equity-advance></equity-advance>
-      </div> -->
-      <!-- <div :class="tab_visible('Traditional_Real_Estate')" v-if="readyStateComplete">
-        <traditional-realestate></traditional-realestate>
-      </div> -->
     </div>
   </div>
 </template>
@@ -82,49 +71,47 @@ export default {
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
-       words: ["Buy", "Trade","List","Finance"],
-      place_choosed:null,
-      resultsExample:{},
-      addressData:{},
-      placeResultData:{},
-      readyStateComplete:null,
-     selected_menu :"Swift_Sale"
+      words: ["Buy", "Trade", "List", "Finance"],
+      place_choosed: null,
+      resultsExample: {},
+      addressData: {},
+      placeResultData: {},
+      readyStateComplete: null,
+      selected_menu: "Swift_Sale",
     };
   },
 
   computed: {
-     checkhasstreet(){
-    return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
+    checkhasstreet() {
+      return Object.prototype.hasOwnProperty.call(
+        this.addressData,
+        "street_number"
+      );
     },
-    location(){
-      return this.placeResultData.formatted_address
+    location() {
+      return this.placeResultData.formatted_address;
     },
-    pathes(){
-      let swlat =  this.placeResultData.geometry.viewport.zb.g;
-      let swlng =  this.placeResultData.geometry.viewport.Qa.g;
-       let nelat =  this.placeResultData.geometry.viewport.zb.h;
-       let nelng =  this.placeResultData.geometry.viewport.Qa.h;
-      return ({swlat,swlng, nelat , nelng});
-    }
-    // selected_menu(){
-    //   return this.selected_menu;
-    // },
+    pathes() {
+      let swlat = this.placeResultData.geometry.viewport.zb.g;
+      let swlng = this.placeResultData.geometry.viewport.Qa.g;
+      let nelat = this.placeResultData.geometry.viewport.zb.h;
+      let nelng = this.placeResultData.geometry.viewport.Qa.h;
+      return { swlat, swlng, nelat, nelng };
+    },
   },
-  components: {
-    
-  },
+  components: {},
   watch: {},
   methods: {
-    yourFunctinNameToBeCall(){
+    yourFunctinNameToBeCall() {
       this.place_choosed = false;
     },
     getAddressData(addressData, placeResultData) {
-      this.addressData= addressData
-      this.placeResultData = placeResultData
-      this.latlong.lat = addressData.latitude
-      this.latlong.lng = addressData.longitude
+      this.addressData = addressData;
+      this.placeResultData = placeResultData;
+      this.latlong.lat = addressData.latitude;
+      this.latlong.lng = addressData.longitude;
       this.place_choosed = true;
-      console.log(placeResultData)
+      console.log(placeResultData);
     },
     getclass(tab) {
       if (tab == this.selected_menu) {
@@ -143,11 +130,11 @@ export default {
         return "d-none";
       }
     },
-    editselectedmenu(tab){
-      this.$store.commit('editSelectedMenu',tab)
+    editselectedmenu(tab) {
+      this.$store.commit("editSelectedMenu", tab);
     },
-    opentraditionalpage(){
-      this.$router.push({name:"TraditionalRealestate"})
+    opentraditionalpage() {
+      this.$router.push({ name: "TraditionalRealestate" });
     },
 
     checkform() {
@@ -161,14 +148,10 @@ export default {
        If you're having trouble, just contact us.`;
       }
       if (!this.checkhasstreet) {
-          this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`;
       }
-      if (
-        this.location &&
-        this.place_choosed &&
-        this.checkhasstreet
-      ) {
+      if (this.location && this.place_choosed && this.checkhasstreet) {
         return true;
       }
     },
@@ -180,27 +163,23 @@ export default {
         this.$store.dispatch("ScrollTop");
       }
     },
-    inputChange(){
-      this.errmsg=""
+    inputChange() {
+      this.errmsg = "";
     },
-    opensweetsale(){
-      this.$router.push({name:"SweetSale"})
-    }
+    opensweetsale() {
+      this.$router.push({ name: "SweetSale" });
+    },
   },
-  mounted(){
-     document.onreadystatechange = () => {
-    if (document.readyState == "complete") {
-      console.log('Page completed with image and files!')
+  mounted() {
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        console.log("Page completed with image and files!");
 
-      // HOW LOAD COMPONENTS HERE?
-      this.readyStateComplete = true
-
-    }
-  }
+        this.readyStateComplete = true;
+      }
+    };
   },
-  created() {
-
-  },
+  created() {},
 };
 </script>
 <style scoped>
@@ -208,7 +187,7 @@ export default {
   margin: 0 auto;
 }
 .home .item1a p {
-font-size: 5.2em;
+  font-size: 5.2em;
   color: #fff;
 }
 
@@ -352,13 +331,13 @@ font-size: 5.2em;
 }
 
 .mt-n-4 {
-  margin-top:-3.5rem;
+  margin-top: -3.5rem;
 }
-@media only screen and (max-width: 770px){
+@media only screen and (max-width: 770px) {
   .item1b .item1b3 {
     display: none;
   }
-    .item1b .item1b3-sm {
+  .item1b .item1b3-sm {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -422,6 +401,11 @@ font-size: 5.2em;
   .itemnew11 {
     font-size: 20px;
   }
-
+  .home .item1a p {
+    font-size: 36px;
+  }
+  .item1 .item1b {
+    width: 95%;
+  }
 }
 </style>

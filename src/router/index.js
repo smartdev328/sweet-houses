@@ -9,9 +9,6 @@ import store from '../store/index'
 Vue.use(VueRouter)
 
 
-function lazyLoad(view){
-  return() => import(`../components/base/${view}.vue`)
-}
 
 function requireAddress(to, from, next) {
   if (store.state.homeaddress) {
@@ -78,8 +75,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: lazyLoad('Cities')
-    //component: () => import(/* webpackChunkName: "about" */ '../components/base/Cities.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Cities.vue')
   },
   {
     path: '/cities-one',
@@ -87,7 +83,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/CitiesOne.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/CitiesOne.vue')
   },
   {
     path: '/agents',
@@ -95,7 +91,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/OurTeam.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/OurTeam.vue')
   },
   {
     path: '/contact-us',
@@ -103,7 +99,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/ContactUs.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ContactUs.vue')
   },
   {
     path: '/for-realtor',
@@ -111,7 +107,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/ForRealtor.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ForRealtor.vue')
   },
   {
     path: '/agent-profile/:name',
@@ -120,7 +116,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/AgentProfile.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AgentProfile.vue')
   },
   {
     path: '/frequentlyaskedquestions',
@@ -136,7 +132,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/AboutUs.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AboutUs.vue')
   },
   {
     path: '/blog-details',
@@ -144,7 +140,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/BlogDetails.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/BlogDetails.vue')
   },
   {
     path: '/blog',
@@ -152,7 +148,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Blog.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Blog.vue')
   },
   {
     path: '/Whats-My-Home-Worth',
@@ -196,12 +192,12 @@ const routes = [
   {
     path:'/SuceessMsg',
     name:'SuceessMsg',
-    component:()=>import('../components/base/SuceessMsg.vue')
+    component:()=>import('../components/base/Interfaces/SuceessMsg.vue')
   },
   {
     path:'/home-details-forsale/:mls&:boardId',
     name:'HomeDetails',
-    component:()=>import('../components/base/HomeDetails.vue'),
+    component:()=>import('../components/base/homes/HomeDetails.vue'),
     props:true
   },
   {

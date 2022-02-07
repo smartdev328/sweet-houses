@@ -489,10 +489,9 @@ export const store = new Vuex.Store({
             input.bathrooms_partial = state.homedatafirst.bathrooms_partial,
             input.bedrooms_bg = state.homedatafirst.bedrooms_bg,
             input.bedrooms_ag = state.homedatafirst.bedrooms_ag,
-            input.parking_spaces = state.homedatafirst.parking_spaces,
+            input.garage_spaces = state.homedatafirst.garage_spaces,
             input.home_condition = state.homedatasecond.home_condition,
             input.parking_desc = state.homedatasecond.parking_desc,
-            input.vehicles = state.homedatasecond.vehiclesnNo,
             input.basement_desc = state.homedatasecond.basement_desc,
             input.priority = state.homedatasecond.prioritysale,
             input.occupancy = state.homedatasecond.CurrentOccupancy,
@@ -538,9 +537,7 @@ export const store = new Vuex.Store({
             return new Promise((resolve, reject) => {
                 axios({url: 'listings/form_images/', data:  formData, method: 'POST' })
                     .then(resp => {
-
                             resolve(resp)
-
                     })
                     .catch(err => {
                             reject(err)

@@ -99,14 +99,14 @@ Vue.component('sale-question',require('./components/share/SaleQuestion.vue').def
 
 
 // Vue.component('sweet-sale',require('./components/base/SweetSale.vue').default)
-const SwiftsalePage = () => import('./components/base/SwiftsalePage.vue');
+const SwiftsalePage = () => import('./components/base/MainInterface/SwiftsalePage.vue');
 Vue.component('swiftsale-page', SwiftsalePage)
 
-const SweetsalePage = () => import('./components/base/SweetsalePage.vue');
+const SweetsalePage = () => import('./components/base/MainInterface/SweetsalePage.vue');
 Vue.component('sweetsale-page', SweetsalePage)
 
-const EquityAdvance = () => import('./components/base/EquityAdvance.vue');
-Vue.component('equity-advance', EquityAdvance)
+// const EquityAdvance = () => import('./components/base/MainInterface/EquityAdvance.vue');
+// Vue.component('equity-advance', EquityAdvance)
 
 const TraditionalRealestate = () => import('./views/TraditionalRealestate.vue');
 Vue.component('traditional-realestate', TraditionalRealestate)
