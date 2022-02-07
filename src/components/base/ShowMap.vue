@@ -188,6 +188,16 @@ export default {
       );
     },
     google: gmapApi,
+     username() {
+      return this.$store.state.user.first_name || "";
+    },
+    isLoggedIn() {
+      if (this.username) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     icon() {
       if (this.type == "sold") {
         return require("../../assets/image/icon/Recsold.svg");
@@ -361,8 +371,19 @@ export default {
       };
     },
     numFormatter(num) {
-      if (this.type == "sold") {
+      if (this.type == "sold" && !this.isLoggedIn) {
         return "Sold";
+      }
+      if(this.type == "sold" && this.isLoggedIn){
+         if (Math.abs(num) > 999 && Math.abs(num) < 1000000) {
+          return Math.sign(num) * (Math.abs(num) / 1000).toFixed(2) + "k";
+        }
+        if (Math.abs(num) > 1000000) {
+          return Math.sign(num) * (Math.abs(num) / 1000000).toFixed(2) + "M";
+        }
+        else if (num < 900) {
+        return num; // if value < 1000, nothing to do
+      }
       }
       if (this.type !== "sold") {
         if (Math.abs(num) > 999 && Math.abs(num) < 1000000) {
@@ -371,9 +392,10 @@ export default {
         if (Math.abs(num) > 1000000) {
           return Math.sign(num) * (Math.abs(num) / 1000000).toFixed(2) + "M";
         }
-      } else if (num < 900) {
+        else if (num < 900) {
         return num; // if value < 1000, nothing to do
       }
+      } 
     },
     hideboxselling() {
       this.showbox = false;
