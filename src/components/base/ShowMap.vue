@@ -1,9 +1,7 @@
 <template>
   <div class="showmap">
-    <div style="display: block; width:auto;">
-
+    <div style="display: block; width: auto">
       <GmapMap
-
         ref="map"
         @click="checkClick"
         @zoom_changed="changezoom($event)"
@@ -15,9 +13,8 @@
         @dragend="dropmap()"
         map-type-id="terrain"
         :options="options"
-        class="mt-n5 "
-
-        :class="[fullscreenh ?  'full-map' : 'h-map']"
+        class="mt-n5"
+        :class="[fullscreenh ? 'full-map' : 'h-map']"
       >
         <gmap-polygon
           v-bind:paths.sync="objpaths"
@@ -35,7 +32,7 @@
             <div v-if="activehomelad" class="text-center">
               <b-spinner
                 variant="success"
-                style="width: 3rem; height: 3rem;"
+                style="width: 3rem; height: 3rem"
                 label="Spinning"
               ></b-spinner>
             </div>
@@ -48,7 +45,11 @@
             </div>
           </div>
         </gmap-info-window>
-        <GmapCluster :styles="clusterStyles" :zoom-on-click="true" @click="openfullscreenh()">
+        <GmapCluster
+          :styles="clusterStyles"
+          :zoom-on-click="true"
+          @click="openfullscreenh()"
+        >
           <GmapMarker
             v-for="m in listings"
             :key="m.id"
@@ -68,48 +69,61 @@
         </GmapCluster>
       </GmapMap>
     </div>
-    <div class="groupbtn" 
-     :style="{  top: posY + 30  + 'px' }"
-     v-if="!showcontent">
+    <div
+      class="groupbtn"
+      :style="{ top: posY + 30 + 'px' }"
+      v-if="!showcontent"
+    >
       <div class="container">
         <div class="mx-1 col-12">
-           <button class="Roboto-Regular col-3" @click="showcontent = true">Get an Estimate</button>
+          <button class="Roboto-Regular col-3" @click="showcontent = true">
+            Get an Estimate
+          </button>
         </div>
       </div>
-          
     </div>
-    <div class="groupcontent pt-5"  
-   :style="{  top: footerh + 'px' }"
-     v-if="showcontent" @click.self="hidecontent()"  :class="{groupcontentfull :fullscreenh}">
+    <div
+      class="groupcontent pt-5"
+      :style="{ top: footerh + 'px' }"
+      v-if="showcontent"
+      @click.self="hidecontent()"
+      :class="{ groupcontentfull: fullscreenh }"
+    >
       <div class="container">
-        <div class="mx-4 item1text mt-5 w-75" >
-          <p class="DMSerifRegular">Market Value, Hassle Free</p>
-          <div class="item1b  py-1">
-
+        <div class="mx-4 item1text mt-5 w-100 w-md-75">
+          <p class="DMSerifRegular pt-5 pt-md-1">
+            Market Value, <Hassle></Hassle> Free
+          </p>
+          <div class="item1b py-1">
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
               Get an estimate value of any home
-
             </p>
             <div class="w-100 inputaddress">
               <img
-                  src="../../assets/image/icon/Iconly-Light-Location.svg"
-                  alt=""
+                src="../../assets/image/icon/Iconly-Light-Location.svg"
+                alt=""
               />
               <div class="item1b2">
                 <span class="space"></span>
                 <!-- <input type="text" class="Poppins" v-model="location"
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
-                    autocomplete="off"
-                    id="map"
-                    ref="addressmapcontent"
-                    classname="form-control"
-                    placeholder="Enter a home location"
-                    country="ca"
-                    v-on:keyup="yourFunctinNameToBeCall"
-                    v-on:placechanged="getAddressData"
-                    v-on:inputChange="inputChange"
-                    :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                  autocomplete="off"
+                  id="map"
+                  ref="addressmapcontent"
+                  classname="form-control"
+                  placeholder="Enter a home location"
+                  country="ca"
+                  v-on:keyup="yourFunctinNameToBeCall"
+                  v-on:placechanged="getAddressData"
+                  v-on:inputChange="inputChange"
+                  :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
                 >
                 </vue-google-autocomplete>
               </div>
@@ -132,12 +146,9 @@
           </div>
         </div>
       </div>
-
     </div>
 
-
-    
-      <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
+    <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
           <textra
             :data="words"
             :timer="2"
@@ -155,23 +166,26 @@
       </button>
     </div>
     <div class="my-5">
-      <div class="container" > 
+      <div class="container">
         <SweetSale></SweetSale>
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 <script>
 import { gmapApi } from "vue2-google-maps";
 import GmapCluster from "vue2-google-maps/dist/components/cluster";
 import { mapState } from "vuex";
-import SweetSale from './SweetSale.vue'
+import SweetSale from "./MainInterface/SweetSale.vue";
 export default {
   props: ["type"],
   computed: {
     ...mapState(["city"]),
-    checkhasstreet(){
-    return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
+    checkhasstreet() {
+      return Object.prototype.hasOwnProperty.call(
+        this.addressData,
+        "street_number"
+      );
     },
     google: gmapApi,
     icon() {
@@ -253,30 +267,29 @@ export default {
     objpaths() {
       return this.path.map(this.getFullPath);
     },
-    location(){
-      return this.placeResultData.formatted_address
+    location() {
+      return this.placeResultData.formatted_address;
     },
-    boundsvalue(){
-      return  new window.google.maps.LatLngBounds()
+    boundsvalue() {
+      return new window.google.maps.LatLngBounds();
     },
-   
-   footerh(){
-     return this.$store.state.footerh
-   },
-  posY(){
-    return this.$store.state.posY
-  },
-   gmaph(){
-     return this.$refs.map.offsetHeight
-   }
 
+    footerh() {
+      return this.$store.state.footerh;
+    },
+    posY() {
+      return this.$store.state.posY;
+    },
+    gmaph() {
+      return this.$refs.map.offsetHeight;
+    },
   },
-  components: { GmapCluster , SweetSale},
+  components: { GmapCluster, SweetSale },
   data: () => ({
-    showcontent:true,
-    words: ["Buy", "Trade","List","Finance"],
-    fullscreenh:false,
-    showbox:true,
+    showcontent: true,
+    words: ["Buy", "Trade", "List", "Finance"],
+    fullscreenh: false,
+    showbox: true,
     visInfoWindow: false,
     centerLatitude: 0,
     centerLongitude: 0,
@@ -287,10 +300,10 @@ export default {
     coordinates: null,
     //   currentLocation : { lat : 53.177338695404515, lng : -114.0218292213596},
     currentLocation: {
-      lat : localStorage.getItem('currentLocationlat') *1 || 0,
-      lng :  localStorage.getItem('currentLocationlng')*1 || 0,
+      lat: localStorage.getItem("currentLocationlat") * 1 || 0,
+      lng: localStorage.getItem("currentLocationlng") * 1 || 0,
     },
-    mapCenter:{},
+    mapCenter: {},
     zoom: 10,
     bounds: {},
     options: {
@@ -303,12 +316,13 @@ export default {
       disableDefaultUi: false,
       scrollwheel: true,
       minZoom: 8,
+      maxZoom: 23,
     },
     listings: [],
-    sw_long: localStorage.getItem('sw_long')*1 || 0,
-    sw_lat: localStorage.getItem('sw_lat')*1 || 0,
-    ne_long: localStorage.getItem('ne_long')*1 || 0,
-    ne_lat: localStorage.getItem('ne_lat')*1 || 0,
+    sw_long: localStorage.getItem("sw_long") * 1 || 0,
+    sw_lat: localStorage.getItem("sw_lat") * 1 || 0,
+    ne_long: localStorage.getItem("ne_long") * 1 || 0,
+    ne_lat: localStorage.getItem("ne_lat") * 1 || 0,
     path: [],
     total: 0,
     latlong: { lat: 0, lng: 0 },
@@ -324,18 +338,18 @@ export default {
     infoWindowPosition: { lat: 0, lng: 0 },
     activehomelad: null,
     errmsg: "",
-    placeResultData:{},
+    placeResultData: {},
   }),
   methods: {
-    hidecontent(){
-      this.showcontent = false
+    hidecontent() {
+      this.showcontent = false;
     },
-    openfullscreenh(){
-      this.fullscreenh = true
-      this.showbox = false
+    openfullscreenh() {
+      this.fullscreenh = true;
+      this.showbox = false;
     },
     checkClick() {
-      this.showcontent = false
+      this.showcontent = false;
       if (this.infoWindowOpened) {
         (this.infoWindowOpened = false), (this.activehome = {});
       }
@@ -351,25 +365,24 @@ export default {
         return "Sold";
       }
       if (this.type !== "sold") {
-        if(Math.abs(num) > 999 && Math.abs(num) < 1000000){
-         return Math.sign(num)*((Math.abs(num)/1000).toFixed(2)) + 'k' 
+        if (Math.abs(num) > 999 && Math.abs(num) < 1000000) {
+          return Math.sign(num) * (Math.abs(num) / 1000).toFixed(2) + "k";
         }
-        if(Math.abs(num) > 1000000){
-          return Math.sign(num)*((Math.abs(num)/1000000).toFixed(2)) + 'M' 
+        if (Math.abs(num) > 1000000) {
+          return Math.sign(num) * (Math.abs(num) / 1000000).toFixed(2) + "M";
         }
-        } else if (num < 900) {
-          return num; // if value < 1000, nothing to do
-        }
-      
+      } else if (num < 900) {
+        return num; // if value < 1000, nothing to do
+      }
     },
-    hideboxselling(){
-      this.showbox = false
+    hideboxselling() {
+      this.showbox = false;
     },
-    showboxselling(){
-      this.showbox = true
+    showboxselling() {
+      this.showbox = true;
     },
-    hideContent(){
-      this.showcontent = false
+    hideContent() {
+      this.showcontent = false;
     },
     handleInfoWindowClose() {
       this.activehome = {};
@@ -487,7 +500,7 @@ export default {
           this.loadedlistingsold = true;
         });
     },
-    changebounds: function($event) {
+    changebounds: function ($event) {
       this.bounds = $event;
     },
     dropmap() {
@@ -510,8 +523,8 @@ export default {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             });
-            localStorage.setItem("currentLocationlat", this.currentLocation.lat);
-            localStorage.setItem("currentLocationlng", this.currentLocation.lng);
+          localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+          localStorage.setItem("currentLocationlng", this.currentLocation.lng);
           this.sync();
         },
         () => {
@@ -530,8 +543,8 @@ export default {
           lat: data.latitude,
           lng: data.longitude,
         };
-         localStorage.setItem("currentLocationlat", this.currentLocation.lat);
-          localStorage.setItem("currentLocationlng", this.currentLocation.lng);
+        localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+        localStorage.setItem("currentLocationlng", this.currentLocation.lng);
         this.sync();
       }
       this.findlistingsevent();
@@ -563,7 +576,7 @@ export default {
       this.place_choosed = true;
       console.log(placeResultData);
     },
-     checkform() {
+    checkform() {
       this.errmsg = "";
       if (!this.location) {
         this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
@@ -574,14 +587,10 @@ export default {
        If you're having trouble, just contact us.`;
       }
       if (!this.checkhasstreet) {
-          this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`;
       }
-      if (
-        this.location &&
-        this.place_choosed &&
-        this.checkhasstreet
-      ) {
+      if (this.location && this.place_choosed && this.checkhasstreet) {
         return true;
       }
     },
@@ -593,15 +602,15 @@ export default {
         this.$store.dispatch("ScrollTop");
       }
     },
-    inputChange(){
-      this.errmsg=""
+    inputChange() {
+      this.errmsg = "";
     },
     updateCenter(latLng) {
       this.currentLocation = {
         lat: latLng.lat(),
         lng: latLng.lng(),
       };
-       localStorage.setItem("currentLocationlat", this.currentLocation.lat);
+      localStorage.setItem("currentLocationlat", this.currentLocation.lat);
       localStorage.setItem("currentLocationlng", this.currentLocation.lng);
     },
     sync() {
@@ -609,7 +618,7 @@ export default {
     },
   },
   created() {
-    this.currentLocation.lat == 0 ? this.getCoords() : ''
+    this.currentLocation.lat == 0 ? this.getCoords() : "";
     // this.getCoords();
     this.changebounds();
     this.find_listings_forSale();
@@ -623,16 +632,16 @@ export default {
       this.lat = this.centerLatitude;
       this.lng = this.longitude;
     },
-    bounds: function(newval, oldval) {
+    bounds: function (newval, oldval) {
       if (oldval) {
         (this.sw_long = oldval.getSouthWest().lng()),
           (this.sw_lat = oldval.getSouthWest().lat()),
           (this.ne_long = oldval.getNorthEast().lng()),
           (this.ne_lat = oldval.getNorthEast().lat());
-           localStorage.setItem("sw_long", this.sw_long);
-           localStorage.setItem("sw_lat", this.sw_lat);
-           localStorage.setItem("ne_long", this.ne_long);
-           localStorage.setItem("ne_lat", this.ne_lat);
+        localStorage.setItem("sw_long", this.sw_long);
+        localStorage.setItem("sw_lat", this.sw_lat);
+        localStorage.setItem("ne_long", this.ne_long);
+        localStorage.setItem("ne_lat", this.ne_lat);
       }
       //  console.log(newval, oldval)
     },
@@ -640,16 +649,16 @@ export default {
 };
 </script>
 <style scoped>
-.groupcontent .item1text p:first-child{
+.groupcontent .item1text p:first-child {
   color: #fff;
   font-size: 60px;
   margin-bottom: 0;
 }
-.groupcontent .item1text p:nth-child(2){
+.groupcontent .item1text p:nth-child(2) {
   color: #fff;
   font-size: 28px;
 }
- .item1b {
+.item1b {
   width: 75%;
   height: auto;
   margin: 0px;
@@ -662,10 +671,10 @@ export default {
   flex-direction: column;
   /*height: 420px;*/
 }
- .item1b p:first-child {
+.item1b p:first-child {
   font-size: 22px !important;
 }
- .item1b .inputaddress {
+.item1b .inputaddress {
   width: 100%;
   display: flex;
   box-sizing: border-box;
@@ -677,15 +686,15 @@ export default {
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
   padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
-   z-index:999;
+  z-index: 999;
 }
 .item1b .inputaddress img {
   flex-shrink: 0;
@@ -695,59 +704,59 @@ export default {
   height: 30px;
 }
 .item1b .inputaddress .item1b2 {
-   /* display: inline-flex; */
-   width: 100%;
-   flex-direction: column;
- }
- .item1b .space {
-   border: 0px;
-   clip: rect(0px, 0px, 0px, 0px);
-   height: 1px;
-   margin: -1px;
-   overflow: hidden;
-   padding: 0px;
-   position: absolute;
-   width: 1px;
-   white-space: nowrap;
-   overflow-wrap: normal;
- }
- .item1b input {
-   flex: 1 1 0%;
-   border: none;
-   padding-left: 12px;
-   border-radius: 8px;
-   width: 100%;
-   height: 100%;
-   min-height: 48px;
-   line-height: normal;
-   box-shadow: none !important;
-   outline: none;
-   font-size: 18px;
- }
- .item1b .item1b3,
- .item1b .item1b3-sm {
-   display: flex;
-   -webkit-box-align: center;
-   align-items: center;
-   flex-shrink: 0;
- }
- .item1b .item1b3 button,
- .item1b .item1b3-sm button {
-   background-color: #ffb600;
-   color: #fff;
-   height: 48px;
-   border: 2px solid transparent;
-   border-radius: 6px;
-   width: 100%;
-   display: flex;
-   -webkit-box-align: center;
-   align-items: center;
-   -webkit-box-pack: center;
-   justify-content: center;
-   font-size: 16px;
-   /* font-weight: bold; */
-   padding: 9px 24px;
- }
+  /* display: inline-flex; */
+  width: 100%;
+  flex-direction: column;
+}
+.item1b .space {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.item1b input {
+  flex: 1 1 0%;
+  border: none;
+  padding-left: 12px;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 48px;
+  line-height: normal;
+  box-shadow: none !important;
+  outline: none;
+  font-size: 18px;
+}
+.item1b .item1b3,
+.item1b .item1b3-sm {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.item1b .item1b3 button,
+.item1b .item1b3-sm button {
+  background-color: #ffb600;
+  color: #fff;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 9px 24px;
+}
 .showmap .togglemap {
   display: inline-block;
   height: 40px;
@@ -757,9 +766,9 @@ export default {
   top: auto;
   z-index: 1;
 }
- .item1b .item1b3-sm {
-   display: none;
- }
+.item1b .item1b3-sm {
+  display: none;
+}
 .showmap .togglemap button {
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
     rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
@@ -774,31 +783,32 @@ export default {
   border-radius: 50px;
   font-size: 1rem;
 }
-.itemnew11{
-   position: absolute;
+.itemnew11 {
+  position: absolute;
   right: 170px;
   height: 200px;
   top: 280px;
   z-index: 0;
   /* width: 30%; */
 }
-.itemnew11 .textra ,.itemnew11 span {
+.itemnew11 .textra,
+.itemnew11 span {
   font-size: 90px;
-  color:#ffb600;
+  color: #ffb600;
 }
 .textra {
   /* width: 160px !important;
   text-align: end; */
 }
-.groupcontent{
+.groupcontent {
   position: absolute;
   width: 100%;
   left: 0;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, 0.3);
   bottom: 0;
   height: calc(68vh + 6px);
 }
-.groupcontentfull{
+.groupcontentfull {
   height: 90vh;
 }
 .group {
@@ -809,24 +819,24 @@ export default {
   width: 30%;
   padding: 12px;
 }
-.groupbtn{
-    position: absolute;
+.groupbtn {
+  position: absolute;
   width: 100%;
   left: 0;
 }
-.groupbtn button{
-     background-color: rgb(10, 133, 110);
-   color: #fff;
-   border: 2px solid transparent;
-   border-radius: 6px;
-   display: flex;
-   -webkit-box-align: center;
-   align-items: center;
-   -webkit-box-pack: center;
-   justify-content: center;
-   font-size: 18px;
-   font-weight: bold;
-   padding: 9px 24px;
+.groupbtn button {
+  background-color: rgb(10, 133, 110);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 9px 24px;
 }
 .info-window {
   width: 27em;
@@ -842,27 +852,27 @@ export default {
   margin-top: 6px;
   border-radius: 4px;
 }
-.h-map{
+.h-map {
   width: 100%;
-   height: 68vh
+  height: 68vh;
 }
-.full-map{
-   width: 100%;
-   height: 90vh
+.full-map {
+  width: 100%;
+  height: 90vh;
 }
- @media only screen and (max-width: 770px){
-   .item1b .item1b3 {
-     display: none;
-   }
-   .item1b .item1b3-sm {
-     display: flex;
-     -webkit-box-align: center;
-     align-items: center;
-     flex-shrink: 0;
-     width: 100%;
-     margin-top: 8px;
-   }
- }
+@media only screen and (max-width: 770px) {
+  .item1b .item1b3 {
+    display: none;
+  }
+  .item1b .item1b3-sm {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .group {
     left: 25px;
@@ -871,24 +881,32 @@ export default {
     padding: 0px;
   }
 
-
-   .spanerr {
+  .spanerr {
     font-size: 10px;
     width: 90%;
   }
- .item1b p {
+  .item1b p {
     font-size: 20px;
   }
- .item1b p:first-child {
+  .item1b p:first-child {
     font-size: 20px;
   }
-.item1b .inputaddress {
+  .item1b .inputaddress {
     padding: 0px 10px;
   }
-.item1b .inputaddress img {
+  .item1b .inputaddress img {
     margin-left: 4px;
     width: 20px;
     height: 20px;
+  }
+  .groupcontent .item1text p:first-child {
+    font-size: 34px;
+  }
+  .groupcontent .item1text p:nth-child(2) {
+    font-size: 18px;
+  }
+  .item1b {
+    width: 85%;
   }
 }
 </style>

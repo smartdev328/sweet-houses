@@ -349,7 +349,7 @@
             </div>
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-               :class="{ 'input--error':  (msgone.parking_spaces && parking_spaces < 0) || (msgone.parking_spaces && parking_spaces == null) }"
+               :class="{ 'input--error':  (msgone.garage_spaces && garage_spaces < 0) || (msgone.garage_spaces && garage_spaces == null) }"
             >
               <label for="Parking" class="col-sm-5 col-form-label text-left"
                 >Garage spaces</label
@@ -358,9 +358,9 @@
                 <div class="col-sm-2">
                   <button
                     class="btn minus-btn rounded-circle"
-                    :disabled="parking_spaces < 1"
+                    :disabled="garage_spaces < 1"
                     type="button"
-                    @click="parking_spaces--"
+                    @click="garage_spaces--"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                  <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -372,13 +372,13 @@
                     min="0"
                     max="5"
                     id="Parking"
-                    v-model.number="parking_spaces"
+                    v-model.number="garage_spaces"
                     class="pl-2 form-control border bg-white no-arrow Roboto-Regular text-center"
                   />
                   <span
                     class="required-err"
                     style="position:absolute;top:38px"
-                    v-if="(msgone.parking_spaces && parking_spaces < 0) || (msgone.parking_spaces && parking_spaces == null) "
+                    v-if="(msgone.garage_spaces && garage_spaces < 0) || (msgone.garage_spaces && garage_spaces == null) "
                     >required</span
                   >
                 </div>
@@ -386,7 +386,7 @@
                   <button
                     class="btn plus-btn rounded-circle"
                     type="button"
-                    @click="parking_spaces++"
+                    @click="garage_spaces++"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                     <img src="../../../assets/image/icon/plus.svg" alt="">
@@ -811,7 +811,7 @@ export default {
       bathrooms_full: null, //Full bathrooms
       bathrooms_partial: null, //Partial bathrooms
       squfeet: null, //Square feet (approx.)
-      parking_spaces: null, //Parking spaces
+      garage_spaces: null, //Parking spaces
       changedhome_condition: false,
       changedparking_desc: false,
       changedbasement: false,
@@ -904,8 +904,8 @@ export default {
       if (this.bathrooms_partial   ==null || this.bathrooms_partial < 0) {
         this.msgone.bathrooms_partial = "required";
       }
-      if (this.parking_spaces  ==null || this.parking_spaces < 0) {
-        this.msgone.parking_spaces = "require";
+      if (this.garage_spaces  ==null || this.garage_spaces < 0) {
+        this.msgone.garage_spaces = "require";
       }
       if (this.squfeet ==null || this.squfeet < 0) {
         this.msgone.squfeet = "required";
@@ -930,7 +930,7 @@ export default {
           (inputdata.bedrooms_bg = this.bedrooms_bg),
           (inputdata.bedrooms_ag = this.bedrooms_ag),
           (inputdata.bathrooms_partial = this.bathrooms_partial),
-          (inputdata.parking_spaces = this.parking_spaces),
+          (inputdata.garage_spaces = this.garage_spaces),
           (inputdata.bathrooms_full = this.bathrooms_full),
           (inputdata.squfeet = this.squfeet);
         this.$store.commit("sethomedata", inputdata);

@@ -36,14 +36,14 @@
           </div>
           <div class="item1c mt-3 mt-md-0">
             <button class="btn text-color-1 Roboto-Regular">
-              <img src="../../assets/image/icon/Heart.svg" alt="icon" />
+              <img src="../../../assets/image/icon/Heart.svg" alt="icon" />
               Save
             </button>
             <b-button
               v-b-modal="'modal-share'"
               class="btn bg-transparent text-color-1 Roboto-Regular"
             >
-              <img src="../../assets/image/icon/share.svg" alt="icon" />
+              <img src="../../../assets/image/icon/share.svg" alt="icon" />
               Share</b-button
             >
             <b-modal
@@ -62,7 +62,7 @@
                     <img
                       @click="copyURL"
                       class="pointer"
-                      src="../../assets/image/icon/noun_linked_4211117.svg"
+                      src="../../../assets/image/icon/noun_linked_4211117.svg"
                       alt=""
                     />
                     <form>
@@ -95,7 +95,7 @@
                     >
                       <button class="btn Roboto-Medium">
                         <img
-                          src="../../assets/image/icon/noun_messenger_3202205.svg"
+                          src="../../../assets/image/icon/noun_messenger_3202205.svg"
                           alt=""
                         />
                         <span>Messenger</span>
@@ -105,7 +105,7 @@
                   <div class="item2b">
                     <button class="btn Roboto-Medium" @click="shareSMS">
                       <img
-                        src="../../assets/image/icon/Group 13353.svg"
+                        src="../../../assets/image/icon/Group 13353.svg"
                         alt=""
                       />
                       <span>SMS</span>
@@ -123,7 +123,7 @@
                     >
                       <button class="btn Roboto-Medium">
                         <img
-                          src="../../assets/image/icon/noun_Email_4292826.svg"
+                          src="../../../assets/image/icon/noun_Email_4292826.svg"
                           alt=""
                         />
                         <span>Email</span>
@@ -250,7 +250,7 @@
                   "
                   @click="makeAuth"
                 >
-                  <img src="../../assets/image/icon/lock.svg" alt="" />
+                  <img src="../../../assets/image/icon/lock.svg" alt="" />
                   <p class="mb-0 text-white Roboto-Regular">
                     See what agents see
                   </p>
@@ -267,14 +267,14 @@
               <div class="d-flex justify-content-between w-50">
                 <div class="item8a" v-if="homedata.history_details">
                   <div class="d-flex align-items-center">
-                    <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
+                    <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
                     <p class="mb-0 Roboto-Medium ml-3" v-if="homedata.history_details.comparedToLastSold">${{homedata.history_details.comparedToLastSold.toLocaleString("ja-JP")}}</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Compared to last sold</p>
                 </div>
                 <div class="item8a">
                   <div class="d-flex align-items-center">
-                    <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
+                    <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
                     <p class="mb-0 Roboto-Medium ml-3">{{homedata.history_details.yearlyAppreciation}}%</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Yearly appreciation</p>

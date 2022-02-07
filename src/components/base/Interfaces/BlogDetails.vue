@@ -4,7 +4,7 @@
             <div class="my-5">
                 <div class="item1">
                     <div class="image">
-                        <img src="../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
+                        <img src="../../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
                     </div>
                     <div class="my-4 itam1a">
                         <p class="text-color-2 Roboto-Regular">News . Posted By Aidan Woodfine On Monday, July 5, 2021 At 2:43 PM</p>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="item2">
                     <div class="image">
-                        <img src="../../assets/image/blog/Group13491.png" class="w-100 h-100" alt="">
+                        <img src="../../../assets/image/blog/Group13491.png" class="w-100 h-100" alt="">
                     </div>
                 </div>
                 <div class="item3">
@@ -39,7 +39,7 @@
                                 <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="../../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">
@@ -52,7 +52,7 @@
                                 <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="../../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">
@@ -65,7 +65,7 @@
                                 <div class="d-flex align-items-center row">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="../../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">
