@@ -72,7 +72,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1 Roboto-Medium"><p class="p1">Certainty</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-1.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-1.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">We can provide an unconditional commitment to buy your listing within days. Your client can focus on what's next.</p>
@@ -82,7 +82,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1Roboto-Medium"><p class="p1">We Share Commisssion</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-2.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-2.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">When we buy and resell your clients listed home, we’ll resell it, and YOU can list it for us! We pay 1% on the value of the sale (roughly 50% of full commission).</p>
@@ -92,7 +92,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1 Roboto-Medium"><p class="p1">More Closed Deals</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-3.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-3.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">Sweetly offers ‘out of the box’ programs to provide a fair and unconditional sale for your clients’ property which empowers them to make non-contingent winning offers on their next home – with you!</p>
@@ -111,7 +111,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1 Roboto-Medium"><p class="p1">Convenience</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-4.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-4.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">Sweetly makes it easy for clients sell for Maximum Value without public showings. Customers choose their own possession date, and may even buy their next home before selling their current home – No more condition-to-sale of buyers’ home.</p>
@@ -121,7 +121,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1 Roboto-Medium"><p class="p1">Empowered</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-5.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-5.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">Knowing for certain that the house is SOLD! Your client can make a strong, winning offer on their next home - with you!</p>
@@ -131,7 +131,7 @@ can even keep your current listing active.
               <div class="partcol">
                 <div class="text-color-1 Roboto-Medium"><p class="p1">Save Money</p></div>
                 <div class="image my-5">
-                  <img src="../../assets/image/icon/p-6.svg" class="w-100 h-100" alt="">
+                  <img src="../../../assets/image/icon/p-6.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
                   <p class="p2 Roboto-Regular">Sweetly provides certainty of a sale, and flexibility for a customer to choose/change the possession date. There’s no need to settle for a home that’s not perfect or moving twice and placing valuables in storage.</p>
@@ -151,7 +151,7 @@ can even keep your current listing active.
               <div class="col-12 col-md-6">
                 <div class="circleone pt-1 pt-md-5 pb-2 px-5 text-center">
                   <div class="icon mx-auto">
-                    <img src="../../assets/image/icon/1.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/1.svg" class="w-100 h-100" alt="">
                   </div>
                   <div>
                     <p class="pa1 text-color-1 Roboto-Medium">Clients Can Choose The Program That Works  Best For Them.</p>
@@ -164,7 +164,7 @@ can even keep your current listing active.
               </div>
               <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="n1">
-                    <img src="../../assets/image/icon/na1.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/na1.svg" class="w-100 h-100" alt="">
                 </div>
               </div>
             </div>
@@ -172,13 +172,13 @@ can even keep your current listing active.
             <div class="row align-items-center flex-dir-col">
                 <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="n2">
-                    <img src="../../assets/image/icon/na2.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/na2.svg" class="w-100 h-100" alt="">
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="circleone pt-1 pt-md-5 pb-2 px-5 text-center">
                   <div class="icon mx-auto">
-                    <img src="../../assets/image/icon/2.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/2.svg" class="w-100 h-100" alt="">
                   </div>
                   <div>
                     <p class="pa1 text-color-1  Roboto-Medium">Sweetly Makes All The Monthly Ownership 
@@ -196,7 +196,7 @@ Payments On The Previous Home.</p>
               <div class="col-12 col-md-6">
                 <div class="circleone pt-1 pt-md-5 pb-2 px-5 text-center">
                   <div class="icon mx-auto">
-                    <img src="../../assets/image/icon/3.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/3.svg" class="w-100 h-100" alt="">
                   </div>
                   <div>
                     <p class="pa1 text-color-1 Roboto-Medium">Sweetly Resells The Property We Buy On 
@@ -209,7 +209,7 @@ The Open (MLS) Market.</p>
               </div>
               <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="n1">
-                    <img src="../../assets/image/icon/na3.svg" class="w-100 h-100" alt="">
+                    <img src="../../../assets/image/icon/na3.svg" class="w-100 h-100" alt="">
                 </div>
               </div>
             </div>

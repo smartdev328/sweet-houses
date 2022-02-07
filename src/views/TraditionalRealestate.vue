@@ -1,44 +1,48 @@
 <template ref="home">
   <div class="home">
     <header>
-      <div class="p-5 container">
-
-        <div class="item1  mb-3 my-5">
+      <div class="p-4 p-md-5 container">
+        <div class="item1 mb-3 my-2 my-md-5">
           <div class="item1a">
-            <p class="DMSerifRegular mb-0">A Traditional Listing - With Confidence !</p>
-            <p>Test the market with confidence, knowing you’ll have Swift Sale Available
+            <p class="DMSerifRegular mb-0">
+              A Traditional Listing - With Confidence !
+            </p>
+            <p>
+              Test the market with confidence, knowing you’ll have Swift Sale
+              Available
             </p>
           </div>
-          <div class="item1b  py-5">
-
+          <div class="item1b py-2 py-md-5">
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
               Get an estimate value of any home
-
             </p>
             <div class="w-100 inputaddress">
               <img
-                  src="../assets/image/icon/Iconly-Light-Location.svg"
-                  alt=""
+                src="../assets/image/icon/Iconly-Light-Location.svg"
+                alt=""
               />
               <div class="item1b2">
                 <span class="space"></span>
-                <!-- <input type="text" class="Poppins" v-model="location"
-                         placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
-                    autocomplete="off"
-                    id="map"
-                    ref="addressmap"
-                    classname="form-control"
-                    placeholder="Enter a home location"
-                    country="ca"
-                    v-on:keyup="yourFunctinNameToBeCall"
-                    v-on:placechanged="getAddressData"
-                    v-on:inputChange="inputChange"
-                    :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                  autocomplete="off"
+                  id="map"
+                  ref="addressmap"
+                  classname="form-control"
+                  placeholder="Enter a home location"
+                  country="ca"
+                  v-on:keyup="yourFunctinNameToBeCall"
+                  v-on:placechanged="getAddressData"
+                  v-on:inputChange="inputChange"
+                  :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
                 >
                 </vue-google-autocomplete>
               </div>
-
               <div class="item1b3">
                 <button class="Poppins" type="button" @click="getresult()">
                   Start
@@ -50,33 +54,21 @@
                 Start
               </button>
             </div>
-            <!--        <span class="spanalgorithm mt-2 text-white Poppins">-->
-            <!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
-            <!--            </span>-->
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
         </div>
       </div>
     </header>
     <div class="my-5">
-      <div class="container" >
+      <div class="container">
         <TraditionalPage></TraditionalPage>
       </div>
-      <!-- <div class="container" :class="tab_visible('Swift_Sale')" v-if="readyStateComplete">
-        <swift-sale></swift-sale>
-      </div> -->
-      <!-- <div class="container" :class="tab_visible('Equity_Advance')" v-if="readyStateComplete">
-        <equity-advance></equity-advance>
-      </div> -->
-      <!-- <div :class="tab_visible('Traditional_Real_Estate')" v-if="readyStateComplete">
-        <traditional-realestate></traditional-realestate>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import TraditionalPage from '../components/base/TraditionalPage.vue'
+import TraditionalPage from "../components/base/MainInterface/TraditionalPage.vue";
 // @ is an alias to /src
 export default {
   name: "Home",
@@ -85,48 +77,48 @@ export default {
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
-      words: ["Buy", "Trade","List","Finance"],
-      place_choosed:null,
-      resultsExample:{},
-      addressData:{},
-      placeResultData:{},
-      readyStateComplete:null,
-      selected_menu:"Traditional_Real_Estate"
+      words: ["Buy", "Trade", "List", "Finance"],
+      place_choosed: null,
+      resultsExample: {},
+      addressData: {},
+      placeResultData: {},
+      readyStateComplete: null,
+      selected_menu: "Traditional_Real_Estate",
     };
   },
   computed: {
-    checkhasstreet(){
-      return  Object.prototype.hasOwnProperty.call(this.addressData, 'street_number');
+    checkhasstreet() {
+      return Object.prototype.hasOwnProperty.call(
+        this.addressData,
+        "street_number"
+      );
     },
-    location(){
-      return this.placeResultData.formatted_address
+    location() {
+      return this.placeResultData.formatted_address;
     },
-    pathes(){
-      let swlat =  this.placeResultData.geometry.viewport.zb.g;
-      let swlng =  this.placeResultData.geometry.viewport.Qa.g;
-      let nelat =  this.placeResultData.geometry.viewport.zb.h;
-      let nelng =  this.placeResultData.geometry.viewport.Qa.h;
-      return ({swlat,swlng, nelat , nelng});
-    }
-    // selected_menu(){
-    //   return this.selected_menu;
-    // },
+    pathes() {
+      let swlat = this.placeResultData.geometry.viewport.zb.g;
+      let swlng = this.placeResultData.geometry.viewport.Qa.g;
+      let nelat = this.placeResultData.geometry.viewport.zb.h;
+      let nelng = this.placeResultData.geometry.viewport.Qa.h;
+      return { swlat, swlng, nelat, nelng };
+    },
   },
   components: {
-    TraditionalPage
+    TraditionalPage,
   },
   watch: {},
   methods: {
-    yourFunctinNameToBeCall(){
+    yourFunctinNameToBeCall() {
       this.place_choosed = false;
     },
     getAddressData(addressData, placeResultData) {
-      this.addressData= addressData
-      this.placeResultData = placeResultData
-      this.latlong.lat = addressData.latitude
-      this.latlong.lng = addressData.longitude
+      this.addressData = addressData;
+      this.placeResultData = placeResultData;
+      this.latlong.lat = addressData.latitude;
+      this.latlong.lng = addressData.longitude;
       this.place_choosed = true;
-      console.log(placeResultData)
+      console.log(placeResultData);
     },
     getclass(tab) {
       if (tab == this.selected_menu) {
@@ -145,8 +137,8 @@ export default {
         return "d-none";
       }
     },
-    openswiftsale(){
-      this.$router.push({name:"SwiftSale"})
+    openswiftsale() {
+      this.$router.push({ name: "SwiftSale" });
     },
     checkform() {
       this.errmsg = "";
@@ -162,11 +154,7 @@ export default {
         this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
        If you're having trouble, just contact us.`;
       }
-      if (
-          this.location &&
-          this.place_choosed &&
-          this.checkhasstreet
-      ) {
+      if (this.location && this.place_choosed && this.checkhasstreet) {
         return true;
       }
     },
@@ -178,24 +166,23 @@ export default {
         this.$store.dispatch("ScrollTop");
       }
     },
-    inputChange(){
-      this.errmsg=""
+    inputChange() {
+      this.errmsg = "";
     },
-    opensweetsale(){
-      this.$router.push({name:"SweetSale"})
-    }
+    opensweetsale() {
+      this.$router.push({ name: "SweetSale" });
+    },
   },
-  mounted(){
+  mounted() {
     document.onreadystatechange = () => {
       if (document.readyState == "complete") {
-        console.log('Page completed with image and files!')
+        console.log("Page completed with image and files!");
         // HOW LOAD COMPONENTS HERE?
-        this.readyStateComplete = true
+        this.readyStateComplete = true;
       }
-    }
+    };
   },
-  created() {
-  },
+  created() {},
 };
 </script>
 <style scoped>
@@ -208,8 +195,8 @@ export default {
   width: 80%;
   line-height: 1.2;
 }
-.home .item1a p:last-child{
-  font-size:28px;
+.home .item1a p:last-child {
+  font-size: 28px;
   color: #fff;
   width: 70%;
 }
@@ -244,10 +231,10 @@ export default {
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
   padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
@@ -356,9 +343,9 @@ export default {
 }
 
 .mt-n-4 {
-  margin-top:-3.5rem;
+  margin-top: -3.5rem;
 }
-@media only screen and (max-width: 770px){
+@media only screen and (max-width: 770px) {
   .item1b .item1b3 {
     display: none;
   }
@@ -426,6 +413,16 @@ export default {
   .itemnew11 {
     font-size: 20px;
   }
-
+  .home .item1a p:first-child {
+    font-size: 34px;
+    width: 100%;
+  }
+  .home .item1a p:last-child {
+    font-size: 26px;
+    width: 100%;
+  }
+  .item1 .item1b {
+    width: 90%;
+  }
 }
 </style>

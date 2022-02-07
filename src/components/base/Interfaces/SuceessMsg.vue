@@ -8,7 +8,7 @@
                     <div class="item2 text-center ">
                             <div class="d-flex align-items-baseline">
                                 <div class="image mr-3">
-                                    <img src="../../assets/image/icon/ico20.svg" class="w-100 h-100" alt="icon">
+                                    <img src="../../../assets/image/icon/ico20.svg" class="w-100 h-100" alt="icon">
                                 </div>
                                 <div>
                                     <p class="Roboto-Medium">Your call is scheduled </p>
@@ -25,7 +25,7 @@
                     <div class="item4 bg-white shadow-lg">
                         <div class="p-3 p-md-5 d-flex justify-content-between">
                             <div class="image">
-                                <img src="../../assets/image/icon/ico81.svg" class="w-100 h-100" alt="icon">
+                                <img src="../../../assets/image/icon/ico81.svg" class="w-100 h-100" alt="icon">
                             </div>
                             <div class="item4b ml-2">
                                 <p class="Roboto-Regular mb-0">Thinking about moving soon?</p>

@@ -8,7 +8,7 @@
                             <div class="item1">
                                 <p class="item1a text-color-1 Roboto-Medium">Selling Your Home</p>
                                 <div class="image my-4">
-                                    <img src="../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
+                                    <img src="../../../assets/image/blog/hand.png" class="w-100 h-100" alt="image">
                                 </div>
                                 <p class="item1b text-color-1 Roboto-Medium">How Do I Know My Homes True Market Value Is Correct?</p>
                                 <p class="item1c text-color-2 Roboto-Regular">News</p>
@@ -24,7 +24,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="/../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">
@@ -38,7 +38,7 @@ Prices?</p>
                                 <div class="d-flex align-items-center">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="../../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">
@@ -52,7 +52,7 @@ Prices?</p>
                                 <div class="d-flex align-items-center">
                                     <div class="col-12 col-md-6 px-0">
                                         <div class="image">
-                                            <img src="../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
+                                            <img src="../../../assets/image/blog/blog1.png" class="w-100 h-100" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 content">

@@ -40,37 +40,27 @@
                     alt=""
                   />
                 </button>
-                <!-- <input type="text" placeholder="Any area or listing " /> -->
-                <!-- <multiselect
-                  v-model="value2"
-                  tag-placeholder="Any area or listing "
-                  placeholder="Any area or listing "
-                  label="name"
-                  track-by="code"
-                  :options="options3"
-                  deselectLabel=""
-                  selectLabel=""
-                  :hideSelected="true"
-                  :multiple="true"
-                  :taggable="true"
-                  @tag="addTag"
-                  @remove="remove"
-                ></multiselect> -->
-                   <vue-google-autocomplete
+                <vue-google-autocomplete
                   id="mapautoinput"
-                    ref="addressmap"
-                    autocomplete="off"
+                  ref="addressmap"
+                  autocomplete="off"
                   classname="form-control"
                   placeholder="Enter City"
                   country="ca"
                   v-on:placechanged="getAddressData"
                   v-on:keyup="clearcity"
                   types="(cities)"
-                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
+                  :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
                   :enable-geolocation="true"
                 >
                 </vue-google-autocomplete>
-                
+
                 <button @click="showfilter = !showfilter" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
@@ -407,7 +397,12 @@
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
       <div class="text-center my-5 container">
-        <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
+        <b-spinner
+          v-if="loading"
+          style="width: 4rem; height: 4rem;"
+          variant="warning"
+          label="Large Spinner"
+        ></b-spinner>
       </div>
       <show-list
         ref="showlist"
@@ -415,26 +410,19 @@
         @submit="submitlist"
       ></show-list>
     </div>
-       <!-- <div class="my-5" :class="tab_visible('show-map')" >
-      <div class="container" > 
-        <SweetSale></SweetSale>
-      </div>
-    </div> -->
   </div>
 </template>
 <script>
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
-//import SweetSale from '../components/base/SweetSale.vue'
-// import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap,
-  // SweetSale 
+  components: {
+    ShowMap,
   },
   data() {
     return {
-      loading:false,
-      posY:null,
+      loading: false,
+      posY: null,
       showfilter: false,
       rangevalue: 0,
       range: [1, 4500],
@@ -480,12 +468,6 @@ export default {
         { text: "Low Rise Condos (4 or fewer levels)", value: "l_rise" },
         { text: "High Rise Condos (5 or more levels)", value: "h_rise" },
       ],
-      // propertyType: [],
-      // minPrice: null,
-      // maxPrice: null,
-      // minBeds:'',
-      // minBaths:'',
-      // minParkingSpaces:'',
       minPrice: this.$store.state.filteroptdata.minPrice,
       maxPrice: this.$store.state.filteroptdata.maxPrice,
       minParkingSpaces: this.$store.state.filteroptdata.minParkingSpaces,
@@ -506,24 +488,22 @@ export default {
     CancelFilter() {
       this.showfilter = false;
     },
-     getAddressData(addressData) {
-      this.$refs.showmap.openfullscreenh()
-      let city = addressData.locality
-      this.$store.commit("setCity",city)
-      this.$refs.showmap.updateaddressdata(addressData)
-      this.$refs.showmap.getpath(city)
-     
-     
+    getAddressData(addressData) {
+      this.$refs.showmap.openfullscreenh();
+      let city = addressData.locality;
+      this.$store.commit("setCity", city);
+      this.$refs.showmap.updateaddressdata(addressData);
+      this.$refs.showmap.getpath(city);
     },
-    clearcity(){
-     if(this.$refs.addressmap.$el._value == ''){
-       this.$refs.showmap.showboxselling()
-        let city = ""
-      this.$store.commit("setCity",city)
-      this.$refs.showmap.updateaddressdata()
-       }else{
-         this.$refs.showmap.hideboxselling()
-       }
+    clearcity() {
+      if (this.$refs.addressmap.$el._value == "") {
+        this.$refs.showmap.showboxselling();
+        let city = "";
+        this.$store.commit("setCity", city);
+        this.$refs.showmap.updateaddressdata();
+      } else {
+        this.$refs.showmap.hideboxselling();
+      }
     },
     addTag(newTag) {
       const tag = {
@@ -533,8 +513,8 @@ export default {
       this.options3.push(tag);
       this.value2.push(tag);
       this.saveFilterdata();
-    },  
-    remove(OldTage){
+    },
+    remove(OldTage) {
       this.value2 = this.value2.filter((item) => item.code !== OldTage.code);
       this.saveFilterdata();
     },
@@ -561,37 +541,37 @@ export default {
         (input.style = this.style);
       this.$store.commit("SAVE_FILTER_OPT", input);
       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
-        this.loading= true
+        this.loading = true;
         this.$refs.showlist.find_listings_forSaleMain();
       }
       if (this.selected_menu == "show-list" && this.typesale == "sold") {
-        this.loading= true
+        this.loading = true;
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map" && this.typesale == "forsale") {
         this.$refs.showmap.find_listings_forSaleMain();
       }
-       if (this.selected_menu == "show-map" && this.typesale == "sold") {
+      if (this.selected_menu == "show-map" && this.typesale == "sold") {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
     submitmap() {
       this.selected_menu = "show-list";
-      if(this.typesale == "forsale"){
-        this.loading= true
+      if (this.typesale == "forsale") {
+        this.loading = true;
         this.$refs.showlist.find_listings_forSaleMain();
       }
-      if( this.typesale == "sold"){
-        this.loading= true
+      if (this.typesale == "sold") {
+        this.loading = true;
         this.$refs.showlist.find_listings_SoldMain();
       }
     },
     submitlist() {
       this.selected_menu = "show-map";
-      if(this.typesale == "forsale"){
+      if (this.typesale == "forsale") {
         this.$refs.showmap.find_listings_forSaleMain();
       }
-      if( this.typesale == "sold"){
+      if (this.typesale == "sold") {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
@@ -605,19 +585,18 @@ export default {
     openforsale() {
       if (this.selected_menu == "show-list") {
         this.typesale = "forsale";
-        this.loading= true
+        this.loading = true;
         this.$refs.showlist.find_listings_forSaleMain();
       }
       if (this.selected_menu == "show-map") {
         this.typesale = "forsale";
         this.$refs.showmap.find_listings_forSaleMain();
       }
-
     },
     opensold() {
       if (this.selected_menu == "show-list") {
         this.typesale = "sold";
-        this.loading= true
+        this.loading = true;
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map") {
@@ -625,32 +604,30 @@ export default {
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
-    openfullscreen(){
-       this.$refs.showmap.openfullscreenh()
-    }
-    ,
-    getpositiontop(){
-      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
-      this.$refs.showmap.setposYsearchbar(this.posY)
+    openfullscreen() {
+      this.$refs.showmap.openfullscreenh();
     },
-    stoploading(){
-      this.loading = false
+    getpositiontop() {
+      this.posY =
+        document.getElementById("searchpage").getBoundingClientRect().y +
+        document.getElementById("searchpage").offsetHeight;
+      this.$refs.showmap.setposYsearchbar(this.posY);
     },
-    runloading(){
-      this.loading = true
-    }
-    
+    stoploading() {
+      this.loading = false;
+    },
+    runloading() {
+      this.loading = true;
+    },
   },
-  mounted(){
-      this.openfullscreen();
+  mounted() {
+    this.openfullscreen();
     this.getpositiontop();
-  }
-  ,
-
+  },
   created() {
     /* this.getCoords(); */
     /*  this.changebounds();  */
-  //  this.openfullscreen()
+    //  this.openfullscreen()
   },
   watch: {
     latitude() {
@@ -796,8 +773,8 @@ footer {
   transition: background 0.25s ease 0s, border-color 0.25s ease 0s,
     box-shadow 0.25s ease 0s;
 }
-.fixedtop .element1 .searchform .item1{
-    display: flex;
+.fixedtop .element1 .searchform .item1 {
+  display: flex;
   -webkit-box-align: center;
   align-items: center;
   position: relative;
@@ -998,7 +975,7 @@ input:focus {
   opacity: 0;
   transform: translateY(30px);
 }
-input:focus{
+input:focus {
   outline: none;
   box-shadow: none;
   border: 0;
@@ -1012,20 +989,20 @@ input:focus{
     width: 20px;
     height: 20px;
   }
-  .searchpage .element1{
+  .searchpage .element1 {
     flex-direction: column;
   }
-  .searchpage .element1 .searchform .item1 .item1a{
+  .searchpage .element1 .searchform .item1 .item1a {
     flex-wrap: nowrap;
   }
-  .searchpage .element1 .searchform .item1 .item1a button span{
+  .searchpage .element1 .searchform .item1 .item1a button span {
     font-size: 14px;
   }
-  .searchpage .element1 .searchform .item1 .item1a button:last-child img{
+  .searchpage .element1 .searchform .item1 .item1a button:last-child img {
     width: 16px;
     height: 16px;
   }
-  .searchpage .element1 .searchform .item1 .item1a button{
+  .searchpage .element1 .searchform .item1 .item1a button {
     display: flex;
     align-items: center;
   }
