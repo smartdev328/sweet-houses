@@ -523,51 +523,6 @@
             </div>
             <div
               class="form-group row ol-12 col-md-10 mx-auto px-0"
-               :class="{ 'input--error':  (msgtwo.vehiclesnNo && vehiclesnNo < 0) || (msgtwo.vehiclesnNo && vehiclesnNo == null) }"
-            >
-              <label for="vehicles" class="col-sm-5 col-form-label text-left"
-                >How many vehicles fit in your garage?</label
-              >
-              <div class="d-style">
-                <div class="col-sm-2">
-                  <button
-                    class="btn minus-btn rounded-circle"
-                    :disabled="vehiclesnNo < 1"
-                    type="button"
-                    @click="vehiclesnNo--"
-                  >
-                    <img src="../../../assets/image/icon/minus.svg" alt="">
-                  </button>
-                </div>
-                <div class="col-sm-3">
-                  <input
-                    type="number"
-                    min="0"
-                    max="5"
-                    id="vehicles"
-                    v-model.number="vehiclesnNo"
-                    class="pl-2 form-control border bg-white no-arrow"
-                  />
-                  <span
-                    style="color: #dc3545;font-size: 16px;position:absolute;top:38px"
-                    v-if=" (msgtwo.vehiclesnNo && vehiclesnNo < 0) || (msgtwo.vehiclesnNo && vehiclesnNo == null) "
-                  >
-                    required
-                  </span>
-                </div>
-                <div class="col-sm-2">
-                  <button
-                    class="btn plus-btn rounded-circle"
-                    type="button"
-                    @click="vehiclesnNo++"
-                  >
-                    <img src="../../../assets/image/icon/plus.svg" alt="">
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="form-group row ol-12 col-md-10 mx-auto px-0"
               :class="{ 'input--error': msgtwo.basement_desc && !basement_desc }"
             >
               <label for="hometype" class="col-sm-4 col-form-label text-left"
@@ -805,7 +760,6 @@ export default {
       hometype: null,
       parking_desc: null,
       storeys: null,
-      vehiclesnNo: null,
       bedrooms_bg: null, //Bedrooms (above ground)
       bedrooms_ag: null, //Bedrooms (below ground)
       bathrooms_full: null, //Full bathrooms
@@ -955,16 +909,12 @@ export default {
       if (!this.CurrentOccupancy) {
         this.msgtwo.CurrentOccupancy = "CurrentOccupancy is required";
       }
-      if (this.vehiclesnNo == null || this.vehiclesnNo < 0) {
-        this.msgtwo.vehiclesnNo = "required";
-      }
       if (
         this.home_condition &&
         this.parking_desc &&
         this.basement_desc &&
         this.prioritysale &&
-        this.CurrentOccupancy &&
-        this.vehiclesnNo >= 0
+        this.CurrentOccupancy 
       ) {
         return true;
       }
@@ -988,7 +938,6 @@ export default {
         secondinputdata.basement_desc = this.basement_desc;
         secondinputdata.prioritysale = this.prioritysale;
         secondinputdata.CurrentOccupancy = this.CurrentOccupancy;
-        secondinputdata.vehiclesnNo = this.vehiclesnNo;
         this.$store.commit("sethomedatasecond", secondinputdata);
         this.$store.commit("Setuploadfile",this.imagesArray)
         this.$emit("gotoContactPage");

@@ -492,7 +492,6 @@ export const store = new Vuex.Store({
             input.garage_spaces = state.homedatafirst.garage_spaces,
             input.home_condition = state.homedatasecond.home_condition,
             input.parking_desc = state.homedatasecond.parking_desc,
-            input.vehicles = state.homedatasecond.vehiclesnNo,
             input.basement_desc = state.homedatasecond.basement_desc,
             input.priority = state.homedatasecond.prioritysale,
             input.occupancy = state.homedatasecond.CurrentOccupancy,
