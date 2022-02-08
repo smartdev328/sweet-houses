@@ -34,7 +34,7 @@
         class="collapse navbar-collapse mx-auto DMSerifRegular"
         id="navbarSupportedContent"
       >
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav mx-auto px-2 px-md-0">
               <li class="nav-item dropdown">
             <p
               class="nav-link dropdown-toggle DMSerifRegular"
@@ -226,7 +226,7 @@
             </div>
           </li>
         </ul>
-        <div class="">
+        <div class="bg-white px-2 px-md-0 pb-3 pb-md-0">
           <span class="border-right px-3 mr-3 text-color-1 DMSerifRegular phonenumer">
             <img class="phoneicon" src="../../assets/image/icon/phoneicon.svg" alt="">
             780-477-9338 </span>
@@ -469,5 +469,11 @@ nav a:focus {
 .phonenumer{
   font-weight: bold;
   font-size: 20px;
+}
+.navbar-collapse{
+  height: 0;
+}
+.navbar-nav{
+  background: #fff;
 }
 </style>
