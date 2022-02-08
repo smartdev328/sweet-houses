@@ -92,7 +92,7 @@
       <div class="container">
         <div class="mx-4 item1text mt-5 w-100 w-md-75">
           <p class="DMSerifRegular pt-5 pt-md-1">
-            Market Value, <Hassle></Hassle> Free
+            Market Value, Hassle Free
           </p>
           <div class="item1b py-1">
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
