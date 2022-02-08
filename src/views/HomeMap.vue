@@ -88,9 +88,9 @@
 
         <transition name="list">
           <div class="modelfilter shadow-sm" v-show="showfilter">
-            <div class="px-4 pt-0 pb-4">
-              <div class="element1 px-0">
-                <div class="w-50">
+            <div class="px-1 px-md-4 pt-0 pb-4">
+              <div class="element1 px-1 px-md-0">
+                <div class="w-100 w-md-50">
                   <label for="propertytype" class="text-color-1 Roboto-Medium"
                     >Property Type</label
                   >
@@ -103,7 +103,7 @@
                     ></b-form-checkbox-group>
                   </div>
                 </div>
-                <div class="w-50">
+                <div class="w-100 w-md-50">
                   <label for="optionstyle" class="text-white Roboto-Medium"
                     >4</label
                   >
@@ -118,7 +118,7 @@
                 </div>
               </div>
 
-              <div class="element2">
+              <div class="element2 px-2 px-md-0">
                 <label for="" class="text-color-1 Roboto-Medium"
                   >Price Range</label
                 >
@@ -149,7 +149,7 @@
                   </div>
                 </div>
               </div>
-              <div class="element3 mt-3">
+              <div class="element3 mt-3 px-2 px-md-0">
                 <div class="row">
                   <div class="col-12 col-md-6">
                     <p>Bedrooms</p>
@@ -261,7 +261,7 @@
                   </div>
                 </div>
               </div>
-              <div class="element3">
+              <div class="element3 px-2 px-md-0">
                 <div class="row mt-3">
                   <div class="col-12 col-md-6">
                     <p>Parking</p>
@@ -366,7 +366,7 @@
                   </div>
                 </div>
               </div>
-              <div class="element4 py-3">
+              <div class="element4 py-3 px-2 px-md-0">
                 <div>
                   <p class="text-color-1 Roboto-Regular mb-0">
                     Get Alerts When Homes Matching These Filters Come Up For
@@ -886,6 +886,7 @@ input:focus {
   left: 15%;
   right: 15%;
   /* border: 1px solid #707070; */
+  z-index:99;
 }
 .modelfilter .element1 {
   max-width: 100%;
@@ -1023,6 +1024,20 @@ input:focus{
   .searchpage .element1 .searchform .item1 .item1a button{
     display: flex;
     align-items: center;
+  }
+  .modelfilter{
+    left:10%;
+    right: 10%;
+  }
+  .modelfilter .element2{
+    width: 94%;
+  }
+  .modelfilter .element3 .types a{
+    padding: 4px 14px;
+    font-size: 18px;
+  }
+  .modelfilter .element5{
+    flex-direction: column;
   }
 }
 </style>

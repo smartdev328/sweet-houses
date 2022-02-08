@@ -716,7 +716,7 @@ export default {
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
-  z-index: 999;
+  z-index: 0;
 }
 .item1b .inputaddress img {
   flex-shrink: 0;
