@@ -72,11 +72,22 @@
     <div
       class="groupbtn"
       :style="{ top: posY + 30 + 'px' }"
-      v-if="!showcontent"
-    >
+      v-if="!showcontent && !smscreen">
       <div class="container">
         <div class="mx-1 col-12">
-          <button class="Roboto-Regular col-3" @click="showcontent = true">
+          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
+            Get an Estimate
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+        class="groupbtn"
+        :style="{ top: posY + 90 + 'px' }"
+        v-if="!showcontent && smscreen">
+      <div class="container">
+        <div class="mx-1 col-12">
+          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
         </div>
@@ -181,6 +192,9 @@ export default {
   props: ["type"],
   computed: {
     ...mapState(["city"]),
+    smscreen(){
+      return window.innerWidth < 620
+    },
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
         this.addressData,
