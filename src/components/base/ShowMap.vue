@@ -1,5 +1,5 @@
 <template>
-  <div class="showmap">
+  <div class="showmap" @click.self="ckself">
     <div style="display: block; width: auto">
       <GmapMap
         ref="map"
@@ -72,11 +72,22 @@
     <div
       class="groupbtn"
       :style="{ top: posY + 30 + 'px' }"
-      v-if="!showcontent"
-    >
+      v-if="!showcontent && !smscreen">
       <div class="container">
         <div class="mx-1 col-12">
-          <button class="Roboto-Regular col-3" @click="showcontent = true">
+          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
+            Get an Estimate
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+        class="groupbtn"
+        :style="{ top: posY + 90 + 'px' }"
+        v-if="!showcontent && smscreen">
+      <div class="container">
+        <div class="mx-1 col-12">
+          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
         </div>
@@ -92,7 +103,7 @@
       <div class="container">
         <div class="mx-4 item1text mt-5 w-100 w-md-75">
           <p class="DMSerifRegular pt-5 pt-md-1">
-            Market Value, <Hassle></Hassle> Free
+            Market Value, Hassle Free
           </p>
           <div class="item1b py-1">
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
@@ -181,6 +192,9 @@ export default {
   props: ["type"],
   computed: {
     ...mapState(["city"]),
+    smscreen(){
+      return window.innerWidth < 620
+    },
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
         this.addressData,
@@ -351,6 +365,11 @@ export default {
     placeResultData: {},
   }),
   methods: {
+    ckself(){
+      console.log("00000000000")
+      this.showcontent = false;
+      this.fullscreenh = false;
+    },
     hidecontent() {
       this.showcontent = false;
     },
@@ -716,7 +735,7 @@ export default {
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
-  z-index: 999;
+  z-index: 0;
 }
 .item1b .inputaddress img {
   flex-shrink: 0;

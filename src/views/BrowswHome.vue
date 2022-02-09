@@ -868,6 +868,7 @@ input:focus {
   left: 15%;
   right: 15%;
   /* border: 1px solid #707070; */
+  z-index: 99;
 }
 .modelfilter .element1 {
   max-width: 100%;
