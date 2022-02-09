@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click.self="ckself()">
     <div
       class="searchpage"
       id="searchpage"
@@ -502,6 +502,9 @@ export default {
     },
   },
   methods: {
+    ckself(){
+      console.log("1151515")
+    },
     CancelFilter() {
       this.showfilter = false;
     },
