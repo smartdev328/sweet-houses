@@ -1,5 +1,5 @@
 <template>
-  <div class="showmap">
+  <div class="showmap" @click.self="ckself">
     <div style="display: block; width: auto">
       <GmapMap
         ref="map"
@@ -365,6 +365,11 @@ export default {
     placeResultData: {},
   }),
   methods: {
+    ckself(){
+      console.log("00000000000")
+      this.showcontent = false;
+      this.fullscreenh = false;
+    },
     hidecontent() {
       this.showcontent = false;
     },
