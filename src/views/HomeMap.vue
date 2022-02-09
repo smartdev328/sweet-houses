@@ -612,6 +612,7 @@ export default {
       }
       if (this.selected_menu == "show-map") {
         this.typesale = "forsale";
+        this.$refs.showmap.ckself();
         this.$refs.showmap.find_listings_forSaleMain();
       }
 
@@ -623,6 +624,7 @@ export default {
       }
       if (this.selected_menu == "show-map") {
         this.typesale = "sold";
+        this.$refs.showmap.ckself();
         this.$refs.showmap.find_listings_SoldMain();
       }
     },
