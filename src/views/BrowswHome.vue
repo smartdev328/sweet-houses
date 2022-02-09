@@ -607,22 +607,29 @@ export default {
     openfullscreen() {
       this.$refs.showmap.openfullscreenh();
     },
-    getpositiontop() {
-      this.posY =
-        document.getElementById("searchpage").getBoundingClientRect().y +
-        document.getElementById("searchpage").offsetHeight;
-      this.$refs.showmap.setposYsearchbar(this.posY);
-    },
+    // getpositiontop() {
+    //   this.posY =
+    //     document.getElementById("searchpage").getBoundingClientRect().y +
+    //     document.getElementById("searchpage").offsetHeight;
+    //   this.$refs.showmap.setposYsearchbar(this.posY);
+    // },
     stoploading() {
       this.loading = false;
     },
     runloading() {
       this.loading = true;
     },
+    getpositiontop(){
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
+      this.$store.commit('setposY',this.posY)
+      console.log("255555555555555555")
+    },
   },
   mounted() {
-    this.openfullscreen();
+    this.$refs.showmap.ckself();
     this.getpositiontop();
+    this.openfullscreen();
+
   },
   created() {
     /* this.getCoords(); */

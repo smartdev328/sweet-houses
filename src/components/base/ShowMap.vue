@@ -366,7 +366,6 @@ export default {
   }),
   methods: {
     ckself(){
-      console.log("00000000000")
       this.showcontent = false;
       this.fullscreenh = false;
     },
