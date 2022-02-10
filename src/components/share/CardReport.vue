@@ -10,9 +10,9 @@
                 
             </div> -->
             <!-- <img  v-if="sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="..."> -->
-             <img  v-if="closest_home_data.images.count > 0" :src="closest_home_data.images.image" class="card-img-top" alt="...">
+             <img  v-if="closest_home_data.images.length > 0" :src="closest_home_data.images[0]" class="card-img-top" alt="...">
              <img
-                        v-if="closest_home_data.images.count ==0 "
+                        v-if="closest_home_data.images.length ==0 "
                         src="../../assets/image/notimg.jpeg"
                         class="card-img-top"
                         alt=""
