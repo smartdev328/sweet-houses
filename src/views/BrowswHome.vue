@@ -2,6 +2,7 @@
   <div>
     <div
       class="searchpage"
+      id="searchpage"
       :class="{ fixedtop: selected_menu === 'show-list' }"
     >
       <div class="container">
