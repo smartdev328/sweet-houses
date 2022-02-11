@@ -1,6 +1,7 @@
 <template>
   <div @click.self="ckself()">
     <div
+        v-if="!smscreen"
       class="searchpage"
       id="searchpage"
       :class="{ fixedtop: selected_menu === 'show-list' }"
@@ -405,7 +406,6 @@
       </div>
 
     </div>
-
     <div :class="tab_visible('show-map')" class="h-50">
       <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
     </div>
@@ -427,7 +427,7 @@ import itemsnumber from "../itemsnumber.json";
 //import SweetSale from '../components/base/SweetSale.vue'
 // import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap,
+  components: { ShowMap
   // SweetSale 
   },
   data() {
@@ -499,6 +499,9 @@ export default {
     itemsnumberlist() {
       const result = itemsnumber.items;
       return Array.from(result, (x) => x.toLocaleString("ja-JP"));
+    },
+    smscreen(){
+      return window.innerWidth < 620
     },
   },
   methods: {
