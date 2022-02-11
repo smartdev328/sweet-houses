@@ -1,24 +1,68 @@
-<template ref="home">
+<template>
   <div class="home">
-    <HeaderSwiftsale></HeaderSwiftsale>
-    <div class="my-5">
-      <div class="container">
-        <swiftsale-page></swiftsale-page>
+    <header
+    :class="{fullsize : hideMap}">
+      <div class="p-4 p-md-5 container">
+        <div class="item1 mb-3 my-2 my-md-5" :class="{'my-5':hideMap , 'py-5':hideMap}">
+          <div class="item1a">
+            <p class="DMSerifRegular">Market Value, Hassle Free</p>
+          </div>
+          <div class="item1b py-2 py-md-5">
+            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+              Get an estimate value of any home
+            </p>
+            <div class="w-100 inputaddress">
+              <img
+                  src="../../assets/image/icon/Iconly-Light-Location.svg"
+                  alt=""
+              />
+              <div class="item1b2">
+                <span class="space"></span>
+                <vue-google-autocomplete
+                    autocomplete="off"
+                    id="map"
+                    ref="addressmap"
+                    classname="form-control"
+                    placeholder="Enter a home location"
+                    country="ca"
+                    v-on:keyup="yourFunctinNameToBeCall"
+                    v-on:placechanged="getAddressData"
+                    v-on:inputChange="inputChange"
+                    :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
+                >
+                </vue-google-autocomplete>
+              </div>
+
+              <div class="item1b3">
+                <button class="Poppins" type="button" @click="getresult()">
+                  Start
+                </button>
+              </div>
+            </div>
+            <div class="item1b3-sm">
+              <button class="Poppins" type="button" @click="getresult()">
+                Start
+              </button>
+            </div>
+            <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HeaderSwiftsale from "../components/base/HeaderSwiftsale";
 export default {
-  name: "Home",
-  component:{
-    HeaderSwiftsale
-  },
-  data() {
-    return {
+  name: "HeaderSwiftsale.vue",
+  data(){
+    return{
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
@@ -29,14 +73,22 @@ export default {
       placeResultData: {},
       readyStateComplete: null,
       selected_menu: "Swift_Sale",
-    };
+    }
   },
-
-  computed: {
+  computed:{
+    hideMap(){
+      return  this.urlPath && this.smscreen
+    },
+    urlPath(){
+      return  this.$route.name !== "BrowswHome"
+    },
+    smscreen(){
+      return window.innerWidth < 620
+    },
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
-        this.addressData,
-        "street_number"
+          this.addressData,
+          "street_number"
       );
     },
     location() {
@@ -50,37 +102,55 @@ export default {
       return { swlat, swlng, nelat, nelng };
     },
   },
-  components: {},
-  watch: {},
-  methods: {
-
-
-
-
-    opentraditionalpage() {
-      this.$router.push({ name: "TraditionalRealestate" });
+  methods:{
+    yourFunctinNameToBeCall() {
+      this.place_choosed = false;
     },
-
-
-
-
-    opensweetsale() {
-      this.$router.push({ name: "SweetSale" });
+    getAddressData(addressData, placeResultData) {
+      this.addressData = addressData;
+      this.placeResultData = placeResultData;
+      this.latlong.lat = addressData.latitude;
+      this.latlong.lng = addressData.longitude;
+      this.place_choosed = true;
+      console.log(placeResultData);
     },
-  },
-  mounted() {
-    document.onreadystatechange = () => {
-      if (document.readyState == "complete") {
-        console.log("Page completed with image and files!");
-
-        this.readyStateComplete = true;
+    getresult() {
+      if (this.checkform()) {
+        this.$store.commit("sethomeaddress", this.location);
+        this.$store.commit("setlatlong", this.latlong);
+        this.$router.push({ name: "ConfirmAddress" });
+        this.$store.dispatch("ScrollTop");
       }
-    };
-  },
-  created() {},
-};
+    },
+    inputChange() {
+      this.errmsg = "";
+    },
+    checkform() {
+      this.errmsg = "";
+      if (!this.location) {
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`;
+      }
+      if (!this.place_choosed) {
+        this.errmsg = `Oops! Please select from the dropdown.
+       If you're having trouble, just contact us.`;
+      }
+      if (!this.checkhasstreet) {
+        this.errmsg = `Oops! Please enter your home address (including street number), then select from the dropdown.
+       If you're having trouble, just contact us.`;
+      }
+      if (this.location && this.place_choosed && this.checkhasstreet) {
+        return true;
+      }
+    },
+  }
+}
 </script>
+
 <style scoped>
+.fullsize{
+  height: 90vh;
+}
 .home .item1 {
   margin: 0 auto;
 }
@@ -117,10 +187,10 @@ export default {
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
   padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
