@@ -1,5 +1,5 @@
 <template>
-  <div class="showmap" @click.self="ckself">
+  <div class="showmap position-relative" @click.self="ckself">
     <div style="display: block; width: auto">
       <GmapMap
         ref="map"
@@ -71,10 +71,10 @@
     </div>
     <div
       class="groupbtn"
-      :style="{ top: posY + 30 + 'px' }"
+      :style="{ top: posY + 'px' }"
       v-if="!showcontent && !smscreen">
       <div class="container">
-        <div class="mx-1 col-12">
+        <div class="mx-auto col-12">
           <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
@@ -86,7 +86,7 @@
         :style="{ top: posY + 90 + 'px' }"
         v-if="!showcontent && smscreen">
       <div class="container">
-        <div class="mx-1 col-12">
+        <div class="mx-auto col-12">
           <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
@@ -95,7 +95,7 @@
     </div>
     <div
       class="groupcontent pt-5"
-      :style="{ top: footerh + 'px' }"
+      :style="{ top: 0 + 'px' }"
       v-if="showcontent"
       @click.self="hidecontent()"
       :class="{ groupcontentfull: fullscreenh }"
@@ -177,7 +177,7 @@
       </button>
     </div>
     <div class="my-5">
-      <div class="container">
+      <div class="container bg-white">
         <SweetSale></SweetSale>
       </div>
     </div>
@@ -311,6 +311,7 @@ export default {
   components: { GmapCluster, SweetSale },
   data: () => ({
     showcontent: true,
+    hidegroupbtn:false,
     words: ["Buy", "Trade", "List", "Finance"],
     fullscreenh: false,
     showbox: true,
@@ -363,10 +364,25 @@ export default {
     activehomelad: null,
     errmsg: "",
     placeResultData: {},
+    windowTop: window.top.scrollY
   }),
+  mounted(){
+    window.addEventListener("scroll", this.onScroll , true)
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll , true)
+  },
   methods: {
+    onScroll() {
+      if(window.innerWidth < 620){
+        this.showcontent = false;
+        this.fullscreenh = false;
+      }
+
+
+    //  this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
+    },
     ckself(){
-      console.log("00000000000")
       this.showcontent = false;
       this.fullscreenh = false;
     },
@@ -664,6 +680,8 @@ export default {
     this.changebounds();
     this.find_listings_forSale();
   },
+
+
   watch: {
     latitude() {
       this.lat = this.latitude;

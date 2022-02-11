@@ -2,6 +2,7 @@
   <div>
     <div
       class="searchpage"
+      id="searchpage"
       :class="{ fixedtop: selected_menu === 'show-list' }"
     >
       <div class="container">
@@ -607,22 +608,28 @@ export default {
     openfullscreen() {
       this.$refs.showmap.openfullscreenh();
     },
-    getpositiontop() {
-      this.posY =
-        document.getElementById("searchpage").getBoundingClientRect().y +
-        document.getElementById("searchpage").offsetHeight;
-      this.$refs.showmap.setposYsearchbar(this.posY);
-    },
+    // getpositiontop() {
+    //   this.posY =
+    //     document.getElementById("searchpage").getBoundingClientRect().y +
+    //     document.getElementById("searchpage").offsetHeight;
+    //   this.$refs.showmap.setposYsearchbar(this.posY);
+    // },
     stoploading() {
       this.loading = false;
     },
     runloading() {
       this.loading = true;
     },
+    getpositiontop(){
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y;
+      this.$store.commit('setposY',this.posY)
+    },
   },
   mounted() {
-    this.openfullscreen();
+    this.$refs.showmap.ckself();
     this.getpositiontop();
+    this.openfullscreen();
+
   },
   created() {
     /* this.getCoords(); */
