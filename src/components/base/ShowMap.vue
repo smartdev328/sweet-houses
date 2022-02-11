@@ -84,7 +84,7 @@
     </div >
     <div
         class="groupbtn"
-        :style="{ top: posY + 90 + 'px' }"
+        :style="{ top: posY+50 + 'px' }"
         v-if="!showcontent && smscreen">
       <div class="container" v-if="!hideMap">
         <div class="mx-auto col-12">
@@ -339,6 +339,7 @@ export default {
       fullscreenControl: true,
       disableDefaultUi: false,
       scrollwheel: true,
+      gestureHandling: 'cooperative',
       minZoom: 8,
       maxZoom: 23,
     },

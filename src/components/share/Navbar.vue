@@ -52,7 +52,7 @@
               <!-- <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
                 >Sweet Sale</a
               > -->
-              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
+              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
                 >Swift Sale</a
               >
               <!-- <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
@@ -65,22 +65,22 @@
               >  -->
               <a
                 class="dropdown-item btn"
-                @click="opentraditionestate()"
+                @click="opentraditionestate();hidecollapse()"
                 >Traditional Real Estate</a
               >
             </div>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/browse-home" exact-path
-              >Browse Homes</router-link
+          <li class="nav-item" >
+            <a class="nav-link btn text-left" @click="openBrowsehome();hidecollapse()" exact-path
+              >Browse Homes</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="hidecollapse()">
             <router-link to="/Whats-My-Home-Worth" class="nav-link">
               Sweetly Estimates
             </router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="hidecollapse()">
             <router-link to="/saved" class="nav-link">
               <div class="d-flex">
                 <img
@@ -164,7 +164,7 @@
               <!-- <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale')"
                 >Sweet Sale</a
               > -->
-              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale')"
+              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
                 >Swift Sale</a
               >
               <!-- <a class="dropdown-item btn" @click="openhomeswap('home-swap')"
@@ -177,17 +177,17 @@
               >  -->
               <a
                 class="dropdown-item btn"
-                @click="opentraditionestate()"
+                @click="opentraditionestate();hidecollapse()"
                 >Traditional Real Estate</a
               >
             </div>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/browse-home"
-              >Browse Homes</router-link
+          <li class="nav-item" >
+            <a class="nav-link btn text-left" @click="openBrowsehome();hidecollapse()"
+              >Browse Homes</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="closepopup()">
             <router-link to="/Whats-My-Home-Worth" class="nav-link">
               What's My Home Worth?
             </router-link>
@@ -232,6 +232,7 @@
             780-477-9338 </span>
           <!-- <button @click="openresetpassword">verify</button> -->
           <button
+              @click="closepopup()"
             v-b-modal="'my-modallogin'"
             class="bg-transparent border-0 mr-3 py-1"
           >
@@ -251,6 +252,7 @@
             ></log-in>
           </b-modal>
           <b-button
+              @click="closepopup()"
             v-b-modal="'my-modal'"
             variant="white"
             class="bg-transparent signupbtn px-2 py-1"
@@ -319,7 +321,9 @@
 import Swal from "sweetalert2";
 export default {
   data() {
-    return {};
+    return {
+      showCollapse:false
+    };
   },
   computed: {
     username() {
@@ -337,6 +341,9 @@ export default {
     },
   },
   methods: {
+    hidecollapse(){
+      document.querySelector(".navbar-collapse").classList.remove('show');
+    },
     Openverifyemailbtcode(){
        this.$bvModal.hide("my-modallogin");
       this.$bvModal.show("verify-modal");
@@ -398,10 +405,12 @@ export default {
     },
     opensweetsale() {
        this.$router.push({name:'SweetSale'})
-      
     },
     openswiftsale(){
       this.$router.push({name:"SwiftSale"})
+    },
+    openBrowsehome(){
+      this.$router.push({name:"BrowswHome"})
     },
     openhomeswap(){
       this.$router.push({name:"HomeSwap"})
@@ -471,7 +480,7 @@ nav a:focus {
   font-size: 20px;
 }
 .navbar-collapse{
-  height: 0;
+  /*height: 0;*/
 }
 .navbar-nav{
   background: #fff;
