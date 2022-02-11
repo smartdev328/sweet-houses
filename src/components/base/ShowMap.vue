@@ -339,7 +339,7 @@ export default {
       fullscreenControl: true,
       disableDefaultUi: false,
       scrollwheel: true,
-      gestureHandling: 'cooperative',
+      gestureHandling: 'greedy',
       minZoom: 8,
       maxZoom: 23,
     },
