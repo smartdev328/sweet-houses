@@ -621,9 +621,8 @@ export default {
       this.loading = true;
     },
     getpositiontop(){
-      this.posY = document.getElementById('searchpage').getBoundingClientRect().y + document.getElementById('searchpage').offsetHeight;
+      this.posY = document.getElementById('searchpage').getBoundingClientRect().y;
       this.$store.commit('setposY',this.posY)
-      console.log("255555555555555555")
     },
   },
   mounted() {

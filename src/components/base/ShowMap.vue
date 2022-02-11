@@ -1,5 +1,5 @@
 <template>
-  <div class="showmap" @click.self="ckself">
+  <div class="showmap position-relative" @click.self="ckself">
     <div style="display: block; width: auto">
       <GmapMap
         ref="map"
@@ -71,7 +71,7 @@
     </div>
     <div
       class="groupbtn"
-      :style="{ top: posY + 30 + 'px' }"
+      :style="{ top: posY + 'px' }"
       v-if="!showcontent && !smscreen">
       <div class="container">
         <div class="mx-auto col-12">
@@ -95,7 +95,7 @@
     </div>
     <div
       class="groupcontent pt-5"
-      :style="{ top: footerh + 'px' }"
+      :style="{ top: 0 + 'px' }"
       v-if="showcontent"
       @click.self="hidecontent()"
       :class="{ groupcontentfull: fullscreenh }"
