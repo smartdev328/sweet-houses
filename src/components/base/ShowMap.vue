@@ -1,6 +1,7 @@
 <template>
+
   <div class="showmap position-relative" @click.self="ckself">
-    <div style="display: block; width: auto">
+    <div v-if="!hideMap" style="display: block; width: auto">
       <GmapMap
         ref="map"
         @click="checkClick"
@@ -73,19 +74,19 @@
       class="groupbtn"
       :style="{ top: posY + 'px' }"
       v-if="!showcontent && !smscreen">
-      <div class="container">
+      <div class="container" v-if="!hideMap">
         <div class="mx-auto col-12">
           <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
         </div>
       </div>
-    </div>
+    </div >
     <div
         class="groupbtn"
-        :style="{ top: posY + 90 + 'px' }"
+        :style="{ top: posY+50 + 'px' }"
         v-if="!showcontent && smscreen">
-      <div class="container">
+      <div class="container" v-if="!hideMap">
         <div class="mx-auto col-12">
           <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
@@ -96,7 +97,7 @@
     <div
       class="groupcontent pt-5"
       :style="{ top: 0 + 'px' }"
-      v-if="showcontent"
+      v-if="showcontent && !hideMap"
       @click.self="hidecontent()"
       :class="{ groupcontentfull: fullscreenh }"
     >
@@ -159,22 +160,13 @@
       </div>
     </div>
 
-    <!-- <div class="itemnew11 d-flex justify-content-center DMSerifRegular" v-if="!fullscreenh">
-          <textra
-            :data="words"
-            :timer="2"
-            :infinite="true"
-            filter="top-bottom"
-          />
-          <span class="ml-2">
-            <span>Your Home</span>
-            
-          </span>
-        </div> -->
-    <div class="togglemap" v-if="fullscreenh">
+    <div class="togglemap" v-if="fullscreenh || !hideMap">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
       </button>
+    </div>
+    <div v-if="hideMap">
+      <HeaderSwiftsale></HeaderSwiftsale>
     </div>
     <div class="my-5">
       <div class="container bg-white">
@@ -188,13 +180,20 @@ import { gmapApi } from "vue2-google-maps";
 import GmapCluster from "vue2-google-maps/dist/components/cluster";
 import { mapState } from "vuex";
 import SweetSale from "./MainInterface/SweetSale.vue";
+import HeaderSwiftsale from "./HeaderSwiftsale";
 export default {
   props: ["type"],
   computed: {
-    ...mapState(["city"]),
+    hideMap(){
+      return  this.urlPath && this.smscreen
+    },
+    urlPath(){
+     return  this.$route.name !== "BrowswHome"
+    },
     smscreen(){
       return window.innerWidth < 620
     },
+    ...mapState(["city"]),
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
         this.addressData,
@@ -308,7 +307,7 @@ export default {
       return this.$refs.map.offsetHeight;
     },
   },
-  components: { GmapCluster, SweetSale },
+  components: { GmapCluster, SweetSale , HeaderSwiftsale  },
   data: () => ({
     showcontent: true,
     hidegroupbtn:false,
@@ -340,6 +339,7 @@ export default {
       fullscreenControl: true,
       disableDefaultUi: false,
       scrollwheel: true,
+      gestureHandling: 'greedy',
       minZoom: 8,
       maxZoom: 23,
     },
