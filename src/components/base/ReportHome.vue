@@ -290,7 +290,7 @@
         </p>
       </div>
       <div class="my-5 pb-5">
-        <address-map :lat="latlong.lat" :lon="latlong.lng"></address-map>
+        <AddressMap :lat="latlong.lat" :lon="latlong.lng"></AddressMap>
       </div>
       <div class="item7 cards my-5">
         <div>
@@ -468,9 +468,9 @@
   </div>
 </template>
 <script>
-import AddressMap from "./AddressMap.vue";
+import AddressMap from "./AddressMap.vue"
 export default {
-  components: { AddressMap },
+  components: {  AddressMap },
   data() {
     return {
            copied:false,
@@ -536,6 +536,13 @@ export default {
         {}
       );
     },
+    latlng() {
+        return [
+          this.closest_sqftcom.map,
+          this.closest_locationcom.map,
+          this.closest_bedroomscom.map
+        ]
+    }
   },
   methods: {
     open(e) {

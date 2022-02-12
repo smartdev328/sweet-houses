@@ -160,7 +160,7 @@
       </div>
     </div>
 
-    <div class="togglemap" v-if="fullscreenh || !hideMap">
+    <div class="togglemap" v-if="fullscreenh && !hideMap">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
       </button>
