@@ -1,6 +1,6 @@
 <template ref="home">
   <div class="home">
-    <HeaderSwiftsale></HeaderSwiftsale>
+    <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     <div class="my-5">
       <div class="container">
         <swiftsale-page></swiftsale-page>
@@ -14,7 +14,7 @@
 import HeaderSwiftsale from "../components/base/HeaderSwiftsale";
 export default {
   name: "Home",
-  component:{
+  components:{
     HeaderSwiftsale
   },
   data() {
@@ -50,13 +50,14 @@ export default {
       return { swlat, swlng, nelat, nelng };
     },
   },
-  components: {},
   watch: {},
   methods: {
-
-
-
-
+    openforsalemap(){
+      return ""
+    },
+    opensoldmap(){
+      return ""
+    },
     opentraditionalpage() {
       this.$router.push({ name: "TraditionalRealestate" });
     },

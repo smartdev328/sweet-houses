@@ -10,9 +10,9 @@
                 
             </div> -->
             <!-- <img  v-if="sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="..."> -->
-             <img  v-if="closest_home_data.images.length > 0" :src="closest_home_data.images[0]" class="card-img-top" alt="...">
+             <img  v-if="closest_home_data.images.count > 0" :src="closest_home_data.images.image" class="card-img-top" alt="...">
              <img
-                        v-if="closest_home_data.images.length ==0 "
+                        v-if="closest_home_data.images.count ==0 "
                         src="../../assets/image/notimg.jpeg"
                         class="card-img-top"
                         alt=""
@@ -64,8 +64,8 @@
                                 <tr>
                                     <td>Beds</td>
                                     <td>
-                                        <img v-if="homedatafirst.bedrooms_bg > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
-                                        <img v-if="homedatafirst.bedrooms_bg < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
+                                        <img v-if="homedatafirst.bedrooms_ag > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.bedrooms_ag < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
                                         
                                     </td>
                                      <td>{{homedatafirst.bedrooms_bg}}</td>
@@ -98,10 +98,10 @@
                                 <tr>
                                     <td>Garage</td>
                                      <td>
-                                        <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
-                                        <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
+                                        <img v-if="homedatafirst.garage_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.garage_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
                                     </td>
-                                      <td>{{homedatafirst.parking_spaces}}</td>
+                                      <td>{{homedatafirst.garage_spaces}}</td>
                                     <td>{{closest_home_data.details.numParkingSpaces}}</td>
                                   
                                     
@@ -166,8 +166,16 @@ export default {
     openhomedetails(){
       let mls = this.closest_home_data.mlsNumber;
       let boardId = this.closest_home_data.boardId;
-        let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+      if(this.homedata.lastStatus !== "Sld"){
+        let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
+      }
+      if(this.homedata.lastStatus == "Sld"){
+
+          let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+
+      }
     }
     }
 }

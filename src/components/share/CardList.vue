@@ -320,7 +320,7 @@ export default {
     openhomedetails(){
       let mls = this.homedata.mlsNumber;
       let boardId = this.homedata.boardId;
-      if(this.type == "forsale"){
+      if(this.homedata == "forsale"){
         let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
       }else{
@@ -328,7 +328,6 @@ export default {
             let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
           window.open(routeData.href, '_blank');
           }else{
-            console.log('000')
             this.SignUp();
           }
           

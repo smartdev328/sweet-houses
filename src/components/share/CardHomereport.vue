@@ -33,7 +33,7 @@
                 </div>
                 <div class="element2 d-flex">
                 
-                    <p class="Roboto-Regular" v-if="homedata.sweetly_price">${{homedata.sweetly_price.prices.offer_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
+                    <p class="Roboto-Regular" v-if="homedata.offer_price">${{homedata.offer_price.toLocaleString('ja-JP')}}  Sweetly Estimate</p>
                 </div>
                 <div class="element3">
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numBedrooms}} <span v-if="homedata.details.numBedroomsPlus > 0">+{{(homedata.details.numBedroomsPlus)}}</span> </span>
@@ -43,7 +43,7 @@
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
                     <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numGarageSpaces}}</span>
-                    <span class="text-color-1  ml-2  Roboto-Regular">GarageSpaces</span>
+                    <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
                 </div>
                       <div class="element6b mt-2">
           <p class="Roboto-Regular">
@@ -183,6 +183,18 @@ export default {
             formData: new FormData(),
     }),
     methods:{
+      openhomedetails(){
+        let mls = this.homedata.mlsNumber;
+        let boardId = this.homedata.boardId;
+        if(this.homedata.lastStatus !== "Sld"){
+          let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+        }
+        if(this.homedata.lastStatus == "Sld"){
+            let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+            window.open(routeData.href, '_blank');
+          }
+      },
         gettime(item){
             return moment(item).endOf('day').fromNow();   
         },
