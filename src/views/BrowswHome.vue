@@ -394,7 +394,9 @@
     </div>
 
     <div :class="tab_visible('show-map')" class="h-50">
-      <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
+      <show-map ref="showmap" :type="typesale" @submit="submitmap" @submit2="submitmap2"
+
+      ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
       <div class="text-center my-5 container">
@@ -555,8 +557,20 @@ export default {
       if (this.selected_menu == "show-map" && this.typesale == "sold") {
         this.$refs.showmap.find_listings_SoldMain();
       }
+
     },
     submitmap() {
+      this.selected_menu = "show-list";
+      if (this.typesale == "forsale") {
+        this.loading = true;
+        this.$refs.showlist.find_listings_forSaleMain();
+      }
+      if (this.typesale == "sold") {
+        this.loading = true;
+        this.$refs.showlist.find_listings_SoldMain();
+      }
+    },
+    submitmap2() {
       this.selected_menu = "show-list";
       if (this.typesale == "forsale") {
         this.loading = true;
@@ -632,6 +646,10 @@ export default {
 
   },
   created() {
+    if(this.$store.state.typesale){
+      console.log(this.$store.state.typesale)
+      this.typesale = this.$store.state.typesale
+    }
     /* this.getCoords(); */
     /*  this.changebounds();  */
     //  this.openfullscreen()
