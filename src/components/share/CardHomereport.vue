@@ -43,7 +43,7 @@
                     <span class="text-color-1 Roboto-Medium">{{homedata.details.sqft}}</span>
                     <span class="mr-3 ml-1   color2 Roboto-Medium">sqft</span>
                     <span class="text-color-1 Roboto-Regular">{{homedata.details.numGarageSpaces}}</span>
-                    <span class="text-color-1  ml-2  Roboto-Regular">GarageSpaces</span>
+                    <span class="text-color-1  ml-2  Roboto-Regular">prkg</span>
                 </div>
                       <div class="element6b mt-2">
           <p class="Roboto-Regular">
