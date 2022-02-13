@@ -166,8 +166,16 @@ export default {
     openhomedetails(){
       let mls = this.closest_home_data.mlsNumber;
       let boardId = this.closest_home_data.boardId;
-        let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+      if(this.homedata.lastStatus !== "Sld"){
+        let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
+      }
+      if(this.homedata.lastStatus == "Sld"){
+
+          let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+
+      }
     }
     }
 }

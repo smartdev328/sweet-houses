@@ -52,7 +52,27 @@
             </div>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
+          <div class="mt-5">
+            <div
+                v-if="showonly"
+                class="togglesearch"
+            >
+              <button
+                  @click="openforsale"
+                  class="DFJqO"
+              >
+                For sale
+              </button>
+              <button
+                  @click="opensold"
+                  class="eGqDDI"
+              >
+                Sold last 90days
+              </button>
+            </div>
+          </div>
         </div>
+
       </div>
     </header>
   </div>
@@ -60,7 +80,7 @@
 
 <script>
 export default {
-  name: "HeaderSwiftsale.vue",
+  name: "HeaderSwiftsale",
   data(){
     return{
       errmsg: "",
@@ -76,6 +96,9 @@ export default {
     }
   },
   computed:{
+    showonly(){
+      return  this.$route.name == "MapHome" && this.smscreen
+    },
     hideMap(){
       return  this.urlPath && this.smscreen
     },
@@ -103,6 +126,12 @@ export default {
     },
   },
   methods:{
+    openforsale(){
+      this.$emit("openforsalemap")
+    },
+    opensold(){
+      this.$emit("opensoldmap")
+    },
     yourFunctinNameToBeCall() {
       this.place_choosed = false;
     },
@@ -150,6 +179,52 @@ export default {
 <style scoped>
 .fullsize{
   height: 90vh;
+}
+.togglesearch {
+  /* max-width: 260px; */
+  width: 95%;
+  border-radius: 6px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 42px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background: #fff;
+  opacity: 1;
+  border-radius: 6px;
+  padding: 6px;
+  transition: opacity 0.25s ease 0s;
+}
+.togglesearch .eGqDDI {
+  display: block;
+  height: 32px;
+  border: none;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease 0s;
+  color: #efc9cb;
+  background: rgb(201, 80, 85);
+}
+.togglesearch .DFJqO {
+  display: block;
+  height: 32px;
+  border: none;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  transition: background-color 0.3s ease 0s;
+  color: rgb(4, 58, 48);
 }
 .home .item1 {
   margin: 0 auto;

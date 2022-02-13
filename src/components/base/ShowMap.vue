@@ -166,7 +166,7 @@
       </button>
     </div>
     <div v-if="hideMap">
-      <HeaderSwiftsale></HeaderSwiftsale>
+      <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     </div>
     <div class="my-5">
       <div class="container bg-white">
@@ -373,6 +373,17 @@ export default {
     window.removeEventListener("scroll", this.onScroll , true)
   },
   methods: {
+    opensoldmap(){
+      console.log("00000")
+      this.$emit("opensoldmap");
+      this.$store.commit('setType','sold')
+      //this.$router.push({name:"BrowswHome"})
+    },
+    openforsalemap(){
+      this.$emit("openforsalemap");
+      this.$store.commit('setType','forsale')
+     // this.$router.push({name:"BrowswHome"})
+    },
     onScroll() {
       if(window.innerWidth < 620){
         this.showcontent = false;

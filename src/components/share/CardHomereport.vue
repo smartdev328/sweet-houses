@@ -186,20 +186,14 @@ export default {
       openhomedetails(){
         let mls = this.homedata.mlsNumber;
         let boardId = this.homedata.boardId;
-        if(this.type == "forsale"){
+        if(this.homedata.lastStatus !== "Sld"){
           let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
           window.open(routeData.href, '_blank');
-        }else{
-          if(this.isLoggedIn){
+        }
+        if(this.homedata.lastStatus == "Sld"){
             let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
             window.open(routeData.href, '_blank');
-          }else{
-            console.log('000')
-            this.SignUp();
           }
-
-
-        }
       },
         gettime(item){
             return moment(item).endOf('day').fromNow();   
