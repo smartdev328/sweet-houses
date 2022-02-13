@@ -290,7 +290,27 @@
         </p>
       </div>
       <div class="my-5 pb-5">
-        <address-map :lat="latlong.lat" :lon="latlong.lng"></address-map>
+        <div style="display: block; width:auto;height:400px">
+          <GmapMap
+              :center="{lat:latlong.lat, lng:latlong.lng}"
+              :zoom="zoom"
+              ref="map"
+              map-type-id="terrain"
+              draggable=false
+              :options="options"
+              style="width: 100%; height: 360px"
+          >
+            <GmapMarker
+                v-for="m in similar_homes"
+                :key="m.id"
+                :position="getpos(m.map)"
+                :clickable="true"
+                :draggable="false"
+                :icon="icon"
+                @click="center=m.position"
+            />
+          </GmapMap>
+        </div>
       </div>
       <div class="item7 cards my-5">
         <div>
@@ -468,16 +488,30 @@
   </div>
 </template>
 <script>
-import AddressMap from "./AddressMap.vue";
+import { gmapApi } from 'vue2-google-maps';
 export default {
-  components: { AddressMap },
+  components: {   },
   data() {
     return {
            copied:false,
-      errsms:false
+      errsms:false,
+      zoom:12,
+      options:{
+        zoomControl: false,
+        mapTypeControl: false,
+        scrollwheel:false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: true,
+        fullscreenControl: false,
+        disableDefaultUi: false,
+        draggable:false
+      },
+      icon:require('../../assets/image/icon/markerhome.svg')
     };
   },
   computed: {
+    google: gmapApi,
       fullPath() {
       return window.location.href;
     },
@@ -536,8 +570,21 @@ export default {
         {}
       );
     },
+    latlng() {
+        return [
+          this.closest_sqftcom.map,
+          this.closest_locationcom.map,
+          this.closest_bedroomscom.map
+        ]
+    }
   },
   methods: {
+    getpos(item) {
+      return {
+        lat: item.latitude * 1,
+        lng: item.longitude * 1,
+      };
+    },
     open(e) {
       console.log(e);
     },

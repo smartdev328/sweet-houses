@@ -407,7 +407,9 @@
 
     </div>
     <div :class="tab_visible('show-map')" class="h-50">
-      <show-map ref="showmap" :type="typesale" @submit="submitmap"></show-map>
+      <show-map ref="showmap" :type="typesale" @submit="submitmap" @openforsalemap="openforsalemap"
+      @opensoldmap="opensoldmap"
+      ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
       <div class="text-center my-5">
@@ -505,6 +507,12 @@ export default {
     },
   },
   methods: {
+    openforsalemap(){
+      this.$router.push({name:"BrowswHome"})
+    },
+    opensoldmap(){
+      this.$router.push({name:"BrowswHome"})
+    },
     ckself(){
       console.log("1151515")
     },
@@ -591,6 +599,9 @@ export default {
         this.loading = true
         this.$refs.showlist.find_listings_SoldMain();
       }
+    },
+    submitmap2(){
+      console.log("00444444")
     },
     submitlist() {
       this.selected_menu = "show-map";
