@@ -26,7 +26,7 @@
                 <img src="../../assets/image/icon/Iconarrows.svg" alt="">
             </div> -->
              <!-- <div class="counter">{{currentcount}}</div> -->
-            <div class="card-body">
+            <div class="card-body" @click="openhomedetails()">
                 <div class="element1 d-flex align-items-baseline justify-content-between">
                     <p class="text-color-1 Roboto-Medium" v-if="homedata.listPrice">${{homedata.listPrice.toLocaleString('ja-JP')}} </p>
                     <p class="Roboto-Regular" v-if="homedata.listDate">{{ gettime(homedata.listDate)}}</p>
