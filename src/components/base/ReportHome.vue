@@ -495,7 +495,7 @@ export default {
     return {
            copied:false,
       errsms:false,
-      zoom:15,
+      zoom:12,
       options:{
         zoomControl: false,
         mapTypeControl: false,
