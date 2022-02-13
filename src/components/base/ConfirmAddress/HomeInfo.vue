@@ -140,7 +140,7 @@
               :class="{ 'input--error':  (msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) }"
             >
               <label for="bedrooms_bg" class="col-sm-5 col-form-label text-left"
-                >Bedrooms (above ground)</label
+                >Bedrooms (below ground)</label
               >
               <div class="d-style">
                 <div class="col-sm-2">
@@ -186,7 +186,7 @@
               :class="{ 'input--error':  (msgone.bedrooms_ag && bedrooms_ag < 0) || (msgone.bedrooms_ag && bedrooms_ag == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
-                >Bedrooms (below ground)</label
+                >Bedrooms (above ground) </label
               >
               <div class="d-style">
                 <div class="col-sm-2">

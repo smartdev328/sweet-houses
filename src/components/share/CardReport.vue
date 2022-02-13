@@ -64,8 +64,8 @@
                                 <tr>
                                     <td>Beds</td>
                                     <td>
-                                        <img v-if="homedatafirst.bedrooms_bg > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
-                                        <img v-if="homedatafirst.bedrooms_bg < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
+                                        <img v-if="homedatafirst.bedrooms_ag > closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.bedrooms_ag < closest_home_data.details.numBedrooms" src="../../assets/image/icon/arrowless.svg" alt="">
                                         
                                     </td>
                                      <td>{{homedatafirst.bedrooms_bg}}</td>
@@ -98,10 +98,10 @@
                                 <tr>
                                     <td>Garage</td>
                                      <td>
-                                        <img v-if="homedatafirst.parking_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
-                                        <img v-if="homedatafirst.parking_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
+                                        <img v-if="homedatafirst.garage_spaces > closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowmore.svg" alt="">
+                                        <img v-if="homedatafirst.garage_spaces < closest_home_data.details.numParkingSpaces" src="../../assets/image/icon/arrowless.svg" alt="">
                                     </td>
-                                      <td>{{homedatafirst.parking_spaces}}</td>
+                                      <td>{{homedatafirst.garage_spaces}}</td>
                                     <td>{{closest_home_data.details.numParkingSpaces}}</td>
                                   
                                     
