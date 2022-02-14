@@ -170,7 +170,7 @@ export default {
         let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
       }
-      if(this.homedata.lastStatus == "Sld"){
+      if(this.closest_home_data.lastStatus == "Sld"){
           let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
           window.open(routeData.href, '_blank');
       }
