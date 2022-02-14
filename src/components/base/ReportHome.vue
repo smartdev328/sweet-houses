@@ -317,19 +317,25 @@
           <card-report
             :instant_estimate_data="instant_estimate_data"
             :closest_home_data="closest_sqftcom"
+            v-if="Object.keys(closest_sqftcom).length"
           ></card-report>
+          <h4 v-else class="text-color-1 DMSerifRegular">We Can't Find any Closest Sqft</h4>
         </div>
         <div>
           <card-report
             :instant_estimate_data="instant_estimate_data"
             :closest_home_data="closest_locationcom"
+            v-if="Object.keys(closest_locationcom).length"
           ></card-report>
+          <h4 v-else  class="text-color-1 DMSerifRegular">We Can't Find any Closest Location</h4>
         </div>
         <div>
           <card-report
             :instant_estimate_data="instant_estimate_data"
             :closest_home_data="closest_bedroomscom"
+            v-if="Object.keys(closest_bedroomscom).length"
           ></card-report>
+          <h4 v-else class="text-color-1 DMSerifRegular">We Can't Find any Closest Bedrooms</h4>
         </div>
       </div>
       <!-- <div class="item8 my-4">
@@ -495,7 +501,7 @@ export default {
     return {
            copied:false,
       errsms:false,
-      zoom:12,
+      zoom:14,
       options:{
         zoomControl: false,
         mapTypeControl: false,
@@ -580,10 +586,13 @@ export default {
   },
   methods: {
     getpos(item) {
-      return {
-        lat: item.latitude * 1,
-        lng: item.longitude * 1,
-      };
+      if(item){
+        return {
+          lat: item.latitude * 1,
+          lng: item.longitude * 1,
+        };
+      }
+
     },
     open(e) {
       console.log(e);
