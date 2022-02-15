@@ -44,9 +44,6 @@
             alt=""
           />
         </div>
-        <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
-        <p>A Traditional Listing Is Right for You if You</p>
-      </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul>
             <li
