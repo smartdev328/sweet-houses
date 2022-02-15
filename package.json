@@ -6,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js",
-    "postinstall": "ng build --aot"
+    "start": "node server.js"
   },
   "engines": {
         "npm": "8.3.1",
