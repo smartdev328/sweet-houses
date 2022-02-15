@@ -13,25 +13,25 @@
             <!-- <img src="../assets/image/icon/Iconly-Light-Location.svg" alt=""> -->
             <div class="item1b2">
               <span class="space"></span>
-              <vue-google-autocomplete
-                id="map"
-                autocomplete="off"
-                ref="addressmap"
-                classname="form-control"
-                placeholder="Enter a home location"
-                country="ca"
-                v-on:keyup="yourFunctinNameToBeCall"
-                v-on:placechanged="getAddressData"
-                v-on:inputChange="inputChange"
-                :options="{
-                  fields: [
-                    'geometry',
-                    'formatted_address',
-                    'address_components',
-                  ],
-                }"
-              >
-              </vue-google-autocomplete>
+                <vue-google-autocomplete
+                    autocomplete="off"
+                    id="map"
+                    ref="addressmap"
+                    classname="form-control"
+                    placeholder="Enter a home location"
+                    country="ca"
+                    v-on:keyup="yourFunctinNameToBeCall"
+                    v-on:placechanged="getAddressData"
+                    v-on:inputChange="inputChange"
+                    :options="{
+                    fields: [
+                      'geometry',
+                      'formatted_address',
+                      'address_components',
+                    ],
+                  }"
+                >
+                </vue-google-autocomplete>
             </div>
             <div class="item1b3">
               <button class="Roboto-Regular" type="button" @click="getresult()">
@@ -59,7 +59,24 @@ export default {
         homeaddress: null,
       },
       errmsg: "",
+      latlong: { lat: 0, lng: 0 },
+       userlocation: {},
+      place_choosed: null,
+      resultsExample: {},
+      addressData: {},
+      placeResultData: {},
     };
+  },
+  computed:{
+     checkhasstreet() {
+      return Object.prototype.hasOwnProperty.call(
+          this.addressData,
+          "street_number"
+      );
+    },
+    location() {
+      return this.placeResultData.formatted_address;
+    },
   },
   methods: {
     inputChange() {

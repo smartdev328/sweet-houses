@@ -91,8 +91,7 @@ export default {
       resultsExample: {},
       addressData: {},
       placeResultData: {},
-      readyStateComplete: null,
-      selected_menu: "Swift_Sale",
+
     }
   },
   computed:{
