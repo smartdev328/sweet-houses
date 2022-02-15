@@ -86,13 +86,13 @@ export default {
   data() {
     return {
       Traditionaldata: [
-        { content: "Want to test the market with your price" },
-        { content: "Want to use our reno budget to improve before selling" },
+        { content: "Want to test the market with your price." },
+        { content: "Want to use our reno budget to improve before selling." },
         {
           content:
-            "Have time to allow showings and don’t mind having strangers in your home",
+            "Have time to allow showings and don’t mind having strangers in your home.",
         },
-        { content: "Want to negotiate our commission" },
+        { content: "Want to negotiate our commission." },
       ],
       Benefitsdata: [
         {
