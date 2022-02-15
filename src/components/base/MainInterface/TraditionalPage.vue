@@ -1,7 +1,7 @@
 <template>
   <div class="page4">
     <div class="my-2 my-md-5 item12 mx-3">
-      <div class="item12a DMSerifRegular text-center">
+      <div class="item12a DMSerifRegular text-center"
         <p>Swift Sale Benefits</p>
       </div>
       <div
@@ -44,6 +44,9 @@
             alt=""
           />
         </div>
+        <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
+        <p>A Traditional Listing Is Right for You if You</p>
+      </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul>
             <li
