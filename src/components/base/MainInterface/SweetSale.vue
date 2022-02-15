@@ -13,11 +13,10 @@
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property-->
             <!--              </h3>-->
             <p class="card-text text-color-2">
-              Tell us about your home. You’ll get a computer-generated
-              evaluation along with Comparable Sales and Active Listings to show
-              you what other homes have sold for in your area, and those that
-              represent your selling competition. We’ll arrange for a
-              bank-certified Appraisal to set a fair and accurate price.
+              Tell us about your home. You'll get a computer-generated
+              evaluation and comparable sales in your area. We'll arrange
+              for a licensed Appraiser to view your home and set the final
+              price.
             </p>
           </div>
         </div>
@@ -34,9 +33,8 @@
 
             <!--              </h3>-->
             <p class="card-text text-color-2">
-              We buy your home in two payments. We pay 90% of appraised value on
-              the day you choose to move (without a listing or showings) and
-              subject only to a suitable home inspection.
+              Subject to a reasonable home inspection, you receive 90% of
+              appraised value on the moving day you choose.
             </p>
           </div>
         </div>
@@ -52,9 +50,9 @@
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Close & Move-->
             <!--              </h3>-->
             <p class="card-text text-color-2">
-              We resell the house on the open market, deduct our 4% fee and send
-              you the balance of the actual resale price. You even get 50% of
-              any overage if we can resell for more than bank appraisal.
+              We'll resell your home, retain our fee (7% of $100,000 plus
+              3% of the balance), then return to you the full balance of
+              the actual sale price - even if it sells over appraised value.
             </p>
           </div>
         </div>
@@ -71,7 +69,7 @@
               width="100%"
               class="rounded"
               height="100%"
-              src="https://www.youtube.com/embed/ZuG6KMMRu8k"
+              src="https://www.youtube.com/embed/NtPMe0nhq2w"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -114,7 +112,7 @@
             both far easier and more fun.
           </p>
           <router-link to="about-us" class="Roboto-Regular"
-            >About us</router-link
+            >Read More</router-link
           >
         </div>
         <div class="col-12 col-md-4">

@@ -328,41 +328,32 @@ For More Value</p></div>
     <div class="item7 container">
       <h3 class="Roboto-Medium">Read more:</h3>
       <p class="Roboto-Regular text-color-1">
-        Our ownership team is made up of ex ‘big brand’ Realtors. For a combined
-        50 years plus, we’ve watched customers struggle with seller pains like
-        regular showings, keeping a home show-ready, having strangers tour the
-        home you live in while not home, doors left open or unlocked. Add in the
-        financial logistics involved with selling one home to buy another and
-        it’s easy to see why those who have gone through the process understand
-        the need for change.
+        Selling to Sweetly means choosing to sell stress free, and on your timeline.
+        Our Swift Sale pays you 90% of your homes' (professionally) appraised value on
+        the day you choose to move; and this let's you sell without living through 
+        the seller pains and endless showings, or open houses where strangers tour 
+        the home you live in. Once we resell your home, you get the full balance of
+        the actual resale price and thus you get the exact same amount of money had
+        you listed and sold on the market with any other full service brokerage
+        (assuming commission of 7% of $100,000 plus 3% on the balance).
       </p>
       <p class="Roboto-Regular text-color-1">
-        So, we re-built the real estate wheel to serve customers with better
-        solutions.
+        The benefits and conveniences of our program are obvious for any home seller.
+        But for anyone selling and buying at the same time, our program is even more
+        powerful. We encourage our clients to get our appraisal, then delay selling
+        to us until you find the perfect home! You get to avoid paying two mortgages
+        at once, moving twice, or missing out on the perfect new home waiting to sell
+        the one you have.
       </p>
       <p class="Roboto-Regular text-color-1">
-        So, we re-built the real estate wheel to serve customers with better
-        solutions. We’re often asked questions like: Why would you do this? Why
-        would you take so much risk? Why isn’t anyone else doing this? We’re
-        encouraged by these questions. We feel that the risk should be with the
-        brokerage and not the customer; further, we feel that a brokerage should
-        have a program available to buy a house at a fair value – without the
-        requirement of the customer to list their home for sale and live through
-        seller pains.
+        We've spent years watching customers just like you struggle with showing,
+        interruptions and the broken product that is 'traditional real estate', but
+        until now, nobody has bothered to question the process and the fees. We dare
+        to dream of better services for our customers and we look forward to sharing
+        our vision with you.
       </p>
       <p class="Roboto-Regular text-color-1">
-        We use bank certified appraisers and home inspectors to determine the
-        fair market value of property. Our processes and fees are completely
-        transparent and posted all over our website. We use our money to make
-        our customers’ process easier, less costly, and less risky. In doing so
-        we earn commissions just like any other Realtor.
-      </p>
-      <p class="Roboto-Regular text-color-1">
-        My name is Ed DePrato, and I’m one of the owners, as well as the broker
-        at Sweetly Real Estate. Thanks for connecting with us! I welcome your
-        feedback. At Sweetly, we’re never too busy to answer any questions. If
-        there’s anything I can help with, please feel free to contact me
-        directly. With gratitude,
+        I welcome your comments, questions or feedback, always.
       </p>
       <p class="Roboto-Regular text-color-1">
         Ed DePrato Partner, Broker, Dog dad

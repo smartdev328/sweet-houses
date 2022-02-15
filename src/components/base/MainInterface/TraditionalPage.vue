@@ -1,8 +1,8 @@
 <template>
   <div class="page4">
     <div class="my-2 my-md-5 item12 mx-3">
-      <div class="item12a DMSerifRegular text-center">
-        <p>Swift Sale Benefits</p>
+      <div class="item12a DMSerifRegular text-center"
+        <p>Benefits of a Traditional Listing</p>
       </div>
       <div
         class="item12b p-3 p-md-4 mb-5"
@@ -65,7 +65,7 @@
       </div>
       <div class="text-center Roboto-Regular">
         <p>Want a different program?</p>
-        <router-link to="/swift-sale">Try our Swift Sal</router-link>
+        <router-link to="/swift-sale">Try our Swift Sale</router-link>
       </div>
     </div>
     <div class="my-2 my-md-5 item7">

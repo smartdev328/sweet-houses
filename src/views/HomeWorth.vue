@@ -7,8 +7,7 @@
             What's My Home Worth?
           </p>
           <p class="text-center p2 my-4 text-white Roboto-Regular">
-            Start your search for your next home with our comprehensive,
-            personalized home valuation.
+            Get an estimate value of any home.
           </p>
           <div class="w-100 inputaddress">
             <!-- <img src="../assets/image/icon/Iconly-Light-Location.svg" alt=""> -->

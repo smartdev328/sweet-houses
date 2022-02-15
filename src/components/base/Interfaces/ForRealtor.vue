@@ -85,7 +85,7 @@ can even keep your current listing active.
                   <img src="../../../assets/image/icon/p-2.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
-                  <p class="p2 Roboto-Regular">When we buy and resell your clients listed home, we’ll resell it, and YOU can list it for us! We pay 1% on the value of the sale (roughly 50% of full commission).</p>
+                  <p class="p2 Roboto-Regular">When we buy your active listing, or a house for your referred customer, we'll resell it and off YOU the listing.</p>
                 </div>
               </div>
 
