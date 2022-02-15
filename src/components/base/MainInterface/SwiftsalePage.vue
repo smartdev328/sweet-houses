@@ -87,9 +87,11 @@
               Tell Us About Your Property
             </h3>
             <p class="card-text text-color-2">
-              Answer some easy questions about your home. You'll get a computer
-              generated <a href="/Whats-My-Home-Worth">estimate</a> of the
-              current value of your property.
+              Tell us about your home. You'll get a
+              computer-generated evaluation and
+              comparable sales in your area. We'll arrange
+              for a licensed Appraiser to view your home
+              and set the final price.
             </p>
           </div>
         </div>
@@ -106,8 +108,9 @@
               Appraisal & Inspection
             </h3>
             <p class="card-text text-color-2">
-              We will arrange for an independents, bank-certified appraisal and
-              home inspection to establish our purchase price.
+              Subject to a reasonable home inspection, you
+              receive 90% of appraised value on the 
+              moving day you choose.
             </p>
           </div>
         </div>
@@ -122,8 +125,10 @@
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <h3 class="card-title Roboto-Medium text-color-1">Close & Move</h3>
             <p class="card-text text-color-2">
-              Once we resell the improved home you get a second payment for the
-              full resale price less our fee and our cost for improvements.
+              We'll resell your home, retain our fee (7% of
+              $100,000 plus 3% of the balance), then return
+              to you the full balance of the actual sale price 
+              - even if it sells over appraised value.
             </p>
           </div>
         </div>
