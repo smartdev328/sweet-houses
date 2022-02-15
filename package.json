@@ -6,11 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
-  },
-  "engines": {
-     "npm": "5.6.0",
-      "node": "8.10.0"
+    "start": "node server.js",
+    "postinstall": "ng build --aot"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
