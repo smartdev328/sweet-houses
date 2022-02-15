@@ -112,7 +112,7 @@
             both far easier and more fun.
           </p>
           <router-link to="about-us" class="Roboto-Regular"
-            >About us</router-link
+            >Read More</router-link
           >
         </div>
         <div class="col-12 col-md-4">
