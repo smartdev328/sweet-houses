@@ -52,9 +52,13 @@
             </div>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
-          <div class="mt-5">
+         
+        </div>
+         
+      </div>
+      <div class="p-4  py-3 container" v-if="showonly" style="background: green">
+         <div class="item1a"><p class="DMSerifRegular mb-0">Browse Home</p></div>
             <div
-                v-if="showonly"
                 class="togglesearch"
             >
               <button
@@ -71,9 +75,6 @@
               </button>
             </div>
           </div>
-        </div>
-
-      </div>
     </header>
   </div>
 </template>
