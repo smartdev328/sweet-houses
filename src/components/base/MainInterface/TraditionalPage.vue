@@ -1,7 +1,7 @@
 <template>
   <div class="page4">
     <div class="my-2 my-md-5 item12 mx-3">
-      <div class="item12a DMSerifRegular text-center"
+      <div class="item12a DMSerifRegular text-center" >
         <p>Benefits of a Traditional Listing</p>
       </div>
       <div
