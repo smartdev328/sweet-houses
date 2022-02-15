@@ -68,7 +68,7 @@
       </div>
       <div class="text-center Roboto-Regular">
         <p>Want a different program?</p>
-        <router-link to="/swift-sale">Try our Swift Sal</router-link>
+        <router-link to="/swift-sale">Try our Swift Sale</router-link>
       </div>
     </div>
     <div class="my-2 my-md-5 item7">
