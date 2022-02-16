@@ -2,8 +2,8 @@
   <div class="home">
     <header
     :class="{fullsize : hideMap}">
-      <div class="p-4 p-md-5 container">
-        <div class="item1 mb-3 my-2 my-md-5" :class="{'my-5':hideMap , 'py-5':hideMap}">
+      <div class="px-4 pt-4 pb-0 p-md-5 container">
+        <div class="item1  my-2 my-md-5" :class="{'mt-5':hideMap,'mb-2':hideMap , 'py-5':hideMap}">
           <div class="item1a">
             <p class="DMSerifRegular">Market Value, Hassle Free</p>
           </div>
