@@ -56,7 +56,7 @@
         </div>
          
       </div>
-      <div class="p-4  py-3 container" v-if="showonly" style="background: green">
+      <div class="p-4  py-3 container" v-if="showonly">
          <div class="item1a"><p class="DMSerifRegular mb-0">Browse Home</p></div>
             <div
                 class="togglesearch"
@@ -224,7 +224,8 @@ export default {
   font-weight: bold;
   background: transparent;
   transition: background-color 0.3s ease 0s;
-  color: rgb(4, 58, 48);
+  background: rgb(10, 133, 110);
+  color: #fff;
 }
 .home .item1 {
   margin: 0 auto;
