@@ -179,9 +179,9 @@ export const store = new Vuex.Store({
         ],
         faqs:[
             {title:'How do I know that I’m getting a fair price from Sweetly?',
-            content:`We use an independent bank-certified appraiser to view your home and provide an objective Relocation Appraisal to set our purchase price. Appraisals are used by lenders to ensure appropriate security for a mortgage and it’s the same way we determine value for our purchase price.`},
+            content:`You get FULL market value for your home from Sweetly. Our resale price is often higher than what a seller can achieve because we sell the home vacant and available immediately, and we also make improvements to ensure that the house shows it's best. When we resell your home, we retain commission of 7% of $100,000 and 3% of the balance, and you get the full balance of the resale price! The full market value is paid to you, even if the actual sale price is more than the appraised value. The major difference is you don't need to tolerate showings and seller pains.`},
             {title:`How does the Sweetly offer compare to actual market value?
-            `,content:`They are the same. Sweetly pays market value which is determined by an independent bank-certified appraiser.`},
+            `,content:`Actual market value can only be determined by the market (buyers). Our appraisal is done by a professional appraiser who's only job is to predict what a property will sell for in the current market, which makes our appraisal very reliable. Regardless of what your property sells for, we charge the same 7% of $100,000 and 3% of the balance. Which pays you the exact same net as compared to a traditional listing and sale. The difference is in the experience, given that you won't need to list your home, tolerate any public showings, and you even get to choose your own moving day.`},
             {title:`Does Sweetly negotiate on price?
             `,content:`Absolutely. If you think the appraised value has overlooked anything, please let us know and we’ll be happy to revisit the value.`},
             {title:`What is Sweetly?`,content:`We get this question almost every day, actually. There’s really no catch. We know, our programs make it easy – it’s by design! It’s not too good to be true, it’s just very good`},
