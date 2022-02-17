@@ -112,7 +112,7 @@
                 class="dropdown-menu border-0 shadow-sm"
                 aria-labelledby="navbarDropdown"
               >
-                <router-link to="/info/" class="dropdown-item">Blog</router-link>
+                <router-link to="/info" class="dropdown-item">Blog</router-link>
                 <router-link to="/about-us" class="dropdown-item"
                   >About us</router-link
                 >
