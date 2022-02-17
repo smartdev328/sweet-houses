@@ -572,7 +572,7 @@ export default {
     },
     closest_bedroomscom() {
       return (
-        this.$store.state.instant_estimate_data.comp_homes.closest_bedrooms ||
+        this.$store.state.instant_estimate_data.comp_homes.closest_bedroom ||
         {}
       );
     },
