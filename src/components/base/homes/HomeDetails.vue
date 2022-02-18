@@ -222,16 +222,26 @@
             </div>
             <div class="item6 my-2 py-5">
               <div class="mb-3 Roboto-Regular">
-                <span class="p1"
-                  >{{ homedata.address.streetNumber }}
-                  {{ homedata.address.streetDirection }}
-                  {{ homedata.address.district }}
-                </span>
-                <span class="p2 px-2"
-                  >{{ homedata.address.neighborhood }}.
-                  {{ homedata.address.state }}
-                </span>
-                <span class="p3 px-2">{{ homedata.address.city }}</span>
+                <span v-if="homedata.address.unitNumber" class="mr-1">{{homedata.address.unitNumber}}</span>
+             <span v-if="homedata.address.streetNumber" class="mr-1"> {{ homedata.address.streetNumber  }}</span>
+             <span v-if="homedata.address.streetName " class="mr-1">{{ homedata.address.streetName  }}</span>
+               <span v-if="homedata.address.streetSuffix  " class="mr-1">{{ homedata.address.streetSuffix   }}</span>
+                <span v-if="homedata.address.streetDirection   " class="mr-1">{{ homedata.address.streetDirection    }}</span>
+                   <span class="Roboto-Regular" v-if="homedata.address.neighborhood "
+                >{{ homedata.address.neighborhood }}.
+             
+              </span>
+              <span class="Roboto-Regular px-1" v-if="homedata.address.city">
+               
+                {{ homedata.address.city }}
+              </span>
+              <span class="Roboto-Regular" v-if="homedata.address.state">
+               
+                {{ homedata.address.state }}
+              </span>
+              <span class="Roboto-Regular border-left pl-2" v-if="homedata.address.area">{{
+                homedata.address.area
+              }}</span>
               </div>
               <div>
                 <address-map :lat="latitude" :lon="longitude"></address-map>
