@@ -314,7 +314,7 @@
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on market</p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on system</p>
                 </div>
                 <div class="image col-3">
                 </div>
@@ -344,9 +344,6 @@
                       getnumber(history.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <!-- <p class="mb-0 text-color-2 Roboto-Medium">
-                    8 days on market
-                  </p> -->
                 </div>
                 <div class="image col-3">
                   <!-- <img
@@ -736,7 +733,7 @@
         estate professionals who are members of CREA. Used under license.
       </p>
        <p class="Roboto-Regular" v-if="MainboardId == 21">
-                    Copyright 2022 by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
+                    Copyright {{yearnow}}  by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
 The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.<code><br></code>
 Days on Site and market statistics values are calculated by Sweetly Real Estate Inc based on values provided in the REALTORS® Association of Edmonton listing data feed.<code><br></code>
 Mortgage values are calculated by Sweetly Real Estate Inc and are provided for estimate purposes only.<code><br></code>
@@ -809,6 +806,9 @@ export default {
     ...mapState(["similerbymsl","estimatevalue"]),
     homedata() {
       return this.$store.state.currentHome;
+    },
+    yearnow(){
+        return new Date().getFullYear();
     },
     latitude() {
       return this.homedata.map.latitude * 1;

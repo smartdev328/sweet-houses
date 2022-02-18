@@ -603,30 +603,10 @@ later</p>
 
                             </div>
                         </div> -->
-
-
-            <div class="item12 my-2 py-3">
-                            <div class="item1">
-                                <p class="text-color-1  Roboto-Medium">Listing Brokerage</p>
-                            </div>
-                            <div class="item2 Roboto-Regular">
-                                <div class="row">
-                                    <div class="col-12" v-for="agent in homedata.agents" :key="agent.id">
-                                      <p> Listing Provided by {{agent.name}} OF {{agent.brokerage.name}} , {{mlsnum}}</p>
-                                     
-                                       </div>
-                                    <!-- <div class="col-9">{{mlsnum}}</div> -->
-                                </div>
-                                 <!-- <div class="row">
-                                    <div class="col-3">Brokerage</div>
-                                    <div class="col-9">{{homedata.agents[0].name}},{{homedata.agents[0].brokerage.name}}</div>
-                                </div> -->
-                            </div>
-            </div>
             <div class="my-5 disclaimer-content">
                 <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
                  <p class="Roboto-Regular" v-if="MainboardId == 21">
-                    Copyright 2022 by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
+                    Copyright {{yearnow}} by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
 The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.<code><br></code>
 Days on Site and market statistics values are calculated by Sweetly Real Estate Inc based on values provided in the REALTORS® Association of Edmonton listing data feed.<code><br></code>
 Mortgage values are calculated by Sweetly Real Estate Inc and are provided for estimate purposes only.<code><br></code>
@@ -777,6 +757,9 @@ export default {
     ...mapState(["similerbymsl","estimatevalue"]),
     homedata() {
       return this.$store.state.currentHome;
+    },
+    yearnow(){
+        return new Date().getFullYear();
     },
     latitude() {
       return this.homedata.map.latitude * 1;

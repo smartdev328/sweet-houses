@@ -22,7 +22,7 @@
           of use governing such an area are in conflict with these Terms, the
           additional terms shall control.
         </p><br>
-        <h4>Policies Applicable to Participants’ VOWs </h4>
+        <!-- <h4>Policies Applicable to Participants’ VOWs </h4>
         <br />
         <ol style="list-style: lower-alpha;">
           <li>Participants may provide additional Brokerage services via a VOW in addition to making  MLS® System listing data available, but only to consumers with whom the Participants  have first established relationships, including completion of all actions and/or forms  respecting agency disclosure required by provincial law or regulation in connection with  providing real estate Brokerage services to clients and customers (hereinafter  “Registrants). The Cooperative recommends that the most current Agency  Relationships Guide be displayed for consumer review and acceptance. Such  acceptance should require a click to accept at the Buyer Brokerage Verification section
@@ -115,7 +115,7 @@ For purposes of this paragraph, selling does not include making referrals of  pr
                 </li>
             
          
-        </ol>
+        </ol> -->
         <h4>Visitors of this website</h4>
         <br />
 
