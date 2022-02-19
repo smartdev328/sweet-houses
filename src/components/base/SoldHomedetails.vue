@@ -613,7 +613,10 @@ Mortgage values are calculated by Sweetly Real Estate Inc and are provided for e
 The Sweetly Estimate is calculated by Sweetly Real Estate Inc and is provided as a general estimate only.<code><br></code>
 Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
 
-                 </p>
+                 </p><br>
+                  <p  class="Roboto-Regular text-color-1">
+                    Listing information last updated on {{lastupdatemonth}} at {{lastupdatehour}}  ({{timezone}})
+                 </p> 
             </div>
                 </div>
           <!-- <div class="col-12 col-md-4">
@@ -792,7 +795,26 @@ export default {
       }  
       return []
        
-    }
+    },
+       timezone(){
+      return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    },
+    lastupdate(){
+      var d = new Date(); /* midnight in China on April 13th */
+     return   d.toLocaleString('en-US', { timeZone: this.timezone });
+    },
+    lastupdatemonth(){
+      return moment(this.lastupdate).format("MMM Do YY");
+    },
+    lastupdatehour(){
+      const d = new Date();
+     let res =  d.toLocaleString('en-US',  {
+        timeZone: this.timezone,
+    hour: '2-digit',
+    hour12: true
+})
+    return  res.replace(/[ ,]+/g, ":00 ")
+    },
   },
   components: {
     VueSlickCarousel,
