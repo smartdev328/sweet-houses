@@ -57,7 +57,7 @@
          
       </div>
       <div class="px-4 py-0 container" v-if="showonly">
-         <div class="item1a"><p class="DMSerifRegular mb-0">Browse Home</p></div>
+         <div class="item1a"><p class="DMSerifRegular mb-0">Browse Homes</p></div>
             <div
                 class="togglesearch"
             >
