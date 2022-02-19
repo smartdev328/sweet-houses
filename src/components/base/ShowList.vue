@@ -5,7 +5,10 @@
 
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}} <span class="DMSerifRegular text-color-2">Results</span> </p>
+                <p class="font-weight-bold" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}}
+                  <span class="DMSerifRegular text-color-2" style="font-size: 16px;" v-if="listingsold.count > 15000">Listings Found | Showing 0-30 |Only 1500 properties may be displayed per search. To see all your results, try narrowing your search criteria</span>
+                  <span class="DMSerifRegular text-color-2" v-else>Results</span>
+                </p>
             </div>
             <div class="item1b">
                 <button class="Roboto-Regular btn bg-white" @click="submit">Show Map</button>
