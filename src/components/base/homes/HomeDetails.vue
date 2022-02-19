@@ -889,7 +889,7 @@ export default {
         });
     },
     gettime(item) {
-      return moment(item).endOf("day").fromNow();
+      return moment(item).endOf("day").fromNow(true);
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
