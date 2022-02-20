@@ -159,7 +159,7 @@
                 ${{ homedata.listPrice.toLocaleString("ja-JP") }}
               </p>
               <p class="Roboto-Regular">
-                Listed {{ gettime(homedata.listDate) }}
+                 {{ gettime(homedata.listDate) }} on Sweetly
               </p>
             </div>
             <div
