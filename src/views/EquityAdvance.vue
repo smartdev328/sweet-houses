@@ -108,7 +108,6 @@ day - like a traditional listing/selling process.</li>
                         <img  src="../assets/image/homepage/Component 89 – 1.svg" class="w-100 h-100" alt="">
                     </div> 
                 </div>
-                <!-- <div class="col-12 col-md-1"></div> -->
                  <div class="col-12 col-md-6">
                     <p class="DMSerifRegular">Consider Any Other Offers</p>
                     <ul>
