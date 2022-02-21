@@ -189,20 +189,32 @@
                 <span>{{ homedata.details.propertyType }}</span>
               </p>
             </div>
-             <div class="item6 my-2 py-5">
+            <div class="item6 my-2 py-5">
               <div class="mb-3 Roboto-Regular">
-                <span class="p1"
-                  >{{ homedata.address.streetNumber }}
-                  {{ homedata.address.streetDirection }}
-                  {{ homedata.address.district }}
-                </span>
-                <span class="p2 px-2"
-                  >{{ homedata.address.neighborhood }}.
-                  {{ homedata.address.state }}
-                </span>
-                <span class="p3 px-2">{{ homedata.address.city }}</span>
+                <span v-if="homedata.address.unitNumber" class="mr-1">{{homedata.address.unitNumber}}</span>
+                <span v-if="homedata.address.streetNumber" class="mr-1"> {{ homedata.address.streetNumber  }}</span>
+                <span v-if="homedata.address.streetName " class="mr-1">{{ homedata.address.streetName  }}</span>
+                <span v-if="homedata.address.streetSuffix  " class="mr-1">{{ homedata.address.streetSuffix   }}</span>
+                <span v-if="homedata.address.streetDirection   " class="mr-1">{{ homedata.address.streetDirection    }}</span>
+                <span class="Roboto-Regular" v-if="homedata.address.neighborhood "
+                >{{ homedata.address.neighborhood }}.
+
+              </span>
+                <span class="Roboto-Regular px-1" v-if="homedata.address.city">
+
+                {{ homedata.address.city }}
+              </span>
+                <span class="Roboto-Regular" v-if="homedata.address.state">
+
+                {{ homedata.address.state }}
+              </span>
+                <span class="Roboto-Regular border-left pl-2" v-if="homedata.address.area">{{
+                    homedata.address.area
+                  }}</span>
               </div>
-         
+              <div>
+                <address-map :lat="latitude" :lon="longitude"></address-map>
+              </div>
             </div>
 
               <div class="item12 text-center my-3 pointer" v-if="!isLoggedIn">
@@ -228,28 +240,32 @@
             <div class="item7 my-3">
               <p class="DMSerifRegular text-color-1">Property History</p>
             </div>
-            <div class="item8 my-2 py-2">
-              <div class="d-flex justify-content-between w-100 w-md-50">
-                <div class="item8a">
-                  <div class="d-flex align-items-center">
+            <div
+                class="item8 my-2 py-2"
+                v-if="Object.keys(homedata.history_details).length"
+            >
+              <div class="d-flex justify-content-between w-50">
+                <div class="item8a" v-if="homedata.history_details">
+                  <div class="d-flex align-items-center" v-if="homedata.history_details.comparedToLastSold">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">$ x,xxx,xxx</p>
+                    <p class="mb-0 Roboto-Medium ml-3" v-if="homedata.history_details.comparedToLastSold">${{homedata.history_details.comparedToLastSold.toLocaleString("ja-JP")}}</p>
                   </div>
-                  <p class="mb-0 Roboto-Regular p2">Compared to last sold</p>
+                  <p class="mb-0 Roboto-Regular p2" v-if="homedata.history_details.comparedToLastSold.length">Compared to last sold</p>
                 </div>
-                <div class="item8a">
+                <div class="item8a" v-if="homedata.history_details.yearlyAppreciation.length">
                   <div class="d-flex align-items-center">
                     <img src="../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">x%</p>
+                    <p class="mb-0 Roboto-Medium ml-3">{{homedata.history_details.yearlyAppreciation}}%</p>
                   </div>
                   <p class="mb-0 Roboto-Regular p2">Yearly appreciation</p>
                 </div>
               </div>
             </div>
 
-        <div class="item9">
-            <div
-                class="
+            <div class="item9 my-2 py-3" v-if="homedata.history.length == 0">
+
+              <div
+                  class="
                   item9a
                   new
                   my-3
@@ -258,21 +274,25 @@
                   align-items-center
                 "
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
-                  <p class="mb-0">{{formatdatehistory(homedata.listDate)}}</p>
-                    <p class="mb-0" >{{gettime(homedata.soldDate)}}</p>
-                    
-                    </div>
-                <div class="col-6 col-md-5">
-                  <p class="mb-0 Roboto-Medium" v-if="isLoggedIn && homedata.soldPrice">Sold for ${{ homedata.soldPrice.toLocaleString("ja-JP") }}</p>
-                   <p class="mb-0 Roboto-Medium" v-if="!isLoggedIn && homedata.soldPrice">Sold for $xxx,xxx
-                     
-                   </p>
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                  <p class="mb-0 element2">New</p>
+                </div>
+                <div class="col-5">
+                  <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
+                    Listed for ${{
+                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                    }}
+                  </p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
                 </div>
                 <div class="image col-3">
                 </div>
               </div>
-        </div>
+
+
+
+
+            </div>
          
 
             <div v-if="homedata.history.length > 0" class="item9">
@@ -284,24 +304,29 @@
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-1
                 "
                 
                 v-for="history in homedata.history" :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
-                    <p class="mb-0">{{gettime(history.listDate)}}</p>
-                    <p class="mb-0">{{formatdatehistory(history.listDate)}}</p>
-                    </div>
-                <div class="col-6 col-md-5">
-                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">Sold for ${{getnumber(history.listPrice).toLocaleString("ja-JP") }}</p>
+                    <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
+                    <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
+                  </div>
+                <div class="col-6 col-md-5" v-if="!history.soldDate">
+                  <p class="mb-0 Roboto-Medium text-color-5 element3" >
+                    <u> Listed without selling </u>
+                  </p>
+                  <p class="mb-0 text-color-2 Roboto-Medium ">Listed for $ {{getnumber(history.listPrice)}}</p>
                 </div>
+                 <div class="col-6 col-md-5" v-if="history.soldDate">
+                   <p class="mb-0 Roboto-Medium text-color-6 element3" >
+                     <u>Sold for ${{getnumber(history.listPrice)}} </u>
+                   </p>
+                   <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}}</p>
+                 </div>
                 <div class="image col-3">
-                  <!-- <img
-                    src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100 withoutlogin"
-                    alt="image"
-                  />
-                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt=""> -->
+
                 </div>
               </div>
             </div>
@@ -477,132 +502,6 @@ later</p>
 
 
         </div>
-            
-         
-          
-           
-          
-           
-              
-            <!-- <div class="item10 my-2 py-3">
-                            <div class="item1">
-                                <p class="text-color-1 DMSerifRegular">Commute Time</p>
-                            </div>
-                            <div class="item2 px-2 d-flex">
-                                <div>
-                                    <img src="../../assets/image/icon/commute.svg" alt="">
-                                </div>
-                                <div class="w-100 ml-2">
-                                    <p class="mb-0 item2a Roboto-Regular">
-                                        <span>19555 Shaws </span>
-                                        <span>Yonge-St. Clair </span>
-                                        <span class="px-2">City Name</span>
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between w-100 item2b my-2">
-                                        <div class="form-group mb-0 w-75">
-                                            <input type="text" class="w-100 form-control form-control-lg shadow-sm" placeholder="Enter a location to view travel times">
-                                        </div>
-                                        <button class="btn">Show Travel Time</button>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" id="package-area-0" type="checkbox" checked="checked" />
-                                        <label class="custom-control-label" for="package-area-0">During peak traffic </label>  
-                                    </div> 
-                                </div>
-                            </div>
-                        </div> -->
-     
-            <!-- <div class="item13 my-2 py-3"> 
-                            <div class="item1">
-                                <p class="title Roboto-Medium">Main Level</p>
-
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p>Kitchen</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>19'8' ' x 26'2' '</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p>Living</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>26'2' ' x 13'1' '</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p>Dining </p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>26'2' ' x 13'1' '</p>
-                                    </div>
-                                </div>
-
-
-                                 <div class="row">
-                                    <div class="col-3">
-                                        <p>Master </p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>13'1' ' x 13'1' '</p>
-                                    </div>
-                                </div>
-
-                                 <div class="row">
-                                    <div class="col-3">
-                                        <p>2nd Br </p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>13'1' ' x 9'10' '</p>
-                                    </div>
-                                </div>
-
-                                 <div class="row">
-                                    <div class="col-3">
-                                        <p>3rd Br</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>13'1' ' x 9'10' '</p>
-                                    </div>
-                                </div>
-                            <p class="title mt-3 Roboto-Medium">Lower</p>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p>Kitchen</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>9'10' ' x 16'4' '</p>
-                                    </div>
-                                </div>
-
-                                    <div class="row">
-                                    <div class="col-3">
-                                        <p>Rec</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>926'2' ' x 26'2' '</p>
-                                    </div>
-                                </div>
-
-                                 <div class="row">
-                                    <div class="col-3">
-                                        <p>Br</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>13'1' ' x 9'10' '</p>
-                                    </div>
-                                </div>
-
-                                 
-
-
-                            </div>
-                        </div> -->
             <div class="my-5 disclaimer-content">
                 <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
                  <p class="Roboto-Regular" v-if="MainboardId == 21">
@@ -804,7 +703,7 @@ export default {
      return   d.toLocaleString('en-US', { timeZone: this.timezone });
     },
     lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YY");
+      return moment(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();
@@ -1081,16 +980,28 @@ export default {
   font-size: 16px;
   color: #707070;
 }
+.homedetails .item9 .item9a .element1{
+  font-size: 20px;
+  color: #ffb600;
+}
+.homedetails .item9 .item9a .element2{
+  font-size: 20px;
+}
+.homedetails .item9 .item9a .element3{
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .homedetails .item9 {
   border-bottom: 1px solid #7070706b;
 }
-.homedetails .item9 div:first-child {
-  font-size: 24px;
-}
-.homedetails .item9 div:nth-child(2) p:first-child {
-  color: #ffb600;
-  font-size: 24px;
-}
+/*.homedetails .item9 div:first-child {*/
+/*  font-size: 24px;*/
+/*}*/
+/*.homedetails .item9 div:nth-child(2) p:first-child {*/
+/*  color: #ffb600;*/
+/*  font-size: 24px;*/
+/*}*/
 .homedetails .item9 .item9a .image {
   width: 120px;
   height: 90px;

@@ -218,7 +218,7 @@
                 >Contact</router-link
               >
                <router-link class="dropdown-item pl-3" to="/for-realtor"
-                >For Realtors</router-link
+                >For  REALTORS®</router-link
               >
                <router-link class="dropdown-item pl-3" to="/agents"
                 >Agents</router-link

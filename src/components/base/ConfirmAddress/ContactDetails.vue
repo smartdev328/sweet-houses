@@ -207,7 +207,7 @@ export default {
       { name: "Radio" },
       { name: "Letter / Postcard" },
       { name: "Friend" },
-      { name: "Sweetly Realtor" },
+      { name: "Sweetly REALTOR®" },
       { name: "Billboard" },
       { name: "YouTube" },
       { name: "Other" },

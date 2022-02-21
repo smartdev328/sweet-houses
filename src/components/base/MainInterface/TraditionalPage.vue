@@ -151,7 +151,7 @@ export default {
           details: `
             <p>I was born in Edmonton, to parents from rural backgrounds and lived within blocks of the original Fort Edmonton and the Legislature building.</p>
             <p>My father was a building contractor, and I spent my preschool years with my dad at houses he was building. I learned about the housing industry, and as I got older became interested in the operation of the family business and eventually decided to become a Real Estate Professional. My oldest son followed in the same industry direction and is now a Real Estate Appraiser.</p>
-            <p>When I had decided to become a Real Estate Professional, I originally started with Metro City Realty in June of 1995. I have enjoyed my work as a Realtor and have acquired considerable amounts of my own real estate during the time. I’m excited for my move to “Sweetly” as I know it will offer myself and my client’s new options and added benefits in the purchase and sale of their homes.</p>
+            <p>When I had decided to become a Real Estate Professional, I originally started with Metro City Realty in June of 1995. I have enjoyed my work as a  REALTOR® and have acquired considerable amounts of my own real estate during the time. I’m excited for my move to “Sweetly” as I know it will offer myself and my client’s new options and added benefits in the purchase and sale of their homes.</p>
         `,
         },
       ],
