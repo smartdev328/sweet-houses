@@ -145,6 +145,12 @@ body{
 .text-color-4{
   color: #FFB600;
 }
+.text-color-5{
+  color:#0a856e !important;
+}
+.text-color-6{
+  color:#c95055;
+}
 .pointer{
   cursor: pointer;
 }

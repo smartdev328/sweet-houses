@@ -159,7 +159,7 @@
                 ${{ homedata.listPrice.toLocaleString("ja-JP") }}
               </p>
               <p class="Roboto-Regular">
-                Listed {{ gettime(homedata.listDate) }}
+                 {{ gettime(homedata.listDate) }} on Sweetly
               </p>
             </div>
             <div
@@ -276,13 +276,13 @@
             >
               <div class="d-flex justify-content-between w-50">
                 <div class="item8a" v-if="homedata.history_details">
-                  <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center" v-if="homedata.history_details.comparedToLastSold.length">
                     <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
                     <p class="mb-0 Roboto-Medium ml-3" v-if="homedata.history_details.comparedToLastSold">${{homedata.history_details.comparedToLastSold.toLocaleString("ja-JP")}}</p>
                   </div>
-                  <p class="mb-0 Roboto-Regular p2">Compared to last sold</p>
+                  <p class="mb-0 Roboto-Regular p2" v-if="homedata.history_details.comparedToLastSold.length">Compared to last sold</p>
                 </div>
-                <div class="item8a">
+                <div class="item8a" v-if="homedata.history_details.yearlyAppreciation.length">
                   <div class="d-flex align-items-center">
                     <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
                     <p class="mb-0 Roboto-Medium ml-3">{{homedata.history_details.yearlyAppreciation}}%</p>
@@ -291,10 +291,10 @@
                 </div>
               </div>
             </div>
-            <div class="item9 my-2 py-3">
+            <div class="item9 my-2 py-3" v-if="homedata.history.length == 0">
 
-                <div
-                class="
+              <div
+                  class="
                   item9a
                   new
                   my-3
@@ -304,12 +304,10 @@
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0">{{ (homedata.lastStatus) }}</p>
-                 
-                  <!-- <p class="mb-0">{{ formatdatehistory(homedata.listDate) }}</p> -->
+                  <p class="mb-0 element2">New</p>
                 </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium" v-if="homedata.listPrice">
+                  <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
                     Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
@@ -322,66 +320,43 @@
 
 
 
+
+            </div>
+            <div v-if="homedata.history.length > 0" class="item9">
               <div
-                class="
+                  class="
                   item9a
                   new
                   my-3
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-1
                 "
-                v-for="history in homedata.history"
-                :key="history.id"
+
+                  v-for="history in homedata.history" :key="history.id"
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0">{{ gettime(history.listDate) }}</p>
-                  <p class="mb-0">{{ formatdatehistory(history.listDate) }}</p>
+                <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
+                  <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
+                  <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
                 </div>
-                <div class="col-5">
-                  <p class="mb-0 Roboto-Medium" v-if="history.listPrice">
-                    Listed for ${{
-                      getnumber(history.listPrice).toLocaleString("ja-JP")
-                    }}
+                <div class="col-6 col-md-5" v-if="!history.soldDate">
+                  <p class="mb-0 Roboto-Medium text-color-5 element3" >
+                    <u> Listed without selling </u>
                   </p>
+                  <p class="mb-0 text-color-2 Roboto-Medium ">Listed for $ {{getnumber(history.listPrice)}}</p>
+                </div>
+                <div class="col-6 col-md-5" v-if="history.soldDate">
+                  <p class="mb-0 Roboto-Medium text-color-6 element3" >
+                    <u>Sold for ${{getnumber(history.listPrice)}} </u>
+                  </p>
+                  <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}}</p>
                 </div>
                 <div class="image col-3">
-                  <!-- <img
-                    src="../../assets/image/blog/hand.png"
-                    class="w-100 h-100 withoutlogin"
-                    alt="image"
-                  />
-                  <img src="../../assets/image/icon/lockimg.svg" class="w-100 h-100 lockimg" alt=""> -->
+
                 </div>
               </div>
             </div>
-            <!-- <div class="item10 my-2 py-3">
-                            <div class="item1">
-                                <p class="text-color-1 DMSerifRegular">Commute Time</p>
-                            </div>
-                            <div class="item2 px-2 d-flex">
-                                <div>
-                                    <img src="../../assets/image/icon/commute.svg" alt="">
-                                </div>
-                                <div class="w-100 ml-2">
-                                    <p class="mb-0 item2a Roboto-Regular">
-                                        <span>19555 Shaws </span>
-                                        <span>Yonge-St. Clair </span>
-                                        <span class="px-2">City Name</span>
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between w-100 item2b my-2">
-                                        <div class="form-group mb-0 w-75">
-                                            <input type="text" class="w-100 form-control form-control-lg shadow-sm" placeholder="Enter a location to view travel times">
-                                        </div>
-                                        <button class="btn">Show Travel Time</button>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" id="package-area-0" type="checkbox" checked="checked" />
-                                        <label class="custom-control-label" for="package-area-0">During peak traffic </label>  
-                                    </div> 
-                                </div>
-                            </div>
-                        </div> -->
             <div class="item11 my-2 py-3">
               <div class="item1">
                 <p class="text-color-1 DMSerifRegular">Home Details</p>
@@ -854,7 +829,7 @@ export default {
      return   d.toLocaleString('en-US', { timeZone: this.timezone });
     },
     lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YY");
+      return moment(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();
@@ -1148,16 +1123,27 @@ export default {
   font-size: 16px;
   color: #707070;
 }
+.homedetails .item9 .item9a .element1{
+  font-size: 20px;
+  color: #ffb600;
+}
+.homedetails .item9 .item9a .element2{
+  font-size: 20px;
+}
+.homedetails .item9 .item9a .element3{
+  font-size: 20px;
+  font-weight: bold;
+}
 .homedetails .item9 {
   border-bottom: 1px solid #7070706b;
 }
-.homedetails .item9 div:first-child {
-  font-size: 24px;
-}
-.homedetails .item9 div:nth-child(2) p:first-child {
-  color: #ffb600;
-  font-size: 24px;
-}
+/*.homedetails .item9 div:first-child {*/
+/*  font-size: 24px;*/
+/*}*/
+/*.homedetails .item9 div:nth-child(2) p:first-child {*/
+/*  color: #ffb600;*/
+/*  font-size: 24px;*/
+/*}*/
 .homedetails .item9 .item9a .image {
   width: 120px;
   height: 90px;

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="my-5">
             <div class="item1 Roboto-Medium text-color-1">
-                <p>Our Team Of Edmonton Realtors</p>
+                <p>Our Team Of Edmonton  REALTORS®</p>
            </div>
                     <div class="item2">
                             <div class="gridcol" v-for="agent in agents" :key="agent.id">
