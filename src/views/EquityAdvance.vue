@@ -122,7 +122,7 @@ any other buyer, you can take it!.</li>
                         <li>  <div class="icon mr-3">
                                 <img src="../assets/image/homepage/icon2.svg"  class="w-100 h-100" alt="">
                             </div>There's no cost to accept a better offer - only our 
-traditional Realtor commission will apply.</li>
+traditional  REALTOR® commission will apply.</li>
                     </ul>
                 </div>
             </div>
