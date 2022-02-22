@@ -42,7 +42,7 @@
     </div>
     <div class="my-2 my-md-5 item13">
       <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
-        <p>A Swift Sale is Right For You, If You</p>
+        <p>A Swift Sale is Right For You, If You:</p>
       </div>
       <div class="item13a p-4 shadow-sm">
         <div class="image">
@@ -187,24 +187,22 @@ export default {
       Benefitsdata: [
         {
           title: "Market Value Sale",
-          content: ` You get full market value on the day you choose.
-  The cost is basically <u>the same as our standard full service commission</u>
-  .`,
+          content: `You get full market value for your home.`,
           image: require("../../../assets/image/1-MarketValueSale.png"),
         },
         {
-          title: "Sell Without Listings ",
+          title: "Sell Without Showings ",
           content: ` Accepting our offer means that your home isn’t listed for sale until after you move out.`,
           image: require("../../../assets/image/2-SellWithoutListings.png"),
         },
         {
           title: "No Showings",
-          content: `Avoid the disruption of strangers touring your home and inconvenient open house weekends`,
+          content: `Avoid the disruption of strangers touring your home and inconvenient open house weekends.`,
           image: require("../../../assets/image/HappyFamilyMorning.jpg"),
         },
         {
           title: "Pick Your Closing Day",
-          content: `Pick the moving day that works best for you (within 45 days). You may also change the day with notice at no cast.`,
+          content: `Pick the moving day that works best for you (within 45 days). You may also change the day with notice at no cost.`,
           image: require("../../../assets/image/4-PickYourClosingDay.jpeg"),
         },
       ],
