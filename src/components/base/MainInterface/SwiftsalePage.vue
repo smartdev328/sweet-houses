@@ -174,14 +174,14 @@ export default {
     return {
       selected_part: "Swiftpart",
       Traditionaldata: [
-        { content: " Value your time and convenience" },
-        { content: "Have pets who don’t like stranger" },
-        { content: "Have children and a busy lifestyle" },
-        { content: " Like to be in control and hate surprises" },
-        { content: "Already have a new home waiting" },
+        { content: " Value your time and convenience." },
+        { content: "Have pets who don’t like strangers." },
+        { content: "Have children and a busy lifestyle." },
+        { content: " Like to be in control and hate surprises." },
+        { content: "Already have a new home waiting." },
         {
           content:
-            "Plan to buy your next home using the money from the one you have",
+            "Plan to buy your next home using the money from the one you have.",
         },
       ],
       Benefitsdata: [
