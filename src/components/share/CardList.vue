@@ -105,7 +105,7 @@
             {{ gettime(homedata.listDate) }}
           </p>
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
-            {{ gettime(homedata.soldDate) }}
+            {{ gettime(homedata.listDate) }}
           </p>
         </div>
         <div class="element2" v-if="homedata.offer_price">
@@ -187,6 +187,7 @@ export default {
     currentcount: 1,
     sold: false,
     saved: null,
+    createdToday:false,
     slideimgs:[]
     //  settings:{
     //         "dots": false,
@@ -247,23 +248,30 @@ export default {
       if (this.type == "forsale") {
         return new Date(this.homedata.listDate).getTime();
       } else {
-        return new Date(this.homedata.soldDate).getTime();
+        return new Date(this.homedata.listDate).getTime();
       }
     },
-    createdToday() {
-      let timestamp = this.taday - this.homestartdate;
-      let numhr = Math.floor(timestamp / 1000 / 60 / 60 / 24);
-      if (numhr < 2) {
-        return true;
-      } else {
-        return false;
-      }
-    },
+    // createdToday() {
+    //  //  let timestamp = this.taday - this.homestartdate;
+    //  //  let numhr = Math.floor(timestamp / 1000 / 60 / 60 / 24);
+    //  //  if (numhr < 2) {
+    //  //    return true;
+    //  //  } else {
+    //  //    return false;
+    //  //  }
+    // },
     
   },
   methods: {
     gettime(item) {
-      return moment(item).endOf("day").fromNow();
+      let relativetime = moment(item).endOf("day").fromNow();
+      if(relativetime.includes('hour')){
+        this.createdToday = true
+      }
+      else {
+        return relativetime
+      }
+
     },
     getImage() {
       //  this.currentcount +=1
