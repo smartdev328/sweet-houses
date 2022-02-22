@@ -191,7 +191,7 @@ export default {
           image: require("../../../assets/image/2-SellWithoutListings.png"),
         },
         {
-          title: "No Showings",
+          title: "Skip Showings",
           content: `Avoid the disruption of strangers touring your home and inconvenient open house weekends.`,
           image: require("../../../assets/image/HappyFamilyMorning.jpg"),
         },
