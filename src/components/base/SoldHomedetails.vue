@@ -275,7 +275,7 @@
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2">New</p>
+                  <p class="mb-0 element2">NOW</p>
                 </div>
                 <div class="col-5">
                   <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
@@ -296,6 +296,30 @@
          
 
             <div v-if="homedata.history.length > 0" class="item9">
+              <div
+                  class="
+                  item9a
+                  new
+                  my-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                  <p class="mb-0 element2">NOW</p>
+                </div>
+                <div class="col-5">
+                  <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
+                    Listed for ${{
+                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                    }}
+                  </p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                </div>
+                <div class="image col-3">
+                </div>
+              </div>
                <div
                 class="
                   item9a

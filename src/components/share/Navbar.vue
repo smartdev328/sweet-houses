@@ -114,7 +114,16 @@
               >
                 <router-link to="/info/" class="dropdown-item">Blog</router-link>
                 <router-link to="/about-us" class="dropdown-item"
-                  >About us</router-link
+                >About us</router-link
+                >
+                <router-link class="dropdown-item pl-3" to="/contact-us"
+                >Contact</router-link
+                >
+                <router-link class="dropdown-item pl-3" to="/for-realtor"
+                >For  REALTORS®</router-link
+                >
+                <router-link class="dropdown-item pl-3" to="/agents"
+                >Agents</router-link
                 >
               </div>
             </li>
