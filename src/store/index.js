@@ -396,7 +396,6 @@ export const store = new Vuex.Store({
         city:"",
         imageArr:[],
         posY:null,
-
     },
     mutations:{
         setType(state,payload){
