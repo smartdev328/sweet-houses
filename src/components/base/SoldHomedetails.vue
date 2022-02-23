@@ -272,29 +272,25 @@
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-3
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{homedata.lastStatus}}</p>
+                  <p class="mb-0 element2">Current Status</p>
                 </div>
-                <div class="col-5">
-                  <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.listPrice">
-                    Sold for ${{
+                <div class="col-8">
+                  <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.soldPrice">
+                    Sold for  ${{
                       getnumber(homedata.soldPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <div class="d-flex">
-                    <p class="mb-0 Roboto-Medium text-color-2 mr-1">Listed for ${{
-                        getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                      }}</p> <span>&#8226;</span>
-
-
-                    <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
-                  </div>
+                  <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
+                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                    }} , {{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
 
                 </div>
-                <div class="image col-3">
-                </div>
+<!--                <div class="image col-3">-->
+<!--                </div>-->
               </div>
 
 
@@ -312,21 +308,24 @@
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-3
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{homedata.lastStatus}}</p>
+                  <p class="mb-0 element2">Current Status</p>
                 </div>
-                <div class="col-5">
-                  <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
-                    Listed for ${{
-                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                <div class="col-8">
+                  <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.soldPrice">
+                    Sold for  ${{
+                      getnumber(homedata.soldPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                  <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
+                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                    }} , {{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
                 </div>
-                <div class="image col-3">
-                </div>
+<!--                <div class="image col-3">-->
+<!--                </div>-->
               </div>
                <div
                 class="
@@ -336,14 +335,14 @@
                   d-flex
                   justify-content-between
                   align-items-center
-                  py-1
+                  py-2
                 "
                 
                 v-for="history in homedata.history" :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
-                    <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
-                    <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
+                    <p class="mb-0 element1">{{formatdatehistory(history.soldDate)}}</p>
+                    <p class="mb-0 element2">{{gettime(history.soldDate)}}</p>
                   </div>
                 <div class="col-6 col-md-5" v-if="!history.soldDate">
                   <p class="mb-0 Roboto-Medium text-color-5 element3" >
@@ -355,7 +354,7 @@
                    <p class="mb-0 Roboto-Medium text-color-6 element3" >
                      <u>Sold for ${{getnumber(history.listPrice)}} </u>
                    </p>
-                   <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}}</p>
+                   <p class="mb-0 text-color-5 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
                  </div>
                 <div class="image col-3">
 
@@ -734,6 +733,7 @@ export default {
       var d = new Date(); /* midnight in China on April 13th */
      return   d.toLocaleString('en-US', { timeZone: this.timezone });
     },
+
     lastupdatemonth(){
       return moment(this.lastupdate).format("MMM Do YYYY");
     },
@@ -760,6 +760,9 @@ export default {
     },
     close(e) {
       console.log(e);
+    },
+    formatdate(date){
+      return moment(date).format("MMM Do YYYY");
     },
     copyURL() {
       var Url = this.$refs.mylink;

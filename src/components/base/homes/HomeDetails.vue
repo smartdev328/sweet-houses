@@ -301,21 +301,22 @@
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-3
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{ homedata.lastStatus }}</p>
+                  <p class="mb-0 element2">Current Status</p>
                 </div>
-                <div class="col-5">
+                <div class="col-8">
                   <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
-                    Listed for ${{
+                    Listed for  ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
                 </div>
-                <div class="image col-3">
-                </div>
+<!--                <div class="image col-3">-->
+<!--                </div>-->
               </div>
 
 
@@ -331,21 +332,22 @@
                   d-flex
                   justify-content-between
                   align-items-center
+                  py-3
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{ homedata.lastStatus }}</p>
+                  <p class="mb-0 element2" >Current Status</p>
                 </div>
-                <div class="col-5">
+                <div class="col-8">
                   <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
                     Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                   <p class="mb-0 Roboto-Medium text-color-5">{{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
                 </div>
-                <div class="image col-3">
-                </div>
+                <!-- <div class="image col-3">
+                </div> -->
               </div>
               <div
                   class="
@@ -357,7 +359,6 @@
                   align-items-center
                   py-1
                 "
-
                   v-for="history in homedata.history" :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
@@ -368,13 +369,13 @@
                   <p class="mb-0 Roboto-Medium text-color-5 element3" >
                     <u> Listed without selling </u>
                   </p>
-                  <p class="mb-0 text-color-2 Roboto-Medium ">Listed for $ {{getnumber(history.listPrice)}}</p>
+                  <p class="mb-0 text-color-2 Roboto-Medium ">Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
                 </div>
                 <div class="col-6 col-md-5" v-if="history.soldDate">
                   <p class="mb-0 Roboto-Medium text-color-6 element3" >
                     <u>Sold for ${{getnumber(history.listPrice)}} </u>
                   </p>
-                  <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}}</p>
+                  <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
                 </div>
                 <div class="image col-3">
 
@@ -877,6 +878,9 @@ export default {
     VueSlickCarousel,
   },
   methods: {
+    formatdate(date){
+      return moment(date).format("MMM Do YYYY");
+    },
     Openverifyemailbtcode(){
       this.$bvModal.show("verify-modal");
       this.$bvModal.hide("my-modallogin");
