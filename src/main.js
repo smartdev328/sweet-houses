@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 Vue.config.productionTip = false
 import {store} from './store'
 import { BootstrapVue , IconsPlugin } from 'bootstrap-vue'
-// Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
@@ -37,7 +36,6 @@ const api = axios.create({
       }
     
 })
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 Vue.prototype.$http = api
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user')
@@ -62,9 +60,7 @@ Vue.use(VueSocialSharing);
 
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
-// Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
 import LazyLoadDirective from "./directives/LazyLoadDirective";
