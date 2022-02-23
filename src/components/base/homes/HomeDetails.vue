@@ -313,7 +313,7 @@
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
+                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
                 </div>
 <!--                <div class="image col-3">-->
 <!--                </div>-->
@@ -344,7 +344,7 @@
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                   <p class="mb-0 Roboto-Medium text-color-5">{{ homedata.daysOnMarket}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
+                   <p class="mb-0 Roboto-Medium text-color-5">{{ gettime(homedata.listDate) }} on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
                 </div>
                 <!-- <div class="image col-3">
                 </div> -->
