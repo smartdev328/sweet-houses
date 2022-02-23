@@ -335,7 +335,7 @@ export default {
               contactinput.phone = this.phone;
               this.$store.commit("setContactDetail", contactinput);
               this.scheduleEvent()
-              window.scrollTo(0,0);
+              document.body.scrollTop = 0;
             } else {
              this.loadvalid = false;
              this.emailisvalid = false;

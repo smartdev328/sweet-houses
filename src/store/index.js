@@ -554,7 +554,7 @@ export const store = new Vuex.Store({
             // })
         },
         ScrollTop(){
-            window.scrollTo(0,0);
+            document.body.scrollTop = 0;
         },
         
         verifycodeactive({commit , state} , input){
