@@ -116,13 +116,13 @@
                 <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
                 >
-                <router-link class="dropdown-item pl-3" to="/contact-us"
+                <router-link class="dropdown-item" to="/contact-us"
                 >Contact</router-link
                 >
-                <router-link class="dropdown-item pl-3" to="/for-realtor"
+                <router-link class="dropdown-item" to="/for-realtor"
                 >For  REALTORS®</router-link
                 >
-                <router-link class="dropdown-item pl-3" to="/agents"
+                <router-link class="dropdown-item" to="/agents"
                 >Agents</router-link
                 >
               </div>
@@ -223,13 +223,13 @@
               <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
               >
-               <router-link class="dropdown-item pl-3" to="/contact-us"
+               <router-link class="dropdown-item" to="/contact-us"
                 >Contact</router-link
               >
-               <router-link class="dropdown-item pl-3" to="/for-realtor"
+               <router-link class="dropdown-item" to="/for-realtor"
                 >For  REALTORS®</router-link
               >
-               <router-link class="dropdown-item pl-3" to="/agents"
+               <router-link class="dropdown-item" to="/agents"
                 >Agents</router-link
               >
             </div>
