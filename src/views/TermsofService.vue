@@ -22,100 +22,36 @@
           of use governing such an area are in conflict with these Terms, the
           additional terms shall control.
         </p><br>
-        <!-- <h4>Policies Applicable to Participants’ VOWs </h4>
+         <h4>VOW Terms of Use </h4>
         <br />
-        <ol style="list-style: lower-alpha;">
-          <li>Participants may provide additional Brokerage services via a VOW in addition to making  MLS® System listing data available, but only to consumers with whom the Participants  have first established relationships, including completion of all actions and/or forms  respecting agency disclosure required by provincial law or regulation in connection with  providing real estate Brokerage services to clients and customers (hereinafter  “Registrants). The Cooperative recommends that the most current Agency  Relationships Guide be displayed for consumer review and acceptance. Such  acceptance should require a click to accept at the Buyer Brokerage Verification section
-              and another click at the signatureline. </li>
-          <li>
-            <p>Participants’ VOWs must obtain the identity of each Registrant and obtain each  Registrant’s agreement to “Terms of Use” of the VOW, as follows: </p>
-            <ol class="pl-4" style="list-style: lower-roman;">
-              <li>A Registrant must provide their name, a current telephone number and a valid  email address. The Participant must send an email to the address provided by  the Registrant and confirming that the Registrant has agreed to the Terms of  Use (described in subsection c below). The Registrant may be permitted to  access the VOW only after the Participant has verified that the email address  provided is valid and the Registrant’s 
-                agreement to the VOW’s Terms of Useis  confirmed. </li>
-                <li>The Registrant must supply a username and a password, the combination of  which must be different from those of all other Registrants on the VOW, before  being permitted to search and view information from the MLS® System
-                  database via the VOW. The username and password may be established by the  Registrant or may be supplied by the Participant, at the option of the Participant.  An email address may be associated with only one username and password. The Registrant’s password and access must expire on a date certain at a  maximum of 30 days but may be renewed. 
-                </li>
-                <li>The Participant must at all times maintain a record of the name, telephone  
-                  number and email address supplied by the Registrant, and the username and  current password of each 
-                  Registrant, such records to be kept for not less than  180 days after the expiration of the validity of the 
-                  Registrant’s password. If the  Cooperative has reason to believe that a Participant’s VOW has caused or 
-                   permitted a breach in the security of the data or a violation of MLS® System  rules related to use by one or more 
-                   Registrants, the Participant shall, upon  request, provide to the Cooperative a copy of the record of the name, email
-                     address, telephone number, username, current password, and audit trail, if  required, of any Registrant identified 
-                     by the Cooperative to be suspected of  involvement in the violation.</li>
-            </ol>
-          </li>
-          <li>
-            <p> The Registrant must be required to affirmatively express agreement to a Terms of  Use provision that requires the Registrant to open and review an agreement that  provides at least the following: </p>
-              <ol class="pl-4" style="list-style: lower-roman;">
-                <li>That the Registrant acknowledges that the Terms of Use do not create an  agency relationship with the Participant;</li>
-                <li>That all data obtained from the VOW is intended only for the Registrant’s personal,  non-commercial use;</li>
-                <li>That the Registrant has a bona fide interest in the purchase, sale, or lease of  real estate of the type being offered through the VOW; </li>
-                <li>
-                  That the Registrant will not copy, redistribute or retransmit any of the data  or information provided
-                </li>
-                <li>
-                  That the Registrant acknowledges Cooperative ownership of and the  validity ofthe copyright in the MLS® System database;
-                </li>
-              </ol>
-          </li>
-          <li>
-            That the Registrant agrees that all information provided may be provided to the  Cooperative and may be used to administer and operate the VOW and to investigate  any breach of security of the data or the MLS® System rules. After the Registrant has  opened for viewing the Terms of Use agreement, a “mouse click” is sufficient to  acknowledge agreement to those terms. The Terms of Use Agreement shall not impose  a financial obligation on the Registrant or create any representation agreement between  the Registrant and the Participant. An agreement entered into at any time between the  Participant and Registrant imposing a financial obligation on the Registrant or creating  agency representation of the Registrant by the Participant must be established  separately from the Terms of Use, must be prominently labelled and may not be  accepted solely by mouse click.
 
-          </li>
-          <li>
-            <p>A Participant’s website must protect the MLS® System data from misappropriation by  employing reasonable efforts to monitor for and prevent “scraping” or other  unauthorized accessing, reproduction or use of the MLS® System database. f. A Participant’s website must comply with the following additionalrequirements: </p>
-            <ol class="pl-4" style="list-style: lower-roman;">
-                <li>
-                  If authorized by the Cooperative, non-principal Brokers or Associates of  Participants may operate internet websites if their Principal Broker consents,  such a website to be subject to the control of the Principal Broker. In such cases  both the Principal Broker, the non-principal Broker and Associate shall be  accountable for compliance with these policies.
-
-                </li>
-                <li>
-                  MLS® System data available on a website shall be refreshed not less frequently  than everyone (1) days and must indicate the date of last update
-                </li>
-                <li>
-                  Except as provided elsewhere in this policy or elsewhere in the MLS® System  rules and regulations of the Cooperative, a website or a Participant operating a  website may not distribute, provide or make any portion of the MLS® System  database accessible to any person or entity. 
-                </li>
-                <li>
-                  A Participant’s website must display a privacy policy that informs Registrants of  the ways in which information obtained from them will be used.
-                </li>
-                <li>
-                  A Participant may exclude listings from display on the Participant’s websitebased  only on objective criteria such as geography, list price, or type of property
-                </li>
-                </ol>
-
-                </li>
-
-                <li>
-                  <p>
-                    A Participant may not provide the identity of a Registrant to any other entity  for compensation. Notwithstanding the foregoing, a Participant mayprovide  the identity of a Registrant to another Broker for compensation if; 
-                  </p>
-                  <ol class="pl-4" style="list-style: lower-roman;">
-                    <li>
-                      the Participant’s real estate Brokerage activities principally consistof  listing or selling the types of properties filed with the Cooperative; 
-                      </li> 
-                      <li>
-                        the Registrant is seeking property of a type, in a price range, or in a  location for which the Participant does not ordinarily provide real estate  
-Brokerage services and;
-
-                      </li>
-                      <li> the number of Registrant identities provided or the corresponding revenue  generated is an insignificant portion of the Participant’s real estate  
-Brokerage 
-activities. 
-For purposes of this paragraph, selling does not include making referrals of  prospective purchasers to other real estate Brokerages and listing does not  include making referrals of prospective sellers to other real estate Brokerages. 
-</li>
-                  </ol>
-                  </li>
-               
-                <li>
-                  Participants must notify the Cooperative of their intention to establish a website and  make their website directly accessible to the Cooperative for purposes of  monitoring/ensuring compliance with applicable rules and policies.
-                </li>
-                <li>
-                  The Participant also expressly authorize the Cooperative, and other MLS® Participants  or their duly authorized representatives, to access the website for the sole purpose of  monitoring compliance with MLS® System rules.
-                </li>
-            
-         
-        </ol> -->
+        <p>
+          The term Virtual Office Website ("VOW") refers to a Participant's (REALTORS®) Internet website, or a feature of a Participant's Internet website, through which the Participant provides real estate brokerage services to Registrants (clients and prospects) with whom the Participant has first established a relationship where the Registrant has the opportunity to search for MLS® data, subject to the Participant's oversight, supervision and accountability. By agreeing to these "Terms of Use" you:
+        </p><br>
+        <p>Acknowledge and understand that the Terms of Use do not create an agency relationship and do not impose a financial obligation on the Registrant or create any representation agreement between the Registrant and the Participant;</p>
+        <br>
+        <p>
+          Understand that all data obtained from the VOW is intended only for your personal, non-commercial use;
+        </p><br>
+        <p>Do have a bona fide interest in the purchase, sale, or lease of real estate of the type being offered through the VOW</p>
+        <br>
+        <p>Agree not to copy, redistribute or retransmit any of the data or information provided;</p>
+        <br>
+        <p>Acknowledge the Board/Association ownership of and the validity of the copyright in the MLS® database.</p>
+        <br>
+        <p>Agree that all information provided may be provided to the relevant Board and may be used to administer and operate the VOW and to investigate any breach of security of the data or the MLS® rules</p>
+       <br>
+        <p>
+          That a "mouse click" is sufficient acknowledgement and agreement to the terms
+        </p><br>
+        <p>Must provide a valid email address. The Registrant may be permitted to access the VOW only after the Participant has verified that the email address provided is valid the Registrant's agreement to the VOW's Terms of Use is confirmed.</p>
+        <br>
+        <p>Understand the Participant must at all times maintain a record of the name, telephone number and email address supplied by the Registrant, and the username and current password of each Registrant, such records to be kept for not less than 180 days after the expiration of the validity of the Registrant's password. If the Board/Association has reason to believe that a Participant's VOW has caused or permitted a breach in the security of the data or a violation of MLS® rules related to use by one or more Registrants, the Participant shall, upon request, provide to the Board/Association a copy of the record of the name, email address, telephone number, username, current password, and audit trail, if required, of any Registrant identified by the Board/Association to be suspected of involvement in the violation.</p>
+        <br>
+        <p>Understand that information on this site is deemed to be valid but is not guaranteed.  It is the responsibility of the registrants to confirm all information on their own.  Broker may not have reviewed or approved listing enhancements.  All information provided by the listing agent/broker is deemed reliable but is not guaranteed and should be independently verified.</p>
+      <br>
+        <p>Understand any agreement entered into at any time between the Participant and Registrant imposing a financial obligation on the Registrant or creating agency representation of the Registrant by the Participant must be established separately from the Terms of Use, must be prominently labelled and may not be accepted solely by mouse click</p>
+        <br>
         <h4>Visitors of this website</h4>
         <br />
 
