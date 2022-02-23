@@ -260,7 +260,7 @@ computed:{
             }else{
             this.find_listings_forSale();
             }
-        window.scrollTo(0,200);
+        document.body.scrollTop = 0;
     },
     find_listings_SoldMain(){
          this.paginationpage = 1;

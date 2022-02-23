@@ -10,38 +10,41 @@
             Get an estimate value of any home.
           </p>
           <div class="w-100 inputaddress">
-            <!-- <img src="../assets/image/icon/Iconly-Light-Location.svg" alt=""> -->
+            <img
+                src="../assets/image/icon/Iconly-Light-Location.svg"
+                alt=""
+            />
             <div class="item1b2">
               <span class="space"></span>
-                <vue-google-autocomplete
-                    autocomplete="off"
-                    id="map"
-                    ref="addressmap"
-                    classname="form-control"
-                    placeholder="Enter a home location"
-                    country="ca"
-                    v-on:keyup="yourFunctinNameToBeCall"
-                    v-on:placechanged="getAddressData"
-                    v-on:inputChange="inputChange"
-                    :options="{
+              <vue-google-autocomplete
+                  autocomplete="off"
+                  id="map"
+                  ref="addressmap"
+                  classname="form-control"
+                  placeholder="Enter a home location"
+                  country="ca"
+                  v-on:keyup="yourFunctinNameToBeCall"
+                  v-on:placechanged="getAddressData"
+                  v-on:inputChange="inputChange"
+                  :options="{
                     fields: [
                       'geometry',
                       'formatted_address',
                       'address_components',
                     ],
                   }"
-                >
-                </vue-google-autocomplete>
+              >
+              </vue-google-autocomplete>
             </div>
             <div class="item1b3">
-              <button class="Roboto-Regular" type="button" @click="getresult()">
-                Get Started
+              <button class="Poppins" type="button" @click="getresult()">
+                Start
               </button>
             </div>
           </div>
           <div class="item1b3-sm">
-            <button class="Roboto-Regular" type="button" @click="getresult()">
-              Get Started
+            <button class="Poppins" type="button" @click="getresult()">
+              Start
             </button>
           </div>
           <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
@@ -49,10 +52,18 @@
         </div>
       </div>
     </div>
+    <div class="my-5">
+      <div class="container bg-white">
+        <SweetSale></SweetSale>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+import SweetSale from "../components/base/MainInterface/SweetSale.vue";
+
 export default {
+  components: {  SweetSale   },
   data() {
     return {
       input: {
@@ -146,21 +157,20 @@ export default {
   box-sizing: border-box;
   border-radius: 6px;
   text-align: left;
-  background: #00a19b;
+  background: white;
   min-height: 48px;
   -webkit-box-pack: justify;
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
-  padding: 10px;
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
   border-style: solid;
-  font-size: 18px;
 }
 .homeworth .item1 .item1a .inputaddress img {
   flex-shrink: 0;
@@ -210,20 +220,20 @@ export default {
   display: none;
 }
 .homeworth .item1 .item1a button {
-  background-color: rgb(255, 192, 67);
-  color: #232323;
-  height: 54px;
-  border: 2px solid transparent;
-  border-radius: 6px;
+  background-color: rgb(255, 182, 0);
+  color: rgb(255, 255, 255);
+  height: 48px;
   width: 100%;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
   font-size: 16px;
-  font-weight: bold;
-  padding: 9px 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  border-radius: 6px;
+  padding: 9px 24px;
 }
 input:focus {
   outline: none;

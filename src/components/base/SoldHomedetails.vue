@@ -278,12 +278,20 @@
                   <p class="mb-0 element2">NOW</p>
                 </div>
                 <div class="col-5">
-                  <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">
-                    Listed for ${{
-                      getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                  <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.listPrice">
+                    Sold for ${{
+                      getnumber(homedata.soldPrice).toLocaleString("ja-JP")
                     }}
                   </p>
-                  <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                  <div class="d-flex">
+                    <p class="mb-0 Roboto-Medium text-color-2 mr-1">Listed for ${{
+                        getnumber(homedata.listPrice).toLocaleString("ja-JP")
+                      }}</p> <span>&#8226;</span>
+
+
+                    <p class="mb-0 Roboto-Medium text-color-2">{{ gettime(homedata.listDate) }} on Sweetly</p>
+                  </div>
+
                 </div>
                 <div class="image col-3">
                 </div>

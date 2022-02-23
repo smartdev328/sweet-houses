@@ -111,8 +111,8 @@
             and real estate together to make your process of selling, buying or
             both far easier and more fun.
           </p>
-          <router-link to="about-us" class="Roboto-Regular"
-            >Read More</router-link
+          <a  @click="openaboutus()" class="Roboto-Regular pointer"
+            >Read More</a
           >
         </div>
         <div class="col-12 col-md-4">
@@ -158,9 +158,13 @@ export default {
     },
   },
   methods: {
+    openaboutus() {
+      this.$router.push({ name: "Aboutus" });
+      document.body.scrollTop = 0;
+    },
     openfaqspage() {
       this.$router.push({ name: "FrequentlyQuestion" });
-      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
     },
   },
 };

@@ -240,7 +240,7 @@ export default {
   },
   methods: {
     gettime(item) {
-      return moment(item).endOf("day").fromNow();
+      return moment(item).endOf("day").fromNow(true);
     },
 
     SignUp() {
