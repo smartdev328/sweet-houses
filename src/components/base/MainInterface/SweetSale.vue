@@ -100,7 +100,7 @@
       <div class="elfsight-app-3f411fcb-35bd-44e4-b1ce-551508d164d9"></div>
     </div>
     <!--      Our Story-->
-    <div class="bg-color-1 p-3 item1 DMSerifRegular">
+    <div class="bg-color-1 p-3 item1p DMSerifRegular">
       <div class="item1a text-center">
         <p class="text-color-1 DMSerifRegular">Our Story</p>
       </div>
@@ -171,10 +171,10 @@ export default {
 </script>
 
 <style scoped>
-.page1 .item1 .item1a p {
+.page1 .item1p .item1a p {
   font-size: 36px;
 }
-.page1 .item1 .item1b p {
+.page1 .item1p .item1b p {
   color: #434242;
   font-size: 20px;
 }
