@@ -103,7 +103,7 @@ export default {
     methods:{
         opendetails(){
             this.$router.push({name:"BlogDetails"})
-            window.scrollTo(0,0);
+            document.body.scrollTop = 0;
         }
     }
 }

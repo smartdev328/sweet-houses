@@ -46,7 +46,7 @@ export default {
     methods:{
         routetohome(){
             this.$router.push({name:"Home"});
-            window.scrollTo(0,0);
+            document.body.scrollTop = 0;
         }
     }
 }

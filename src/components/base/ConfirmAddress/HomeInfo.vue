@@ -889,7 +889,7 @@ export default {
           (inputdata.squfeet = this.squfeet);
         this.$store.commit("sethomedata", inputdata);
         this.tab_visible = "menu_three";
-        window.scrollTo(0,0);
+        document.body.scrollTop = 0;
       }
     },
     twocheckform() {
@@ -941,7 +941,7 @@ export default {
         this.$store.commit("sethomedatasecond", secondinputdata);
         this.$store.commit("Setuploadfile",this.imagesArray)
         this.$emit("gotoContactPage");
-        window.scrollTo(0,0);
+        document.body.scrollTop = 0;
       }
     },
   },

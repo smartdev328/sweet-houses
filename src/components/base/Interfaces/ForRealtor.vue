@@ -85,7 +85,7 @@ can even keep your current listing active.
                   <img src="../../../assets/image/icon/p-2.svg" class="w-100 h-100" alt="">
                 </div>
                 <div>
-                  <p class="p2 Roboto-Regular">When we buy your active listing, or a house for your referred customer, we'll resell it and off YOU the listing.</p>
+                  <p class="p2 Roboto-Regular">When we buy your active listing, or a house for your referred customer, we'll resell it and offer YOU the listing.</p>
                 </div>
               </div>
 

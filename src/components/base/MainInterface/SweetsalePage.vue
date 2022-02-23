@@ -439,7 +439,7 @@ export default {
   methods: {
     openfaqspage() {
       this.$router.push({ name: "FrequentlyQuestion" });
-      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
     },
   },
 };
