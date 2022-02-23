@@ -43,7 +43,7 @@ export default {
         openprofile(agent){
             this.$store.commit('setagent',agent)
             this.$router.push('/agent-profile/' + agent.name.replace(/\s+/g, '-')) 
-            window.scrollTo(0,0); 
+            document.body.scrollTop = 0;
         }
     }
 }

@@ -102,10 +102,10 @@
             />
           </p>
           <p class="Roboto-Regular" v-if="type == 'forsale' && !createdToday">
-            {{ gettime(homedata.listDate) }}
+            {{ gettime(homedata.listDate) }} om Sweetly
           </p>
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
-            {{ gettime(homedata.listDate) }}
+            {{ gettime(homedata.listDate) }} on Sweetly
           </p>
         </div>
         <div class="element2" v-if="homedata.offer_price">
@@ -264,7 +264,7 @@ export default {
   },
   methods: {
     gettime(item) {
-      let relativetime = moment(item).endOf("day").fromNow();
+      let relativetime = moment(item).endOf("day").fromNow(true);
       if(relativetime.includes('hour')){
         this.createdToday = true
       }
