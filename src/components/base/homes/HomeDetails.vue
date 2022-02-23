@@ -424,7 +424,7 @@
 
                 <div class="row">
                   <div class="col-4">
-                    <p>Sweetly Taxes</p>
+                    <p>Property Taxes</p>
                   </div>
                   <div class="col-8">
                     <p v-if="homedata.taxes.annualAmount">
