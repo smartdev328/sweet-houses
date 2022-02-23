@@ -275,7 +275,7 @@
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2">NOW</p>
+                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{homedata.lastStatus}}</p>
                 </div>
                 <div class="col-5">
                   <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.listPrice">
@@ -315,7 +315,7 @@
                 "
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-4">
-                  <p class="mb-0 element2">NOW</p>
+                  <p class="mb-0 element2" v-if="homedata.lastStatus">{{homedata.lastStatus}}</p>
                 </div>
                 <div class="col-5">
                   <p class="mb-0 Roboto-Medium element3 text-color-5" v-if="homedata.listPrice">

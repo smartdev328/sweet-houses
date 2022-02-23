@@ -45,8 +45,6 @@
                     </div>
                     <div :class="tab_visible('contact-details')" class="h-100">
                         <contact-detailsedit
-                        
-                         
                         @openhomeinfopage="openhomeinfopage"
                         ></contact-detailsedit>
                     </div>
