@@ -5,8 +5,8 @@
 
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}}
-                  <span class="DMSerifRegular text-color-2" style="font-size: 16px;" v-if="listingsold.count > 1500">Listings Found | Showing {{reshowing}} <br>Only 1500 properties may be displayed per search. To see all your results, try narrowing your search criteria</span>
+                <p class="font-weight-bold open-sans" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}}
+                  <span class="open-sans text-color-2" style="font-size: 16px;" v-if="listingsold.count > 1500">Listings Found | Showing {{reshowing}} <br>Only 1500 properties may be displayed per search.<br> To see all your results, try narrowing your search criteria</span>
                   <span class="DMSerifRegular text-color-2" v-else>Results</span>
                 </p>
             </div>
@@ -63,6 +63,9 @@
                      The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton. Days on Site and market statistics values are calculated by Sierra Interactive based on values provided in the REALTORS® Association of Edmonton listing data feed. Mortgage values are calculated by Sierra Interactive and are provided for estimate purposes only.<code><br></code>
                      Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
 
+                 </p><br>
+                  <p  class="Roboto-Regular text-color-1">
+                    Listing information last updated on {{lastupdatemonth}} at {{lastupdatehour}}  ({{timezone}})
                  </p>
             </div>
         </div>
@@ -121,6 +124,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import moment from "moment";
 export default {
     props:{homedata:{},type:{default:'forsale'}},
     data(){
@@ -237,6 +241,21 @@ computed:{
             let end = start + 30
             return start + ` - ` + end
         },
+         timezone(){
+      return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    },
+        lastupdatemonth(){
+      return moment(this.lastupdate).format("MMM Do YYYY");
+    },
+    lastupdatehour(){
+      const d = new Date();
+     let res =  d.toLocaleString('en-US',  {
+        timeZone: this.timezone,
+    hour: '2-digit',
+    hour12: true
+})
+    return  res.replace(/[ ,]+/g, ":00 ")
+    },
 },
     methods:{
         

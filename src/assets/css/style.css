@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* @font-face {
   font-family: "DMSerifRegular";
   src: url("DMSerifText-Regular.ttf"),
@@ -67,6 +68,9 @@
 }
 .Poppins{
   font-family: 'Poppins', sans-serif;
+}
+.open-sans{
+  font-family: 'Open Sans', sans-serif;
 }
 html, body {
   overflow-x: hidden;
