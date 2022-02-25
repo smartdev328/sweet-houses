@@ -270,27 +270,6 @@
                 </p>
               </div>
             </div>
-            <div
-              class="item8 my-2 py-2"
-              v-if="Object.keys(homedata.history_details).length"
-            >
-              <div class="d-flex justify-content-between w-50">
-                <div class="item8a" v-if="homedata.history_details">
-                  <div class="d-flex align-items-center" v-if="homedata.history_details.comparedToLastSold.length">
-                    <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3" v-if="homedata.history_details.comparedToLastSold">${{homedata.history_details.comparedToLastSold.toLocaleString("ja-JP")}}</p>
-                  </div>
-                  <p class="mb-0 Roboto-Regular p2" v-if="homedata.history_details.comparedToLastSold.length">Compared to last sold</p>
-                </div>
-                <div class="item8a" v-if="homedata.history_details.yearlyAppreciation.length">
-                  <div class="d-flex align-items-center">
-                    <img src="../../../assets/image/icon/arrowup.svg" alt="icon" />
-                    <p class="mb-0 Roboto-Medium ml-3">{{homedata.history_details.yearlyAppreciation}}%</p>
-                  </div>
-                  <p class="mb-0 Roboto-Regular p2">Yearly appreciation</p>
-                </div>
-              </div>
-            </div>
             <div class="item9 my-2 py-3" v-if="homedata.history.length == 0">
 
               <div
@@ -373,7 +352,16 @@
                 </div>
                 <div class="col-6 col-md-5" v-if="history.soldDate">
                   <p class="mb-0 Roboto-Medium text-color-6 element3" >
-                    <u>Sold for ${{getnumber(history.listPrice)}} </u>
+                    <u>
+                      
+                      Sold for
+                         <span v-if="isLoggedIn">${{
+                      getnumber(homedata.soldPrice).toLocaleString("ja-JP")
+                    }}</span>
+                    <span v-if="!isLoggedIn">
+                      $XXX,XXX
+                    </span>
+                     </u>
                   </p>
                   <p class="mb-0 text-color-2 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
                 </div>
