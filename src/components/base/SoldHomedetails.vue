@@ -280,9 +280,13 @@
                 </div>
                 <div class="col-8">
                   <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.soldPrice">
-                    Sold for  ${{
+                    Sold for 
+                      <span v-if="isLoggedIn">${{
                       getnumber(homedata.soldPrice).toLocaleString("ja-JP")
-                    }}
+                    }}</span>
+                    <span v-if="!isLoggedIn">
+                      $XXX,XXX
+                    </span>
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
@@ -312,9 +316,14 @@
                 </div>
                 <div class="col-8">
                   <p class="mb-0 Roboto-Medium element3 text-color-6" v-if="homedata.soldPrice">
-                    Sold for  ${{
+                    Sold for  
+                    <span v-if="isLoggedIn">${{
                       getnumber(homedata.soldPrice).toLocaleString("ja-JP")
-                    }}
+                    }}</span>
+                    <span v-if="!isLoggedIn">
+                      $XXX,XXX
+                    </span>
+                    
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
@@ -348,7 +357,11 @@
                 </div>
                  <div class="col-6 col-md-5" v-if="history.soldDate">
                    <p class="mb-0 Roboto-Medium text-color-6 element3" >
-                     <u>Sold for ${{getnumber(history.listPrice)}} </u>
+                     <u>Sold for $
+                       <span v-if="isLoggedIn && homedata.soldPrice">{{getnumber(history.soldPrice)}}</span>
+                       <span v-if="!isLoggedIn">XXX,XXX</span>
+                       
+                        </u>
                    </p>
                    <p class="mb-0 text-color-5 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
                  </div>
@@ -357,10 +370,6 @@
                 </div>
               </div>
             </div>
-
-                     <div>
-                <address-map :lat="longitude" :lon="latitude"></address-map>
-              </div>
             <div class="item11 my-2 py-3">
               <div class="item1">
                 <p class="text-color-1 DMSerifRegular">Home Details</p>
