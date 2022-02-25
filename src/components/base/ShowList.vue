@@ -6,7 +6,7 @@
             <div class="item1">
             <div class="item1a">
                 <p class="font-weight-bold open-sans" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}}
-                  <span class="open-sans text-color-2" style="font-size: 16px;" v-if="listingsold.count > 1500">Listings Found | Showing {{reshowing}} <br>Only 1500 properties may be displayed per search.<br> To see all your results, try narrowing your search criteria</span>
+                  <span class="open-sans text-color-2" v-if="listingsold.count > 1500">Listings Found | Showing {{reshowing}} <br>Only 1500 properties may be displayed per search.<br> To see all your results, try narrowing your search criteria</span>
                   <span class="DMSerifRegular text-color-2" v-else>Results</span>
                 </p>
             </div>
@@ -425,6 +425,9 @@ computed:{
     font-size: 1rem;
     border: 1px solid #707070;
 }
+.showlist .item1 .item1a p span{
+    font-size: 14px;
+}
 .showlist .cards {
     display: grid;
     grid-template-columns: auto auto auto ;
@@ -432,7 +435,7 @@ computed:{
     grid-row-gap: 40px;
 }
 .showlist .item1 .item1a{
-    font-size: 20px;
+    font-size: 16px;
     width: 33%;
 }
 /* .showlist .item1 .item1b{
