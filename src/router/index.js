@@ -6,6 +6,7 @@ import BrowswHome from '../views/BrowswHome.vue'
 import store from '../store/index'
 Vue.use(VueRouter)
 
+
 function requireAddress(to, from, next) {
   if (store.state.homeaddress) {
       next();
