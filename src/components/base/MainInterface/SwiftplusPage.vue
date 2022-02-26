@@ -1,6 +1,35 @@
 <template>
   <div class="page2">
-
+     <div class="bg-color-1 p-3 my-2 item1p DMSerifRegular">
+      <div class="item1a text-center">
+        <p class="text-color-1 DMSerifRegular">SOLD</p>
+      </div>
+      <div class="row d-flex align-items-center item1b">
+        <div class="col-12 col-md-10 mx-auto">
+          <p class="Roboto-Medium">
+             The minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
+          </p>
+       
+        </div>
+   
+      </div>
+    </div>
+        <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
+      <div class="item1a text-center">
+        <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
+      </div>
+      <div class="row d-flex align-items-center item1b">
+        <div class="col-12 col-md-10 mx-auto">
+          <p class="Roboto-Medium">
+            It starts with an appraisal to determine the current value of your home. We buy your home in 2 payments.
+             Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property  <u>at an 
+             asking price that you agree to </u> and resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the prep, showings, interruptions, home fix-ups (seller pains). Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. 
+            This product is available to customers who sell and buy with Sweetly.
+          </p>
+        </div>
+   
+      </div>
+    </div>
 
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
@@ -232,6 +261,13 @@ export default {
 ul li {
   list-style-type: none;
   display: flex;
+  font-size: 20px;
+}
+.page2 .item1p .item1a p {
+  font-size: 36px;
+}
+.page2 .item1p .item1b p {
+  color: #434242;
   font-size: 20px;
 }
 .item2c ul li .icon,

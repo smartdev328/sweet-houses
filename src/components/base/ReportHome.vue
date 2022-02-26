@@ -261,14 +261,14 @@
             />
           </div>
         </div>
-        <div class="item5b">
+        <!-- <div class="item5b">
           <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>
           <p class="Roboto-Regular text-color-2">
             Kick off your sale by getting a more detailed appraisal from one of
             our <br />
             agents. Learn more about our <span> selling services.</span>
           </p>
-        </div>
+        </div> -->
         <div class="item5c text-center">
           <button class="btn Roboto-Regular mb-2">
             Get a personalized home appraisal
@@ -419,9 +419,9 @@
             </div>
             <div class="item5b mr-1 mr-md-5">
               <p class="text-color-1 Roboto-Medium">Thinking of moving ?</p>
-              <p class="Roboto-Regular">
+              <!-- <p class="Roboto-Regular">
                 Sweetly helps you buy, move, then sell.
-              </p>
+              </p> -->
             </div>
           </div>
           <div class="element1 pl-1 pl-md-5 mt-3">
@@ -453,9 +453,9 @@
           <div class="element3 d-flex align-items-center">
             <span class="DiwaniBentRegular">،،</span>
             <span class="Roboto-Regular pt-3"
-              >" It was a huge relief to not have to live through the showings.
-              " -Emily Glynn- James</span
-            >
+              >" We got the price we needed for our house and moved into our dream home.
+              " -Laura CS</span
+            > 
           </div>
         </div>
       </div>
@@ -466,7 +466,7 @@
         <div class="item12a text-color-2 Roboto-Regular px-3">
           <div>
             <textarea
-              placeholder="What did you think of this estimate for your home?"
+              placeholder="Think something was missed in the preliminary evaluation? Please let us know here"
               class="p-3 w-100"
               name=""
               id=""
@@ -478,13 +478,7 @@
       </div>
       <div class="my-5 disclaimer-content">
         <p class="Roboto-Regular">
-          Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of
-          the copyright in its MLS® System. Data is deemed reliable but is not
-          guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple
-          Listing Service® and the associated logos are owned by The Canadian
-          Real Estate Association (CREA) and identify the quality of services
-          provided by real estate professionals who are members of CREA. Used
-          under license.
+         <!-- disclimer -->
         </p>
       </div>
     </div>

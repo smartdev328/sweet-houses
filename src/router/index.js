@@ -75,6 +75,15 @@ const routes = [
     component: () => import ('../views/EquityAdvance.vue')
   },
   {
+    path:'/appraisa',
+    name:'appraisa',
+    component: () => import ('../views/AppRise.vue'),
+    meta: {
+      hideNavbar: true,
+     }
+  },
+  
+  {
     path: '/cities',
     name: 'cities',
     // route level code-splitting
