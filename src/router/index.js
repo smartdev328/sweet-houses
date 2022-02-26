@@ -65,6 +65,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/SwiftSale.vue')
   },
   {
+    path:'/swift-saleplus',
+    name:"SwiftsalePlus",
+    component: () => import(/* webpackChunkName: "about" */ '../views/SwiftsalePlus.vue')
+  },
+  {
     path:'/equity-advance',
     name:'EquityAdvance',
     component: () => import ('../views/EquityAdvance.vue')
