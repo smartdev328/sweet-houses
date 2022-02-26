@@ -92,9 +92,8 @@
                         <p class="DMSerifRegular">POPULAR SEARCHES</p>
                          <div>
                         <ul class="Roboto-Regular">
-                            <li><a href="">Featured Listings</a></li>
-                            <li><a href="">Homes For Sale</a></li>
-                            <li><a href="">Sold Data</a></li>
+                            <li><a @click="openforsalemap">Homes For Sale</a></li>
+                            <li><a @click="opensoldmap()">Sold Data</a></li>
                         </ul>
                     </div>
                     </div>
@@ -140,7 +139,18 @@ export default {
     },
     opencontactpage(){
         this.$router.push({name:"ContactUs"});
+        
       this.scrolltop()
+    },
+    openforsalemap(){
+        this.$store.commit('setType','forsale')
+        this.$router.push({name:"BrowswHome"})
+        this.scrolltop()
+    },
+    opensoldmap(){
+        this.$store.commit('setType','sold')
+        this.$router.push({name:"BrowswHome"})
+        this.scrolltop()
     },
     scrolltop(){
         document.body.scrollTop = 0;

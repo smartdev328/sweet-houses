@@ -374,7 +374,6 @@ export default {
   },
   methods: {
     opensoldmap(){
-      console.log("00000")
       this.$emit("opensoldmap");
       this.$store.commit('setType','sold')
       //this.$router.push({name:"BrowswHome"})
