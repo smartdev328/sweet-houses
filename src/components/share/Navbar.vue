@@ -55,11 +55,11 @@
               <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
                 >Swift Sale</a
               >
-              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
-                >Home Swap</a>  
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale Plus</a
-              >                  
+              >    
+              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
+                >Home Swap</a>                  
               <!-- <a
                 class="dropdown-item btn"
                 @click="openeduityadvanced('Equity_Advance')"
@@ -178,12 +178,13 @@
               <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
                 >Swift Sale</a
               >
-              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
-                >Home Swap</a
-              >           
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale Plus</a
               >    
+              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
+                >Home Swap</a
+              >           
+              
               <!-- <a
                 class="dropdown-item btn"
                 @click="openeduityadvanced('Equity_Advance')"
