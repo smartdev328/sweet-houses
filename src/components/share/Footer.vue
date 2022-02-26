@@ -15,11 +15,33 @@
                         <p class="DMSerifRegular">NAVIGATION</p>
                          <div>
                         <ul class="Roboto-Regular">
-                            <li><a href="">Sweet Sale</a></li>
-                            <li><a href="">Swift Sale</a></li>
-                            <li><a href="">Traditional Real Estate</a></li>
-                            <li><a href="">Buyers</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li>
+                                <a class="" @click="openswiftplus('home-swap')"
+                >Swift Sale Plus</a
+              >   
+                            </li>
+                            <li>
+                                <a class="" @click="openswiftsale()"
+                >Swift Sale</a
+              >
+                            </li>
+                            <li>
+                                <a class="" @click="opensweetsale()"
+                >Sweet Sale</a
+              >
+                            </li>
+                            <li>
+                                <a class="" @click="openhomeswap()"
+                >Home Swap</a>  
+                            </li>
+                            <li>
+                                 <a
+                class=""
+                @click="opentraditionestate()"
+                >Traditional Real Estate</a
+              >
+                            </li>
+                            <li><a href="" @click="openfaqspage()">Q & A</a></li>
                         </ul>
                     </div>
                     </div>
@@ -27,7 +49,7 @@
                         <p class="DMSerifRegular">Contact us</p>
                          <div>
                         <ul class="Roboto-Regular">
-                            <li><a href="">
+                            <li><a href="https://www.facebook.com/sweetlyrealestatecanada/" target="_blank">
                                 <div class="d-flex align-items-baseline">
                                  
                                     <div class="socialicon mr-2">
@@ -36,7 +58,7 @@
                                     <p>Facebook</p>
                                 </div>
                             </a></li>
-                            <li><a href="">
+                            <li><a href="https://www.instagram.com/sweetlyrealestatecanada/" target="_blank">
                                 <div class="d-flex align-items-baseline">
                                  
                                     <div class="socialicon mr-2">
@@ -45,7 +67,7 @@
                                     <p>Instagram</p>
                                 </div>
                             </a></li>
-                             <li><a href="">
+                             <li><a href="https://www.linkedin.com/company/sellsweetlyrealestate/about/" target="_blank">
                                 <div class="d-flex align-items-baseline">
                                  
                                     <div class="socialicon mr-2">
@@ -54,7 +76,7 @@
                                     <p>Linkedin</p>
                                 </div>
                             </a></li>
-                             <li><a href="">
+                             <li><a href="https://www.youtube.com/channel/UC6JD4zvXw9aUiuisxPitqdw" target="_blank">
                                 <div class="d-flex align-items-baseline">
                                  
                                     <div class="socialicon mr-2">
@@ -88,7 +110,42 @@
 </template>
 <script>
 export default {
-    
+    methods:{
+        openswiftsale(){
+      this.$router.push({name:"SwiftSale"});
+      document.body.scrollTop = 0;
+    },
+    openfaqspage(){
+        this.$router.push({ name: "FrequentlyQuestion" });
+        this.scrolltop()
+    },
+    openhomeswap(){
+        this.$router.push({name:"HomeSwap"})
+      this.scrolltop()
+    },
+    opensweetsale(){
+        this.$router.push({name:'SweetSale'})
+       this.scrolltop()
+    },
+    openswiftplus(){
+        this.$router.push({name:'SwiftsalePlus'})
+       this.scrolltop()
+    },
+    hidecollapse(){
+      document.querySelector(".navbar-collapse").classList.remove('show');
+    },
+    opentraditionestate(){
+      this.$router.push({name:"TraditionalRealestate"});
+      this.scrolltop()
+    },
+    opencontactpage(){
+        this.$router.push({name:"ContactUs"});
+      this.scrolltop()
+    },
+    scrolltop(){
+        document.body.scrollTop = 0;
+    }
+    }
 }
 </script>
 <style>
@@ -119,8 +176,8 @@ export default {
         list-style: none;
     }
     footer .elementb ul li a{
-        color:#FFB600;
-        text-decoration: none;
+        color:#FFB600 !important;
+        text-decoration: none !important;
         cursor: pointer;
         font-family: 'Roboto-Regular' , sans-serif  !important;
         font-size: 16px;
