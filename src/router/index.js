@@ -72,8 +72,8 @@ const routes = [
     component: () => import ('../views/EquityAdvance.vue')
   },
   {
-    path:'/appraisa',
-    name:'appraisa',
+    path:'/appraisal',
+    name:'appraisal',
     component: () => import ('../views/AppRise.vue'),
     meta: {
       hideNavbar: true,
