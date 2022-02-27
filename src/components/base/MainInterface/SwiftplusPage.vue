@@ -104,7 +104,7 @@
 
     <div class="my-2 my-md-5 item11 mx-3">
       <div class="item11a DMSerifRegular text-center">
-        <p>Why a Swift Sale Plus is For You?</p>
+        <p>Why a Swift Sale PLUS is For You?</p>
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
@@ -144,7 +144,7 @@
     </div>
         <div class="my-2 my-md-5 item12 mx-3">
       <div class="item12a DMSerifRegular text-center">
-        <p>Benefits of a Swift Sale Plus</p>
+        <p>Benefits of a Swift Sale PLUS</p>
       </div>
       <div
         class="item12b p-4 mb-5"
