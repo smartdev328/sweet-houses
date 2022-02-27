@@ -56,7 +56,7 @@
                 >Swift Sale</a
               >
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
-                >Swift Sale Plus</a
+                >Swift Sale PLUS</a
               >    
               <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
                 >Home Swap</a>                  
@@ -179,7 +179,7 @@
                 >Swift Sale</a
               >
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
-                >Swift Sale Plus</a
+                >Swift Sale PLUS</a
               >    
               <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
                 >Home Swap</a

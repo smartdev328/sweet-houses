@@ -17,7 +17,7 @@
                         <ul class="Roboto-Regular">
                             <li>
                                 <a class="" @click="openswiftplus('home-swap')"
-                >Swift Sale Plus</a
+                >Swift Sale PLUS</a
               >   
                             </li>
                             <li>
