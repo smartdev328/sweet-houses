@@ -22,12 +22,12 @@
         <div class="col-12 col-md-10 mx-auto">
           <p class="Roboto-Medium">
             It starts with an appraisal to determine the current value of your home. We buy your home in 2 payments.
-             Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property  <u>at an 
-             asking price that you agree to </u> and resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the prep, showings, interruptions, home fix-ups (seller pains). Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. 
+             Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property  <u>at an
+             asking price that you agree to </u> and resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the prep, showings, interruptions, home fix-ups (seller pains). Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly.
             This product is available to customers who sell and buy with Sweetly.
           </p>
         </div>
-   
+
       </div>
     </div>
 
@@ -45,7 +45,7 @@
               Tell Us About Your Property
             </h3>
             <p class="card-text text-color-2">
-              Tell us about your home. You'll get a computer-generated evaluation and comparable sales in your area. 
+              Tell us about your home. You'll get a computer-generated evaluation and comparable sales in your area.
               We'll arrange for a licensed Appraiser to view your home and set the final price.
             </p>
           </div>
@@ -99,7 +99,7 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
 
     <div class="my-2 my-md-5 item11 mx-3">
@@ -140,7 +140,7 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
         <div class="my-2 my-md-5 item12 mx-3">
       <div class="item12a DMSerifRegular text-center">
@@ -186,7 +186,7 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
   </div>
 </template>
