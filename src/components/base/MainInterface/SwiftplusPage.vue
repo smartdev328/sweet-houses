@@ -211,7 +211,7 @@ export default {
           title: "Market Value Sale",
           content: `With a Swift Sale PLUS you net the exact same market value that you would if you had listed and sold on the open market with any full service agent who also charges 7% of $100,000 plus 3% on the balance. The difference is the absence of all the public showings, interruptions,
            home prep and seller pains. You even get to choose your own moving day!`,
-          image: require("../../../assets/image/1-MarketValueSale.png"),
+          image: require("../../../assets/image/marketv.jpg"),
         },
         {
           title: "Sell Without Showings ",

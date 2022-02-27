@@ -4,211 +4,97 @@
       <div class="item1">
         <div class="item1a d-flex pointer" @click="routrMap()">
 
-          <p class="mb-0 ml-2 Roboto-Medium">Return to map</p>
+          <p class=" ml-2 Roboto-Medium"> <span class="text-dark">For Customer </span> {{ contactinput.fullname }}</p>
         </div>
-        <div class="item1b">
+        <div class="item1d">
+          <p class="mb-0 Roboto-Medium text-dark">
+            Based only on publicly available data, and without considering recent improvements, maintenance,
+            or other factors that will effect the value of any property our PRELIMINARY understanding of value is:
+          </p>
+        </div>
+        <div class="item1b text-right">
           <p class="text-color-1 Roboto-Medium mb-0" v-if="address_format">
-            {{ address_format[0] }}
+           <span v-if="address_format[0]">{{ address_format[0] }}</span>
+            <span v-if="address_format[1]">{{ address_format[1] }}</span>
+            <span v-if="address_format[2]">{{ address_format[2] }}</span>
+            <span v-if="address_format[3]">{{ address_format[3] }}</span>
           </p>
-          <div
-            class="text-color-2 Roboto-Regular d-flex justify-content-around"
-          >
-            <span>{{ address_format[1] }}</span>
-            <span class="pl-1 br-left" v-if="address_format[2]">{{
-              address_format[2]
-            }}</span>
-            <span class="pl-1 br-left" v-else>Canada</span>
-          </div>
+
         </div>
-        <div class="item1c mt-3 mt-md-0">
-          <!-- <b-button
-            v-b-modal="'modal-share'"
-            class="btn bg-transparent text-color-1 Roboto-Regular"
-          >
-            <img src="../../assets/image/icon/share.svg" alt="icon" />
-            Share</b-button
-          > -->
-          <b-modal
-            id="modal-share"
-            size="lg"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <template #modal-title>
-              <h4 class="text-color-1 Roboto-Medium">Share this Sweetly</h4>
-            </template>
-            <div class="element1">
-              <div class="item1">
-                <div class="item1a">
-                  <img
-                    @click="copyURL"
-                    class="pointer"
-                    src="../../assets/image/icon/noun_linked_4211117.svg"
-                    alt=""
-                  />
-                  <form>
-                    <input
-                      :value="fullPath"
-                      ref="mylink"
-                      type="text"
-                      name=""
-                      id=""
-                    />
-                  </form>
-                </div>
-                <div class="item1b">
-                  <button
-                    class="btn"
-                    :class="{ copied: copied }"
-                    @click="copyURL()"
-                  >
-                    <span v-if="!copied">Copy Link</span>
-                    <span v-if="copied">Link Copied</span>
-                  </button>
-                </div>
-              </div>
-              <div class="item2 mb-2">
-                <div class="item2a">
-                  <ShareNetwork
-                    class="btn Roboto-Medium font-weight-bold"
-                    network="facebook"
-                    :url="fullPath"
-                    title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                    @open="open"
-                    @change="change"
-                    @close="close"
-                  >
-                    <button class="btn Roboto-Medium">
-                      <img
-                        src="../../assets/image/icon/noun_messenger_3202205.svg"
-                        alt=""
-                      />
-                      <span>Messenger</span>
-                    </button>
-                  </ShareNetwork>
-                </div>
-                <div class="item2b">
-                  <button class="btn Roboto-Medium" @click="shareSMS">
-                    <img src="../../assets/image/icon/Group 13353.svg" alt="" />
-                    <span>SMS</span>
-                  </button>
-                </div>
-                <div class="item2c">
-                  <ShareNetwork
-                    class="btn Roboto-Medium font-weight-bold"
-                    network="email"
-                    :url="'Listing Details : ' + fullPath"
-                    title="Your friend or relative has shared a listing with you"
-                    @open="open"
-                    @change="change"
-                    @close="close"
-                  >
-                    <button class="btn Roboto-Medium">
-                      <img
-                        src="../../assets/image/icon/noun_Email_4292826.svg"
-                        alt=""
-                      />
-                      <span>Email</span>
-                    </button>
-                  </ShareNetwork>
-                </div>
-              </div>
-              <div class="text-center my-3" v-if="errsms">
-                <p
-                  style="color: #fc5353;font-size:18px"
-                  class="Roboto-Regular mb-0"
-                >
-                  Sorry, this feature isn’t active yet
-                </p>
-              </div>
-            </div>
-          </b-modal>
+        <div class="item1c mt-3 mt-md-0 item1a text-right">
+          <p class="Roboto-Medium"> <span class="text-dark">Preliminary Valuation:</span> ${{ prices.offer_price.toLocaleString("ja-JP") }}</p>
+        </div>
+        <div class="item1d">
+          <p class="text-dark Roboto-Medium">
+            To establish an accurate and fair value for your home, we use an appraisal as provided by a licensed Appraiser. The eventualasking (listing price) will be set by you.
+          </p>
         </div>
       </div>
-      <div class="item2 p-4 mt-4 mb-2 rounded">
-        <div class="item2a d-flex align-items-baseline">
-          <p class="text-white Roboto-Medium mr-2">Sweetly Estimate</p>
-          <img src="../../assets/image/icon/warning.svg" class="" alt="" />
-        </div>
-        <div class="item3a text-white d-flex align-items-center">
-          <p class="Roboto-Medium mr-5 mb-0" v-if="prices">
-            ${{ prices.offer_price.toLocaleString("ja-JP") }}
-          </p>
-          <!-- <button class="btn btn-track Roboto-Regular px-2">
-                        <img src="../../assets/image/icon/iconhome.svg" alt="">
-                            Track
-                    </button> -->
-        </div>
+      <div class="item3">
+          <div class="item3a">
+            <h1>FOUR WAYS TO<br> SELL YOUR HOME</h1>
+          </div>
       </div>
-      <div class="item3 my-3  text-center">
-        <div class="item3a p-3">
-          <p class="text-color-1 Roboto-Medium mb-0" v-if="prices">
-            ${{ prices.offer_price.toLocaleString("ja-JP") }}
+      <div class="boxs">
+        <div class="box card pb-5">
+          <p class="title DMSerifRegular">Swift Sale</p>
+          <p class="content Roboto-Medium mb-5">
+            SOLD! The minute you’re ready. We pay 90% of appraised value (1 payment) on whatever day you choose to move (possession day).
+            You skip public showings and choose your own moving day. This product is perfect for anyone who doesn’t want to tolerate public showings,
+            and is not buying another home in Canada at this time with any Sweetly referred area professional.
           </p>
-          <p
-            class="text-color-1 Roboto-Medium mb-0"
-            v-if="instant_estimate_data"
-          >
-            {{ instant_estimate_data.address_searched }}
-          </p>
+        <footer class="footerbox DMSerifRegular card-footer">
+          <p v-if="prices">Sample Sale Price:<span>${{ prices.offer_price.toLocaleString("ja-JP") }}</span> </p>
+          <p v-if="prices">Estimated Net:<span>${{ prices.swift_net.toLocaleString("ja-JP") }}</span> </p>
+        </footer>
         </div>
-        <div class="item3b p-3 py-4">
-          <p class="text-color-1 Roboto-Medium">
-            Sweet Sale: We buy it, improve it, and sell it, You Get More!
+        <div class="box card pb-5">
+          <p class="title DMSerifRegular">Swift Sale <span class="text-color-4">PLUS</span> </p>
+          <p class="content Roboto-Medium mb-5">
+            The smartest, and easiest way to sell. We buy your home in 2 payments. Get 90% of current value on the moving day
+            you choose. We'll manage an MLS listing for the property at an asking price that you agree to and resell the property, we keep our fee (7/3*) then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the prep, showings, interruptions, home fix-ups (seller pains). Just choose the day you want to move. You net the same money you would if you listed and sold traditionally, except you get to choose your own moving day and
+            skip all the showings and seller pains. This product is available to those who sell and buy with Sweetly.
           </p>
-          <p class="text-color-1 Roboto-Regular">
-            This Example Contemplates $10,000 Of Improvements and An Increase To
-            The Sale Price Of $30,000. You net The Full Resale Price Less Our
-            Fee And The Cost Of Improvements.
-          </p>
-        </div>
-        <div class="item3c p-3 py-4">
-          <div class="item3c1">
-            <p class="text-center Roboto-Medium">Expected Sale Price</p>
-            <p class="text-center Roboto-Medium px-5" v-if="prices">
-              ${{ prices.sweet_price.toLocaleString("ja-JP") }}
-            </p>
-          </div>
-          <div class="item3c2">
-            <p class="text-center Roboto-Medium">Sale Expected Net</p>
-            <p class="text-center Roboto-Medium px-5" v-if="prices">
-              ${{ prices.sweet_net.toLocaleString("ja-JP") }}
-            </p>
+          <div class="footerbox DMSerifRegular card-footer">
+            <p v-if="prices">Sample Sale Price:<span>${{ prices.trad_price.toLocaleString("ja-JP") }}</span> </p>
+            <p v-if="prices">Estimated Net:<span>${{ prices.trad_net.toLocaleString("ja-JP") }}</span> </p>
           </div>
         </div>
-        <div class="item3d text-center px-2 Roboto-Medium">
-          <p><span>Swift Sale:</span> We'll buy it at our discounted fee</p>
-        </div>
-        <div class="item3c p-3">
-          <div class="item3c2">
-            <p class="text-center Roboto-Medium">Sale Expected Net</p>
-            <p class="text-center Roboto-Medium px-5" v-if="prices">
-              ${{ prices.swift_net.toLocaleString("ja-JP") }}
-            </p>
-          </div>
-        </div>
-        <div class="item3d text-center  Roboto-Medium">
-          <p class="mb-0">
-            <span>Traditional Sale:</span> We'll list it and represent you as
-            your agent
+        <div class="box card pb-5">
+          <p class="title DMSerifRegular">Sweet Sale</p>
+          <p class="content Roboto-Medium mb-5">
+            If you feel that your home might sell for more with the right improvements,
+            then this product is perfect for you. You skip public showings, home prep,
+            fix-ups, and choose your own moving day. We’ll recommend and even make the improvements with your permission –designed to
+            increase the resale price. We pay 75% of appraisal on the moving day you choose, we’ll invest in the right improvements and
+            resell the property for all it’s worth! You get the full balance of the resale price less our fee and the cost of improvements.
+            Our fee is 7/3 plus 2% of actual resale price.
+            <code><br></code>
+            Sample increased Sale Price: <span v-if="prices"> ${{ prices.sweet_price.toLocaleString("ja-JP") }}</span> – based on$10,000 improvements and a sale price increase of$30,000.
           </p>
-        </div>
-        <div class="item3c p-3">
-          <div class="item3c1">
-            <p class="text-center Roboto-Medium">Expected Sale Price</p>
-            <p class="text-center Roboto-Medium px-5" v-if="prices">
-              ${{ prices.trad_price.toLocaleString("ja-JP") }}
-            </p>
+          <div class="footerbox DMSerifRegular card-footer">
+            <p v-if="prices">Estimated Net:<span>${{ prices.sweet_net.toLocaleString("ja-JP") }}</span> </p>
           </div>
-          <div class="item3c2">
-            <p class="text-center Roboto-Medium">Sale Expected Net</p>
-            <p class="text-center Roboto-Medium px-5" v-if="prices">
-              ${{ prices.trad_net.toLocaleString("ja-JP") }}
-            </p>
+        </div>
+        <div class="box card pb-5">
+          <p class="title DMSerifRegular">Traditional Listing <br> <span class="text-color-4">With Confidence</span> </p>
+          <p class="content Roboto-Medium mb-5">
+            If you want to test the open market, or have a home in a rural setting (where our Sweet Sale, Swift Sale(s) don’t apply) then this product is right for you. You’ll work directly with a local expert Realtor to guide you through the entire process from prep to Sold. Listing with Sweetly also comes with access to our renovation allowance that you can use to make any last-minute improvements. You’ll also have the flexibility to move to any of our other products
+            if you’re not getting the results you hope for.
+          </p>
+          <div class="footerbox DMSerifRegular card-footer">
+            <p v-if="prices">Sample Sale Price:<span>${{ prices.trad_price.toLocaleString("ja-JP") }}</span> </p>
+            <p v-if="prices">Estimated Net:<span>${{ prices.trad_net.toLocaleString("ja-JP") }}</span> </p>
           </div>
         </div>
       </div>
+      <div>
+        <p>*7/3 means 7% of the first $100,000 plus 3% on the balance of the sale price</p>
+        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the
+          address used for this listing is )Address</p>
+      </div>
+
+
 
       <div class="item4 px-2 my-5">
         <p class="text-color-2 Roboto-Regular">
@@ -512,6 +398,9 @@ export default {
       fullPath() {
       return window.location.href;
     },
+    contactinput(){
+      return this.$store.state.contactinput || {}
+    },
     instant_estimate_data() {
       return this.$store.state.instant_estimate_data.prices_offer || {};
     },
@@ -657,10 +546,10 @@ export default {
   border-radius: 12px;
 }
 .reporthome .item1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  /*flex-direction: row;*/
 }
 .reporthome .item1 .item1a .image {
   width: 22px;
@@ -674,14 +563,50 @@ export default {
 .reporthome .item1 .item1a input:focus {
   outline: none;
 }
+.reporthome .item3 .item3a h1 {
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#0a856e !important;
+  font-family: 'DM Serif Display', "Playfair Display",serif;
+}
+.reporthome .item3 .item3a h1:before,
+h1:after {
+  background-color:  #FFB600;;
+  content: "";
+  display: inline-block;
+  height: 6px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  border-radius: 8px;
+}
+.reporthome .item3 .item3a h1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.reporthome .item3 .item3a h1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
 /* .reporthome .item1 .item1a input:focus {
     border: 1px solid #70707059 !important;
     background: #f5f5f5;
     border-radius: 12px;
 } */
-.reporthome .item1 .item1a p {
-  font-size: 22px;
+.reporthome .item1 .item1b p{
+  font-size: 24px;
   color: #00a19b;
+}
+.reporthome .item1 .item1a p ,
+.reporthome .item1 .item1d p{
+  font-size: 24px;
+  color: #00a19b;
+}
+.reporthome .item1 .item1d p{
+  font-size: 24px;
 }
 .reporthome .item1 .item1b p {
   font-size: 24px;
@@ -714,88 +639,42 @@ export default {
   color: #fff;
   font-size: 22px;
 }
-.reporthome .item3 {
-  background: #edf3f2;
-  border: 3px solid #ffb600;
-  border-radius: 6px;
-  width: 60%;
-  margin: auto;
-}
-.reporthome .item3 .item3a p:first-child {
-  font-size: 28px;
-  font-weight: 600;
-}
-.reporthome .item3 .item3a p:nth-child(2) {
-  font-size: 22px;
-}
-.reporthome .item3 .item3b {
-  background: #b3c7c4;
-}
-.reporthome .item3 .item3b p:first-child {
-  font-size: 20px;
-  font-weight: 600;
-}
-.reporthome .item3 .item3b p:nth-child(2) {
-  font-size: 16px;
-  color: #232323;
-}
-.reporthome .item3 .item3c .item3c1,
-.reporthome .item3 .item3c .item3c2 {
+.reporthome .boxs {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto ;
+  gap: 40px;
 }
-.reporthome .item3 .item3c .item3c1 p:first-child {
-  background: #00a19b;
-  font-size: 24px;
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 2.4;
+.reporthome .boxs .box{
+  border: 2px solid #000;
+  padding: 20px;
 }
-.reporthome .item3 .item3c .item3c1 p:nth-child(2) {
-  background: #ffffff;
-  font-size: 27px;
-  color: #232323;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 2.4;
+.reporthome .boxs .box .title{
+  font-size: 36px;
 }
-.reporthome .item3 .item3c .item3c2 p:first-child {
-  background: #ffb600;
-  font-size: 24px;
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 2.4;
-}
-.reporthome .item3 .item3c .item3c2 p:nth-child(2) {
-  background: #ffffff;
-  font-size: 27px;
-  color: #232323;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 2.4;
-}
-.reporthome .item3 .item3d {
-  background: #b3c7c4;
-  color: #232323;
-  line-height: 2.5;
-}
-.reporthome .item3 .item3d p {
+.reporthome .boxs .box .content{
   font-size: 20px;
 }
-.reporthome .item3 .item3d p span {
-  font-size: 26px;
+.reporthome .boxs .box .footerbox{
+  /*position: absolute;*/
+  /*bottom: 16px;*/
+  /*left: 50%;*/
+  /*right: 50%;*/
+}
+.reporthome .boxs .box .footerbox p{
+  font-size: 20px;
+}
+.reporthome .boxs .box .footerbox span{
+  font-size: 20px;
+  color: #00a19b;
+}
+.card-footer {
+  background: transparent !important;
+  border-top: unset !important;
+  height: 100px;
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .reporthome .item4 p:first-child {
   font-size: 20px;
@@ -979,23 +858,13 @@ textarea:focus {
   .reporthome .cards {
     grid-template-columns: auto;
   }
-  .reporthome .item3 {
-    width: 100%;
-  }
+
   .reporthome .item2 .item3a p {
     font-size: 22px;
   }
-  .reporthome .item3 .item3c .item3c1 p:first-child,
-  .reporthome .item3 .item3c .item3c1 p:nth-child(2),
-  .reporthome .item3 .item3c .item3c2 p:first-child,
-  .reporthome .item3 .item3c .item3c2 p:nth-child(2) {
-    font-size: 14px;
-  }
-  .reporthome .item3 .item3d p {
-    font-size: 18px;
-  }
-  .reporthome .item3 .item3d p span {
-    font-size: 20px;
+
+  .reporthome .boxs{
+    grid-template-columns: auto;
   }
   .reporthome .item4 p:first-child {
     font-size: 16px;
