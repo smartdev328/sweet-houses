@@ -183,7 +183,7 @@ export default {
         {
           title: "Market Value Sale",
           content: `You get full market value for your home.`,
-          image: require("../../../assets/image/1-MarketValueSale.png"),
+          image: require("../../../assets/image/marketv.jpg"),
         },
         {
           title: "Sell Without Showings ",

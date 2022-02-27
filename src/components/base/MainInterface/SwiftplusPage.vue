@@ -104,7 +104,7 @@
 
     <div class="my-2 my-md-5 item11 mx-3">
       <div class="item11a DMSerifRegular text-center">
-        <p>Why a Swift Sale Plus is For You?</p>
+        <p>Why a Swift Sale PLUS is For You?</p>
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
@@ -144,7 +144,7 @@
     </div>
         <div class="my-2 my-md-5 item12 mx-3">
       <div class="item12a DMSerifRegular text-center">
-        <p>Benefits of a Swift Sale Plus</p>
+        <p>Benefits of a Swift Sale PLUS</p>
       </div>
       <div
         class="item12b p-4 mb-5"
@@ -211,7 +211,7 @@ export default {
           title: "Market Value Sale",
           content: `With a Swift Sale PLUS you net the exact same market value that you would if you had listed and sold on the open market with any full service agent who also charges 7% of $100,000 plus 3% on the balance. The difference is the absence of all the public showings, interruptions,
            home prep and seller pains. You even get to choose your own moving day!`,
-          image: require("../../../assets/image/1-MarketValueSale.png"),
+          image: require("../../../assets/image/marketv.jpg"),
         },
         {
           title: "Sell Without Showings ",
