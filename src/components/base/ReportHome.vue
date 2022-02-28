@@ -305,7 +305,7 @@
               </div>
             </div>
             <div class="item5b mr-1 mr-md-5">
-              <p class="text-color-1 Roboto-Medium">Thinking of moving ?</p>
+              <p class="text-color-1 Roboto-Medium">Next Steps?</p>
               <!-- <p class="Roboto-Regular">
                 Sweetly helps you buy, move, then sell.
               </p> -->
@@ -313,13 +313,12 @@
           </div>
           <div class="element1 pl-1 pl-md-5 mt-3">
             <p class="Roboto-Regular">
-              The next step is to get a detailed home estimate prepared by an
-              independent team of expert home evaluators. We'll also start
-              crafting your custom moving plan to take advantage of Sweetly's
-              unique approaches to buying and selling. Learn more
+              The next step is to get a licenced appraiser to view your home and
+              set the final price. Once the price has been set we can move forward
+              with the Sweetly product of your choice.
             </p>
             <button class="btn Roboto-Regular text-white">
-              Get personalized home valuation
+              Book an Appraisal
             </button>
           </div>
         </div>
