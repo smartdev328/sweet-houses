@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="mt-3">
         <p>*7/3 means 7% of the first $100,000 plus 3% on the balance of the sale price</p>
         <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the
           address used for this listing is )Address</p>
@@ -199,6 +199,7 @@
       <div class="item7 cards my-5">
         <div>
           <card-report
+              @SignUp="SignUp"
             :instant_estimate_data="instant_estimate_data"
             :closest_home_data="closest_sqftcom"
             v-if="Object.keys(closest_sqftcom).length"
@@ -245,30 +246,30 @@
         <div class="cards" v-if="Object.keys(similar_homes).length">
           <div>
             <h3 class="text-left text-color-1 DMSerifRegular ">Closest Sqft</h3>
-            <card-homereport
+            <card-list
               :homedata="closest_sqft"
               v-if="Object.keys(closest_sqft).length"
-            ></card-homereport>
+            ></card-list>
             <p v-else>We Can't Find any Closest Sqft</p>
           </div>
           <div>
             <h3 class="text-left text-color-1 DMSerifRegular ">
               Closest Location
             </h3>
-            <card-homereport
+            <card-list
               :homedata="closest_location"
               v-if="Object.keys(closest_location).length"
-            ></card-homereport>
+            ></card-list>
             <p v-else>We Can't Find any Closest Location</p>
           </div>
           <div>
             <h3 class="text-left text-color-1 DMSerifRegular ">
               Closest Bedrooms
             </h3>
-            <card-homereport
+            <card-list
               :homedata="closest_bedrooms"
               v-if="Object.keys(closest_bedrooms).length"
-            ></card-homereport>
+            ></card-list>
             <p v-else>We Can't Find any Closest Bedroom</p>
           </div>
         </div>
@@ -646,7 +647,9 @@ h1:after {
   gap: 40px;
 }
 .reporthome .boxs .box{
-  border: 2px solid #000;
+  padding: 20px;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+  border-radius: 6px;
   padding: 20px;
 }
 .reporthome .boxs .box .title{
