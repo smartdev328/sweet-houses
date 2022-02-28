@@ -1,77 +1,6 @@
 <template ref="home">
   <div class="home">
-    <header>
-      <div class="p-5">
-        <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
-          <textra
-            :data="words"
-            :timer="2"
-            :infinite="true"
-            filter="top-bottom"
-          />
-          <span class="ml-2">
-            <span>Your Home</span>
-            <img class="mt-n-4  mb-0" src="../assets/image/Underline_Dash.svg" alt="">
-          </span>
-        </div>
-        <div class="item1 mb-3">
-          <div class="item1b px-3 py-3 p-md-5">
-            <div
-              class="text-center text-white DMSerifRegular h-50"
-           
-            >
-              <p class="DMSerifRegular">
-                You see yourself in one home.  But your money is in the one you have?
-              </p>
-                  <p class="Roboto-Regular ">
-                Don’t lose out on your dream home, unlock your equity today!
-              </p>
-            </div>
-
-          
-            <div class="w-100 inputaddress">
-              <img
-                src="../assets/image/icon/Iconly-Light-Location.svg"
-                alt=""
-              />
-              <div class="item1b2">
-                <span class="space"></span>
-                <!-- <input type="text" class="Poppins" v-model="location"
-                         placeholder="Enter your home address"> -->
-                <vue-google-autocomplete
-                autocomplete="off"
-                  id="map"
-                    ref="addressmap"
-                  classname="form-control"
-                  placeholder="Enter a home location"
-                  country="ca"
-                  v-on:keyup="yourFunctinNameToBeCall"
-                  v-on:placechanged="getAddressData"
-                   v-on:inputChange="inputChange"
-                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
-                >
-                </vue-google-autocomplete>
-              </div>
-
-              <div class="item1b3">
-                <button class="Poppins" type="button" @click="getresult()">
-                  Get value
-                </button>
-              </div>
-            </div>
-            <div class="item1b3-sm">
-              <button class="Poppins" type="button" @click="getresult()">
-                Get value
-              </button>
-            </div>
-            <span class="spanalgorithm mt-2 text-white Poppins">
-              Algorithm values are provided as examples. Purchase price is set by independent appraiser & home inspection
-            </span>
-            <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     <div class="my-5">
       <div class="container" > 
           <HomeSwap></HomeSwap>
@@ -82,6 +11,7 @@
 
 <script>
 import HomeSwap from '../components/base/HomeSwap.vue'
+import HeaderSwiftsale from "../components/base/HeaderSwiftsale";
 export default {
   name: "Home",
   data() {
@@ -114,7 +44,8 @@ export default {
 
   },
   components: {
-    HomeSwap
+    HomeSwap,
+    HeaderSwiftsale
   },
   watch: {},
   methods: {

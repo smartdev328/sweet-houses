@@ -110,7 +110,7 @@
         </p>
         <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
           <p>
-            <span>{{ homedatafirst.bedrooms_bg }}</span>
+            <span>{{ homedatafirst.bedrooms_ag }}</span>
             <span>bed</span>
           </p>
           <p>
@@ -122,7 +122,7 @@
             <span>sqft</span>
           </p>
           <p>
-            <span>{{ homedatafirst.parking_spaces }}</span>
+            <span>{{ homedatafirst.garage_spaces }}</span>
             <span>parking</span>
           </p>
           <p>
@@ -164,7 +164,6 @@
 <!--          </p>-->
 <!--        </div>-->
 <!--      </div>-->
-
       <div class="item6">
         <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
         <p class="Roboto-Regular text-color-2">
@@ -318,7 +317,7 @@
               set the final price. Once the price has been set we can move forward
               with the Sweetly product of your choice.
             </p>
-            <button class="btn Roboto-Regular text-white">
+            <button class="btn Roboto-Regular text-white" @click="routeToAppraisal()">
               Book an Appraisal
             </button>
           </div>
@@ -466,6 +465,10 @@ export default {
     }
   },
   methods: {
+    routeToAppraisal(){
+      let routeData = this.$router.resolve({name:'appraisal'});
+        window.open(routeData.href, '_blank');
+    },
     getpos(item) {
       if(item){
         return {

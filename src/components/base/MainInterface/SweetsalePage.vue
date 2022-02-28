@@ -46,7 +46,7 @@
             alt="..."
           />
           <div class="card-body pl-0">
-            <h3 class="card-title text-primary Playfair">Step 1</h3>
+            <h3 class="card-title DMSerifRegular">Step 1</h3>
             <h3 class="card-title Roboto-Medium text-color-1">
               Tell Us About Your Property
             </h3>
@@ -67,7 +67,7 @@
             alt="..."
           />
           <div class="card-body pl-0">
-            <h3 class="card-title text-primary Playfair">Step 2</h3>
+            <h3 class="card-title DMSerifRegular">Step 2</h3>
             <h3 class="card-title Roboto-Medium text-color-1">
               Appraisal & Inspection
             </h3>
@@ -86,7 +86,7 @@
             alt="..."
           />
           <div class="card-body pl-0">
-            <h3 class="card-title text-primary Playfair">Step 3</h3>
+            <h3 class="card-title DMSerifRegular">Step 3</h3>
             <h3 class="card-title Roboto-Medium text-color-1">Close & Move</h3>
             <p class="card-text text-color-2">
               Receive your first payment on the day you choose. Once we improve
@@ -700,7 +700,7 @@ ul li {
   border-radius: 8px;
 }
 .page1 .item3new .cards .card .card-body h3:first-child {
-  color: #00a19b;
+  color:#ffb600;
 }
 @media only screen and (max-width: 600px) {
   .item2c .gridcontainer,

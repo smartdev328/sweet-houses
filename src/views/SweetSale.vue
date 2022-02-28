@@ -1,123 +1,6 @@
 <template ref="home">
   <div class="home">
-    <header>
-      <div class="p-5">
-        <div class="itemnew11 d-flex justify-content-center DMSerifRegular">
-          <textra
-            :data="words"
-            :timer="2"
-            :infinite="true"
-            filter="top-bottom"
-          />
-          <span class="ml-2">
-            <span>Your Home</span>
-            <img class="mt-n-4 mb-0" src="../assets/image/Underline_Dash.svg" alt="">
-          </span>
-        </div>
-        <div class="item1  mb-3">
-          <div class="item1a">
-            <button
-              :style="getclass('Sweet_Sale')"
-            >
-              Sweet Sale
-              <div :style="getline('Sweet_Sale')"></div>
-            </button>
-            <button
-              @click="openswiftsale('Swift_Sale')"
-            >
-              Swift Sale
-              <div :style="getline('Swift_Sale')"></div>
-            </button>
-            <button
-              @click="opentraditionalpage('Traditional_Real_Estate')"
-              :style="getclass('Traditional_Real_Estate')"
-            >
-              Traditional Real Estate
-              <div :style="getline('Traditional_Real_Estate')"></div>
-            </button>
-          </div>
-          <div class="item1b px-3 py-5 p-md-5">
-            <div
-              class="text-center text-white DMSerifRegular h-75"
-              :class="tab_visible('Sweet_Sale')"
-            >
-              <p class="DMSerifRegular">
-                Get Maximum Value! Skip Public Showings And Choose Your Moving
-                Day
-              </p>
-              <p class="Roboto-Regular ">
-                The Sweet Sale is the smartest way to sell.
-              </p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular  h-75"
-              :class="tab_visible('Swift_Sale')"
-            >
-              <p class="DMSerifRegular">Your offer in minutes, SOLD in days</p>
-              <p class="Roboto-Regular">
-                Market Value less Our Fee = SOLD! Hassle-free.
-              </p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular   h-75"
-              :class="tab_visible('Equity_Advance')"
-            >
-              <p class="DMSerifRegular">
-                Your Home Equity, Before Your First Showing!
-              </p>
-              <p class="Roboto-Regular ">Access $25,000, $50,000, $150,000, or more!</p>
-            </div>
-            <div
-              class="text-center text-white DMSerifRegular  h-75"
-              :class="tab_visible('Traditional_Real_Estate')"
-            >
-              <p class="DMSerifRegular">Sweetened Listing, With Muscle!</p>
-              <p class="Roboto-Regular">Compare our services.</p>
-            </div>
-          
-            <div class="w-100 inputaddress">
-              <img
-                src="../assets/image/icon/Iconly-Light-Location.svg"
-                alt=""
-              />
-              <div class="item1b2">
-                <span class="space"></span>
-                <!-- <input type="text" class="Poppins" v-model="location"
-                         placeholder="Enter your home address"> -->
-                <vue-google-autocomplete
-                  id="map"
-                  autocomplete="off"
-                    ref="addressmap"
-                  classname="form-control"
-                placeholder="Enter a home location"
-                  country="ca"
-                  v-on:keyup="yourFunctinNameToBeCall"
-                  v-on:placechanged="getAddressData"
-                   v-on:inputChange="inputChange"
-                  :options="{fields: ['geometry', 'formatted_address', 'address_components']}"
-                >
-                </vue-google-autocomplete>
-              </div>
-
-              <div class="item1b3">
-                <button class="Poppins" type="button" @click="getresult()">
-                  Get value
-                </button>
-              </div>
-            </div>
-            <div class="item1b3-sm">
-              <button class="Poppins" type="button" @click="getresult()">
-               Get value
-              </button>
-            </div>
-        <span class="spanalgorithm mt-2 text-white Poppins">
-              Algorithm values are not intended to replace a professional opinion. Our purhcase price is set by certified Appraisers and Home Inspectors.
-            </span>
-            <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     <div class="my-5">
       <div class="container" > 
         <sweetsale-page></sweetsale-page>
@@ -136,9 +19,13 @@
 </template>
 
 <script>
+import HeaderSwiftsale from "../components/base/HeaderSwiftsale";
 // @ is an alias to /src
 export default {
   name: "Home",
+  components:{
+    HeaderSwiftsale
+  },
   data() {
     return {
       errmsg: "",
@@ -171,9 +58,6 @@ export default {
     // selected_menu(){
     //   return this.selected_menu;
     // },
-  },
-  components: {
-    
   },
   watch: {},
   methods: {
