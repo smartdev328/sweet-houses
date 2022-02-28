@@ -15,10 +15,24 @@
       </div>
     </div>
         <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
+
       <div class="item1a text-center">
-        <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
+        <p class="text-color-1 DMSerifRegular">Swift Sale PLUS</p>
       </div>
+
+<!--      <div class="item1b  col-md-10 mx-auto">-->
+<!--        <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>-->
+<!--      </div>-->
+
+
       <div class="row d-flex align-items-center item1b">
+        <div class="col-12 col-md-10 mx-auto">
+          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
+        </div>
+
+      </div>
+
+          <div class="row d-flex align-items-center item1b">
         <div class="col-12 col-md-10 mx-auto">
           <p class="Roboto-Medium">
             It starts with an appraisal to determine the current value of your home. We buy your home in 2 payments.
