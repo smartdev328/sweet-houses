@@ -132,38 +132,39 @@
         </div>
       </div>
 
-      <div class="item5 p-3 my-5">
-        <div class="item5a dropdown">
-          <img
-            src="../../assets/image/icon/progree.svg"
-            class="w-100 h-100 dropbtn"
-            alt=""
-          />
-          <div class="dropdown-content">
-            <img
-              src="../../assets/image/icon/Component 61 – 1.svg"
-              class="w-100 h-100"
-              alt=""
-            />
-          </div>
-        </div>
-        <!-- <div class="item5b">
-          <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>
-          <p class="Roboto-Regular text-color-2">
-            Kick off your sale by getting a more detailed appraisal from one of
-            our <br />
-            agents. Learn more about our <span> selling services.</span>
-          </p>
-        </div> -->
-        <div class="item5c text-center">
-          <button class="btn Roboto-Regular mb-2">
-            Get a personalized home appraisal
-          </button>
-          <p class="text-color-2  Roboto-Regular">
-            It's free when you list with us
-          </p>
-        </div>
-      </div>
+<!--      <div class="item5 p-3 my-5">-->
+<!--        <div class="item5a dropdown">-->
+<!--          <img-->
+<!--            src="../../assets/image/icon/progree.svg"-->
+<!--            class="w-100 h-100 dropbtn"-->
+<!--            alt=""-->
+<!--          />-->
+<!--          <div class="dropdown-content">-->
+<!--            <img-->
+<!--              src="../../assets/image/icon/Component 61 – 1.svg"-->
+<!--              class="w-100 h-100"-->
+<!--              alt=""-->
+<!--            />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; <div class="item5b">-->
+<!--          <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>-->
+<!--          <p class="Roboto-Regular text-color-2">-->
+<!--            Kick off your sale by getting a more detailed appraisal from one of-->
+<!--            our <br />-->
+<!--            agents. Learn more about our <span> selling services.</span>-->
+<!--          </p>-->
+<!--        </div> &ndash;&gt;-->
+<!--        <div class="item5c text-center">-->
+<!--          <button class="btn Roboto-Regular mb-2">-->
+<!--            Get a personalized home appraisal-->
+<!--          </button>-->
+<!--          <p class="text-color-2  Roboto-Regular">-->
+<!--            It's free when you list with us-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+
       <div class="item6">
         <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
         <p class="Roboto-Regular text-color-2">
