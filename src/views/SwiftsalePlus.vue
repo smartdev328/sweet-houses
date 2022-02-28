@@ -1,9 +1,9 @@
 <template ref="home">
   <div class="home">
-    <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
+    <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     <div class="my-5">
       <div class="container">
-        <SwiftplusPage></SwiftplusPage>
+        <SwiftplusPage @gotFocus="gotFocus"></SwiftplusPage>
       </div>
     </div>
   </div>
@@ -54,6 +54,9 @@ export default {
   },
   watch: {},
   methods: {
+    gotFocus(){
+      this.$refs.HeaderSwiftsale.gotFocus()
+    },
     openforsalemap(){
       return ""
     },

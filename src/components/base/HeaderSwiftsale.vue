@@ -20,7 +20,7 @@
                 <span class="space"></span>
                 <vue-google-autocomplete
                     autocomplete="off"
-                    id="map"
+                    id="textaddress"
                     ref="addressmap"
                     classname="form-control"
                     placeholder="Enter a home location"
@@ -172,6 +172,10 @@ export default {
         return true;
       }
     },
+    gotFocus(){
+      document.getElementById("textaddress").focus();
+    },
+
   }
 }
 </script>

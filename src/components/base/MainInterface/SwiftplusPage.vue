@@ -9,9 +9,7 @@
           <p class="Roboto-Medium">
              The minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
           </p>
-       
         </div>
-   
       </div>
     </div>
         <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
@@ -88,7 +86,7 @@
     </div>
 
     <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn" @click="scrolltop()" style="    background-color: #ffb600;
+      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -99,7 +97,7 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
 
     <div class="my-2 my-md-5 item11 mx-3">
@@ -110,14 +108,14 @@
         <div class="element1 p-0 col-12 col-md-6">
           <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
           <img
-            src="../../../assets/image/wswift1.png"
+            src="../../../assets/image/swplus1.png"
             class="w-100 h-100"
             alt=""
           />
         </div>
         <div class="element2 p-0 col-12 col-md-6">
           <img
-            src="../../../assets/image/wswift2.png"
+            src="../../../assets/image/swplus2.png"
             class="w-100 h-100"
             alt=""
           />
@@ -129,7 +127,7 @@
       </div>
     </div>
         <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn" @click="scrolltop()" style="    background-color: #ffb600;
+      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -140,7 +138,7 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
         <div class="my-2 my-md-5 item12 mx-3">
       <div class="item12a DMSerifRegular text-center">
@@ -175,7 +173,7 @@
       </div>
     </div>
            <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn" @click="scrolltop()" style="    background-color: #ffb600;
+      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -186,26 +184,15 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">start</button>
+    padding: 9px 24px;">Start</button>
     </div>
   </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
   data() {
     return {
-      selected_part: "Swiftpart",
-      Traditionaldata: [
-        { content: " Value your time and convenience." },
-        { content: "Have pets who don’t like strangers." },
-        { content: "Have children and a busy lifestyle." },
-        { content: " Like to be in control and hate surprises." },
-        { content: "Already have a new home waiting." },
-        {
-          content:
-            "Plan to buy your next home using the money from the one you have.",
-        },
-      ],
       Benefitsdata: [
         {
           title: "Market Value Sale",
@@ -238,12 +225,40 @@ export default {
       this.$router.push({ name: "FrequentlyQuestion" });
       document.body.scrollTop = 0;
     },
-    scrolltop(){
-      document.body.scrollTop = 0;
+    gotFocus(){
+      setTimeout(() => { this.$emit("gotFocus")}, 1000);
+
     }
+
   },
+  mounted() {
+  $(document).ready(function(){
+     $('body,html').animate({
+      scrollTop: 0
+     }, 800);
+     $('.btngototop').click(function () {
+       $('body,html').animate({
+       scrollTop: 0,
+      }, 800);
+     return false;
+     });
+  });
+  }
 };
 </script>
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--  $('body,html').animate({-->
+<!--    scrollTop: 0-->
+<!--  }, 800);-->
+<!--  $('.btngototop').click(function () {-->
+<!--    $('body,html').animate({-->
+<!--      scrollTop: 0-->
+<!--    }, 800);-->
+<!--    return false;-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
 
 <style scoped>
 .page2 .item1 .item1a p {

@@ -1,22 +1,75 @@
 <template>
     <div>
         <div class="card shadow">
-            <!-- <div class="overlay" v-if="sold">
-                <div class="text-white Roboto-Medium">
-                    <p>See this home's photos and sale price</p>
-                    <p>Local laws require you to sign up to see sold details</p>
-                    <button class="btn">Sign Up</button>
-                </div>
-                
-            </div> -->
-            <!-- <img  v-if="sold" src="../../assets/image/homepage/pic2.png" class="card-img-top" alt="..."> -->
-             <img  v-if="closest_home_data.images.count > 0" :src="closest_home_data.images.image" class="card-img-top" alt="...">
-             <img
-                        v-if="closest_home_data.images.count ==0 "
-                        src="../../assets/image/notimg.jpeg"
-                        class="card-img-top"
-                        alt=""
-                    />
+          <div class="position-relative" style="overflow: hidden">
+            <div class="overlay" v-if="!isLoggedIn">
+              <div class="text-white Roboto-Medium">
+                <p>See this home's photos and sale price</p>
+                <p>Local laws require you to sign up to see sold details</p>
+                <b-button v-b-modal="'my-modal'" @click="SignUp()" class="btn"
+                >Sign up</b-button
+                >
+              </div>
+            </div>
+            <div
+                class="overlay d-flex align-items-center justify-content-center"
+                v-if="currentcount > 6 && closest_home_data.images.count > 6"
+            >
+              <div class="text-white Roboto-Medium pointer">
+                <img src="../../assets/image/download.svg" alt="" />
+                <p>View all {{ closest_home_data.images.count }} images</p>
+              </div>
+            </div>
+            <img
+                v-if="!closest_home_data.images.image"
+                src="../../assets/image/notimg.jpeg"
+                class="card-img-top"
+                alt=""
+                @click="openhomedetails"
+            />
+            <img
+                v-if="sold && closest_home_data.images.image"
+                :src="closest_home_data.images.image"
+                class="card-img-top"
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0"
+                alt="..."
+                @click="openhomedetails"
+            />
+
+            <img
+                v-if="!sold && closest_home_data.images.image"
+                :src="closest_home_data.images.image"
+                class="card-img-top"
+                ref="slidepic"
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0"
+                alt="..."
+                @click="openhomedetails"
+            />
+            <div
+                class="arrow-dir"
+                @click="getImage()"
+                v-if="currentcount < closest_home_data.images.count"
+            >
+              <img src="../../assets/image/icon/Iconarrows.svg" alt="" />
+            </div>
+            <div
+                class="arrow-dir-before"
+                @click="getImagebefor()"
+                v-if="currentcount > 1"
+            >
+              <img src="../../assets/image/icon/iconbefore.svg" alt="" />
+            </div>
+            <div class="counter" v-if="closest_home_data.images.count">
+              {{ currentcount }}/{{ closest_home_data.images.count }}
+            </div>
+          </div>
+
 
             <div class="card-body">
                 <div class="element1a">
@@ -137,9 +190,22 @@ import moment from 'moment';
 export default {
     props:["instant_estimate_data","closest_home_data"],
     data:() =>({
-        sold:true
+      currentcount: 1,
     }),
     computed:{
+      sold(){
+        return this.closest_home_data.lastStatus == "Sld"
+      },
+      username() {
+        return this.$store.state.user.first_name || "";
+      },
+      isLoggedIn() {
+        if (this.username) {
+          return true;
+        } else {
+          return false;
+        }
+      },
         prices(){
              return this.instant_estimate_data.prices || {}
       },
@@ -151,6 +217,58 @@ export default {
       },
     },
     methods:{
+      getImage() {
+        //  this.currentcount +=1
+        let input = {
+          mls: this.closest_home_data.mlsNumber,
+          image_num: this.currentcount + 1,
+          boardId:this.closest_home_data.boardId
+        };
+        const element = this.$refs.slidepic;
+        element.classList.add("ac1");
+
+        this.$http.post("listings/image_bymls/", input).then((res) => {
+          const element = this.$refs.slidepic;
+          element.classList.remove("ac1");
+          this.slideimgs.push({
+            imageurl:res.data.image,
+            c_count:this.currentcount += 1
+          })
+          this.closest_home_data.images.image = res.data.image;
+          console.log(res.data.image);
+          this.currentcount += 1;
+          return res;
+        });
+      },
+      getImagebefor() {
+        //  this.currentcount -=1
+        let input = {
+          mls: this.closest_home_data.mlsNumber,
+          image_num: this.currentcount - 1,
+          boardId:this.closest_home_data.boardId
+        };
+        const element = this.$refs.slidepic;
+        element.classList.add("ac2");
+        this.$http.post("listings/image_bymls/", input).then((res) => {
+          const element = this.$refs.slidepic;
+          element.classList.remove("ac2");
+          // const element = this.$refs.slidepic;
+          // element.classList.add('fadeOut');
+          //     element.classList.remove('fadeIn');
+          // setTimeout(() => {
+          //         element.classList.remove('fadeOut');
+          //         element.classList.add('fadeIn');
+          //     }, 300);
+          this.closest_home_data.images.image = res.data.image;
+
+          console.log(res.data.image);
+          this.currentcount -= 1;
+          return res;
+        });
+      },
+      SignUp() {
+        this.$emit("SignUp");
+      },
         gettime(item){
             return moment(item).endOf('day').fromNow();   
         },
@@ -219,6 +337,66 @@ export default {
     border: 2px solid #FFFFFF;
     background: transparent;
     color: #fff;
+}
+.card img {
+  overflow: hidden;
+  transform-origin: 50% 65%;
+  transition: transform 2s, filter 3s ease-in-out;
+
+}
+.counter {
+  position: absolute;
+  top:10.5em;
+  right: 10px;
+  color: #fff;
+  background: #434242a3;
+  padding: 4px 16px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+.arrow-dir {
+  position: absolute;
+  cursor: pointer;
+  top: 40%;
+  right: 10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow-dir-before {
+  position: absolute;
+  cursor: pointer;
+  top: 20%;
+  left: 10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.arrow-dir-before img {
+  width: 16px;
+  height: 16px;
+  /* transform: rotate(180deg); */
+  transform-origin: unset !important;
+}
+.arrow-dir img {
+  width: 16px;
+  height: 16px;
+}
+.card img:hover {
+  transform: scale(1.2);
+}
+.card .overlay img {
+  width: 34px;
+  height: 34px;
 }
 .element1a p{
     font-size: 22px;
@@ -303,5 +481,15 @@ export default {
 .card table tbody tr td img{
     width: 17px !important;
     height: 17px !important;
+}
+.ac1{
+  transform: translateX(300%) !important;
+  transition : transform 0s !important;
+  /* transition-delay: 0.1s !important; */
+}
+.ac2{
+  transform: translateX(-300%) !important;
+  transition : transform 0s !important;
+  /* transition-delay: 0.1s !important; */
 }
 </style>
