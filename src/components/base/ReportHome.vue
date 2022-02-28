@@ -90,8 +90,8 @@
       </div>
       <div class="mt-3">
         <p>*7/3 means 7% of the first $100,000 plus 3% on the balance of the sale price</p>
-        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the
-          address used for this listing is )Address</p>
+<!--        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the-->
+<!--          address used for this listing is )Address</p>-->
       </div>
 
 
