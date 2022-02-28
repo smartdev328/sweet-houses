@@ -21,13 +21,13 @@ can even keep your current listing active.
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">First Name:*</label>
-                  <input type="email" class="form-control border-0 shadow-sm" />
+                  <input type="text" class="form-control border-0 shadow-sm" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Last Name:*</label>
-                  <input type="email" class="form-control border-0 shadow-sm" />
+                  <input type="text" class="form-control border-0 shadow-sm" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -39,7 +39,7 @@ can even keep your current listing active.
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Phone:*</label>
-                  <input type="email" class="form-control border-0 shadow-sm" />
+                  <input type="text" class="form-control border-0 shadow-sm" />
                 </div>
               </div>
               <div class="col-12">
