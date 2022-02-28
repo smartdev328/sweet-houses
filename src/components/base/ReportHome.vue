@@ -317,7 +317,7 @@
               set the final price. Once the price has been set we can move forward
               with the Sweetly product of your choice.
             </p>
-            <button class="btn Roboto-Regular text-white">
+            <button class="btn Roboto-Regular text-white" @click="routeToAppraisal()">
               Book an Appraisal
             </button>
           </div>
@@ -465,6 +465,10 @@ export default {
     }
   },
   methods: {
+    routeToAppraisal(){
+      let routeData = this.$router.resolve({name:'appraisal'});
+        window.open(routeData.href, '_blank');
+    },
     getpos(item) {
       if(item){
         return {
