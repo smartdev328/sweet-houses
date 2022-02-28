@@ -24,14 +24,14 @@
 
 
       <div class="row d-flex align-items-center item1b">
-        <div class="col-12 col-md-10 mx-auto">
+        <div class="col-12 col-md-8">
           <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
         </div>
 
       </div>
 
           <div class="row d-flex align-items-center item1b">
-        <div class="col-12 col-md-10 mx-auto">
+        <div class="col-12 col-md-8">
           <p class="Roboto-Medium">
             It starts with an appraisal to determine the current value of your home. We buy your home in 2 payments.
              Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property  <u>at an
@@ -39,6 +39,18 @@
             This product is available to customers who sell and buy with Sweetly.
           </p>
         </div>
+            <div class="col-12 col-md-4">
+              <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/NtPMe0nhq2w"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  style="background: #edf3f2; border-radius: 8px"
+                  allowfullscreen
+              ></iframe>
+            </div>
 
       </div>
     </div>
