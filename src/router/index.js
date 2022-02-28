@@ -3,11 +3,8 @@ import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
 import HomeSwap from '../views/HomeSwap.vue'
 import BrowswHome from '../views/BrowswHome.vue'
-
-
 import store from '../store/index'
 Vue.use(VueRouter)
-
 
 
 function requireAddress(to, from, next) {
@@ -75,8 +72,8 @@ const routes = [
     component: () => import ('../views/EquityAdvance.vue')
   },
   {
-    path:'/appraisa',
-    name:'appraisa',
+    path:'/appraisal',
+    name:'appraisal',
     component: () => import ('../views/AppRise.vue'),
     meta: {
       hideNavbar: true,

@@ -110,7 +110,7 @@
         </p>
         <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
           <p>
-            <span>{{ homedatafirst.bedrooms_bg }}</span>
+            <span>{{ homedatafirst.bedrooms_ag }}</span>
             <span>bed</span>
           </p>
           <p>
@@ -122,7 +122,7 @@
             <span>sqft</span>
           </p>
           <p>
-            <span>{{ homedatafirst.parking_spaces }}</span>
+            <span>{{ homedatafirst.garage_spaces }}</span>
             <span>parking</span>
           </p>
           <p>
@@ -132,38 +132,38 @@
         </div>
       </div>
 
-      <div class="item5 p-3 my-5">
-        <div class="item5a dropdown">
-          <img
-            src="../../assets/image/icon/progree.svg"
-            class="w-100 h-100 dropbtn"
-            alt=""
-          />
-          <div class="dropdown-content">
-            <img
-              src="../../assets/image/icon/Component 61 – 1.svg"
-              class="w-100 h-100"
-              alt=""
-            />
-          </div>
-        </div>
-        <!-- <div class="item5b">
-          <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>
-          <p class="Roboto-Regular text-color-2">
-            Kick off your sale by getting a more detailed appraisal from one of
-            our <br />
-            agents. Learn more about our <span> selling services.</span>
-          </p>
-        </div> -->
-        <div class="item5c text-center">
-          <button class="btn Roboto-Regular mb-2">
-            Get a personalized home appraisal
-          </button>
-          <p class="text-color-2  Roboto-Regular">
-            It's free when you list with us
-          </p>
-        </div>
-      </div>
+<!--      <div class="item5 p-3 my-5">-->
+<!--        <div class="item5a dropdown">-->
+<!--          <img-->
+<!--            src="../../assets/image/icon/progree.svg"-->
+<!--            class="w-100 h-100 dropbtn"-->
+<!--            alt=""-->
+<!--          />-->
+<!--          <div class="dropdown-content">-->
+<!--            <img-->
+<!--              src="../../assets/image/icon/Component 61 – 1.svg"-->
+<!--              class="w-100 h-100"-->
+<!--              alt=""-->
+<!--            />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; <div class="item5b">-->
+<!--          <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>-->
+<!--          <p class="Roboto-Regular text-color-2">-->
+<!--            Kick off your sale by getting a more detailed appraisal from one of-->
+<!--            our <br />-->
+<!--            agents. Learn more about our <span> selling services.</span>-->
+<!--          </p>-->
+<!--        </div> &ndash;&gt;-->
+<!--        <div class="item5c text-center">-->
+<!--          <button class="btn Roboto-Regular mb-2">-->
+<!--            Get a personalized home appraisal-->
+<!--          </button>-->
+<!--          <p class="text-color-2  Roboto-Regular">-->
+<!--            It's free when you list with us-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
       <div class="item6">
         <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
         <p class="Roboto-Regular text-color-2">
@@ -305,7 +305,7 @@
               </div>
             </div>
             <div class="item5b mr-1 mr-md-5">
-              <p class="text-color-1 Roboto-Medium">Thinking of moving ?</p>
+              <p class="text-color-1 Roboto-Medium">Next Steps?</p>
               <!-- <p class="Roboto-Regular">
                 Sweetly helps you buy, move, then sell.
               </p> -->
@@ -313,13 +313,12 @@
           </div>
           <div class="element1 pl-1 pl-md-5 mt-3">
             <p class="Roboto-Regular">
-              The next step is to get a detailed home estimate prepared by an
-              independent team of expert home evaluators. We'll also start
-              crafting your custom moving plan to take advantage of Sweetly's
-              unique approaches to buying and selling. Learn more
+              The next step is to get a licenced appraiser to view your home and
+              set the final price. Once the price has been set we can move forward
+              with the Sweetly product of your choice.
             </p>
-            <button class="btn Roboto-Regular text-white">
-              Get personalized home valuation
+            <button class="btn Roboto-Regular text-white" @click="routeToAppraisal()">
+              Book an Appraisal
             </button>
           </div>
         </div>
@@ -466,6 +465,10 @@ export default {
     }
   },
   methods: {
+    routeToAppraisal(){
+      let routeData = this.$router.resolve({name:'appraisal'});
+        window.open(routeData.href, '_blank');
+    },
     getpos(item) {
       if(item){
         return {

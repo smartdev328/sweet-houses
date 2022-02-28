@@ -24,7 +24,7 @@
                     <div class="card border-0">
                     <img src="../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
-                        <h3 class="card-title text-primary Playfair">Step 1</h3>
+                        <h3 class="card-title DMSerifRegula">Step 1</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Appraised Value
 
 </h3>
@@ -38,7 +38,7 @@
                  <div class="card border-0">
                     <img src="../../assets/image/Renovation.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
-                        <h3 class="card-title text-primary Playfair">Step 2</h3>
+                        <h3 class="card-title DMSerifRegula">Step 2</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Buy Your Dream Home
 
 </h3>
@@ -52,7 +52,7 @@
                   <div class="card border-0">
                     <img src="../../assets/image/SoldSign.jpg" class="card-img-top" alt="...">
                     <div class="card-body pl-0">
-                        <h3 class="card-title text-primary Playfair">Step 3</h3>
+                        <h3 class="card-title DMSerifRegula">Step 3</h3>
                         <h3 class="card-title Roboto-Medium text-color-1">Sell Your Old Home</h3>
                         <p class="card-text text-color-2">Close - Stress free.  We’ll sell the home you have.  Pay us back
 
@@ -454,7 +454,7 @@ p{
          border-radius: 8px;
      }
      .page1 .item3new .cards .card .card-body h3:first-child{
-         color: #00A19B;
+         color: #ffb600;
      }
     @media only screen and (max-width: 600px){
         .item2c .gridcontainer,
