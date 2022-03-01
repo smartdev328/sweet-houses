@@ -70,7 +70,7 @@
             resell the property for all it’s worth! You get the full balance of the resale price less our fee and the cost of improvements.
             Our fee is 7/3 plus 2% of actual resale price.
             <code><br></code>
-            Sample increased Sale Price: <span v-if="prices"> ${{ prices.sweet_price.toLocaleString("ja-JP") }}</span> – based on$10,000 improvements and a sale price increase of$30,000.
+            Sample increased Sale Price: <span v-if="prices"> ${{ prices.sweet_price.toLocaleString("ja-JP") }}</span> – based on $10,000 improvements and a sale price increase of $30,000.
           </p>
           <div class="footerbox DMSerifRegular card-footer">
             <p v-if="prices">Estimated Net:<span>${{ prices.sweet_net.toLocaleString("ja-JP") }}</span> </p>
