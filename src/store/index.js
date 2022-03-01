@@ -508,7 +508,7 @@ export const store = new Vuex.Store({
             state.formData.append(entry[0], entry[1])
             );
             return new Promise((resolve, reject) => {
-                axios({url: 'listings/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
+                axios({url: 'forms/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
                 .then(resp => {
 
                   commit('instant_estimate', resp.data)
