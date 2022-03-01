@@ -26,7 +26,7 @@
         </div>
         <div class="item1d">
           <p class="text-dark Roboto-Medium">
-            To establish an accurate and fair value for your home, we use an appraisal as provided by a licensed Appraiser. The eventualasking (listing price) will be set by you.
+            To establish an accurate and fair value for your home, we use an appraisal as provided by a licensed Appraiser. The eventual asking (listing price) will be set by you.
           </p>
         </div>
       </div>
