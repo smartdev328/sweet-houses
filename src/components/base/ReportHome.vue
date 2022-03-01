@@ -269,7 +269,7 @@
               :homedata="closest_bedrooms"
               v-if="Object.keys(closest_bedrooms).length"
             ></card-list>
-            <p v-else>We Can't Find any Closest Bedroom</p>
+            <p v-else>We Can't Find any Closest Bedroom's</p>
           </div>
         </div>
         <p v-if="!Object.keys(similar_homes).length">
@@ -573,7 +573,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#0a856e !important;
+  color:#00a19b !important;
   font-family: 'DM Serif Display', "Playfair Display",serif;
 }
 .reporthome .item3 .item3a h1:before,
