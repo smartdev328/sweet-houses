@@ -269,7 +269,7 @@
               :homedata="closest_bedrooms"
               v-if="Object.keys(closest_bedrooms).length"
             ></card-list>
-            <p v-else>We Can't Find any Closest Bedroom</p>
+            <p v-else>We Can't Find any Closest Bedroom's</p>
           </div>
         </div>
         <p v-if="!Object.keys(similar_homes).length">
