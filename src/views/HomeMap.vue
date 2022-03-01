@@ -74,7 +74,7 @@
                 >
                 </vue-google-autocomplete>
 
-                <button @click="showfilter = !showfilter" class="px-2">
+                <button @click="showfilter = !showfilter;openfscreen()" class="px-2">
                   <img src="../assets/image/icon/iconfilter.svg" alt="" />
                   <span class="Roboto-Regular ml-2">Filters</span>
                 </button>
@@ -634,6 +634,7 @@ export default {
     opensold() {
       if (this.selected_menu == "show-list") {
         this.typesale = "sold";
+        this.$refs.showmap.ckself();
         this.$refs.showlist.find_listings_SoldMain();
       }
       if (this.selected_menu == "show-map") {
@@ -641,6 +642,9 @@ export default {
         this.$refs.showmap.ckself();
         this.$refs.showmap.find_listings_SoldMain();
       }
+    },
+    openfscreen(){
+      this.$refs.showmap.ckself();
     },
     getpositiontop(){
       this.posY = document.getElementById('searchpage').getBoundingClientRect().y;

@@ -2,24 +2,6 @@
     <div>
         <div class="card shadow">
           <div class="position-relative" style="overflow: hidden">
-            <div class="overlay" v-if="!isLoggedIn">
-              <div class="text-white Roboto-Medium">
-                <p>See this home's photos and sale price</p>
-                <p>Local laws require you to sign up to see sold details</p>
-                <b-button v-b-modal="'my-modal'" @click="SignUp()" class="btn"
-                >Sign up</b-button
-                >
-              </div>
-            </div>
-            <div
-                class="overlay d-flex align-items-center justify-content-center"
-                v-if="currentcount > 6 && closest_home_data.images.count > 6"
-            >
-              <div class="text-white Roboto-Medium pointer">
-                <img src="../../assets/image/download.svg" alt="" />
-                <p>View all {{ closest_home_data.images.count }} images</p>
-              </div>
-            </div>
             <img
                 v-if="!closest_home_data.images.image"
                 src="../../assets/image/notimg.jpeg"
@@ -28,7 +10,7 @@
                 @click="openhomedetails"
             />
             <img
-                v-if="sold && closest_home_data.images.image"
+                v-if="closest_home_data.images.image"
                 :src="closest_home_data.images.image"
                 class="card-img-top"
                 data-aos="fade-zoom-in"
@@ -39,18 +21,6 @@
                 @click="openhomedetails"
             />
 
-            <img
-                v-if="!sold && closest_home_data.images.image"
-                :src="closest_home_data.images.image"
-                class="card-img-top"
-                ref="slidepic"
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0"
-                alt="..."
-                @click="openhomedetails"
-            />
             <div
                 class="arrow-dir"
                 @click="getImage()"
