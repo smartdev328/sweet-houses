@@ -156,7 +156,7 @@
                <p class=" Roboto-Medium" v-if="!isLoggedIn">
                Sold for $xxx,xxx
               </p>
-              <p class="Roboto-Regular">{{ getrelativedate }} days ago</p>
+              <p class="Roboto-Regular">{{ getrelativedateformnow }}</p>
             </div>
                <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -264,7 +264,7 @@
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                    }} , {{ getrelativedate}} days ago , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}} days ago</p>
+                    }} , {{ getrelativedate}} days ago , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}}</p>
 
                 </div>
 <!--                <div class="image col-3">-->
@@ -673,10 +673,11 @@ export default {
       return Difference_In_Days
     },
     getrelativedateformnow(){
-      let nowdate = new Date().toISOString().slice(0, 10)
-       let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
-      let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-      return Difference_In_Days
+       return moment(this.homedata.soldDate).endOf("day").fromNow();
+      // let nowdate = new Date().toISOString().slice(0, 10)
+      //  let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
+      // let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+      // return Difference_In_Days
     },
     getget(){
       let nowdate = new Date().toISOString().slice(0, 10)
