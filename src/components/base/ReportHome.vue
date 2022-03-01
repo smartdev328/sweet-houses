@@ -283,7 +283,7 @@
           >
         </div>
         <div class="item10b">
-          <button class="btn Roboto-Regular">Browse homes</button>
+          <button class="btn Roboto-Regular" @click="openbrowsehome()">Browse homes</button>
         </div>
       </div>
       <div class="item11 my-4 p-4 d-flex row">
@@ -467,6 +467,11 @@ export default {
     routeToAppraisal(){
       let routeData = this.$router.resolve({name:'appraisal'});
         window.open(routeData.href, '_blank');
+    },
+    openbrowsehome(){
+      this.$router.push({name:"BrowswHome"});
+      document.body.scrollTop = 0;
+
     },
     getpos(item) {
       if(item){
