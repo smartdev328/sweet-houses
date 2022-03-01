@@ -168,7 +168,7 @@
     <div v-if="hideMap">
       <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     </div>
-    <div class="my-5">
+    <div class="my-5" v-if="!fullscreenh">
       <div class="container bg-white">
         <SweetSale></SweetSale>
       </div>
@@ -386,6 +386,7 @@ export default {
     onScroll() {
       if(window.innerWidth < 620){
         this.showcontent = false;
+        this.fullscreenh = true
    //     this.fullscreenh = false;
       }
 
@@ -394,10 +395,12 @@ export default {
     },
     ckself(){
       this.showcontent = false;
+      this.fullscreenh = true
      // this.fullscreenh = false;
     },
     hidecontent() {
       this.showcontent = false;
+      this.fullscreenh = true
     },
     openfullscreenh() {
       this.fullscreenh = true;
@@ -405,6 +408,7 @@ export default {
     },
     checkClick() {
       this.showcontent = false;
+      this.fullscreenh = true
       if (this.infoWindowOpened) {
         (this.infoWindowOpened = false), (this.activehome = {});
       }
@@ -450,6 +454,7 @@ export default {
     },
     hideContent() {
       this.showcontent = false;
+      this.fullscreenh = true
     },
     handleInfoWindowClose() {
       this.activehome = {};

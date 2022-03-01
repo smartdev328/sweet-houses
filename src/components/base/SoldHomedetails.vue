@@ -156,7 +156,7 @@
                <p class=" Roboto-Medium" v-if="!isLoggedIn">
                Sold for $xxx,xxx
               </p>
-              <p class="Roboto-Regular">{{ getrelativedate }} days on Sweetly</p>
+              <p class="Roboto-Regular">{{ getrelativedate }} days ago</p>
             </div>
                <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -264,7 +264,7 @@
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                    }} , {{ getrelativedate}} days on Sweetly , Last Status is : {{homedata.lastStatus}}</p>
+                    }} , {{ getrelativedate}} days ago , Last Status is : {{homedata.lastStatus}}</p>
 
                 </div>
 <!--                <div class="image col-3">-->
@@ -321,7 +321,7 @@
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
                     <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
-                    <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
+                    <p class="mb-0 element2">{{gettime(history.listDate)}} ago</p>
                   </div>
                 <div class="col-6 col-md-5" v-if="!history.soldDate">
                   <p class="mb-0 Roboto-Medium text-color-5 element3" >

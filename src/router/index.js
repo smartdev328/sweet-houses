@@ -32,7 +32,11 @@ const routes = [
   {
     path: '/browse-home',
     name: 'BrowswHome',
-    component:BrowswHome
+    component:BrowswHome,
+    meta: {
+      hideNavbar: true
+    }
+
   },
   {
     path: '/terms-of-service',
