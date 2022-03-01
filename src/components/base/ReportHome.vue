@@ -26,7 +26,7 @@
         </div>
         <div class="item1d">
           <p class="text-dark Roboto-Medium">
-            To establish an accurate and fair value for your home, we use an appraisal as provided by a licensed Appraiser. The eventualasking (listing price) will be set by you.
+            To establish an accurate and fair value for your home, we use an appraisal as provided by a licensed Appraiser. The eventual asking (listing price) will be set by you.
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@
             resell the property for all it’s worth! You get the full balance of the resale price less our fee and the cost of improvements.
             Our fee is 7/3 plus 2% of actual resale price.
             <code><br></code>
-            Sample increased Sale Price: <span v-if="prices"> ${{ prices.sweet_price.toLocaleString("ja-JP") }}</span> – based on$10,000 improvements and a sale price increase of$30,000.
+            Sample increased Sale Price: <span v-if="prices"> ${{ prices.sweet_price.toLocaleString("ja-JP") }}</span> – based on $10,000 improvements and a sale price increase of $30,000.
           </p>
           <div class="footerbox DMSerifRegular card-footer">
             <p v-if="prices">Estimated Net:<span>${{ prices.sweet_net.toLocaleString("ja-JP") }}</span> </p>
@@ -269,7 +269,7 @@
               :homedata="closest_bedrooms"
               v-if="Object.keys(closest_bedrooms).length"
             ></card-list>
-            <p v-else>We Can't Find any Closest Bedroom</p>
+            <p v-else>We Can't Find any Closest Bedroom's</p>
           </div>
         </div>
         <p v-if="!Object.keys(similar_homes).length">
@@ -573,7 +573,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#0a856e !important;
+  color:#00a19b !important;
   font-family: 'DM Serif Display', "Playfair Display",serif;
 }
 .reporthome .item3 .item3a h1:before,

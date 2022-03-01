@@ -195,7 +195,7 @@ export default {
                 //   this.$notify({
                 //   group: 'foo',
                 //   type: "Success",
-                //   text: 'Success..! you are login',
+                //   text: 'Success..! You are logged in',
                 //   duration:6000,
                 //   speed:500
                 // });

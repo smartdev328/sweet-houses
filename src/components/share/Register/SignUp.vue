@@ -254,7 +254,7 @@ export default {
         this.$store.dispatch('registerGauth',{id_token:id_token,access_token:access_token}).then((res) =>{
             Swal.fire({
                   title: 'success!',
-                  text: 'Success..! you are login',
+                  text: 'Success..! You are logged in',
                   icon: 'success',
                   confirmButtonText: 'Ok',
                   timer: 1500
