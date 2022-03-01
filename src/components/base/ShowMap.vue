@@ -386,7 +386,7 @@ export default {
     onScroll() {
       if(window.innerWidth < 620){
         this.showcontent = false;
-        this.fullscreenh = false;
+   //     this.fullscreenh = false;
       }
 
 
@@ -394,7 +394,7 @@ export default {
     },
     ckself(){
       this.showcontent = false;
-      this.fullscreenh = false;
+     // this.fullscreenh = false;
     },
     hidecontent() {
       this.showcontent = false;
