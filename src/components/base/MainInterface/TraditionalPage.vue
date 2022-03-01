@@ -65,7 +65,7 @@
       </div>
       <div class="text-center Roboto-Regular">
         <p>Want a different program?</p>
-        <router-link to="/swift-sale">Try our Swift Sale</router-link>
+        <a class="Roboto-Regular pointer" @click="routeswiftsale()">Try our Swift Sale</a>
       </div>
     </div>
     <div class="my-2 my-md-5 item7">
@@ -218,6 +218,10 @@ export default {
       this.$router.push("/agent-profile/" + agent.name.replace(/\s+/g, "-"));
       document.body.scrollTop = 0;
     },
+    routeswiftsale(){
+      this.$router.push({ name: "SwiftSale" });
+      document.body.scrollTop = 0;
+    }
   },
 };
 </script>

@@ -78,7 +78,7 @@
           <div class="modelfilter shadow-sm" v-show="showfilter">
             <div class="px-4 pt-0 pb-4">
               <div class="element1 px-0">
-                <div class="w-50">
+                <div class="w-100 w-md-50">
                   <label for="propertytype" class="text-color-1 Roboto-Medium"
                     >Property Type</label
                   >
@@ -91,7 +91,7 @@
                     ></b-form-checkbox-group>
                   </div>
                 </div>
-                <div class="w-50">
+                <div class="w-100 w-md-50">
                   <label for="optionstyle" class="text-white Roboto-Medium"
                     >4</label
                   >
@@ -307,7 +307,7 @@
                   </div>
                   <div class="col-12 col-md-6">
                     <div
-                      class="d-flex align-items-baseline justify-content-between"
+                      class="d-flex align-items-baseline justify-content-between px-3"
                     >
                       <p style="float:left">Internal Sqft</p>
                       <p
@@ -393,7 +393,7 @@
       </div>
     </div>
 
-    <div :class="tab_visible('show-map')" class="h-50">
+    <div :class="tab_visible('show-map')" class="h-100">
       <show-map ref="showmap" :type="typesale" @submit="submitmap" @submit2="submitmap2"
 
       ></show-map>
@@ -490,6 +490,7 @@ export default {
   methods: {
     CancelFilter() {
       this.showfilter = false;
+      console.log("0000")
     },
     getAddressData(addressData) {
       this.$refs.showmap.openfullscreenh();
@@ -924,6 +925,7 @@ input:focus {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+  flex-direction: row;
 }
 .modelfilter .element2 .element2a div:nth-child(2) {
   width: 12px;
@@ -1007,6 +1009,22 @@ input:focus {
   border: 0;
 }
 @media only screen and (max-width: 600px) {
+  .modelfilter{
+    left:10%;
+    right: 10%;
+  }
+  .modelfilter .element1 .element1a{
+    width: 90%;
+  }
+  .modelfilter .element2 .element2a{
+    flex-direction: column;
+  }
+  .modelfilter .element3 .types a{
+    font-size: 14px;
+    margin: 0 3px 3px 0;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
   .searchpage {
     padding-left: 5px;
     padding-right: 5px;
