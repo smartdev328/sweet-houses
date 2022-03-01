@@ -573,7 +573,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#0a856e !important;
+  color:#00a19b !important;
   font-family: 'DM Serif Display', "Playfair Display",serif;
 }
 .reporthome .item3 .item3a h1:before,
