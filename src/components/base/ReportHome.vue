@@ -198,7 +198,6 @@
       <div class="item7 cards my-5">
         <div>
           <card-report
-              @SignUp="SignUp"
             :instant_estimate_data="instant_estimate_data"
             :closest_home_data="closest_sqftcom"
             v-if="Object.keys(closest_sqftcom).length"
