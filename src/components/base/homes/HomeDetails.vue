@@ -342,7 +342,7 @@
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
                   <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
-                  <p class="mb-0 element2">{{gettime(history.listDate)}} ago</p>
+                  <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
                 </div>
                 <div class="col-6 col-md-5" v-if="!history.soldDate">
                   <p class="mb-0 Roboto-Medium text-color-5 element3" >
