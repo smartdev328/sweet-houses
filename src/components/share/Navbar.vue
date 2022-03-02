@@ -247,85 +247,24 @@
             780-477-9338 </span>
           <!-- <button @click="openresetpassword">verify</button> -->
           <button
-              @click="closepopup()"
+              @click="openloginmodal()"
             v-b-modal="'my-modallogin'"
             class="bg-transparent border-0 mr-3 py-1"
           >
             Log In
           </button>
-          <b-modal
-            id="my-modallogin"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <log-in
-              @hideloginmodal="hideloginmodal"
-              @xloginOsignup="xloginOsignup"
-              @Openforgetcode="Openforgetcode"
-              @Openverifyemailbtcode="Openverifyemailbtcode"
-            ></log-in>
-          </b-modal>
+         
           <b-button
-              @click="closepopup()"
+              @click="opensignupmodal()"
             v-b-modal="'my-modal'"
             variant="white"
             class="bg-transparent signupbtn px-2 py-1"
           >
             Sign Up
           </b-button>
-          <b-modal
-            id="my-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <sign-up
-              @hidesignupmodal="hidesignupmodal"
-              @XsignupOlogin="XsignupOlogin"
-              @OpenVerifycode="OpenVerifycode"
-            ></sign-up>
-          </b-modal>
-          <b-modal
-            id="verify-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-            
-            no-close-on-backdrop
-          >
-            <verification-code
-              @OpenVerifycode="OpenVerifycode"
-              @closeVerify="closeVerify"
-            ></verification-code>
-          </b-modal>
+        
+          
 
-        <b-modal
-            id="forget-code"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-            
-            no-close-on-backdrop
-          >
-            <forget-code
-              @closepopup="closepopup"
-              @Xopenresetpasswprd="Xopenresetpasswprd"
-            ></forget-code>
-          </b-modal>
-           <b-modal
-            id="reset-password"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-            
-            no-close-on-backdrop
-          >
-            <reset-password
-              @closepopup="closepopup"
-              @Xresetpassword="Xresetpassword"
-            ></reset-password>
-          </b-modal>
           
         </div>
       </div>
@@ -356,52 +295,23 @@ export default {
     },
   },
   methods: {
+    opensignupmodal(){
+      this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
+    },
+    openloginmodal(){
+      this.$root.$emit('bv::show::modal', 'my-modallogin', '#my-modallogin')
+    },
     hidecollapse(){
       document.querySelector(".navbar-collapse").classList.remove('show');
-    },
-    Openverifyemailbtcode(){
-       this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("verify-modal");
     },
     switchVisibility() {
       this.FieldType = this.FieldType === "password" ? "text" : "password";
     },
-    hidesignupmodal() {
-      console.log("success");
-      this.$bvModal.hide("my-modal");
-    },
-    OpenVerifycode(){
-      this.$bvModal.show("verify-modal");
-    },
-    closeVerify(){
-      this.$bvModal.hide("verify-modal");
-    },
-    hideloginmodal() {
-      this.$bvModal.hide("my-modallogin");
-    },
-    xloginOsignup() {
-      this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("my-modal");
-    },
-    XsignupOlogin() {
-      this.$bvModal.hide("my-modal");
-      this.$bvModal.show("my-modallogin");
-    },
-    Openforgetcode(){
-      this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("forget-code");
-
-    },
     closepopup(){
       this.$bvModal.hide("forget-code");
     },
-    Xopenresetpasswprd(){
-      this.$bvModal.hide("forget-code");
-      this.$bvModal.show('reset-password');
-    },
-    Xresetpassword(){
-      this.$bvModal.hide('reset-password');
-    },
+  
+  
     logout() {
       this.$store.dispatch("logout");
       // this.$notify({
