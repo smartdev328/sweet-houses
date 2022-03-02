@@ -70,7 +70,7 @@
             </h3>
             <p class="card-text text-color-2">
               Tell us about your home. You'll get a computer-generated evaluation and comparable sales in your area.
-              We'll arrange for a licensed Appraiser to view your home and set the final price.
+              We'll arrange for a licensed Appraiser to view your home and set the price.
             </p>
           </div>
         </div>
