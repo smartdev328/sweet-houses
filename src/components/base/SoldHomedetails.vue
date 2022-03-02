@@ -156,7 +156,7 @@
                <p class=" Roboto-Medium" v-if="!isLoggedIn">
                Sold for $xxx,xxx
               </p>
-              <p class="Roboto-Regular">{{ getrelativedateformnow }}</p>
+              <p class="Roboto-Regular">{{ getrelativedateformnow }} ago</p>
             </div>
                <div
               class="item4 my-4 d-flex justify-content-between Roboto-Regular"
@@ -264,7 +264,7 @@
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                    }} , {{ getrelativedate}} days on Sweetly , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}}</p>
+                    }} , {{ getrelativedate}} days on Sweetly , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}} ago</p>
 
                 </div>
 <!--                <div class="image col-3">-->
@@ -301,7 +301,7 @@
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                    }} , {{ getrelativedate}} days  on Sweetly , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}} days ago</p>
+                    }} , {{ getrelativedate}} days  on Sweetly , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}} ago</p>
                 </div>
 <!--                <div class="image col-3">-->
 <!--                </div>-->
@@ -559,57 +559,6 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
                             </div>
                         </div>
                     </div> -->
-                       <b-modal
-            ref="my-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <sign-up
-              @hidesignupmodal="hidesignupmodal"
-              @XsignupOlogin="XsignupOlogin"
-              @OpenVerifycode="OpenVerifycode"
-            ></sign-up>
-          </b-modal>
-          <b-modal
-            ref="my-modallogin"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <log-in
-              @hideloginmodal="hideloginmodal"
-              @xloginOsignup="xloginOsignup"
-              @Openforgetcode="Openforgetcode"
-              @Openverifyemailbtcode="Openverifyemailbtcode"
-            ></log-in>
- </b-modal>
-   <b-modal
-            id="verify-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-            
-            no-close-on-backdrop
-          >
-            <verification-code
-              @OpenVerifycode="OpenVerifycode"
-              @closeVerify="closeVerify"
-            ></verification-code>
-          </b-modal>
-
-        <b-modal
-            id="forget-code"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-            
-            no-close-on-backdrop
-          >
-            <forget-code
-              @closepopup="closepopup"
-            ></forget-code>
-          </b-modal>
          
       </div>
 
@@ -673,7 +622,7 @@ export default {
       return Difference_In_Days
     },
     getrelativedateformnow(){
-       return moment(this.homedata.soldDate).endOf("day").fromNow();
+       return moment(this.homedata.soldDate).endOf("day").fromNow(true);
       // let nowdate = new Date().toISOString().slice(0, 10)
       //  let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
       // let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
@@ -787,21 +736,7 @@ export default {
         return moment(item).format("MMM Do YYYY");   
     },
         makeAuth(){
-      this.$refs['my-modallogin'].show();
-    },
-        XsignupOlogin() {
-        this.$refs['my-modal'].hide();
-       this.$refs['my-modallogin'].show();
-    },
-    hidesignupmodal() {
-     this.$refs['my-modal'].hide();
-    },
-    hideloginmodal() {
-      this.$refs['my-modallogin'].hide();
-    },
-    xloginOsignup() {
-      this.$refs['my-modallogin'].hide();
-      this.$refs['my-modal'].show();
+     this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
     },
      getsimiler(){
       let input = {

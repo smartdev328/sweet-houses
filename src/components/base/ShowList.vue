@@ -69,57 +69,6 @@
                  </p>
             </div>
         </div>
-          <b-modal
-            ref="my-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <sign-up
-              @hidesignupmodal="hidesignupmodal"
-              @XsignupOlogin="XsignupOlogin"
-              @OpenVerifycode="OpenVerifycode"
-            ></sign-up>
-          </b-modal>
-          <b-modal
-            ref="my-modallogin"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-          >
-            <log-in
-              @hideloginmodal="hideloginmodal"
-              @xloginOsignup="xloginOsignup"
-               @Openforgetcode="Openforgetcode"
-               @Openverifyemailbtcode="Openverifyemailbtcode"
-            ></log-in>
-          </b-modal>
-                <b-modal
-            id="verify-modal"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-
-            no-close-on-backdrop
-          >
-            <verification-code
-              @OpenVerifycode="OpenVerifycode"
-              @closeVerify="closeVerify"
-            ></verification-code>
-          </b-modal>
-
-        <b-modal
-            id="forget-code"
-            header-bg-variant="white"
-            body-bg-variant="white"
-            footer-bg-variant="white"
-
-            no-close-on-backdrop
-          >
-            <forget-code
-              @closepopup="closepopup"
-            ></forget-code>
-          </b-modal>
     </div>
 </template>
 <script>
@@ -351,14 +300,15 @@ computed:{
       this.$refs['my-modal'].show();
     },
     XsignupOlogin() {
-        this.$refs['my-modal'].hide();
-       this.$refs['my-modallogin'].show();
+      console.log("xxxx")
+      this.$refs['my-modal'].hide();
+       // this.$refs['my-modallogin'].show();
     },
     hidesignupmodal() {
      this.$refs['my-modal'].hide();
     },
     hideloginmodal() {
-      this.$refs['my-modallogin'].hide();
+      this.$bvModal.hide("my-modallogin");
     },
     xloginOsignup() {
       this.$refs['my-modallogin'].hide();

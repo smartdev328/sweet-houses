@@ -91,7 +91,7 @@
           >
             Sold for $xxx,xxx
           </p>
-          <p v-if="createdToday">
+          <p v-if="createdToday && type == 'forsale'">
             Listed today
             <img
               style="    width: 20px;
@@ -101,11 +101,14 @@
               alt=""
             />
           </p>
+          <p v-if="createdToday && type == 'sold'">
+            {{getrelativedateformnow(homedata.soldDate)}} ago
+          </p>
           <p class="Roboto-Regular" v-if="type == 'forsale' && !createdToday">
             {{ gettime(homedata.listDate) }} om Sweetly
           </p>
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
-            {{ gettime(homedata.soldDate) }} ago
+            {{getrelativedateformnow(homedata.soldDate)}} ago
           </p>
         </div>
         <div class="element2" v-if="homedata.offer_price">
@@ -263,6 +266,13 @@ export default {
     
   },
   methods: {
+    getrelativedateformnow(date){
+      return moment(date).endOf("day").fromNow(true);
+      // let nowdate = new Date().toISOString().slice(0, 10)
+      //  let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
+      // let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+      // return Difference_In_Days
+    },
     gettime(item) {
       let relativetime = moment(item).endOf("day").fromNow(true);
       if(relativetime.includes('hour')){
@@ -323,7 +333,7 @@ export default {
       });
     },
     SignUp() {
-      this.$emit("SignUp");
+       this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
     },
     openhomedetails(){
       let mls = this.homedata.mlsNumber;
