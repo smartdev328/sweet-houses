@@ -264,7 +264,7 @@
                   </p>
                   <p class="mb-0 Roboto-Medium text-color-5">Listed for ${{
                       getnumber(homedata.listPrice).toLocaleString("ja-JP")
-                    }} , {{ getrelativedate}} days ago , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}}</p>
+                    }} , {{ getrelativedate}} days on Sweetly , Last Status is : {{homedata.lastStatus}} , {{getrelativedateformnow}}</p>
 
                 </div>
 <!--                <div class="image col-3">-->

@@ -105,7 +105,7 @@
             {{ gettime(homedata.listDate) }} om Sweetly
           </p>
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
-            {{ gettime(homedata.listDate) }} ago
+            {{ gettime(homedata.soldDate) }} ago
           </p>
         </div>
         <div class="element2" v-if="homedata.offer_price">

@@ -21,31 +21,31 @@ can even keep your current listing active.
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">First Name:*</label>
-                  <input type="text" class="form-control border-0 shadow-sm" />
+                  <input type="text" class="form-control border-0 shadow-sm" v-model="inputdata.first_name" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Last Name:*</label>
-                  <input type="text" class="form-control border-0 shadow-sm" />
+                  <input type="text" class="form-control border-0 shadow-sm" v-model="inputdata.last_name" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email Address:*</label>
-                  <input type="email" class="form-control border-0 shadow-sm" />
+                  <input type="email" class="form-control border-0 shadow-sm" v-model="inputdata.email" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Phone:*</label>
-                  <input type="text" class="form-control border-0 shadow-sm" />
+                  <input type="phone" class="form-control border-0 shadow-sm" v-model="inputdata.phone_number" />
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Questions / Comments:*</label>
-                  <textarea class="form-control border-0 shadow-sm" rows="4"></textarea>
+                  <textarea class="form-control border-0 shadow-sm" rows="4" v-model="inputdata.comments" ></textarea>
                 </div>
               </div>
             </div>
@@ -240,10 +240,21 @@ The Open (MLS) Market.</p>
 export default {
   data(){
     return{
-      paginationpage:1
+      paginationpage:1,
+      inputdata:{
+        first_name:"",
+        last_name:"",
+        email:"",
+        phone_number:"",
+        comments:""
+      }
     }
   },
   methods:{
+    checkform(){
+      this.msg={};
+      this.errors=[]
+    },
     myCallback(){
       console.log(5)
     }
