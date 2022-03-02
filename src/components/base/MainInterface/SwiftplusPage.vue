@@ -87,8 +87,8 @@
               Appraisal & Inspection
             </h3>
             <p class="card-text text-color-2">
-              Subject only to a reasonable home inspection, you receive 90% of appraised value on the moving day you choose.
-               Then we’ll list the property for sale at an asking price that you agree to.
+              Subject to a reasonable home inspection, you receive 90% of appraised value on the moving day you choose.
+              Then we'll list the property for sale at an asking price that you agree to.
             </p>
           </div>
         </div>
