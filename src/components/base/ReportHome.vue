@@ -90,8 +90,8 @@
       </div>
       <div class="mt-3">
         <p>*7/3 means 7% of the first $100,000 plus 3% on the balance of the sale price</p>
-        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the
-          address used for this listing is )Address</p>
+<!--        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the-->
+<!--          address used for this listing is )Address</p>-->
       </div>
 
 
@@ -362,21 +362,36 @@
         </div>
       </div>
       <div class="my-5 disclaimer-content">
-        <p class="Roboto-Regular">
-          Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of
-          the copyright in its MLS® System. Data is deemed reliable but is not
-          guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple
-          Listing Service® and the associated logos are owned by The Canadian
-          Real Estate Association (CREA) and identify the quality of services
-          provided by real estate professionals who are members of CREA. Used
-          under license.
+<!--        <p class="Roboto-Regular">-->
+<!--          Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of-->
+<!--          the copyright in its MLS® System. Data is deemed reliable but is not-->
+<!--          guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple-->
+<!--          Listing Service® and the associated logos are owned by The Canadian-->
+<!--          Real Estate Association (CREA) and identify the quality of services-->
+<!--          provided by real estate professionals who are members of CREA. Used-->
+<!--          under license.-->
+<!--        </p>-->
+
+        <p class="Roboto-Regular" >
+          Copyright {{yearnow}}  by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>
+          The MLS® System Data is made available from the REALTORS® Association of Edmonton. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.<code><br></code>
+          Days on Site and market statistics values are calculated by Sweetly Real Estate Inc based on values provided in the REALTORS® Association of Edmonton listing data feed.<code><br></code>
+          Mortgage values are calculated by Sweetly Real Estate Inc and are provided for estimate purposes only.<code><br></code>
+          The Sweetly Estimate is calculated by Sweetly Real Estate Inc and is provided as a general estimate only.<code><br></code>
+          Trademarks are owned or controlled by the Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA (REALTOR®, REALTORS®) and/or the quality of services they provide (MLS®, Multiple Listing Service®)
+
+        </p><br>
+        <p  class="Roboto-Regular text-color-1">
+          Listing information last updated on {{lastupdatemonth}} at {{lastupdatehour}}  ({{timezone}})
         </p>
+
       </div>
     </div>
   </div>
 </template>
 <script>
 import { gmapApi } from 'vue2-google-maps';
+import moment from "moment";
 export default {
   components: {   },
   data() {
@@ -467,7 +482,30 @@ export default {
           this.closest_locationcom.map,
           this.closest_bedroomscom.map
         ]
+    },
+    yearnow(){
+      return new Date().getFullYear();
+    },
+    timezone(){
+      return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    },
+    lastupdate(){
+      var d = new Date(); /* midnight in China on April 13th */
+      return   d.toLocaleString('en-US', { timeZone: this.timezone });
+    },
+    lastupdatemonth(){
+      return moment(this.lastupdate).format("MMM Do YYYY");
+    },
+    lastupdatehour(){
+      const d = new Date();
+      let res =  d.toLocaleString('en-US',  {
+        timeZone: this.timezone,
+        hour: '2-digit',
+        hour12: true
+      })
+      return  res.replace(/[ ,]+/g, ":00 ")
     }
+
   },
   methods: {
     routeToAppraisal(){
