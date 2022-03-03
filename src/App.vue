@@ -53,7 +53,6 @@
             no-close-on-backdrop
           >
             <forget-code
-              @closepopup="closepopup"
               @Xopenresetpasswprd="Xopenresetpasswprd"
             ></forget-code>
           </b-modal>
@@ -66,7 +65,6 @@
             no-close-on-backdrop
           >
             <reset-password
-              @closepopup="closepopup"
               @Xresetpassword="Xresetpassword"
             ></reset-password>
           </b-modal>

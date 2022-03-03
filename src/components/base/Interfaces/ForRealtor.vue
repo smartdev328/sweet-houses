@@ -16,41 +16,93 @@ can even keep your current listing active.
               Please tell us a bit about your clients' situation.
             </p>
           </div>
-          <form>
+          <form @submit.prevent="send">
             <div class="row Roboto-Regular">
               <div class="col-12 col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">First Name:*</label>
-                  <input type="text" class="form-control border-0 shadow-sm" v-model="inputdata.first_name" />
+                  <label for="first_name">First Name:*</label>
+                  <input type="text" id="first_name" class="form-control border-0 shadow-sm"
+                         :class="{'p_invalid' : msgs.first_name}"
+                         @input="inputfirstname()"
+                         v-model="inputdata.first_name" />
+                  <span v-if="msgs.first_name" style="color: #fc5353;">{{
+                      msgs.first_name
+                    }}</span>
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Last Name:*</label>
-                  <input type="text" class="form-control border-0 shadow-sm" v-model="inputdata.last_name" />
+                  <label for="last_name">Last Name:*</label>
+                  <input type="text" id="last_name" class="form-control border-0 shadow-sm" v-model="inputdata.last_name"
+                         :class="{'p_invalid' : msgs.last_name}"
+                         @input="inputlastnamea()"
+                  />
+                  <span v-if="msgs.last_name" style="color: #fc5353;">{{
+                      msgs.last_name
+                    }}</span>
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email Address:*</label>
-                  <input type="email" class="form-control border-0 shadow-sm" v-model="inputdata.email" />
+                  <label for="email">Email Address:*</label>
+                  <input type="email" id="email" class="form-control border-0 shadow-sm" v-model="inputdata.email"
+                         :class="{'p_invalid' : msgs.email , 'p_invalid'  : (emailnotmaildmsg && !emailisvalid)}"
+                         @input="inputemail()"/>
+                  <span v-if="msgs.email" style="color: #fc5353;">{{
+                      msgs.email
+                    }}</span>
+                  <span
+                      style="color: #dc3545; font-size: 16px"
+                      v-if="emailnotmaildmsg && !emailisvalid"
+                  >{{ emailnotmaildmsg }}</span
+                  >
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Phone:*</label>
-                  <input type="phone" class="form-control border-0 shadow-sm" v-model="inputdata.phone_number" />
+                  <label for="phone_number">Phone:*</label>
+                  <div class="">
+                    <vue-phone-number-input
+                        id="phone_number"
+                        v-model="phone"
+                        @update="resultsExample = $event"
+                        color="#ffb600"
+                        error-color="orangered"
+                        default-country-code="CA"
+                    />
+                  </div>
+<!--                  <input type="number" id="phone_number" class="form-control border-0 shadow-sm" v-model="inputdata.phone_number"-->
+<!--                         :class="{'p_invalid' : msgs.phone_number}"-->
+<!--                         @input="inputphone_number()"-->
+<!--                  />-->
+                  <span style="color: #dc3545; font-size: 16px" v-if="msgs.phone && !phone">{{
+                      msgs.phone
+                    }}</span>
+                  <span style="color: #dc3545; font-size: 16px" v-if="phone && resultsExample && !resultsExample.isValid">{{
+                      msgs.phone
+                    }}</span>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Questions / Comments:*</label>
-                  <textarea class="form-control border-0 shadow-sm" rows="4" v-model="inputdata.comments" ></textarea>
+                  <label for="comments">Questions / Comments:*</label>
+                  <textarea id="comments" class="form-control border-0 shadow-sm" rows="4"
+                            :maxlength='maxlength'
+                            :class="{'p_invalid' : msgs.comments}"
+                            @input="calc_char();msgs.comments ? msgs.comments = '' : ''"
+                            v-model="inputdata.comments" ></textarea>
+                  <span :class="{'zero':reachzero}">remaining char is {{remainingcahr}}</span>
+                  <span v-if="msgs.comments" style="color: #fc5353;">{{
+                      msgs.comments
+                    }}</span>
                 </div>
               </div>
             </div>
             <div class="col-10 col-md-3 mx-auto">
-                <button type="submit" class="btn btn-submit w-100">Submit</button>
+                <button type="submit" class="btn btn-submit w-100">
+                  <span v-if="loading">loading...</span>
+                  <span v-else>Submit</span>
+                  </button>
             </div>
             
           </form>
@@ -237,6 +289,8 @@ The Open (MLS) Market.</p>
   </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
+
 export default {
   data(){
     return{
@@ -247,21 +301,161 @@ export default {
         email:"",
         phone_number:"",
         comments:""
+      },
+      loading:false,
+      emailisvalid: false,
+      emailnotmaildmsg: "",
+      reachzero:false,
+      maxlength:150,
+      remainingcahr:150,
+      msgs: {},
+      errors:[],
+      phone:null,
+      resultsExample: null,
+    }
+  },
+  computed:{
+    le(){
+     return  Object.keys(this.msgs).length == 0
+    },
+    phonenumber(){
+      if(this.resultsExample){
+        return this.resultsExample.formatInternational
+      }else{
+        return ""
       }
     }
   },
   methods:{
-    checkform(){
-      this.msg={};
-      this.errors=[]
+    calc_char:function(){
+      this.remainingcahr= this.maxlength - this.inputdata.comments.length;
+      this.reachzero = this.remainingcahr === 0;
     },
-    myCallback(){
-      console.log(5)
+    inputfirstname(){
+      if(this.msgs.first_name){
+        if(!this.inputdata.first_name.length < 3){
+          this.msgs.first_name = ""
+        }
+      }
+    },
+    inputemail(){
+      if(this.msgs.email){
+        if(!this.inputdata.email.length < 3){
+          this.msgs.email = ""
+        }
+      }
+    },
+    inputlastnamea(){
+      if(this.msgs.last_name){
+        if(!this.inputdata.last_name.length < 3){
+          this.msgs.last_name = ""
+        }
+      }
+    },
+    inputphone_number(){
+      if(this.msgs.phone_number){
+        if(!this.inputdata.phone_number.length < 3){
+          this.msgs.phone_number = ""
+        }
+      }
+    },
+    checkform(){
+      this.msgs={};
+      this.emailnotmaildmsg = "";
+      this.errors=[]
+      if(!this.inputdata.first_name){
+        this.msgs.first_name = "required"
+      }
+      if(this.inputdata.first_name &&this.inputdata.first_name.length < 3){
+        this.msgs.first_name = "First Name must be at 3 char"
+      }
+      if(!this.inputdata.last_name){
+        this.msgs.last_name = "required"
+      }
+      if(this.inputdata.last_name && this.inputdata.last_name.length < 3){
+        this.msgs.last_name = "Last Name must be at 3 char"
+      }
+      if(!this.inputdata.comments){
+        this.msgs.comments = "comments is required";
+      }
+      if(!this.inputdata.email){
+        this.msgs.email  = "Email is required"
+      }
+      if (
+          this.inputdata.email &&
+          !this.inputdata.email.match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          )
+      ) {
+        this.msgs.email = "please enter emai correctly"
+      }
+
+      if (!this.phone) {
+        this.msgs.phone = "phone is required";
+      }
+      if (!this.resultsExample.isValid) {
+        this.msgs.phone = "enter a correct phone number";
+      }
+
+      if(this.inputdata.first_name && this.inputdata.first_name.length >2 &&
+      this.inputdata.last_name && this.inputdata.last_name.length > 2 &&
+          this.inputdata.email  && this.phone && this.inputdata.comments &&
+      this.resultsExample.isValid
+      ){
+        return true
+      }
+    },
+    send(){
+      if(this.checkform() && Object.keys(this.msgs).length == 0){
+        this.inputdata.phone_number = this.phonenumber
+        this.loading = true
+        this.$http
+            .get(
+                `external/email_verif/?email=${this.inputdata.email}`
+            ).then((res) => {
+
+          if (res.data.data) {
+            this.$http.post('forms/for_realtors/',this.inputdata).then((res) =>{
+              Swal.fire({
+                title: 'success!',
+                text: 'Success..! ',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+                timer: 1500
+              })
+              this.loading = false
+              this.inputdata = {}
+              return res;
+            }).catch((err) => {
+              Swal.fire({
+                title: 'Failed !',
+                text: err.response.data.msg,
+                icon: 'error',
+                confirmButtonText: 'Ok',
+              })
+              this.loading = false
+            });
+            this.emailisvalid = true;
+            this.emailnotmaildmsg = "";
+          } else {
+            this.loading = false;
+            this.emailnotmaildmsg = "please enter a real email";
+            this.emailisvalid = false;
+          }
+        });
+
+
+
+      }
+
     }
   }
 };
 </script>
 <style scoped>
+.p_invalid{
+  border: 1px solid red !important;
+}
 .realtor .item1 p:first-child {
   color: #434242;
   font-size: 32px;
@@ -432,6 +626,9 @@ textarea{
   font-size: 20px;
 }
 }
-
+.zero{
+  color:red;
+  font-weight: bold;
+}
 
 </style>

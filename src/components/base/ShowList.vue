@@ -329,9 +329,7 @@ computed:{
       this.$bvModal.show("forget-code");
 
     },
-    closepopup(){
-      this.$bvModal.hide("forget-code");
-    },
+
     },
     created(){
           if(this.type == 'sold'){
