@@ -830,9 +830,7 @@ export default {
       this.$bvModal.show("forget-code");
 
     },
-    closepopup(){
-      this.$bvModal.hide("forget-code");
-    },
+
     closeVerify(){
       this.$bvModal.hide("verify-modal");
     },

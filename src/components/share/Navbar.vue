@@ -202,7 +202,7 @@
               >Browse Homes</a
             >
           </li>
-          <li class="nav-item" @click="closepopup()">
+          <li class="nav-item">
             <router-link to="/Whats-My-Home-Worth" class="nav-link">
               What's My Home Worth?
             </router-link>
@@ -307,9 +307,7 @@ export default {
     switchVisibility() {
       this.FieldType = this.FieldType === "password" ? "text" : "password";
     },
-    closepopup(){
-      this.$bvModal.hide("forget-code");
-    },
+
   
   
     logout() {

@@ -253,7 +253,6 @@ export default {
         this.email &&
         this.phone &&
         this.resultsExample.isValid
-      //  this.emailisvalid
       ) {
         return true;
       }
