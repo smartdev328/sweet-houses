@@ -142,8 +142,8 @@ export default {
         emailisvalid: false,
        emailnotmaildmsg: "",
         phone: null,
-    resultsExample: null,
-    checkedmsg:""
+        resultsExample: null,
+        checkedmsg:""
         }
     },
     computed : {
