@@ -425,6 +425,9 @@ export default {
               })
               this.loading = false
               this.inputdata = {}
+              this.phone = null
+              this.remainingcahr = 150
+              this.reachzero = false
               return res;
             }).catch((err) => {
               Swal.fire({
