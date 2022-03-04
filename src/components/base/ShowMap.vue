@@ -168,7 +168,7 @@
     <div v-if="hideMap">
       <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     </div>
-    <div class="my-5" v-if="!fullscreenh">
+    <div class="my-5" v-if="urlPath">
       <div class="container bg-white">
         <SweetSale></SweetSale>
       </div>
