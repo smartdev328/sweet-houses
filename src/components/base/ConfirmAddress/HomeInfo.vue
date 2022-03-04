@@ -805,7 +805,8 @@ export default {
         formData.append('image', this.imagesArray[i])
       }
       formData.append('form_id', 2)
-      this.$http.post('listings/form_images/', formData, {
+      this.$http.post('forms/sweetly_estimate_images/', formData, {
+      // this.$http.post('listings/form_images/', formData, {
       }).then((res) => {
         console.log(res)
       })
