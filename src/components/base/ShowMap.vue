@@ -355,7 +355,7 @@ export default {
     infoWindowOptions: {
       pixelOffset: {
         width: 0,
-        he9ight: -35,
+        height: 250
       },
     },
 
@@ -463,8 +463,8 @@ export default {
     handleMarkerClicked(m) {
       this.openfullscreenh();
       this.activehome = {};
-      this.infoWindowPosition.lat = m.map.latitude * 1;
-      this.infoWindowPosition.lng = m.map.longitude * 1;
+      this.infoWindowPosition.lat = m.map.latitude  * 1;
+      this.infoWindowPosition.lng =m.map.longitude * 1 ;
       this.mapCenter.lat = m.map.latitude * 1;
       this.mapCenter.lng = m.map.longitude * 1;
       this.infoWindowOpened = true;
@@ -914,6 +914,7 @@ export default {
 }
 .info-window {
   width: 27em;
+  height: unset;
   /* max-height: 360px;
   overflow-y: auto; */
 }
@@ -981,6 +982,11 @@ export default {
   }
   .item1b {
     width: 85%;
+  }
+  .info-window{
+    width: 100%;
+    height: 370px;
+    overflow-y: scroll;
   }
 }
 </style>
