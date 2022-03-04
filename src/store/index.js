@@ -538,7 +538,8 @@ export const store = new Vuex.Store({
             }
             formData.append('form_id', state.instant_estimate_data.form_id)
             return new Promise((resolve, reject) => {
-                axios({url: 'listings/form_images/', data:  formData, method: 'POST' })
+                // axios({url: 'listings/form_images/', data:  formData, method: 'POST' })
+                axios({url: 'forms/sweetly_estimate_images/', data:  formData, method: 'POST' })
                     .then(resp => {
                             resolve(resp)
                     })
