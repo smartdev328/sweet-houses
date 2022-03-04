@@ -42,8 +42,14 @@ export default {
         openhomedetails(){
       let mls = this.homedata.mlsNumber;
       let boardId = this.MainboardId;
-        let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+      if(this.homedata.lastStatus !== "Sld"){
+        let routeData = this.$router.resolve({name:'HomeDetails',params:{mls:mls,boardId:boardId}});
         window.open(routeData.href, '_blank');
+      }else{
+           let routeData = this.$router.resolve({name:'SoldHomeDetails',params:{mls:mls,boardId:boardId}});
+          window.open(routeData.href, '_blank');
+      }
+        
         
       
     }
