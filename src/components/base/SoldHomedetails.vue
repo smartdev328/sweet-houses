@@ -249,7 +249,7 @@
                   py-3
                 "
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                <div class="ml-1 ml-md-3 text-color-2 Roboto-Medium col-4">
                   <p class="mb-0 element2">Current Status</p>
                 </div>
                 <div class="col-8">
@@ -285,7 +285,7 @@
                   py-3
                 "
               >
-                <div class="ml-3 text-color-2 Roboto-Medium col-4">
+                <div class="ml-1 ml-md-3 text-color-2 Roboto-Medium col-4">
                   <p class="mb-0 element2">Current Status</p>
                 </div>
                 <div class="col-8">
@@ -1206,6 +1206,12 @@ export default {
 }
 .homedetails .item15{
   font-size: 18px;
+}
+.homedetails .item9 .item9a .element3{
+  font-size: 16px;
+}
+.homedetails .item9 .item9a .element2{
+  font-size: 16px;
 }
 
 }
