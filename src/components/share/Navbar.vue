@@ -296,7 +296,8 @@ export default {
   },
   methods: {
     openblog(){
-      this.$router.push('/info/blog/')
+      window.open('https://sweetly.cloud/info/blog/', '_blank')
+     // this.$router.push('/info/blog/')
     },
     opensignupmodal(){
       this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
