@@ -715,7 +715,7 @@ export default {
       this.copied = true
     },
     routrMap(){
-            this.$router.push({name:'MapHome'})
+            this.$router.push({name:'BrowswHome'})
         },
     gethomedetails() {
       let mls = this.$route.params.mls;
