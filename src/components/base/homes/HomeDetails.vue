@@ -898,7 +898,7 @@ export default {
       console.log(e);
     },
     routrMap(){
-            this.$router.push({name:'MapHome'})
+            this.$router.push({name:'BrowswHome'})
         },
              find_estimate(){
       let input = {

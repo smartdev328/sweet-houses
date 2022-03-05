@@ -857,3 +857,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.gm-style .gm-style-iw-c{
+  padding: 0px !important;
+}
+.gm-style .gm-style-iw-d{
+  overflow: unset !important;
+}
