@@ -105,7 +105,7 @@
             {{getrelativedateformnow(homedata.soldDate)}} ago
           </p>
           <p class="Roboto-Regular" v-if="type == 'forsale' && !createdToday">
-            {{ gettime(homedata.listDate) }} om Sweetly
+            {{ gettime(homedata.listDate) }} on Sweetly
           </p>
           <p class="Roboto-Regular" v-if="type == 'sold' && !createdToday">
             {{getrelativedateformnow(homedata.soldDate)}} ago
