@@ -114,7 +114,7 @@
                 class="dropdown-menu border-0 shadow-sm"
                 aria-labelledby="navbarDropdown"
               >
-                <router-link to="/info/blog/" class="dropdown-item">Blog</router-link>
+                <a @click="openblog()" class="dropdown-item">Blog</a>
                 <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
                 >
@@ -225,7 +225,7 @@
               class="dropdown-menu border-0 shadow-sm"
               aria-labelledby="navbarDropdown"
             >
-              <router-link to="/info/blog/" class="dropdown-item">Blog</router-link>
+              <a @click="openblog()"  class="dropdown-item">Blog</a>
               <router-link to="/about-us" class="dropdown-item"
                 >About us</router-link
               >
@@ -295,6 +295,9 @@ export default {
     },
   },
   methods: {
+    openblog(){
+      this.$router.push('/info/blog/')
+    },
     opensignupmodal(){
       this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
     },

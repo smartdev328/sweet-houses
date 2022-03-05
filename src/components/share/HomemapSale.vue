@@ -106,10 +106,6 @@
             homedata.details.sqft
           }}</span>
           <span class="mr-2 ml-1 color2 Roboto-Medium">sqft</span>
-          <span class="text-color-1 Roboto-Regular">{{
-            homedata.details.numParkingSpaces
-          }}</span>
-          <span class="text-color-1 ml-2 Roboto-Regular">prkg</span>
         </div>
         <div class="element5 mt-2">
           <p class="Roboto-Regular">
