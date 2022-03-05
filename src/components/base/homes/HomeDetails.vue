@@ -141,7 +141,7 @@
         <div class="item2 my-2 my-md-5">
           <VueSlickCarousel v-bind="settings">
             <div
-              class="slideimg px-1"
+              class="slideimg"
               v-for="image in homedata.images"
               :key="image.id"
             >

@@ -139,7 +139,7 @@
         <div class="item2 my-5 row">
           <div class="col-12 col-md-8"> 
              <VueSlickCarousel v-bind="settings">
-            <div class="slideimg px-1" v-for="image in homedata.images" :key="image.id">
+            <div class="slideimg" v-for="image in homedata.images" :key="image.id">
               <img
                 :src="image"
                 class="w-100 h-100"
