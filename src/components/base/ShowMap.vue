@@ -75,8 +75,8 @@
       :style="{ top: posY + 'px' }"
       v-if="!showcontent && !smscreen">
       <div class="container" v-if="!hideMap">
-        <div class="mx-auto col-12">
-          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
+        <div class="mx-auto col-12 px-4 px-md-0">
+          <button class="Roboto-Regular col-12 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
         </div>
@@ -87,8 +87,8 @@
         :style="{ top: posY+50 + 'px' }"
         v-if="!showcontent && smscreen">
       <div class="container" v-if="!hideMap">
-        <div class="mx-auto col-12">
-          <button class="Roboto-Regular col-11 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
+        <div class="mx-auto col-12 px-4 px-md-0">
+          <button class="Roboto-Regular col-12 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
         </div>
@@ -987,6 +987,9 @@ export default {
     width: 100%;
     height: 370px;
     overflow-y: scroll;
+  }
+  .groupbtn button{
+    padding: 6px 24px;
   }
 }
 </style>
