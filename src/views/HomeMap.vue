@@ -1062,5 +1062,17 @@ input:focus{
   .modelfilter .element5{
     flex-direction: column;
   }
+  .searchpage .element1 .togglesearch{
+    margin-right: unset !important;
+  }
+  .searchpage .element1 .togglesearch .DFJqO{
+    height: 28px;
+  }
+  .searchpage .element1 .togglesearch .eGqDDI{
+    height: 28px;
+  }
+  .searchpage .element1 .togglesearch{
+    padding: 3px 6px;
+  }
 }
 </style>
