@@ -18,7 +18,6 @@
               v-for="(image,index) in homedata.images.slice(0, 8)"
               :key="image.id"
             >
-            <!-- <h1>asdcva </h1> -->
               <img :src="image" v-if="index < 7" class="w-100 h-100" alt="image"  @click="openhomedetails"/>
                  <div
              class="overlay d-flex align-items-center justify-content-center"
