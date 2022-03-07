@@ -121,7 +121,7 @@
                          placeholder="Enter your home address"> -->
                 <vue-google-autocomplete
                   autocomplete="off"
-                  id="map"
+                  id="textaddress"
                   ref="addressmapcontent"
                   classname="form-control"
                   placeholder="Enter a home location"
@@ -166,11 +166,11 @@
       </button>
     </div>
     <div v-if="hideMap">
-      <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
+      <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     </div>
     <div class="my-5" v-if="urlPath">
       <div class="container bg-white">
-        <SweetSale></SweetSale>
+        <SweetSale @gotFocus="gotFocus"></SweetSale>
       </div>
     </div>
   </div>
@@ -373,6 +373,9 @@ export default {
     window.removeEventListener("scroll", this.onScroll , true)
   },
   methods: {
+    gotFocus(){
+      document.getElementById("textaddress").focus();
+    },
     opensoldmap(){
       this.$emit("opensoldmap");
       this.$store.commit('setType','sold')

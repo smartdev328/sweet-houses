@@ -95,6 +95,12 @@ export default {
     inputChange(){
       this.errmsg=""
     },
+    openforsalemap(){
+      return ""
+    },
+    opensoldmap(){
+      return ""
+    },
   },
   mounted(){
  

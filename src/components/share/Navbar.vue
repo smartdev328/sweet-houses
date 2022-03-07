@@ -49,17 +49,17 @@
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"
-                >Sweet Sale</a
-              >
-              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
-                >Swift Sale</a
-              >
+<!--              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"-->
+<!--                >Sweet Sale</a-->
+<!--              >-->
+<!--              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"-->
+<!--                >Swift Sale</a-->
+<!--              >-->
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale PLUS</a
               >    
-              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
-                >Home Swap</a>                  
+<!--              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"-->
+<!--                >Home Swap</a>                  -->
               <!-- <a
                 class="dropdown-item btn"
                 @click="openeduityadvanced('Equity_Advance')"
@@ -172,18 +172,18 @@
               <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"
-                >Sweet Sale</a
-              >
-              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"
-                >Swift Sale</a
-              >
+<!--              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"-->
+<!--                >Sweet Sale</a-->
+<!--              >-->
+<!--              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"-->
+<!--                >Swift Sale</a-->
+<!--              >-->
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale PLUS</a
               >    
-              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"
-                >Home Swap</a
-              >           
+<!--              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"-->
+<!--                >Home Swap</a-->
+<!--              >           -->
               
               <!-- <a
                 class="dropdown-item btn"
