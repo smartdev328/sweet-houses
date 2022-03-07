@@ -1,9 +1,9 @@
 <template ref="home">
   <div class="home">
-    <HeaderSwiftsale @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
+    <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
     <div class="my-5">
       <div class="container">
-        <swiftsale-page></swiftsale-page>
+        <swiftsale-page @gotFocus="gotFocus"></swiftsale-page>
       </div>
     </div>
   </div>
@@ -52,6 +52,9 @@ export default {
   },
   watch: {},
   methods: {
+    gotFocus(){
+       this.$refs.HeaderSwiftsale.gotFocus()
+    },
     openforsalemap(){
       return ""
     },
@@ -70,13 +73,7 @@ export default {
     },
   },
   mounted() {
-    document.onreadystatechange = () => {
-      if (document.readyState == "complete") {
-        console.log("Page completed with image and files!");
 
-        this.readyStateComplete = true;
-      }
-    };
   },
   created() {},
 };

@@ -21,7 +21,7 @@
                   id="map"
                   ref="addressmap"
                   classname="form-control"
-                  placeholder="Get an estimate value of any home"
+                  placeholder="Get an estimate value of any home’"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"

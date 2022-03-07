@@ -1,48 +1,40 @@
 <template>
   <div class="page2">
-     <div class="bg-color-1 p-3 my-2 item1p DMSerifRegular">
-      <div class="item1a text-center">
-        <p class="text-color-1 DMSerifRegular">SOLD</p>
-      </div>
-      <div class="row d-flex align-items-center item1b">
-        <div class="col-12 col-md-10 mx-auto">
-          <p class="Roboto-Medium">
-             The minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
-          </p>
-        </div>
-      </div>
-    </div>
+<!--     <div class="bg-color-1 p-3 my-2 item1p DMSerifRegular">-->
+<!--      <div class="item1a text-center">-->
+<!--        <p class="text-color-1 DMSerifRegular">SOLD</p>-->
+<!--      </div>-->
+<!--      <div class="row d-flex align-items-center item1b">-->
+<!--        <div class="col-12 col-md-10 mx-auto">-->
+<!--          <p class="Roboto-Medium">-->
+<!--             The minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
         <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
 
       <div class="item1a text-center">
         <p class="text-color-1 DMSerifRegular">Swift Sale PLUS</p>
       </div>
+<!--      <div class="row d-flex align-items-center item1b">-->
+<!--        <div class="col-12 col-md-8">-->
+<!--          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>-->
+<!--        </div>-->
 
-<!--      <div class="item1b  col-md-10 mx-auto">-->
-<!--        <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>-->
 <!--      </div>-->
-
-
-      <div class="row d-flex align-items-center item1b">
-        <div class="col-12 col-md-8">
-          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
-        </div>
-
-      </div>
 
           <div class="row d-flex align-items-center item1b">
         <div class="col-12 col-md-8">
+          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
           <p class="Roboto-Medium">
-            It starts with an appraisal to determine the current value of your home. We buy your home in 2 payments.
-             Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property  <u>at an
-             asking price that you agree to </u> and resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the prep, showings, interruptions, home fix-ups (seller pains). Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly.
-            This product is available to customers who sell and buy with Sweetly.
+            It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.
           </p>
         </div>
             <div class="col-12 col-md-4">
               <iframe
                   width="100%"
-                  height="100%"
+                  height="380px"
                   src="https://www.youtube.com/embed/NtPMe0nhq2w"
                   title="YouTube video player"
                   frameborder="0"
@@ -198,7 +190,7 @@
         </div>
       </div>
     </div>
-           <div class="my-3 text-center w-25 mx-auto">
+     <div class="my-3 text-center w-25 mx-auto">
       <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
@@ -253,7 +245,6 @@ export default {
     },
     gotFocus(){
       setTimeout(() => { this.$emit("gotFocus")}, 1000);
-
     }
 
   },
