@@ -117,6 +117,9 @@
     /* font-weight: bold; */
     padding: 9px 24px;">Start</button>
     </div>
+    <div class="text-center">
+      <p>We cut out the unnecessary steps to make selling your home easy, fast, and stress free.</p>
+    </div>
 
     <div class="my-2 my-md-5 item11 mx-3">
       <div class="item11a DMSerifRegular text-center">
