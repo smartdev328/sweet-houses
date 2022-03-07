@@ -1,16 +1,11 @@
-<template ref="home">
+<template>
   <div class="home">
-    <header>
-      <div class="p-4 p-md-5 container">
-        <div class="item1 mb-3 my-2 my-md-5">
+    <header
+    :class="{fullsize : hideMap}">
+      <div class="px-4 pt-2 pb-0 p-md-5 container">
+        <div class="item1  my-2 my-md-5" :class="{'mt-2':hideMap,'mb-2':hideMap , 'py-5':hideMap}">
           <div class="item1a">
-            <p class="DMSerifRegular mb-0">
-              A Traditional Listing - With Confidence !
-            </p>
-            <p>
-              Test the market with confidence, knowing you’ll have Swift Sale
-              Available
-            </p>
+            <p class="DMSerifRegular">Market Value, Hassle Free</p>
           </div>
           <div class="item1b py-2 py-md-5">
             <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
@@ -18,22 +13,22 @@
             </p>
             <div class="w-100 inputaddress">
               <img
-                src="../assets/image/icon/Iconly-Light-Location.svg"
-                alt=""
+                  src="../../assets/image/icon/Iconly-Light-Location.svg"
+                  alt=""
               />
               <div class="item1b2">
                 <span class="space"></span>
                 <vue-google-autocomplete
-                  autocomplete="off"
-                  id="textaddress"
-                  ref="addressmap"
-                  classname="form-control"
-                  placeholder="Get an estimate value of any home"
-                  country="ca"
-                  v-on:keyup="yourFunctinNameToBeCall"
-                  v-on:placechanged="getAddressData"
-                  v-on:inputChange="inputChange"
-                  :options="{
+                    autocomplete="off"
+                    id="textaddress"
+                    ref="addressmap"
+                    classname="form-control"
+                    placeholder="Get an estimate value of any home"
+                    country="ca"
+                    v-on:keyup="yourFunctinNameToBeCall"
+                    v-on:placechanged="getAddressData"
+                    v-on:inputChange="inputChange"
+                    :options="{
                     fields: [
                       'geometry',
                       'formatted_address',
@@ -43,12 +38,14 @@
                 >
                 </vue-google-autocomplete>
               </div>
+
               <div class="item1b3">
                 <button class="Poppins" type="button" @click="getresult()">
                   Start
                 </button>
               </div>
             </div>
+
             <div class="item1b3-sm">
               <button class="Poppins" type="button" @click="getresult()">
                 Start
@@ -56,24 +53,40 @@
             </div>
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
+          <p class="spanalgorithm mt-n4 text-white Poppins">
+            Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
+          </p>
         </div>
+
       </div>
+      <div class="px-4 py-0 container" v-if="showonly">
+         <div class="item1a"><p class="DMSerifRegular mb-0">Browse Homes</p></div>
+            <div
+                class="togglesearch"
+            >
+              <button
+                  @click="openforsale"
+                  class="DFJqO"
+              >
+                For sale
+              </button>
+              <button
+                  @click="opensold"
+                  class="eGqDDI"
+              >
+                Sold last 90days
+              </button>
+            </div>
+          </div>
     </header>
-    <div class="my-5">
-      <div class="container">
-        <TraditionalPage @gotFocustrad="gotFocustrad"></TraditionalPage>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import TraditionalPage from "../components/base/MainInterface/TraditionalPage.vue";
-// @ is an alias to /src
 export default {
-  name: "Home",
-  data() {
-    return {
+  name: "HeaderSwiftsale",
+  data(){
+    return{
       errmsg: "",
       latlong: { lat: 0, lng: 0 },
       userlocation: {},
@@ -82,16 +95,26 @@ export default {
       resultsExample: {},
       addressData: {},
       placeResultData: {},
-      readyStateComplete: null,
-      selected_menu: "Traditional_Real_Estate",
-    };
-  },
-  computed: {
 
+    }
+  },
+  computed:{
+    showonly(){
+      return  this.$route.name == "MapHome" && this.smscreen
+    },
+    hideMap(){
+      return  this.urlPath && this.smscreen
+    },
+    urlPath(){
+      return  this.$route.name !== "BrowswHome"
+    },
+    smscreen(){
+      return window.innerWidth < 620
+    },
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
-        this.addressData,
-        "street_number"
+          this.addressData,
+          "street_number"
       );
     },
     location() {
@@ -105,13 +128,12 @@ export default {
       return { swlat, swlng, nelat, nelng };
     },
   },
-  components: {
-    TraditionalPage,
-  },
-  watch: {},
-  methods: {
-    gotFocustrad(){
-      document.getElementById("textaddress").focus();
+  methods:{
+    openforsale(){
+      this.$emit("openforsalemap")
+    },
+    opensold(){
+      this.$emit("opensoldmap")
     },
     yourFunctinNameToBeCall() {
       this.place_choosed = false;
@@ -124,25 +146,16 @@ export default {
       this.place_choosed = true;
       console.log(placeResultData);
     },
-    getclass(tab) {
-      if (tab == this.selected_menu) {
-        return "background:#00A19B;";
+    getresult() {
+      if (this.checkform()) {
+        this.$store.commit("sethomeaddress", this.location);
+        this.$store.commit("setlatlong", this.latlong);
+        this.$router.push({ name: "ConfirmAddress" });
+        this.$store.dispatch("ScrollTop");
       }
     },
-    getline(tab) {
-      if (tab == this.selected_menu) {
-        return " background: rgb(255, 182, 0);margin-bottom: 0px;  position: absolute; bottom: 0px;    width: 50%;   height: 5px;";
-      }
-    },
-    tab_visible(tab) {
-      if (tab == this.selected_menu) {
-        return "d-block";
-      } else {
-        return "d-none";
-      }
-    },
-    openswiftsale() {
-      this.$router.push({ name: "SwiftSale" });
+    inputChange() {
+      this.errmsg = "";
     },
     checkform() {
       this.errmsg = "";
@@ -162,48 +175,73 @@ export default {
         return true;
       }
     },
-    getresult() {
-      if (this.checkform()) {
-        this.$store.commit("sethomeaddress", this.location);
-        this.$store.commit("setlatlong", this.latlong);
-        this.$router.push({ name: "ConfirmAddress" });
-        this.$store.dispatch("ScrollTop");
-      }
+    gotFocus(){
+      document.getElementById("textaddress").focus();
     },
-    inputChange() {
-      this.errmsg = "";
-    },
-    opensweetsale() {
-      this.$router.push({ name: "SweetSale" });
-    },
-  },
-  mounted() {
-    document.onreadystatechange = () => {
-      if (document.readyState == "complete") {
-        console.log("Page completed with image and files!");
-        // HOW LOAD COMPONENTS HERE?
-        this.readyStateComplete = true;
-      }
-    };
-  },
-  created() {},
-};
+
+  }
+}
 </script>
+
 <style scoped>
+.fullsize{
+  height: 90vh;
+}
+.togglesearch {
+  /* max-width: 260px; */
+  width: 95%;
+  border-radius: 6px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 42px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background: #fff;
+  opacity: 1;
+  border-radius: 6px;
+  padding: 6px;
+  transition: opacity 0.25s ease 0s;
+}
+.togglesearch .eGqDDI {
+  display: block;
+  height: 32px;
+  border: none;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease 0s;
+  color: #efc9cb;
+  background: rgb(201, 80, 85);
+}
+.togglesearch .DFJqO {
+  display: block;
+  height: 32px;
+  border: none;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  transition: background-color 0.3s ease 0s;
+  background: rgb(10, 133, 110);
+  color: #fff;
+}
 .home .item1 {
   margin: 0 auto;
 }
-.home .item1a p:first-child {
+.home .item1a p {
   font-size: 5.2em;
   color: #fff;
-  width: 80%;
-  line-height: 1.2;
 }
-.home .item1a p:last-child {
-  font-size: 28px;
-  color: #fff;
-  width: 70%;
-}
+
 .item1 .item1b {
   width: 50%;
   height: auto;
@@ -220,9 +258,6 @@ export default {
 .home .item1 .item1b p:first-child {
   font-size: 24px;
 }
-/*.home .item1 .item1b p:nth-child(2) {*/
-/*  font-size: 22px;*/
-/*}*/
 .item1 .item1b .inputaddress {
   width: 100%;
   display: flex;
@@ -235,10 +270,10 @@ export default {
   justify-content: space-between;
   border-color: transparent;
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
   padding: 3px 10px;
   flex-direction: row;
   border-width: 1px;
@@ -417,16 +452,11 @@ export default {
   .itemnew11 {
     font-size: 20px;
   }
-  .home .item1a p:first-child {
-    font-size: 34px;
-    width: 100%;
-  }
-  .home .item1a p:last-child {
-    font-size: 26px;
-    width: 100%;
+  .home .item1a p {
+    font-size: 36px;
   }
   .item1 .item1b {
-    width: 90%;
+    width: 95%;
   }
 }
 </style>

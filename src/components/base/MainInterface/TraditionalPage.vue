@@ -68,6 +68,20 @@
         <a class="Roboto-Regular pointer" @click="routeswiftsale()">Try our Swift Sale</a>
       </div>
     </div>
+    <div class="my-3 text-center w-25 mx-auto">
+      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+    color: #fff;
+    height: 48px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 9px 24px;">Start</button>
+    </div>
     <div class="my-2 my-md-5 item7">
       <div class="text-center text-color-1 mb-1 DMSerifRegular text-capitalize">
         <p>What Our Customers Say</p>
@@ -79,6 +93,7 @@
   </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
   data() {
     return {
@@ -221,8 +236,24 @@ export default {
     routeswiftsale(){
       this.$router.push({ name: "SwiftSale" });
       document.body.scrollTop = 0;
+    },
+    gotFocus(){
+      setTimeout(() => { this.$emit("gotFocustrad")}, 1000);
     }
   },
+  mounted(){
+    $(document).ready(function(){
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      $('.btngototop').click(function () {
+        $('body,html').animate({
+          scrollTop: 0,
+        }, 800);
+        return false;
+      });
+    });
+  }
 };
 </script>
 

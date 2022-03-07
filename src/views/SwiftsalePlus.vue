@@ -1,6 +1,6 @@
 <template ref="home">
   <div class="home">
-    <HeaderSwiftsale ref="HeaderSwiftsale" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwiftsale>
+    <HeaderSwifplus ref="HeaderSwifplus" @openforsalemap="openforsalemap" @opensoldmap="opensoldmap"></HeaderSwifplus>
     <div class="my-5">
       <div class="container">
         <SwiftplusPage @gotFocus="gotFocus"></SwiftplusPage>
@@ -11,12 +11,12 @@
 
 <script>
 // @ is an alias to /src
-import HeaderSwiftsale from "../components/base/HeaderSwiftsale";
+import HeaderSwifplus from "../components/base/HeaderSwifplus";
 import SwiftplusPage from '../components/base/MainInterface/SwiftplusPage.vue'
 export default {
   name: "Home",
   components:{
-    HeaderSwiftsale,
+    HeaderSwifplus,
     SwiftplusPage
   },
   data() {
@@ -55,7 +55,7 @@ export default {
   watch: {},
   methods: {
     gotFocus(){
-      this.$refs.HeaderSwiftsale.gotFocus()
+      this.$refs.HeaderSwifplus.gotFocus()
     },
     openforsalemap(){
       return ""
