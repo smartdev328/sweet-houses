@@ -99,14 +99,13 @@
       <div class="item4 px-2 my-5">
         <p class="text-color-2 Roboto-Regular">
           Sweetly Estimate doesn't factor in renovations, conditions, or unique
-          features. Our algorithm detects the closest house that we have data
+          features. Our algorithm detects the closest houses that we have data
           for, the address used for this listing is "<span
             v-if="instant_estimate_data"
             >{{ instant_estimate_data.address_found }}</span
           >"
           <code><br /></code>
-          Calculated 1 minute ago . Sweetly Estimate doesn't factor in
-          renovations, condition, or unique features.
+          Calculated 1 minute ago . 
         </p>
         <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
           <p>
