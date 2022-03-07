@@ -107,9 +107,9 @@
             Market Value, Hassle Free
           </p>
           <div class="item1b py-1">
-            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+            <!--<p class="spanalgorithm mt-2 text-white Poppins mr-auto">
               Get an estimate value of any home
-            </p>
+            </p>-->
             <div class="w-100 inputaddress">
               <img
                 src="../../assets/image/icon/Iconly-Light-Location.svg"
