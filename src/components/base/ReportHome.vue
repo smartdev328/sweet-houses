@@ -311,9 +311,8 @@
           </div>
           <div class="element1 pl-1 pl-md-5 mt-3">
             <p class="Roboto-Regular">
-              The next step is to get a licenced appraiser to view your home and
-              set the final price. Once the price has been set we can move forward
-              with the Sweetly product of your choice.
+              The next step is to understand the value of your home. Once the price 
+              has been set we can move forward with the Sweetly product of your choice.
             </p>
             <button class="btn Roboto-Regular text-white" @click="routeToAppraisal()">
               Book an Appraisal
