@@ -6,8 +6,8 @@
           <p class="text-center p1 text-white DMSerifRegular">
             What's My Home Worth?
           </p>
-          <p class="text-center p2 my-4 text-white Roboto-Regular">
-            Get an estimate value of any home.
+          <p class="text-left p2 my-4 text-white Roboto-Regular">
+            SOLD. The minute you're ready. Skip public showings. Choose your own moving day. Net the same money-hassle free.
           </p>
           <div class="w-100 inputaddress">
             <img
@@ -21,7 +21,7 @@
                   id="map"
                   ref="addressmap"
                   classname="form-control"
-                  placeholder="Get an estimate value of any home’"
+                  placeholder="Get an estimate value of any home"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"

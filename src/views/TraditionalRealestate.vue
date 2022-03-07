@@ -13,9 +13,9 @@
             </p>
           </div>
           <div class="item1b py-2 py-md-5">
-            <p class="spanalgorithm mt-2 text-white Poppins mr-auto">
+            <!--<p class="spanalgorithm mt-2 text-white Poppins mr-auto">
               Get an estimate value of any home
-            </p>
+            </p>-->
             <div class="w-100 inputaddress">
               <img
                 src="../assets/image/icon/Iconly-Light-Location.svg"
@@ -28,7 +28,7 @@
                   id="textaddress"
                   ref="addressmap"
                   classname="form-control"
-                  placeholder="Enter a home location"
+                  placeholder="Get an estimate value of any home"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
