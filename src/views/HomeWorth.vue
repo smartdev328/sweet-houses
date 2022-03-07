@@ -7,7 +7,7 @@
             What's My Home Worth?
           </p>
           <p class="text-left p2 my-4 text-white Roboto-Regular">
-            SOLD. The minute you're ready. Skip public showings. <br>Choose your own moving day. Net the same money-hassle free.
+            SOLD. The minute you're ready. Skip public showings. Choose your own moving day. Net the same money-hassle free.
           </p>
           <div class="w-100 inputaddress">
             <img
