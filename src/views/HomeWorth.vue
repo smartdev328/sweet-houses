@@ -6,7 +6,7 @@
           <p class="text-center p1 text-white DMSerifRegular">
             What's My Home Worth?
           </p>
-          <p class="text-center p2 my-4 text-white Roboto-Regular">
+          <p class="text-left p2 my-4 text-white Roboto-Regular">
             SOLD. The minute you're ready. Skip public showings. <br>Choose your own moving day. Net the same money-hassle free.
           </p>
           <div class="w-100 inputaddress">
