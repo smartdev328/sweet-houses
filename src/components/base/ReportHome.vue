@@ -99,14 +99,13 @@
       <div class="item4 px-2 my-5">
         <p class="text-color-2 Roboto-Regular">
           Sweetly Estimate doesn't factor in renovations, conditions, or unique
-          features. Our algorithm detects the closest house that we have data
+          features. Our algorithm detects the closest houses that we have data
           for, the address used for this listing is "<span
             v-if="instant_estimate_data"
             >{{ instant_estimate_data.address_found }}</span
           >"
           <code><br /></code>
-          Calculated 1 minute ago . Sweetly Estimate doesn't factor in
-          renovations, condition, or unique features.
+          Calculated 1 minute ago . 
         </p>
         <div class="item4a my-4 d-flex justify-content-between Roboto-Regular">
           <p>
@@ -312,9 +311,8 @@
           </div>
           <div class="element1 pl-1 pl-md-5 mt-3">
             <p class="Roboto-Regular">
-              The next step is to get a licenced appraiser to view your home and
-              set the final price. Once the price has been set we can move forward
-              with the Sweetly product of your choice.
+              The next step is to understand the value of your home. Once the price 
+              has been set we can move forward with the Sweetly product of your choice.
             </p>
             <button class="btn Roboto-Regular text-white" @click="routeToAppraisal()">
               Book an Appraisal
