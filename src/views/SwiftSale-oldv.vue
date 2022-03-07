@@ -66,7 +66,7 @@
                   id="map"
                     ref="addressmap"
                   classname="form-control"
-                 placeholder="Enter a home location"
+                 placeholder="Get an estimate value of any home"
                   country="ca"
                   v-on:keyup="yourFunctinNameToBeCall"
                   v-on:placechanged="getAddressData"
