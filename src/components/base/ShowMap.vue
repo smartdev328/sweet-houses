@@ -344,10 +344,10 @@ export default {
       maxZoom: 23,
     },
     listings: [],
-    sw_long: localStorage.getItem("sw_long") * 1 || 0,
-    sw_lat: localStorage.getItem("sw_lat") * 1 || 0,
-    ne_long: localStorage.getItem("ne_long") * 1 || 0,
-    ne_lat: localStorage.getItem("ne_lat") * 1 || 0,
+    sw_long: localStorage.getItem("sw_long") * 1 || -118.10611005078125,
+    sw_lat: localStorage.getItem("sw_lat") * 1 || 53.04990976710761,
+    ne_long: localStorage.getItem("ne_long") * 1 || -108.22390790234375,
+    ne_lat: localStorage.getItem("ne_lat") * 1 || 54.31214438036664,
     path: [],
     total: 0,
     latlong: { lat: 0, lng: 0 },
@@ -603,12 +603,12 @@ export default {
           this.sync();
         },
         () => {
-          // this.zoom=8;
-          // this.currentLocation = {
-          //               lat: 53.702018651928924,
-          //               lng: -113.09359784375
-          //       };
-          //this.notify('error', 'قم بتفعيل تحديد موقعك لتتمكن من الطلب', 'error');
+          this.zoom=8;
+          this.currentLocation = {
+                        lat: 53.702018651928924,
+                        lng: -113.09359784375
+                };
+          this.notify('error', 'قم بتفعيل تحديد موقعك لتتمكن من الطلب', 'error');
         }
       );
     },
@@ -694,7 +694,7 @@ export default {
   },
   created() {
     this.currentLocation.lat == 0 ? this.getCoords() : "";
-    // this.getCoords();
+     this.getCoords();
     this.changebounds();
     this.find_listings_forSale();
   },

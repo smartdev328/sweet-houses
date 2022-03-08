@@ -326,7 +326,6 @@ For More Value</p></div>
     </div>
 
     <div class="item7 container">
-      <h3 class="Roboto-Medium">Read more:</h3>
       <p class="Roboto-Regular text-color-1">
         Selling to Sweetly means choosing to sell stress free, and on your timeline.
         Our Swift Sale pays you 90% of your homes' (professionally) appraised value on
