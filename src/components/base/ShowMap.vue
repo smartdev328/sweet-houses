@@ -75,7 +75,7 @@
       :style="{ top: posY + 'px' }"
       v-if="!showcontent && !smscreen">
       <div class="container" v-if="!hideMap">
-        <div class="mx-auto col-12 px-4 px-md-0">
+        <div class="mx-auto col-12 px-4 px-md-3">
           <button class="Roboto-Regular col-12 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
@@ -87,7 +87,7 @@
         :style="{ top: posY+50 + 'px' }"
         v-if="!showcontent && smscreen">
       <div class="container" v-if="!hideMap">
-        <div class="mx-auto col-12 px-4 px-md-0">
+        <div class="mx-auto col-12 px-4 px-md-3">
           <button class="Roboto-Regular col-12 col-md-3 " :class="{'mx-auto' :smscreen}" @click="showcontent = true">
             Get an Estimate
           </button>
