@@ -598,6 +598,7 @@ export default {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             });
+          this.find_listings_forSale();
           localStorage.setItem("currentLocationlat", this.currentLocation.lat);
           localStorage.setItem("currentLocationlng", this.currentLocation.lng);
           this.sync();
