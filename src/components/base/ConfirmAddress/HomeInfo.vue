@@ -578,17 +578,33 @@
                 class="col-sm-12 selectspecbg Roboto-Regular text-left"
                 :class="{ selectspecchanged: changedprioritysale }"
               >
-                 <v-select 
-                    :reduce="prioritysales => prioritysales.value"
-                    class="form-control form-control-lg Roboto-Regular"
-                    v-model="prioritysale"
-                    :options="prioritysales" 
-                  
-                    :get-option-label="({value}) => `${value}`" 
-                    placeholder="Choose an option"
-                    :searchable=false
-                    :clearable=false
-                  ></v-select>
+                <b-form-group>
+                  <b-form-checkbox-group
+                      id="checkbox-group-2"
+                      v-model="prioritysale"
+                      name="flavour-2"
+                      style="display: grid"
+                  >
+                    <b-form-checkbox
+                        v-for="item in prioritysales" :key="item.id"
+                        :value="item.value">{{ item.value }}</b-form-checkbox>
+                  </b-form-checkbox-group>
+                </b-form-group>
+<!--                 <v-select-->
+<!--                    :reduce="(option) => option.id"-->
+<!--                    class="form-control form-control-lg Roboto-Regular"-->
+<!--                    v-model="prioritysale"-->
+<!--                    :options="-->
+<!--                    [-->
+<!--                  { value: 'We want the highest price ...', id: 'We want the highest price with the right improvements' },-->
+<!--                  { value: 'Two', id: 2 },-->
+<!--                ]"-->
+
+<!--                    :get-option-label="({value}) => `${value}`"-->
+<!--                    placeholder="Choose an option"-->
+<!--                    :searchable=false-->
+<!--                    :clearable=false-->
+<!--                  ></v-select>-->
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.prioritysale && !prioritysale"

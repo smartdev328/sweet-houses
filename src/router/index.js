@@ -36,7 +36,22 @@ const routes = [
     meta: {
       hideNavbar: true
     }
-
+  },
+  {
+    path: '/sold-data',
+    name: 'HomesData',
+    component:() => import('../views/HomesData.vue'),
+    meta: {
+      hideNavbar: true
+    }
+  },
+  {
+    path: '/forsale-data',
+    name: 'HomesData',
+    component:() => import('../views/HomesData.vue'),
+    meta: {
+      hideNavbar: true
+    }
   },
   {
     path: '/terms-of-service',

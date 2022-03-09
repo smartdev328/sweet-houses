@@ -1,30 +1,30 @@
 <template>
   <div>
     <div
-      class="searchpage"
-      id="searchpage"
-      :class="{ fixedtop: selected_menu === 'show-list' }"
+        class="searchpage"
+        id="searchpage"
+        :class="{ fixedtop: selected_menu === 'show-list' }"
     >
       <div class="container">
         <div
-          class="element1  d-flex align-items-center"
-          :class="{ bgwhite: selected_menu === 'show-list' }"
+            class="element1  d-flex align-items-center"
+            :class="{ bgwhite: selected_menu === 'show-list' }"
         >
           <div
-            class="togglesearch col-12 col-md-3 mxr-2"
-            :class="{ bgdark: selected_menu === 'show-list' }"
+              class="togglesearch col-12 col-md-3 mxr-2"
+              :class="{ bgdark: selected_menu === 'show-list' }"
           >
             <button
-              @click="openforsale"
-              class="DFJqO"
-              :class="{ forsale: this.typesale === 'forsale' }"
+                @click="openforsale"
+                class="DFJqO"
+                :class="{ forsale: this.typesale === 'forsale' }"
             >
               For sale
             </button>
             <button
-              @click="opensold"
-              class="eGqDDI"
-              :class="{ sold: this.typesale == 'sold' }"
+                @click="opensold"
+                class="eGqDDI"
+                :class="{ sold: this.typesale == 'sold' }"
             >
               Sold last 90days
             </button>
@@ -32,33 +32,33 @@
           <div class="searchform col-12 col-md-9 mx-0">
             <div class="item1">
               <div
-                class="item1a rounded"
-                :class="{ bgdark: selected_menu === 'show-list' }"
+                  class="item1a rounded"
+                  :class="{ bgdark: selected_menu === 'show-list' }"
               >
                 <button>
                   <img
-                    src="../assets/image/icon/Iconly-Light-outline-Search.svg"
-                    alt=""
+                      src="../assets/image/icon/Iconly-Light-outline-Search.svg"
+                      alt=""
                   />
                 </button>
                 <vue-google-autocomplete
-                  id="mapautoinput"
-                  ref="addressmap"
-                  autocomplete="off"
-                  classname="form-control"
-                  placeholder="Enter City"
-                  country="ca"
-                  v-on:placechanged="getAddressData"
-                  v-on:keyup="clearcity"
-                  types="(cities)"
-                  :options="{
+                    id="mapautoinput"
+                    ref="addressmap"
+                    autocomplete="off"
+                    classname="form-control"
+                    placeholder="Enter City"
+                    country="ca"
+                    v-on:placechanged="getAddressData"
+                    v-on:keyup="clearcity"
+                    types="(cities)"
+                    :options="{
                     fields: [
                       'geometry',
                       'formatted_address',
                       'address_components',
                     ],
                   }"
-                  :enable-geolocation="true"
+                    :enable-geolocation="true"
                 >
                 </vue-google-autocomplete>
 
@@ -80,27 +80,27 @@
               <div class="element1 px-0">
                 <div class="w-100 w-md-50">
                   <label for="propertytype" class="text-color-1 Roboto-Medium"
-                    >Property Type</label
+                  >Property Type</label
                   >
                   <div class="element1a">
                     <b-form-checkbox-group
-                      style="display:grid"
-                      v-model="propertyType"
-                      :options="optionsdata"
-                      name="flavour-1"
+                        style="display:grid"
+                        v-model="propertyType"
+                        :options="optionsdata"
+                        name="flavour-1"
                     ></b-form-checkbox-group>
                   </div>
                 </div>
                 <div class="w-100 w-md-50">
                   <label for="optionstyle" class="text-white Roboto-Medium"
-                    >4</label
+                  >4</label
                   >
                   <div class="element1a">
                     <b-form-checkbox-group
-                      style="display:grid"
-                      v-model="style"
-                      :options="styleoptions"
-                      name="flavour-2"
+                        style="display:grid"
+                        v-model="style"
+                        :options="styleoptions"
+                        name="flavour-2"
                     ></b-form-checkbox-group>
                   </div>
                 </div>
@@ -108,31 +108,31 @@
 
               <div class="element2">
                 <label for="" class="text-color-1 Roboto-Medium"
-                  >Price Range</label
+                >Price Range</label
                 >
                 <div class="element2a">
                   <div class="w-100 position-relative">
                     <v-select
-                      class="form-control form-control-lg Roboto-Regular"
-                      v-model="minPrice"
-                      :options="itemsnumberlist"
-                      label="name"
-                      placeholder="No Min"
-                      :searchable="false"
-                      :clearable="false"
+                        class="form-control form-control-lg Roboto-Regular"
+                        v-model="minPrice"
+                        :options="itemsnumberlist"
+                        label="name"
+                        placeholder="No Min"
+                        :searchable="false"
+                        :clearable="false"
                     ></v-select>
                   </div>
                   <div></div>
 
                   <div class="w-100 position-relative">
                     <v-select
-                      class="form-control form-control-lg Roboto-Regular"
-                      v-model="maxPrice"
-                      :options="itemsnumberlist"
-                      label="name"
-                      placeholder="No Max"
-                      :searchable="false"
-                      :clearable="false"
+                        class="form-control form-control-lg Roboto-Regular"
+                        v-model="maxPrice"
+                        :options="itemsnumberlist"
+                        label="name"
+                        placeholder="No Max"
+                        :searchable="false"
+                        :clearable="false"
                     ></v-select>
                   </div>
                 </div>
@@ -143,51 +143,51 @@
                     <p>Bedrooms</p>
                     <div class="types">
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = ''"
-                        :class="{ active: minBeds == '' }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = ''"
+                          :class="{ active: minBeds == '' }"
                       >
                         Any
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 1"
-                        :class="{ active: minBeds == 1 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 1"
+                          :class="{ active: minBeds == 1 }"
                       >
                         1+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 2"
-                        :class="{ active: minBeds == 2 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 2"
+                          :class="{ active: minBeds == 2 }"
                       >
                         2+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 3"
-                        :class="{ active: minBeds == 3 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 3"
+                          :class="{ active: minBeds == 3 }"
                       >
                         3+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 4"
-                        :class="{ active: minBeds == 4 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 4"
+                          :class="{ active: minBeds == 4 }"
                       >
                         4+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 5"
-                        :class="{ active: minBeds == 5 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 5"
+                          :class="{ active: minBeds == 5 }"
                       >
                         5+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBeds = 6"
-                        :class="{ active: minBeds == 6 }"
+                          class="btn Roboto-Regular"
+                          @click="minBeds = 6"
+                          :class="{ active: minBeds == 6 }"
                       >
                         6+
                       </a>
@@ -197,51 +197,51 @@
                     <p>Bathrooms</p>
                     <div class="types">
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = ''"
-                        :class="{ active: minBaths == '' }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = ''"
+                          :class="{ active: minBaths == '' }"
                       >
                         Any
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 1"
-                        :class="{ active: minBaths == 1 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 1"
+                          :class="{ active: minBaths == 1 }"
                       >
                         1+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 2"
-                        :class="{ active: minBaths == 2 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 2"
+                          :class="{ active: minBaths == 2 }"
                       >
                         2+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 3"
-                        :class="{ active: minBaths == 3 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 3"
+                          :class="{ active: minBaths == 3 }"
                       >
                         3+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 4"
-                        :class="{ active: minBaths == 4 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 4"
+                          :class="{ active: minBaths == 4 }"
                       >
                         4+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 5"
-                        :class="{ active: minBaths == 5 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 5"
+                          :class="{ active: minBaths == 5 }"
                       >
                         5+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minBaths = 6"
-                        :class="{ active: minBaths == 6 }"
+                          class="btn Roboto-Regular"
+                          @click="minBaths = 6"
+                          :class="{ active: minBaths == 6 }"
                       >
                         6+
                       </a>
@@ -255,51 +255,51 @@
                     <p>Parking</p>
                     <div class="types">
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = ''"
-                        :class="{ active: minParkingSpaces == '' }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = ''"
+                          :class="{ active: minParkingSpaces == '' }"
                       >
                         Any
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 1"
-                        :class="{ active: minParkingSpaces == 1 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 1"
+                          :class="{ active: minParkingSpaces == 1 }"
                       >
                         1+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 2"
-                        :class="{ active: minParkingSpaces == 2 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 2"
+                          :class="{ active: minParkingSpaces == 2 }"
                       >
                         2+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 3"
-                        :class="{ active: minParkingSpaces == 3 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 3"
+                          :class="{ active: minParkingSpaces == 3 }"
                       >
                         3+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 4"
-                        :class="{ active: minParkingSpaces == 4 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 4"
+                          :class="{ active: minParkingSpaces == 4 }"
                       >
                         4+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 5"
-                        :class="{ active: minParkingSpaces == 5 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 5"
+                          :class="{ active: minParkingSpaces == 5 }"
                       >
                         5+
                       </a>
                       <a
-                        class="btn Roboto-Regular"
-                        @click="minParkingSpaces = 6"
-                        :class="{ active: minParkingSpaces == 6 }"
+                          class="btn Roboto-Regular"
+                          @click="minParkingSpaces = 6"
+                          :class="{ active: minParkingSpaces == 6 }"
                       >
                         6+
                       </a>
@@ -307,31 +307,31 @@
                   </div>
                   <div class="col-12 col-md-6">
                     <div
-                      class="d-flex align-items-baseline justify-content-between px-3"
+                        class="d-flex align-items-baseline justify-content-between px-3"
                     >
                       <p style="float:left">Internal Sqft</p>
                       <p
-                        style="float:right"
-                        class="text-color-1 Roboto-Regular p2"
+                          style="float:right"
+                          class="text-color-1 Roboto-Regular p2"
                       >
                         <span
-                          class="text-color-1 Roboto-Regular"
-                          v-if="range[0] == 0 && range[1] == 4500"
-                          >Any #</span
+                            class="text-color-1 Roboto-Regular"
+                            v-if="range[0] == 0 && range[1] == 4500"
+                        >Any #</span
                         >
                         <span
-                          class="text-color-1 Roboto-Regular"
-                          v-if="range[0] == 0 && range[1] < 4500"
-                          >Up to {{ range[1] }}</span
+                            class="text-color-1 Roboto-Regular"
+                            v-if="range[0] == 0 && range[1] < 4500"
+                        >Up to {{ range[1] }}</span
                         >
                         <span
-                          class="text-color-1 Roboto-Regular"
-                          v-if="range[0] > 0 && range[1] < 4500"
-                          >{{ range[0] }} - {{ range[1] }}</span
+                            class="text-color-1 Roboto-Regular"
+                            v-if="range[0] > 0 && range[1] < 4500"
+                        >{{ range[0] }} - {{ range[1] }}</span
                         >
                         <span
-                          class="text-color-1 Roboto-Regular"
-                          v-if="range[0] > 0 && range[1] == 4500"
+                            class="text-color-1 Roboto-Regular"
+                            v-if="range[0] > 0 && range[1] == 4500"
                         >
                           {{ range[0] }} - Any</span
                         >
@@ -339,11 +339,11 @@
                       </p>
                     </div>
                     <vue-slider
-                      v-model="range"
-                      :min="0"
-                      :max="4500"
-                      :height="8"
-                      :dotSize="32"
+                        v-model="range"
+                        :min="0"
+                        :max="4500"
+                        :height="8"
+                        :dotSize="32"
                     ></vue-slider>
                     <!-- <b-form-input id="range-1" v-model="rangevalue" type="range" min="100" max="4500"></b-form-input> -->
                     <!-- {{rangevalue}} -->
@@ -367,21 +367,21 @@
               </div>
               <div class="element5 mt-3">
                 <button
-                  class="btn text-color-1 Roboto-Regular"
-                  @click="CancelFilter"
+                    class="btn text-color-1 Roboto-Regular"
+                    @click="CancelFilter"
                 >
                   X Cancel
                 </button>
                 <div>
                   <button
-                    class="btn text-color-2 Roboto-Regular"
-                    @click="clearFilter"
+                      class="btn text-color-2 Roboto-Regular"
+                      @click="clearFilter"
                   >
                     Clear all
                   </button>
                   <button
-                    class="btn btn-save px-5 text-white Roboto-Regular"
-                    @click="saveFilterdata()"
+                      class="btn btn-save px-5 text-white Roboto-Regular"
+                      @click="saveFilterdata()"
                   >
                     Save
                   </button>
@@ -401,16 +401,16 @@
     <div :class="tab_visible('show-list')" class="h-100">
       <div class="text-center my-5 container">
         <b-spinner
-          v-if="loading"
-          style="width: 4rem; height: 4rem;"
-          variant="warning"
-          label="Large Spinner"
+            v-if="loading"
+            style="width: 4rem; height: 4rem;"
+            variant="warning"
+            label="Large Spinner"
         ></b-spinner>
       </div>
       <show-list
-        ref="showlist"
-        :type="typesale"
-        @submit="submitlist"
+          ref="showlist"
+          :type="typesale"
+          @submit="submitlist"
       ></show-list>
     </div>
   </div>
@@ -486,6 +486,9 @@ export default {
       const result = itemsnumber.items;
       return Array.from(result, (x) => x.toLocaleString("ja-JP"));
     },
+    typeparams(){
+      return this.$route.fullPath
+    }
   },
   methods: {
     CancelFilter() {
@@ -535,14 +538,14 @@ export default {
       this.showfilter = false;
       let input = {};
       (input.minBeds = this.minBeds),
-        (input.minBaths = this.minBaths),
-        (input.minParkingSpaces = this.minParkingSpaces),
-        (input.minSqft = this.range[0]),
-        (input.maxSqft = this.range[1]),
-        (input.maxPrice = this.maxPrice),
-        (input.minPrice = this.minPrice),
-        (input.propertyType = this.propertyType),
-        (input.style = this.style);
+          (input.minBaths = this.minBaths),
+          (input.minParkingSpaces = this.minParkingSpaces),
+          (input.minSqft = this.range[0]),
+          (input.maxSqft = this.range[1]),
+          (input.maxPrice = this.maxPrice),
+          (input.minPrice = this.minPrice),
+          (input.propertyType = this.propertyType),
+          (input.style = this.style);
       this.$store.commit("SAVE_FILTER_OPT", input);
       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
         this.loading = true;
@@ -647,8 +650,10 @@ export default {
 
   },
   created() {
-    if(this.$store.state.typesale){
-      this.typesale = this.$store.state.typesale
+    if(this.typeparams.includes('sold')){
+      this.typesale = "sold"
+    }else{
+      this.typesale = "forsale"
     }
     /* this.getCoords(); */
     /*  this.changebounds();  */
@@ -689,10 +694,10 @@ footer {
 }
 .togglemap button {
   box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
+  rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
+  rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
+  rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
+  rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
   border: 2px solid transparent;
   background: #232323;
   color: inherit;
@@ -796,7 +801,7 @@ footer {
   /* background: white; */
   /* border: 1px solid transparent; */
   transition: background 0.25s ease 0s, border-color 0.25s ease 0s,
-    box-shadow 0.25s ease 0s;
+  box-shadow 0.25s ease 0s;
 }
 .fixedtop .element1 .searchform .item1 {
   display: flex;
@@ -808,7 +813,7 @@ footer {
   background: white;
   border: 1px solid transparent;
   transition: background 0.25s ease 0s, border-color 0.25s ease 0s,
-    box-shadow 0.25s ease 0s;
+  box-shadow 0.25s ease 0s;
 }
 .searchpage .element1 .searchform .item1 .item1a {
   display: flex;
