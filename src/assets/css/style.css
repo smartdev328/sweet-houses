@@ -868,3 +868,6 @@ input[type=number] {
 .info-window .card img{
   border-radius: 0px !important;
 }
+.slick-slider {
+  position: relative;
+}
