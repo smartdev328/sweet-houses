@@ -135,53 +135,39 @@
                 >
               </div>
             </div>
-            <div
+                 <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{ 'input--error':  (msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) }"
+              :class="{
+                'input--error': msgone.home_condition && !home_condition,
+              }"
             >
-              <label for="bedrooms_bg" class="col-sm-5 col-form-label text-left"
-                >Bedrooms (below ground)</label
+              <label
+                for="home_condition"
+                class="col-sm-4 col-form-label text-left Roboto-Regular"
+                >Home Condition
+              </label>
+              <div
+                class="col-sm-8 selectspecbg Roboto-Regular text-left"
+                :class="{ selectspecchanged: changedhome_condition }"
               >
-              <div class="d-style">
-                <div class="col-sm-2">
-                  <button
-                    class="btn minus-btn rounded-circle"
-                    :disabled="bedrooms_bg < 1"
-                    type="button"
-                    @click="bedrooms_bg--"
-                  >
-                    <img src="../../../assets/image/icon/minus.svg" alt="">
-                  </button>
-                </div>
-                <div class="col-sm-3">
-                  <input
-                    type="number"
-                    min="0"
-                    max="5"
-                    id="bedrooms_bg"
-                    v-model.number="bedrooms_bg"
-                    class="pl-0 pl-md-2 form-control border bg-white no-arrow Roboto-Regular text-center"
-                    required
-                  />
-                  <span
-                    class="required-err"
-                    style="position:absolute;top:38px"
-                    v-if="(msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) "
-                    >required</span
-                  >
-                </div>
-                <div class="col-sm-2">
-                  <button
-                    class="btn plus-btn rounded-circle"
-                    type="button"
-                    @click="bedrooms_bg++"
-                  >
-                  <img src="../../../assets/image/icon/plus.svg" alt="">
-                  </button>
-                </div>
+                 <v-select 
+                 :reduce="home_conditions => home_conditions.value"
+                  class="form-control form-control-lg Roboto-Regular"
+                 v-model="home_condition"
+                    :options="home_conditions" 
+                    label="name"
+                    placeholder="Choose an option"
+                    :searchable=false
+                    :clearable=false
+                  ></v-select>
+                <span
+                  style="color: #dc3545;font-size: 16px;"
+                  v-if="msgone.home_condition && !home_condition"
+                  >{{ msgone.home_condition }}</span
+                >
               </div>
             </div>
-            <div
+                  <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
               :class="{ 'input--error':  (msgone.bedrooms_ag && bedrooms_ag < 0) || (msgone.bedrooms_ag && bedrooms_ag == null) }"
             >
@@ -228,6 +214,53 @@
                 </div>
               </div>
             </div>
+            <div
+              class="form-group row col-12 col-md-10 mx-auto px-0"
+              :class="{ 'input--error':  (msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) }"
+            >
+              <label for="bedrooms_bg" class="col-sm-5 col-form-label text-left"
+                >Bedrooms (below ground)</label
+              >
+              <div class="d-style">
+                <div class="col-sm-2">
+                  <button
+                    class="btn minus-btn rounded-circle"
+                    :disabled="bedrooms_bg < 1"
+                    type="button"
+                    @click="bedrooms_bg--"
+                  >
+                    <img src="../../../assets/image/icon/minus.svg" alt="">
+                  </button>
+                </div>
+                <div class="col-sm-3">
+                  <input
+                    type="number"
+                    min="0"
+                    max="5"
+                    id="bedrooms_bg"
+                    v-model.number="bedrooms_bg"
+                    class="pl-0 pl-md-2 form-control border bg-white no-arrow Roboto-Regular text-center"
+                    required
+                  />
+                  <span
+                    class="required-err"
+                    style="position:absolute;top:38px"
+                    v-if="(msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) "
+                    >required</span
+                  >
+                </div>
+                <div class="col-sm-2">
+                  <button
+                    class="btn plus-btn rounded-circle"
+                    type="button"
+                    @click="bedrooms_bg++"
+                  >
+                  <img src="../../../assets/image/icon/plus.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+      
             <div
               class="form-group row col-12 col-md-10 mx-auto px-0"
                :class="{ 'input--error':  (msgone.bathrooms_full && bathrooms_full < 0) || (msgone.bathrooms_full && bathrooms_full == null) }"
@@ -425,56 +458,7 @@
             <p>Tell us about your home</p>
           </div>
           <form action="" class="container">
-            <div
-              class="form-group row col-12 col-md-10 mx-auto px-0"
-              :class="{
-                'input--error': msgtwo.home_condition && !home_condition,
-              }"
-            >
-              <label
-                for="home_condition"
-                class="col-sm-4 col-form-label text-left Roboto-Regular"
-                >Home Condition
-              </label>
-              <div
-                class="col-sm-8 selectspecbg Roboto-Regular text-left"
-                :class="{ selectspecchanged: changedhome_condition }"
-              >
-                <!-- <select
-                  name="canadianprovince"
-                  id="home_condition "
-                  @change="changehcond()"
-                  class="form-control form-control-lg Roboto-Regular text-left"
-                  v-model="home_condition"
-                  required
-                >
-                  <option value="null" disabled hidden selected>
-                    Choose an option
-                  </option>
-                  <option
-                    v-for="home_condition in home_conditions"
-                    :key="home_condition.id"
-                    :value="home_condition.value"
-                    >{{ home_condition.name }}</option
-                  >
-                </select> -->
-                 <v-select 
-                 :reduce="home_conditions => home_conditions.value"
-                  class="form-control form-control-lg Roboto-Regular"
-                 v-model="home_condition"
-                    :options="home_conditions" 
-                    label="name"
-                    placeholder="Choose an option"
-                    :searchable=false
-                    :clearable=false
-                  ></v-select>
-                <span
-                  style="color: #dc3545;font-size: 16px;"
-                  v-if="msgtwo.home_condition && !home_condition"
-                  >{{ msgtwo.home_condition }}</span
-                >
-              </div>
-            </div>
+       
             <div
               class="form-group row ol-12 col-md-10 mx-auto px-0"
               :class="{ 'input--error': msgtwo.parking_desc && !parking_desc }"
@@ -863,6 +847,9 @@ export default {
       if (!this.storeys) {
         this.msgone.storeys = "Storeys is required";
       }
+         if (!this.home_condition) {
+        this.msgone.home_condition = "Home Condition is required";
+      }
       if (this.bedrooms_bg==null || this.bedrooms_bg < 0) {
         this.msgone.bedrooms_bg = "required";
       }
@@ -883,7 +870,8 @@ export default {
       }
       if (
         this.hometype &&
-        this.storeys &&
+        this.storeys && 
+        this.home_condition &&
         this.bedrooms_bg >= 0 &&
         this.bedrooms_ag >= 0 &&
         this.bathrooms_partial >= 0 &&
@@ -911,9 +899,7 @@ export default {
     },
     twocheckform() {
       this.msgtwo = {};
-      if (!this.home_condition) {
-        this.msgtwo.home_condition = "Home Condition is required";
-      }
+   
       if (!this.parking_desc) {
         this.msgtwo.parking_desc = "parking_desc is required";
       }
@@ -927,7 +913,6 @@ export default {
         this.msgtwo.CurrentOccupancy = "CurrentOccupancy is required";
       }
       if (
-        this.home_condition &&
         this.parking_desc &&
         this.basement_desc &&
         this.prioritysale &&
