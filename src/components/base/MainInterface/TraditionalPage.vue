@@ -170,61 +170,6 @@ export default {
         `,
         },
       ],
-      chartOptions: {
-        chart: {
-          id: "vuechart-example",
-        },
-        colors: ["#FFB600"],
-        dataLabels: {
-          enabled: false,
-        },
-        xaxis: {
-          categories: [
-            "Sep 22",
-            "Sep 23",
-            "Sep 24",
-            "Sep 25",
-            "Sep 26",
-            "Sep 27",
-            "Sep 28",
-            "Sep 29",
-          ],
-          labels: {
-            style: {
-              colors: [
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-              ],
-            },
-          },
-        },
-      },
-      series: [
-        {
-          name: "series-1",
-          data: [40, 35, 42, 20, 45, 35, 27, 20],
-          labels: {
-            style: {
-              colors: [
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-                "#707070",
-              ],
-            },
-          },
-        },
-      ],
     };
   },
   methods: {
