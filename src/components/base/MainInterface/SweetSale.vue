@@ -15,7 +15,7 @@
             <div class="dropdown">
               <div class="d-flex align-items-center">
               <p class="card-text Poppins mb-0">
-             Get an <u class="pointer" >appraisl</u> 
+             Get an <u class="pointer" >appraisal</u> 
              
             </p>
             <img src="../../../assets/image/icon/info.svg" class="ml-3" style="width:20px;heigth:20px">
@@ -27,7 +27,7 @@
             
             
             <p class=" Poppins pointer">
-            <u @click="routetoappraisl()" class="text-color-7">Need an appraisl</u>  
+            <u @click="routetoappraisl()" class="text-color-7">Need an appraisal?</u>  
             </p>
           </div>
         </div>
