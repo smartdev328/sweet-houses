@@ -12,11 +12,22 @@
             <h3 class="card-title DMSerifRegular">Step 1</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property-->
             <!--              </h3>-->
-            <p class="card-text DMSerifRegular mb-0">
-             Get an appraisl
+            <div class="dropdown">
+              <div class="d-flex align-items-center">
+              <p class="card-text Poppins mb-0">
+             Get an <u class="pointer" >appraisl</u> 
+             
             </p>
-            <p class="card-text DMSerifRegular">
-              Need an appraisl
+            <img src="../../../assets/image/icon/info.svg" class="ml-3" style="width:20px;heigth:20px">
+            </div>
+            <div class="dropdown-content">
+                <p>Only relocation appraisals provided by a licensed appraiser within 45 days can be considered for our program.</p>
+              </div>
+            </div>
+            
+            
+            <p class=" Poppins pointer">
+            <u @click="routetoappraisl()" class="text-color-7">Need an appraisl</u>  
             </p>
           </div>
         </div>
@@ -32,8 +43,8 @@
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection-->
 
             <!--              </h3>-->
-            <p class="card-text DMSerifRegular">
-              Get 90% of the day you chance
+            <p class="card-text Poppins">
+              Get 90% and move on the day you choose
             </p>
           </div>
         </div>
@@ -49,14 +60,13 @@
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Close & Move-->
             <!--              </h3>-->
             <p class="card-text DMSerifRegular">
-              We'll resell your property
+              We’ll re-sell the property
             </p>
           </div>
         </div>
       </div>
       <div class="card-body p-0">
-        <p class="DMSerifRegular card-text">PLUS. Get a second payment for the fail balnca of our re-sale pricess our normar (commision) when
-        you sell buy with Sweetly</p>
+        <p class="DMSerifRegular card-text">PLUS:Get the balance of our re-sale price when you buy with Sweetly!</p>
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
@@ -323,6 +333,11 @@ export default {
     },
   },
   methods: {
+    routetoappraisl(){
+      this.$router.push({ name: "appraisal" });
+      document.body.scrollTop = 0;
+    },
+    
     openaboutus() {
       this.$router.push({ name: "Aboutus" });
       document.body.scrollTop = 0;
@@ -644,8 +659,25 @@ ul li a {
   font-size: 18px;
 }
 .card-body .card-text{
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
+}
+.page1 .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.page1 .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.page1 .dropdown:hover .dropdown-content {
+  display: block;
 }
 @media only screen and (max-width: 600px) {
   .item2c .gridcontainer,
