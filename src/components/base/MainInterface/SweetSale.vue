@@ -27,7 +27,7 @@
             
             
             <p class=" Poppins pointer">
-            <u @click="routetoappraisl()" class="text-color-7">Need an appraisal</u>  
+            <u @click="routetoappraisl()" class="text-color-7">Need an appraisal?</u>  
             </p>
           </div>
         </div>
