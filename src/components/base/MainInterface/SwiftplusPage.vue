@@ -1,28 +1,10 @@
 <template>
   <div class="page2">
-<!--     <div class="bg-color-1 p-3 my-2 item1p DMSerifRegular">-->
-<!--      <div class="item1a text-center">-->
-<!--        <p class="text-color-1 DMSerifRegular">SOLD</p>-->
-<!--      </div>-->
-<!--      <div class="row d-flex align-items-center item1b">-->
-<!--        <div class="col-12 col-md-10 mx-auto">-->
-<!--          <p class="Roboto-Medium">-->
-<!--             The minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
         <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
 
       <div class="item1a text-center">
         <p class="text-color-1 DMSerifRegular">Swift Sale PLUS</p>
       </div>
-<!--      <div class="row d-flex align-items-center item1b">-->
-<!--        <div class="col-12 col-md-8">-->
-<!--          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>-->
-<!--        </div>-->
-
-<!--      </div>-->
 
           <div class="row d-flex align-items-center item1b">
         <div class="col-12 col-md-8">

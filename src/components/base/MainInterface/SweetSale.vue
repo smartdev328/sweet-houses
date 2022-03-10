@@ -12,11 +12,11 @@
             <h3 class="card-title DMSerifRegular">Step 1</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property-->
             <!--              </h3>-->
-            <p class="card-text text-color-2">
-              Tell us about your home. You'll get a computer-generated
-              evaluation and comparable sales in your area. We'll arrange
-              for a licensed Appraiser to view your home and set the final
-              price.
+            <p class="card-text DMSerifRegular mb-0">
+             Get an appraisl
+            </p>
+            <p class="card-text DMSerifRegular">
+              Need an appraisl
             </p>
           </div>
         </div>
@@ -32,9 +32,8 @@
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection-->
 
             <!--              </h3>-->
-            <p class="card-text text-color-2">
-              Subject to a reasonable home inspection, you receive 90% of
-              appraised value on the moving day you choose.
+            <p class="card-text DMSerifRegular">
+              Get 90% of the day you chance
             </p>
           </div>
         </div>
@@ -49,17 +48,147 @@
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Close & Move-->
             <!--              </h3>-->
-            <p class="card-text text-color-2">
-              We'll resell your home, retain our fee (7% of $100,000 plus
-              3% of the balance), then return to you the full balance of
-              the actual sale price - even if it sells over appraised value.
+            <p class="card-text DMSerifRegular">
+              We'll resell your property
             </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <p class="DMSerifRegular card-text">PLUS. Get a second payment for the fail balnca of our re-sale pricess our normar (commision) when
+        you sell buy with Sweetly</p>
+      </div>
+    </div>
+    <div class="my-4 text-center w-25 mx-auto">
+      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+    color: #fff;
+    height: 48px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 9px 24px;">Start</button>
+    </div>
+    <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
+
+      <div class="item1a text-center">
+        <p class="text-color-1 DMSerifRegular">Here's How We Do it:</p>
+      </div>
+
+      <div class="row d-flex align-items-center item1b">
+        <div class="col-12 col-md-8">
+          <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
+          <p class="Roboto-Medium">
+            It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.
+          </p>
+        </div>
+        <div class="col-12 col-md-4">
+          <iframe
+              width="100%"
+              height="380px"
+              src="https://www.youtube.com/embed/NtPMe0nhq2w"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              style="background: #edf3f2; border-radius: 8px"
+              allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+    <div class="my-4 text-center w-25 mx-auto">
+      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+    color: #fff;
+    height: 48px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 9px 24px;">Start</button>
+    </div>
+    <div class="my-2 my-md-5 item11 mx-3">
+      <div class="item11a DMSerifRegular text-center">
+        <p>Why a Swift Sale PLUS is For You?</p>
+      </div>
+      <div class="item11b row p-0">
+        <div class="element1 p-0 col-12 col-md-6">
+          <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
+          <img
+              src="../../../assets/image/swplus1.png"
+              class="w-100 h-100"
+              alt=""
+          />
+        </div>
+        <div class="element2 p-0 col-12 col-md-6">
+          <img
+              src="../../../assets/image/swplus2.png"
+              class="w-100 h-100"
+              alt=""
+          />
+        </div>
+      </div>
+      <div>
+        <p class="Roboto-Regular text-color-2 my-2">
+        </p>
+      </div>
+    </div>
+    <div class="my-4 text-center w-25 mx-auto">
+      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
+    color: #fff;
+    height: 48px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 9px 24px;">Start</button>
+    </div>
+    <div class="my-2 my-md-5 item12 mx-3">
+      <div class="item12a DMSerifRegular text-center">
+        <p>Benefits of a Swift Sale PLUS</p>
+      </div>
+      <div
+          class="item12b p-4 mb-5"
+          v-for="itembenefite in Benefitsdata"
+          :key="itembenefite.id"
+          style="background-color: #edf3f2"
+      >
+        <div class="benefits-card bg-white p-3">
+          <div class="card my-2">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img :src="itembenefite.image" class="card-img" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title DMSerifRegular">
+                    {{ itembenefite.title }}
+                  </h5>
+                  <p
+                      class="card-text text-color-2 Roboto-Regular"
+                      v-html="itembenefite.content"
+                  ></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -160,9 +289,31 @@
   </div>
 </template>
 <script>
+import $ from "jquery";
+
 export default {
   data() {
     return {
+      Benefitsdata: [
+        {
+          title: "Market Value Sale",
+          content: `With a Swift Sale PLUS you net the exact same market value that you would if you had listed and sold on the open market with any full service agent who also charges 7% of $100,000 plus 3% on the balance. The difference is the absence of all the public showings, interruptions,
+           home prep and seller pains. You even get to choose your own moving day!`,
+          image: require("../../../assets/image/marketv.jpg"),
+        },
+        {
+          title: "Sell Without Showings ",
+          content: ` Live in your home and pack at your pace. Keeping your home show-ready and letting strangers into the home you live in while you’re not there can be unsettling.
+           Sell your home the new-fashioned way. Sell with Sweetly.`,
+          image: require("../../../assets/image/2-SellWithoutListings.png"),
+        },
+        {
+          title: "Pick Your Closing Day",
+          content: `The freedom to move at your own pace is far more convenient than having to meet a deadline imposed by a buyer. Further more, price and possession day often conflict where a buyer and seller use possession day as a lever against price. The resulting price concessions
+           are completely avoided when Sweetly offers the freedom to choose your own moving day.`,
+          image: require("../../../assets/image/4-PickYourClosingDay.jpeg"),
+        },
+      ],
       selected_part: "Swiftpart",
     };
   },
@@ -184,6 +335,19 @@ export default {
       setTimeout(() => { this.$emit("gotFocus")}, 1000);
     }
   },
+  mounted() {
+    $(document).ready(function(){
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      $('.btngototop').click(function () {
+        $('body,html').animate({
+          scrollTop: 0,
+        }, 800);
+        return false;
+      });
+    });
+  }
 };
 </script>
 
@@ -378,6 +542,25 @@ ul li {
 .page1 .item8 .element2 table tbody tr:nth-child(8) td:nth-child(2) {
   font-size: 16px !important;
 }
+.page1 .item12 .item12a {
+  font-size: 36px;
+  font-weight: 600;
+}
+.page1 .item12 .item12b,
+.page1 .item12 .item12b .benefits-card,
+.page1 .item12 .item12b .benefits-card .card img {
+  border-radius: 8px;
+}
+.benefits-card .card-body .card-text{
+  font-size: 16px;
+  font-weight: unset;
+}
+.benefits-card .card {
+  border: 0 !important;
+}
+.benefits-card .card .card-title {
+  font-size: 32px;
+}
 .element4 {
   font-size: 38px;
   font-weight: 600;
@@ -460,6 +643,10 @@ ul li a {
 .page1 .item3new .cards .card .card-text p {
   font-size: 18px;
 }
+.card-body .card-text{
+  font-size: 26px;
+  font-weight: bold;
+}
 @media only screen and (max-width: 600px) {
   .item2c .gridcontainer,
   .item2c2 .gridcontainer {
@@ -528,7 +715,7 @@ ul li a {
     font-size: 26px;
   }
   .page1 .item11 .item11a {
-    font-size: 32px;
+    font-size: 26px;
   }
   .page1 .item8 .element4 {
     font-size: 32px;
@@ -547,6 +734,12 @@ ul li a {
   }
   .element4 {
     font-size: 26px;
+  }
+  .page1 .item12 .item12a{
+    font-size: 26px;
+  }
+  .benefits-card .card .card-title{
+    font-size: 22px;
   }
 }
 </style>
