@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
         token: localStorage.getItem('token') || '',
         user:{},
         footerh:null,
+        fullscreen:null,
         typesale:'',
         agents:[
             {name:"Barbara Diduch",phone:'(587) 984-2058',position:"REALTOR®",image:require('../assets/image/homepage/team/Barbara.svg'),
@@ -397,6 +398,9 @@ export const store = new Vuex.Store({
         posY:null,
     },
     mutations:{
+        setfullscreen(state){
+            state.fullscreen = true
+        },
         setType(state,payload){
             state.typesale = payload
         },

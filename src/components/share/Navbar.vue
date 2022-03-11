@@ -10,7 +10,7 @@
       "
     >
       <router-link class="navbar-brand" to="/">
-        <div class="logo">
+        <div class="logo" @click="reloadpage()">
           <img
             src="@/assets/image/logo.svg"
             class="w-100 h-100 normalstate"
@@ -293,8 +293,18 @@ export default {
         return false;
       }
     },
+    fullscreen(){
+      return this.$store.state.fullscreen
+    }
+
   },
   methods: {
+    reloadpage(){
+      console.log(this.$route.name)
+      if(this.$route.name == 'MapHome' && this.fullscreen){
+         window.location.reload();
+      }
+    },
     openblog(){
       window.open('https://sweetly.cloud/info/blog/', '_blank')
      // this.$router.push('/info/blog/')
