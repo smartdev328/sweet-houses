@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card shadow">
-          <div class="position-relative" style="overflow: hidden">
+          <div class="position-relative pointer" style="overflow: hidden">
             <img
                 v-if="!closest_home_data.images.image"
                 src="../../assets/image/notimg.jpeg"
