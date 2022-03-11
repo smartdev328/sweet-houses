@@ -356,7 +356,7 @@ export default {
     showpopup(){
      
       if(window.innerWidth < 620){
-     
+    //  alert("aasascas")
         this.isActive = true
       }
     },
@@ -690,9 +690,9 @@ ul li a {
   font-size: 24px;
   font-weight: bold;
 }
-.card-body .p5{
+/* .card-body .p5{
   font-size: 18px !important;
-}
+} */
 .card-body .lastp{
   font-size: 36px !important;
 }
@@ -795,13 +795,11 @@ ul li a {
   .card-body .lastp{
     font-size: 24px;
   }
-    .dropdown .showon{
-    display: block !important;
-  }
-  .dropdown:hover .dropdown-content {
-  display: none !important;
+/* .dropdown .showon{*/
+/*  display: block !important;*/
+/*}*/
+  .dropdown:focus .dropdown-content {
+  display: block !important;
 }
-
-
 }
 </style>
