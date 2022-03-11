@@ -1,7 +1,7 @@
 <template>
   <div class="page1" id="container"  @click.self="close()">
     <div class="my-3 card-body">
-      <p class="Poppins  card-text" v-if="smscreen">
+      <p class="Poppins  card-text p5" v-if="smscreen">
 Sold - The minute you're ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
       </p>
     </div>
@@ -356,7 +356,7 @@ export default {
     showpopup(){
      
       if(window.innerWidth < 620){
-     
+    //  alert("aasascas")
         this.isActive = true
       }
     },
@@ -690,6 +690,9 @@ ul li a {
   font-size: 24px;
   font-weight: bold;
 }
+/* .card-body .p5{
+  font-size: 18px !important;
+} */
 .card-body .lastp{
   font-size: 36px !important;
 }
@@ -792,13 +795,11 @@ ul li a {
   .card-body .lastp{
     font-size: 24px;
   }
-    .dropdown .showon{
-    display: block !important;
-  }
-  .dropdown:hover .dropdown-content {
-  display: none !important;
+/* .dropdown .showon{*/
+/*  display: block !important;*/
+/*}*/
+  .dropdown:focus .dropdown-content {
+  display: block !important;
 }
-
-
 }
 </style>

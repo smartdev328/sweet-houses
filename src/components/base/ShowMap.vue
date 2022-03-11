@@ -732,7 +732,7 @@ export default {
 </script>
 <style scoped>
 .spanalgorithm{
-  font-size: 18px;
+  font-size: 20px;
 }
 .groupcontent .item1text p:first-child {
   color: #fff;
