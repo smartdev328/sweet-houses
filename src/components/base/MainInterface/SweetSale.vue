@@ -14,11 +14,11 @@
             <!--              </h3>-->
             <div class="dropdown">
               <div class="d-flex align-items-center">
-              <p class="card-text Poppins mb-0">
-             Get an <u class="pointer" >appraisal.</u> 
+              <p class="card-text Poppins mb-0" disabled>
+             Get an appraisal.
              
             </p>
-            <img src="../../../assets/image/icon/info.svg" class="ml-3" style="width:20px;heigth:20px">
+            <img src="../../../assets/image/icon/info.svg" class="ml-3 pointer dropdownimg" style="width:20px;heigth:20px">
             </div>
             <div class="dropdown-content">
                 <p>Only relocation appraisals provided by a licensed appraiser within 45 days can be considered for our program.</p>
@@ -665,23 +665,8 @@ ul li a {
 .card-body .lastp{
   font-size: 36px !important;
 }
-.page1 .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.page1 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
 
-.page1 .dropdown:hover .dropdown-content {
-  display: block;
-}
+
 @media only screen and (max-width: 600px) {
   .item2c .gridcontainer,
   .item2c2 .gridcontainer {
