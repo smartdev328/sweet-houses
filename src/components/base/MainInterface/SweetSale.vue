@@ -15,7 +15,7 @@
             <div class="dropdown">
               <div class="d-flex align-items-center">
               <p class="card-text Poppins mb-0">
-             Get an <u class="pointer" >appraisal</u> 
+             Get an <u class="pointer" >appraisal.</u> 
              
             </p>
             <img src="../../../assets/image/icon/info.svg" class="ml-3" style="width:20px;heigth:20px">
@@ -44,7 +44,7 @@
 
             <!--              </h3>-->
             <p class="card-text Poppins">
-              Get 90% and move on the day you choose
+              Get 90% and move on the day you choose.
             </p>
           </div>
         </div>
@@ -59,14 +59,14 @@
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Close & Move-->
             <!--              </h3>-->
-            <p class="card-text DMSerifRegular">
-              We’ll re-sell the property
+            <p class="card-text Poppins">
+              We'll re-sell the property.
             </p>
           </div>
         </div>
       </div>
       <div class="card-body p-0">
-        <p class="DMSerifRegular card-text">PLUS:Get the balance of our re-sale price when you buy with Sweetly!</p>
+        <p class="DMSerifRegular card-text lastp">PLUS:Get the balance of our re-sale price when you buy with Sweetly!</p>
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
@@ -662,6 +662,9 @@ ul li a {
   font-size: 24px;
   font-weight: bold;
 }
+.card-body .lastp{
+  font-size: 36px !important;
+}
 .page1 .dropdown {
   position: relative;
   display: inline-block;
@@ -772,6 +775,9 @@ ul li a {
   }
   .benefits-card .card .card-title{
     font-size: 22px;
+  }
+  .card-body .lastp{
+    font-size: 24px;
   }
 }
 </style>
