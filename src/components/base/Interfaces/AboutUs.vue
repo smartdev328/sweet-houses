@@ -402,18 +402,18 @@ For More Value</p></div>
               </div>
             </div>
             <div class="col-12 col-md-7">
-              <div class="map-image">
+              <div class="map-image h-100">
                 <img
-                  src="../../../assets/image/contactus/map.svg"
+                  src="../../../assets/image/contactus/map45.jpg"
                   class="w-100 h-100"
                   alt="map"
                 />
               </div>
-              <img
-                src="../../../assets/image/contactus/icon-location.svg"
-                class="icon-location"
-                alt=""
-              />
+<!--              <img-->
+<!--                src="../../../assets/image/contactus/icon-location.svg"-->
+<!--                class="icon-location"-->
+<!--                alt=""-->
+<!--              />-->
             </div>
           </div>
         </div>
@@ -748,6 +748,10 @@ input:focus {
 }
 .aboutus .item7 p {
   font-size: 18px;
+}
+.aboutus .map-image img{
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
 }
 @media only screen and (max-width: 600px) {
   .aboutus .item4 .element2 {
