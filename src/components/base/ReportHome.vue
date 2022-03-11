@@ -2,7 +2,7 @@
   <div class="reporthome">
     <div class="container my-5">
       <div class="item1">
-        <div class="item1a d-flex pointer" @click="routrMap()">
+        <div class="item1a d-flex pointer">
 
           <p class=" ml-2 Roboto-Medium"> <span class="text-dark">For Customer </span> {{ contactinput.fullname }}</p>
         </div>
@@ -122,7 +122,7 @@
           </p>
           <p>
             <span>{{ homedatafirst.garage_spaces }}</span>
-            <span>parking</span>
+            <span>garage</span>
           </p>
           <p>
             <span>{{ homedatafirst.hometype }}</span>

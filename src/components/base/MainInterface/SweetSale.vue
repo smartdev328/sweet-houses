@@ -1,5 +1,10 @@
 <template>
-  <div class="page1">
+  <div class="page1" id="container"  @click.self="close()">
+    <div class="my-3 card-body">
+      <p class="Poppins  card-text" v-if="smscreen">
+Sold - The minute you're ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
+      </p>
+    </div>
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
         <div class="card border-0">
@@ -12,18 +17,26 @@
             <h3 class="card-title DMSerifRegular">Step 1</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property-->
             <!--              </h3>-->
-            <div class="dropdown">
+         
               <div class="d-flex align-items-center">
               <p class="card-text Poppins mb-0" disabled>
              Get an appraisal.
              
             </p>
-            <img src="../../../assets/image/icon/info.svg" class="ml-3 pointer dropdownimg" style="width:20px;heigth:20px">
-            </div>
-            <div class="dropdown-content">
+
+             <div class="dropdown">
+            <img src="../../../assets/image/icon/info.svg" class="ml-3 pointer dropdownimg"
+            @click="showpopup()"
+             style="width:20px;heigth:20px">
+             <div class="dropdown-content" :class="{showon: isActive }">
                 <p>Only relocation appraisals provided by a licensed appraiser within 45 days can be considered for our program.</p>
               </div>
+               </div>
+
+
             </div>
+           
+         
             
             
             <p class=" Poppins pointer">
@@ -304,6 +317,7 @@ import $ from "jquery";
 export default {
   data() {
     return {
+      isActive:false,
       Benefitsdata: [
         {
           title: "Market Value Sale",
@@ -328,11 +342,24 @@ export default {
     };
   },
   computed: {
+    smscreen(){
+      return window.innerWidth < 620
+    },
     Homefaqs() {
       return this.$store.state.Homefaqs;
     },
   },
   methods: {
+    close(){
+      alert("sacascas")
+    },
+    showpopup(){
+     
+      if(window.innerWidth < 620){
+     
+        this.isActive = true
+      }
+    },
     routetoappraisl(){
       this.$router.push({ name: "appraisal" });
       document.body.scrollTop = 0;
@@ -630,6 +657,7 @@ ul li {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
+  left: -100px;
 }
 ul li a {
   color: #00a19b;
@@ -764,5 +792,13 @@ ul li a {
   .card-body .lastp{
     font-size: 24px;
   }
+    .dropdown .showon{
+    display: block !important;
+  }
+  .dropdown:hover .dropdown-content {
+  display: none !important;
+}
+
+
 }
 </style>
