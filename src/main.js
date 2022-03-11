@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 
 
 import {store} from './store'
-import { BootstrapVue  } from 'bootstrap-vue'
+import { BootstrapVue ,IconsPlugin  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
@@ -62,6 +62,7 @@ Vue.use(VueSocialSharing);
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
 Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
