@@ -1,7 +1,7 @@
 <template>
   <div class="page1" id="container"  @click.self="close()">
     <div class="my-3 card-body">
-      <p class="Poppins  card-text" v-if="smscreen">
+      <p class="Poppins  card-text p5" v-if="smscreen">
 Sold - The minute you're ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
       </p>
     </div>
@@ -689,6 +689,9 @@ ul li a {
 .card-body .card-text{
   font-size: 24px;
   font-weight: bold;
+}
+.card-body .p5{
+  font-size: 18px !important;
 }
 .card-body .lastp{
   font-size: 36px !important;
