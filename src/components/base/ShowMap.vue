@@ -394,6 +394,7 @@ export default {
       if(window.innerWidth < 620){
         this.showcontent = false;
         this.fullscreenh = true
+
    //     this.fullscreenh = false;
       }
 
@@ -401,19 +402,24 @@ export default {
     //  this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
     },
     ckself(){
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
-     // this.fullscreenh = false;
+
     },
     hidecontent() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
     },
     openfullscreenh() {
+      this.$store.commit('setfullscreen')
       this.fullscreenh = true;
       this.showbox = false;
+
     },
     checkClick() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
       if (this.infoWindowOpened) {
@@ -460,8 +466,10 @@ export default {
       this.showbox = true;
     },
     hideContent() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
+
     },
     handleInfoWindowClose() {
       this.activehome = {};
