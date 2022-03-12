@@ -139,16 +139,41 @@
           </div>
         </div>
         <div class="item2 my-2 my-md-5 position-relative">
-          <VueSlickCarousel v-bind="settings">
-            <div
-              class="slideimg position-relative"
-              v-for="image in homedata.images"
-              :key="image.id"
+          <div>
+            <b-carousel
+                id="carousel-1"
+                v-model="slide"
+                :interval="4000"
+                controls
+                
+                background="#ababab"
+                img-width="1024"
+                img-height="480"
+                style="text-shadow: 1px 1px 2px #333;"
+                @sliding-start="onSlideStart"
+                @sliding-end="onSlideEnd"
             >
-            <!-- <h1>asdcva </h1> -->
-              <img :src="image" class="w-100 h-100" alt="image" />
-            </div>
-          </VueSlickCarousel>
+              <!-- Text slides with image -->
+              <b-carousel-slide
+                  v-for="image in homedata.images"
+                  :key="image.id"
+                  :img-src="image"
+              ></b-carousel-slide>
+
+
+            </b-carousel>
+
+          </div>
+<!--          <VueSlickCarousel v-bind="settings">-->
+<!--            <div-->
+<!--              class="slideimg position-relative"-->
+<!--              v-for="image in homedata.images"-->
+<!--              :key="image.id"-->
+<!--            >-->
+<!--            &lt;!&ndash; <h1>asdcva </h1> &ndash;&gt;-->
+<!--              <img :src="image" class="w-100 h-100" alt="image" />-->
+<!--            </div>-->
+<!--          </VueSlickCarousel>-->
         </div>
         <div class="row">
           <div class="col-12">
@@ -693,7 +718,7 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
   </div>
 </template>
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
+// import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
@@ -703,6 +728,8 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
+      slide: 0,
+      sliding: null,
       settings: {
         dots: false,
         focusOnSelect: true,
@@ -812,9 +839,15 @@ export default {
     
   },
   components: {
-    VueSlickCarousel,
+  //  VueSlickCarousel,
   },
   methods: {
+    onSlideStart() {
+      this.sliding = true
+    },
+    onSlideEnd() {
+      this.sliding = false
+    },
     formatdate(date){
       return moment(date).format("MMM Do YYYY");
     },
