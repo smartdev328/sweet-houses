@@ -136,10 +136,10 @@
             </b-modal>
           </div>
         </div>
-        <div class="item2 my-5 row">
-          <div class="col-12 col-md-8"> 
+        <div class="item2 my-5 row position-relative">
+          <div class="col-12 col-md-8 position-relative">
              <VueSlickCarousel v-bind="settings">
-            <div class="slideimg" v-for="image in homedata.images" :key="image.id">
+            <div class="slideimg position-relative" v-for="image in homedata.images" :key="image.id">
               <img
                 :src="image"
                 class="w-100 h-100"
