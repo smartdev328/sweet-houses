@@ -155,9 +155,6 @@
             <!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
             <!--            </span>-->
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
-            <p class="spanalgorithm  text-white Poppins">
-              Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
-            </p>
           </div>
 
         </div>
@@ -394,6 +391,7 @@ export default {
       if(window.innerWidth < 620){
         this.showcontent = false;
         this.fullscreenh = true
+
    //     this.fullscreenh = false;
       }
 
@@ -401,19 +399,24 @@ export default {
     //  this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
     },
     ckself(){
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
-     // this.fullscreenh = false;
+
     },
     hidecontent() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
     },
     openfullscreenh() {
+      this.$store.commit('setfullscreen')
       this.fullscreenh = true;
       this.showbox = false;
+
     },
     checkClick() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
       if (this.infoWindowOpened) {
@@ -460,8 +463,10 @@ export default {
       this.showbox = true;
     },
     hideContent() {
+      this.$store.commit('setfullscreen')
       this.showcontent = false;
       this.fullscreenh = true
+
     },
     handleInfoWindowClose() {
       this.activehome = {};

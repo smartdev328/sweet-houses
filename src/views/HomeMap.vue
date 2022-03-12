@@ -523,10 +523,24 @@ export default {
       this.$refs.showmap.openfullscreenh()
       let city = addressData.locality
       this.$store.commit("setCity",city)
-      this.$refs.showmap.updateaddressdata(addressData)
-      this.$refs.showmap.getpath(city)
-     
-     
+       if(this.selected_menu == "show-map"){
+         this.$refs.showmap.updateaddressdata(addressData)
+         this.$refs.showmap.getpath(city)
+       }
+       if (this.selected_menu == "show-list" && this.typesale == "forsale") {
+         this.loading = true
+         this.$refs.showlist.find_listings_forSaleMain();
+       }
+       if (this.selected_menu == "show-list" && this.typesale == "sold") {
+         this.loading = true
+         this.$refs.showlist.find_listings_SoldMain();
+       }
+       if (this.selected_menu == "show-map" && this.typesale == "forsale") {
+         this.$refs.showmap.find_listings_forSaleMain();
+       }
+       if (this.selected_menu == "show-map" && this.typesale == "sold") {
+         this.$refs.showmap.find_listings_SoldMain();
+       }
     },
     clearcity(){
      // this.$refs.showmap.hideContent();
