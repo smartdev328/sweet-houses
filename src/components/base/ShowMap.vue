@@ -155,9 +155,6 @@
             <!--              Algorithm values are not intended to replace a professional opinion. Our purchase price is set by certified Appraisers and Home Inspectors.-->
             <!--            </span>-->
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
-            <p class="spanalgorithm  text-white Poppins">
-              Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
-            </p>
           </div>
 
         </div>

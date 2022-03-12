@@ -514,9 +514,7 @@ export const store = new Vuex.Store({
             return new Promise((resolve, reject) => {
                 axios({url: 'forms/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
                 .then(resp => {
-
                   commit('instant_estimate', resp.data)
-
                   state.formData = new FormData()
                     if(state.imageArr.length){
                         dispatch('UploadImage');

@@ -346,18 +346,32 @@
         <p class="text-color-1 DMSerifRegular text-capitalize">
           Help us improve this Sweetly Estimate
         </p>
-        <div class="item12a text-color-2 Roboto-Regular px-3">
+        <div class="item12a text-color-2 Roboto-Regular px-3"
+             :class="{'p_invalid' : msgs.helps}"
+        >
           <div>
             <textarea
               placeholder="Think something was missed in the preliminary evaluation? Please let us know here"
               class="p-3 w-100"
               name=""
               id=""
-              rows="3"
+              rows="4"
+              v-model="inputhelp.helps"
+              :maxlength='maxlength'
+              @input="calc_char();msgs.helps ? msgs.helps = '' : ''"
             ></textarea>
+
           </div>
-          <button class="btn">Submit</button>
+          <button class="btn" @click="estimateHelps()">
+            <span v-if="loading">Loading ..</span>
+            <span v-else>Submit</span>
+            </button>
         </div>
+        <span v-if="msgs.helps" style="color: #fc5353;">{{
+            msgs.helps
+          }}</span><br>
+        <span :class="{'zero':reachzero}">remaining char is {{remainingcahr}}</span>
+
       </div>
       <div class="my-5 disclaimer-content">
 <!--        <p class="Roboto-Regular">-->
@@ -390,11 +404,19 @@
 <script>
 import { gmapApi } from 'vue2-google-maps';
 import moment from "moment";
+import Swal from "sweetalert2";
 export default {
   components: {   },
   data() {
     return {
-           copied:false,
+      inputhelp:{
+        helps:""
+      },
+      msgs:{},
+      reachzero:false,
+      maxlength:300,
+      remainingcahr:300,
+      copied:false,
       errsms:false,
       zoom:14,
       options:{
@@ -412,6 +434,10 @@ export default {
     };
   },
   computed: {
+    form_id(){
+        return this.$store.state.instant_estimate_data.form_id;
+    },
+
     google: gmapApi,
       fullPath() {
       return window.location.href;
@@ -522,7 +548,6 @@ export default {
           lng: item.longitude * 1,
         };
       }
-
     },
     open(e) {
       console.log(e);
@@ -541,10 +566,54 @@ export default {
     routrMap() {
       this.$router.push({ name: "MapHome" });
     },
+    calc_char:function(){
+      this.remainingcahr= this.maxlength - this.inputhelp.helps.length;
+      this.reachzero = this.remainingcahr === 0;
+    },
+    checkformhlps(){
+      this.msgs = {}
+      if(!this.inputhelp.helps){
+        this.msgs.helps = "required"
+      }
+      if(this.inputhelp.helps){
+        return true
+      }
+    },
+    estimateHelps(){
+      if(this.checkformhlps() && Object.keys(this.msgs).length == 0){
+        this.loading = true
+        this.inputhelp.form_id = this.form_id
+        this.$http.post('forms/estimate_helps/',this.inputhelp).then((res) =>{
+          Swal.fire({
+            title: 'success!',
+            text: 'Success..! ',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+            timer: 1500
+          })
+          this.loading = false
+          this.inputhelp = {}
+          this.remainingcahr = 300
+          this.reachzero = false
+          return res;
+        }).catch((err) => {
+          Swal.fire({
+            title: 'Failed !',
+            text: err.response.data.msgs,
+            icon: 'error',
+            confirmButtonText: 'Ok',
+          })
+          this.loading = false
+        });
+      }
+    },
   },
 };
 </script>
 <style lang="css" scoped>
+.p_invalid{
+  border: 1px solid red !important;
+}
 .searchBox {
   /* position: absolute;
     top: 50%;
@@ -905,6 +974,10 @@ textarea:focus {
 }
 .disclaimer-content p {
   color: #434242;
+}
+.zero{
+  color:red;
+  font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
   .reporthome .cards {
