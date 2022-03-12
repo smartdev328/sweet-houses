@@ -353,8 +353,9 @@
             <textarea
               placeholder="Think something was missed in the preliminary evaluation? Please let us know here"
               class="p-3 w-100"
-              name=""
-              id=""
+              name="helps"
+              id="helps"
+              :disabled="addedhelp"
               rows="4"
               v-model="inputhelp.helps"
               :maxlength='maxlength'
@@ -362,7 +363,7 @@
             ></textarea>
 
           </div>
-          <button class="btn" @click="estimateHelps()">
+          <button class="btn" :disabled="addedhelp" @click="estimateHelps()">
             <span v-if="loading">Loading ..</span>
             <span v-else>Submit</span>
             </button>
@@ -416,6 +417,7 @@ export default {
       reachzero:false,
       maxlength:300,
       remainingcahr:300,
+      addedhelp:false,
       copied:false,
       errsms:false,
       zoom:14,
@@ -595,6 +597,7 @@ export default {
           this.inputhelp = {}
           this.remainingcahr = 300
           this.reachzero = false
+          this.addedhelp = true
           return res;
         }).catch((err) => {
           Swal.fire({

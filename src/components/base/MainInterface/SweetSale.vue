@@ -4,9 +4,6 @@
       <p class="p5  card-text Poppins">
         Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
       </p>
-      <p class="Poppins  card-text p5" v-if="smscreen">
-Sold - The minute you're ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
-      </p>
     </div>
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
