@@ -2,7 +2,7 @@
   <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="homedetails">
     <div class="container" v-if="!loading">
-      <div class="my-2 my-md-5">
+      <div class="my-2 my-md-5 position-relative">
         <div class="item1">
           <div class="item1a d-flex pointer"  @click="routrMap()">
 
@@ -138,10 +138,10 @@
             </b-modal>
           </div>
         </div>
-        <div class="item2 my-2 my-md-5">
+        <div class="item2 my-2 my-md-5 position-relative">
           <VueSlickCarousel v-bind="settings">
             <div
-              class="slideimg"
+              class="slideimg position-relative"
               v-for="image in homedata.images"
               :key="image.id"
             >
@@ -695,10 +695,8 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-
-// optional style for arrows & dots
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
 import { mapState } from "vuex";
 
