@@ -785,6 +785,9 @@ font-size: 16px;
     width: 60%;
     border-top: 3px solid #fff;
   }
+.carousel-inner{
+  height: 380px !important;
+}
   @media only screen and (max-width: 700px){
     .bordered-left{
       border-left: 2px solid #00a19b;
@@ -818,6 +821,9 @@ font-size: 16px;
     }
   }
 @media only screen and (max-width: 600px){
+  .carousel-inner{
+    height: unset !important;
+  }
   .home header{
     /* height: 85vh; */
   }

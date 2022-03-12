@@ -145,10 +145,10 @@
                 v-model="slide"
                 :interval="4000"
                 controls
-                
+
                 background="#ababab"
-                img-width="1024"
-                img-height="480"
+                img-width="800"
+                img-height="200"
                 style="text-shadow: 1px 1px 2px #333;"
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
