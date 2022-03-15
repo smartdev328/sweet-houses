@@ -399,14 +399,14 @@
       ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
-      <div class="text-center my-5 container">
+      <!-- <div class="text-center my-5 container">
         <b-spinner
           v-if="loading"
           style="width: 4rem; height: 4rem;"
           variant="warning"
           label="Large Spinner"
         ></b-spinner>
-      </div>
+      </div> -->
       <show-list
         ref="showlist"
         :type="typesale"
@@ -490,7 +490,6 @@ export default {
   methods: {
     CancelFilter() {
       this.showfilter = false;
-      console.log("0000")
     },
     getAddressData(addressData) {
       this.$refs.showmap.openfullscreenh()
@@ -524,19 +523,6 @@ export default {
       } else {
         this.$refs.showmap.hideboxselling();
       }
-    },
-    addTag(newTag) {
-      const tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
-      };
-      this.options3.push(tag);
-      this.value2.push(tag);
-      this.saveFilterdata();
-    },
-    remove(OldTage) {
-      this.value2 = this.value2.filter((item) => item.code !== OldTage.code);
-      this.saveFilterdata();
     },
     clearFilter() {
       this.minPrice = "";
