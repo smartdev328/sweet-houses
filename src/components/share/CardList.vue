@@ -144,9 +144,10 @@
             {{ homedata.address.streetNumber }}
             {{ homedata.address.streetName }}
             {{ homedata.address.streetSuffix }}
-            {{ homedata.address.streetDirection }} ({{
+            {{ homedata.address.streetDirection }} 
+            {{
               homedata.details.style
-            }})
+            }}
             <br />
             {{ homedata.address.neighborhood }},{{ homedata.address.city }},{{
               homedata.address.area
