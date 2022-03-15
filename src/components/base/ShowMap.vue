@@ -341,7 +341,7 @@ export default {
       disableDefaultUi: false,
       scrollwheel: true,
       gestureHandling: 'greedy',
-      minZoom: 8,
+      minZoom: 10,
       maxZoom: 23,
     },
     listings: [],
@@ -412,6 +412,7 @@ export default {
     openfullscreenh() {
       this.$store.commit('setfullscreen')
       this.fullscreenh = true;
+      this.showcontent = false;
       this.showbox = false;
 
     },
