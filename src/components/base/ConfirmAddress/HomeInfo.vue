@@ -691,6 +691,7 @@
   </div>
 </template>
 <script>
+import Swal from "sweetalert2"
 export default {
   data() {
     return {
@@ -797,7 +798,17 @@ export default {
 
   methods: {
     onChange (event) {
-      this.imagesArray = event.target.files
+      if(event.target.files.length > 20){
+         Swal.fire({
+            title: 'Failed !',
+            text: 'you can upload only 20 picture',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+          })
+      }else{
+        this.imagesArray = event.target.files
+      }
+      
     },
     onUpload() {
       const formData = new FormData();

@@ -5,7 +5,7 @@
 
             <div class="item1">
             <div class="item1a">
-                <p class="font-weight-bold open-sans" v-if="listingsold">{{listingsold.count.toLocaleString('ja-JP')}}
+                <p class="font-weight-bold open-sans" v-if="listingsold.count">{{listingsold.count.toLocaleString('ja-JP')}}
                   <span class="open-sans text-color-2" v-if="listingsold.count > 1500">Listings Found | Showing {{reshowing}} <br>Only 1500 properties may be displayed per search.<br> To see all your results, try narrowing your search criteria</span>
                   <span class="DMSerifRegular text-color-2" v-else>Results</span>
                 </p>
@@ -28,19 +28,20 @@
                 </div>
             </div>
         </div>
-        <div class="cards my-5" >
-            <card-list
-             v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
-            @SignUp="SignUp"
-             ></card-list>
-        </div>
-         <div class="text-center my-5 container">
+             <div class="text-center my-5 container">
         <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
       </div>
 
         <div class="text-center my-5 DMSerifRegular" v-if="!loading && loadedlistingsold && tatal == 0">
             No Matchig Data
         </div>
+        <div class="cards my-5" >
+            <card-list
+             v-for="listing in listings" :key="listing.id" :homedata="listing" :type="type"
+            @SignUp="SignUp"
+             ></card-list>
+        </div>
+    
         <div class="my-5 row">
             <div class="col-12 d-flex justify-content-center">
                    <b-pagination
@@ -331,7 +332,10 @@ computed:{
     },
 
     },
+    mounted(){
+    },
     created(){
+        this.$parent.stoploading(); 
           if(this.type == 'sold'){
             this.filerdata  =  {name:'Date solid (new to old)',value:'soldDateDesc'}
         }else{
