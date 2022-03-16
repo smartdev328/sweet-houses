@@ -183,7 +183,8 @@ export default {
             //  this.currentcount +=1
             let input = {
                 mls:  this.homedata.mlsNumber,
-                image_num : this.currentcount+1
+                image_num : this.currentcount+1,
+                boardId:this.homedata.boardId
             }
 
             this.$http.post('listings/image_bymls/',input).then((res)=>{

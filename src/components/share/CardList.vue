@@ -303,7 +303,7 @@ export default {
         })
         this.homedata.images.image = res.data.image;
         console.log(res.data.image);
-        this.currentcount += 1;
+      //  this.currentcount += 1;
         return res;
       });
     },
