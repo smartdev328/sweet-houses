@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="card-body p-0">
-        <p class="DMSerifRegular card-text lastp font-weight-normal">PLUS:Get the balance of our re-sale price when you buy with Sweetly!</p>
+        <p class="DMSerifRegular card-text lastp font-weight-normal">PLUS: Get the balance of our re-sale price when you buy with Sweetly!</p>
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
