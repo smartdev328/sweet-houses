@@ -151,7 +151,6 @@ Vue.component('sold-similerhome',SoldSimilerhome);
 
 const AutocompleteMap = () => import('./components/share/AutocompleteMap.vue');
 Vue.component('autocomplete-map',AutocompleteMap);
-Vue.component('card-home',require('./components/share/CardHome.vue').default);
 Vue.component('card-homereport',require('./components/share/CardHomereport.vue').default);
 
 Vue.component('google-review',require('./components/share/GoogleReview.vue').default)

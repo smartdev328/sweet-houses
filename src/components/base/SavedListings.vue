@@ -3,12 +3,7 @@
         <div class="item1 container my-5">
             <p class="Roboto-Medium text-color-1 my-3">Saved Listings</p>
             <div class="cards">
-                <div>
-                    <card-home></card-home>
-                </div>
-                <div>
-                    <card-home></card-home>
-                </div>
+
             </div>
         </div>
     </div>

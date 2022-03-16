@@ -205,8 +205,7 @@ export default {
             c_count:this.currentcount += 1
           })
           this.closest_home_data.images.image = res.data.image;
-          console.log(res.data.image);
-          this.currentcount += 1;
+      //    this.currentcount += 1;
           return res;
         });
       },
