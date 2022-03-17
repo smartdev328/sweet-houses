@@ -138,14 +138,6 @@
         </div>
         <div class="item2 my-5 row position-relative">
           <div class="col-12 col-md-8 position-relative">
-            <carousel>
-              <slide>
-                Slide 1 Content
-              </slide>
-              <slide>
-                Slide 2 Content
-              </slide>
-            </carousel>
              <VueSlickCarousel v-bind="settings">
             <div class="slideimg position-relative" v-for="image in homedata.images" :key="image.id">
               <img
@@ -579,58 +571,57 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
  import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import moment from "moment";
 import { mapState } from 'vuex';
-import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   data() {
     return {
-      settings:{
-        "dots": true,
-        "dotsClass": "slick-dots custom-dot-class",
-        "edgeFriction": 0.35,
-        "infinite": false,
-        "speed": 500,
-        "slidesToShow": 1,
-        "slidesToScroll": 1,
-        "nextArrow":true
-      },
       // settings:{
-      //   "dots": false,
-      //   "focusOnSelect": true,
+      //   "dots": true,
+      //   "dotsClass": "slick-dots custom-dot-class",
+      //   "edgeFriction": 0.35,
       //   "infinite": false,
       //   "speed": 500,
-      //   "slidesToShow": 2,
+      //   "slidesToShow": 1,
       //   "slidesToScroll": 1,
-      //   "touchThreshold": 1,
-      //   "arrows":true,
-      //   "responsive": [
-      //     {
-      //       "breakpoint": 1024,
-      //       "settings": {
-      //         "slidesToShow": 1,
-      //         "slidesToScroll": 1,
-      //         "infinite": true,
-      //       }
-      //     },
-      //     {
-      //       "breakpoint": 600,
-      //       "settings": {
-      //         "slidesToShow":1,
-      //         "slidesToScroll": 1,
-      //         "initialSlide": 1,
-      //         "arrows":true,
-      //       }
-      //     },
-      //     {
-      //       "breakpoint": 480,
-      //       "settings": {
-      //         "slidesToShow": 1,
-      //         "slidesToScroll": 1,
-      //         "arrows":true,
-      //       }
-      //     }
-      //   ]
+      //   "nextArrow":true
       // },
+      settings:{
+        "dots": false,
+        "focusOnSelect": true,
+        "infinite": false,
+        "speed": 500,
+        "slidesToShow": 2,
+        "slidesToScroll": 1,
+        "touchThreshold": 1,
+        "arrows":true,
+        "responsive": [
+          {
+            "breakpoint": 1024,
+            "settings": {
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "infinite": true,
+            }
+          },
+          {
+            "breakpoint": 600,
+            "settings": {
+              "slidesToShow":1,
+              "slidesToScroll": 1,
+              "initialSlide": 1,
+              "arrows":true,
+            }
+          },
+          {
+            "breakpoint": 480,
+            "settings": {
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "arrows":true,
+            }
+          }
+        ]
+      },
       checkstatus: null,
       loading: null,
       copied:false
@@ -715,8 +706,6 @@ export default {
   },
   components: {
      VueSlickCarousel,
-    Carousel,
-    Slide
   },
 
   methods: {
