@@ -319,13 +319,6 @@ export default {
       this.$http.post("listings/image_bymls/", input).then((res) => {
         const element = this.$refs.slidepic;
         element.classList.remove("ac2");
-        // const element = this.$refs.slidepic;
-        // element.classList.add('fadeOut');
-        //     element.classList.remove('fadeIn');
-        // setTimeout(() => {
-        //         element.classList.remove('fadeOut');
-        //         element.classList.add('fadeIn');
-        //     }, 300);
         this.homedata.images.image = res.data.image;
          
         console.log(res.data.image);

@@ -14,6 +14,7 @@
                 :src="closest_home_data.images.image"
                 class="card-img-top"
                 data-aos="fade-zoom-in"
+                ref="slidepic"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0"
@@ -161,6 +162,7 @@ export default {
     props:["instant_estimate_data","closest_home_data"],
     data:() =>({
       currentcount: 1,
+      slideimgs:[]
     }),
     computed:{
       sold(){
@@ -205,7 +207,7 @@ export default {
             c_count:this.currentcount += 1
           })
           this.closest_home_data.images.image = res.data.image;
-      //    this.currentcount += 1;
+         // this.currentcount += 1;
           return res;
         });
       },
@@ -221,13 +223,6 @@ export default {
         this.$http.post("listings/image_bymls/", input).then((res) => {
           const element = this.$refs.slidepic;
           element.classList.remove("ac2");
-          // const element = this.$refs.slidepic;
-          // element.classList.add('fadeOut');
-          //     element.classList.remove('fadeIn');
-          // setTimeout(() => {
-          //         element.classList.remove('fadeOut');
-          //         element.classList.add('fadeIn');
-          //     }, 300);
           this.closest_home_data.images.image = res.data.image;
 
           console.log(res.data.image);
