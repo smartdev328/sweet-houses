@@ -10,9 +10,6 @@ import { BootstrapVue ,IconsPlugin  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
-import vue2Dropzone from 'vue2-dropzone'
-import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-Vue.component('vueDropzone', vue2Dropzone);
 
 export const eventBus = new Vue();
 
