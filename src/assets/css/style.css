@@ -825,6 +825,53 @@ font-size: 16px;
 .carousel-inner{
   height: 380px !important;
 }
+.carousel-control-prev,
+.carousel-control-next{
+  opacity: 1 !important;
+}
+.homedetails .carousel-control-prev-icon{
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-left: 8px;
+  opacity: 1;
+  padding-bottom: 10px;
+  color: #fff !important;
+  background-image: url(../image/icon/arrowslide.svg) !important;
+  font-weight: bold;
+  font-size: 50px;
+  /* color: #434242; */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  font-size: unset!important;
+  transform: rotate(180deg);
+  background-size: 1em;
+}
+.homedetails .carousel-control-next-icon{
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-left: 8px;
+  opacity: 1;
+  padding-bottom: 10px;
+  color: #fff !important;
+  background-image: url(../image/icon/arrowslide.svg) !important;
+  font-weight: bold;
+  font-size: 50px;
+  /* color: #434242; */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  font-size: unset!important;
+  background-size: 1em;
+}
   @media only screen and (max-width: 700px){
     .bordered-left{
       border-left: 2px solid #00a19b;
