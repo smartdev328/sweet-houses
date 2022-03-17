@@ -661,7 +661,7 @@
                   name="imagesArray"
                   multiple
                   @change="onChange"
-                  accept="image/*"
+                  accept="image/jpg, image/jpeg, image/png"
                   class="form-control border bg-white"
                 />
               </div>
@@ -806,7 +806,24 @@ export default {
             confirmButtonText: 'Ok',
           })
       }else{
-        this.imagesArray = event.target.files
+        for(var item in event.target.files){
+          let pic = event.target.files[item]
+         if( (pic.name.split(".").pop() == 'png' || pic.name.split(".").pop() == 'jpg' || pic.name.split(".").pop() == 'jpeg')
+         ){
+           this.imagesArray.push(pic)
+               // = event.target.files
+         }
+         else{
+           Swal.fire({
+             title: 'Failed !',
+             text: 'you can upload only png,jpg or jpeg',
+             icon: 'error',
+             confirmButtonText: 'Ok',
+           })
+         }
+
+        }
+
       }
       
     },
