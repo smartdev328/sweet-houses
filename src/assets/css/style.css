@@ -570,18 +570,21 @@ body{
   height: 40px;
   padding: 6px 0px;
 }
-.homedetails button.slick-next:before {
+.homedetails button.slick-next:before,
+.homedetails button.slick-next:after,.homedetails button.slick-prev:before
+.homedetails button.slick-prev:after{
   color: #434242;
 }
- .slick-next:before{
+ .slick-next:before,
+ .slick-prev:before{
   color: #434242 !important;
 }
 /* .homedetails button.slick-prev:before{
   color: #434242 !important;
 } */
-/* .slick-prev{
-  left: 0px !important;
-} */
+ .homedetails .slick-prev{
+ left: 0px !important;
+}
 .homedetails .slick-next{
   right: 0px !important;
 }
@@ -704,9 +707,22 @@ font-size: 16px;
   padding-bottom: 10px;
   color: #fff !important;
 }
+.homedetails button.slick-prev:before{
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-right: -57px;
+  opacity: 1;
+  padding-bottom: 10px;
+  color: #fff !important;
+}
 
-
-.homedetails .slick-next:before {
+.homedetails .slick-next:before,
+.homedetails .slick-prev:before{
     /* content: '˃'; */
     background-image: url(../image/icon/arrowslide.svg) !important;
     font-weight: bold;
@@ -737,6 +753,23 @@ font-size: 16px;
     outline: none;
     background: transparent;
   }
+.homemapsale .slick-prev{
+  right: 12px !important;
+  font-size: 8px;
+  line-height: 6;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 24px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  height: 19px;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
   .homemapsale .slick-next:before{
     color: #fff !important;
   }
