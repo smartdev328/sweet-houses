@@ -259,6 +259,7 @@ export default {
                   confirmButtonText: 'Ok',
                   timer: 1500
                 })
+                this.$emit('hidesignupmodal');
                 return res;
         }).catch((err) => {
                  Swal.fire({
