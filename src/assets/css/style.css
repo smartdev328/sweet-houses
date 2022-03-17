@@ -584,6 +584,7 @@ body{
 } */
  .homedetails .slick-prev{
  left: 0px !important;
+   z-index: 999;
 }
 .homedetails .slick-next{
   right: 0px !important;
@@ -715,7 +716,7 @@ font-size: 16px;
   align-items: center;
   width: 70px;
   height: 70px;
-  margin-right: -57px;
+  margin-left:8px;
   opacity: 1;
   padding-bottom: 10px;
   color: #fff !important;
@@ -732,6 +733,9 @@ font-size: 16px;
     background-position: center !important;
     font-size: unset!important;
 
+}
+.homedetails .slick-prev:before{
+  transform: rotate(180deg);
 }
 .vue-map-container .gm-ui-hover-effect{
   display: none!important;
@@ -754,7 +758,7 @@ font-size: 16px;
     background: transparent;
   }
 .homemapsale .slick-prev{
-  right: 12px !important;
+  left: 12px !important;
   font-size: 8px;
   line-height: 6;
   position: absolute;
