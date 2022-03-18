@@ -1,7 +1,6 @@
 # ### STAGE 1: Build ###
 FROM node:16 as builder
 ENV NODE_OPTIONS="--max-old-space-size=4096"
-ENV NODE_ENV="production"
 ARG VUE_APP_URL_API
 
 WORKDIR /app
