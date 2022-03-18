@@ -508,10 +508,19 @@ export const store = new Vuex.Store({
             input.phone_number = state.contactinput.phone,
             input.longitude = state.latlong.lng,
             input.latitude = state.latlong.lat
+            if(state.imageArr.length > 0){
+                input.image = 'yes'
+            }
             Object.entries(input).forEach((entry) =>
             state.formData.append(entry[0], entry[1])
             );
+            if(state.imageArr.length > 0){
+                state.formData.append('imaage','yes')
+            }else{
+                state.formData.append('imaage','no') 
+            }
             return new Promise((resolve, reject) => {
+
                 axios({url: 'forms/sweetly_estimate_form/', data:  state.formData, method: 'POST' })
                 .then(resp => {
                   commit('instant_estimate', resp.data)
