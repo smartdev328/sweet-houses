@@ -118,7 +118,7 @@ export default {
           image: require("../../../assets/image/2HomeMarketing.png"),
         },
         {
-          title: "Improvement Budge",
+          title: "Improvement Budget",
           content: `We can offer (interest free) funds to make powerful improvements to help you maximize your sale price. You pay us back once you sell.`,
           image: require("../../../assets/image/3-Home mprovement.png"),
         },
