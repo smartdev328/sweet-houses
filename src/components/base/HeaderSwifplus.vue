@@ -54,7 +54,7 @@
             <span class="spanerr" v-if="errmsg">{{ errmsg }}</span>
           </div>
           <p class="spanalgorithm mt-n4 text-white Poppins">
-            Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
+           <br> Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
           </p>
         </div>
 
