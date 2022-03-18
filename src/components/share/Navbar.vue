@@ -306,7 +306,7 @@ export default {
       }
     },
     openblog(){
-      window.open('https://sweetly.cloud/info/blog/', '_blank')
+      window.open('https://sweetly.ca/info/blog/', '_blank')
      // this.$router.push('/info/blog/')
     },
     opensignupmodal(){
