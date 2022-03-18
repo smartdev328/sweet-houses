@@ -810,7 +810,17 @@ export default {
           let pic = event.target.files[item]
          if( (pic.name.split(".").pop() == 'png' || pic.name.split(".").pop() == 'jpg' || pic.name.split(".").pop() == 'jpeg')
          ){
-           this.imagesArray.push(pic)
+            if(pic.size/1024/1024 > 10){
+            Swal.fire({
+             title: 'Failed !',
+             text: 'The file size can not exceed 10MB',
+             icon: 'error',
+             confirmButtonText: 'Ok',
+           })
+         }else{
+            this.imagesArray.push(pic)
+         }
+          // this.imagesArray.push(pic)
                // = event.target.files
          }
          else{
@@ -821,6 +831,7 @@ export default {
              confirmButtonText: 'Ok',
            })
          }
+        
 
         }
 
