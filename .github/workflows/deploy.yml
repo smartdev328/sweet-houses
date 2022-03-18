@@ -72,4 +72,5 @@ jobs:
           -l traefik.http.routers.sweetly_app_http.entrypoints=http \
           -l traefik.http.middlewares.https_redirect.redirectscheme.scheme=https \
           -l traefik.http.routers.sweetly_app_http.middlewares=https_redirect \
+          -v /home/sweetly/.blog_data:/app/info \
           ghcr.io/${{ steps.reponame.outputs._0 }}/sweetly_app:latest
