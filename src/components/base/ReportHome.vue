@@ -410,6 +410,7 @@ export default {
   components: {   },
   data() {
     return {
+      loading:false,
       inputhelp:{
         helps:""
       },
@@ -600,13 +601,15 @@ export default {
           this.addedhelp = true
           return res;
         }).catch((err) => {
+           this.loading = false
+           console.log('loading')
           Swal.fire({
             title: 'Failed !',
             text: err.response.data.msgs,
             icon: 'error',
             confirmButtonText: 'Ok',
           })
-          this.loading = false
+         
         });
       }
     },
