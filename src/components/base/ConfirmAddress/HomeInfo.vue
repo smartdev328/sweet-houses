@@ -661,7 +661,7 @@
                   name="imagesArray"
                   multiple
                   @change="onChange"
-                  accept="image/jpg, image/jpeg, image/png"
+                  accept=".png, .jpg, .jpeg"
                   class="form-control border bg-white"
                 />
               </div>
