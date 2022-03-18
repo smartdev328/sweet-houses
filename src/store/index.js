@@ -508,16 +508,13 @@ export const store = new Vuex.Store({
             input.phone_number = state.contactinput.phone,
             input.longitude = state.latlong.lng,
             input.latitude = state.latlong.lat
-            if(state.imageArr.length > 0){
-                input.image = 'yes'
-            }
             Object.entries(input).forEach((entry) =>
             state.formData.append(entry[0], entry[1])
             );
             if(state.imageArr.length > 0){
-                state.formData.append('imaage','yes')
+                state.formData.append('images','yes')
             }else{
-                state.formData.append('imaage','no') 
+                state.formData.append('images','no') 
             }
             return new Promise((resolve, reject) => {
 
