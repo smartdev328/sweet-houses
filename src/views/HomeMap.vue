@@ -434,6 +434,7 @@ export default {
   },
   data() {
     return {
+      smscreen:null,
       loading:false,
       showfilter: false,
       posY:'',
@@ -502,11 +503,19 @@ export default {
       const result = itemsnumber.items;
       return Array.from(result, (x) => x.toLocaleString("ja-JP"));
     },
-    smscreen(){
-      return window.innerWidth < 620
-    },
+    // smscreen(){
+    //   return window.innerWidth < 620
+    // },
   },
   methods: {
+    checkScreen(){
+        const windowWidth = window.innerWidth;
+      if (windowWidth <= 750) {
+        this.smscreen = true;
+        return;
+      }
+      this.smscreen = false;
+    },
     openforsalemap(){
       this.$router.push({name:"BrowswHome"})
     },
@@ -674,6 +683,8 @@ export default {
   },
 
   created() {
+    this.checkScreen();
+    window.addEventListener("resize", this.checkScreen);
     /* this.getCoords(); */
     /*  this.changebounds();  */
   },
