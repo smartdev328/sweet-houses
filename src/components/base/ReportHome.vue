@@ -357,7 +357,7 @@
               id="helps"
               :disabled="addedhelp"
               rows="4"
-              v-model="inputhelp.helps"
+              v-model="inputhelp.help"
               :maxlength='maxlength'
               @input="calc_char();msgs.helps ? msgs.helps = '' : ''"
             ></textarea>
@@ -570,15 +570,15 @@ export default {
       this.$router.push({ name: "MapHome" });
     },
     calc_char:function(){
-      this.remainingcahr= this.maxlength - this.inputhelp.helps.length;
+      this.remainingcahr= this.maxlength - this.inputhelp.help.length;
       this.reachzero = this.remainingcahr === 0;
     },
     checkformhlps(){
       this.msgs = {}
-      if(!this.inputhelp.helps){
+      if(!this.inputhelp.help){
         this.msgs.helps = "required"
       }
-      if(this.inputhelp.helps){
+      if(this.inputhelp.help){
         return true
       }
     },
@@ -586,7 +586,7 @@ export default {
       if(this.checkformhlps() && Object.keys(this.msgs).length == 0){
         this.loading = true
         this.inputhelp.form_id = this.form_id
-        this.$http.post('forms/estimate_helps/',this.inputhelp).then((res) =>{
+        this.$http.post('forms/estimate_help/',this.inputhelp).then((res) =>{
           Swal.fire({
             title: 'success!',
             text: 'Success..! ',
