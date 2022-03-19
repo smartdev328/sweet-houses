@@ -1013,6 +1013,7 @@ input:focus {
   .modelfilter{
     left:10%;
     right: 10%;
+    padding-bottom: 36px;
   }
   .modelfilter .element1 .element1a{
     width: 90%;
@@ -1025,6 +1026,9 @@ input:focus {
     margin: 0 3px 3px 0;
     padding: 4px 10px;
     border-radius: 6px;
+  }
+  .modelfilter .element5{
+    align-items: end;
   }
   .searchpage {
     padding-left: 5px;
