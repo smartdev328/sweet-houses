@@ -436,4 +436,7 @@ nav a:focus {
 .navbar-nav{
   background: #fff;
 }
+.dropdown {
+  display: block;
+}
 </style>
