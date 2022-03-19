@@ -27,14 +27,26 @@ const routes = [
   {
     path: '/privacy-policy',
     name: 'PrivacyPolicy',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicy.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicy.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/browse-home',
     name: 'BrowswHome',
     component:BrowswHome,
     meta: {
-      hideNavbar: true
+      hideNavbar: true,
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
     }
   },
   {
@@ -42,7 +54,12 @@ const routes = [
     name: 'HomesData',
     component:() => import('../views/HomesData.vue'),
     meta: {
-      hideNavbar: true
+      hideNavbar: true,
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
     }
   },
   {
@@ -50,45 +67,100 @@ const routes = [
     name: 'HomesData',
     component:() => import('../views/HomesData.vue'),
     meta: {
-      hideNavbar: true
+      hideNavbar: true,
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
     }
   },
   {
     path: '/terms-of-service',
     name: 'TermsofService',
-    component: () => import(/* webpackChunkName: "about" */ '../views/TermsofService.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/TermsofService.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
+    }
+
   },
   
   {
     path:'/home-swap',
     name:"HomeSwap",
-    component:HomeSwap
+    component:HomeSwap,
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   
   {
     path:'/sweet-sale',
     name:"SweetSale",
-    component: () => import(/* webpackChunkName: "about" */ '../views/SweetSale.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/SweetSale.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/traditional-real-estate',
     name:"TraditionalRealestate",
-    component: () => import(/* webpackChunkName: "about" */ '../views/TraditionalRealestate.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/TraditionalRealestate.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/swift-sale',
     name:"SwiftSale",
-    component: () => import(/* webpackChunkName: "about" */ '../views/SwiftSale.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/SwiftSale.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/swift-saleplus',
     name:"SwiftsalePlus",
-    component: () => import(/* webpackChunkName: "about" */ '../views/SwiftsalePlus.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/SwiftsalePlus.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/equity-advance',
     name:'EquityAdvance',
-    component: () => import ('../views/EquityAdvance.vue')
+    component: () => import ('../views/EquityAdvance.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/appraisal',
@@ -96,6 +168,11 @@ const routes = [
     component: () => import ('../views/AppRise.vue'),
     meta: {
       hideNavbar: true,
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
      }
   },
   
@@ -105,7 +182,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Cities.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Cities.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.5,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/cities-one',
@@ -113,7 +197,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/CitiesOne.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/CitiesOne.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.5,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/agents',
@@ -121,7 +212,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/OurTeam.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/OurTeam.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.7,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/contact-us',
@@ -129,7 +227,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ContactUs.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ContactUs.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/for-realtor',
@@ -137,7 +242,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ForRealtor.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/ForRealtor.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.6,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/agent-profile/:name',
@@ -146,7 +258,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AgentProfile.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AgentProfile.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.7,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/frequentlyaskedquestions',
@@ -154,7 +273,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/FrequentlyQuestion.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/FrequentlyQuestion.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.8,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/about-us',
@@ -162,7 +288,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AboutUs.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AboutUs.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/blog-details',
@@ -170,7 +303,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/BlogDetails.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/BlogDetails.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.7,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/blog',
@@ -178,7 +318,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Blog.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/Blog.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.7,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/Whats-My-Home-Worth',
@@ -186,7 +333,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeWorth.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/HomeWorth.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.7,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path: '/',
@@ -194,7 +348,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeMap.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/HomeMap.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    1,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/edit-address',
@@ -210,7 +371,12 @@ const routes = [
     component: () => import('../components/base/ConfirmAddress.vue'),
     beforeEnter: requireAddress,
     meta: {
-      hideNavbar: true
+      hideNavbar: true,
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
      }
     
   },
@@ -228,18 +394,39 @@ const routes = [
     path:'/home-details-forsale/:mls&:boardId',
     name:'HomeDetails',
     component:()=>import('../components/base/homes/HomeDetails.vue'),
-    props:true
+    props:true,
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/home-details-sold/:mls&:boardId',
     name:'SoldHomeDetails',
     component:()=>import('../components/base/SoldHomedetails.vue'),
-    props:true
+    props:true,
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/report-home',
     name:"RerportHome",
-    component:()=>import('../components/base/ReportHome.vue')
+    component:()=>import('../components/base/ReportHome.vue'),
+    meta: {
+      sitemap: {
+        lastmod:    'March 19, 2022',
+        priority:    0.9,
+        changefreq: 'daily',
+      }
+    }
   },
   {
     path:'/saved',
