@@ -1,4 +1,5 @@
-const { routes } = require('./src/routes.js');
+
+// const { routes } = require('./src/router/index');
 module.exports = {
   configureWebpack:{
     optimization: {
@@ -8,10 +9,10 @@ module.exports = {
       }
     }
   },
-  pluginOptions: {
-    sitemap: {
-      baseURL: 'https://sweetly.ca/',
-      routes,
-    }
-  }
+  // pluginOptions: {
+  //   sitemap: {
+  //     baseURL: 'https://sweetly.ca/',
+  //     routes,
+  //   }
+  // }
 }
