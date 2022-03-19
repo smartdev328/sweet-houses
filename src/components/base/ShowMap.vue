@@ -191,9 +191,9 @@ export default {
     urlPath(){
      return  this.$route.name !== "BrowswHome"
     },
-    smscreen(){
-      return window.innerWidth < 620
-    },
+    // smscreen(){
+    //   return window.innerWidth < 620
+    // },
     ...mapState(["city"]),
     checkhasstreet() {
       return Object.prototype.hasOwnProperty.call(
@@ -310,6 +310,7 @@ export default {
   },
   components: { GmapCluster, SweetSale , HeaderSwiftsale  },
   data: () => ({
+    smscreen:null,
     showcontent: true,
     hidegroupbtn:false,
     words: ["Buy", "Trade", "List", "Finance"],
@@ -374,6 +375,14 @@ export default {
     window.removeEventListener("scroll", this.onScroll , true)
   },
   methods: {
+    checkScreen(){
+        const windowWidth = window.innerWidth;
+      if (windowWidth <= 750) {
+        this.smscreen = true;
+        return;
+      }
+      this.smscreen = false;
+    },
     gotFocus(){
       document.getElementById("textaddress").focus();
     },
@@ -708,6 +717,8 @@ export default {
      this.getCoords();
     this.changebounds();
     this.find_listings_forSale();
+     this.checkScreen();
+    window.addEventListener("resize", this.checkScreen);
   },
 
 
