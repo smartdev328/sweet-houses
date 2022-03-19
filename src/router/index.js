@@ -261,6 +261,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AgentProfile.vue'),
     meta: {
       sitemap: {
+        slugs: [
+          'my-amazing-article',
+          'a-life-changing-method-for-folding-socks',
+
+          // Slugs can have their own meta tags
+          {
+            title:     'a-very-important-article',
+            priority:  0.7,
+            lastmod:    'March 19, 2022',
+            changefreq: 'daily',
+          }
+        ],
         lastmod:    'March 19, 2022',
         priority:    0.7,
         changefreq: 'daily',
