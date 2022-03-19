@@ -7,11 +7,8 @@
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "build-report": "vue-cli-service build --report",
+    "sitemap": "vue-cli-service sitemap",
     "start": "node server.js"
-  },
-  "engines": {
-    "npm": "8.3.1",
-    "node": "16.14.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
@@ -52,6 +49,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "vue-cli-plugin-sitemap": "~2.3.0",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
     "vue-textra": "^1.3.0"
@@ -74,5 +72,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "engines": {
+    "npm": "8.3.1",
+    "node": "16.14.0"
+  }
 }
