@@ -409,6 +409,7 @@
     <div :class="tab_visible('show-map')" class="h-50">
       <show-map ref="showmap" :type="typesale" @submit="submitmap" @openforsalemap="openforsalemap"
       @opensoldmap="opensoldmap"
+      :showfilter="showfilter"
       ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
