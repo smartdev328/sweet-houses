@@ -528,37 +528,6 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
                  </p> 
             </div>
                 </div>
-          <!-- <div class="col-12 col-md-4">
-                        <div class="part2 shadow p-3">
-                            <div class="item1">
-                                <p class="Roboto-Medium">Tour this home</p>
-                            </div>
-                            <div class="item2">
-                                <div class="item2a px-3 py-1 align-items-center">
-                                     <img src="../../assets/image/icon/home.svg" alt="">
-                                    <span class="text-color-1 Roboto-Regular ml-2">In Person</span>
-                                </div>
-                                <div class="item2b ml-4">
-                                     <img src="../../assets/image/icon/smartphone.svg" alt="">
-                                    <span class="Roboto-Regular text-color-1 ml-2">Live Video</span>
-                                </div>
-                            </div>
-                            <div class="item3 px-2 mt-4 mb-2">
-                                <p class="mb-0 text-color-1 Roboto-Regular form-control form-control-lg">Tuesday, Oct 05, 2021</p>
-                            </div>
-                             <div class="item3 px-2 mt-4 mb-2">
-                                <p class="mb-0 text-color-1 Roboto-Regular form-control form-control-lg">10:00am - 10:30am</p>
-                            </div>
-                             <div class="item4 px-2 mt-4 mb-2 w-100">
-                                <button class="btn px-3  Roboto-Medium">Request tour</button>
-                                <p class="my-3 Roboto-Medium">
-                                    Tour homes with a Sweetly Real 
-                                    Estate Agent. It's free, there's no 
-                                    commitment. 
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
          
       </div>
 
@@ -575,16 +544,6 @@ import { mapState } from 'vuex';
 export default {
   data() {
     return {
-      // settings:{
-      //   "dots": true,
-      //   "dotsClass": "slick-dots custom-dot-class",
-      //   "edgeFriction": 0.35,
-      //   "infinite": false,
-      //   "speed": 500,
-      //   "slidesToShow": 1,
-      //   "slidesToScroll": 1,
-      //   "nextArrow":true
-      // },
       settings:{
         "dots": false,
         "focusOnSelect": true,

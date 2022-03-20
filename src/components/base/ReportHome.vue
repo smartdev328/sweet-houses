@@ -90,8 +90,6 @@
       </div>
       <div class="mt-3">
         <p>*7/3 means 7% of the first $100,000 plus 3% on the balance of the sale price</p>
-<!--        <p>Sweetly estimate doesn't factor in renovations, conditions, or unique features. Our algorithm detect the closest house that we have data for, the-->
-<!--          address used for this listing is )Address</p>-->
       </div>
 
 
@@ -131,38 +129,6 @@
         </div>
       </div>
 
-<!--      <div class="item5 p-3 my-5">-->
-<!--        <div class="item5a dropdown">-->
-<!--          <img-->
-<!--            src="../../assets/image/icon/progree.svg"-->
-<!--            class="w-100 h-100 dropbtn"-->
-<!--            alt=""-->
-<!--          />-->
-<!--          <div class="dropdown-content">-->
-<!--            <img-->
-<!--              src="../../assets/image/icon/Component 61 – 1.svg"-->
-<!--              class="w-100 h-100"-->
-<!--              alt=""-->
-<!--            />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; <div class="item5b">-->
-<!--          <p class="Roboto-Medium text-color-1">Thinking of moving ?</p>-->
-<!--          <p class="Roboto-Regular text-color-2">-->
-<!--            Kick off your sale by getting a more detailed appraisal from one of-->
-<!--            our <br />-->
-<!--            agents. Learn more about our <span> selling services.</span>-->
-<!--          </p>-->
-<!--        </div> &ndash;&gt;-->
-<!--        <div class="item5c text-center">-->
-<!--          <button class="btn Roboto-Regular mb-2">-->
-<!--            Get a personalized home appraisal-->
-<!--          </button>-->
-<!--          <p class="text-color-2  Roboto-Regular">-->
-<!--            It's free when you list with us-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
       <div class="item6">
         <p class="Roboto-Medium text-color-1">Comparable recent home sales</p>
         <p class="Roboto-Regular text-color-2">
@@ -220,22 +186,6 @@
           <h4 v-else class="text-color-1 DMSerifRegular">We Can't Find any Closest Bedrooms</h4>
         </div>
       </div>
-      <!-- <div class="item8 my-4">
-            <p class="Roboto-Medium text-color-1">Edmonton - Housing market update</p>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="image">
-                        <img src="../../assets/image/chartA.svg" class="w-100 h-100" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="image">
-                        <img src="../../assets/image/chartB.svg" class="w-100 h-100" alt="">
-                    </div>
-                </div>
-            </div>
-            <P class="my-3 ml-2 text-color-1 Roboto-Regular">Edmonton, Alberta is the province's second largest municipality & capital.</P>
-        </div> -->
       <div class="item9 my-5">
         <p v-if="Object.keys(similar_homes).length" class="mb-4">
           Similar homes for sale
@@ -375,15 +325,6 @@
 
       </div>
       <div class="my-5 disclaimer-content">
-<!--        <p class="Roboto-Regular">-->
-<!--          Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of-->
-<!--          the copyright in its MLS® System. Data is deemed reliable but is not-->
-<!--          guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple-->
-<!--          Listing Service® and the associated logos are owned by The Canadian-->
-<!--          Real Estate Association (CREA) and identify the quality of services-->
-<!--          provided by real estate professionals who are members of CREA. Used-->
-<!--          under license.-->
-<!--        </p>-->
 
         <p class="Roboto-Regular" >
           Copyright {{yearnow}}  by the REALTORS® Association of Edmonton. All Rights Reserved. <code><br></code>

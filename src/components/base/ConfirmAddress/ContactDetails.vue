@@ -8,7 +8,7 @@
         <div class="col-12 row p-0 col-md-6 mx-auto d-flex">
           <div class="col-1 col-md-1 mr-sm-auto ml-md-auto">
             <p class="h1" @click="openhomeinfopage" style="cursor: pointer">
-              <b-icon icon="chevron-left"></b-icon>
+               <img src="../../../assets/image/icon/bottomarrow.svg" alt="arrow-icon" class="chevron-left">
             </p>
           </div>
           <div class="item1z p-1 p-md-4 col-12 col-md-11">
@@ -45,7 +45,7 @@
     <div v-if="tab_visible == 'menu_two'" class="row container px-0 w-100 mx-0">
       <div class="col-1 col-md-1 mr-sm-auto ml-md-auto">
         <p class="h1" @click="tab_visible = 'menu_one'" style="cursor: pointer">
-          <b-icon icon="chevron-left"></b-icon>
+           <img src="../../../assets/image/icon/bottomarrow.svg" alt="arrow-icon" class="chevron-left">
         </p>
       </div>
       <div class="col-12 col-md-5 mx-auto item11 text-center px-3 py-4">
@@ -133,7 +133,7 @@
             >
               <p v-if="!loadvalid" class="mb-0">Continue</p>
               <p v-if="!loadvalid" class="h4 text-white mb-0">
-                <b-icon icon="arrow-right"></b-icon>
+                <img src="../../../assets/image/icon/arrow-right.svg" alt="arrow-icon" class="arrow-icon">
               </p>
               <div v-if="loadvalid" class="lds-ring mx-auto">
                 <div></div>
@@ -158,19 +158,19 @@
           <div class="text-color-2 d-flex">
             <p class="Roboto-Medium font-weight-bold mr-2">50+</p>
             <p class="h3 mr-2">
-              <b-icon icon="star-fill" variant="warning"></b-icon>
+              <img src="../../../assets/image/icon/starsvg.svg" alt="starsvg-icon" class="starsvg-icon">
             </p>
             <p class="h3 mr-2">
-              <b-icon icon="star-fill" variant="warning"></b-icon>
+               <img src="../../../assets/image/icon/starsvg.svg" alt="starsvg-icon" class="starsvg-icon">
             </p>
             <p class="h3 mr-2">
-              <b-icon icon="star-fill" variant="warning"></b-icon>
+             <img src="../../../assets/image/icon/starsvg.svg" alt="starsvg-icon" class="starsvg-icon">
             </p>
             <p class="h3 mr-2">
-              <b-icon icon="star-fill" variant="warning"></b-icon>
+              <img src="../../../assets/image/icon/starsvg.svg" alt="starsvg-icon" class="starsvg-icon">
             </p>
             <p class="h3 mr-2">
-              <b-icon icon="star-fill" variant="warning"></b-icon>
+             <img src="../../../assets/image/icon/starsvg.svg" alt="starsvg-icon" class="starsvg-icon">
             </p>
           </div>
           <p class="text-color-2 Roboto-Regular">Five-star reviews on Google</p>
@@ -347,6 +347,15 @@ export default {
 };
 </script>
 <style scoped>
+.chevron-left{
+  width: 45px;
+  height: 45px;
+  transform: rotate(180deg);
+}
+.arrow-icon{
+  width: 24px;
+  height: 24px;
+}
 .contact-details-form .item11 {
   background: #edf3f2;
   border-radius: 6px;

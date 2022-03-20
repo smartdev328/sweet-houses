@@ -46,25 +46,15 @@
               aria-expanded="false"
             >
               Buy & Sell
-              <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+              <a class="h5">
+                <img src="../../assets/image/icon/arrowbottom.svg" alt="arrow-icon" style="width:25px;height: 25px"/>
+
+              </a>
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<!--              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"-->
-<!--                >Sweet Sale</a-->
-<!--              >-->
-<!--              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"-->
-<!--                >Swift Sale</a-->
-<!--              >-->
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale PLUS</a
               >    
-<!--              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"-->
-<!--                >Home Swap</a>                  -->
-              <!-- <a
-                class="dropdown-item btn"
-                @click="openeduityadvanced('Equity_Advance')"
-                >Equity Advance</a
-              >  -->
               <a
                 class="dropdown-item btn"
                 @click="opentraditionestate();hidecollapse()"
@@ -108,7 +98,9 @@
                 aria-expanded="false"
               >
                 More
-                <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+                <a class="h5">
+                  <img src="../../assets/image/icon/arrowbottom.svg" alt="arrow-icon" style="width:25px;height: 25px"/>
+                </a>
               </a>
               <div
                 class="dropdown-menu border-0 shadow-sm"
@@ -140,7 +132,9 @@
                 aria-expanded="false"
               >
                 {{ username }}
-                <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+                <a class="h5">
+                  <img src="../../assets/image/icon/arrowbottom.svg" alt="arrow-icon" style="width:25px;height: 25px"/>
+                </a>
               </a>
               <div
                 class="dropdown-menu border-0 shadow-sm"
@@ -169,27 +163,15 @@
               aria-expanded="false"
             >
               Buy & Sell
-              <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+              <a class="h5">
+                <img src="../../assets/image/icon/arrowbottom.svg" alt="arrow-icon" style="width:25px;height: 25px"/>
+              </a>
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<!--              <a class="dropdown-item btn" @click="opensweetsale('Sweet_Sale');hidecollapse()"-->
-<!--                >Sweet Sale</a-->
-<!--              >-->
-<!--              <a class="dropdown-item btn" @click="openswiftsale('Swift_Sale');hidecollapse()"-->
-<!--                >Swift Sale</a-->
-<!--              >-->
+
                 <a class="dropdown-item btn" @click="openswiftplus('home-swap');hidecollapse()"
                 >Swift Sale PLUS</a
               >    
-<!--              <a class="dropdown-item btn" @click="openhomeswap('home-swap');hidecollapse()"-->
-<!--                >Home Swap</a-->
-<!--              >           -->
-              
-              <!-- <a
-                class="dropdown-item btn"
-                @click="openeduityadvanced('Equity_Advance')"
-                >Equity Advance</a
-              >  -->
               <a
                 class="dropdown-item btn"
                 @click="opentraditionestate();hidecollapse()"
@@ -219,7 +201,9 @@
               aria-expanded="false"
             >
               More
-              <a class="h5"> <b-icon-chevron-down></b-icon-chevron-down></a>
+              <a class="h5">
+                <img src="../../assets/image/icon/arrowbottom.svg" alt="arrow-icon" style="width:25px;height: 25px"/>
+              </a>
             </a>
             <div
               class="dropdown-menu border-0 shadow-sm"

@@ -33,7 +33,7 @@
             class="h1"
             style="cursor:pointer"
           >
-            <b-icon icon="chevron-left"></b-icon>
+            <img src="../../../assets/image/icon/bottomarrow.svg" alt="arrow-icon" class="chevron-left">
           </p>
         </div>
         <div class="col-12 col-md-7 mr-auto item11 text-center p-2 px-md-4">
@@ -435,7 +435,7 @@
               >
                 <p class="mb-0">Continue</p>
                 <p class="h1 text-white mb-0">
-                  <b-icon icon="arrow-right"></b-icon>
+                  <img src="../../../assets/image/icon/arrow-right.svg" alt="arrow-icon" class="arrow-icon">
                 </p>
               </button>
             </div>
@@ -450,7 +450,7 @@
             class="h1"
             style="cursor:pointer"
           >
-            <b-icon icon="chevron-left"></b-icon>
+            <img src="../../../assets/image/icon/bottomarrow.svg" alt="arrow-icon" class="chevron-left">
           </p>
         </div>
         <div class="col-12 col-md-7 mr-auto item11 text-center p-2 p-md-4">
@@ -680,7 +680,7 @@
               >
                 <p class="mb-0">Continue</p>
                 <p class="h1 text-white mb-0">
-                  <b-icon icon="arrow-right"></b-icon>
+                  <img src="../../../assets/image/icon/arrow-right.svg" alt="arrow-icon">
                 </p>
               </button>
             </div>
@@ -990,6 +990,15 @@ export default {
 </script>
 
 <style scoped>
+.chevron-left{
+  width: 45px;
+  height: 45px;
+  transform: rotate(180deg);
+}
+.arrow-icon{
+  width: 24px;
+  height: 24px;
+}
 .imagesinfo {
   display: flex;
   justify-content: center;

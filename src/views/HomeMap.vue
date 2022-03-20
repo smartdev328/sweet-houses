@@ -427,10 +427,12 @@
 <script>
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
+
 //import SweetSale from '../components/base/SweetSale.vue'
 // import Multiselect from "vue-multiselect";
 export default {
-  components: { ShowMap
+  components: {
+    ShowMap
   // SweetSale 
   },
   data() {
