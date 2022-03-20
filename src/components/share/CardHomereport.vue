@@ -132,10 +132,6 @@
 </template>
 <script>
 import moment from "moment";
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// // optional style for arrows & dots
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   props: {
     homedata: {},
@@ -149,43 +145,6 @@ export default {
     saved: null,
     createdToday:false,
     slideimgs:[]
-    //  settings:{
-    //         "dots": false,
-    //         "focusOnSelect": true,
-    //         "infinite": true,
-    //         "speed": 500,
-    //         "slidesToShow": 1,
-    //         "slidesToScroll": 1,
-    //         "touchThreshold": 1,
-    //         "arrows":false,
-    //          "responsive": [
-    //         {
-    //         "breakpoint": 1024,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "infinite": true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 600,
-    //         "settings": {
-    //             "slidesToShow":1,
-    //             "slidesToScroll": 1,
-    //             "initialSlide": 1,
-    //             "arrows":true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 480,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "arrows":true,
-    //         }
-    //         }
-    //     ]
-    //         }
   }),
   components:{
     
@@ -211,15 +170,7 @@ export default {
         return new Date(this.homedata.listDate).getTime();
       }
     },
-    // createdToday() {
-    //  //  let timestamp = this.taday - this.homestartdate;
-    //  //  let numhr = Math.floor(timestamp / 1000 / 60 / 60 / 24);
-    //  //  if (numhr < 2) {
-    //  //    return true;
-    //  //  } else {
-    //  //    return false;
-    //  //  }
-    // },
+
     
   },
   methods: {
@@ -268,13 +219,7 @@ export default {
       this.$http.post("listings/image_bymls/", input).then((res) => {
         const element = this.$refs.slidepic;
         element.classList.remove("ac2");
-        // const element = this.$refs.slidepic;
-        // element.classList.add('fadeOut');
-        //     element.classList.remove('fadeIn');
-        // setTimeout(() => {
-        //         element.classList.remove('fadeOut');
-        //         element.classList.add('fadeIn');
-        //     }, 300);
+
         this.homedata.images.image = res.data.image;
          
         console.log(res.data.image);

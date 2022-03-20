@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 
 
 import {store} from './store'
-import { BootstrapVue ,IconsPlugin  } from 'bootstrap-vue'
+import { BootstrapVue   } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
@@ -59,7 +59,6 @@ Vue.use(VueSocialSharing);
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
 Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
@@ -146,11 +145,8 @@ const SoldSimilerhome = () => import('./components/share/SoldSimilerhome.vue');
 Vue.component('sold-similerhome',SoldSimilerhome);
 
 
-const AutocompleteMap = () => import('./components/share/AutocompleteMap.vue');
-Vue.component('autocomplete-map',AutocompleteMap);
 Vue.component('card-homereport',require('./components/share/CardHomereport.vue').default);
 
-Vue.component('google-review',require('./components/share/GoogleReview.vue').default)
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {

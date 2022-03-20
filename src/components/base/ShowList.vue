@@ -104,14 +104,7 @@ export default {
             loadedlistingsold:null,
             tatal:0,
             filerdata:null,
-            // minBeds:this.$store.state.filteroptdata.minBeds,
-            // minParkingSpaces:this.$store.state.filteroptdata.minParkingSpaces,
-            // minSqft:this.$store.state.filteroptdata.minSqft,
-            // maxSqft:this.$store.state.filteroptdata.maxSqft,
-            // maxPrice:this.$store.state.filteroptdata.maxPrice,
-            // minPrice:this.$store.state.filteroptdata.minPrice,
-            // propertyType:this.$store.state.filteroptdata.propertyType,
-            // style:this.$store.state.filteroptdata.style,
+ 
 
             
             

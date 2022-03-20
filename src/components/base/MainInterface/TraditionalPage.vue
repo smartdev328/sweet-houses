@@ -87,7 +87,6 @@
         <p>What Our Customers Say</p>
       </div>
 
-      <!-- <google-review></google-review> -->
       <div class="elfsight-app-3f411fcb-35bd-44e4-b1ce-551508d164d9"></div>
     </div>
   </div>

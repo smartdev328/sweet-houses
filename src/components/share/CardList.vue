@@ -176,10 +176,6 @@
 </template>
 <script>
 import moment from "moment";
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// // optional style for arrows & dots
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   props: {
     homedata: {},
@@ -193,43 +189,7 @@ export default {
     saved: null,
     createdToday:false,
     slideimgs:[]
-    //  settings:{
-    //         "dots": false,
-    //         "focusOnSelect": true,
-    //         "infinite": true,
-    //         "speed": 500,
-    //         "slidesToShow": 1,
-    //         "slidesToScroll": 1,
-    //         "touchThreshold": 1,
-    //         "arrows":false,
-    //          "responsive": [
-    //         {
-    //         "breakpoint": 1024,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "infinite": true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 600,
-    //         "settings": {
-    //             "slidesToShow":1,
-    //             "slidesToScroll": 1,
-    //             "initialSlide": 1,
-    //             "arrows":true,
-    //         }
-    //         },
-    //         {
-    //         "breakpoint": 480,
-    //         "settings": {
-    //             "slidesToShow": 1,
-    //             "slidesToScroll": 1,
-    //             "arrows":true,
-    //         }
-    //         }
-    //     ]
-    //         }
+    
   }),
   components:{
     
@@ -255,24 +215,10 @@ export default {
         return new Date(this.homedata.listDate).getTime();
       }
     },
-    // createdToday() {
-    //  //  let timestamp = this.taday - this.homestartdate;
-    //  //  let numhr = Math.floor(timestamp / 1000 / 60 / 60 / 24);
-    //  //  if (numhr < 2) {
-    //  //    return true;
-    //  //  } else {
-    //  //    return false;
-    //  //  }
-    // },
-    
   },
   methods: {
     getrelativedateformnow(date){
       return moment(date).endOf("day").fromNow(true);
-      // let nowdate = new Date().toISOString().slice(0, 10)
-      //  let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
-      // let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-      // return Difference_In_Days
     },
     gettime(item) {
       let relativetime = moment(item).endOf("day").fromNow(true);
