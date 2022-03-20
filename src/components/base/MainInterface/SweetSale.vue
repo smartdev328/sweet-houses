@@ -262,7 +262,6 @@
       </div>
     </div>
     <div class="my-2 my-md-5 item12">
-      <!-- <google-review></google-review> -->
       <div class="elfsight-app-3f411fcb-35bd-44e4-b1ce-551508d164d9"></div>
     </div>
     <!--      Our Story-->

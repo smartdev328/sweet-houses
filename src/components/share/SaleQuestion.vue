@@ -19,16 +19,9 @@
             </div>
             <div class="accordicon">
               <p class="h2">
-                <b-icon
-                v-show="!isExpanded(key)"
-              icon="plus"
-              variant="#434242"
-            ></b-icon>
-              <b-icon
-                v-show="isExpanded(key)"
-              icon="dash"
-              variant="warning"
-            ></b-icon>
+                  <img   v-show="!isExpanded(key)" src="../../assets/image/icon/plusicon.svg" alt="plus-icon" style="width:28px;height:28px" />
+
+            <img   v-show="isExpanded(key)" src="../../assets/image/icon/dashicon.svg" alt="plus-icon" style="width:28px;height:28px" />
                </p>
             </div>
           </div>

@@ -151,18 +151,6 @@ const routes = [
     }
   },
   {
-    path:'/equity-advance',
-    name:'EquityAdvance',
-    component: () => import ('../views/EquityAdvance.vue'),
-    meta: {
-      sitemap: {
-        lastmod:    'March 19, 2022',
-        priority:    0.8,
-        changefreq: 'daily',
-      }
-    }
-  },
-  {
     path:'/appraisal',
     name:'appraisal',
     component: () => import ('../views/AppRise.vue'),

@@ -67,15 +67,6 @@
                                     <p>Instagram</p>
                                 </div>
                             </a></li>
-<!--                             <li><a href="https://www.linkedin.com/company/sellsweetlyrealestate/about/" target="_blank">-->
-<!--                                <div class="d-flex align-items-baseline">-->
-<!--                                 -->
-<!--                                    <div class="socialicon mr-2">-->
-<!--                                        <img src="@/assets/image/footer/linkedin.svg" class="w-100 h-100 mr-2" alt="">-->
-<!--                                    </div>-->
-<!--                                    <p>Linkedin</p>-->
-<!--                                </div>-->
-<!--                            </a></li>-->
                              <li><a href="https://www.youtube.com/channel/UC6JD4zvXw9aUiuisxPitqdw" target="_blank">
                                 <div class="d-flex align-items-baseline">
                                  
