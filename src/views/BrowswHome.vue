@@ -395,7 +395,7 @@
 
     <div :class="tab_visible('show-map')" class="h-100">
       <show-map ref="showmap" :type="typesale" @submit="submitmap" @submit2="submitmap2"
-
+      :showfilter="showfilter"
       ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
