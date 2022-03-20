@@ -161,7 +161,7 @@
       </div>
     </div>
 
-    <div class="togglemap" v-if="fullscreenh && !hideMap">
+    <div class="togglemap" :class="{'hidetogglebtn' : showfilter}" v-if="fullscreenh && !hideMap">
       <button class="Roboto-Regular btn bg-white" @click="submit">
         Show List
       </button>
@@ -183,7 +183,7 @@ import { mapState } from "vuex";
 import SweetSale from "./MainInterface/SweetSale.vue";
 import HeaderSwiftsale from "./HeaderSwiftsale";
 export default {
-  props: ["type"],
+  props: ["type","showfilter"],
   computed: {
     hideMap(){
       return  this.urlPath && this.smscreen
@@ -867,6 +867,9 @@ export default {
   bottom: 20px;
   top: auto;
   z-index: 1;
+}
+.showmap .hidetogglebtn{
+  z-index: 0 !important;
 }
 .item1b .item1b3-sm {
   display: none;
