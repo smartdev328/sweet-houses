@@ -733,21 +733,21 @@ export default {
         { value: "Separate Suite", name: "Separate Suite" },
         { value: "No Basement", name: "No Basement" },
       ],
-<!--      prioritysales: [ -->
-<!--        {-->
-<!--          value: "We want the highest price with the right improvements",-->
-<!--          name: "We want the highest price ...",-->
-<!--        },-->
-<!--        { value: "Sell by a specific date", name: "Sell by a specific date" },-->
-<!--        {-->
-<!--          value: "Secure a sale to purchase another home",-->
-<!--          name: "Secure a sale to purchase...",-->
-<!--        },-->
-<!--        {-->
-<!--          value: `Been for sale before and we don't want that again`,-->
-<!--          name: `Been for sale before and....`,-->
-<!--        },-->
-<!--      ],-->
+      prioritysales: [ 
+        {
+          value: "We want the highest price with the right improvements",
+          name: "We want the highest price ...",
+        },
+        { value: "Sell by a specific date", name: "Sell by a specific date" },
+        {
+          value: "Secure a sale to purchase another home",
+          name: "Secure a sale to purchase...",
+        },
+        {
+          value: `Been for sale before and we don't want that again`,
+          name: `Been for sale before and....`,
+        },
+      ],
       CurrentOccupancies: [
         { value: "Vacant", name: "Vacant" },
         { value: "We Live There", name: "We Live There" },
