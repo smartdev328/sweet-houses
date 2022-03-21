@@ -13,8 +13,8 @@
         <div class="benefits-card bg-white p-2 p-md-3">
           <div class="card my-2">
             <div class="row no-gutters">
-              <div class="col-md-4">
-                <img :src="itembenefite.image" class="card-img" alt="..." />
+              <div class="col-md-4"  v-lazy-container="{ selector: 'img' }" >
+                <img :data-src="itembenefite.image" class="card-img" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -38,11 +38,13 @@
       </div>
       <div>
         <div class="image">
-          <img
+          <lazy-component >
+            <img
             class="rounded w-100"
             src="../../../assets/image/ASwiftSaleisRightForYou.png"
             alt=""
           />
+          </lazy-component>
         </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul>

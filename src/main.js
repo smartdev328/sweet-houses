@@ -24,7 +24,11 @@ Vue.directive('b-modal', VBModal)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
+import VueLazyload from "vue-lazyload";
 
+Vue.use(VueLazyload, {
+  lazyComponent: true
+});
 export const eventBus = new Vue();
 
 import VuePhoneNumberInput from 'vue-phone-number-input';
