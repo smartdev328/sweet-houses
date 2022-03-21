@@ -217,22 +217,22 @@ export default {
       Benefitsdata: [
         {
           title: "Market Value Sale",
-          content: `You get full market value for your home.`,
+          content: `You get current market value less our fee of 10%. Our payment is net to you with no hidden fees, etc.`,
           image: require("../../../assets/image/marketv.jpg"),
         },
         {
           title: "Sell Without Showings ",
-          content: ` Accepting our offer means that your home isn’t listed for sale until after you move out.`,
+          content: ` Accepting our offer means that your home is sold to Sweetly. We list it for sale after you move out. You get to skip all the disruption and inconvenience of showings to strangers touring the home you live in and being away for open house weekends.`,
           image: require("../../../assets/image/2-SellWithoutListings.png"),
         },
         {
-          title: "Skip Showings",
-          content: `Avoid the disruption of strangers touring your home and inconvenient open house weekends.`,
+          title: "Pick your Closing Day",
+          content: `The freedom to move at your own pace is far more convenient than having to meet a deadline imposed by a buyer. Further more, price and possession day often conflict where a buyer and seller use possession day as a lever against price. The resulting price concessions are completely avoided when you choose your own moving day by selling to Sweetly.`,
           image: require("../../../assets/image/HappyFamilyMorning.jpg"),
         },
         {
-          title: "Pick Your Closing Day",
-          content: `Pick the moving day that works best for you (within 45 days). You may also change the day with notice at no cost.`,
+          title: "Here's How We do it",
+          content: `One Payment - you choose the day. <br> It starts with an appraisal to determine the current value of your home. Get 90% of the current value on the moving day you choose, and move. That's it! The payment is net to you without any hidden fees or charges. You don't need to list your home or deal with public showings, and you even get to choose your own moving day.`,
           image: require("../../../assets/image/4-PickYourClosingDay.jpeg"),
         },
       ],
