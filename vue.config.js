@@ -2,7 +2,9 @@
 
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const webpack = require('webpack');
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
 const routes = [
   // {
   //   path: '/',
@@ -248,38 +250,40 @@ module.exports = {
     }
   },
   configureWebpack:{
-    optimization: {
-      runtimeChunk: 'single',
-      splitChunks: {
-        chunks: 'all',
-        maxInitialRequests: Infinity,
-        minSize: 0,
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-              return `npm.${packageName.replace('@', '')}`;
-            },
-          },
-        },
-      },
-    },
+    
+    plugins : [new BundleAnalyzerPlugin({
+      options:{
+        reslove:{
+          alias:{
+            moment : 'moment/src/moment'
+          }
+        }
+      }
+    }
+      
+    )],
+   
   
+
     // optimization: {
+    //   runtimeChunk: 'single',
     //   splitChunks: {
-    //     minSize: 10000,
-    //     maxSize: 250000,
-    //   }
+    //     chunks: 'all',
+    //     maxInitialRequests: Infinity,
+    //     minSize: 0,
+    //     cacheGroups: {
+    //       vendor: {
+    //         test: /[\\/]node_modules[\\/]/,
+    //         name(module) {
+    //           const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+    //           return `npm.${packageName.replace('@', '')}`;
+    //         },
+    //       },
+    //     },
+    //   },
     // },
-  //   plugins: [
-  //     new SitemapPlugin({ base:'https://sweetly.ca/', routes })
-  // ]
+  
+
   },
-  // pluginOptions: {
-  //   sitemap: {
-  //     baseURL: 'https://sweetly.ca/',
-  //     routes,
-  //   }
-  // }
+
 }
