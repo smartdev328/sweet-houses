@@ -79,7 +79,7 @@
         <div class="box card pb-5">
           <p class="title DMSerifRegular">Traditional Listing <br> <span class="text-color-4">With Confidence</span> </p>
           <p class="content Roboto-Medium mb-5">
-            If you want to test the open market, or have a home in a rural setting (where our Sweet Sale, Swift Sale(s) don’t apply) then this product is right for you. You’ll work directly with a local expert Realtor to guide you through the entire process from prep to Sold. Listing with Sweetly also comes with access to our renovation allowance that you can use to make any last-minute improvements. You’ll also have the flexibility to move to any of our other products
+            If you want to test the open market, or have a home in a rural setting (where our Sweet Sale, Swift Sale(s) don’t apply) then this product is right for you. You’ll work directly with a local expert REALTOR® to guide you through the entire process from prep to Sold. Listing with Sweetly also comes with access to our renovation allowance that you can use to make any last-minute improvements. You’ll also have the flexibility to move to any of our other products
             if you’re not getting the results you hope for.
           </p>
           <div class="footerbox DMSerifRegular card-footer">
