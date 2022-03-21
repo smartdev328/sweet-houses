@@ -11,7 +11,10 @@
       </div>
       <div class="item8">
         <div class="text-right">
-          <img src="../../../assets/image/homepage/team/Ed.svg" alt="" />
+          <lazy-component >
+            <img src="../../../assets/image/homepage/team/Ed.svg" alt="" />
+          </lazy-component>
+          
         </div>
       </div>
     </div>

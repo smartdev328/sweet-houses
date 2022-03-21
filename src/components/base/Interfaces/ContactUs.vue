@@ -14,13 +14,19 @@
             <div class="item2a">
               <div class="d-flex align-items-baseline">
                 <div class="icon">
-                  <img src="../../../assets/image/contactus/email.svg" class="w-100 h-100" alt="email" />
+                  <lazy-component >
+                    <img src="../../../assets/image/contactus/email.svg" class="w-100 h-100" alt="email" />
+                  </lazy-component>
+                  
                 </div>
                 <p class="ml-3 Roboto-Medium">info@sweetly.ca</p>
               </div>
               <div class="d-flex align-items-baseline">
                 <div class="icon">
-                  <img src="../../../assets/image/contactus/address.svg" class="w-100 h-100" alt="address" />
+                   <lazy-component >
+                      <img src="../../../assets/image/contactus/address.svg" class="w-100 h-100" alt="address" />
+                   </lazy-component>
+                 
                 </div>
                 <p class="ml-3 Roboto-Medium">
                   <span>Office:</span><br />
@@ -31,7 +37,10 @@
               </div>
               <div class="d-flex align-items-baseline">
                 <div class="icon">
-                  <img src="../../../assets/image/contactus/phone.svg" class="w-100 h-100" alt="phone" />
+                  <lazy-component >
+                     <img src="../../../assets/image/contactus/phone.svg" class="w-100 h-100" alt="phone" />
+                  </lazy-component>
+                 
                 </div>
                 <p class="ml-3 Roboto-Medium">780-477-9338</p>
               </div>
@@ -39,17 +48,23 @@
           </div>
           <div class="col-12 col-md-6">
             <div class="map-image">
-              <img
+               <lazy-component >
+                 <img
                 src="../../../assets/image/contactus/map.svg"
                 class="w-100 h-100"
                 alt="map"
               />
+               </lazy-component>
+              
             </div>
-            <img
+             <lazy-component >
+               <img
               src="../../../assets/image/contactus/icon-location.svg"
               class="icon-location"
               alt=""
             />
+             </lazy-component>
+            
           </div>
         </div>
       </div>
