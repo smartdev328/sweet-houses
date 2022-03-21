@@ -43,22 +43,6 @@
                     alt=""
                   />
                 </button>
-                <!-- <input type="text" placeholder="Any area or listing " /> -->
-                <!-- <multiselect
-                  v-model="value2"
-                  tag-placeholder="Any area or listing "
-                  placeholder="Any area or listing "
-                  label="name"
-                  track-by="code"
-                  :options="options3"
-                  deselectLabel=""
-                  selectLabel=""
-                  :hideSelected="true"
-                  :multiple="true"
-                  :taggable="true"
-                  @tag="addTag"
-                  @remove="remove"
-                ></multiselect> -->
                    <vue-google-autocomplete
                   id="mapautoinput"
                     ref="addressmap"
@@ -428,8 +412,6 @@
 import ShowMap from "../components/base/ShowMap.vue";
 import itemsnumber from "../itemsnumber.json";
 
-//import SweetSale from '../components/base/SweetSale.vue'
-// import Multiselect from "vue-multiselect";
 export default {
   components: {
     ShowMap
@@ -715,7 +697,6 @@ export default {
   },
 };
 </script>
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style scoped>
 footer {
@@ -926,9 +907,7 @@ input:focus {
 .bgdark {
   background-color: #f3f3f3 !important;
 }
-.multiselect__tag {
-  position: relative !important;
-}
+
 
 .modelfilter {
   background: #fff;
