@@ -676,7 +676,6 @@ export default {
   },
 };
 </script>
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style scoped>
 footer {
@@ -887,9 +886,7 @@ input:focus {
 .bgdark {
   background-color: #f3f3f3 !important;
 }
-.multiselect__tag {
-  position: relative !important;
-}
+
 
 .modelfilter {
   background: #fff;

@@ -1,6 +1,8 @@
 
 
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const webpack = require('webpack');
+
 const routes = [
   // {
   //   path: '/',
@@ -232,6 +234,22 @@ const routes = [
 
 
 ]
+
+new webpack.IgnorePlugin({
+  resourceRegExp: /\/icons\//,
+  contextRegExp: /bootstrap-vue/,
+});
+// new webpack.IgnorePlugin({
+//   checkResource (resource, context) {
+//     if (context.includes('bootstrap-vue')) {
+//       console.log(resource, ':::', context)
+//       // check console to figure out how the resource is used
+//       // update the function until it's satisfies your case
+//       // then move to regexp if you wish
+//     }
+//     return false
+//   },
+// })
 module.exports = {
   pluginOptions: {
     sitemap: {
@@ -240,14 +258,7 @@ module.exports = {
     }
   },
   configureWebpack:{
-    // plugins: [
-    //   new SitemapPlugin('https://sweetly.ca/', routes, {
-    //     filename: 'sitemap.xml',
-    //     lastmod: true,
-    //     changefreq: 'hourly',
-    //     priority: '0.8'
-    //   })
-    // ],
+  
     optimization: {
       splitChunks: {
         minSize: 10000,
