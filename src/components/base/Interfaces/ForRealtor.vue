@@ -282,10 +282,10 @@ Payments On The Previous Home.</p>
                   </div>
                   <div>
                     <p class="pa1 text-color-1 Roboto-Medium">Sweetly Resells The Property We Buy On 
-The Open (MLS) Market.</p>
+The Open (MLS®) Market.</p>
                   </div>
                   <div>
-                    <p class="pa2 text-color-1 Roboto-Regular">When we purchase a home, we (often) make the improvements that increase the price and appeal. Then we list it on MLS - with you! </p>
+                    <p class="pa2 text-color-1 Roboto-Regular">When we purchase a home, we (often) make the improvements that increase the price and appeal. Then we list it on MLS® - with you! </p>
                   </div>
                 </div>
               </div>
