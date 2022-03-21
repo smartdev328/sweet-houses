@@ -733,7 +733,7 @@ export default {
         { value: "Separate Suite", name: "Separate Suite" },
         { value: "No Basement", name: "No Basement" },
       ],
-      prioritysales: [
+     <!-- prioritysales: [
         {
           value: "We want the highest price with the right improvements",
           name: "We want the highest price ...",
@@ -747,7 +747,7 @@ export default {
           value: `Been for sale before and we don't want that again`,
           name: `Been for sale before and....`,
         },
-      ],
+      ],-->
       CurrentOccupancies: [
         { value: "Vacant", name: "Vacant" },
         { value: "We Live There", name: "We Live There" },
