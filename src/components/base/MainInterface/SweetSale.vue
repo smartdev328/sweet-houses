@@ -2,7 +2,7 @@
   <div class="page1" id="container"  @click.self="close()">
     <div class="my-3 card-body">
       <p class="p5  card-text Poppins">
-        Sold – The Minute you’re ready. Skip all public showings. Choose your own moving day. Net exactly the same money as a traditional listing/sale.
+        Sold! The minute you're ready. Net exactly the same money as a traditional listing/sale without public showings. Even choose your own moving day.
       </p>
     </div>
     <div class="my-2 my-md-5 item3new">
