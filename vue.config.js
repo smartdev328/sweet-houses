@@ -1,10 +1,10 @@
 
 
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+// const webpack = require('webpack');
+//  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+ //import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
 const routes = [
   // {
   //   path: '/',
@@ -237,10 +237,10 @@ const routes = [
 
 ]
 
-new webpack.IgnorePlugin({
-  resourceRegExp: /\/icons\//,
-  contextRegExp: /bootstrap-vue/,
-});
+// new webpack.IgnorePlugin({
+//   resourceRegExp: /\/icons\//,
+//   contextRegExp: /bootstrap-vue/,
+// });
 
 module.exports = {
   pluginOptions: {
@@ -251,17 +251,17 @@ module.exports = {
   },
   configureWebpack:{
     
-    plugins : [new BundleAnalyzerPlugin({
-      options:{
-        reslove:{
-          alias:{
-            moment : 'moment/src/moment'
-          }
-        }
-      }
-    }
+    // plugins : [new BundleAnalyzerPlugin({
+    //   options:{
+    //     reslove:{
+    //       alias:{
+    //         moment : 'moment/src/moment'
+    //       }
+    //     }
+    //   }
+    // }
       
-    )],
+    // )],
    
   
 
