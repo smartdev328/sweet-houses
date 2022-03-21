@@ -115,7 +115,7 @@
         <div class="col-12 col-md-8">
           <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
           <p class="Roboto-Medium">
-            It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.
+            It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS® listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.
           </p>
         </div>
         <div class="col-12 col-md-4">
