@@ -15,6 +15,7 @@
         </div>
             <div class="col-12 col-md-4">
               <iframe
+              async 
                   width="100%"
                   height="380px"
                   src="https://www.youtube.com/embed/NtPMe0nhq2w"

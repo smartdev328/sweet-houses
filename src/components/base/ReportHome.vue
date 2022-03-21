@@ -272,6 +272,7 @@
         <div class="col-12 col-md-5 mt-4 mt-md-0">
           <div class="h-75">
             <iframe
+            async 
               width="100%"
               class="rounded"
               height="100%"
