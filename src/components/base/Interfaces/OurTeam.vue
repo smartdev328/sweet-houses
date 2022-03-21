@@ -7,15 +7,15 @@
            </div>
                     <div class="item2">
                             <div class="gridcol" v-for="agent in agents" :key="agent.id">
-                                <div class="image mx-auto">
-                                    <img :src="agent.image" class="w-100 h-100" alt="personal photo">
+                                <div class="image mx-auto" v-lazy-container="{ selector: 'img' }">
+                                    <img :data-src="agent.image" class="w-100 h-100" alt="personal photo">
                                 </div>
                                 <div class="conent-info text-center">
                                     <p class="name text-color-1 mb-2 Roboto-Medium">{{agent.name}}</p>
                                     <p class="position mb-2 Roboto-Regular">{{agent.position}}</p>
                                     <a @click="openprofile(agent)" class="btn leaen-more Roboto-Regular">
                                         <p>Learn More</p>
-                                        <div class="icon-arrow">
+                                        <div class="icon-arrow" >
                                             <img src="../../../assets/image/homepage/team/Right.svg" class="ml-3" alt="">
                                         </div>
                                     </a>

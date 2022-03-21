@@ -13,8 +13,8 @@
         <div class="benefits-card bg-white p-3">
           <div class="card my-2">
             <div class="row no-gutters">
-              <div class="col-md-4">
-                <img :src="itembenefite.image" class="card-img" alt="..." />
+              <div class="col-md-4" v-lazy-container="{ selector: 'img' }">
+                <img :data-src="itembenefite.image" class="card-img" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -62,11 +62,14 @@
       </div>
       <div class="item13a p-4 shadow-sm">
         <div class="image">
-          <img
+           <lazy-component >
+             <img
             class="rounded w-100"
             src="../../../assets/image/ASwiftSaleisRightForYou.png"
             alt=""
           />
+           </lazy-component>
+          
         </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul class="row">
@@ -92,11 +95,14 @@
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
         <div class="card border-0">
-          <img
+           <lazy-component >
+              <img
             src="../../../assets/image/IpadwithForm.jpg"
             class="card-img-top"
             alt="..."
           />
+           </lazy-component>
+         
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 1</h3>
             <h3 class="card-title Roboto-Medium text-color-1">
@@ -113,11 +119,14 @@
         </div>
 
         <div class="card border-0">
-          <img
+          <lazy-component >
+             <img
             src="../../../assets/image/YellowAppraisal.jpg"
             class="card-img-top"
             alt="..."
           />
+          </lazy-component>
+         
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 2</h3>
             <h3 class="card-title Roboto-Medium text-color-1">
@@ -132,11 +141,14 @@
         </div>
 
         <div class="card border-0">
-          <img
+          <lazy-component >
+              <img
             src="../../../assets/image/HappyFamilyMorning.jpg"
             class="card-img-top"
             alt="..."
           />
+          </lazy-component>
+        
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <h3 class="card-title Roboto-Medium text-color-1">Close & Move</h3>
@@ -157,19 +169,24 @@
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
-          <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-          <img
+           <lazy-component >
+               <img
             src="../../../assets/image/wswift1.png"
             class="w-100 h-100"
             alt=""
           />
+           </lazy-component>
+        
         </div>
         <div class="element2 p-0 col-12 col-md-6">
-          <img
+           <lazy-component >
+              <img
             src="../../../assets/image/wswift2.png"
             class="w-100 h-100"
             alt=""
           />
+           </lazy-component>
+         
         </div>
       </div>
       <div>
