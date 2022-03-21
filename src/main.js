@@ -6,7 +6,21 @@ Vue.config.productionTip = false
 
 
 import {store} from './store'
-import { BootstrapVue   } from 'bootstrap-vue'
+// import { BootstrapVue   } from 'bootstrap-vue'
+
+// import {
+//   Modal,
+//   Button,
+//   Navbar
+//  } from 'bootstrap-vue/es/components';
+//  [Modal, Button,Navbar].forEach(comp => {
+//   Vue.use(comp);
+// });
+import { ButtonPlugin , NavbarPlugin ,VBModal ,BModal ,BFormCheckboxGroup   } from 'bootstrap-vue'
+Vue.use(ButtonPlugin , NavbarPlugin   )
+Vue.component('b-modal', BModal)
+Vue.component('b-form-checkbox-group', BFormCheckboxGroup)
+Vue.directive('b-modal', VBModal)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
@@ -58,7 +72,7 @@ Vue.use(VueSocialSharing);
 
 import Pagination from 'vue-pagination-2';
 Vue.component('pagination', Pagination);
-Vue.use(BootstrapVue)
+// Vue.use(BootstrapVue)
 
 import LazyLoadDirective from "./directives/LazyLoadDirective";
 Vue.directive("lazyload", LazyLoadDirective);
@@ -95,8 +109,8 @@ Vue.component('sale-question',require('./components/share/SaleQuestion.vue').def
 const SwiftsalePage = () => import('./components/base/MainInterface/SwiftsalePage.vue');
 Vue.component('swiftsale-page', SwiftsalePage)
 
-const SweetsalePage = () => import('./components/base/MainInterface/SweetsalePage.vue');
-Vue.component('sweetsale-page', SweetsalePage)
+// const SweetsalePage = () => import('./components/base/MainInterface/SweetsalePage.vue');
+// Vue.component('sweetsale-page', SweetsalePage)
 
 // const EquityAdvance = () => import('./components/base/MainInterface/EquityAdvance.vue');
 // Vue.component('equity-advance', EquityAdvance)
