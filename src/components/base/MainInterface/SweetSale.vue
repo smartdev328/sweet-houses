@@ -111,6 +111,7 @@
         </div>
         <div class="col-12 col-md-4">
           <iframe
+          async 
               width="100%"
               height="380px"
               src="https://www.youtube.com/embed/NtPMe0nhq2w"
@@ -232,6 +233,7 @@
         <div class="col-12 col-md-6 px-3 px-md-0 pr-md-1">
           <div class="h-300px">
             <iframe
+            async 
               width="100%"
               class="rounded"
               height="100%"
@@ -247,6 +249,7 @@
         <div class="col-12 col-md-6 px-3 px-md-0 pl-md-1 mt-4 mt-md-0">
           <div class="h-300px">
             <iframe
+            async 
               width="100%"
               class="rounded"
               height="100%"
@@ -282,6 +285,7 @@
         </div>
         <div class="col-12 col-md-4">
           <iframe
+          async 
             width="100%"
             height="100%"
             src="https://www.youtube.com/embed/jyTW6ErTxBg"
