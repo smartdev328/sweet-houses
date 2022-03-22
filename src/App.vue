@@ -86,40 +86,55 @@ export default {
       this.$store.commit("setfooterh",this.navbarheight)
 },
 hidesignupmodal() {
-      this.$bvModal.hide("my-modal");
+      // this.$bvModal.hide("my-modal");
+  this.$root.$emit('bv::hide::modal', 'my-modal', '#my-modal')
     },
     OpenVerifycode(){
-      this.$bvModal.show("verify-modal");
+      // this.$bvModal.show("verify-modal");
+      this.$root.$emit('bv::show::modal', 'verify-modal', '#verify-modal')
     },
     XsignupOlogin() {
-      this.$refs['my-modal'].hide();
-      this.$bvModal.show("my-modallogin");
+      this.$root.$emit('bv::hide::modal', 'my-modal', '#my-modal')
+    //  this.$refs['my-modal'].hide();
+   //   this.$bvModal.show("my-modallogin");
+      this.$root.$emit('bv::show::modal', 'my-modallogin', '#my-modallogin')
     },
     Openverifyemailbtcode(){
-       this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("verify-modal");
+    //   this.$bvModal.hide("my-modallogin");
+      this.$root.$emit('bv::hide::modal', 'my-modallogin', '#my-modallogin')
+    //  this.$bvModal.show("verify-modal");
+      this.$root.$emit('bv::show::modal', 'verify-modal', '#verify-modal')
     },
      closeVerify(){
-      this.$bvModal.hide("verify-modal");
+      //this.$bvModal.hide("verify-modal");
+       this.$root.$emit('bv::hide::modal', 'verify-modal', '#verify-modal')
     },
       hideloginmodal() {
-      this.$bvModal.hide("my-modallogin");
+      // this.$bvModal.hide("my-modallogin");
+        this.$root.$emit('bv::hide::modal', 'my-modallogin', '#my-modallogin')
     },
      
     xloginOsignup() {
-      this.$bvModal.hide("my-modallogin");
-      this.$bvModal.show("my-modal");
+    //  this.$bvModal.hide("my-modallogin");
+      this.$root.$emit('bv::hide::modal', 'my-modallogin', '#my-modallogin')
+   //   this.$bvModal.show("my-modal");
+      this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
     },
     Openforgetcode(){
-      this.$bvModal.hide("my-modallogin");
+      //this.$bvModal.hide("my-modallogin");
+      this.$root.$emit('bv::hide::modal', 'my-modallogin', '#my-modallogin')
       this.$bvModal.show("forget-code");
+      this.$root.$emit('bv::show::modal', 'forget-code', '#forget-code')
     },
     Xopenresetpasswprd(){
-    this.$bvModal.hide("forget-code");
-    this.$bvModal.show('reset-password');
+   // this.$bvModal.hide("forget-code");
+      this.$root.$emit('bv::hide::modal', 'forget-code', '#forget-code')
+   // this.$bvModal.show('reset-password');
+      this.$root.$emit('bv::show::modal', 'reset-password', '#reset-password')
   },
     Xresetpassword(){
-      this.$bvModal.hide('reset-password');
+     // this.$bvModal.hide('reset-password');
+      this.$root.$emit('bv::hide::modal', 'reset-password', '#reset-password')
     },
   },
   mounted(){

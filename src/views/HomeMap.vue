@@ -670,6 +670,7 @@ export default {
   created() {
     this.checkScreen();
     window.addEventListener("resize", this.checkScreen);
+    window.addEventListener("resize", this.getpositiontop);
     /* this.getCoords(); */
     /*  this.changebounds();  */
   },
@@ -1028,6 +1029,18 @@ input:focus{
   outline: none;
   box-shadow: none;
   border: 0;
+}
+@media only screen and (max-width: 760px){
+  .searchpage .element1{
+    max-width: 55%;
+  }
+  .modelfilter{
+    left: 8%;
+    right: 8%;
+  }
+  .modelfilter .element1{
+    max-width: 100% !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   .searchpage {

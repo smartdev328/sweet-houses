@@ -103,9 +103,9 @@ export default {
         { content: "Want to use our reno budget to improve before selling." },
         {
           content:
-            "Have time to allow showings and don’t mind having strangers in your home.",
+            "Have time to allow showings and don’t mind having buyers in your home.",
         },
-        { content: "Want to negotiate our commission." },
+        { content: "Want to negotiate our commission. Our commission is 7% of $100,000 plus 3 percent of the balance of your sale price." },
       ],
       Benefitsdata: [
         {

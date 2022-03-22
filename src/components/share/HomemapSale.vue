@@ -239,7 +239,7 @@ export default {
     },
 
     SignUp() {
-      this.$emit("SignUp");
+      this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')
     },
     openhomedetails(){
       let mls = this.homedata.mlsNumber;
