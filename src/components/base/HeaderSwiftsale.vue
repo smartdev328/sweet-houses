@@ -394,6 +394,14 @@ export default {
     margin-top: 8px;
   }
 }
+@media only screen and (max-width: 760px){
+  .home .item1a p{
+    font-size:3em
+  }
+  .item1 .item1b{
+    width: 90%;
+  }
+}
 @media only screen and (max-width: 600px) {
   .home .item1 {
     width: 100%;

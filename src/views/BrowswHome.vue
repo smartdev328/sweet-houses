@@ -625,12 +625,6 @@ export default {
     openfullscreen() {
       this.$refs.showmap.openfullscreenh();
     },
-    // getpositiontop() {
-    //   this.posY =
-    //     document.getElementById("searchpage").getBoundingClientRect().y +
-    //     document.getElementById("searchpage").offsetHeight;
-    //   this.$refs.showmap.setposYsearchbar(this.posY);
-    // },
     stoploading() {
       this.loading = false;
     },
@@ -652,6 +646,7 @@ export default {
     if(this.$store.state.typesale){
       this.typesale = this.$store.state.typesale
     }
+    window.addEventListener("resize", this.getpositiontop);
     /* this.getCoords(); */
     /*  this.changebounds();  */
     //  this.openfullscreen()
@@ -896,7 +891,7 @@ input:focus {
   z-index: 99;
 }
 .modelfilter .element1 {
-  max-width: 100%;
+  max-width: 100% !important;
   padding: 20px;
   display: flex;
   width: 100%;
@@ -1007,6 +1002,18 @@ input:focus {
   box-shadow: none;
   border: 0;
 }
+@media only screen and (max-width: 760px){
+  .searchpage .element1{
+    max-width: 55%;
+  }
+  .modelfilter{
+    left: 8%;
+    right: 8%;
+  }
+  .modelfilter .element1{
+    max-width: 100% !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .modelfilter{
     left:10%;
@@ -1014,7 +1021,7 @@ input:focus {
     padding-bottom: 36px;
   }
   .modelfilter .element1 .element1a{
-    width: 90%;
+    width: 90% !important;
   }
   .modelfilter .element2 .element2a{
     flex-direction: column;

@@ -16,13 +16,14 @@ import {store} from './store'
 //  [Modal, Button,Navbar].forEach(comp => {
 //   Vue.use(comp);
 // });
-import { ButtonPlugin , NavbarPlugin ,VBModal ,BModal ,BFormCheckboxGroup  ,BFormGroup , BFormCheckbox   } from 'bootstrap-vue'
-Vue.use(ButtonPlugin , NavbarPlugin   )
+import { ButtonPlugin , NavbarPlugin ,VBModal ,BModal ,BFormCheckboxGroup  ,BFormGroup , BFormCheckbox ,BSpinner ,ModalPlugin  ,BVModalPlugin   } from 'bootstrap-vue'
+Vue.use(ButtonPlugin , NavbarPlugin  , ModalPlugin ,BVModalPlugin)
 Vue.component('b-modal', BModal)
 Vue.component('b-form-checkbox-group', BFormCheckboxGroup)
 Vue.component('b-form-checkbox', BFormCheckbox)
 Vue.component('b-form-group', BFormGroup)
 Vue.directive('b-modal', VBModal)
+Vue.component('b-spinner', BSpinner)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
