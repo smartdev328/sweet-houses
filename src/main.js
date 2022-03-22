@@ -16,10 +16,12 @@ import {store} from './store'
 //  [Modal, Button,Navbar].forEach(comp => {
 //   Vue.use(comp);
 // });
-import { ButtonPlugin , NavbarPlugin ,VBModal ,BModal ,BFormCheckboxGroup   } from 'bootstrap-vue'
+import { ButtonPlugin , NavbarPlugin ,VBModal ,BModal ,BFormCheckboxGroup  ,BFormGroup , BFormCheckbox   } from 'bootstrap-vue'
 Vue.use(ButtonPlugin , NavbarPlugin   )
 Vue.component('b-modal', BModal)
 Vue.component('b-form-checkbox-group', BFormCheckboxGroup)
+Vue.component('b-form-checkbox', BFormCheckbox)
+Vue.component('b-form-group', BFormGroup)
 Vue.directive('b-modal', VBModal)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
