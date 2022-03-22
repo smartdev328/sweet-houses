@@ -581,9 +581,7 @@
                     :options="
                     [
                   { value: 'We want the highest price ...', id: 'We want the highest price with the right improvements' },
-                  { value: 'Sell by a specific date', id: 'Sell by a specific date' },
-                  { value: 'Secure a sale', id: 'Secure a sale to purchase another home' },
-                  { value: 'Been for sale before', id: 'Been for sale before and we don't want that again' },
+                  { value: 'Sell by a specific date', id: 'Sell by a specific date' },                
                 ]"
 
                     :get-option-label="({value}) => `${value}`"
