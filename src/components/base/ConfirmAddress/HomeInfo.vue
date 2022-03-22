@@ -574,7 +574,7 @@
                         :value="item.value">{{ item.value }}</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
-                 <v-select
+                 <!-- <v-select
                     :reduce="(option) => option.id"
                     class="form-control form-control-lg Roboto-Regular"
                     v-model="prioritysale"
@@ -588,7 +588,7 @@
                     placeholder="Choose an option"
                     :searchable=false
                     :clearable=false
-                  ></v-select>
+                  ></v-select> -->
                 <span
                   style="color: #dc3545;font-size: 16px;"
                   v-if="msgtwo.prioritysale && !prioritysale"
