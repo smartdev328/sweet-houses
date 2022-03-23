@@ -226,7 +226,7 @@
       </div>
       <div class="item10">
         <div class="item10a">
-          <img src="../../assets/image/ico-home.svg" alt="" />
+          <img src="../assets/image/ico-home.svg" alt="" />
           <span class="text-color-1 Roboto-Medium ml-2"
             >Want to see more comparable listings?</span
           >
@@ -240,13 +240,13 @@
           <div class="element11  pr-1 pr-md-5">
             <div class="item5a dropdown">
               <img
-                src="../../assets/image/icon/progree.svg"
+                src="../assets/image/icon/progree.svg"
                 class="w-100 h-100 dropbtn"
                 alt=""
               />
               <div class="dropdown-content">
                 <img
-                  src="../../assets/image/icon/Component 61 – 1.svg"
+                  src="../assets/image/icon/Component 61 – 1.svg"
                   class="w-100 h-100"
                   alt=""
                 />
@@ -375,7 +375,7 @@ export default {
         disableDefaultUi: false,
         draggable:false
       },
-      icon:require('../../assets/image/icon/markerhome.svg')
+      icon:require('../assets/image/icon/markerhome.svg')
     };
   },
   computed: {

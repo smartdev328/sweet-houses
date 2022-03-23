@@ -16,7 +16,7 @@
                                     <a @click="openprofile(agent)" class="btn leaen-more Roboto-Regular">
                                         <p>Learn More</p>
                                         <div class="icon-arrow" >
-                                            <img src="../../../assets/image/homepage/team/Right.svg" class="ml-3" alt="">
+                                            <img src="../assets/image/homepage/team/Right.svg" class="ml-3" alt="">
                                         </div>
                                     </a>
                                 </div>
