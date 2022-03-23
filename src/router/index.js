@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
-import HomeSwap from '../views/HomeSwap.vue'
-import BrowswHome from '../views/BrowswHome.vue'
+// import HomeSwap from '../views/HomeSwap.vue'
 import store from '../store/index'
 Vue.use(VueRouter)
 
@@ -39,7 +38,7 @@ const routes = [
   {
     path: '/browse-home',
     name: 'BrowswHome',
-    component:BrowswHome,
+    component: () => import(/* webpackChunkName: "about" */ '../views/BrowswHome.vue'),
     meta: {
       hideNavbar: true,
       sitemap: {
@@ -92,7 +91,7 @@ const routes = [
   {
     path:'/home-swap',
     name:"HomeSwap",
-    component:HomeSwap,
+    component: () => import(/* webpackChunkName: "about" */ '../views/HomeSwap.vue'),
     meta: {
       sitemap: {
         lastmod:    'March 19, 2022',
