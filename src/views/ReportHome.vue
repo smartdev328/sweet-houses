@@ -271,7 +271,13 @@
         </div>
         <div class="col-12 col-md-5 mt-4 mt-md-0">
           <div class="h-75">
-            <iframe
+            <LazyYoutube
+             width="100%"
+              class="rounded"
+              src="https://www.youtube.com/embed/NtPMe0nhq2w"
+              style="background:#EDF3F2;border-radius:8px;height:100%"
+            />
+            <!-- <iframe
             async 
               width="100%"
               class="rounded"
@@ -282,7 +288,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background:#EDF3F2;border-radius:8px"
               allowfullscreen
-            ></iframe>
+            ></iframe> -->
           </div>
           <div class="element3 d-flex align-items-center">
             <span class="DiwaniBentRegular">،،</span>
@@ -348,8 +354,10 @@
 import { gmapApi } from 'vue2-google-maps';
 import moment from "moment";
 import Swal from "sweetalert2";
+import { LazyYoutube } from "vue-lazytube";
 export default {
-  components: {   },
+  
+  components: {   LazyYoutube},
   data() {
     return {
       loading:false,

@@ -30,6 +30,8 @@ Vue.component('b-carousel', BCarousel)
 Vue.component('b-carousel-slide', BCarouselSlide)
 Vue.component('b-img', BImg)
 Vue.component('b-img-lazy', BImgLazy)
+// import LazyYoutube from "vue-lazytube";
+// Vue.component('LazyYoutube', LazyYoutube)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
