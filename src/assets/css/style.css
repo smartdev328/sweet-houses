@@ -200,6 +200,12 @@ body{
 .modal {
   top: 8% !important;
 }
+.cWExZE{
+  border-radius: 12px !important;
+}
+.cWExZE:after{
+  background: transparent !important;
+}
 .modal-header .close {
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
   margin: 0.25rem 0.125rem !important;

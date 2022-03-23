@@ -119,7 +119,12 @@
           </p>
         </div>
         <div class="col-12 col-md-4">
-          <iframe
+          <LazyYoutube src="https://www.youtube.com/embed/NtPMe0nhq2w"
+          style="background: #edf3f2; border-radius: 8px;height:340px"
+            width="100%"
+           
+          />
+          <!-- <iframe
           async 
               width="100%"
               height="380px"
@@ -129,7 +134,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-          ></iframe>
+          ></iframe> -->
         </div>
 
       </div>
@@ -247,23 +252,36 @@
       <div class="row align-items-center">
         <div class="col-12 col-md-6 px-3 px-md-0 pr-md-1">
           <div class="h-300px">
-            <iframe
+            <LazyYoutube
+               src="https://www.youtube.com/embed/ZuG6KMMRu8k"
+               style="background: #edf3f2; border-radius: 8px;height:100%"
+               width="100%"
+              class="rounded"
+            />
+            <!-- <iframe
             async 
               width="100%"
               class="rounded"
               height="100%"
-              src="https://www.youtube.com/embed/ZuG6KMMRu8k"
+             
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-            ></iframe>
+            ></iframe> -->
           </div>
         </div>
         <div class="col-12 col-md-6 px-3 px-md-0 pl-md-1 mt-4 mt-md-0">
           <div class="h-300px">
-            <iframe
+            <LazyYoutube
+                width="100%"
+              class="rounded"
+              height="100%"
+              src="https://www.youtube.com/embed/UoCHcEQTNdY"
+              style="background: #edf3f2; border-radius: 8px;height:100%"
+            />
+            <!-- <iframe
             async 
               width="100%"
               class="rounded"
@@ -274,7 +292,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-            ></iframe>
+            ></iframe> -->
           </div>
         </div>
       </div>
@@ -299,7 +317,13 @@
           >
         </div>
         <div class="col-12 col-md-4">
-          <iframe
+          <LazyYoutube
+             width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/jyTW6ErTxBg"
+            style="background: #edf3f2; border-radius: 8px;height:100%"
+          />
+          <!-- <iframe
           async 
             width="100%"
             height="100%"
@@ -309,7 +333,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             style="background: #edf3f2; border-radius: 8px"
             allowfullscreen
-          ></iframe>
+          ></iframe> -->
         </div>
       </div>
     </div>
@@ -331,6 +355,7 @@
 </template>
 <script>
 import $ from "jquery";
+import { LazyYoutube } from "vue-lazytube";
 
 export default {
   data() {
@@ -358,6 +383,9 @@ export default {
       ],
       selected_part: "Swiftpart",
     };
+  },
+  components:{
+     LazyYoutube,
   },
   computed: {
     smscreen(){
