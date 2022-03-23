@@ -14,7 +14,13 @@
           </p>
         </div>
             <div class="col-12 col-md-4">
-              <iframe
+              <LazyYoutube
+              width="100%"
+                  src="https://www.youtube.com/embed/NtPMe0nhq2w"
+                  title="YouTube video player"
+                  style="background: #edf3f2; border-radius: 8px;height:300px"
+              />
+              <!-- <iframe
               async 
                   width="100%"
                   height="380px"
@@ -24,7 +30,7 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   style="background: #edf3f2; border-radius: 8px"
                   allowfullscreen
-              ></iframe>
+              ></iframe> -->
             </div>
 
       </div>
@@ -207,6 +213,7 @@
 </template>
 <script>
 import $ from 'jquery'
+import { LazyYoutube } from "vue-lazytube";
 export default {
   data() {
     return {
@@ -231,6 +238,9 @@ export default {
         },
       ],
     };
+  },
+  components:{
+    LazyYoutube
   },
   computed: {
     swiftsalefaqs() {
