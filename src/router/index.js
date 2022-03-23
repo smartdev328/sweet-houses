@@ -200,7 +200,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/OurTeam.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/OurTeam.vue'),
     meta: {
       sitemap: {
         lastmod:    'March 19, 2022',
@@ -288,7 +288,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/base/Interfaces/AboutUs.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutUs.vue'),
     meta: {
       sitemap: {
         lastmod:    'March 19, 2022',
@@ -419,7 +419,7 @@ const routes = [
   {
     path:'/report-home',
     name:"RerportHome",
-    component:()=>import('../components/base/ReportHome.vue'),
+    component:()=>import('../views/ReportHome.vue'),
     meta: {
       sitemap: {
         lastmod:    'March 19, 2022',
