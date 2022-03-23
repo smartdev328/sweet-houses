@@ -5,7 +5,10 @@
                 <div class="py-5">
                     <div class="">
                         <div class="logo-img mx-auto my-3" @click="routeHomepage()">
-                            <img src="../../assets/image/logo.svg" class="w-100 h-100" alt="logo" />
+                             <lazy-component >
+                                  <img src="../../assets/image/logo.svg" class="w-100 h-100" alt="logo" />
+                             </lazy-component>
+                           
                         </div>
                         <div>
                             <ul class="my-3">

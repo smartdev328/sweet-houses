@@ -145,7 +145,7 @@
                 v-model="slide"
                 :interval="0"
                 controls
-
+                fade
                 background="#ababab"
                 img-width="800"
                 img-height="200"

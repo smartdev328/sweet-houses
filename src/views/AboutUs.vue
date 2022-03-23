@@ -12,7 +12,7 @@
       <div class="item8">
         <div class="text-right">
           <lazy-component >
-            <img src="../../../assets/image/homepage/team/Ed.svg" alt="" />
+            <img src="../assets/image/homepage/team/Ed.svg" alt="" />
           </lazy-component>
           
         </div>
@@ -63,7 +63,7 @@
                 <div class="d-flex align-items-baseline">
                   <div class="icon">
                     <img
-                      src="../../../assets/image/contactus/email.svg"
+                      src="../assets/image/contactus/email.svg"
                       class="w-100 h-100"
                       alt="email"
                     />
@@ -73,7 +73,7 @@
                 <div class="d-flex align-items-baseline">
                   <div class="icon">
                     <img
-                      src="../../../assets/image/contactus/phone.svg"
+                      src="../assets/image/contactus/phone.svg"
                       class="w-100 h-100"
                       alt="phone"
                     />
@@ -83,7 +83,7 @@
                 <div class="d-flex align-items-baseline">
                   <div class="icon">
                     <img
-                      src="../../../assets/image/contactus/address.svg"
+                      src="../assets/image/contactus/address.svg"
                       class="w-100 h-100"
                       alt="address"
                     />
@@ -97,11 +97,12 @@
             </div>
             <div class="col-12 col-md-7">
               <div class="map-image h-100">
-                <img
-                  src="../../../assets/image/contactus/map45.jpg"
+                <lazy-component ><img
+                  src="../assets/image/contactus/map45.jpg"
                   class="w-100 h-100"
                   alt="map"
-                />
+                /></lazy-component>
+                
               </div>
 <!--              <img-->
 <!--                src="../../../assets/image/contactus/icon-location.svg"-->
