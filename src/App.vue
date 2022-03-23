@@ -39,7 +39,7 @@
             <log-in
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
-              @Openforgetcode="Openforgetcode"
+              @Openverifyemail="Openforgetcode"
               @Openverifyemailbtcode="Openverifyemailbtcode"
             ></log-in>
           </b-modal>
@@ -123,7 +123,7 @@ hidesignupmodal() {
     Openforgetcode(){
       //this.$bvModal.hide("my-modallogin");
       this.$root.$emit('bv::hide::modal', 'my-modallogin', '#my-modallogin')
-      this.$bvModal.show("forget-code");
+    //  this.$bvModal.show("forget-code");
       this.$root.$emit('bv::show::modal', 'forget-code', '#forget-code')
     },
     Xopenresetpasswprd(){
