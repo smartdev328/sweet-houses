@@ -121,7 +121,7 @@
         <div class="element1 p-0 col-12 col-md-6">
           <lazy-component >
              <img
-            src="../../../assets/image/swplus1.png"
+            src="https://clickclicksold.ca/wp-content/uploads/2022/03/Benefits-of-a-Swift-Plus.png"
             class="w-100 h-100"
             alt=""
           /></lazy-component>
@@ -130,7 +130,7 @@
         <div class="element2 p-0 col-12 col-md-6">
           <lazy-component >
             <img
-            src="../../../assets/image/swplus2.png"
+            src="https://clickclicksold.ca/wp-content/uploads/2022/03/BenefitsofTraditionalSwiftPlus.png"
             class="w-100 h-100"
             alt=""
           />
