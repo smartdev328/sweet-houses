@@ -397,9 +397,9 @@
       ></show-map>
     </div>
     <div :class="tab_visible('show-list')" class="h-100">
-      <div class="text-center my-5">
+      <!-- <div class="text-center my-5">
         <b-spinner  v-if="loading" style="width: 4rem; height: 4rem;" variant="warning" label="Large Spinner"></b-spinner>
-      </div>
+      </div> -->
       <show-list
         ref="showlist"
         :type="typesale"
