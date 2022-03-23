@@ -97,11 +97,13 @@
             </div>
             <div class="col-12 col-md-7">
               <div class="map-image h-100">
-                <lazy-component ><img
+                <lazy-component class="h-100">
+                  <img
                   src="../assets/image/contactus/map45.jpg"
                   class="w-100 h-100"
                   alt="map"
-                /></lazy-component>
+                />
+                </lazy-component>
                 
               </div>
 <!--              <img-->
