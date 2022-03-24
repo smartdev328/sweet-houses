@@ -1308,6 +1308,9 @@ export default {
   }
 
 } */
+.img-fluid{
+  height: 380px;
+}
 @media only screen and (max-width: 600px) {
   .cards {
     grid-template-columns: auto;
