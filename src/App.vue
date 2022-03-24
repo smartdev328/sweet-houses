@@ -39,7 +39,7 @@
             <log-in
               @hideloginmodal="hideloginmodal"
               @xloginOsignup="xloginOsignup"
-              @Openverifyemail="Openforgetcode"
+              @Openforgetcode="Openforgetcode"
               @Openverifyemailbtcode="Openverifyemailbtcode"
             ></log-in>
           </b-modal>
@@ -54,6 +54,7 @@
           >
             <forget-code
               @Xopenresetpasswprd="Xopenresetpasswprd"
+              @Openverifyemail="Openverifyemail"
             ></forget-code>
           </b-modal>
            <b-modal
@@ -92,6 +93,10 @@ hidesignupmodal() {
     OpenVerifycode(){
       // this.$bvModal.show("verify-modal");
       this.$root.$emit('bv::show::modal', 'verify-modal', '#verify-modal')
+    },
+    Openverifyemail(){
+      this.$root.$emit('bv::show::modal', 'verify-modal', '#verify-modal')
+      this.$root.$emit('bv::hide::modal', 'forget-code', '#forget-code')
     },
     XsignupOlogin() {
       this.$root.$emit('bv::hide::modal', 'my-modal', '#my-modal')

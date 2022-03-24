@@ -512,6 +512,24 @@ later</p>
 
 
         </div>
+        <div class="item12 my-1 py-1">
+          <div class="item1">
+            <p class="text-color-1  Roboto-Medium">Listing Brokerage</p>
+          </div>
+          <div class="item2 Roboto-Regular">
+            <div class="row">
+              <div class="col-12" v-for="agent in homedata.agents" :key="agent.id">
+                <p v-if="agent.brokerage.name">Listing Provided by {{agent.name}} OF {{agent.brokerage.name}} , {{mlsnum}}</p>
+
+              </div>
+              <!-- <div class="col-9">{{mlsnum}}</div> -->
+            </div>
+            <!-- <div class="row">
+               <div class="col-3">Brokerage</div>
+               <div class="col-9">{{homedata.agents[0].name}},{{homedata.agents[0].brokerage.name}}</div>
+           </div> -->
+          </div>
+        </div>
             <div class="my-5 disclaimer-content">
                 <p class="Roboto-Regular" v-if="MainboardId == 18">Data is supplied by Pillar 9™ MLS® System. Pillar 9™ is the owner of the copyright in its MLS® System. Data is deemed reliable but is not guaranteed accurate by Pillar 9™. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under license.</p>
                  <p class="Roboto-Regular" v-if="MainboardId == 21">

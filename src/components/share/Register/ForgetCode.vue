@@ -19,7 +19,11 @@
                     >{{ error.msg }}</span
                   >
                 </div>
-            </div><br>
+            </div>
+              <div v-for="(error, index) in errors" :key="index">
+                <p v-if="error.email_exist_not_verified" class="p2  Roboto-Medium" @click="Openverifyemail()">Verify Your Email</p>
+              </div>
+
             <div class="mb-3">
             <button type="submit" class="btn btn-primary w-100 submit-btn" :disabled="!email">
                 <span v-if="loading">Loading ...</span>
@@ -88,7 +92,11 @@ export default {
         },
         Xopenresetpasswprd(){
             this.$emit('Xopenresetpasswprd');
-        }
+        },
+      Openverifyemail(){
+        this.$store.commit('setlocalemail',this.email)
+          this.$emit('Openverifyemail')
+      },
     }
 }
 </script>
@@ -107,5 +115,14 @@ export default {
     cursor: pointer;
     text-decoration: underline;
 
+}
+
+.p2{
+  color: #FFB600;
+  font-size: 20px;
+  cursor: pointer;
+}
+.p2:hover{
+  text-decoration: underline;
 }
 </style>
