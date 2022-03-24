@@ -13,18 +13,13 @@
         <div class="benefits-card bg-white p-3">
           <div class="card my-2">
             <div class="row no-gutters">
-              <div class="col-md-4" v-lazy-container="{ selector: 'img' }">
-                <img :data-src="itembenefite.image" class="card-img" alt="..." />
+              <div class="col-md-4">
+                <img :src="itembenefite.image" class="card-img" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title DMSerifRegular">
-                    {{ itembenefite.title }}
-                  </h5>
-                  <p
-                    class="card-text text-color-2 Roboto-Regular"
-                    v-html="itembenefite.content"
-                  ></p>
+                  <h5 class="card-title DMSerifRegular">{{ itembenefite.title }}</h5>
+                  <p class="card-text text-color-2 Roboto-Regular" v-html="itembenefite.content"></p>
                 </div>
               </div>
             </div>
@@ -33,7 +28,10 @@
       </div>
     </div>
     <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -44,7 +42,8 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >Start</button>
     </div>
     <div class="text-center">
       <p>We cut out the unnecessary steps to make selling your home easy, fast, and stress free.</p>
@@ -62,28 +61,13 @@
       </div>
       <div class="item13a p-4 shadow-sm">
         <div class="image">
-           <lazy-component >
-             <img
-            class="rounded w-100"
-            src="../../../assets/image/ASwiftSaleisRightForYou.png"
-            alt=""
-          />
-           </lazy-component>
-          
+          <img class="rounded w-100" src="../../../assets/image/ASwiftSaleisRightForYou.png" alt />
         </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul class="row">
-            <li
-              v-for="item in Traditionaldata"
-              :key="item.id"
-              class="text-color-1 Roboto-Regular"
-            >
+            <li v-for="item in Traditionaldata" :key="item.id" class="text-color-1 Roboto-Regular">
               <div class="icon mr-3">
-                <img
-                  src="../../../assets/image/icon/checkicon.svg"
-                  class="w-100 h-100"
-                  alt=""
-                />
+                <img src="../../../assets/image/icon/checkicon.svg" class="w-100 h-100" alt />
               </div>
               {{ item.content }}
             </li>
@@ -95,19 +79,11 @@
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
         <div class="card border-0">
-           <lazy-component >
-              <img
-            src="../../../assets/image/IpadwithForm.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-           </lazy-component>
-         
+          <img src="../../../assets/image/IpadwithForm.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 1</h3>
-            <h3 class="card-title Roboto-Medium text-color-1">
-              Tell Us About Your Property
-            </h3>
+            <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property</h3>
             <p class="card-text text-color-2">
               Tell us about your home. You'll get a
               computer-generated evaluation and
@@ -119,43 +95,29 @@
         </div>
 
         <div class="card border-0">
-          <lazy-component >
-             <img
-            src="../../../assets/image/YellowAppraisal.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          </lazy-component>
-         
+          <img src="../../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 2</h3>
-            <h3 class="card-title Roboto-Medium text-color-1">
-              Appraisal & Inspection
-            </h3>
+            <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection</h3>
             <p class="card-text text-color-2">
               Subject to a reasonable home inspection, you
-              receive 90% of appraised value on the 
+              receive 90% of appraised value on the
               moving day you choose.
             </p>
           </div>
         </div>
 
         <div class="card border-0">
-          <lazy-component >
-              <img
-            src="../../../assets/image/HappyFamilyMorning.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          </lazy-component>
-        
+          <img src="../../../assets/image/HappyFamilyMorning.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <h3 class="card-title Roboto-Medium text-color-1">Close & Move</h3>
             <p class="card-text text-color-2">
               We'll resell your home, retain our fee (7% of
               $100,000 plus 3% of the balance), then return
-              to you the full balance of the actual sale price 
+              to you the full balance of the actual sale price
               - even if it sells over appraised value.
             </p>
           </div>
@@ -169,29 +131,14 @@
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
-           <lazy-component >
-               <img
-            src="../../../assets/image/wswift1.png"
-            class="w-100 h-100"
-            alt=""
-          />
-           </lazy-component>
-        
+          <img src="../../../assets/image/wswift1.png" class="w-100 h-100" alt />
         </div>
         <div class="element2 p-0 col-12 col-md-6">
-           <lazy-component >
-              <img
-            src="../../../assets/image/wswift2.png"
-            class="w-100 h-100"
-            alt=""
-          />
-           </lazy-component>
-         
+          <img src="../../../assets/image/wswift2.png" class="w-100 h-100" alt />
         </div>
       </div>
       <div>
-        <p class="Roboto-Regular text-color-2 my-2">
-        </p>
+        <p class="Roboto-Regular text-color-2 my-2"></p>
       </div>
     </div>
   </div>
@@ -244,8 +191,8 @@ export default {
     },
   },
   methods: {
-    gotFocus(){
-      setTimeout(() => { this.$emit("gotFocus")}, 1000);
+    gotFocus() {
+      setTimeout(() => { this.$emit("gotFocus") }, 1000);
     },
     openfaqspage() {
       this.$router.push({ name: "FrequentlyQuestion" });
@@ -253,7 +200,7 @@ export default {
     },
   },
   mounted() {
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('body,html').animate({
         scrollTop: 0
       }, 800);

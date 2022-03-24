@@ -11,39 +11,37 @@
       </div>
       <div class="item8">
         <div class="text-right">
-          <lazy-component >
-            <img src="../assets/image/homepage/team/Ed.svg" alt="" />
-          </lazy-component>
-          
+          <img src="../assets/image/homepage/team/Ed.svg" alt="" />
         </div>
       </div>
     </div>
 
     <div class="item7 container">
       <p class="Roboto-Regular text-color-1">
-        Selling to Sweetly means choosing to sell stress free, and on your timeline.
-        Our Swift Sale pays you 90% of your homes' (professionally) appraised value on
-        the day you choose to move; and this let's you sell without living through 
-        the seller pains and endless showings, or open houses where strangers tour 
-        the home you live in. Once we resell your home, you get the full balance of
-        the actual resale price and thus you get the exact same amount of money had
-        you listed and sold on the market with any other full service brokerage
-        (assuming commission of 7% of $100,000 plus 3% on the balance).
+        Selling to Sweetly means choosing to sell stress free, and on your
+        timeline. Our Swift Sale pays you 90% of your homes' (professionally)
+        appraised value on the day you choose to move; and this let's you sell
+        without living through the seller pains and endless showings, or open
+        houses where strangers tour the home you live in. Once we resell your
+        home, you get the full balance of the actual resale price and thus you
+        get the exact same amount of money had you listed and sold on the market
+        with any other full service brokerage (assuming commission of 7% of
+        $100,000 plus 3% on the balance).
       </p>
       <p class="Roboto-Regular text-color-1">
-        The benefits and conveniences of our program are obvious for any home seller.
-        But for anyone selling and buying at the same time, our program is even more
-        powerful. We encourage our clients to get our appraisal, then delay selling
-        to us until you find the perfect home! You get to avoid paying two mortgages
-        at once, moving twice, or missing out on the perfect new home waiting to sell
-        the one you have.
+        The benefits and conveniences of our program are obvious for any home
+        seller. But for anyone selling and buying at the same time, our program
+        is even more powerful. We encourage our clients to get our appraisal,
+        then delay selling to us until you find the perfect home! You get to
+        avoid paying two mortgages at once, moving twice, or missing out on the
+        perfect new home waiting to sell the one you have.
       </p>
       <p class="Roboto-Regular text-color-1">
-        We've spent years watching customers just like you struggle with showing,
-        interruptions and the broken product that is 'traditional real estate', but
-        until now, nobody has bothered to question the process and the fees. We dare
-        to dream of better services for our customers and we look forward to sharing
-        our vision with you.
+        We've spent years watching customers just like you struggle with
+        showing, interruptions and the broken product that is 'traditional real
+        estate', but until now, nobody has bothered to question the process and
+        the fees. We dare to dream of better services for our customers and we
+        look forward to sharing our vision with you.
       </p>
       <p class="Roboto-Regular text-color-1">
         I welcome your comments, questions or feedback, always.
@@ -97,20 +95,17 @@
             </div>
             <div class="col-12 col-md-7">
               <div class="map-image h-100">
-                <lazy-component class="h-100">
                   <img
-                  src="../assets/image/contactus/map45.jpg"
-                  class="w-100 h-100"
-                  alt="map"
-                />
-                </lazy-component>
-                
+                    src="../assets/image/contactus/map45.jpg"
+                    class="w-100 h-100"
+                    alt="map"
+                  />
               </div>
-<!--              <img-->
-<!--                src="../../../assets/image/contactus/icon-location.svg"-->
-<!--                class="icon-location"-->
-<!--                alt=""-->
-<!--              />-->
+              <!--              <img-->
+              <!--                src="../../../assets/image/contactus/icon-location.svg"-->
+              <!--                class="icon-location"-->
+              <!--                alt=""-->
+              <!--              />-->
             </div>
           </div>
         </div>
@@ -121,8 +116,7 @@
 <script>
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     slugtitle(content) {
@@ -133,8 +127,7 @@ export default {
       }
     },
   },
-  components: {
-  },
+  components: {},
 };
 </script>
 
@@ -406,7 +399,7 @@ input:focus {
 .aboutus .item7 p {
   font-size: 18px;
 }
-.aboutus .map-image img{
+.aboutus .map-image img {
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
 }

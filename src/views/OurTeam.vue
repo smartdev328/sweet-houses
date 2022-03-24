@@ -7,8 +7,8 @@
            </div>
                     <div class="item2">
                             <div class="gridcol" v-for="agent in agents" :key="agent.id">
-                                <div class="image mx-auto" v-lazy-container="{ selector: 'img' }">
-                                    <img :data-src="agent.image" class="w-100 h-100" alt="personal photo">
+                                <div class="image mx-auto">
+                                    <img :src="agent.image" class="w-100 h-100" alt="personal photo">
                                 </div>
                                 <div class="conent-info text-center">
                                     <p class="name text-color-1 mb-2 Roboto-Medium">{{agent.name}}</p>

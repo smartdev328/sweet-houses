@@ -4,8 +4,8 @@
             <div class="item1 ">
                 <div class="container">
                     <div class="element1">
-                        <div class="image" v-lazy-container="{ selector: 'img' }" >
-                            <img :data-src="agent.image" class="w-100 h-100" alt="personal photo" />
+                        <div class="image" >
+                            <img :src="agent.image" class="w-100 h-100" alt="personal photo" />
                         </div>
                         <div class="contactinfo">
                         <div class="mb-2 mb-md-0">
