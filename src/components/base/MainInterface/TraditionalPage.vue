@@ -1,7 +1,7 @@
 <template>
   <div class="page4">
     <div class="my-2 my-md-5 item12 mx-3">
-      <div class="item12a DMSerifRegular text-center" >
+      <div class="item12a DMSerifRegular text-center">
         <p>Benefits of a Traditional Listing</p>
       </div>
       <div
@@ -13,8 +13,8 @@
         <div class="benefits-card bg-white p-2 p-md-3">
           <div class="card my-2">
             <div class="row no-gutters">
-              <div class="col-md-4"  v-lazy-container="{ selector: 'img' }" >
-                <img :data-src="itembenefite.image" class="card-img" alt="..." />
+              <div class="col-md-4">
+                <img :src="itembenefite.image" class="card-img" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -38,13 +38,11 @@
       </div>
       <div>
         <div class="image">
-          <lazy-component >
-            <img
+          <img
             class="rounded w-100"
             src="../../../assets/image/ASwiftSaleisRightForYou.png"
             alt=""
           />
-          </lazy-component>
         </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul>
@@ -67,11 +65,16 @@
       </div>
       <div class="text-center Roboto-Regular">
         <p>Want a different program?</p>
-        <a class="Roboto-Regular pointer" @click="routeswiftsale()">Try our Swift Sale</a>
+        <a class="Roboto-Regular pointer" @click="routeswiftsale()"
+          >Try our Swift Sale</a
+        >
       </div>
     </div>
     <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -82,7 +85,10 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >
+        Start
+      </button>
     </div>
     <div class="my-2 my-md-5 item7">
       <div class="text-center text-color-1 mb-1 DMSerifRegular text-capitalize">
@@ -94,7 +100,7 @@
   </div>
 </template>
 <script>
-import $ from 'jquery'
+import $ from "jquery";
 export default {
   data() {
     return {
@@ -179,27 +185,35 @@ export default {
       this.$router.push("/agent-profile/" + agent.name.replace(/\s+/g, "-"));
       document.body.scrollTop = 0;
     },
-    routeswiftsale(){
+    routeswiftsale() {
       this.$router.push({ name: "SwiftSale" });
       document.body.scrollTop = 0;
     },
-    gotFocus(){
-      setTimeout(() => { this.$emit("gotFocustrad")}, 1000);
-    }
+    gotFocus() {
+      setTimeout(() => {
+        this.$emit("gotFocustrad");
+      }, 1000);
+    },
   },
-  mounted(){
-    $(document).ready(function(){
-      $('body,html').animate({
-        scrollTop: 0
-      }, 800);
-      $('.btngototop').click(function () {
-        $('body,html').animate({
+  mounted() {
+    $(document).ready(function() {
+      $("body,html").animate(
+        {
           scrollTop: 0,
-        }, 800);
+        },
+        800
+      );
+      $(".btngototop").click(function() {
+        $("body,html").animate(
+          {
+            scrollTop: 0,
+          },
+          800
+        );
         return false;
       });
     });
-  }
+  },
 };
 </script>
 

@@ -30,17 +30,15 @@ Vue.component('b-carousel', BCarousel)
 Vue.component('b-carousel-slide', BCarouselSlide)
 Vue.component('b-img', BImg)
 Vue.component('b-img-lazy', BImgLazy)
-// import LazyYoutube from "vue-lazytube";
-// Vue.component('LazyYoutube', LazyYoutube)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
-import VueLazyload from "vue-lazyload";
-const imgload = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921'
-Vue.use(VueLazyload, {
-  lazyComponent: true,
-  loading: imgload
-});
+// import VueLazyload from "vue-lazyload";
+// const imgload = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921'
+// Vue.use(VueLazyload, {
+//   lazyComponent: true,
+//   loading: imgload
+// });
 export const eventBus = new Vue();
 
 import VuePhoneNumberInput from 'vue-phone-number-input';

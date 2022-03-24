@@ -1,98 +1,76 @@
 <template>
-  <div class="page1" id="container"  @click.self="close()">
+  <div class="page1" id="container" @click.self="close()">
     <div class="my-3 card-body">
-      <p class="p5  card-text Poppins">
-        Sold! The minute you're ready. Net exactly the same money as a traditional listing/sale without public showings. Even choose your own moving day.
-      </p>
+      <p
+        class="p5 card-text Poppins"
+      >Sold! The minute you're ready. Net exactly the same money as a traditional listing/sale without public showings. Even choose your own moving day.</p>
     </div>
     <div class="my-2 my-md-5 item3new">
       <div class="cards">
         <div class="card border-0">
-          <lazy-component >
-   <img
-            src="../../../assets/image/IpadwithForm.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-</lazy-component>
-         
+          <img src="../../../assets/image/IpadwithForm.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 1</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Tell Us About Your Property-->
             <!--              </h3>-->
-         
-              <div class="d-flex align-items-center">
-              <p class="card-text Poppins mb-0" disabled>
-             Get an appraisal.
-             
-            </p>
 
-             <div class="dropdown">
-            <img src="../../../assets/image/icon/info.svg" class="ml-3 pointer dropdownimg"
-            @click="showpopup()"
-             style="width:20px;heigth:20px">
-             <div class="dropdown-content" :class="{showon: isActive }">
-                <p>Only relocation appraisals provided by a licensed appraiser within 45 days can be considered for our program.</p>
+            <div class="d-flex align-items-center">
+              <p class="card-text Poppins mb-0" disabled>Get an appraisal.</p>
+
+              <div class="dropdown">
+                <img
+                  src="../../../assets/image/icon/info.svg"
+                  class="ml-3 pointer dropdownimg"
+                  @click="showpopup()"
+                  style="width:20px;heigth:20px"
+                />
+                <div class="dropdown-content" :class="{ showon: isActive }">
+                  <p>Only relocation appraisals provided by a licensed appraiser within 45 days can be considered for our program.</p>
+                </div>
               </div>
-               </div>
-
-
             </div>
-           
-         
-            
-            
-            <p class=" Poppins pointer">
-            <u @click="routetoappraisl()" class="text-color-7">Need an appraisal?</u>  
+
+            <p class="Poppins pointer">
+              <u @click="routetoappraisl()" class="text-color-7">Need an appraisal?</u>
             </p>
           </div>
         </div>
 
         <div class="card border-0">
-          <lazy-component >
-             <img
-            src="../../../assets/image/YellowAppraisal.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          </lazy-component>
-         
+          <img src="../../../assets/image/YellowAppraisal.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 2</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Appraisal & Inspection-->
 
             <!--              </h3>-->
-            <p class="card-text Poppins">
-              Get 90% and move on the day you choose.
-            </p>
+            <p class="card-text Poppins">Get 90% and move on the day you choose.</p>
           </div>
         </div>
 
         <div class="card border-0">
-          <lazy-component >
-            <img
-            src="../../../assets/image/HappyFamilyMorning.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          </lazy-component>
-          
+          <img src="../../../assets/image/HappyFamilyMorning.jpg" class="card-img-top" alt="..." />
+
           <div class="card-body pl-0">
             <h3 class="card-title DMSerifRegular">Step 3</h3>
             <!--              <h3 class="card-title Roboto-Medium text-color-1">Close & Move-->
             <!--              </h3>-->
-            <p class="card-text Poppins">
-              We'll re-sell the property.
-            </p>
+            <p class="card-text Poppins">We'll re-sell the property.</p>
           </div>
         </div>
       </div>
       <div class="card-body p-0">
-        <p class="DMSerifRegular card-text lastp font-weight-normal">PLUS: Get the balance of our re-sale price when you buy with Sweetly!</p>
+        <p
+          class="DMSerifRegular card-text lastp font-weight-normal"
+        >PLUS: Get the balance of our re-sale price when you buy with Sweetly!</p>
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
-      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -103,10 +81,10 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >Start</button>
     </div>
     <div class="bg-color-1 p-3 my-3 item1p DMSerifRegular">
-
       <div class="item1a text-center">
         <p class="text-color-1 DMSerifRegular">Here's How We Do it:</p>
       </div>
@@ -114,15 +92,15 @@
       <div class="row d-flex align-items-center item1b">
         <div class="col-12 col-md-8">
           <p class="text-color-1 DMSerifRegular">Simple. Certain. Easy.</p>
-          <p class="Roboto-Medium">
-            It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS® listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.
-          </p>
+          <p
+            class="Roboto-Medium"
+          >It starts with an appraisal to determine the current value of your home. Get 90% of current value on the moving day you choose. We'll manage an MLS® listing for the property at an asking price that you agree to. We resell the property, keep our fee, then pay you the FULL balance of the actual resale price - even if it's more than the appraisal! Skip all the seller pains - prep, showings, interruptions, home fix-ups. Just choose the day you want to move. Our fee is 7% on $100,000 plus 3% on the balance which is the same as traditional real estate. The difference isn't in our fee, it's in the experience you go through. Skip the showings! Sell Sweetly. This product is available to customers who sell and buy with Sweetly.</p>
         </div>
         <div class="col-12 col-md-4">
-          <LazyYoutube src="https://www.youtube.com/embed/NtPMe0nhq2w"
-          style="background: #edf3f2; border-radius: 8px;height:340px"
+          <LazyYoutube
+            src="https://www.youtube.com/embed/NtPMe0nhq2w"
+            style="background: #edf3f2; border-radius: 8px;height:340px"
             width="100%"
-           
           />
           <!-- <iframe
           async 
@@ -134,13 +112,15 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-          ></iframe> -->
+          ></iframe>-->
         </div>
-
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
-      <button class="btn btngototop"  @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -151,7 +131,8 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >Start</button>
     </div>
     <div class="my-2 my-md-5 item11 mx-3">
       <div class="item11a DMSerifRegular text-center">
@@ -159,34 +140,23 @@
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
-          <lazy-component >
-            <img
-              src="../../../assets/image/swplus1.png"
-              class="w-100 h-100"
-              alt=""
-          />
-          </lazy-component>
+          <img src="../../../assets/image/swplus1.png" class="w-100 h-100" alt />
+
           <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
-          
         </div>
         <div class="element2 p-0 col-12 col-md-6">
-          <lazy-component >
-             <img
-              src="../../../assets/image/swplus2.png"
-              class="w-100 h-100"
-              alt=""
-          />
-          </lazy-component>
-         
+          <img src="../../../assets/image/swplus2.png" class="w-100 h-100" alt />
         </div>
       </div>
       <div>
-        <p class="Roboto-Regular text-color-2 my-2">
-        </p>
+        <p class="Roboto-Regular text-color-2 my-2"></p>
       </div>
     </div>
     <div class="my-4 text-center w-25 mx-auto">
-      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -197,33 +167,29 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >Start</button>
     </div>
     <div class="my-2 my-md-5 item12 mx-3">
       <div class="item12a DMSerifRegular text-center">
         <p>Benefits of a Swift Sale PLUS</p>
       </div>
       <div
-          class="item12b p-4 mb-5"
-          v-for="itembenefite in Benefitsdata"
-          :key="itembenefite.id"
-          style="background-color: #edf3f2"
+        class="item12b p-4 mb-5"
+        v-for="itembenefite in Benefitsdata"
+        :key="itembenefite.id"
+        style="background-color: #edf3f2"
       >
         <div class="benefits-card bg-white p-3">
           <div class="card my-2">
             <div class="row no-gutters">
-              <div class="col-md-4" v-lazy-container="{ selector: 'img' }">
-                <img :data-src="itembenefite.image" class="card-img" alt="..." />
+              <div class="col-md-4">
+                <img :src="itembenefite.image" class="card-img" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title DMSerifRegular">
-                    {{ itembenefite.title }}
-                  </h5>
-                  <p
-                      class="card-text text-color-2 Roboto-Regular"
-                      v-html="itembenefite.content"
-                  ></p>
+                  <h5 class="card-title DMSerifRegular">{{ itembenefite.title }}</h5>
+                  <p class="card-text text-color-2 Roboto-Regular" v-html="itembenefite.content"></p>
                 </div>
               </div>
             </div>
@@ -232,7 +198,10 @@
       </div>
     </div>
     <div class="my-3 text-center w-25 mx-auto">
-      <button class="btn btngototop" @click="gotFocus()"  style="    background-color: #ffb600;
+      <button
+        class="btn btngototop"
+        @click="gotFocus()"
+        style="    background-color: #ffb600;
     color: #fff;
     height: 48px;
     border: 2px solid transparent;
@@ -243,7 +212,8 @@
     justify-content: center;
     font-size: 20px;
     /* font-weight: bold; */
-    padding: 9px 24px;">Start</button>
+    padding: 9px 24px;"
+      >Start</button>
     </div>
     <div class="my-2 my-md-5 item7">
       <div class="text-center text-color-1 mb-5 DMSerifRegular text-capitalize">
@@ -253,9 +223,9 @@
         <div class="col-12 col-md-6 px-3 px-md-0 pr-md-1">
           <div class="h-300px">
             <LazyYoutube
-               src="https://www.youtube.com/embed/ZuG6KMMRu8k"
-               style="background: #edf3f2; border-radius: 8px;height:100%"
-               width="100%"
+              src="https://www.youtube.com/embed/ZuG6KMMRu8k"
+              style="background: #edf3f2; border-radius: 8px;height:100%"
+              width="100%"
               class="rounded"
             />
             <!-- <iframe
@@ -269,13 +239,13 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-            ></iframe> -->
+            ></iframe>-->
           </div>
         </div>
         <div class="col-12 col-md-6 px-3 px-md-0 pl-md-1 mt-4 mt-md-0">
           <div class="h-300px">
             <LazyYoutube
-                width="100%"
+              width="100%"
               class="rounded"
               height="100%"
               src="https://www.youtube.com/embed/UoCHcEQTNdY"
@@ -292,7 +262,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               style="background: #edf3f2; border-radius: 8px"
               allowfullscreen
-            ></iframe> -->
+            ></iframe>-->
           </div>
         </div>
       </div>
@@ -312,13 +282,11 @@
             and real estate together to make your process of selling, buying or
             both far easier and more fun.
           </p>
-          <a  @click="openaboutus()" class="Roboto-Regular pointer"
-            >Read More</a
-          >
+          <a @click="openaboutus()" class="Roboto-Regular pointer">Read More</a>
         </div>
         <div class="col-12 col-md-4">
           <LazyYoutube
-             width="100%"
+            width="100%"
             height="100%"
             src="https://www.youtube.com/embed/jyTW6ErTxBg"
             style="background: #edf3f2; border-radius: 8px;height:100%"
@@ -333,23 +301,19 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             style="background: #edf3f2; border-radius: 8px"
             allowfullscreen
-          ></iframe> -->
+          ></iframe>-->
         </div>
       </div>
     </div>
 
     <div class="my-2 my-md-5 element4">
-      <p class="text-center text-color-1 DMSerifRegular">
-        Questions and Answers
-      </p>
+      <p class="text-center text-color-1 DMSerifRegular">Questions and Answers</p>
     </div>
     <div class="my-2 my-md-5 element5">
       <sale-question :items="Homefaqs"></sale-question>
     </div>
     <div class="my-2 my-md-5 w-100 text-center element6">
-      <a @click="openfaqspage" class="btn py-2 px-5 Roboto-Regula"
-        >View All FAQ's</a
-      >
+      <a @click="openfaqspage" class="btn py-2 px-5 Roboto-Regula">View All FAQ's</a>
     </div>
   </div>
 </template>
@@ -360,7 +324,7 @@ import { LazyYoutube } from "vue-lazytube";
 export default {
   data() {
     return {
-      isActive:false,
+      isActive: false,
       Benefitsdata: [
         {
           title: "Market Value Sale",
@@ -384,11 +348,11 @@ export default {
       selected_part: "Swiftpart",
     };
   },
-  components:{
-     LazyYoutube,
+  components: {
+    LazyYoutube,
   },
   computed: {
-    smscreen(){
+    smscreen() {
       return window.innerWidth < 620
     },
     Homefaqs() {
@@ -396,21 +360,21 @@ export default {
     },
   },
   methods: {
-    close(){
+    close() {
       alert("sacascas")
     },
-    showpopup(){
-     
-      if(window.innerWidth < 620){
-    //  alert("aasascas")
+    showpopup() {
+
+      if (window.innerWidth < 620) {
+        //  alert("aasascas")
         this.isActive = true
       }
     },
-    routetoappraisl(){
+    routetoappraisl() {
       this.$router.push({ name: "appraisal" });
       document.body.scrollTop = 0;
     },
-    
+
     openaboutus() {
       this.$router.push({ name: "Aboutus" });
       document.body.scrollTop = 0;
@@ -419,12 +383,12 @@ export default {
       this.$router.push({ name: "FrequentlyQuestion" });
       document.body.scrollTop = 0;
     },
-    gotFocus(){
-      setTimeout(() => { this.$emit("gotFocus")}, 1000);
+    gotFocus() {
+      setTimeout(() => { this.$emit("gotFocus") }, 1000);
     }
   },
   mounted() {
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('body,html').animate({
         scrollTop: 0
       }, 800);
@@ -639,7 +603,7 @@ ul li {
 .page1 .item12 .item12b .benefits-card .card img {
   border-radius: 8px;
 }
-.benefits-card .card-body .card-text{
+.benefits-card .card-body .card-text {
   font-size: 16px;
   font-weight: unset;
 }
@@ -732,17 +696,16 @@ ul li a {
 .page1 .item3new .cards .card .card-text p {
   font-size: 18px;
 }
-.card-body .card-text{
+.card-body .card-text {
   font-size: 24px;
   font-weight: bold;
 }
 /* .card-body .p5{
   font-size: 18px !important;
 } */
-.card-body .lastp{
+.card-body .lastp {
   font-size: 36px !important;
 }
-
 
 @media only screen and (max-width: 600px) {
   .item2c .gridcontainer,
@@ -832,20 +795,20 @@ ul li a {
   .element4 {
     font-size: 26px;
   }
-  .page1 .item12 .item12a{
+  .page1 .item12 .item12a {
     font-size: 26px;
   }
-  .benefits-card .card .card-title{
+  .benefits-card .card .card-title {
     font-size: 22px;
   }
-  .card-body .lastp{
+  .card-body .lastp {
     font-size: 24px;
   }
-/* .dropdown .showon{*/
-/*  display: block !important;*/
-/*}*/
+  /* .dropdown .showon{*/
+  /*  display: block !important;*/
+  /*}*/
   .dropdown:focus .dropdown-content {
-  display: block !important;
-}
+    display: block !important;
+  }
 }
 </style>
