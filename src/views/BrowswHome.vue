@@ -1015,6 +1015,9 @@ input:focus {
   }
 }
 @media only screen and (max-width: 600px) {
+  .searchpage .element1{
+    max-width: 100%;
+  }
   .modelfilter{
     left:10%;
     right: 10%;
