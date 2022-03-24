@@ -119,7 +119,7 @@ export default {
         this.$emit('Openverifyemailbtcode')
       },
       Openforgetcode(){
-        this.$emit("Openverifyemail")
+        this.$emit("Openforgetcode")
       },
         xloginOsignup(){
             this.$emit('xloginOsignup')
@@ -207,7 +207,7 @@ export default {
                   timer: 1500
                 })
                   this.loading = false
-                  this.xloginOsignup()
+                  // this.xloginOsignup()
                   this.$emit('hideloginmodal')
                   
                   return res;
@@ -241,7 +241,7 @@ export default {
                   confirmButtonText: 'Ok',
                   timer: 1500
                 })
-                this.xloginOsignup()
+                // this.xloginOsignup()
                 return res;
         }).catch((err) => {
            this.errors = err.response.data.errors || {};
