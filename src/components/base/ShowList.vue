@@ -74,7 +74,11 @@
 </template>
 <script>
 import { mapState } from 'vuex';
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 export default {
     props:{homedata:{},type:{default:'forsale'}},
     data(){
@@ -188,7 +192,7 @@ computed:{
       return Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
         lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YYYY");
+      return dayjs(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();

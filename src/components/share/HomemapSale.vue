@@ -142,7 +142,11 @@
   </div>
 </template>
 <script>
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
@@ -235,7 +239,7 @@ export default {
   },
   methods: {
     gettime(item) {
-      return moment(item).endOf("day").fromNow(true);
+      return dayjs(item).fromNow(true);
     },
 
     SignUp() {

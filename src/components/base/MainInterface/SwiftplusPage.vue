@@ -135,10 +135,10 @@
 
             <img
             src="https://clickclicksold.ca/wp-content/uploads/2022/03/BenefitsofTraditionalSwiftPlus.png"
+
             class="w-100 h-100"
             alt=""
           />
-    
           
         </div>
       </div>

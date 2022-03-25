@@ -243,7 +243,6 @@
   </div>
 </template>
 <script>
-import moment from "moment";
 export default {
   props:["contactinput"],
   data: () => ({
@@ -270,16 +269,14 @@ export default {
     },
   },
   methods: {
-    fildate(value) {
-      return moment(value).format("dddd") + "," + moment(value).format("LL");
+    fildate() {
+      return new Date()
     },
-    filtimefrom(value) {
-      return moment(value).format("LT");
+    filtimefrom() {
+     return new Date()
     },
     filtimeto() {
-      return moment(new Date(this.yourtime).getTime() + 15 * 60000).format(
-        "LT"
-      );
+      return new Date()
     },
 
     openParttwo() {

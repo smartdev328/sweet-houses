@@ -49,7 +49,6 @@ perfect Sweetly Agent.
     </div>
 </template>
 <script>
-import moment from 'moment';
 export default {
     data:() =>({
         yourValue:null,
@@ -59,8 +58,8 @@ export default {
     label: 'My custom thing',
     value: () => {
       return {
-        start: moment(),
-        end: moment().add(2, 'days')
+        start:new Date(),
+        end:new Date(),
       }
     },
     callback: ({ start, end }) => {
