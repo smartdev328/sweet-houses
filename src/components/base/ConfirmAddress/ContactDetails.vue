@@ -129,6 +129,7 @@
                 align-items-baseline
               "
               type="button"
+              id="report1"
               @click.prevent="openPersonalized"
             >
               <p v-if="!loadvalid" class="mb-0">Continue</p>
