@@ -394,6 +394,7 @@
                     :disabled="garage_spaces < 1"
                     type="button"
                     @click="garage_spaces--"
+                    id="tell1"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                  <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -676,6 +677,7 @@
               <button
                 class="btn btn-continue w-100 px-4 d-flex justify-content-between align-items-baseline"
                 type="button"
+                id="tell2"
                 @click="twoFunc()"
               >
                 <p class="mb-0">Continue</p>
