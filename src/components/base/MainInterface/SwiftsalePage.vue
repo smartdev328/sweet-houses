@@ -61,7 +61,7 @@
       </div>
       <div class="item13a p-4 shadow-sm">
         <div class="image">
-          <img class="rounded w-100" src="../../../assets/image/ASwiftSaleisRightForYou.png" alt />
+          <img class="rounded w-100" src="../../../assets/image/ASwiftSaleisRightForYou.jpg" alt />
         </div>
         <div class="col-12 col-md-8 py-4 pl-4 my-4 mx-auto">
           <ul class="row">
@@ -131,10 +131,10 @@
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
-          <img src="../../../assets/image/wswift1.png" class="w-100 h-100" alt />
+          <img src="../../../assets/image/wswift1.jpg" class="w-100 h-100" alt />
         </div>
         <div class="element2 p-0 col-12 col-md-6">
-          <img src="../../../assets/image/wswift2.png" class="w-100 h-100" alt />
+          <img src="../../../assets/image/wswift2.jpg" class="w-100 h-100" alt />
         </div>
       </div>
       <div>
