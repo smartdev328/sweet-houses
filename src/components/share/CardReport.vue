@@ -157,7 +157,11 @@
     </div>
 </template>
 <script>
-import moment from 'moment';
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 export default {
     props:["instant_estimate_data","closest_home_data"],
     data:() =>({
@@ -234,7 +238,7 @@ export default {
         this.$emit("SignUp");
       },
         gettime(item){
-            return moment(item).endOf('day').fromNow();   
+            return dayjs(item).fromNow();   
         },
         numFormatter(num) {
         if (num > 999 && num < 1000000) {

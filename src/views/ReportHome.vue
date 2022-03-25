@@ -352,7 +352,11 @@
 </template>
 <script>
 import { gmapApi } from 'vue2-google-maps';
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 import Swal from "sweetalert2";
 import { LazyYoutube } from "vue-lazytube";
 export default {
@@ -471,7 +475,7 @@ export default {
       return   d.toLocaleString('en-US', { timeZone: this.timezone });
     },
     lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YYYY");
+      return dayjs(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();

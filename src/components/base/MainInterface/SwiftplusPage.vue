@@ -125,7 +125,7 @@
         <div class="element1 p-0 col-12 col-md-6">
       
              <img
-            src="../../../assets/image/swplus1.png"
+            src="../../../assets/image/swplus1.jpg"
             class="w-100 h-100"
             alt=""
           />
@@ -134,7 +134,7 @@
         <div class="element2 p-0 col-12 col-md-6">
 
             <img
-            src="../../../assets/image/swplus2.png"
+            src="../../../assets/image/swplus2.jpg"
             class="w-100 h-100"
             alt=""
           />

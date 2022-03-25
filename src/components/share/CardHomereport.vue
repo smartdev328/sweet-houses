@@ -131,7 +131,11 @@
   </div>
 </template>
 <script>
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 export default {
   props: {
     homedata: {},
@@ -175,7 +179,7 @@ export default {
   },
   methods: {
     gettime(item) {
-      let relativetime = moment(item).endOf("day").fromNow(true);
+      let relativetime = dayjs(item).fromNow(true);
       if(relativetime.includes('hour')){
         this.createdToday = true
       }

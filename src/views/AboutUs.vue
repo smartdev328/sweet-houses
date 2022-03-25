@@ -135,103 +135,12 @@ export default {
 .aboutus .part1 {
   flex-direction: row;
 }
-.aboutus .item1 .item1a {
-  width: 50%;
-  margin: auto;
-}
-.aboutus .item1 .item1a .item1b {
-  width: 75%;
-  margin: auto;
-}
-.aboutus .item1 .item1a .p1 {
-  font-size: 60px;
-  font-weight: 600;
-}
-.aboutus .item1 .item1a .p2 {
-  font-size: 32px;
-}
-.aboutus .item1 .item1a .inputaddress {
-  width: 100%;
-  display: flex;
-  box-sizing: border-box;
-  border-radius: 6px;
-  text-align: left;
-  background: white;
-  min-height: 48px;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  border-color: transparent;
-  box-shadow: rgb(0 0 0 / 1%) 0px 1.77104px 4.75968px,
-    rgb(0 0 0 / 2%) 0px 4.25607px 11.4382px,
-    rgb(0 0 0 / 2%) 0px 8.01379px 21.5371px,
-    rgb(0 0 0 / 2%) 0px 14.2952px 38.4185px,
-    rgb(0 0 0 / 3%) 0px 26.7377px 71.8575px, rgb(0 0 0 / 4%) 0px 64px 172px;
-  padding: 10px;
-  flex-direction: row;
-  border-width: 1px;
-  border-style: solid;
-  font-size: 18px;
-}
 
-.aboutus .item1 .item1a .inputaddress img {
-  flex-shrink: 0;
-  align-self: center;
-  margin-left: 12px;
-  width: 30px;
-  height: 30px;
-}
-.aboutus .item1 .item1a .inputaddress .item1b2 {
-  display: inline-flex;
-  width: 100%;
-  flex-direction: column;
-}
-.aboutus .item1 .item1a .space {
-  border: 0px;
-  clip: rect(0px, 0px, 0px, 0px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0px;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-  overflow-wrap: normal;
-}
-.aboutus .item1 .item1a input {
-  flex: 1 1 0%;
-  border: none;
-  padding-left: 12px;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  min-height: 48px;
-  line-height: normal;
-  box-shadow: none !important;
-  border: 0 !important;
-  outline: none;
-}
-.aboutus .item1 .item1a .item1b3 {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-.aboutus .item1 .item1a button {
-  background-color: rgb(255, 192, 67);
-  color: #fff;
-  height: 48px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  width: 100%;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 9px 16px;
-}
+
+
+
+
+
 input:focus {
   outline: none;
 }
@@ -414,12 +323,7 @@ input:focus {
     grid-row-gap: 10px;
     padding: 10px;
   }
-  .aboutus .item1 .item1a {
-    width: 100%;
-  }
-  .aboutus .item1 .item1a .item1b {
-    width: 100%;
-  }
+
   .aboutus .item4 .title {
     width: 80%;
     font-size: 20px;
@@ -439,15 +343,6 @@ input:focus {
   }
   .aboutus .item6 .element2 p {
     font-size: 14px;
-  }
-  .aboutus .item1 .item1a .p1 {
-    font-size: 30px;
-  }
-  .aboutus .item1 .item1a .p2 {
-    font-size: 24px;
-  }
-  .aboutus .item1 .item1a .inputaddress {
-    font-size: 12px;
   }
   .aboutus .item7 h3 {
     font-size: 22px;

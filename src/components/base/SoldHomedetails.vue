@@ -337,7 +337,7 @@
                        
                         </u>
                    </p>
-                   <p class="mb-0 text-color-5 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}}</p>
+                   <p class="mb-0 text-color-5 Roboto-Medium " >Listed for $ {{getnumber(history.listPrice)}} at {{formatdate(history.listDate)}} xx</p>
                  </div>
                 <div class="image col-3">
 
@@ -556,7 +556,11 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
  import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 import { mapState } from 'vuex';
 
 export default {
@@ -612,7 +616,7 @@ export default {
       return Difference_In_Days
     },
     getrelativedateformnow(){
-       return moment(this.homedata.soldDate).endOf("day").fromNow(true);
+       return dayjs(this.homedata.soldDate).fromNow(true);
       // let nowdate = new Date().toISOString().slice(0, 10)
       //  let Difference_In_Time = new Date(nowdate).getTime() -  new Date(this.homedata.soldDate).getTime()
       // let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
@@ -669,7 +673,7 @@ export default {
     },
 
     lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YYYY");
+      return dayjs(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();
@@ -696,7 +700,7 @@ export default {
       console.log(e);
     },
     formatdate(date){
-      return moment(date).format("MMM Do YYYY");
+      return dayjs(date).format("MMM Do YYYY");
     },
     copyURL() {
       var Url = this.$refs.mylink;
@@ -717,13 +721,13 @@ export default {
       });
     },
     gettime(item) {
-      return moment(item).endOf("day").fromNow(true);
+      return dayjs(item).fromNow(true);
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
     },
       formatdatehistory(item){
-        return moment(item).format("MMM Do YYYY");   
+        return dayjs(item).format("MMM Do YYYY");   
     },
         makeAuth(){
      this.$root.$emit('bv::show::modal', 'my-modal', '#my-modal')

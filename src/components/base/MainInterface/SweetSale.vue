@@ -140,12 +140,12 @@
       </div>
       <div class="item11b row p-0">
         <div class="element1 p-0 col-12 col-md-6">
-          <img src="../../../assets/image/swplus1.png" class="w-100 h-100" alt />
+          <img src="../../../assets/image/swplus1.jpg" class="w-100 h-100" alt />
 
           <!-- <p class="p1 DMSerifRegular">Sweet Sale with Sweetly</p> -->
         </div>
         <div class="element2 p-0 col-12 col-md-6">
-          <img src="../../../assets/image/swplus2.png" class="w-100 h-100" alt />
+          <img src="../../../assets/image/swplus2.jpg" class="w-100 h-100" alt />
         </div>
       </div>
       <div>

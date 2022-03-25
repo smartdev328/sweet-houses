@@ -366,7 +366,7 @@
                   v-for="history in homedata.history" :key="history.id"
               >
                 <div class="ml-3 text-color-2 Roboto-Medium col-6 col-md-4">
-                  <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}</p>
+                  <p class="mb-0 element1">{{formatdatehistory(history.listDate)}}xxx</p>
                   <p class="mb-0 element2">{{gettime(history.listDate)}}</p>
                 </div>
                 <div class="col-6 col-md-5" v-if="!history.soldDate">
@@ -721,8 +721,11 @@ Trademarks are owned or controlled by the Canadian Real Estate Association (CREA
 // import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
-import moment from "moment";
+import relativeTime from 'dayjs/plugin/relativeTime' 
+import advancedFormat from 'dayjs/plugin/advancedFormat' 
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
 import { mapState } from "vuex";
 
 export default {
@@ -824,7 +827,7 @@ export default {
      return   d.toLocaleString('en-US', { timeZone: this.timezone });
     },
     lastupdatemonth(){
-      return moment(this.lastupdate).format("MMM Do YYYY");
+      return dayjs(this.lastupdate).format("MMM Do YYYY");
     },
     lastupdatehour(){
       const d = new Date();
@@ -849,7 +852,7 @@ export default {
       this.sliding = false
     },
     formatdate(date){
-      return moment(date).format("MMM Do YYYY");
+      return dayjs(date).format("MMM DD YYYY");
     },
     Openverifyemailbtcode(){
       this.$bvModal.show("verify-modal");
@@ -891,13 +894,14 @@ export default {
         });
     },
     gettime(item) {
-      return moment(item).endOf("day").fromNow(true);
+      return dayjs(item).fromNow(true);
+
     },
     getpermonth(item) {
       return (item / 12).toFixed(2).toLocaleString("ja-JP");
     },
     formatdatehistory(item) {
-      return moment(item).format("MMM Do YY");
+      return dayjs(item).format("MMM DD YY");
     },
     getnumber(item) {
       return item * 1;

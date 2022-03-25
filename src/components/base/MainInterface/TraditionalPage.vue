@@ -40,7 +40,7 @@
         <div class="image">
           <img
             class="rounded w-100"
-            src="../../../assets/image/ASwiftSaleisRightForYou.png"
+            src="../../../assets/image/ASwiftSaleisRightForYou.jpg"
             alt=""
           />
         </div>
