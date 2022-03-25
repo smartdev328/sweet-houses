@@ -394,6 +394,7 @@
                     :disabled="garage_spaces < 1"
                     type="button"
                     @click="garage_spaces--"
+                    id="tell1"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                  <img src="../../../assets/image/icon/minus.svg" alt="">
