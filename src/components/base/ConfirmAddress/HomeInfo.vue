@@ -172,7 +172,7 @@
               :class="{ 'input--error':  (msgone.bedrooms_ag && bedrooms_ag < 0) || (msgone.bedrooms_ag && bedrooms_ag == null) }"
             >
               <label for="hometype" class="col-sm-5 col-form-label text-left"
-                >Bedrooms (above ground) </label
+                >Bedrooms (above grade) </label
               >
               <div class="d-style">
                 <div class="col-sm-2">
@@ -219,7 +219,7 @@
               :class="{ 'input--error':  (msgone.bedrooms_bg && bedrooms_bg < 0) || (msgone.bedrooms_bg && bedrooms_bg == null) }"
             >
               <label for="bedrooms_bg" class="col-sm-5 col-form-label text-left"
-                >Bedrooms (below ground)</label
+                >Bedrooms (below grade)</label
               >
               <div class="d-style">
                 <div class="col-sm-2">
@@ -394,6 +394,7 @@
                     :disabled="garage_spaces < 1"
                     type="button"
                     @click="garage_spaces--"
+                    id="tell1"
                   >
                     <!--  <p class="mb-1 mt-0">-</p> -->
                  <img src="../../../assets/image/icon/minus.svg" alt="">
@@ -676,6 +677,7 @@
               <button
                 class="btn btn-continue w-100 px-4 d-flex justify-content-between align-items-baseline"
                 type="button"
+                id="tell2"
                 @click="twoFunc()"
               >
                 <p class="mb-0">Continue</p>

@@ -125,7 +125,7 @@
         <div class="element1 p-0 col-12 col-md-6">
       
              <img
-            src="../../../assets/image/swplus1.jpg"
+            src="https://clickclicksold.ca/wp-content/uploads/2022/03/Benefits-of-a-Swift-Plus.png"
             class="w-100 h-100"
             alt=""
           />
@@ -134,11 +134,11 @@
         <div class="element2 p-0 col-12 col-md-6">
 
             <img
-            src="../../../assets/image/swplus2.jpg"
+            src="https://clickclicksold.ca/wp-content/uploads/2022/03/BenefitsofTraditionalSwiftPlus.png"
+
             class="w-100 h-100"
             alt=""
           />
-    
           
         </div>
       </div>
